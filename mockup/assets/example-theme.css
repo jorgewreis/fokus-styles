@@ -1,5 +1,7 @@
 html[data-theme="dark"],
-html[data-theme="dark"] body {
+html[data-fs-theme="dark"],
+html[data-theme="dark"] body,
+html[data-fs-theme="dark"] body {
   min-height: 100%;
   color: var(--fs-color-text);
   background-color: var(--fs-color-surface);

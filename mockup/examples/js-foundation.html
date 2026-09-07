@@ -83,6 +83,21 @@
     </section>
 
     <section>
+        <h2 class="fs-u-fs-md fs-u-fw-medium fs-u-mb-2">4. API declarativa 2.3</h2>
+        <p class="fs-u-fs-sm fs-u-mb-3">Theme, validação e eventos comuns usam os exports vanilla sem dependências externas.</p>
+        <div class="fs-form-row">
+            <button type="button" class="fs-btn" id="theme-toggle">Alternar tema com FokusStyles.Theme</button>
+            <form class="fs-form-col" data-fs="form-validation" id="api-form" novalidate>
+                <label class="fs-form-label" for="api-required">Campo obrigatório</label>
+                <input class="fs-form-control" id="api-required" required aria-describedby="api-feedback">
+                <div class="fs-invalid-feedback" id="api-feedback">Informe um valor para continuar.</div>
+                <button class="fs-btn fs-btn-primary" type="submit">Validar formulário</button>
+            </form>
+        </div>
+        <p class="fs-u-fs-xs fs-u-mt-2" id="api-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section>
         <h2 class="fs-u-fs-md fs-u-fw-medium fs-u-mb-2">2. Foco, teclado e overlay (FokusStyles.core.createFocusTrap / onEscapeKey / lockScroll / onClickOutside)</h2>
         <p class="fs-u-fs-sm fs-u-mb-3">Abre um painel com scroll da página bloqueado, foco preso via Tab/Shift+Tab, fecha com Escape ou clique fora.</p>
         <button type="button" class="fs-btn fs-btn-primary" id="trap-trigger">Abrir painel com focus trap</button>
@@ -183,6 +198,16 @@
             } else {
                 core.collapse(collapsePanel);
             }
+        });
+
+        const apiStatus = document.getElementById("api-status");
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+            const next = FokusStyles.Theme.getOrCreateInstance().get() === "dark" ? "light" : "dark";
+            FokusStyles.Theme.set(next);
+            apiStatus.textContent = `Tema ${next} aplicado.`;
+        });
+        document.getElementById("api-form").addEventListener("fs:form:validated", (event) => {
+            apiStatus.textContent = event.detail.valid ? "Formulário válido." : "Formulário precisa de atenção.";
         });
     </script>
 

@@ -62,17 +62,21 @@ export class Accordion {
   }
 
   _open(entry) {
+    entry.button.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     entry.button.setAttribute("aria-expanded", "true");
     entry.panel.hidden = false;
     expand(entry.panel).then(() => {
+      entry.button.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
       entry.button.dispatchEvent(new CustomEvent("fs:accordion:shown", { bubbles: true }));
     });
   }
 
   _close(entry) {
+    entry.button.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     entry.button.setAttribute("aria-expanded", "false");
     collapse(entry.panel).then(() => {
       entry.panel.hidden = true;
+      entry.button.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
       entry.button.dispatchEvent(new CustomEvent("fs:accordion:hidden", { bubbles: true }));
     });
   }

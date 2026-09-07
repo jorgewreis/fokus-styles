@@ -48,6 +48,14 @@ export class Offcanvas {
     return instances.get(el);
   }
 
+  static getOrCreateInstance(el, options = {}) {
+    return this.getInstance(el) ?? new Offcanvas(el, options);
+  }
+
+  static show(el, options = {}) { return this.getOrCreateInstance(el, options).show(); }
+  static hide(el) { return this.getInstance(el)?.hide(); }
+  static toggle(el, options = {}) { return this.getOrCreateInstance(el, options).toggle(); }
+
   _handleTriggerClick(event) {
     event.preventDefault();
     this.show();
@@ -61,6 +69,7 @@ export class Offcanvas {
 
   show() {
     if (this.isOpen) return;
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
 
     if (this.hasBackdrop) {
@@ -96,11 +105,13 @@ export class Offcanvas {
       });
     }
 
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:offcanvas:shown", { bubbles: true }));
   }
 
   hide() {
     if (!this.isOpen) return;
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     this.isOpen = false;
 
     this.offcanvasEl.classList.remove("is-open");
@@ -118,6 +129,7 @@ export class Offcanvas {
 
     this.triggerEl.focus();
 
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:offcanvas:hidden", { bubbles: true }));
   }
 
@@ -138,4 +150,4 @@ export class Offcanvas {
   }
 }
 
-autoInit("offcanvas", Offcanvas);
+autoInit("offcanvas", Offcanvas, { selector: '[data-fs="offcanvas"], [data-fs-toggle="offcanvas"]' });

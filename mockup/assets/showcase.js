@@ -482,6 +482,7 @@ const apiExtensions = {
 };
 
 if (new URLSearchParams(window.location.search).get("theme") === "dark") {
+  document.documentElement.setAttribute("data-fs-theme", "dark");
   document.documentElement.setAttribute("data-theme", "dark");
   if (themeButton) themeButton.textContent = "Usar tema claro";
 }
@@ -713,6 +714,7 @@ for (const item of catalog) {
 
 themeButton?.addEventListener("click", () => {
   const dark = document.documentElement.getAttribute("data-theme") !== "dark";
+  document.documentElement.setAttribute("data-fs-theme", dark ? "dark" : "light");
   document.documentElement.toggleAttribute("data-theme", dark);
   if (dark) document.documentElement.setAttribute("data-theme", "dark");
   themeButton.textContent = dark ? "Usar tema claro" : "Usar tema escuro";

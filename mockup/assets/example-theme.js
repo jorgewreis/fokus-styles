@@ -3,7 +3,9 @@
 const exampleTheme = new URLSearchParams(window.location.search).get("theme");
 
 if (exampleTheme === "dark") {
+  document.documentElement.setAttribute("data-fs-theme", "dark");
   document.documentElement.setAttribute("data-theme", "dark");
 } else {
+  document.documentElement.setAttribute("data-fs-theme", "light");
   document.documentElement.removeAttribute("data-theme");
 }

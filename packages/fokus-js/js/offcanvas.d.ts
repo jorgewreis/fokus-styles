@@ -12,6 +12,10 @@ export class Offcanvas {
   constructor(triggerEl: HTMLElement, options?: OffcanvasOptions);
 
   static getInstance(el: Element): Offcanvas | undefined;
+  static getOrCreateInstance(el: HTMLElement, options?: OffcanvasOptions): Offcanvas;
+  static show(el: HTMLElement, options?: OffcanvasOptions): void;
+  static hide(el: HTMLElement): void;
+  static toggle(el: HTMLElement, options?: OffcanvasOptions): void;
 
   show(): void;
   hide(): void;

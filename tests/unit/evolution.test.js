@@ -4,6 +4,8 @@ import { FormValidation } from "../../packages/fokus-js/js/form-validation.js";
 import { Navbar } from "../../packages/fokus-js/js/navbar.js";
 import { Scrollspy } from "../../packages/fokus-js/js/scrollspy.js";
 import { Accordion } from "../../packages/fokus-js/js/accordion.js";
+import { Modal } from "../../packages/fokus-js/js/modal.js";
+import { Offcanvas } from "../../packages/fokus-js/js/offcanvas.js";
 
 afterEach(() => { document.body.innerHTML = ""; });
 
@@ -52,5 +54,26 @@ describe("Fokus Styles evolution API", () => {
     button.click();
     expect(button.getAttribute("aria-expanded")).toBe("true");
     accordion.dispose();
+  });
+
+  it("aceita gatilho data-fs-toggle e eventos comuns no Modal", () => {
+    document.body.innerHTML = '<button data-fs-toggle="modal" data-fs-target="#dialog">Abrir</button><div id="dialog"><div class="fs-modal-dialog"><h2 class="fs-modal-title">Diálogo</h2></div></div>';
+    const trigger = document.querySelector("button");
+    const shown = [];
+    trigger.addEventListener("fs:shown", () => shown.push(true));
+    const modal = Modal.getOrCreateInstance(trigger);
+    modal.show();
+    expect(shown).toHaveLength(1);
+    modal.dispose();
+  });
+
+  it("expõe a API estática e eventos comuns do Offcanvas", () => {
+    document.body.innerHTML = '<button data-fs-target="#panel">Abrir</button><div id="panel" class="fs-offcanvas"><div class="fs-offcanvas-body"><button>Conteúdo</button></div></div>';
+    const trigger = document.querySelector("button");
+    const events = [];
+    trigger.addEventListener("fs:shown", () => events.push("shown"));
+    Offcanvas.show(trigger, { backdrop: false });
+    expect(events).toEqual(["shown"]);
+    Offcanvas.hide(trigger);
   });
 });

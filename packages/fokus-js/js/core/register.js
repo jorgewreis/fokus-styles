@@ -14,11 +14,13 @@ export function createInstanceRegistry() {
   };
 }
 
-export function autoInit(name, Ctor) {
+export function autoInit(name, Ctor, options = {}) {
   if (typeof document === "undefined") return;
 
+  const selector = options.selector ?? `[data-fs="${name}"]`;
+
   const init = () => {
-    document.querySelectorAll(`[data-fs="${name}"]`).forEach((el) => {
+    document.querySelectorAll(selector).forEach((el) => {
       if (!Ctor.getInstance(el)) new Ctor(el);
     });
   };

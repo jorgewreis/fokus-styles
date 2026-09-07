@@ -15,7 +15,8 @@
             background-color: var(--fs-color-subtle);
         }
 
-        html[data-theme="dark"] .theme-panel {
+        html[data-theme="dark"] .theme-panel,
+        html[data-fs-theme="dark"] .theme-panel {
             color: var(--fs-color-text);
             background-color: var(--fs-color-surface);
         }
@@ -25,14 +26,17 @@
 </head>
 <body>
 <div class="theme-panel">
-        <nav class="fs-navbar fs-u-mb-3">
+        <nav class="fs-navbar fs-u-mb-3" data-fs="navbar" aria-label="Navegação principal">
             <a href="#" class="fs-navbar-brand">FokusStyles</a>
-            <ul class="fs-navbar-nav">
-                <li><a href="#" class="fs-nav-link is-active">Início</a></li>
-                <li><a href="#" class="fs-nav-link">Projetos <span class="fs-badge fs-badge-primary fs-badge-sm">3</span></a></li>
-                <li><a href="#" class="fs-nav-link is-disabled">Configurações</a></li>
-            </ul>
-            <button type="button" class="fs-btn fs-btn-primary fs-btn-sm">Entrar</button>
+            <button type="button" class="fs-navbar-toggler" data-fs-toggle="navbar" data-fs-target="#demo-navbar-menu" aria-controls="demo-navbar-menu" aria-expanded="false">Menu</button>
+            <div class="fs-navbar-collapse" id="demo-navbar-menu" hidden>
+                <ul class="fs-navbar-nav">
+                    <li><a href="#" class="fs-nav-link is-active" aria-current="page">Início</a></li>
+                    <li><a href="#" class="fs-nav-link">Projetos <span class="fs-badge fs-badge-primary fs-badge-sm">3</span></a></li>
+                    <li><a href="#" class="fs-nav-link is-disabled">Configurações</a></li>
+                </ul>
+                <button type="button" class="fs-btn fs-btn-primary fs-btn-sm">Entrar</button>
+            </div>
         </nav>
 
         <div class="fs-table-responsive">

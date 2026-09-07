@@ -124,4 +124,4 @@ export class Modal {
   }
 }
 
-autoInit("modal", Modal);
+autoInit("modal", Modal, { selector: '[data-fs="modal"], [data-fs-toggle="modal"]' });

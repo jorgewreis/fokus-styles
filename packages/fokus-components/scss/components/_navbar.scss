@@ -63,7 +63,8 @@
     }
 
     .fs-navbar-collapse,
-    .fs-navbar-collapse:not(.is-open) {
+    .fs-navbar-collapse:not(.is-open),
+    .fs-navbar-collapse[hidden] {
       display: flex;
       flex: 1 1 auto;
       align-items: center;
