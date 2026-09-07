@@ -1,171 +1,620 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mockup - Checkbox / Radio / Switch</title>
+    <title>Fokus Styles — Check, Radio e Switch</title>
 
-    <!-- STYLES IMPORT -->
     <link rel="stylesheet" href="../../dist/css/fonts.css">
+    <link rel="stylesheet" href="../../dist/css/components.css">
     <link rel="stylesheet" href="../../dist/css/forms.css">
     <link rel="stylesheet" href="../../dist/css/helpers.css">
+    <link rel="stylesheet" href="../assets/example-theme.css">
+    <script src="../assets/example-theme.js"></script>
+
     <style>
-        .theme-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            padding: 24px;
+        :root {
+            --demo-max-width: 1080px;
+            --demo-panel-bg: var(--fs-color-surface);
+            --demo-soft-bg: var(--fs-color-subtle);
+            --demo-panel-border: var(--fs-color-border);
+            --demo-accent: var(--fs-color-primary);
+            --demo-code-bg: var(--fs-color-bg-subtle);
         }
 
-        html[data-theme="dark"] .theme-panel {
+        * { box-sizing: border-box; }
+
+        body {
+            min-block-size: 100vh;
+            margin: 0;
             color: var(--fs-color-text);
-            background-color: var(--fs-color-surface);
+            background: var(--fs-color-bg-subtle);
         }
 
-        .control-row {
+        .demo-page {
+            max-inline-size: var(--demo-max-width);
+            margin-inline: auto;
+            padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px;
+        }
+
+        .demo-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: end;
+            gap: 24px;
+            margin-block-end: 32px;
+        }
+
+        .demo-eyebrow {
+            margin: 0 0 8px;
+            color: var(--demo-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        html[data-fs-theme="dark"] .demo-eyebrow {
+            color: var(--fs-color-text);
+        }
+
+        .demo-title {
+            max-inline-size: 760px;
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .demo-lead {
+            max-inline-size: 720px;
+            margin: 16px 0 0;
+            color: var(--fs-color-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .demo-badge-row,
+        .demo-action-row,
+        .demo-chip-row {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 20px;
+            gap: 8px;
         }
 
-        .fs-check-invalid-demo {
+        .demo-badge-row { margin-block-start: 20px; }
+
+        .demo-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-block: 24px;
+            padding: 12px;
+            border: var(--fs-border-width) solid var(--demo-panel-border);
+            border-radius: var(--fs-radius-md);
+            background: var(--demo-panel-bg);
+        }
+
+        .demo-section { margin-block-start: 32px; }
+
+        .demo-section-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: end;
+            justify-content: space-between;
+            gap: 12px;
+            margin-block-end: 14px;
+        }
+
+        .demo-section-heading h2,
+        .demo-card h3 { margin: 0; }
+
+        .demo-section-heading p,
+        .demo-card p { color: var(--fs-color-muted); }
+
+        .demo-section-heading p {
+            max-inline-size: 620px;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .demo-grid {
             display: grid;
-            gap: 4px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
         }
 
-        .choice-fieldset {
+        .demo-card,
+        .demo-playground,
+        .demo-reference {
+            border: var(--fs-border-width) solid var(--demo-panel-border);
+            border-radius: var(--fs-radius-md);
+            background: var(--demo-panel-bg);
+            box-shadow: var(--fs-shadow-sm);
+        }
+
+        .demo-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-block-size: 170px;
+            padding: 20px;
+        }
+
+        .demo-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .demo-card-icon {
+            display: grid;
+            place-items: center;
+            inline-size: 36px;
+            block-size: 36px;
+            border-radius: 50%;
+            color: var(--fs-color-on-primary);
+            background: var(--demo-accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .demo-playground { padding: clamp(18px, 3vw, 32px); }
+
+        .demo-playground-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.75fr);
+            gap: 28px;
+        }
+
+        .demo-demo-area { display: grid; gap: 22px; }
+
+        .demo-demo-group {
+            display: grid;
+            gap: 10px;
+            padding-block-end: 20px;
+            border-block-end: var(--fs-border-width) solid var(--demo-panel-border);
+        }
+
+        .demo-demo-group:last-child {
+            padding-block-end: 0;
+            border-block-end: 0;
+        }
+
+        .demo-demo-group h3 { margin: 0; font-size: 0.95rem; }
+
+        .demo-demo-group > p {
+            margin: -4px 0 2px;
+            color: var(--fs-color-muted);
+            font-size: 0.82rem;
+        }
+
+        .demo-control-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 20px;
+        }
+
+        .demo-control-grid .fs-check,
+        .demo-control-grid .fs-radio,
+        .demo-control-grid .fs-switch { min-inline-size: 0; }
+
+        .demo-fieldset { display: grid; gap: 10px; }
+
+        .demo-fieldset .fs-form-text,
+        .demo-fieldset .fs-invalid-feedback { margin: 0; }
+
+        .demo-status {
+            display: grid;
+            align-content: start;
+            gap: 16px;
+            padding: 20px;
+            border-radius: var(--fs-radius-md);
+            background: var(--demo-soft-bg);
+        }
+
+        .demo-status h3 { margin: 0; font-size: 1rem; }
+
+        .demo-status p {
+            margin: 0;
+            color: var(--fs-color-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .demo-status .demo-status-output {
+            min-block-size: 48px;
+            padding: 12px;
+            border-inline-start: 3px solid var(--demo-accent);
+            color: var(--fs-color-text);
+            background: var(--demo-panel-bg);
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+
+        .demo-code {
+            overflow-x: auto;
+            margin: 0;
+            padding: 16px;
+            border: var(--fs-border-width) solid var(--demo-panel-border);
+            border-radius: var(--fs-radius-sm);
+            color: var(--fs-color-text);
+            background: var(--demo-code-bg);
+            font-size: 0.78rem;
+            line-height: 1.6;
+            tab-size: 2;
+        }
+
+        .demo-reference {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 24px;
+            padding: clamp(18px, 3vw, 28px);
+        }
+
+        .demo-reference h2 { margin: 0 0 10px; font-size: 1.1rem; }
+
+        .demo-reference ul {
             display: grid;
             gap: 8px;
-            max-inline-size: 420px;
+            margin: 0;
+            padding-inline-start: 20px;
+            color: var(--fs-color-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
         }
 
-        .choice-fieldset .fs-form-text {
-            margin-block: 0 4px;
+        .demo-note {
+            margin-block-start: 12px;
+            padding: 12px 14px;
+            border-radius: var(--fs-radius-sm);
+            color: var(--fs-alert-info-text);
+            background: var(--fs-alert-info-bg);
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+
+        .demo-touch-area {
+            display: inline-flex;
+            align-items: center;
+            min-block-size: 44px;
+            padding: 6px 10px;
+            border: var(--fs-border-width) dashed var(--demo-panel-border);
+            border-radius: var(--fs-radius-sm);
+        }
+
+        .demo-switch-sample {
+            display: grid;
+            gap: 8px;
+            padding: 16px;
+            border: var(--fs-border-width) solid var(--demo-panel-border);
+            border-radius: var(--fs-radius-sm);
+            background: var(--demo-soft-bg);
+        }
+
+        .demo-switch-sample > p {
+            margin: 0;
+            color: var(--fs-color-muted);
+            font-size: 0.8rem;
+            line-height: 1.45;
+        }
+
+        .demo-switch-sample .fs-switch {
+            align-items: flex-start;
+        }
+
+        .demo-visible-feedback {
+            display: block;
+            min-block-size: auto;
+        }
+
+        @media (max-width: 760px) {
+            .demo-hero,
+            .demo-playground-grid,
+            .demo-reference { grid-template-columns: 1fr; }
+
+            .demo-hero { align-items: start; }
+        }
+
+        @media (max-width: 480px) {
+            .demo-page { padding-inline: 12px; }
+            .demo-control-grid,
+            .demo-grid { grid-template-columns: 1fr; }
+            .demo-toolbar .fs-btn { flex: 1 1 100%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto; }
         }
     </style>
-    <link rel="stylesheet" href="../assets/example-theme.css">
-    <script src="../assets/example-theme.js"></script>
 </head>
 <body>
+    <main class="demo-page">
+        <header class="demo-hero">
+            <div>
+                <p class="demo-eyebrow">Fokus Styles · controles nativos</p>
+                <h1 class="demo-title">Check, Radio e Switch</h1>
+                <p class="demo-lead">Uma página de demonstração para explorar estados, tamanhos, validação e acessibilidade dos controles de seleção — com o comportamento nativo do navegador preservado.</p>
+                <div class="demo-badge-row" aria-label="Características demonstradas">
+                    <span class="fs-badge fs-badge-soft-primary">CSS-only</span>
+                    <span class="fs-badge fs-badge-soft-success">Acessível</span>
+                    <span class="fs-badge fs-badge-outline-primary">Responsivo</span>
+                </div>
+            </div>
+            <div class="demo-chip-row" aria-label="Escopos disponíveis">
+                <span class="fs-badge fs-badge-dot fs-badge-soft-success">Pronto para uso</span>
+            </div>
+        </header>
 
-    <div class="theme-panel">
-        <fieldset class="fs-form-fieldset choice-fieldset" dir="auto">
-            <legend class="fs-form-label">Preferências de contato</legend>
-            <p class="fs-form-text" id="contact-help">Escolha uma opção; o controle permanece nativo e acessível.</p>
-            <div class="fs-radio">
-                <input type="radio" name="contact" class="fs-radio-input" id="contact-email" aria-describedby="contact-help" checked>
-                <label for="contact-email" class="fs-radio-label">E-mail</label>
+        <div class="demo-toolbar" aria-label="Ferramentas da demonstração">
+            <div class="demo-action-row">
+                <button class="fs-btn fs-btn-primary fs-btn-sm" type="button" id="reset-demo">Restaurar demonstração</button>
+                <button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button>
             </div>
-            <div class="fs-radio">
-                <input type="radio" name="contact" class="fs-radio-input" id="contact-phone" aria-describedby="contact-help">
-                <label for="contact-phone" class="fs-radio-label">Telefone</label>
-            </div>
-        </fieldset>
-
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Checkbox — estados</p>
-        <div class="control-row">
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-unchecked">
-                <label for="check-unchecked" class="fs-check-label">Não marcado</label>
-            </div>
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-checked" checked>
-                <label for="check-checked" class="fs-check-label">Marcado</label>
-            </div>
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-indeterminate">
-                <label for="check-indeterminate" class="fs-check-label">Indeterminado</label>
-            </div>
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-disabled" disabled>
-                <label for="check-disabled" class="fs-check-label">Desabilitado</label>
-            </div>
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-disabled-checked" checked disabled>
-                <label for="check-disabled-checked" class="fs-check-label">Desabilitado + marcado</label>
-            </div>
+            <span class="fs-form-text">Use Tab, Espaço e as setas para testar a interação.</span>
         </div>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Checkbox — validação e tamanhos</p>
-        <div class="control-row">
-            <div class="fs-check fs-check-invalid-demo">
-                <input type="checkbox" class="fs-check-input is-invalid" id="check-invalid" aria-invalid="true" aria-describedby="check-invalid-help">
-                <label for="check-invalid" class="fs-check-label">Inválido</label>
-                <div class="fs-invalid-feedback" id="check-invalid-help">Selecione esta opção para continuar.</div>
+        <section class="demo-section" aria-labelledby="why-title">
+            <div class="demo-section-heading">
+                <div>
+                    <h2 id="why-title">Escolha o controle certo</h2>
+                    <p>A aparência muda conforme o estado, mas o HTML continua simples, previsível e compatível com teclado e tecnologias assistivas.</p>
+                </div>
             </div>
-            <div class="fs-check fs-check-sm">
-                <input type="checkbox" class="fs-check-input" id="check-sm" checked>
-                <label for="check-sm" class="fs-check-label">sm</label>
+            <div class="demo-grid">
+                <article class="demo-card">
+                    <span class="demo-card-icon" aria-hidden="true">✓</span>
+                    <h3>Checkbox</h3>
+                    <p>Para opções independentes, como aceitar termos ou selecionar vários filtros.</p>
+                    <span class="fs-badge fs-badge-soft-primary">múltipla escolha</span>
+                </article>
+                <article class="demo-card">
+                    <span class="demo-card-icon" aria-hidden="true">○</span>
+                    <h3>Radio</h3>
+                    <p>Para escolher uma única alternativa dentro de um grupo nomeado.</p>
+                    <span class="fs-badge fs-badge-soft-primary">escolha única</span>
+                </article>
+                <article class="demo-card">
+                    <span class="demo-card-icon" aria-hidden="true">—</span>
+                    <h3>Switch</h3>
+                    <p>Para preferências que podem ser ligadas ou desligadas imediatamente.</p>
+                    <span class="fs-badge fs-badge-soft-primary">estado imediato</span>
+                </article>
             </div>
-            <div class="fs-check">
-                <input type="checkbox" class="fs-check-input" id="check-md" checked>
-                <label for="check-md" class="fs-check-label">md (padrão)</label>
-            </div>
-            <div class="fs-check fs-check-lg">
-                <input type="checkbox" class="fs-check-input" id="check-lg" checked>
-                <label for="check-lg" class="fs-check-label">lg</label>
-            </div>
-        </div>
+        </section>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Radio — estados e tamanhos</p>
-        <div class="control-row">
-            <div class="fs-radio">
-                <input type="radio" name="radio-claro" class="fs-radio-input" id="radio-1" checked>
-                <label for="radio-1" class="fs-radio-label">Opção 1</label>
+        <section class="demo-section" aria-labelledby="playground-title">
+            <div class="demo-section-heading">
+                <div>
+                    <h2 id="playground-title">Laboratório interativo</h2>
+                    <p>Altere os controles e observe os estados aplicados sem JavaScript para o comportamento de seleção.</p>
+                </div>
+                <span class="fs-badge fs-badge-outline-success">ao vivo</span>
             </div>
-            <div class="fs-radio">
-                <input type="radio" name="radio-claro" class="fs-radio-input" id="radio-2">
-                <label for="radio-2" class="fs-radio-label">Opção 2</label>
-            </div>
-            <div class="fs-radio">
-                <input type="radio" name="radio-claro-disabled" class="fs-radio-input" id="radio-disabled" disabled>
-                <label for="radio-disabled" class="fs-radio-label">Desabilitado</label>
-            </div>
-            <div class="fs-radio fs-radio-sm">
-                <input type="radio" name="radio-sm" class="fs-radio-input" id="radio-sm" checked>
-                <label for="radio-sm" class="fs-radio-label">sm</label>
-            </div>
-            <div class="fs-radio fs-radio-lg">
-                <input type="radio" name="radio-lg" class="fs-radio-input" id="radio-lg" checked>
-                <label for="radio-lg" class="fs-radio-label">lg</label>
-            </div>
-        </div>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Switch — estados e tamanhos (knob retangular arredondado)</p>
-        <div class="control-row">
-            <div class="fs-switch">
-                <input type="checkbox" class="fs-switch-input" id="switch-off">
-                <label for="switch-off" class="fs-switch-label">Desligado</label>
-            </div>
-            <div class="fs-switch">
-                <input type="checkbox" class="fs-switch-input" id="switch-on" checked>
-                <label for="switch-on" class="fs-switch-label">Ligado</label>
-            </div>
-            <div class="fs-switch">
-                <input type="checkbox" class="fs-switch-input" id="switch-disabled" disabled>
-                <label for="switch-disabled" class="fs-switch-label">Desabilitado</label>
-            </div>
-            <div class="fs-switch fs-switch-sm">
-                <input type="checkbox" class="fs-switch-input" id="switch-sm" checked>
-                <label for="switch-sm" class="fs-switch-label">sm</label>
-            </div>
-            <div class="fs-switch fs-switch-lg">
-                <input type="checkbox" class="fs-switch-input" id="switch-lg" checked>
-                <label for="switch-lg" class="fs-switch-label">lg</label>
-            </div>
-            <div class="fs-switch">
-                <input type="checkbox" class="fs-switch-input" id="switch-aria" aria-label="Ativar notificações por e-mail">
-                <label for="switch-aria" class="fs-switch-label"></label>
-            </div>
-        </div>
-    </div>
+            <div class="demo-playground">
+                <div class="demo-playground-grid">
+                    <div class="demo-demo-area">
+                        <div class="demo-demo-group">
+                            <h3>Checkbox · seleção e validação</h3>
+                            <p>O terceiro item começa indeterminado; o último demonstra uma mensagem associada.</p>
+                            <div class="demo-control-grid">
+                                <div class="fs-check">
+                                    <input type="checkbox" class="fs-check-input" id="demo-check-unchecked">
+                                    <label for="demo-check-unchecked" class="fs-check-label">Não marcado</label>
+                                </div>
+                                <div class="fs-check">
+                                    <input type="checkbox" class="fs-check-input" id="demo-check-checked" checked>
+                                    <label for="demo-check-checked" class="fs-check-label">Marcado</label>
+                                </div>
+                                <div class="fs-check">
+                                    <input type="checkbox" class="fs-check-input" id="demo-check-indeterminate">
+                                    <label for="demo-check-indeterminate" class="fs-check-label">Indeterminado</label>
+                                </div>
+                                <div class="fs-check">
+                                    <input type="checkbox" class="fs-check-input" id="demo-check-disabled" disabled>
+                                    <label for="demo-check-disabled" class="fs-check-label">Desabilitado</label>
+                                </div>
+                                <div class="fs-check fs-check-invalid-demo">
+                                    <input type="checkbox" class="fs-check-input is-invalid" id="demo-check-invalid" aria-invalid="true" aria-describedby="demo-check-error">
+                                    <label for="demo-check-invalid" class="fs-check-label">Com erro</label>
+                                    <div class="fs-invalid-feedback" id="demo-check-error">Escolha uma opção para continuar.</div>
+                                </div>
+                            </div>
+                        </div>
 
-    
+                        <div class="demo-demo-group">
+                            <h3>Radio · grupo semântico</h3>
+                            <fieldset class="fs-form-fieldset demo-fieldset" id="demo-radio-fieldset">
+                                <legend class="fs-form-label">Formato de entrega</legend>
+                                <p class="fs-form-text" id="demo-radio-help">Escolha uma opção. Use as setas quando o grupo estiver focado.</p>
+                                <div class="fs-radio">
+                                    <input type="radio" name="demo-delivery" class="fs-radio-input" id="demo-radio-email" value="email" aria-describedby="demo-radio-help" checked>
+                                    <label for="demo-radio-email" class="fs-radio-label">E-mail — envio imediato</label>
+                                </div>
+                                <div class="fs-radio">
+                                    <input type="radio" name="demo-delivery" class="fs-radio-input" id="demo-radio-download" value="download" aria-describedby="demo-radio-help">
+                                    <label for="demo-radio-download" class="fs-radio-label">Download — arquivo compactado</label>
+                                </div>
+                                <div class="fs-radio">
+                                    <input type="radio" name="demo-delivery" class="fs-radio-input" id="demo-radio-disabled" disabled>
+                                    <label for="demo-radio-disabled" class="fs-radio-label">Correio — temporariamente indisponível</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="demo-demo-group">
+                            <h3>Switch · preferências imediatas</h3>
+                            <p>O controle permanece um checkbox nativo; não é necessário adicionar <code>role="switch"</code>.</p>
+                            <div class="demo-control-grid">
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="demo-switch-off">
+                                    <label for="demo-switch-off" class="fs-switch-label">Notificações desligadas</label>
+                                </div>
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="demo-switch-on" checked>
+                                    <label for="demo-switch-on" class="fs-switch-label">Modo compacto ligado</label>
+                                </div>
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="demo-switch-disabled" disabled checked>
+                                    <label for="demo-switch-disabled" class="fs-switch-label">Sincronização bloqueada</label>
+                                </div>
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="demo-switch-no-label" aria-label="Ativar modo silencioso">
+                                    <label for="demo-switch-no-label" class="fs-switch-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="demo-status" aria-labelledby="status-title">
+                        <div>
+                            <h3 id="status-title">Status da interação</h3>
+                            <p>Este painel é atualizado quando um controle é alterado. A mensagem usa uma região live para comunicar a mudança.</p>
+                        </div>
+                        <p class="demo-status-output" id="demo-status" role="status" aria-live="polite">Nenhuma alteração ainda.</p>
+                        <div class="demo-touch-area">
+                            <div class="fs-check">
+                                <input type="checkbox" class="fs-check-input" id="demo-touch-check">
+                                <label for="demo-touch-check" class="fs-check-label">Área de toque confortável</label>
+                            </div>
+                        </div>
+                        <pre class="demo-code"><code>class="fs-check"
+class="fs-radio"
+class="fs-switch"
+
+/* tokens locais */
+--fs-check-size
+--fs-radio-size
+--fs-switch-track-width</code></pre>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="sizes-title">
+            <div class="demo-section-heading">
+                <div>
+                    <h2 id="sizes-title">Tamanhos e temas</h2>
+                    <p>As variantes alteram a escala do controle sem trocar a marcação ou a semântica.</p>
+                </div>
+            </div>
+            <div class="demo-reference">
+                <div>
+                    <h2>Escala visual</h2>
+                    <div class="demo-chip-row">
+                        <div class="fs-check fs-check-sm">
+                            <input type="checkbox" class="fs-check-input" id="size-check-sm" checked>
+                            <label for="size-check-sm" class="fs-check-label">Small</label>
+                        </div>
+                        <div class="fs-check">
+                            <input type="checkbox" class="fs-check-input" id="size-check-md" checked>
+                            <label for="size-check-md" class="fs-check-label">Default</label>
+                        </div>
+                        <div class="fs-check fs-check-lg">
+                            <input type="checkbox" class="fs-check-input" id="size-check-lg" checked>
+                            <label for="size-check-lg" class="fs-check-label">Large</label>
+                        </div>
+                    </div>
+                    <p class="demo-note">Passe o foco pelo teclado para visualizar o anel de foco. Em telas estreitas, os labels podem ocupar mais de uma linha.</p>
+                </div>
+                <div>
+                    <h2>Contratos preservados</h2>
+                    <ul>
+                        <li>Checkbox e switch alternam com <strong>Espaço</strong>.</li>
+                        <li>Radio mantém a navegação nativa por setas.</li>
+                        <li>Labels continuam associados por <code>for</code> e <code>id</code>.</li>
+                        <li>RTL usa propriedades lógicas sem duplicar estilos.</li>
+                        <li>Movimento reduzido remove transições dos estados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="proposal-title">
+            <div class="demo-section-heading">
+                <div>
+                    <h2 id="proposal-title">Switch refinado</h2>
+                    <p>Trilho mais definido, thumb elevado e estados de interação consistentes com o restante do sistema.</p>
+                </div>
+                <span class="fs-badge fs-badge-success">componente oficial</span>
+            </div>
+
+            <div class="demo-reference">
+                <div>
+                    <h2>Estados principais</h2>
+                    <div class="demo-switch-sample">
+                        <div class="fs-switch">
+                            <input type="checkbox" class="fs-switch-input" id="proposal-switch-off">
+                            <label for="proposal-switch-off" class="fs-switch-label">Desligado · trilho neutro</label>
+                        </div>
+                        <p>O trilho usa superfície sutil e o thumb ganha contraste próprio.</p>
+                    </div>
+                    <div class="demo-switch-sample">
+                        <div class="fs-switch">
+                            <input type="checkbox" class="fs-switch-input" id="proposal-switch-on" checked>
+                            <label for="proposal-switch-on" class="fs-switch-label">Ligado · estado primário</label>
+                        </div>
+                        <p>O estado ligado fica evidente sem inserir texto ou ícone dentro do controle.</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Estados de sistema</h2>
+                    <div class="demo-switch-sample">
+                        <div class="fs-switch">
+                            <input type="checkbox" class="fs-switch-input is-invalid" id="proposal-switch-invalid" aria-invalid="true">
+                            <label for="proposal-switch-invalid" class="fs-switch-label">Inválido · com mensagem externa</label>
+                        </div>
+                        <div class="fs-invalid-feedback demo-visible-feedback">Ative esta preferência para continuar.</div>
+                    </div>
+                    <div class="demo-switch-sample">
+                        <div class="fs-switch">
+                            <input type="checkbox" class="fs-switch-input" id="proposal-switch-disabled" disabled checked>
+                            <label for="proposal-switch-disabled" class="fs-switch-label">Desabilitado · preserva o estado</label>
+                        </div>
+                        <p>O controle fica indisponível, mas continua comunicando se está ligado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="../../dist/js/fokus.js"></script>
     <script>
-        document.getElementById("check-indeterminate").indeterminate = true;
+        const indeterminate = document.getElementById("demo-check-indeterminate");
+        const status = document.getElementById("demo-status");
+        const resetButton = document.getElementById("reset-demo");
+        const directionButton = document.getElementById("toggle-direction");
+        const page = document.querySelector(".demo-page");
+        const defaults = new Map([...document.querySelectorAll("input")].map((input) => [input.id, input.checked]));
+
+        indeterminate.indeterminate = true;
+
+        document.querySelectorAll("input:not(:disabled)").forEach((input) => {
+            input.addEventListener("change", () => {
+                const state = input.checked ? "marcado" : "desmarcado";
+                status.textContent = `${input.id}: ${state}.`;
+            });
+        });
+
+        resetButton.addEventListener("click", () => {
+            defaults.forEach((checked, id) => {
+                const input = document.getElementById(id);
+                input.checked = checked;
+            });
+            indeterminate.indeterminate = true;
+            status.textContent = "Demonstração restaurada.";
+        });
+
+        directionButton.addEventListener("click", () => {
+            const rtl = page.getAttribute("dir") !== "rtl";
+            page.setAttribute("dir", rtl ? "rtl" : "ltr");
+            directionButton.setAttribute("aria-pressed", String(rtl));
+            directionButton.textContent = rtl ? "Voltar para LTR" : "Testar RTL";
+            status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada.";
+        });
     </script>
 </body>
 </html>

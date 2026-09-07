@@ -10,6 +10,11 @@ describe("Check, Radio e Switch", () => {
     expect(source).toContain("--fs-check-size");
     expect(source).toContain("--fs-radio-dot-size");
     expect(source).toContain("--fs-switch-on-offset");
+    expect(source).toContain("--fs-switch-track-bg");
+    expect(source).toContain("--fs-switch-thumb-shadow");
+    expect(source).toContain("--fs-switch-track-shadow");
+    expect(source).toContain("--fs-switch-hover-shadow");
+    expect(source).toContain("--fs-switch-active-scale");
     expect(source).toContain("padding-inline-start");
     expect(source).toContain("inset-inline-start");
     expect(source).not.toMatch(/padding-left|\bleft\s*:/);

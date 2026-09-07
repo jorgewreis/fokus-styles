@@ -97,7 +97,7 @@ para a escala semântica do framework:
 |---|---|
 | Checkbox | `--fs-check-size`, `--fs-check-border-width`, `--fs-check-radius`, `--fs-check-gap`, `--fs-check-mark-color` |
 | Radio | `--fs-radio-size`, `--fs-radio-dot-size`, `--fs-radio-radius`, `--fs-radio-gap` |
-| Switch | `--fs-switch-track-width`, `--fs-switch-track-height`, `--fs-switch-thumb-width`, `--fs-switch-thumb-height`, `--fs-switch-thumb-offset`, `--fs-switch-on-offset`, `--fs-switch-radius`, `--fs-switch-thumb-radius`, `--fs-switch-gap` |
+| Switch | `--fs-switch-track-width`, `--fs-switch-track-height`, `--fs-switch-thumb-width`, `--fs-switch-thumb-height`, `--fs-switch-thumb-offset`, `--fs-switch-on-offset`, `--fs-switch-radius`, `--fs-switch-thumb-radius`, `--fs-switch-gap`, `--fs-switch-track-bg`, `--fs-switch-track-border`, `--fs-switch-track-checked-bg`, `--fs-switch-thumb-bg`, `--fs-switch-thumb-border`, `--fs-switch-thumb-shadow`, `--fs-switch-track-shadow`, `--fs-switch-hover-ring`, `--fs-switch-hover-shadow`, `--fs-switch-active-scale` |
 
 Eles podem ser sobrescritos no wrapper do controle sem `!important`. As
 variantes `sm` e `lg` alteram os valores desses tokens.

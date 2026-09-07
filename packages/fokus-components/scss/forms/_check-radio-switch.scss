@@ -37,15 +37,25 @@
   }
 
   .fs-switch {
-    --fs-switch-track-width: 36px;
-    --fs-switch-track-height: 20px;
-    --fs-switch-thumb-width: 16px;
-    --fs-switch-thumb-height: 14px;
-    --fs-switch-thumb-offset: 2px;
-    --fs-switch-on-offset: 18px;
+    --fs-switch-track-width: 40px;
+    --fs-switch-track-height: 24px;
+    --fs-switch-thumb-width: 18px;
+    --fs-switch-thumb-height: 18px;
+    --fs-switch-thumb-offset: 3px;
+    --fs-switch-on-offset: 19px;
     --fs-switch-radius: var(--fs-radius-md);
     --fs-switch-thumb-radius: var(--fs-radius-sm);
     --fs-switch-gap: var(--fs-space-2);
+    --fs-switch-track-bg: var(--fs-color-subtle);
+    --fs-switch-track-border: var(--fs-color-border-default);
+    --fs-switch-track-checked-bg: var(--fs-color-primary);
+    --fs-switch-thumb-bg: var(--fs-color-surface);
+    --fs-switch-thumb-border: var(--fs-color-border-default);
+    --fs-switch-thumb-shadow: var(--fs-shadow-sm);
+    --fs-switch-track-shadow: inset 0 1px 1px rgb(15 23 42 / 12%);
+    --fs-switch-hover-ring: color-mix(in srgb, var(--fs-color-primary) 18%, transparent);
+    --fs-switch-hover-shadow: 0 0 0 4px var(--fs-switch-hover-ring);
+    --fs-switch-active-scale: 0.92;
     --fs-control-hover-bg: var(--fs-color-subtle);
     --fs-control-active-bg: var(--fs-alert-primary-bg);
     --fs-control-error-color: var(--fs-color-danger);
@@ -191,7 +201,10 @@
     inset-inline-start: 0;
     width: var(--fs-switch-track-width);
     height: var(--fs-switch-track-height);
+    border-color: var(--fs-switch-track-border);
     border-radius: var(--fs-switch-radius);
+    background-color: var(--fs-switch-track-bg);
+    box-shadow: var(--fs-switch-track-shadow);
   }
 
   .fs-switch-label::after {
@@ -200,19 +213,35 @@
     width: var(--fs-switch-thumb-width);
     height: var(--fs-switch-thumb-height);
     border-radius: var(--fs-switch-thumb-radius);
-    background-color: var(--fs-color-border);
+    border: var(--fs-border-width) solid var(--fs-switch-thumb-border);
+    background-color: var(--fs-switch-thumb-bg);
     opacity: 1;
     transform: translateY(-50%);
+    box-shadow: var(--fs-switch-thumb-shadow);
   }
 
   .fs-switch-input:checked + .fs-switch-label::before {
-    border-color: var(--fs-color-primary);
-    background-color: var(--fs-color-primary);
+    border-color: var(--fs-switch-track-checked-bg);
+    background-color: var(--fs-switch-track-checked-bg);
+    box-shadow: none;
   }
 
   .fs-switch-input:checked + .fs-switch-label::after {
     inset-inline-start: var(--fs-switch-on-offset);
+    border-color: var(--fs-color-on-primary);
     background-color: var(--fs-color-on-primary);
+  }
+
+  .fs-switch-input:not(:disabled, .is-invalid) + .fs-switch-label:hover::before {
+    box-shadow: var(--fs-switch-hover-shadow), var(--fs-switch-track-shadow);
+  }
+
+  .fs-switch-input:checked:not(:disabled, .is-invalid) + .fs-switch-label:hover::before {
+    box-shadow: var(--fs-switch-hover-shadow);
+  }
+
+  .fs-switch-input:not(:disabled) + .fs-switch-label:active::after {
+    transform: translateY(-50%) scale(var(--fs-switch-active-scale));
   }
 
   .fs-check-input:focus-visible + .fs-check-label::before,
@@ -233,15 +262,25 @@
   .fs-check-input:disabled + .fs-check-label::before,
   .fs-radio-input:disabled + .fs-radio-label::before,
   .fs-switch-input:disabled + .fs-switch-label::before {
-    border-color: var(--fs-color-border);
+    border-color: var(--fs-switch-track-border);
+    background-color: var(--fs-switch-track-bg);
+    box-shadow: none;
+  }
+
+  .fs-switch-input:disabled + .fs-switch-label::after {
     background-color: var(--fs-color-subtle);
+    box-shadow: none;
   }
 
   .fs-check-input:disabled:checked + .fs-check-label::before,
   .fs-radio-input:disabled:checked + .fs-radio-label::before,
   .fs-switch-input:disabled:checked + .fs-switch-label::before {
-    border-color: color-mix(in srgb, var(--fs-color-primary) 55%, var(--fs-color-border));
-    background-color: color-mix(in srgb, var(--fs-color-primary) 45%, var(--fs-color-subtle));
+    border-color: color-mix(in srgb, var(--fs-switch-track-checked-bg) 55%, var(--fs-color-border));
+    background-color: color-mix(in srgb, var(--fs-switch-track-checked-bg) 45%, var(--fs-switch-track-bg));
+  }
+
+  .fs-switch-input:disabled:checked + .fs-switch-label::after {
+    background-color: var(--fs-color-on-primary);
   }
 
   .fs-check-input.is-valid + .fs-check-label::before,
@@ -260,6 +299,19 @@
   .fs-radio-input[aria-invalid="true"] + .fs-radio-label::before,
   .fs-switch-input[aria-invalid="true"] + .fs-switch-label::before {
     border-color: var(--fs-control-error-color);
+  }
+
+  .fs-switch-input.is-invalid:checked + .fs-switch-label::before,
+  .fs-switch-input[aria-invalid="true"]:checked + .fs-switch-label::before {
+    background-color: var(--fs-control-error-color);
+    box-shadow: none;
+  }
+
+  .fs-switch-input.is-valid:checked + .fs-switch-label::before,
+  .fs-switch-input[aria-invalid="false"]:checked + .fs-switch-label::before {
+    background-color: var(--fs-control-success-color);
+    border-color: var(--fs-control-success-color);
+    box-shadow: none;
   }
 
   .fs-check-input.is-invalid + .fs-check-label::before,
@@ -316,11 +368,13 @@
   }
 
   .fs-switch-sm {
-    --fs-switch-track-width: 30px;
-    --fs-switch-track-height: 16px;
-    --fs-switch-thumb-width: 12px;
-    --fs-switch-thumb-height: 10px;
+    --fs-switch-track-width: 32px;
+    --fs-switch-track-height: 18px;
+    --fs-switch-thumb-width: 14px;
+    --fs-switch-thumb-height: 14px;
+    --fs-switch-thumb-offset: 2px;
     --fs-switch-on-offset: 16px;
+    --fs-switch-hover-shadow: 0 0 0 3px var(--fs-switch-hover-ring);
   }
 
   .fs-check-lg,
@@ -341,11 +395,13 @@
   }
 
   .fs-switch-lg {
-    --fs-switch-track-width: 44px;
-    --fs-switch-track-height: 24px;
-    --fs-switch-thumb-width: 20px;
-    --fs-switch-thumb-height: 18px;
-    --fs-switch-on-offset: 22px;
+    --fs-switch-track-width: 48px;
+    --fs-switch-track-height: 28px;
+    --fs-switch-thumb-width: 22px;
+    --fs-switch-thumb-height: 22px;
+    --fs-switch-thumb-offset: 3px;
+    --fs-switch-on-offset: 23px;
+    --fs-switch-hover-shadow: 0 0 0 5px var(--fs-switch-hover-ring);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -382,6 +438,17 @@
     .fs-switch-input:checked + .fs-switch-label::before {
       background-color: Highlight;
       border-color: Highlight;
+    }
+
+    .fs-switch-label::after {
+      background-color: ButtonFace;
+      border-color: ButtonText;
+      box-shadow: none;
+    }
+
+    .fs-switch-input:checked + .fs-switch-label::after {
+      background-color: HighlightText;
+      border-color: HighlightText;
     }
 
     .fs-check-input:focus-visible + .fs-check-label::before,

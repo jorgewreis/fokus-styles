@@ -18,7 +18,7 @@ design deliberada (nada circular no framework além de radio/spinner).
 
 `.fs-switch` (wrapper) > `.fs-switch-input` (oculto via clip) +
 `.fs-switch-label` (`<label for="...">`, desenha o trilho via `::before` e
-o knob via `::after`, que desliza com `left` + `transition`).
+o knob via `::after`, que desliza com propriedades lógicas e `transition`).
 
 ## Variações
 
@@ -27,8 +27,10 @@ Tamanho: `.fs-switch-sm`, `.fs-switch-lg` no wrapper.
 ## Estados
 
 checked/disabled/foco — mesmo padrão do [Checkbox](checkbox.md). O switch
-também possui hover, active, valid/invalid opcional para uso em formulário,
-forced colors e redução de movimento. Não há `indeterminate`.
+também possui hover com halo sutil, active com redução discreta do thumb,
+valid/invalid opcional para uso em formulário, forced colors e redução de
+movimento. O trilho desligado usa superfície neutra e o thumb possui contraste
+e elevação próprios. Não há `indeterminate`.
 
 ## A11y
 
@@ -58,15 +60,25 @@ Nenhuma — 100% CSS.
 
 | Token | Fallback | Uso |
 |---|---|---|
-| `--fs-switch-track-width` | `36px` | Largura do trilho |
-| `--fs-switch-track-height` | `20px` | Altura do trilho |
-| `--fs-switch-thumb-width` | `16px` | Largura do knob |
-| `--fs-switch-thumb-height` | `14px` | Altura do knob |
-| `--fs-switch-thumb-offset` | `2px` | Posição desligada |
-| `--fs-switch-on-offset` | `18px` | Posição ligada |
+| `--fs-switch-track-width` | `40px` | Largura do trilho |
+| `--fs-switch-track-height` | `24px` | Altura do trilho |
+| `--fs-switch-thumb-width` | `18px` | Largura do knob |
+| `--fs-switch-thumb-height` | `18px` | Altura do knob |
+| `--fs-switch-thumb-offset` | `3px` | Posição desligada |
+| `--fs-switch-on-offset` | `19px` | Posição ligada |
 | `--fs-switch-radius` | `--fs-radius-md` | Raio do trilho |
 | `--fs-switch-thumb-radius` | `--fs-radius-sm` | Raio do knob |
 | `--fs-switch-gap` | `--fs-space-2` | Distância até o texto |
+| `--fs-switch-track-bg` | `--fs-color-subtle` | Fundo desligado |
+| `--fs-switch-track-border` | `--fs-color-border-default` | Borda do trilho |
+| `--fs-switch-track-checked-bg` | `--fs-color-primary` | Fundo ligado |
+| `--fs-switch-thumb-bg` | `--fs-color-surface` | Fundo do knob |
+| `--fs-switch-thumb-border` | `--fs-color-border-default` | Borda do knob |
+| `--fs-switch-thumb-shadow` | `--fs-shadow-sm` | Elevação do knob |
+| `--fs-switch-track-shadow` | Sombra interna sutil | Profundidade do trilho desligado |
+| `--fs-switch-hover-ring` | Mistura de primary com transparente | Halo de hover |
+| `--fs-switch-hover-shadow` | Halo baseado em `--fs-switch-hover-ring` | Sombra de hover |
+| `--fs-switch-active-scale` | `0.92` | Escala do knob durante active |
 
 ## Exemplo
 
@@ -81,5 +93,5 @@ Nenhuma — 100% CSS.
 </div>
 ```
 
-Mockup: [laboratório do componente](../../mockup/content-data.html#tile).
+Mockup: [laboratório do componente](../../mockup/forms.html#check-radio-switch).
 Uso combinado com Tile: [laboratório de conteúdo e dados](../../mockup/content-data.html#tile).
