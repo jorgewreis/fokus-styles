@@ -7,7 +7,7 @@ o `<select>` real por baixo — sincronizado, escondido visualmente.
 ## Visão geral
 
 ```html
-<select class="cl-form-select" data-cl="select" id="pais">
+<select class="fs-form-select" data-fs="select" id="pais">
   <option value="br">Brasil</option>
   <option value="pt">Portugal</option>
   <option value="us" disabled>Estados Unidos (indisponível)</option>
@@ -21,18 +21,18 @@ verdade).
 
 ## Anatomia
 
-Gerado automaticamente a partir do `<select>`: `.cl-dropdown.cl-form-select-dropdown`
-> `.cl-form-select` (botão-toggle, mesma aparência estática documentada em
-[Input](input.md#anatomia)) + `.cl-dropdown-menu` > um `.cl-dropdown-item`
+Gerado automaticamente a partir do `<select>`: `.fs-dropdown.fs-form-select-dropdown`
+> `.fs-form-select` (botão-toggle, mesma aparência estática documentada em
+[Input](input.md#anatomia)) + `.fs-dropdown-menu` > um `.fs-dropdown-item`
 por `<option>`.
 
 ## Variações
 
 Tamanho: `data-size="sm"`/`"lg"` no `<select>` original — vira
-`.cl-form-select-sm`/`-lg` no toggle gerado.
+`.fs-form-select-sm`/`-lg` no toggle gerado.
 
 ```html
-<select class="cl-form-select" data-cl="select" data-size="sm">...</select>
+<select class="fs-form-select" data-fs="select" data-size="sm">...</select>
 ```
 
 ## Estados
@@ -54,7 +54,7 @@ mudança.
 
 ## API JS
 
-Auto-init via `data-cl="select"` **no `<select>`**. `Select.getInstance(selectEl)`.
+Auto-init via `data-fs="select"` **no `<select>`**. `Select.getInstance(selectEl)`.
 
 | Método | Descrição |
 |---|---|
@@ -64,23 +64,23 @@ Auto-init via `data-cl="select"` **no `<select>`**. `Select.getInstance(selectEl
 | Evento (no `<select>` original) | Cancelável | Quando |
 |---|---|---|
 | `change` (nativo) | Não | Ao selecionar uma opção — mesmo evento que um `<select>` comum dispara. |
-| `cl:select:changed` | Não | Mesmo momento, com `event.detail.value` (o novo valor). |
+| `fs:select:changed` | Não | Mesmo momento, com `event.detail.value` (o novo valor). |
 
 ## Tokens
 
 Os mesmos do [Dropdown](dropdown.md) e de
-[`.cl-form-select`](input.md) — sem tokens próprios.
+[`.fs-form-select`](input.md) — sem tokens próprios.
 
 ## Exemplo
 
 ```html
-<select class="cl-form-select" data-cl="select" id="prioridade">
+<select class="fs-form-select" data-fs="select" id="prioridade">
   <option value="baixa">Baixa</option>
   <option value="media" selected>Média</option>
   <option value="alta">Alta</option>
 </select>
 <script>
-  document.getElementById("prioridade").addEventListener("cl:select:changed", (e) => {
+  document.getElementById("prioridade").addEventListener("fs:select:changed", (e) => {
     console.log("nova prioridade:", e.detail.value);
   });
 </script>

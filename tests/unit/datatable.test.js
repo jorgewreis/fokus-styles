@@ -1,19 +1,19 @@
 import { describe, it, expect, afterEach } from "vitest";
-import { DataTable } from "../../packages/clarus-js/js/datatable.js";
+import { DataTable } from "../../packages/fokus-js/js/datatable.js";
 
 function buildDataTable({ pageSize } = {}) {
   const wrapper = document.createElement("div");
-  wrapper.className = "cl-datatable";
-  if (pageSize) wrapper.setAttribute("data-cl-page-size", String(pageSize));
+  wrapper.className = "fs-datatable";
+  if (pageSize) wrapper.setAttribute("data-fs-page-size", String(pageSize));
   wrapper.innerHTML = `
-    <div class="cl-datatable-toolbar">
-      <input type="search" data-cl-datatable-filter>
+    <div class="fs-datatable-toolbar">
+      <input type="search" data-fs-datatable-filter>
     </div>
-    <table class="cl-table">
+    <table class="fs-table">
       <thead>
         <tr>
-          <th data-cl-sort="name" scope="col">Nome</th>
-          <th data-cl-sort="age" scope="col">Idade</th>
+          <th data-fs-sort="name" scope="col">Nome</th>
+          <th data-fs-sort="age" scope="col">Idade</th>
         </tr>
       </thead>
       <tbody>
@@ -22,12 +22,12 @@ function buildDataTable({ pageSize } = {}) {
         <tr><td>Bruno</td><td>19</td></tr>
       </tbody>
     </table>
-    <div data-cl-datatable-empty class="cl-empty-state" hidden>
-      <p class="cl-empty-state-title">Nenhum resultado</p>
+    <div data-fs-datatable-empty class="fs-empty-state" hidden>
+      <p class="fs-empty-state-title">Nenhum resultado</p>
     </div>
-    <div data-cl-datatable-loading class="cl-datatable-loading" hidden>Carregando…</div>
-    <div data-cl-datatable-error class="cl-datatable-error" hidden>
-      <p data-cl-datatable-error-message></p>
+    <div data-fs-datatable-loading class="fs-datatable-loading" hidden>Carregando…</div>
+    <div data-fs-datatable-error class="fs-datatable-error" hidden>
+      <p data-fs-datatable-error-message></p>
     </div>
   `;
   document.body.appendChild(wrapper);
@@ -40,7 +40,7 @@ describe("DataTable", () => {
     document.body.innerHTML = "";
   });
 
-  it("lança erro se .cl-table não existir", () => {
+  it("lança erro se .fs-table não existir", () => {
     const el = document.createElement("div");
     document.body.appendChild(el);
 
@@ -49,7 +49,7 @@ describe("DataTable", () => {
 
   it("lança erro se <tbody> não existir", () => {
     const el = document.createElement("div");
-    el.innerHTML = '<table class="cl-table"></table>';
+    el.innerHTML = '<table class="fs-table"></table>';
     document.body.appendChild(el);
 
     expect(() => new DataTable(el)).toThrow();
@@ -60,12 +60,12 @@ describe("DataTable", () => {
     expect(DataTable.getInstance(wrapper)).toBe(dataTable);
   });
 
-  it("envolve cabeçalhos data-cl-sort num botão e define aria-sort=none", () => {
+  it("envolve cabeçalhos data-fs-sort num botão e define aria-sort=none", () => {
     const { wrapper } = buildDataTable();
-    const th = wrapper.querySelector('[data-cl-sort="name"]');
+    const th = wrapper.querySelector('[data-fs-sort="name"]');
 
     expect(th.getAttribute("aria-sort")).toBe("none");
-    expect(th.querySelector(".cl-datatable-sort-btn").textContent).toBe("Nome");
+    expect(th.querySelector(".fs-datatable-sort-btn").textContent).toBe("Nome");
   });
 
   it("sort() ordena as linhas e alterna a direção em ciclo (asc → desc → none)", () => {
@@ -74,7 +74,7 @@ describe("DataTable", () => {
     dataTable.sort("name", "asc");
     let names = Array.from(wrapper.querySelectorAll("tbody tr:not([hidden]) td:first-child")).map((td) => td.textContent);
     expect(names).toEqual(["Ana", "Bruno", "Carla"]);
-    expect(wrapper.querySelector('[data-cl-sort="name"]').getAttribute("aria-sort")).toBe("ascending");
+    expect(wrapper.querySelector('[data-fs-sort="name"]').getAttribute("aria-sort")).toBe("ascending");
 
     dataTable.sort("name", "desc");
     names = Array.from(wrapper.querySelectorAll("tbody tr:not([hidden]) td:first-child")).map((td) => td.textContent);
@@ -83,14 +83,14 @@ describe("DataTable", () => {
     dataTable.sort("name", "none");
     names = Array.from(wrapper.querySelectorAll("tbody tr:not([hidden]) td:first-child")).map((td) => td.textContent);
     expect(names).toEqual(["Carla", "Ana", "Bruno"]);
-    expect(wrapper.querySelector('[data-cl-sort="name"]').getAttribute("aria-sort")).toBe("none");
+    expect(wrapper.querySelector('[data-fs-sort="name"]').getAttribute("aria-sort")).toBe("none");
   });
 
-  it("clicar no botão de ordenação dispara cl:datatable:sorted", () => {
+  it("clicar no botão de ordenação dispara fs:datatable:sorted", () => {
     const { wrapper } = buildDataTable();
-    const btn = wrapper.querySelector('[data-cl-sort="age"] .cl-datatable-sort-btn');
+    const btn = wrapper.querySelector('[data-fs-sort="age"] .fs-datatable-sort-btn');
     let detail = null;
-    wrapper.addEventListener("cl:datatable:sorted", (e) => {
+    wrapper.addEventListener("fs:datatable:sorted", (e) => {
       detail = e.detail;
     });
 
@@ -120,11 +120,11 @@ describe("DataTable", () => {
     expect(dataTable.rowCount).toBe(1);
   });
 
-  it("digitar no input de filtro filtra as linhas e dispara cl:datatable:filtered", () => {
+  it("digitar no input de filtro filtra as linhas e dispara fs:datatable:filtered", () => {
     const { wrapper } = buildDataTable();
-    const input = wrapper.querySelector("[data-cl-datatable-filter]");
+    const input = wrapper.querySelector("[data-fs-datatable-filter]");
     let detail = null;
-    wrapper.addEventListener("cl:datatable:filtered", (e) => {
+    wrapper.addEventListener("fs:datatable:filtered", (e) => {
       detail = e.detail;
     });
 
@@ -142,15 +142,15 @@ describe("DataTable", () => {
 
     dataTable.filter("zzz");
 
-    expect(wrapper.querySelector("[data-cl-datatable-empty]").hidden).toBe(false);
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(true);
+    expect(wrapper.querySelector("[data-fs-datatable-empty]").hidden).toBe(false);
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(true);
 
     dataTable.filter("");
-    expect(wrapper.querySelector("[data-cl-datatable-empty]").hidden).toBe(true);
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(false);
+    expect(wrapper.querySelector("[data-fs-datatable-empty]").hidden).toBe(true);
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(false);
   });
 
-  it("pagina as linhas conforme data-cl-page-size e oculta as demais", () => {
+  it("pagina as linhas conforme data-fs-page-size e oculta as demais", () => {
     const { wrapper, dataTable } = buildDataTable({ pageSize: 2 });
 
     expect(dataTable.pageCount).toBe(2);
@@ -162,14 +162,14 @@ describe("DataTable", () => {
     expect(visible).toHaveLength(1);
   });
 
-  it("clicar num link de paginação navega e dispara cl:datatable:paged", () => {
+  it("clicar num link de paginação navega e dispara fs:datatable:paged", () => {
     const { wrapper, dataTable } = buildDataTable({ pageSize: 2 });
     let detail = null;
-    wrapper.addEventListener("cl:datatable:paged", (e) => {
+    wrapper.addEventListener("fs:datatable:paged", (e) => {
       detail = e.detail;
     });
 
-    const nextBtn = wrapper.querySelector('[data-cl-datatable-pagination] [aria-label="Próxima página"]');
+    const nextBtn = wrapper.querySelector('[data-fs-datatable-pagination] [aria-label="Próxima página"]');
     nextBtn.click();
 
     expect(dataTable.currentPage).toBe(2);
@@ -178,32 +178,32 @@ describe("DataTable", () => {
 
   it("não pagina (nav oculta) quando tudo cabe numa página só", () => {
     const { wrapper } = buildDataTable({ pageSize: 10 });
-    expect(wrapper.querySelector("[data-cl-datatable-pagination]").hidden).toBe(true);
+    expect(wrapper.querySelector("[data-fs-datatable-pagination]").hidden).toBe(true);
   });
 
   it("setLoading(true) esconde a tabela e mostra o bloco de loading", () => {
     const { wrapper, dataTable } = buildDataTable();
 
     dataTable.setLoading(true);
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(true);
-    expect(wrapper.querySelector("[data-cl-datatable-loading]").hidden).toBe(false);
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(true);
+    expect(wrapper.querySelector("[data-fs-datatable-loading]").hidden).toBe(false);
 
     dataTable.setLoading(false);
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(false);
-    expect(wrapper.querySelector("[data-cl-datatable-loading]").hidden).toBe(true);
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(false);
+    expect(wrapper.querySelector("[data-fs-datatable-loading]").hidden).toBe(true);
   });
 
   it("setError() esconde a tabela, mostra o bloco de erro com a mensagem", () => {
     const { wrapper, dataTable } = buildDataTable();
 
     dataTable.setError("Falha ao carregar dados.");
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(true);
-    const errorEl = wrapper.querySelector("[data-cl-datatable-error]");
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(true);
+    const errorEl = wrapper.querySelector("[data-fs-datatable-error]");
     expect(errorEl.hidden).toBe(false);
-    expect(errorEl.querySelector("[data-cl-datatable-error-message]").textContent).toBe("Falha ao carregar dados.");
+    expect(errorEl.querySelector("[data-fs-datatable-error-message]").textContent).toBe("Falha ao carregar dados.");
 
     dataTable.setError(null);
-    expect(wrapper.querySelector(".cl-table").hidden).toBe(false);
+    expect(wrapper.querySelector(".fs-table").hidden).toBe(false);
     expect(errorEl.hidden).toBe(true);
   });
 

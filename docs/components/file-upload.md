@@ -6,9 +6,9 @@ Botão de seleção de arquivo estilizado (o `<input type="file">` nativo não
 ## Visão geral
 
 ```html
-<div class="cl-file-upload">
-  <input type="file" class="cl-file-input" id="arquivo">
-  <label for="arquivo" class="cl-file-label">Escolher arquivo</label>
+<div class="fs-file-upload">
+  <input type="file" class="fs-file-input" id="arquivo">
+  <label for="arquivo" class="fs-file-label">Escolher arquivo</label>
 </div>
 ```
 
@@ -18,25 +18,25 @@ arquivo nativo.
 
 ## Anatomia
 
-`.cl-file-upload` (wrapper) > `.cl-file-input` (`<input type="file">`,
-oculto via clip) + `.cl-file-label` (`<label for="...">`, o botão
+`.fs-file-upload` (wrapper) > `.fs-file-input` (`<input type="file">`,
+oculto via clip) + `.fs-file-label` (`<label for="...">`, o botão
 visível).
 
 ## Variações
 
-- **Tamanho**: `.cl-file-label-sm`, `.cl-file-label-lg`; sem sufixo =
+- **Tamanho**: `.fs-file-label-sm`, `.fs-file-label-lg`; sem sufixo =
   padrão.
-- **Dropzone**: `.cl-file-label-dropzone` — versão maior, borda tracejada,
+- **Dropzone**: `.fs-file-label-dropzone` — versão maior, borda tracejada,
   layout em coluna, pra uma área de soltar mais generosa que o botão
-  padrão. Combine com `.cl-file-dropzone-hint` pra um texto de apoio
+  padrão. Combine com `.fs-file-dropzone-hint` pra um texto de apoio
   discreto dentro.
 
 ```html
-<div class="cl-file-upload" style="width: 100%;">
-  <input type="file" class="cl-file-input" id="arquivo2" data-cl="file-drop">
-  <label for="arquivo2" class="cl-file-label cl-file-label-dropzone">
+<div class="fs-file-upload" style="width: 100%;">
+  <input type="file" class="fs-file-input" id="arquivo2" data-fs="file-drop">
+  <label for="arquivo2" class="fs-file-label fs-file-label-dropzone">
     Arraste um arquivo ou clique para escolher
-    <span class="cl-file-dropzone-hint">PNG, JPG até 5MB</span>
+    <span class="fs-file-dropzone-hint">PNG, JPG até 5MB</span>
   </label>
 </div>
 ```
@@ -57,7 +57,7 @@ usa teclado sempre tem o clique na label como caminho.
 
 ## API JS
 
-Drag-and-drop é opcional, via `data-cl="file-drop"` **na `<label>`** (não
+Drag-and-drop é opcional, via `data-fs="file-drop"` **na `<label>`** (não
 no input). `FileDrop.getInstance(labelEl)`.
 
 | Método | Descrição |
@@ -77,9 +77,9 @@ document.getElementById("arquivo2").addEventListener("change", (event) => {
 
 ## Tokens
 
-`--cl-color-border`, `--cl-color-subtle`, `--cl-color-text`,
-`--cl-color-muted` (hint), `--cl-color-primary` (borda durante drag-over),
-`--cl-radius-sm`.
+`--fs-color-border`, `--fs-color-subtle`, `--fs-color-text`,
+`--fs-color-muted` (hint), `--fs-color-primary` (borda durante drag-over),
+`--fs-radius-sm`.
 
 ## Exemplo
 

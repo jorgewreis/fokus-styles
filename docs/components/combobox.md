@@ -4,42 +4,42 @@ Um `<input>` de texto com uma listbox de sugestões que filtra conforme o
 usuário digita — diferente do [Select](select.md) (que troca a aparência
 de um `<select>` inteiro), o Combobox é sempre texto livre com sugestões,
 seguindo o padrão [WAI-ARIA Combobox (List Autocomplete)](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).
-Reusa `packages/clarus-js/js/core/positioning.js` (mesmo posicionamento do [Dropdown](dropdown.md))
-e a classe `.cl-dropdown-menu`/`.cl-dropdown-item` para a listbox flutuante.
+Reusa `packages/fokus-js/js/core/positioning.js` (mesmo posicionamento do [Dropdown](dropdown.md))
+e a classe `.fs-dropdown-menu`/`.fs-dropdown-item` para a listbox flutuante.
 
 ## Visão geral
 
 ```html
-<div class="cl-combobox">
-  <input type="text" class="cl-form-control" data-cl="combobox" data-cl-target="#lista-frameworks" placeholder="Buscar framework…">
+<div class="fs-combobox">
+  <input type="text" class="fs-form-control" data-fs="combobox" data-fs-target="#lista-frameworks" placeholder="Buscar framework…">
 </div>
-<ul class="cl-dropdown-menu cl-combobox-listbox" id="lista-frameworks">
-  <li class="cl-dropdown-item" data-value="bootstrap">Bootstrap</li>
-  <li class="cl-dropdown-item" data-value="tailwind">Tailwind CSS</li>
-  <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhum resultado encontrado.</li>
+<ul class="fs-dropdown-menu fs-combobox-listbox" id="lista-frameworks">
+  <li class="fs-dropdown-item" data-value="bootstrap">Bootstrap</li>
+  <li class="fs-dropdown-item" data-value="tailwind">Tailwind CSS</li>
+  <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum resultado encontrado.</li>
 </ul>
 ```
 
 O JS reanexa a listbox a `document.body` (igual ao Dropdown/Select — evita
 recorte por `overflow: hidden` de um ancestral) e a posiciona relativa ao
-input. O item com `data-cl-empty` é opcional, mas recomendado: o
+input. O item com `data-fs-empty` é opcional, mas recomendado: o
 componente alterna a visibilidade dele automaticamente quando nenhuma
 opção corresponde à busca — o texto dele é escrito por você (o framework
 não injeta texto/idioma).
 
 ## Anatomia
 
-`.cl-combobox` (wrapper posicionador) > `input[role="combobox"]` +
-`.cl-dropdown-menu.cl-combobox-listbox[role="listbox"]` > um ou mais
-`.cl-dropdown-item[role="option"]`.
+`.fs-combobox` (wrapper posicionador) > `input[role="combobox"]` +
+`.fs-dropdown-menu.fs-combobox-listbox[role="listbox"]` > um ou mais
+`.fs-dropdown-item[role="option"]`.
 
 ## Variações
 
-- `data-value` em cada `.cl-dropdown-item` define o valor "de verdade"
+- `data-value` em cada `.fs-dropdown-item` define o valor "de verdade"
   (`instance.value`); sem ele, o valor é o texto visível do item.
-- Item desabilitado: `.cl-dropdown-item.is-disabled` — ignorado por
+- Item desabilitado: `.fs-dropdown-item.is-disabled` — ignorado por
   teclado, mouse e pelo filtro de "opções selecionáveis".
-- Item de "sem resultados": `.cl-dropdown-item.is-disabled[data-cl-empty]`,
+- Item de "sem resultados": `.fs-dropdown-item.is-disabled[data-fs-empty]`,
   `hidden` por padrão — visibilidade alternada automaticamente pelo JS.
 
 ## Estados
@@ -74,7 +74,7 @@ Teclado (com foco no input):
 
 ## API JS
 
-Auto-init via `data-cl="combobox"` **no `<input>`**, com `data-cl-target`
+Auto-init via `data-fs="combobox"` **no `<input>`**, com `data-fs-target`
 apontando pro seletor da listbox (convenção idêntica ao Dropdown).
 `Combobox.getInstance(inputEl)`.
 
@@ -92,29 +92,29 @@ apontando pro seletor da listbox (convenção idêntica ao Dropdown).
 | Evento (no input) | Cancelável | Quando |
 |---|---|---|
 | `change` (nativo) | Não | Ao selecionar uma opção (clique ou `Enter`). |
-| `cl:combobox:changed` | Não | Mesmo momento, com `event.detail.value`/`event.detail.label`. |
-| `cl:combobox:shown` | Não | Depois de abrir a listbox. |
-| `cl:combobox:hidden` | Não | Depois de fechar. |
+| `fs:combobox:changed` | Não | Mesmo momento, com `event.detail.value`/`event.detail.label`. |
+| `fs:combobox:shown` | Não | Depois de abrir a listbox. |
+| `fs:combobox:hidden` | Não | Depois de fechar. |
 
 ## Tokens
 
-Os mesmos do [Dropdown](dropdown.md) (`.cl-dropdown-menu`/`.cl-dropdown-item`)
-e de [`.cl-form-control`](input.md) — sem tokens próprios. `.cl-combobox-listbox`
+Os mesmos do [Dropdown](dropdown.md) (`.fs-dropdown-menu`/`.fs-dropdown-item`)
+e de [`.fs-form-control`](input.md) — sem tokens próprios. `.fs-combobox-listbox`
 soma `max-height: 240px` + scroll interno para listas longas.
 
 ## Exemplo
 
 ```html
-<div class="cl-combobox">
-  <input type="text" class="cl-form-control" id="cidade" data-cl="combobox" data-cl-target="#cidade-lista" placeholder="Buscar cidade…">
+<div class="fs-combobox">
+  <input type="text" class="fs-form-control" id="cidade" data-fs="combobox" data-fs-target="#cidade-lista" placeholder="Buscar cidade…">
 </div>
-<ul class="cl-dropdown-menu cl-combobox-listbox" id="cidade-lista">
-  <li class="cl-dropdown-item" data-value="sp">São Paulo</li>
-  <li class="cl-dropdown-item" data-value="rj">Rio de Janeiro</li>
-  <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhuma cidade encontrada.</li>
+<ul class="fs-dropdown-menu fs-combobox-listbox" id="cidade-lista">
+  <li class="fs-dropdown-item" data-value="sp">São Paulo</li>
+  <li class="fs-dropdown-item" data-value="rj">Rio de Janeiro</li>
+  <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhuma cidade encontrada.</li>
 </ul>
 <script>
-  document.getElementById("cidade").addEventListener("cl:combobox:changed", (e) => {
+  document.getElementById("cidade").addEventListener("fs:combobox:changed", (e) => {
     console.log("cidade escolhida:", e.detail.value);
   });
 </script>

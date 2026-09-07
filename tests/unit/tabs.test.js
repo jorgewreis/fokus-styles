@@ -1,18 +1,18 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Tabs } from "../../packages/clarus-js/js/tabs.js";
+import { Tabs } from "../../packages/fokus-js/js/tabs.js";
 
 function buildTabs() {
   const container = document.createElement("div");
   container.innerHTML = `
-    <div class="cl-tabs" id="tablist">
-      <a href="#" class="cl-nav-link is-active" data-cl-target="#pane1">Perfil</a>
-      <a href="#" class="cl-nav-link" data-cl-target="#pane2">Segurança</a>
-      <a href="#" class="cl-nav-link is-disabled" data-cl-target="#pane3">Notificações</a>
+    <div class="fs-tabs" id="tablist">
+      <a href="#" class="fs-nav-link is-active" data-fs-target="#pane1">Perfil</a>
+      <a href="#" class="fs-nav-link" data-fs-target="#pane2">Segurança</a>
+      <a href="#" class="fs-nav-link is-disabled" data-fs-target="#pane3">Notificações</a>
     </div>
-    <div class="cl-tab-content">
-      <div class="cl-tab-pane is-active" id="pane1">Conteúdo 1</div>
-      <div class="cl-tab-pane" id="pane2">Conteúdo 2</div>
-      <div class="cl-tab-pane" id="pane3">Conteúdo 3</div>
+    <div class="fs-tab-content">
+      <div class="fs-tab-pane is-active" id="pane1">Conteúdo 1</div>
+      <div class="fs-tab-pane" id="pane2">Conteúdo 2</div>
+      <div class="fs-tab-pane" id="pane3">Conteúdo 3</div>
     </div>
   `;
   document.body.appendChild(container);
@@ -33,7 +33,7 @@ describe("Tabs", () => {
 
   it("define role=tablist/tab/tabpanel e aria-selected/tabindex conforme o estado inicial", () => {
     const { tablistEl } = buildTabs();
-    const links = tablistEl.querySelectorAll(".cl-nav-link");
+    const links = tablistEl.querySelectorAll(".fs-nav-link");
 
     expect(tablistEl.getAttribute("role")).toBe("tablist");
     expect(links[0].getAttribute("role")).toBe("tab");
@@ -49,7 +49,7 @@ describe("Tabs", () => {
 
   it("clicar numa aba ativa ela e o painel correspondente, desativando as demais", () => {
     const { container } = buildTabs();
-    const links = container.querySelectorAll(".cl-nav-link");
+    const links = container.querySelectorAll(".fs-nav-link");
 
     links[1].click();
 
@@ -61,7 +61,7 @@ describe("Tabs", () => {
 
   it("clicar numa aba desabilitada não faz nada", () => {
     const { container } = buildTabs();
-    const links = container.querySelectorAll(".cl-nav-link");
+    const links = container.querySelectorAll(".fs-nav-link");
 
     links[2].click();
 
@@ -71,7 +71,7 @@ describe("Tabs", () => {
 
   it("ArrowRight/ArrowLeft navegam pulando abas desabilitadas", () => {
     const { container } = buildTabs();
-    const links = container.querySelectorAll(".cl-nav-link");
+    const links = container.querySelectorAll(".fs-nav-link");
     links[0].focus();
 
     container.querySelector("#tablist").dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
@@ -86,7 +86,7 @@ describe("Tabs", () => {
 
   it("End move para a última aba habilitada, não para a última aba do DOM", () => {
     const { container } = buildTabs();
-    const links = container.querySelectorAll(".cl-nav-link");
+    const links = container.querySelectorAll(".fs-nav-link");
     links[0].focus();
 
     container.querySelector("#tablist").dispatchEvent(new KeyboardEvent("keydown", { key: "End", bubbles: true }));
@@ -94,11 +94,11 @@ describe("Tabs", () => {
     expect(document.activeElement).toBe(links[1]);
   });
 
-  it("dispara cl:tab:changed com o target no detail", () => {
+  it("dispara fs:tab:changed com o target no detail", () => {
     const { container } = buildTabs();
-    const links = container.querySelectorAll(".cl-nav-link");
+    const links = container.querySelectorAll(".fs-nav-link");
     const handler = vi.fn();
-    links[1].addEventListener("cl:tab:changed", handler);
+    links[1].addEventListener("fs:tab:changed", handler);
 
     links[1].click();
 

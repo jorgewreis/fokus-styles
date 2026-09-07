@@ -1,22 +1,22 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { TreeView } from "../../packages/clarus-js/js/tree-view.js";
+import { TreeView } from "../../packages/fokus-js/js/tree-view.js";
 
 function buildTree() {
   const root = document.createElement("ul");
   root.innerHTML = `
     <li>
-      <span class="cl-tree-label">src</span>
+      <span class="fs-tree-label">src</span>
       <ul>
-        <li><span class="cl-tree-label">index.js</span></li>
+        <li><span class="fs-tree-label">index.js</span></li>
         <li>
-          <span class="cl-tree-label">components</span>
+          <span class="fs-tree-label">components</span>
           <ul>
-            <li><span class="cl-tree-label">Button.js</span></li>
+            <li><span class="fs-tree-label">Button.js</span></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><span class="cl-tree-label">README.md</span></li>
+    <li><span class="fs-tree-label">README.md</span></li>
   `;
   document.body.appendChild(root);
 
@@ -45,13 +45,13 @@ describe("TreeView", () => {
     expect(group.hidden).toBe(true);
   });
 
-  it("injeta .cl-tree-toggle só em nós com filhos", () => {
+  it("injeta .fs-tree-toggle só em nós com filhos", () => {
     const { root } = buildTree();
     const src = root.querySelector('[role="treeitem"]');
     const readme = root.querySelectorAll('[role="treeitem"]')[4];
 
-    expect(src.querySelector(".cl-tree-toggle")).not.toBeNull();
-    expect(readme.querySelector(".cl-tree-toggle")).toBeNull();
+    expect(src.querySelector(".fs-tree-toggle")).not.toBeNull();
+    expect(readme.querySelector(".fs-tree-toggle")).toBeNull();
   });
 
   it("getInstance() retorna a instância criada", () => {
@@ -75,8 +75,8 @@ describe("TreeView", () => {
     const group = src.querySelector("ul");
     const expandedHandler = vi.fn();
     const collapsedHandler = vi.fn();
-    root.addEventListener("cl:tree:expanded", expandedHandler);
-    root.addEventListener("cl:tree:collapsed", collapsedHandler);
+    root.addEventListener("fs:tree:expanded", expandedHandler);
+    root.addEventListener("fs:tree:collapsed", collapsedHandler);
 
     tree.expand(src);
     expect(src.getAttribute("aria-expanded")).toBe("true");
@@ -93,19 +93,19 @@ describe("TreeView", () => {
     const { root } = buildTree();
     const src = root.querySelector('[role="treeitem"]');
 
-    src.querySelector(".cl-tree-label").click();
+    src.querySelector(".fs-tree-label").click();
     expect(src.getAttribute("aria-expanded")).toBe("true");
     expect(src.getAttribute("aria-selected")).toBe("true");
 
-    src.querySelector(".cl-tree-label").click();
+    src.querySelector(".fs-tree-label").click();
     expect(src.getAttribute("aria-expanded")).toBe("false");
   });
 
-  it("select() marca aria-selected só no item selecionado e dispara cl:tree:selected", () => {
+  it("select() marca aria-selected só no item selecionado e dispara fs:tree:selected", () => {
     const { root, tree } = buildTree();
     const items = root.querySelectorAll('[role="treeitem"]');
     const handler = vi.fn();
-    root.addEventListener("cl:tree:selected", handler);
+    root.addEventListener("fs:tree:selected", handler);
 
     tree.select(items[4]);
     expect(items[4].getAttribute("aria-selected")).toBe("true");

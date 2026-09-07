@@ -3,7 +3,7 @@
 ## Via npm
 
 ```bash
-npm install clarus-css
+npm install fokus-styles
 ```
 
 ## Via CDN
@@ -11,11 +11,11 @@ npm install clarus-css
 Sem instalar nada, direto do jsDelivr ou unpkg:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clarus-css/dist/css/clarus.css">
-<script src="https://cdn.jsdelivr.net/npm/clarus-css/dist/js/clarus.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fokus.css">
+<script src="https://cdn.jsdelivr.net/npm/fokus-styles/dist/js/fokus.js"></script>
 ```
 
-Troque `clarus.css`/`clarus.js` por `clarus.min.css`/`clarus.min.js` para as
+Troque `fokus.css`/`fokus.js` por `fokus.min.css`/`fokus.min.js` para as
 versões minificadas em produção.
 
 ## Fontes self-hosted
@@ -25,8 +25,8 @@ em `fonts.css`, para não forçar o download das fontes em quem prefere usar
 as próprias. Inclua **antes** do CSS principal:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clarus-css/dist/css/fonts.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clarus-css/dist/css/clarus.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fonts.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fokus.css">
 ```
 
 Sem `fonts.css`, a tipografia cai no fallback `sans-serif`/`monospace` do
@@ -34,18 +34,18 @@ sistema — nada quebra, só muda a fonte.
 
 ## Distribuições disponíveis
 
-O pacote publica o bundle completo (`clarus.css`) e distribuições granulares,
+O pacote publica o bundle completo (`fokus.css`) e distribuições granulares,
 para quem não precisa do framework inteiro:
 
 | Arquivo | Conteúdo |
 |---|---|
-| `dist/css/clarus.css` | Bundle completo: tokens, reset, layout, forms, components, utilities, tema escuro. |
+| `dist/css/fokus.css` | Bundle completo: tokens, reset, layout, forms, components, utilities, tema escuro. |
 | `dist/css/layout.css` | Só grid/containers (+ tokens/reset/tema). |
 | `dist/css/forms.css` | Só formulários (+ tokens/reset/tema). |
 | `dist/css/components.css` | Só componentes prontos (+ tokens/reset/tema). |
 | `dist/css/helpers.css` | Só utilitários atômicos (+ tokens/reset/tema). |
 | `dist/css/fonts.css` | Só os `@font-face` self-hosted (opcional, ver acima). |
-| `dist/js/clarus.js` | Todo o JavaScript dos componentes interativos, IIFE global `Clarus`. |
+| `dist/js/fokus.js` | Todo o JavaScript dos componentes interativos, IIFE global `FokusStyles`. |
 
 Cada distribuição CSS granular já inclui tokens, reset e tema escuro
 completos — pode ser usada isoladamente sem quebrar variáveis ou dark mode.
@@ -56,7 +56,7 @@ Para compilar com suas próprias variáveis Sass (sobrescrever antes de
 compilar, em vez de sobrescrever CSS Custom Properties depois):
 
 ```scss
-@use "clarus-css/scss/clarus" with (
+@use "fokus-styles/scss/fokus" with (
   $radius-md: 10px
 );
 ```

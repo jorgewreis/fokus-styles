@@ -1,6 +1,6 @@
 ---
 name: Relato de bug
-about: Reportar um comportamento inesperado no Clarus CSS
+about: Reportar um comportamento inesperado no Fokus Styles
 title: "[bug] "
 labels: bug
 ---
@@ -18,7 +18,7 @@ Passos para reproduzir (ou link para um CodePen/StackBlitz/repositório mínimo)
 
 ## Ambiente
 
-- Versão do `clarus-css`:
+- Versão do `fokus-styles`:
 - Navegador/versão:
 - Componente(s) afetado(s):
 

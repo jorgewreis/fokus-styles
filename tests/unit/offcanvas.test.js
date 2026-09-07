@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Offcanvas } from "../../packages/clarus-js/js/offcanvas.js";
+import { Offcanvas } from "../../packages/fokus-js/js/offcanvas.js";
 
 async function flushDoubleRaf() {
   await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
@@ -9,13 +9,13 @@ function buildOffcanvas({ backdrop } = {}) {
   const wrapper = document.createElement("div");
   const backdropAttr = backdrop ? ` data-backdrop="${backdrop}"` : "";
   wrapper.innerHTML = `
-    <button type="button" id="trigger" data-cl-target="#myOffcanvas">Abrir</button>
-    <div class="cl-offcanvas cl-offcanvas-start" id="myOffcanvas"${backdropAttr}>
-      <div class="cl-offcanvas-header">
-        <h3 class="cl-offcanvas-title">Título</h3>
-        <button type="button" class="cl-btn-close" data-cl-dismiss="offcanvas">x</button>
+    <button type="button" id="trigger" data-fs-target="#myOffcanvas">Abrir</button>
+    <div class="fs-offcanvas fs-offcanvas-start" id="myOffcanvas"${backdropAttr}>
+      <div class="fs-offcanvas-header">
+        <h3 class="fs-offcanvas-title">Título</h3>
+        <button type="button" class="fs-btn-close" data-fs-dismiss="offcanvas">x</button>
       </div>
-      <div class="cl-offcanvas-body">
+      <div class="fs-offcanvas-body">
         <button type="button" id="bodyBtn">Ação</button>
       </div>
     </div>
@@ -33,7 +33,7 @@ describe("Offcanvas", () => {
     document.body.innerHTML = "";
     document.body.style.overflow = "";
     document.body.style.paddingRight = "";
-    document.querySelectorAll(".cl-offcanvas-backdrop").forEach((el) => el.remove());
+    document.querySelectorAll(".fs-offcanvas-backdrop").forEach((el) => el.remove());
   });
 
   it("getInstance() retorna a instância criada", () => {
@@ -55,7 +55,7 @@ describe("Offcanvas", () => {
 
     expect(offcanvasEl.classList.contains("is-open")).toBe(true);
     expect(document.body.style.overflow).toBe("hidden");
-    expect(document.querySelector(".cl-offcanvas-backdrop.is-open")).not.toBeNull();
+    expect(document.querySelector(".fs-offcanvas-backdrop.is-open")).not.toBeNull();
     expect(document.activeElement.textContent).toBe("x");
   });
 
@@ -68,7 +68,7 @@ describe("Offcanvas", () => {
 
     expect(offcanvasEl.classList.contains("is-open")).toBe(false);
     expect(document.body.style.overflow).toBe("");
-    expect(document.querySelector(".cl-offcanvas-backdrop")).toBeNull();
+    expect(document.querySelector(".fs-offcanvas-backdrop")).toBeNull();
     expect(document.activeElement).toBe(trigger);
   });
 
@@ -83,12 +83,12 @@ describe("Offcanvas", () => {
     expect(offcanvasEl.classList.contains("is-open")).toBe(false);
   });
 
-  it("qualquer elemento com data-cl-dismiss=offcanvas fecha o painel", async () => {
+  it("qualquer elemento com data-fs-dismiss=offcanvas fecha o painel", async () => {
     const { offcanvasEl, offcanvas } = buildOffcanvas();
     offcanvas.show();
     await flushDoubleRaf();
 
-    offcanvasEl.querySelector('[data-cl-dismiss="offcanvas"]').click();
+    offcanvasEl.querySelector('[data-fs-dismiss="offcanvas"]').click();
 
     expect(offcanvasEl.classList.contains("is-open")).toBe(false);
   });
@@ -105,7 +105,7 @@ describe("Offcanvas", () => {
     document.body.click();
     expect(offcanvasEl.classList.contains("is-open")).toBe(true);
 
-    offcanvasEl.querySelector('[data-cl-dismiss="offcanvas"]').click();
+    offcanvasEl.querySelector('[data-fs-dismiss="offcanvas"]').click();
     expect(offcanvasEl.classList.contains("is-open")).toBe(false);
   });
 
@@ -114,18 +114,18 @@ describe("Offcanvas", () => {
     offcanvas.show();
     await flushDoubleRaf();
 
-    expect(document.querySelector(".cl-offcanvas-backdrop")).toBeNull();
+    expect(document.querySelector(".fs-offcanvas-backdrop")).toBeNull();
 
     document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
     expect(offcanvasEl.classList.contains("is-open")).toBe(false);
   });
 
-  it("dispara cl:offcanvas:shown e cl:offcanvas:hidden", async () => {
+  it("dispara fs:offcanvas:shown e fs:offcanvas:hidden", async () => {
     const { trigger, offcanvas } = buildOffcanvas();
     const shownHandler = vi.fn();
     const hiddenHandler = vi.fn();
-    trigger.addEventListener("cl:offcanvas:shown", shownHandler);
-    trigger.addEventListener("cl:offcanvas:hidden", hiddenHandler);
+    trigger.addEventListener("fs:offcanvas:shown", shownHandler);
+    trigger.addEventListener("fs:offcanvas:hidden", hiddenHandler);
 
     offcanvas.show();
     await flushDoubleRaf();
@@ -139,8 +139,8 @@ describe("Offcanvas", () => {
     const { offcanvas: first } = buildOffcanvas();
     const secondWrapper = document.createElement("div");
     secondWrapper.innerHTML = `
-      <button type="button" id="trigger2" data-cl-target="#second"></button>
-      <div class="cl-offcanvas cl-offcanvas-end" id="second"></div>
+      <button type="button" id="trigger2" data-fs-target="#second"></button>
+      <div class="fs-offcanvas fs-offcanvas-end" id="second"></div>
     `;
     document.body.appendChild(secondWrapper);
     const second = new Offcanvas(secondWrapper.querySelector("#trigger2"));

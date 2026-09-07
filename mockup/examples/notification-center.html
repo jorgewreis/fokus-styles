@@ -20,8 +20,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .push-row {
@@ -36,35 +36,35 @@
 <body>
 
     <div class="theme-panel">
-<button type="button" class="cl-btn" data-cl="notification-center" data-cl-target="#panel-claro" id="bell-claro">
-            <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+<button type="button" class="fs-btn" data-fs="notification-center" data-fs-target="#panel-claro" id="bell-claro">
+            <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
             Notificações
-            <span class="cl-notification-badge" hidden>0</span>
+            <span class="fs-notification-badge" hidden>0</span>
         </button>
 
-        <div class="cl-notification-center" id="panel-claro">
-            <div class="cl-notification-center-header">
-                <span class="cl-notification-center-title">Notificações</span>
-                <button type="button" class="cl-btn-close" data-notification="clear" aria-label="Limpar todas"></button>
+        <div class="fs-notification-center" id="panel-claro">
+            <div class="fs-notification-center-header">
+                <span class="fs-notification-center-title">Notificações</span>
+                <button type="button" class="fs-btn-close" data-notification="clear" aria-label="Limpar todas"></button>
             </div>
-            <ul class="cl-notification-list"></ul>
-            <div class="cl-notification-empty" hidden>Nenhuma notificação.</div>
+            <ul class="fs-notification-list"></ul>
+            <div class="fs-notification-empty" hidden>Nenhuma notificação.</div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mb-0">Disparar (empilha um toast + entra no histórico)</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Disparar (empilha um toast + entra no histórico)</p>
         <div class="push-row">
-            <button type="button" class="cl-btn cl-btn-success cl-btn-sm" data-push="claro" data-variant="success">Sucesso</button>
-            <button type="button" class="cl-btn cl-btn-danger cl-btn-sm" data-push="claro" data-variant="danger">Erro</button>
-            <button type="button" class="cl-btn cl-btn-info cl-btn-sm" data-push="claro" data-variant="info">Info</button>
+            <button type="button" class="fs-btn fs-btn-success fs-btn-sm" data-push="claro" data-variant="success">Sucesso</button>
+            <button type="button" class="fs-btn fs-btn-danger fs-btn-sm" data-push="claro" data-variant="danger">Erro</button>
+            <button type="button" class="fs-btn fs-btn-info fs-btn-sm" data-push="claro" data-variant="info">Info</button>
         </div>
     </div>
 
     
 
-    <div class="cl-toast-container"></div>
+    <div class="fs-toast-container"></div>
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         const messages = {
             success: { title: "Backup concluído", body: "Seus arquivos foram salvos." },
@@ -75,7 +75,7 @@
         document.querySelectorAll("[data-push]").forEach((button) => {
             button.addEventListener("click", () => {
                 const bell = document.getElementById(`bell-${button.dataset.push}`);
-                const center = Clarus.NotificationCenter.getInstance(bell);
+                const center = FokusStyles.NotificationCenter.getInstance(bell);
                 const variant = button.dataset.variant;
                 center.push({ ...messages[variant], variant });
             });

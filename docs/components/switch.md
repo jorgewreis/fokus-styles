@@ -8,21 +8,21 @@ design deliberada (nada circular no framework além de radio/spinner).
 ## Visão geral
 
 ```html
-<div class="cl-switch">
-  <input type="checkbox" class="cl-switch-input" id="notif" checked>
-  <label for="notif" class="cl-switch-label">Notificações</label>
+<div class="fs-switch">
+  <input type="checkbox" class="fs-switch-input" id="notif" checked>
+  <label for="notif" class="fs-switch-label">Notificações</label>
 </div>
 ```
 
 ## Anatomia
 
-`.cl-switch` (wrapper) > `.cl-switch-input` (oculto via clip) +
-`.cl-switch-label` (`<label for="...">`, desenha o trilho via `::before` e
+`.fs-switch` (wrapper) > `.fs-switch-input` (oculto via clip) +
+`.fs-switch-label` (`<label for="...">`, desenha o trilho via `::before` e
 o knob via `::after`, que desliza com `left` + `transition`).
 
 ## Variações
 
-Tamanho: `.cl-switch-sm`, `.cl-switch-lg` no wrapper.
+Tamanho: `.fs-switch-sm`, `.fs-switch-lg` no wrapper.
 
 ## Estados
 
@@ -42,9 +42,9 @@ validável, é um controle de preferência/estado).
   em vez de deixar a `<label>` vazia.
 
 ```html
-<div class="cl-switch">
-  <input type="checkbox" class="cl-switch-input" id="s1" aria-label="Ativar tema escuro">
-  <label for="s1" class="cl-switch-label"></label>
+<div class="fs-switch">
+  <input type="checkbox" class="fs-switch-input" id="s1" aria-label="Ativar tema escuro">
+  <label for="s1" class="fs-switch-label"></label>
 </div>
 ```
 
@@ -54,20 +54,20 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-Sem tokens de componente próprios — usa `--cl-color-primary` (trilho
-ligado), `--cl-color-border` (knob desligado), `--cl-radius-md` (trilho),
-`--cl-radius-sm` (knob).
+Sem tokens de componente próprios — usa `--fs-color-primary` (trilho
+ligado), `--fs-color-border` (knob desligado), `--fs-radius-md` (trilho),
+`--fs-radius-sm` (knob).
 
 ## Exemplo
 
 ```html
-<div class="cl-switch">
-  <input type="checkbox" class="cl-switch-input" id="sw1">
-  <label for="sw1" class="cl-switch-label">Desligado</label>
+<div class="fs-switch">
+  <input type="checkbox" class="fs-switch-input" id="sw1">
+  <label for="sw1" class="fs-switch-label">Desligado</label>
 </div>
-<div class="cl-switch">
-  <input type="checkbox" class="cl-switch-input" id="sw2" checked>
-  <label for="sw2" class="cl-switch-label">Ligado</label>
+<div class="fs-switch">
+  <input type="checkbox" class="fs-switch-input" id="sw2" checked>
+  <label for="sw2" class="fs-switch-label">Ligado</label>
 </div>
 ```
 

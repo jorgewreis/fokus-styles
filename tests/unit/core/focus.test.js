@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { getFocusableElements, createFocusTrap, onEscapeKey } from "../../../packages/clarus-js/js/core/focus.js";
+import { getFocusableElements, createFocusTrap, onEscapeKey } from "../../../packages/fokus-js/js/core/focus.js";
 
 function pressKey(target, key, options = {}) {
   const event = new KeyboardEvent("keydown", { key, bubbles: true, cancelable: true, ...options });

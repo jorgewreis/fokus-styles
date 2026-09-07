@@ -1,0 +1,65 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Estilos exclusivos do DataTable (`js/datatable.js`) — a tabela, a
+// paginação e o empty state em si reusam `.fs-table`/`.fs-pagination`/
+// `.fs-empty-state` já existentes, sem duplicação.
+
+@layer components {
+  .fs-datatable-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .fs-datatable-sort-btn {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-color: var(--fs-color-surface-raised);
+    color: inherit;
+    font: inherit;
+    text-transform: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .fs-datatable-sort-btn:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-datatable-sort-btn::after {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: 4px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    content: "↕";
+  }
+
+  th[aria-sort="ascending"] .fs-datatable-sort-btn::after {
+    color: var(--fs-color-text);
+    content: "↑";
+  }
+
+  th[aria-sort="descending"] .fs-datatable-sort-btn::after {
+    color: var(--fs-color-text);
+    content: "↓";
+  }
+
+  .fs-datatable [data-fs-datatable-pagination] {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+  }
+
+  .fs-datatable td:focus-visible,
+  .fs-datatable th:focus-visible {
+    @include focus-ring;
+
+    outline-offset: -2px;
+  }
+}

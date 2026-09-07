@@ -1,0 +1,57 @@
+// As declarações @font-face das fontes self-hosted ficam em `_fonts.scss`,
+// distribuído à parte (dist/css/fonts.css) e fora dos bundles principais —
+// ver a nota nesse arquivo. Aqui só aplicamos as pilhas de `font-family`
+// (com fallback sans-serif/monospace, que valem mesmo sem fonts.css).
+
+@layer base {
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: var(--fs-font-sans);
+    font-size: var(--fs-font-size-md);
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--fs-font-mono);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    font-weight: var(--fs-font-weight-semibold);
+    line-height: var(--fs-line-height-heading);
+  }
+
+  h1 {
+    font-size: var(--fs-font-size-h1);
+  }
+
+  h2 {
+    font-size: var(--fs-font-size-h2);
+  }
+
+  h3 {
+    font-size: var(--fs-font-size-h3);
+  }
+
+  h4 {
+    font-size: var(--fs-font-size-h4);
+  }
+
+  h5 {
+    font-size: var(--fs-font-size-h5);
+  }
+
+  h6 {
+    font-size: var(--fs-font-size-h6);
+  }
+}

@@ -1,0 +1,22 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    line-height: var(--fs-line-height-base);
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}

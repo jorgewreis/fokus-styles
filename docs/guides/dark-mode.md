@@ -15,18 +15,18 @@ por escopo, não só global):
 ```html
 <!-- Escopo local: só este painel fica escuro -->
 <div data-theme="dark">
-  <div class="cl-card">...</div>
+  <div class="fs-card">...</div>
 </div>
 ```
 
-Não há classe `.dark`/`.cl-dark` — é sempre o atributo `data-theme="dark"`.
+Não há classe `.dark`/`.fs-dark` — é sempre o atributo `data-theme="dark"`.
 Remover o atributo (ou trocar pra qualquer outro valor) volta ao tema claro.
 
 ## Como funciona
 
-`packages/clarus-core/scss/themes/_dark.scss` redefine os tokens semânticos
-de cor (`--cl-color-text`, `--cl-color-surface`, `--cl-color-{primary,
-success,...}`, `--cl-alert-*-bg/-text`, `--cl-feedback-*-bg`) sob o seletor
+`packages/fokus-core/scss/themes/_dark.scss` redefine os tokens semânticos
+de cor (`--fs-color-text`, `--fs-color-surface`, `--fs-color-{primary,
+success,...}`, `--fs-alert-*-bg/-text`, `--fs-feedback-*-bg`) sob o seletor
 `[data-theme="dark"]`. Como todo componente já consome esses tokens via
 `var()`, nenhum CSS extra por componente é necessário — trocar o atributo já
 propaga a cor nova para tudo.
@@ -43,12 +43,12 @@ foram calibrados para manter contraste WCAG AA (ver
 
 O framework não fornece um componente de "toggle de tema" pronto — é
 deliberadamente simples de implementar com o que você já tem
-(`.cl-switch`, ver [`../components/switch.md`](../components/switch.md)):
+(`.fs-switch`, ver [`../components/switch.md`](../components/switch.md)):
 
 ```html
-<div class="cl-switch">
-  <input type="checkbox" class="cl-switch-input" id="theme-toggle">
-  <label for="theme-toggle" class="cl-switch-label">Tema escuro</label>
+<div class="fs-switch">
+  <input type="checkbox" class="fs-switch-input" id="theme-toggle">
+  <label for="theme-toggle" class="fs-switch-label">Tema escuro</label>
 </div>
 ```
 
@@ -76,11 +76,11 @@ carga.
 ## Customizando o tema escuro
 
 Como qualquer outro token, redefina sob `[data-theme="dark"]` no seu
-próprio CSS — carregado **depois** do CSS do Clarus, para vencer a cascata:
+próprio CSS — carregado **depois** do CSS do FokusStyles, para vencer a cascata:
 
 ```css
 [data-theme="dark"] {
-  --cl-color-surface: #14151a;
+  --fs-color-surface: #14151a;
 }
 ```
 

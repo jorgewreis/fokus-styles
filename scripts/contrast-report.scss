@@ -2,8 +2,8 @@
 // importado pelo framework — só existe para o Node compilar e capturar as
 // mensagens `@debug` via scripts/contrast.mjs. Replica (não reimporta, por
 // serem `@each` isolados e não mixins reaproveitáveis) as fórmulas de
-// packages/clarus-core/scss/tokens/_root.scss e
-// packages/clarus-core/scss/themes/_dark.scss — se essas fórmulas mudarem,
+// packages/fokus-core/scss/tokens/_root.scss e
+// packages/fokus-core/scss/themes/_dark.scss — se essas fórmulas mudarem,
 // atualize os pares aqui.
 @use "sass:color";
 @use "sass:map";
@@ -73,8 +73,8 @@ $dark-surface: color.to-space(#202124, oklch);
 @include check("dark: muted/surface", $dark-muted, $dark-surface);
 
 // Botões sólidos (escuro) — o texto continua o branco/preto escolhido no
-// claro (é um valor estático gravado em `.cl-btn-{name}`, não recalculado
-// por tema); o fundo é o `--cl-color-{name}` redefinido pelo tema escuro
+// claro (é um valor estático gravado em `.fs-btn-{name}`, não recalculado
+// por tema); o fundo é o `--fs-color-{name}` redefinido pelo tema escuro
 // (mistura em direção ao branco). Ratio baixo aqui é uma regressão real:
 // sinaliza que o texto do botão ficou ilegível no escuro.
 @each $name, $color in $theme-colors {

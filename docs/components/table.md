@@ -6,7 +6,7 @@ Tabelas seguem a marcação HTML nativa — classes modificadoras no próprio
 ## Visão geral
 
 ```html
-<table class="cl-table cl-table-striped cl-table-hover">
+<table class="fs-table fs-table-striped fs-table-hover">
   <thead>
     <tr><th>Nome</th><th>Status</th></tr>
   </thead>
@@ -19,37 +19,37 @@ Tabelas seguem a marcação HTML nativa — classes modificadoras no próprio
 
 ## Anatomia
 
-`<table class="cl-table">` com `<thead>`/`<tbody>` nativos — nenhuma
+`<table class="fs-table">` com `<thead>`/`<tbody>` nativos — nenhuma
 marcação extra obrigatória. `<thead th>` já vem em uppercase, cor muted,
 peso médio.
 
 ## Variações
 
-- `.cl-table-striped` — linhas ímpares do corpo com fundo diferente (zebra).
-- `.cl-table-hover` — destaca a linha sob o cursor.
-- `.cl-table-bordered` — bordas em todas as células.
-- `.cl-table-borderless` — remove todas as bordas internas.
-- `.cl-table-sm` — reduz o padding das células.
-- `.cl-table-{primary|secondary|success|warning|danger|info}` — tinge
+- `.fs-table-striped` — linhas ímpares do corpo com fundo diferente (zebra).
+- `.fs-table-hover` — destaca a linha sob o cursor.
+- `.fs-table-bordered` — bordas em todas as células.
+- `.fs-table-borderless` — remove todas as bordas internas.
+- `.fs-table-sm` — reduz o padding das células.
+- `.fs-table-{primary|secondary|success|warning|danger|info}` — tinge
   fundo/texto da tabela inteira com uma cor de estado (mesmos tokens dos
   alerts).
-- `.cl-table-responsive` — aplique num `<div>` **envolvendo** a
+- `.fs-table-responsive` — aplique num `<div>` **envolvendo** a
   `<table>` (não na tabela em si), para rolagem horizontal em telas
   estreitas:
 
 ```html
-<div class="cl-table-responsive">
-  <table class="cl-table">...</table>
+<div class="fs-table-responsive">
+  <table class="fs-table">...</table>
 </div>
 ```
 
-Combináveis entre si (ex.: `cl-table-striped cl-table-bordered cl-table-sm`).
+Combináveis entre si (ex.: `fs-table-striped fs-table-bordered fs-table-sm`).
 
 ## Estados
 
 Nenhum — tabela é conteúdo estático. Se precisar de ordenação/filtro/
 paginação client-side, veja o [DataTable](datatable.md), a camada JS
-opcional que reusa `.cl-table`.
+opcional que reusa `.fs-table`.
 
 ## A11y
 
@@ -65,15 +65,15 @@ Nenhuma — 100% CSS. Para ordenação/filtro/paginação, use o
 
 ## Tokens
 
-`--cl-color-border`, `--cl-color-text`, `--cl-color-muted` (cabeçalho),
-`--cl-color-subtle` (striped/hover), `--cl-alert-{nome}-bg`/`-text`
+`--fs-color-border`, `--fs-color-text`, `--fs-color-muted` (cabeçalho),
+`--fs-color-subtle` (striped/hover), `--fs-alert-{nome}-bg`/`-text`
 (variante de cor de estado).
 
 ## Exemplo
 
 ```html
-<div class="cl-table-responsive">
-  <table class="cl-table cl-table-striped cl-table-bordered cl-table-sm">
+<div class="fs-table-responsive">
+  <table class="fs-table fs-table-striped fs-table-bordered fs-table-sm">
     <thead>
       <tr><th scope="col">Nome</th><th scope="col">E-mail</th><th scope="col">Status</th></tr>
     </thead>

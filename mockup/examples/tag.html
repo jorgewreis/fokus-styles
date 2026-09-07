@@ -15,12 +15,12 @@
             flex-direction: column;
             gap: 16px;
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .tag-row {
@@ -34,72 +34,72 @@
 </head>
 <body>
 <div class="theme-panel">
-        <p class="u-fs-sm u-fw-medium u-mb-0">Tags removíveis (clique no "x")</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Tags removíveis (clique no "x")</p>
         <div class="tag-row" id="tags-claro">
-            <span class="cl-badge cl-tag" data-cl="tag">
+            <span class="fs-badge fs-tag" data-fs="tag">
                 Frontend
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Frontend"></button>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button>
             </span>
-            <span class="cl-badge cl-badge-primary cl-tag" data-cl="tag">
+            <span class="fs-badge fs-badge-primary fs-tag" data-fs="tag">
                 Urgente
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Urgente"></button>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Urgente"></button>
             </span>
-            <span class="cl-badge cl-badge-success cl-tag" data-cl="tag">
+            <span class="fs-badge fs-badge-success fs-tag" data-fs="tag">
                 Aprovado
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Aprovado"></button>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Aprovado"></button>
             </span>
-            <span class="cl-badge cl-badge-danger cl-tag" data-cl="tag">
+            <span class="fs-badge fs-badge-danger fs-tag" data-fs="tag">
                 Bloqueado
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Bloqueado"></button>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Bloqueado"></button>
             </span>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Agrupamento (.cl-tag-group)</p>
-        <div class="cl-tag-group">
-            <span class="cl-badge cl-tag" data-cl="tag">Design<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="cl-badge cl-tag" data-cl="tag">Frontend<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="cl-badge cl-tag" data-cl="tag">Backend<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="cl-badge cl-tag" data-cl="tag">DevOps<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="cl-badge cl-tag" data-cl="tag">QA<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button></span>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Agrupamento (.fs-tag-group)</p>
+        <div class="fs-tag-group">
+            <span class="fs-badge fs-tag" data-fs="tag">Design<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
+            <span class="fs-badge fs-tag" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
+            <span class="fs-badge fs-tag" data-fs="tag">Backend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
+            <span class="fs-badge fs-tag" data-fs="tag">DevOps<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
+            <span class="fs-badge fs-tag" data-fs="tag">QA<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Ícone, texto longo e operação pendente</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Ícone, texto longo e operação pendente</p>
         <div class="tag-row">
-            <span class="cl-badge cl-badge-soft-primary cl-tag" data-cl="tag">
-                <span class="cl-tag-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
-                <span class="cl-tag-label">Documento</span>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Documento"></button>
+            <span class="fs-badge fs-badge-soft-primary fs-tag" data-fs="tag">
+                <span class="fs-tag-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+                <span class="fs-tag-label">Documento</span>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Documento"></button>
             </span>
-            <span class="cl-badge cl-tag cl-tag-truncate" data-cl="tag" style="--cl-tag-max-inline-size: 190px;" title="Revisão de acessibilidade e compatibilidade entre navegadores">
-                <span class="cl-tag-label">Revisão de acessibilidade e compatibilidade entre navegadores</span>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Revisão de acessibilidade e compatibilidade entre navegadores"></button>
+            <span class="fs-badge fs-tag fs-tag-truncate" data-fs="tag" style="--fs-tag-max-inline-size: 190px;" title="Revisão de acessibilidade e compatibilidade entre navegadores">
+                <span class="fs-tag-label">Revisão de acessibilidade e compatibilidade entre navegadores</span>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Revisão de acessibilidade e compatibilidade entre navegadores"></button>
             </span>
-            <span class="cl-badge cl-badge-warning cl-tag is-loading" data-cl="tag" aria-busy="true">
-                <span class="cl-tag-label">Salvando</span>
-                <span class="cl-spinner" aria-hidden="true"></span>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Salvando" disabled></button>
+            <span class="fs-badge fs-badge-warning fs-tag is-loading" data-fs="tag" aria-busy="true">
+                <span class="fs-tag-label">Salvando</span>
+                <span class="fs-spinner" aria-hidden="true"></span>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Salvando" disabled></button>
             </span>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Overflow de agrupamento</p>
-        <div class="cl-tag-group" aria-label="Tags do projeto">
-            <span class="cl-badge cl-tag" data-cl="tag">Design<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Design"></button></span>
-            <span class="cl-badge cl-tag" data-cl="tag">Frontend<button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Frontend"></button></span>
-            <button type="button" class="cl-badge cl-tag cl-tag-overflow" aria-label="Mostrar mais 3 tags" aria-expanded="false"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"/><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"/><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"/></svg></button>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Overflow de agrupamento</p>
+        <div class="fs-tag-group" aria-label="Tags do projeto">
+            <span class="fs-badge fs-tag" data-fs="tag">Design<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Design"></button></span>
+            <span class="fs-badge fs-tag" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button></span>
+            <button type="button" class="fs-badge fs-tag fs-tag-overflow" aria-label="Mostrar mais 3 tags" aria-expanded="false"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"/><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"/><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"/></svg></button>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mb-0">Tag protegida (não removível)</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Tag protegida (não removível)</p>
         <div class="tag-row">
-            <span class="cl-badge cl-badge-warning cl-tag cl-tag-protected" aria-disabled="true">
-                <span class="cl-tag-label">Protegida</span>
-                <span class="cl-tag-lock" aria-hidden="true">
-                    <svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="fs-badge fs-badge-warning fs-tag fs-tag-protected" aria-disabled="true">
+                <span class="fs-tag-label">Protegida</span>
+                <span class="fs-tag-lock" aria-hidden="true">
+                    <svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
                 </span>
             </span>
         </div>
     </div>
 
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 </body>
 </html>

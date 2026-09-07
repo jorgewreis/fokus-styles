@@ -1,0 +1,82 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-accordion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fs-accordion-item {
+    overflow: hidden;
+    border: 1px solid var(--fs-color-border);
+    background-color: var(--fs-color-surface-raised);
+  }
+
+  .fs-accordion-item + .fs-accordion-item {
+    border-top: none;
+  }
+
+  .fs-accordion-item:first-child {
+    border-top-left-radius: var(--fs-radius-md);
+    border-top-right-radius: var(--fs-radius-md);
+  }
+
+  .fs-accordion-item:last-child {
+    border-bottom-right-radius: var(--fs-radius-md);
+    border-bottom-left-radius: var(--fs-radius-md);
+  }
+
+  .fs-accordion-header {
+    margin: 0;
+  }
+
+  .fs-accordion-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .fs-accordion-button:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-accordion-button:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-accordion-button::after {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    margin-left: 12px;
+    content: "";
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .fs-accordion-button[aria-expanded="true"]::after {
+    transform: rotate(-135deg);
+  }
+
+  .fs-accordion-collapse {
+    overflow: hidden;
+  }
+
+  .fs-accordion-body {
+    padding: 16px;
+    border-top: 1px solid var(--fs-color-border);
+    background-color: var(--fs-color-surface-raised);
+  }
+}

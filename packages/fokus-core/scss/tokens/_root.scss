@@ -1,0 +1,117 @@
+@use "sass:map";
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Ordem canônica das camadas: declarada uma única vez aqui porque `tokens`
+// é sempre o primeiro `@use` de cada entry point (ver scss/entries/*.scss e
+// scss/fokus.scss) — evita repetir a declaração em cada bundle.
+@layer reset, tokens, base, layout, components, utilities, overrides;
+
+@layer tokens {
+  // Bloco incondicional: fallback sRGB, aplicado em todo navegador. Os
+  // valores de cor aqui vêm de `rgb-fallback()` (gamut-mapeado a partir do
+  // primitivo OKLCH) — ver `tools/_mixins.scss`. É sempre sobrescrito pelo
+  // bloco `@supports` abaixo em navegadores com suporte a `oklch()`; um
+  // `--fs-*` de cor nunca deve ser lido só daqui em código novo.
+  :root {
+    --fs-color-white: #{$color-white};
+    --fs-color-black: #{$color-black};
+    --fs-color-text: #{rgb-fallback($color-gray-900)};
+    --fs-color-muted: #{rgb-fallback($color-gray-600)};
+    --fs-color-border: #{rgb-fallback($color-gray-300)};
+    --fs-color-surface: #{$color-white};
+    --fs-color-subtle: #{rgb-fallback($color-gray-100)};
+    --fs-font-sans: #{$font-family-sans};
+    --fs-font-mono: #{$font-family-mono};
+    --fs-font-size-md: #{$font-size-md};
+    --fs-font-size-h1: #{$font-size-h1};
+    --fs-font-size-h2: #{$font-size-h2};
+    --fs-font-size-h3: #{$font-size-h3};
+    --fs-font-size-h4: #{$font-size-h4};
+    --fs-font-size-h5: #{$font-size-h5};
+    --fs-font-size-h6: #{$font-size-h6};
+    --fs-font-weight-semibold: #{$font-weight-semibold};
+    --fs-line-height-base: #{$line-height-base};
+    --fs-line-height-heading: #{$line-height-heading};
+    --fs-radius-sm: #{$radius-sm};
+    --fs-radius-md: #{$radius-md};
+    --fs-radius-lg: #{$radius-lg};
+    --fs-gutter-x: #{map.get($spacers, 4)};
+    --fs-gutter-y: 0px;
+
+    @each $name, $space in $spacers {
+      --fs-space-#{$name}: #{$space};
+    }
+
+    @each $name, $z-index in $z-indexes {
+      --fs-z-#{$name}: #{$z-index};
+    }
+
+    --fs-control-height: 38px;
+    --fs-control-height-sm: 30px;
+    --fs-control-height-lg: 46px;
+    --fs-control-padding-x: 12px;
+    --fs-control-padding-x-sm: 8px;
+    --fs-control-padding-x-lg: 16px;
+    --fs-focus-width: 2px;
+    --fs-focus-offset: 2px;
+    --fs-focus-ring-alpha: 22%;
+    --fs-transition-fast: 150ms;
+    --fs-transition-normal: 220ms;
+    --fs-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --fs-border-width: 1px;
+    --fs-disabled-opacity: 0.5;
+
+    // Referência dos limiares usados pelos utilitários `@container` (ver
+    // `packages/fokus-utilities/scss/utilities/_container-queries.scss`).
+    // Só informativas: a condição de um `@container` precisa de um valor
+    // literal em tempo de build, não aceita `var()` — mudar aqui não
+    // recalibra as regras já compiladas, só documenta os valores usados.
+    @each $name, $width in $container-breakpoints {
+      --fs-cq-#{$name}: #{$width};
+    }
+
+    --fs-shadow-sm: 0 1px 3px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 10%);
+    --fs-shadow-md: 0 6px 12px rgb(0 0 0 / 15%), 0 3px 6px rgb(0 0 0 / 10%);
+    --fs-shadow-lg: 0 15px 30px rgb(0 0 0 / 18%), 0 6px 12px rgb(0 0 0 / 12%);
+    --fs-tooltip-bg: #{rgb-fallback($color-gray-900)};
+    --fs-tooltip-text: #{$color-white};
+
+    @each $name, $color in $theme-colors {
+      --fs-color-#{$name}: #{rgb-fallback($color)};
+      --fs-color-on-#{$name}: #{color-contrast($color)};
+      --fs-alert-#{$name}-bg: #{rgb-fallback(tint-color($color))};
+      --fs-alert-#{$name}-text: #{rgb-fallback(shade-color($color))};
+    }
+
+    @each $name, $bg in $theme-bg-colors {
+      --fs-feedback-#{$name}-bg: #{rgb-fallback($bg)};
+    }
+  }
+
+  // Bloco condicional: valores nativos em OKLCH. `@supports (color: oklch(0%
+  // 0 0))` só passa em navegadores que entendem a função — os demais ignoram
+  // o bloco inteiro e mantêm o fallback sRGB acima. Só propriedades de cor
+  // entram aqui; o resto (fontes, raio, sombra, gutter) não tem equivalente
+  // "melhor" em OKLCH e já está definido de forma incondicional.
+  @supports (color: oklch(0% 0 0)) {
+    :root {
+      --fs-color-text: #{$color-gray-900};
+      --fs-color-muted: #{$color-gray-600};
+      --fs-color-border: #{$color-gray-300};
+      --fs-color-subtle: #{$color-gray-100};
+      --fs-tooltip-bg: #{$color-gray-900};
+
+      @each $name, $color in $theme-colors {
+        --fs-color-#{$name}: #{$color};
+        --fs-color-on-#{$name}: #{color-contrast($color)};
+        --fs-alert-#{$name}-bg: #{tint-color($color)};
+        --fs-alert-#{$name}-text: #{shade-color($color)};
+      }
+
+      @each $name, $bg in $theme-bg-colors {
+        --fs-feedback-#{$name}-bg: #{$bg};
+      }
+    }
+  }
+}

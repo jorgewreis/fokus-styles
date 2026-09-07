@@ -1,22 +1,22 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { NotificationCenter } from "../../packages/clarus-js/js/notification-center.js";
+import { NotificationCenter } from "../../packages/fokus-js/js/notification-center.js";
 
 function build({ storage } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <button type="button" id="bell" data-cl-target="#panel"${storage ? ` data-storage="${storage}"` : ""}>
+    <button type="button" id="bell" data-fs-target="#panel"${storage ? ` data-storage="${storage}"` : ""}>
       Notificações
-      <span class="cl-notification-badge" hidden>0</span>
+      <span class="fs-notification-badge" hidden>0</span>
     </button>
-    <div class="cl-notification-center" id="panel">
-      <div class="cl-notification-center-header">
-        <span class="cl-notification-center-title">Notificações</span>
-        <button type="button" class="cl-btn-close" data-notification="clear" aria-label="Limpar"></button>
+    <div class="fs-notification-center" id="panel">
+      <div class="fs-notification-center-header">
+        <span class="fs-notification-center-title">Notificações</span>
+        <button type="button" class="fs-btn-close" data-notification="clear" aria-label="Limpar"></button>
       </div>
-      <ul class="cl-notification-list"></ul>
-      <div class="cl-notification-empty" hidden>Nenhuma notificação.</div>
+      <ul class="fs-notification-list"></ul>
+      <div class="fs-notification-empty" hidden>Nenhuma notificação.</div>
     </div>
-    <div class="cl-toast-container" id="toasts"></div>
+    <div class="fs-toast-container" id="toasts"></div>
   `;
   document.body.appendChild(wrapper);
 
@@ -47,10 +47,10 @@ describe("NotificationCenter", () => {
     center.push({ title: "Backup concluído", body: "Tudo certo.", variant: "success" });
 
     expect(center.getAll()).toHaveLength(1);
-    expect(document.querySelector("#toasts .cl-toast")).not.toBeNull();
-    expect(document.querySelector(".cl-notification-item-title").textContent).toBe("Backup concluído");
+    expect(document.querySelector("#toasts .fs-toast")).not.toBeNull();
+    expect(document.querySelector(".fs-notification-item-title").textContent).toBe("Backup concluído");
 
-    const badge = document.querySelector(".cl-notification-badge");
+    const badge = document.querySelector(".fs-notification-badge");
     expect(badge.hasAttribute("hidden")).toBe(false);
     expect(badge.textContent).toBe("1");
   });
@@ -59,9 +59,9 @@ describe("NotificationCenter", () => {
     const { center } = build();
     center.push({ title: "<img src=x onerror=alert(1)>", body: "<b>oi</b>" });
 
-    const item = document.querySelector(".cl-notification-item");
-    expect(item.querySelector(".cl-notification-item-title").innerHTML).not.toContain("<img");
-    expect(item.querySelector(".cl-notification-item-text").innerHTML).not.toContain("<b>");
+    const item = document.querySelector(".fs-notification-item");
+    expect(item.querySelector(".fs-notification-item-title").innerHTML).not.toContain("<img");
+    expect(item.querySelector(".fs-notification-item-text").innerHTML).not.toContain("<b>");
   });
 
   it("open() marca tudo como lido (zera o contador) e mostra o painel", () => {
@@ -75,7 +75,7 @@ describe("NotificationCenter", () => {
     expect(panel.classList.contains("is-open")).toBe(true);
     expect(trigger.getAttribute("aria-expanded")).toBe("true");
     expect(center.unreadCount).toBe(0);
-    expect(document.querySelector(".cl-notification-badge").hasAttribute("hidden")).toBe(true);
+    expect(document.querySelector(".fs-notification-badge").hasAttribute("hidden")).toBe(true);
   });
 
   it("clicar em [data-notification-dismiss] remove só aquela notificação", () => {
@@ -84,7 +84,7 @@ describe("NotificationCenter", () => {
     center.push({ title: "B" });
 
     // Mais recente primeiro: o primeiro item é "B".
-    document.querySelector(".cl-notification-item [data-notification-dismiss]").click();
+    document.querySelector(".fs-notification-item [data-notification-dismiss]").click();
 
     expect(center.getAll().map((r) => r.title)).toEqual(["A"]);
   });
@@ -96,18 +96,18 @@ describe("NotificationCenter", () => {
     document.querySelector('[data-notification="clear"]').click();
 
     expect(center.getAll()).toHaveLength(0);
-    expect(document.querySelector(".cl-notification-empty").hasAttribute("hidden")).toBe(false);
-    expect(document.querySelector(".cl-notification-badge").hasAttribute("hidden")).toBe(true);
+    expect(document.querySelector(".fs-notification-empty").hasAttribute("hidden")).toBe(false);
+    expect(document.querySelector(".fs-notification-badge").hasAttribute("hidden")).toBe(true);
   });
 
-  it("dispara cl:notification:pushed / opened / cleared", () => {
+  it("dispara fs:notification:pushed / opened / cleared", () => {
     const { trigger, center } = build();
     const pushed = vi.fn();
     const opened = vi.fn();
     const cleared = vi.fn();
-    trigger.addEventListener("cl:notification:pushed", pushed);
-    trigger.addEventListener("cl:notification:opened", opened);
-    trigger.addEventListener("cl:notification:cleared", cleared);
+    trigger.addEventListener("fs:notification:pushed", pushed);
+    trigger.addEventListener("fs:notification:opened", opened);
+    trigger.addEventListener("fs:notification:cleared", cleared);
 
     center.push({ title: "A" });
     center.open();

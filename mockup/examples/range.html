@@ -15,8 +15,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .range-row {
@@ -27,7 +27,7 @@
             margin-bottom: 16px;
         }
 
-        .range-row .cl-form-range {
+        .range-row .fs-form-range {
             flex: 1;
         }
     </style>
@@ -37,19 +37,19 @@
 <body>
 
     <div class="theme-panel">
-<p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Padrão</p>
-        <label for="volume" class="cl-form-label">Volume</label>
-        <input type="range" class="cl-form-range" id="volume" min="0" max="100" value="40">
+<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Padrão</p>
+        <label for="volume" class="fs-form-label">Volume</label>
+        <input type="range" class="fs-form-range" id="volume" min="0" max="100" value="40">
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Com valor visível (data-cl="range")</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Com valor visível (data-fs="range")</p>
         <div class="range-row">
-            <input type="range" class="cl-form-range" id="brilho" min="0" max="100" value="65"
-                aria-label="Brilho" data-cl="range" data-cl-target="#brilho-output">
-            <output class="cl-range-output" id="brilho-output" for="brilho">65</output>
+            <input type="range" class="fs-form-range" id="brilho" min="0" max="100" value="65"
+                aria-label="Brilho" data-fs="range" data-fs-target="#brilho-output">
+            <output class="fs-range-output" id="brilho-output" for="brilho">65</output>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Com marcações (datalist)</p>
-        <input type="range" class="cl-form-range" min="0" max="100" step="25" value="50" list="marcas-claro" aria-label="Nível (com marcações)">
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Com marcações (datalist)</p>
+        <input type="range" class="fs-form-range" min="0" max="100" step="25" value="50" list="marcas-claro" aria-label="Nível (com marcações)">
         <datalist id="marcas-claro">
             <option value="0"></option>
             <option value="25"></option>
@@ -58,12 +58,12 @@
             <option value="100"></option>
         </datalist>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Desabilitado</p>
-        <input type="range" class="cl-form-range" min="0" max="100" value="30" aria-label="Controle desabilitado" disabled>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Desabilitado</p>
+        <input type="range" class="fs-form-range" min="0" max="100" value="30" aria-label="Controle desabilitado" disabled>
     </div>
 
     
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 </body>
 </html>

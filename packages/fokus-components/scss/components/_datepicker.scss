@@ -1,0 +1,137 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  // Ajusta o indicador nativo de <input type="date">/<input type="time">
+  // no tema escuro — por padrão o navegador desenha um ícone escuro fixo
+  // (chrome do SO, não estilizável via token), que fica invisível sobre
+  // --fs-color-surface escuro sem essa correção.
+  [data-theme="dark"] .fs-form-control[type="date"]::-webkit-calendar-picker-indicator,
+  [data-theme="dark"] .fs-form-control[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  .fs-datepicker {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .fs-datepicker-panel {
+    display: none;
+    width: min(280px, calc(100vw - 2 * var(--fs-space-3)));
+    padding: 12px;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-md);
+    z-index: var(--fs-z-dropdown);
+  }
+
+  .fs-datepicker-panel.is-open {
+    display: block;
+  }
+
+  .fs-datepicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .fs-datepicker-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    font-size: $font-size-md;
+    cursor: pointer;
+  }
+
+  .fs-datepicker-nav:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-datepicker-nav:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-datepicker-title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    text-transform: capitalize;
+  }
+
+  .fs-datepicker-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fs-datepicker-weekdays,
+  .fs-datepicker-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+
+  .fs-datepicker-weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .fs-datepicker-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border: none;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    font-size: $font-size-sm;
+    cursor: pointer;
+  }
+
+  .fs-datepicker-day:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-datepicker-day:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-datepicker-day.is-outside {
+    color: var(--fs-color-muted);
+  }
+
+  .fs-datepicker-day.is-today {
+    font-weight: $font-weight-semibold;
+    box-shadow: inset 0 0 0 1px var(--fs-color-primary);
+  }
+
+  .fs-datepicker-day.is-selected {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+  }
+
+  .fs-datepicker-day:disabled {
+    color: var(--fs-color-muted);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}

@@ -12,12 +12,12 @@
     <style>
         .theme-panel {
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -25,68 +25,68 @@
 </head>
 <body>
 <div class="theme-panel">
-        <ol class="cl-breadcrumb u-mb-3">
-            <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-            <li class="cl-breadcrumb-item"><a href="#">Categoria</a></li>
-            <li class="cl-breadcrumb-item is-active">Produto atual</li>
+        <ol class="fs-breadcrumb fs-u-mb-3">
+            <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+            <li class="fs-breadcrumb-item"><a href="#">Categoria</a></li>
+            <li class="fs-breadcrumb-item is-active">Produto atual</li>
         </ol>
 
-        <p class="u-fs-sm u-fw-medium u-mb-2">Avançado: truncamento com tooltip + colapso em telas pequenas (redimensione a janela para ver o item "…" com dropdown)</p>
-        <ol class="cl-breadcrumb u-mb-3" data-cl="breadcrumb" data-max-items="3">
-            <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-            <li class="cl-breadcrumb-item"><a href="#">Categoria de produtos muito específica</a></li>
-            <li class="cl-breadcrumb-item"><a href="#">Subcategoria</a></li>
-            <li class="cl-breadcrumb-item"><a href="#">Marca</a></li>
-            <li class="cl-breadcrumb-item is-active">Produto atual com nome bem longo para truncar</li>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Avançado: truncamento com tooltip + colapso em telas pequenas (redimensione a janela para ver o item "…" com dropdown)</p>
+        <ol class="fs-breadcrumb fs-u-mb-3" data-fs="breadcrumb" data-max-items="3">
+            <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+            <li class="fs-breadcrumb-item"><a href="#">Categoria de produtos muito específica</a></li>
+            <li class="fs-breadcrumb-item"><a href="#">Subcategoria</a></li>
+            <li class="fs-breadcrumb-item"><a href="#">Marca</a></li>
+            <li class="fs-breadcrumb-item is-active">Produto atual com nome bem longo para truncar</li>
         </ol>
 
-        <ul class="cl-pagination">
-            <li class="cl-page-item is-disabled"><a href="#" class="cl-page-link" aria-label="Anterior"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">4</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link" aria-label="Próxima"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+        <ul class="fs-pagination">
+            <li class="fs-page-item is-disabled"><a href="#" class="fs-page-link" aria-label="Anterior"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">4</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link" aria-label="Próxima"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
         </ul>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Bordered (itens colados) + compacta (sm) / lg</p>
-        <ul class="cl-pagination cl-pagination-bordered cl-pagination-sm u-mb-2">
-            <li class="cl-page-item is-disabled"><a href="#" class="cl-page-link" aria-label="Anterior"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link" aria-label="Próxima"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Bordered (itens colados) + compacta (sm) / lg</p>
+        <ul class="fs-pagination fs-pagination-bordered fs-pagination-sm fs-u-mb-2">
+            <li class="fs-page-item is-disabled"><a href="#" class="fs-page-link" aria-label="Anterior"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link" aria-label="Próxima"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
         </ul>
-        <ul class="cl-pagination cl-pagination-bordered cl-pagination-lg">
-            <li class="cl-page-item is-disabled"><a href="#" class="cl-page-link" aria-label="Anterior"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link" aria-label="Próxima"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
-        </ul>
-
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Prev/next descritivo</p>
-        <ul class="cl-pagination u-mb-2">
-            <li class="cl-page-item"><a href="#" class="cl-page-link cl-page-link-text"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Anterior</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link cl-page-link-text">Próxima<svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+        <ul class="fs-pagination fs-pagination-bordered fs-pagination-lg">
+            <li class="fs-page-item is-disabled"><a href="#" class="fs-page-link" aria-label="Anterior"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link" aria-label="Próxima"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
         </ul>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Reticências (intervalo de páginas omitido)</p>
-        <ul class="cl-pagination">
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
-            <li class="cl-page-item is-disabled" aria-hidden="true"><span class="cl-page-link"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></span></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">8</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">9</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">10</a></li>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Prev/next descritivo</p>
+        <ul class="fs-pagination fs-u-mb-2">
+            <li class="fs-page-item"><a href="#" class="fs-page-link fs-page-link-text"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Anterior</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link fs-page-link-text">Próxima<svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a></li>
+        </ul>
+
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Reticências (intervalo de páginas omitido)</p>
+        <ul class="fs-pagination">
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
+            <li class="fs-page-item is-disabled" aria-hidden="true"><span class="fs-page-link"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></span></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">8</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">9</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">10</a></li>
         </ul>
     </div>
 
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 </body>
 </html>

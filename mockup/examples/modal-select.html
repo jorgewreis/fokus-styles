@@ -16,15 +16,15 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
             margin-bottom: 24px;
         }
 
-        .cl-form-select-dropdown {
+        .fs-form-select-dropdown {
             width: 220px;
         }
     </style>
@@ -35,52 +35,52 @@
 
     <div class="theme-panel">
 <section>
-            <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-1">Modal — auto-init via data-cl, focus trap, Escape, clique fora, scroll bloqueado</p>
-            <button type="button" class="cl-btn cl-btn-primary u-mr-2" data-cl="modal" data-cl-target="#modal-claro">Abrir modal</button>
-            <button type="button" class="cl-btn u-mr-2" data-cl="modal" data-cl-target="#modal-claro-sm">Modal pequeno</button>
-            <button type="button" class="cl-btn" data-cl="modal" data-cl-target="#modal-claro-static">Backdrop estático</button>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Modal — auto-init via data-fs, focus trap, Escape, clique fora, scroll bloqueado</p>
+            <button type="button" class="fs-btn fs-btn-primary fs-u-mr-2" data-fs="modal" data-fs-target="#modal-claro">Abrir modal</button>
+            <button type="button" class="fs-btn fs-u-mr-2" data-fs="modal" data-fs-target="#modal-claro-sm">Modal pequeno</button>
+            <button type="button" class="fs-btn" data-fs="modal" data-fs-target="#modal-claro-static">Backdrop estático</button>
 
-            <div class="cl-modal" id="modal-claro">
-                <div class="cl-modal-dialog">
-                    <div class="cl-modal-content">
-                        <div class="cl-modal-header">
-                            <h3 class="cl-modal-title">Confirmar ação</h3>
-                            <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+            <div class="fs-modal" id="modal-claro">
+                <div class="fs-modal-dialog">
+                    <div class="fs-modal-content">
+                        <div class="fs-modal-header">
+                            <h3 class="fs-modal-title">Confirmar ação</h3>
+                            <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
                         </div>
-                        <div class="cl-modal-body">
+                        <div class="fs-modal-body">
                             <p>Este modal reaproveita a infraestrutura da Fase 7: focus trap (Tab/Shift+Tab), fecha com Escape ou clique fora, e bloqueia o scroll da página enquanto aberto.</p>
                         </div>
-                        <div class="cl-modal-footer">
-                            <button type="button" class="cl-btn" data-cl-dismiss="modal">Cancelar</button>
-                            <button type="button" class="cl-btn cl-btn-primary" data-cl-dismiss="modal">Confirmar</button>
+                        <div class="fs-modal-footer">
+                            <button type="button" class="fs-btn" data-fs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="fs-btn fs-btn-primary" data-fs-dismiss="modal">Confirmar</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-modal" id="modal-claro-sm">
-                <div class="cl-modal-dialog cl-modal-sm">
-                    <div class="cl-modal-content">
-                        <div class="cl-modal-header">
-                            <h3 class="cl-modal-title">Modal pequeno</h3>
-                            <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+            <div class="fs-modal" id="modal-claro-sm">
+                <div class="fs-modal-dialog fs-modal-sm">
+                    <div class="fs-modal-content">
+                        <div class="fs-modal-header">
+                            <h3 class="fs-modal-title">Modal pequeno</h3>
+                            <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
                         </div>
-                        <div class="cl-modal-body">
-                            <p>Variante <code class="u-font-mono">.modal-sm</code>.</p>
+                        <div class="fs-modal-body">
+                            <p>Variante <code class="fs-u-font-mono">.modal-sm</code>.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-modal" id="modal-claro-static" data-backdrop="static">
-                <div class="cl-modal-dialog">
-                    <div class="cl-modal-content">
-                        <div class="cl-modal-header">
-                            <h3 class="cl-modal-title">Backdrop estático</h3>
-                            <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+            <div class="fs-modal" id="modal-claro-static" data-backdrop="static">
+                <div class="fs-modal-dialog">
+                    <div class="fs-modal-content">
+                        <div class="fs-modal-header">
+                            <h3 class="fs-modal-title">Backdrop estático</h3>
+                            <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
                         </div>
-                        <div class="cl-modal-body">
-                            <p>Com <code class="u-font-mono">data-backdrop="static"</code>, Escape e clique fora não fecham — só o botão de fechar ou dismiss.</p>
+                        <div class="fs-modal-body">
+                            <p>Com <code class="fs-u-font-mono">data-backdrop="static"</code>, Escape e clique fora não fecham — só o botão de fechar ou dismiss.</p>
                         </div>
                     </div>
                 </div>
@@ -88,11 +88,11 @@
         </section>
 
         <section>
-            <p class="u-fs-sm u-fw-medium u-mb-1">Select customizado — auto-init via data-cl, reaproveita o Dropdown (Fase 8)</p>
-            <div class="cl-form-row u-gap-x-2">
-                <div class="cl-form-col">
-                    <label for="select-claro" class="cl-form-label cl-form-size-md">Padrão</label>
-                    <select class="cl-form-select-dropdown" id="select-claro" data-cl="select">
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-1">Select customizado — auto-init via data-fs, reaproveita o Dropdown (Fase 8)</p>
+            <div class="fs-form-row fs-u-gap-x-2">
+                <div class="fs-form-col">
+                    <label for="select-claro" class="fs-form-label fs-form-size-md">Padrão</label>
+                    <select class="fs-form-select-dropdown" id="select-claro" data-fs="select">
                         <option>Selecione um estado</option>
                         <option>São Paulo</option>
                         <option>Rio de Janeiro</option>
@@ -100,17 +100,17 @@
                         <option>Bahia</option>
                     </select>
                 </div>
-                <div class="cl-form-col">
-                    <label for="select-claro-sm" class="cl-form-label cl-form-size-md">Small</label>
-                    <select class="cl-form-select-dropdown" id="select-claro-sm" data-cl="select" data-size="sm">
+                <div class="fs-form-col">
+                    <label for="select-claro-sm" class="fs-form-label fs-form-size-md">Small</label>
+                    <select class="fs-form-select-dropdown" id="select-claro-sm" data-fs="select" data-size="sm">
                         <option>Pequeno</option>
                         <option>Médio</option>
                         <option>Grande</option>
                     </select>
                 </div>
-                <div class="cl-form-col">
-                    <label for="select-claro-disabled" class="cl-form-label cl-form-size-md">Desabilitado</label>
-                    <select class="cl-form-select-dropdown" id="select-claro-disabled" data-cl="select" disabled>
+                <div class="fs-form-col">
+                    <label for="select-claro-disabled" class="fs-form-label fs-form-size-md">Desabilitado</label>
+                    <select class="fs-form-select-dropdown" id="select-claro-disabled" data-fs="select" disabled>
                         <option>Indisponível</option>
                     </select>
                 </div>
@@ -121,7 +121,7 @@
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 
 </body>
 </html>

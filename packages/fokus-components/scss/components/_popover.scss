@@ -1,0 +1,103 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Popover: painel flutuante com conteúdo rico (header/body/footer),
+// posicionado como o Tooltip (mesma técnica de seta rotacionada 45°), mas com
+// aparência de card de superfície em vez do chip escuro do tooltip — porque
+// pode conter elementos interativos. z-index entre o Dropdown (1000) e o
+// Tooltip (1080), para um tooltip aplicado a um gatilho de popover ainda
+// vencer visualmente.
+
+@layer components {
+  .fs-popover {
+    position: absolute;
+    z-index: var(--fs-z-offcanvas);
+    display: none;
+    max-width: 280px;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+    box-shadow: var(--fs-shadow-md);
+  }
+
+  .fs-popover.is-open {
+    display: block;
+  }
+
+  .fs-popover-header {
+    padding: 10px 14px;
+    background-color: var(--fs-color-subtle);
+    border-bottom: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md) var(--fs-radius-md) 0 0;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-popover-body {
+    padding: 14px;
+    font-size: $font-size-sm;
+  }
+
+  .fs-popover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 14px;
+    border-top: 1px solid var(--fs-color-border);
+  }
+
+  .fs-popover-arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--fs-color-surface);
+    border: 1px solid var(--fs-color-border);
+    transform: rotate(45deg);
+  }
+
+  .fs-popover[data-placement="top"] .fs-popover-arrow {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  .fs-popover[data-placement="bottom"] .fs-popover-arrow {
+    top: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .fs-popover[data-placement="left"] .fs-popover-arrow {
+    top: 50%;
+    right: -5px;
+    margin-top: -4px;
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  .fs-popover[data-placement="right"] .fs-popover-arrow {
+    top: 50%;
+    left: -5px;
+    margin-top: -4px;
+    border-top: 0;
+    border-right: 0;
+  }
+
+  // Hover Card: não é um componente novo — composição do Popover com
+  // `data-trigger="hover"` (já suportado por js/popover.js) e conteúdo mais
+  // rico (ex. avatar + bio). Este modificador só alarga um pouco o popover e
+  // alinha um layout de linha (avatar ao lado do texto) no corpo.
+  .fs-popover-hover-card {
+    max-width: 320px;
+  }
+
+  .fs-popover-hover-card .fs-popover-body {
+    display: flex;
+    gap: 12px;
+  }
+}

@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Select } from "../../packages/clarus-js/js/select.js";
+import { Select } from "../../packages/fokus-js/js/select.js";
 
 function buildSelect() {
   const select = document.createElement("select");
@@ -29,8 +29,8 @@ describe("Select", () => {
     const { select } = buildSelect();
 
     expect(select.style.display).toBe("none");
-    expect(document.querySelector(".cl-form-select")).not.toBeNull();
-    expect(document.querySelectorAll(".cl-dropdown-item")).toHaveLength(3);
+    expect(document.querySelector(".fs-form-select")).not.toBeNull();
+    expect(document.querySelectorAll(".fs-dropdown-item")).toHaveLength(3);
   });
 
   it("o toggle mostra o texto da opção selecionada inicialmente", () => {
@@ -47,13 +47,13 @@ describe("Select", () => {
 
   it("a opção desabilitada vira um .dropdown-item.disabled", () => {
     const { instance } = buildSelect();
-    const items = instance.menuEl.querySelectorAll(".cl-dropdown-item");
+    const items = instance.menuEl.querySelectorAll(".fs-dropdown-item");
     expect(items[2].classList.contains("is-disabled")).toBe(true);
   });
 
   it("clicar num item atualiza o <select> nativo, o texto do toggle e o estado aria-selected", () => {
     const { select, instance } = buildSelect();
-    const items = instance.menuEl.querySelectorAll(".cl-dropdown-item");
+    const items = instance.menuEl.querySelectorAll(".fs-dropdown-item");
 
     items[1].click();
 
@@ -63,24 +63,24 @@ describe("Select", () => {
     expect(items[0].getAttribute("aria-selected")).toBe("false");
   });
 
-  it("clicar num item dispara change nativo e cl:select:changed", () => {
+  it("clicar num item dispara change nativo e fs:select:changed", () => {
     const { select, instance } = buildSelect();
     const changeHandler = vi.fn();
-    const clarusHandler = vi.fn();
+    const fokusHandler = vi.fn();
     select.addEventListener("change", changeHandler);
-    select.addEventListener("cl:select:changed", clarusHandler);
+    select.addEventListener("fs:select:changed", fokusHandler);
 
-    instance.menuEl.querySelectorAll(".cl-dropdown-item")[1].click();
+    instance.menuEl.querySelectorAll(".fs-dropdown-item")[1].click();
 
     expect(changeHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler.mock.calls[0][0].detail.value).toBe("Rio de Janeiro");
+    expect(fokusHandler).toHaveBeenCalledTimes(1);
+    expect(fokusHandler.mock.calls[0][0].detail.value).toBe("Rio de Janeiro");
   });
 
   it("clicar num item desabilitado não altera a seleção", () => {
     const { select, instance } = buildSelect();
 
-    instance.menuEl.querySelectorAll(".cl-dropdown-item")[2].click();
+    instance.menuEl.querySelectorAll(".fs-dropdown-item")[2].click();
 
     expect(select.value).toBe("São Paulo");
   });
@@ -90,6 +90,6 @@ describe("Select", () => {
     instance.dispose();
 
     expect(select.style.display).toBe("");
-    expect(document.querySelector(".cl-form-select")).toBeNull();
+    expect(document.querySelector(".fs-form-select")).toBeNull();
   });
 });

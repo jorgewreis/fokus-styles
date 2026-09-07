@@ -8,13 +8,13 @@ resto de tudo).
 ## Visão geral
 
 ```html
-<div class="cl-radio">
-  <input type="radio" name="periodo" class="cl-radio-input" id="dia" checked>
-  <label for="dia" class="cl-radio-label">Dia</label>
+<div class="fs-radio">
+  <input type="radio" name="periodo" class="fs-radio-input" id="dia" checked>
+  <label for="dia" class="fs-radio-label">Dia</label>
 </div>
-<div class="cl-radio">
-  <input type="radio" name="periodo" class="cl-radio-input" id="semana">
-  <label for="semana" class="cl-radio-label">Semana</label>
+<div class="fs-radio">
+  <input type="radio" name="periodo" class="fs-radio-input" id="semana">
+  <label for="semana" class="fs-radio-label">Semana</label>
 </div>
 ```
 
@@ -23,13 +23,13 @@ comportamento nativo do `<input type="radio">`, sem JS.
 
 ## Anatomia
 
-`.cl-radio` (wrapper) > `.cl-radio-input` (oculto via clip) +
-`.cl-radio-label` (`<label for="...">`, desenha o círculo via `::before` e
+`.fs-radio` (wrapper) > `.fs-radio-input` (oculto via clip) +
+`.fs-radio-label` (`<label for="...">`, desenha o círculo via `::before` e
 o ponto interno via `::after`).
 
 ## Variações
 
-Tamanho: `.cl-radio-sm`, `.cl-radio-lg` no wrapper.
+Tamanho: `.fs-radio-sm`, `.fs-radio-lg` no wrapper.
 
 ## Estados
 
@@ -57,13 +57,13 @@ Mesmos do [Checkbox](checkbox.md) — sem tokens próprios.
 ## Exemplo
 
 ```html
-<div class="cl-radio">
-  <input type="radio" name="plano" class="cl-radio-input" id="p1" checked>
-  <label for="p1" class="cl-radio-label">Mensal</label>
+<div class="fs-radio">
+  <input type="radio" name="plano" class="fs-radio-input" id="p1" checked>
+  <label for="p1" class="fs-radio-label">Mensal</label>
 </div>
-<div class="cl-radio">
-  <input type="radio" name="plano" class="cl-radio-input" id="p2">
-  <label for="p2" class="cl-radio-label">Anual</label>
+<div class="fs-radio">
+  <input type="radio" name="plano" class="fs-radio-input" id="p2">
+  <label for="p2" class="fs-radio-label">Anual</label>
 </div>
 ```
 

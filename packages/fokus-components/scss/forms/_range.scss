@@ -1,0 +1,99 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Range/Slider: <input type="range"> nativo — teclado (setas, Home/End,
+// PageUp/Down) e ARIA (role=slider implícito, aria-valuenow/min/max
+// automáticos) já vêm de graça do navegador, então este componente só
+// estiliza a trilha/thumb (pseudo-elementos vendor-prefixados, sem padrão
+// unificado) e usa `--fs-range-percent` (escrito pelo JS opcional, ver
+// js/range.js) pra pintar a parte preenchida da trilha via gradiente —
+// truque necessário porque só o Firefox suporta `::-moz-range-progress`;
+// Chrome/Safari não têm equivalente.
+@layer components {
+  .fs-form-range {
+    --fs-range-track-height: 6px;
+    --fs-range-track-color: var(--fs-color-border);
+    --fs-range-fill-color: var(--fs-color-primary);
+    --fs-range-thumb-size: 18px;
+    --fs-range-thumb-color: var(--fs-color-surface);
+    --fs-range-thumb-border-color: var(--fs-color-primary);
+    --fs-range-percent: 0%;
+
+    width: 100%;
+    height: var(--fs-range-thumb-size);
+    padding: 0;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .fs-form-range::-webkit-slider-runnable-track {
+    height: var(--fs-range-track-height);
+    border-radius: var(--fs-radius-sm);
+    background: linear-gradient(
+      to right,
+      var(--fs-range-fill-color) var(--fs-range-percent),
+      var(--fs-range-track-color) var(--fs-range-percent)
+    );
+  }
+
+  .fs-form-range::-moz-range-track {
+    height: var(--fs-range-track-height);
+    border-radius: var(--fs-radius-sm);
+    background: linear-gradient(
+      to right,
+      var(--fs-range-fill-color) var(--fs-range-percent),
+      var(--fs-range-track-color) var(--fs-range-percent)
+    );
+  }
+
+  .fs-form-range::-webkit-slider-thumb {
+    width: var(--fs-range-thumb-size);
+    height: var(--fs-range-thumb-size);
+    margin-top: calc((var(--fs-range-track-height) - var(--fs-range-thumb-size)) / 2);
+    border: 2px solid var(--fs-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--fs-range-thumb-color);
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .fs-form-range::-moz-range-thumb {
+    width: calc(var(--fs-range-thumb-size) - 4px);
+    height: calc(var(--fs-range-thumb-size) - 4px);
+    border: 2px solid var(--fs-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--fs-range-thumb-color);
+    cursor: pointer;
+  }
+
+  .fs-form-range:focus-visible::-webkit-slider-thumb {
+    @include focus-ring(var(--fs-range-thumb-border-color));
+  }
+
+  .fs-form-range:focus-visible::-moz-range-thumb {
+    @include focus-ring(var(--fs-range-thumb-border-color));
+  }
+
+  .fs-form-range:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .fs-form-range:disabled::-webkit-slider-thumb {
+    cursor: not-allowed;
+  }
+
+  .fs-form-range:disabled::-moz-range-thumb {
+    cursor: not-allowed;
+  }
+
+  .fs-range-output {
+    display: inline-block;
+    min-width: 2.5em;
+    color: var(--fs-color-text);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    text-align: center;
+  }
+}

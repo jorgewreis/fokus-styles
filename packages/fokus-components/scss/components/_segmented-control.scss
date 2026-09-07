@@ -1,0 +1,88 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Grupo de botões com estado selecionado. Modo exclusivo: `<input
+// type="radio">` (mesmo `name` em todos os itens). Modo inclusivo: `<input
+// type="checkbox">`, cada item seleciona/deseleciona de forma independente.
+// O input fica visualmente oculto (mesma técnica de `.fs-file-input`,
+// scss/forms/_forms.scss) e o `<label>` irmão recebe o estilo.
+
+@layer components {
+  .fs-segmented-control {
+    display: inline-flex;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-sm);
+    overflow: hidden;
+  }
+
+  .fs-segmented-item {
+    display: flex;
+  }
+
+  .fs-segmented-item:not(:first-child) .fs-segmented-label {
+    border-left: 1px solid var(--fs-color-border);
+  }
+
+  .fs-segmented-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .fs-segmented-label {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 12px;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .fs-segmented-label:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-segmented-input:checked + .fs-segmented-label {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+  }
+
+  .fs-segmented-input:focus-visible + .fs-segmented-label {
+    position: relative;
+    z-index: 1;
+
+    @include focus-ring;
+  }
+
+  .fs-segmented-input:disabled + .fs-segmented-label {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .fs-segmented-control-sm .fs-segmented-label {
+    min-height: 30px;
+    padding: 0 8px;
+    font-size: $font-size-sm;
+  }
+
+  .fs-segmented-control-lg .fs-segmented-label {
+    min-height: 46px;
+    padding: 0 16px;
+    font-size: $font-size-lg;
+  }
+}

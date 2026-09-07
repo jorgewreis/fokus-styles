@@ -2,5 +2,5 @@
 
 // Bundle isolado só com os @font-face das fontes self-hosted, para ser
 // importado à parte (dist/css/fonts.css) — mantém as `url()` de woff2 fora
-// dos bundles principais (ver nota em packages/clarus-fonts/scss/_fonts.scss).
-@use "fonts";
+// dos bundles principais (ver nota em packages/fokus-fonts/scss/_fonts.scss).
+@use "../../packages/fokus-fonts/scss/fonts";

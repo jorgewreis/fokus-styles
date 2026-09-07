@@ -1,18 +1,18 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Modal } from "../../packages/clarus-js/js/modal.js";
+import { Modal } from "../../packages/fokus-js/js/modal.js";
 
 function buildModal({ backdropStatic = false } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <button type="button" id="trigger" data-cl-target="#myModal">Abrir</button>
-    <div class="cl-modal" id="myModal" ${backdropStatic ? 'data-backdrop="static"' : ""}>
-      <div class="cl-modal-dialog">
-        <div class="cl-modal-content">
-          <div class="cl-modal-header">
-            <h3 class="cl-modal-title">Título</h3>
-            <button type="button" class="cl-btn-close" data-cl-dismiss="modal">x</button>
+    <button type="button" id="trigger" data-fs-target="#myModal">Abrir</button>
+    <div class="fs-modal" id="myModal" ${backdropStatic ? 'data-backdrop="static"' : ""}>
+      <div class="fs-modal-dialog">
+        <div class="fs-modal-content">
+          <div class="fs-modal-header">
+            <h3 class="fs-modal-title">Título</h3>
+            <button type="button" class="fs-btn-close" data-fs-dismiss="modal">x</button>
           </div>
-          <div class="cl-modal-body">
+          <div class="fs-modal-body">
             <button type="button" id="bodyBtn">Ação</button>
           </div>
         </div>
@@ -75,11 +75,11 @@ describe("Modal", () => {
     expect(modalEl.classList.contains("is-open")).toBe(false);
   });
 
-  it("qualquer elemento com data-cl-dismiss=modal fecha o modal", () => {
+  it("qualquer elemento com data-fs-dismiss=modal fecha o modal", () => {
     const { modalEl, modal } = buildModal();
     modal.show();
 
-    modalEl.querySelector('[data-cl-dismiss="modal"]').click();
+    modalEl.querySelector('[data-fs-dismiss="modal"]').click();
 
     expect(modalEl.classList.contains("is-open")).toBe(false);
   });
@@ -95,16 +95,16 @@ describe("Modal", () => {
     modalEl.click();
     expect(modalEl.classList.contains("is-open")).toBe(true);
 
-    modalEl.querySelector('[data-cl-dismiss="modal"]').click();
+    modalEl.querySelector('[data-fs-dismiss="modal"]').click();
     expect(modalEl.classList.contains("is-open")).toBe(false);
   });
 
-  it("dispara cl:modal:shown e cl:modal:hidden", () => {
+  it("dispara fs:modal:shown e fs:modal:hidden", () => {
     const { trigger, modal } = buildModal();
     const shownHandler = vi.fn();
     const hiddenHandler = vi.fn();
-    trigger.addEventListener("cl:modal:shown", shownHandler);
-    trigger.addEventListener("cl:modal:hidden", hiddenHandler);
+    trigger.addEventListener("fs:modal:shown", shownHandler);
+    trigger.addEventListener("fs:modal:hidden", hiddenHandler);
 
     modal.show();
     expect(shownHandler).toHaveBeenCalledTimes(1);

@@ -1,0 +1,100 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  .fs-u-text-start {
+    text-align: left;
+  }
+
+  .fs-u-text-center {
+    text-align: center;
+  }
+
+  .fs-u-text-end {
+    text-align: right;
+  }
+
+  .fs-u-text-lowercase {
+    text-transform: lowercase;
+  }
+
+  .fs-u-text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .fs-u-text-capitalize {
+    text-transform: capitalize;
+  }
+
+  .fs-u-text-truncate {
+    @include truncate;
+  }
+
+  .fs-u-fw-regular {
+    font-weight: $font-weight-regular;
+  }
+
+  .fs-u-fw-medium {
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-u-fw-semibold {
+    font-weight: $font-weight-semibold;
+  }
+
+  .fs-u-fw-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  .fs-u-fs-xs {
+    font-size: $font-size-xs;
+  }
+
+  .fs-u-fs-sm {
+    font-size: $font-size-sm;
+  }
+
+  .fs-u-fs-md {
+    font-size: $font-size-md;
+  }
+
+  .fs-u-fs-lg {
+    font-size: $font-size-lg;
+  }
+
+  .fs-u-fs-xl {
+    font-size: $font-size-xl;
+  }
+
+  .fs-u-fs-h1 {
+    font-size: $font-size-h1;
+  }
+
+  .fs-u-fs-h2 {
+    font-size: $font-size-h2;
+  }
+
+  .fs-u-fs-h3 {
+    font-size: $font-size-h3;
+  }
+
+  .fs-u-fs-h4 {
+    font-size: $font-size-h4;
+  }
+
+  .fs-u-fs-h5 {
+    font-size: $font-size-h5;
+  }
+
+  .fs-u-fs-h6 {
+    font-size: $font-size-h6;
+  }
+
+  .fs-u-font-sans {
+    font-family: var(--fs-font-sans);
+  }
+
+  .fs-u-font-mono {
+    font-family: var(--fs-font-mono);
+  }
+}

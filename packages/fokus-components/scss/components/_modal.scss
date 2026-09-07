@@ -1,0 +1,70 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer components {
+  .fs-modal {
+    position: fixed;
+    inset: 0;
+    z-index: var(--fs-z-modal);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--fs-space-4);
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  .fs-modal.is-open {
+    display: flex;
+  }
+
+  .fs-modal-dialog {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .fs-modal-dialog.fs-modal-sm {
+    max-width: 320px;
+  }
+
+  .fs-modal-dialog.fs-modal-lg {
+    max-width: 720px;
+  }
+
+  .fs-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 2 * var(--fs-space-4));
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-md);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-lg);
+  }
+
+  .fs-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--fs-color-border);
+  }
+
+  .fs-modal-title {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .fs-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--fs-color-border);
+  }
+}

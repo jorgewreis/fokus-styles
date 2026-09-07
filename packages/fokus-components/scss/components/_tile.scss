@@ -1,0 +1,121 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Tile: linha compacta ícone + título/subtítulo + ações, para listas de
+// opções/configurações/itens de navegação (sinergia com Notification Center
+// e Empty State — mesmo vocabulário visual de ícone+texto). Reusa `.fs-btn`
+// nas ações e `.fs-stretched-link` (_cards.scss) para a variante clicável
+// (tile inteiro age como link, sem precisar envolver tudo numa `<a>`).
+@layer components {
+  .fs-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+    background-color: var(--fs-color-surface);
+  }
+
+  .fs-tile-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-subtle);
+    font-size: $font-size-lg;
+  }
+
+  .fs-tile-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .fs-tile-title {
+    margin: 0;
+    color: var(--fs-color-text);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+
+    @include truncate;
+  }
+
+  .fs-tile-subtitle {
+    margin: 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+
+    @include truncate;
+  }
+
+  .fs-tile-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // Ações embaixo: o tile quebra linha (flex-wrap) e `.fs-tile-actions` ocupa
+  // a largura toda numa segunda linha, alinhada à direita — em vez do padrão
+  // (ações à direita, na mesma linha do ícone/corpo).
+  .fs-tile-actions-bottom {
+    flex-wrap: wrap;
+  }
+
+  .fs-tile-actions-bottom .fs-tile-actions {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  // Tile inteiro clicável: usa `.fs-stretched-link` num link dentro do corpo
+  // (mesma técnica do Card) — o hover/focus visual fica no `.fs-tile`.
+  .fs-tile-clickable {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .fs-tile-clickable:hover,
+  .fs-tile-clickable:focus-within {
+    border-color: var(--fs-color-primary);
+    box-shadow: var(--fs-shadow-sm);
+  }
+
+  .fs-tile-sm {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .fs-tile-sm .fs-tile-icon {
+    width: 32px;
+    height: 32px;
+    font-size: $font-size-md;
+  }
+
+  .fs-tile-sm .fs-tile-title {
+    font-size: $font-size-sm;
+  }
+
+  .fs-tile-sm .fs-tile-subtitle {
+    font-size: $font-size-xs;
+  }
+
+  .fs-tile-lg {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .fs-tile-lg .fs-tile-icon {
+    width: 48px;
+    height: 48px;
+    font-size: $font-size-xl;
+  }
+
+  .fs-tile-lg .fs-tile-title {
+    font-size: $font-size-lg;
+  }
+}

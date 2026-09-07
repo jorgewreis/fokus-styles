@@ -20,8 +20,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -30,44 +30,44 @@
 <body>
 
     <div class="theme-panel">
-<p class="u-fs-sm u-fw-medium u-mb-0">Submenus recursivos — hover, clique ou setas (→ abre, ← fecha)</p>
+<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Submenus recursivos — hover, clique ou setas (→ abre, ← fecha)</p>
 
-        <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="nested-menu" data-cl-target="#menu-claro">Ações</button>
-        <div class="cl-dropdown-menu" id="menu-claro">
-            <a href="#" class="cl-dropdown-item">Novo arquivo</a>
-            <a href="#" class="cl-dropdown-item">Abrir…</a>
-            <div class="cl-dropdown-submenu">
-                <button type="button" class="cl-dropdown-item cl-dropdown-item-submenu">Compartilhar</button>
-                <div class="cl-dropdown-menu">
-                    <a href="#" class="cl-dropdown-item">Copiar link</a>
-                    <a href="#" class="cl-dropdown-item">E-mail</a>
-                    <div class="cl-dropdown-submenu">
-                        <button type="button" class="cl-dropdown-item cl-dropdown-item-submenu">Redes sociais</button>
-                        <div class="cl-dropdown-menu">
-                            <a href="#" class="cl-dropdown-item">Twitter / X</a>
-                            <a href="#" class="cl-dropdown-item">LinkedIn</a>
-                            <a href="#" class="cl-dropdown-item">Facebook</a>
+        <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="nested-menu" data-fs-target="#menu-claro">Ações</button>
+        <div class="fs-dropdown-menu" id="menu-claro">
+            <a href="#" class="fs-dropdown-item">Novo arquivo</a>
+            <a href="#" class="fs-dropdown-item">Abrir…</a>
+            <div class="fs-dropdown-submenu">
+                <button type="button" class="fs-dropdown-item fs-dropdown-item-submenu">Compartilhar</button>
+                <div class="fs-dropdown-menu">
+                    <a href="#" class="fs-dropdown-item">Copiar link</a>
+                    <a href="#" class="fs-dropdown-item">E-mail</a>
+                    <div class="fs-dropdown-submenu">
+                        <button type="button" class="fs-dropdown-item fs-dropdown-item-submenu">Redes sociais</button>
+                        <div class="fs-dropdown-menu">
+                            <a href="#" class="fs-dropdown-item">Twitter / X</a>
+                            <a href="#" class="fs-dropdown-item">LinkedIn</a>
+                            <a href="#" class="fs-dropdown-item">Facebook</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cl-dropdown-submenu">
-                <button type="button" class="cl-dropdown-item cl-dropdown-item-submenu">Exportar como</button>
-                <div class="cl-dropdown-menu">
-                    <a href="#" class="cl-dropdown-item">PDF</a>
-                    <a href="#" class="cl-dropdown-item">PNG</a>
-                    <a href="#" class="cl-dropdown-item is-disabled">SVG (em breve)</a>
+            <div class="fs-dropdown-submenu">
+                <button type="button" class="fs-dropdown-item fs-dropdown-item-submenu">Exportar como</button>
+                <div class="fs-dropdown-menu">
+                    <a href="#" class="fs-dropdown-item">PDF</a>
+                    <a href="#" class="fs-dropdown-item">PNG</a>
+                    <a href="#" class="fs-dropdown-item is-disabled">SVG (em breve)</a>
                 </div>
             </div>
-            <hr class="cl-dropdown-divider">
-            <a href="#" class="cl-dropdown-item">Excluir</a>
+            <hr class="fs-dropdown-divider">
+            <a href="#" class="fs-dropdown-item">Excluir</a>
         </div>
     </div>
 
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 
 </body>
 </html>

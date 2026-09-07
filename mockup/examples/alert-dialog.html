@@ -19,13 +19,13 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         #resultado {
             font-size: 0.85rem;
-            color: var(--cl-color-muted);
+            color: var(--fs-color-muted);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -34,20 +34,20 @@
 <body>
 
     <div class="theme-panel">
-<button type="button" class="cl-btn cl-btn-danger" id="btn-excluir">Excluir item</button>
-        <button type="button" class="cl-btn cl-btn-primary" id="btn-sair">Sair sem salvar</button>
-        <button type="button" class="cl-btn cl-btn-success" id="btn-publicar">Publicar</button>
+<button type="button" class="fs-btn fs-btn-danger" id="btn-excluir">Excluir item</button>
+        <button type="button" class="fs-btn fs-btn-primary" id="btn-sair">Sair sem salvar</button>
+        <button type="button" class="fs-btn fs-btn-success" id="btn-publicar">Publicar</button>
         <p id="resultado">Clique num botão para abrir o Alert Dialog.</p>
     </div>
 
     
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         const resultado = document.getElementById("resultado");
 
         document.getElementById("btn-excluir").addEventListener("click", async () => {
-            const confirmed = await Clarus.confirm({
+            const confirmed = await FokusStyles.confirm({
                 title: "Excluir item?",
                 message: "Essa ação não pode ser desfeita.",
                 confirmText: "Excluir",
@@ -58,7 +58,7 @@
         });
 
         document.getElementById("btn-sair").addEventListener("click", async () => {
-            const confirmed = await Clarus.confirm({
+            const confirmed = await FokusStyles.confirm({
                 title: "Sair sem salvar?",
                 message: "Suas alterações serão perdidas.",
                 confirmText: "Sair",
@@ -68,7 +68,7 @@
         });
 
         document.getElementById("btn-publicar").addEventListener("click", async () => {
-            const confirmed = await Clarus.confirm({
+            const confirmed = await FokusStyles.confirm({
                 title: "Publicar agora?",
                 confirmText: "Publicar",
                 variant: "success",
@@ -77,7 +77,7 @@
         });
 
         document.getElementById("btn-excluir-dark")?.addEventListener("click", () => {
-            Clarus.confirm({ title: "Excluir item?", variant: "danger", confirmText: "Excluir" });
+            FokusStyles.confirm({ title: "Excluir item?", variant: "danger", confirmText: "Excluir" });
         });
     </script>
 </body>

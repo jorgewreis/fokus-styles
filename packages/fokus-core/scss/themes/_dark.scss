@@ -1,0 +1,95 @@
+@use "sass:color";
+@use "sass:map";
+@use "../settings" as *;
+@use "../tools" as *;
+
+// Peso (% da cor original mantida, ver color.mix()) de cada cor de estado no
+// tema escuro. O limite de cada uma é o quanto dá pra clarear em direção ao
+// branco antes de virar o texto branco/preto que color-contrast() já
+// pré-calculou para os preenchimentos sólidos (botões, badges) no tema claro
+// — passar do limite deixaria esse texto ilegível. `primary` e `danger` têm
+// texto branco no preenchimento, então clareiam pouco (clarear reduz o
+// contraste com o branco); `info` não tem margem e fica sem alteração (100%).
+// Misturas em `$method: oklch` (ver tools/_mixins.scss) — recalibrado e
+// revalidado com `npm run contrast` após a migração para OKLCH.
+@layer tokens {
+  $dark-color-weights: (
+    primary: 95%,
+    secondary: 90%,
+    success: 65%,
+    warning: 65%,
+    danger: 95%,
+    info: 100%
+  ) !default;
+
+  $dark-text: color.to-space(#f1f3f4, oklch) !default;
+  $dark-muted: color.to-space(#bdc1c6, oklch) !default;
+  $dark-border: color.to-space(#3c4043, oklch) !default;
+  $dark-surface: color.to-space(#202124, oklch) !default;
+  $dark-subtle: color.to-space(#2b2c2f, oklch) !default;
+
+  // Pesos de alert/feedback bg+text no escuro: validados por
+  // `npm run contrast` para ≥4.5:1 (texto normal) em todas as 6 cores —
+  // não abaixe sem reconferir o relatório.
+  $dark-alert-bg-weight: 15%;
+  $dark-alert-text-weight: 55%;
+
+  [data-theme="dark"] {
+    --fs-color-text: #{rgb-fallback($dark-text)};
+    --fs-color-muted: #{rgb-fallback($dark-muted)};
+    --fs-color-border: #{rgb-fallback($dark-border)};
+    --fs-color-surface: #{rgb-fallback($dark-surface)};
+    --fs-color-subtle: #{rgb-fallback($dark-subtle)};
+    --fs-color-bg-surface: var(--fs-color-surface);
+    --fs-color-bg-subtle: var(--fs-color-subtle);
+    --fs-color-surface-raised: var(--fs-color-surface);
+    --fs-color-surface-interactive: var(--fs-color-subtle);
+    --fs-color-text-primary: var(--fs-color-text);
+    --fs-color-text-muted: var(--fs-color-muted);
+    --fs-color-border-default: var(--fs-color-border);
+    --fs-color-focus: var(--fs-color-primary);
+    --fs-color-action-primary: var(--fs-color-primary);
+    --fs-color-action-danger: var(--fs-color-danger);
+    --fs-shadow-sm: 0 1px 3px rgb(0 0 0 / 50%), 0 1px 2px rgb(0 0 0 / 40%);
+    --fs-shadow-md: 0 6px 12px rgb(0 0 0 / 55%), 0 3px 6px rgb(0 0 0 / 45%);
+    --fs-shadow-lg: 0 15px 30px rgb(0 0 0 / 60%), 0 6px 12px rgb(0 0 0 / 50%);
+    --fs-tooltip-bg: #{rgb-fallback($color-gray-100)};
+    --fs-tooltip-text: #{rgb-fallback($color-gray-900)};
+
+    @each $name, $color in $theme-colors {
+      --fs-color-#{$name}: #{rgb-fallback(color.mix($color, $color-white, map.get($dark-color-weights, $name), $method: oklch))};
+      --fs-alert-#{$name}-bg: #{rgb-fallback(color.mix($color, $color-gray-900, $dark-alert-bg-weight, $method: oklch))};
+      --fs-alert-#{$name}-text: #{rgb-fallback(color.mix($color, $color-white, $dark-alert-text-weight, $method: oklch))};
+      --fs-feedback-#{$name}-bg: #{rgb-fallback(color.mix($color, $color-gray-900, $dark-alert-bg-weight, $method: oklch))};
+    }
+  }
+
+  @supports (color: oklch(0% 0 0)) {
+    [data-theme="dark"] {
+      --fs-color-text: #{$dark-text};
+      --fs-color-muted: #{$dark-muted};
+      --fs-color-border: #{$dark-border};
+      --fs-color-surface: #{$dark-surface};
+      --fs-color-subtle: #{$dark-subtle};
+      --fs-color-bg-surface: var(--fs-color-surface);
+      --fs-color-bg-subtle: var(--fs-color-subtle);
+      --fs-color-surface-raised: var(--fs-color-surface);
+      --fs-color-surface-interactive: var(--fs-color-subtle);
+      --fs-color-text-primary: var(--fs-color-text);
+      --fs-color-text-muted: var(--fs-color-muted);
+      --fs-color-border-default: var(--fs-color-border);
+      --fs-color-focus: var(--fs-color-primary);
+      --fs-color-action-primary: var(--fs-color-primary);
+      --fs-color-action-danger: var(--fs-color-danger);
+      --fs-tooltip-bg: #{$color-gray-100};
+      --fs-tooltip-text: #{$color-gray-900};
+
+      @each $name, $color in $theme-colors {
+        --fs-color-#{$name}: #{color.mix($color, $color-white, map.get($dark-color-weights, $name), $method: oklch)};
+        --fs-alert-#{$name}-bg: #{color.mix($color, $color-gray-900, $dark-alert-bg-weight, $method: oklch)};
+        --fs-alert-#{$name}-text: #{color.mix($color, $color-white, $dark-alert-text-weight, $method: oklch)};
+        --fs-feedback-#{$name}-bg: #{color.mix($color, $color-gray-900, $dark-alert-bg-weight, $method: oklch)};
+      }
+    }
+  }
+}

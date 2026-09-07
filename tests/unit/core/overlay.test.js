@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { lockScroll, unlockScroll, onClickOutside } from "../../../packages/clarus-js/js/core/overlay.js";
+import { lockScroll, unlockScroll, onClickOutside } from "../../../packages/fokus-js/js/core/overlay.js";
 
 describe("lockScroll / unlockScroll", () => {
   afterEach(() => {

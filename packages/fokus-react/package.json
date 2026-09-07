@@ -1,0 +1,45 @@
+{
+  "name": "fokus-react",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Wrapper React fino para o Fokus Styles — componentes que aplicam data-fs/classes e delegam pro JS vanilla existente (fokus-styles/js), sem reimplementar comportamento.",
+  "keywords": [
+    "react",
+    "fokus-styles",
+    "ui"
+  ],
+  "homepage": "https://github.com/jorgewreis/fokus-styles/tree/main/packages/fokus-react#readme",
+  "bugs": {
+    "url": "https://github.com/jorgewreis/fokus-styles/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgewreis/fokus-styles.git",
+    "directory": "packages/fokus-react"
+  },
+  "license": "MIT",
+  "author": "Jorge Reis",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "fokus-styles": "file:../..",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

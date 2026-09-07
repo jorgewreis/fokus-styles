@@ -1,12 +1,12 @@
 # Estabilidade e roadmap
 
-Este documento define como o Clarus CSS evolui. A existência de um componente
+Este documento define como o Fokus Styles evolui. A existência de um componente
 no repositório não significa que ele tenha o mesmo nível de maturidade do
 núcleo.
 
 ## Direção estratégica
 
-O Clarus CSS está em fase de consolidação. A prioridade é tornar o núcleo CSS
+O Fokus Styles está em fase de consolidação. A prioridade é tornar o núcleo CSS
 pequeno, previsível, acessível e fácil de adotar. Novos componentes só devem
 entrar no núcleo quando houver uso real, API documentada, testes funcionais,
 regressão visual e validação de acessibilidade.
@@ -55,7 +55,8 @@ núcleo sem evidência de necessidade recorrente.
 
 ### Ecossistema opcional
 
-`clarus-icons`, `clarus-cli` e `clarus-react` são pacotes separados. Eles devem
+`fokus-styles/icons`, `fokus-styles/cli` e `fokus-styles/react` são subpaths
+opcionais do mesmo pacote. Eles devem
 seguir documentação, versionamento e testes próprios, sem tornar o pacote
 principal dependente de React, Sass, CLI ou bibliotecas de ícones.
 
@@ -76,7 +77,7 @@ Um componente avançado só deve ser promovido quando cumprir todos estes
 critérios:
 
 - necessidade recorrente em projetos reais;
-- API pública estável e consistente com `data-cl`, `cl:*` e `window.Clarus`;
+- API pública estável e consistente com `data-fs`, `fs:*` e `window.FokusStyles`;
 - documentação de anatomia, estados, tokens e teclado;
 - testes unitários, visuais e de acessibilidade;
 - comportamento verificado nos navegadores definidos pelo projeto;

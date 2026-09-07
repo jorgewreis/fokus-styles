@@ -1,0 +1,142 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Notification Center (Etapa 10): orquestra o Toast (scss/components/_toasts.scss)
+// e guarda um histórico. Os toasts em si reaproveitam `.fs-toast`/`.fs-toast-container`
+// sem estilo novo; aqui ficam só o contador de não-lidas no gatilho e o painel
+// de histórico. O comportamento (empilhar toasts, marcar lido, persistir) é do
+// js/notification-center.js (FokusStyles.NotificationCenter).
+
+// O gatilho estabelece o contexto de posicionamento do contador.
+
+@layer components {
+  [data-fs="notification-center"] {
+    position: relative;
+  }
+
+  .fs-notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    color: color-contrast($fokus-color-danger);
+    background-color: var(--fs-color-danger);
+    font-size: 0.65rem;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+  }
+
+  .fs-notification-badge[hidden] {
+    display: none;
+  }
+
+  // Painel de histórico: reaproveita a mesma linguagem visual do Dropdown/Toast
+  // (superfície + borda + sombra), posicionado via js/core/positioning.js.
+  .fs-notification-center {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: min(320px, calc(100vw - 2 * var(--fs-space-3)));
+    max-height: 420px;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-md);
+    z-index: var(--fs-z-notification);
+  }
+
+  .fs-notification-center.is-open {
+    display: flex;
+  }
+
+  .fs-notification-center-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--fs-color-border);
+  }
+
+  .fs-notification-center-title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-notification-list {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+  }
+
+  .fs-notification-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 14px;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid var(--fs-color-border);
+  }
+
+  .fs-notification-item:last-child {
+    border-bottom: none;
+  }
+
+  .fs-notification-item-unread {
+    background-color: var(--fs-color-subtle);
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-notification-item-#{$name} {
+      border-left-color: var(--fs-color-#{$name});
+    }
+  }
+
+  .fs-notification-item-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .fs-notification-item-title {
+    margin: 0;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-notification-item-text {
+    margin: 2px 0 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+
+  .fs-notification-item-time {
+    display: block;
+    margin-top: 4px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+  }
+
+  .fs-notification-item .fs-btn-close {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .fs-notification-empty {
+    padding: 24px 14px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+    text-align: center;
+  }
+
+  .fs-notification-empty[hidden] {
+    display: none;
+  }
+}

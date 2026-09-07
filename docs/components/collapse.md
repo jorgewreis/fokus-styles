@@ -7,17 +7,17 @@ só um "mostrar mais" sem a semântica de grupo do Accordion.
 ## Visão geral
 
 ```html
-<button type="button" class="cl-btn" data-cl="collapse" data-cl-target="#detalhes">
+<button type="button" class="fs-btn" data-fs="collapse" data-fs-target="#detalhes">
   Ver detalhes
 </button>
-<div class="cl-collapse" id="detalhes">
+<div class="fs-collapse" id="detalhes">
   Conteúdo que expande/recolhe.
 </div>
 ```
 
 ## Anatomia
 
-Gatilho (`data-cl="collapse"` + `data-cl-target`) + `.cl-collapse`
+Gatilho (`data-fs="collapse"` + `data-fs-target`) + `.fs-collapse`
 (precisa de `overflow: hidden`, já incluso na classe — não remova via CSS
 próprio, quebra a animação de altura).
 
@@ -32,7 +32,7 @@ Estado inicial definido por `aria-expanded` no gatilho: `"true"` começa
 aberto, ausente ou `"false"` começa fechado.
 
 ```html
-<button type="button" class="cl-btn" data-cl="collapse" data-cl-target="#painel" aria-expanded="true">
+<button type="button" class="fs-btn" data-fs="collapse" data-fs-target="#painel" aria-expanded="true">
   Recolher
 </button>
 ```
@@ -46,7 +46,7 @@ pula a animação e aplica o estado final direto.
 
 ## API JS
 
-Auto-init via `data-cl="collapse"` **no gatilho**. `Collapse.getInstance(triggerEl)`.
+Auto-init via `data-fs="collapse"` **no gatilho**. `Collapse.getInstance(triggerEl)`.
 
 | Método | Descrição |
 |---|---|
@@ -57,8 +57,8 @@ Auto-init via `data-cl="collapse"` **no gatilho**. `Collapse.getInstance(trigger
 
 | Evento (no gatilho) | Cancelável | Quando |
 |---|---|---|
-| `cl:collapse:shown` | Não | Depois que a animação de expandir termina. |
-| `cl:collapse:hidden` | Não | Depois que a animação de recolher termina. |
+| `fs:collapse:shown` | Não | Depois que a animação de expandir termina. |
+| `fs:collapse:hidden` | Não | Depois que a animação de recolher termina. |
 
 ## Tokens
 
@@ -67,11 +67,11 @@ Nenhum próprio — o conteúdo interno usa suas próprias cores/espaçamento.
 ## Exemplo
 
 ```html
-<button type="button" class="cl-btn cl-btn-outline-secondary" data-cl="collapse" data-cl-target="#mais-info">
+<button type="button" class="fs-btn fs-btn-outline-secondary" data-fs="collapse" data-fs-target="#mais-info">
   Mais informações
 </button>
-<div class="cl-collapse" id="mais-info">
-  <p class="u-mt-2">Texto adicional que só aparece quando expandido.</p>
+<div class="fs-collapse" id="mais-info">
+  <p class="fs-u-mt-2">Texto adicional que só aparece quando expandido.</p>
 </div>
 ```
 

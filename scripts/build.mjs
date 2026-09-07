@@ -11,7 +11,7 @@ const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const packagesDir = path.join(rootDir, "packages");
 const scssDir = path.join(rootDir, "scss");
 const entriesDir = path.join(scssDir, "entries");
-const jsDir = path.join(packagesDir, "clarus-js", "js");
+const jsDir = path.join(packagesDir, "fokus-js", "js");
 const distDir = path.join(rootDir, "dist");
 const cssOutDir = path.join(distDir, "css");
 const jsOutDir = path.join(distDir, "js");
@@ -20,10 +20,10 @@ const jsOutDir = path.join(distDir, "js");
 // sem prefixo, ex.: `@use "settings"`), permitindo que entries e
 // pacotes se refiram uns aos outros sem caminhos `../../`.
 const scssLoadPaths = [
-  path.join(packagesDir, "clarus-core", "scss"),
-  path.join(packagesDir, "clarus-components", "scss"),
-  path.join(packagesDir, "clarus-utilities", "scss"),
-  path.join(packagesDir, "clarus-fonts", "scss"),
+  path.join(packagesDir, "fokus-core", "scss"),
+  path.join(packagesDir, "fokus-components", "scss"),
+  path.join(packagesDir, "fokus-utilities", "scss"),
+  path.join(packagesDir, "fokus-fonts", "scss"),
 ];
 
 const cssEntries = [
@@ -32,7 +32,7 @@ const cssEntries = [
   { entryPath: path.join(entriesDir, "components-entry.scss"), outName: "components" },
   { entryPath: path.join(entriesDir, "utilities-entry.scss"), outName: "helpers" },
   { entryPath: path.join(entriesDir, "fonts-entry.scss"), outName: "fonts" },
-  { entryPath: path.join(scssDir, "clarus.scss"), outName: "clarus" },
+  { entryPath: path.join(scssDir, "fokus.scss"), outName: "fokus" },
 ];
 
 async function buildCss({ entryPath, outName }) {
@@ -63,24 +63,24 @@ async function buildCss({ entryPath, outName }) {
 }
 
 async function buildJs() {
-  const entryPath = path.join(jsDir, "clarus.js");
+  const entryPath = path.join(jsDir, "fokus.js");
 
   await esbuild.build({
     entryPoints: [entryPath],
-    outfile: path.join(jsOutDir, "clarus.js"),
+    outfile: path.join(jsOutDir, "fokus.js"),
     bundle: true,
     format: "iife",
-    globalName: "Clarus",
+    globalName: "FokusStyles",
     sourcemap: true,
     target: ["es2018"],
   });
 
   await esbuild.build({
     entryPoints: [entryPath],
-    outfile: path.join(jsOutDir, "clarus.min.js"),
+    outfile: path.join(jsOutDir, "fokus.min.js"),
     bundle: true,
     format: "iife",
-    globalName: "Clarus",
+    globalName: "FokusStyles",
     sourcemap: true,
     minify: true,
     target: ["es2018"],

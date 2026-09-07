@@ -1,11 +1,11 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { FileDrop } from "../../packages/clarus-js/js/file-drop.js";
+import { FileDrop } from "../../packages/fokus-js/js/file-drop.js";
 
 function buildFileDrop({ disabled = false } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
     <input type="file" id="arquivo" ${disabled ? "disabled" : ""}>
-    <label for="arquivo" class="cl-file-label cl-file-label-dropzone">Arraste um arquivo</label>
+    <label for="arquivo" class="fs-file-label fs-file-label-dropzone">Arraste um arquivo</label>
   `;
   document.body.appendChild(wrapper);
 

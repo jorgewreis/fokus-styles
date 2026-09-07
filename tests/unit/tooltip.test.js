@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Tooltip } from "../../packages/clarus-js/js/tooltip.js";
+import { Tooltip } from "../../packages/fokus-js/js/tooltip.js";
 
 function buildTooltip(attrs = "") {
   const el = document.createElement("button");
@@ -29,7 +29,7 @@ describe("Tooltip", () => {
 
   it("cria o elemento .tooltip em document.body, ligado por aria-describedby", () => {
     const { el } = buildTooltip();
-    const tooltipEl = document.querySelector(".cl-tooltip");
+    const tooltipEl = document.querySelector(".fs-tooltip");
 
     expect(tooltipEl).not.toBeNull();
     expect(tooltipEl.parentElement).toBe(document.body);
@@ -71,12 +71,12 @@ describe("Tooltip", () => {
     expect(tooltip.tooltipEl.classList.contains("is-open")).toBe(false);
   });
 
-  it("dispara cl:tooltip:shown e cl:tooltip:hidden", () => {
+  it("dispara fs:tooltip:shown e fs:tooltip:hidden", () => {
     const { el, tooltip } = buildTooltip();
     const shownHandler = vi.fn();
     const hiddenHandler = vi.fn();
-    el.addEventListener("cl:tooltip:shown", shownHandler);
-    el.addEventListener("cl:tooltip:hidden", hiddenHandler);
+    el.addEventListener("fs:tooltip:shown", shownHandler);
+    el.addEventListener("fs:tooltip:hidden", hiddenHandler);
 
     tooltip.show();
     expect(shownHandler).toHaveBeenCalledTimes(1);
@@ -104,7 +104,7 @@ describe("Tooltip", () => {
     const { el, tooltip } = buildTooltip();
     tooltip.dispose();
 
-    expect(document.querySelector(".cl-tooltip")).toBeNull();
+    expect(document.querySelector(".fs-tooltip")).toBeNull();
     expect(Tooltip.getInstance(el)).toBeUndefined();
   });
 });

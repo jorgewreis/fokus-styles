@@ -16,8 +16,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
@@ -32,23 +32,23 @@
 
     <div class="theme-panel">
 <section>
-            <p class="u-fs-sm u-fw-medium u-mb-1">Command Palette — clique ou pressione Ctrl+K / Cmd+K</p>
-            <button type="button" class="cl-btn cl-btn-primary" data-cl="command-palette" data-cl-target="#paleta-claro" data-cl-shortcut="mod+k">
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-1">Command Palette — clique ou pressione Ctrl+K / Cmd+K</p>
+            <button type="button" class="fs-btn fs-btn-primary" data-fs="command-palette" data-fs-target="#paleta-claro" data-fs-shortcut="mod+k">
                 Comandos (Ctrl+K)
             </button>
 
-            <div class="cl-command-palette" id="paleta-claro">
-                <div class="cl-command-palette-dialog">
-                    <input type="text" class="cl-command-palette-input" placeholder="Digite um comando…">
-                    <ul class="cl-command-palette-list">
-                        <li class="cl-dropdown-header">Arquivo</li>
-                        <li class="cl-dropdown-item" data-value="new-file">Novo arquivo</li>
-                        <li class="cl-dropdown-item" data-value="open-file">Abrir arquivo…</li>
-                        <li class="cl-dropdown-header">Ver</li>
-                        <li class="cl-dropdown-item" data-value="toggle-theme">Alternar tema claro/escuro</li>
-                        <li class="cl-dropdown-item" data-value="open-settings">Abrir configurações</li>
-                        <li class="cl-dropdown-item is-disabled" data-value="disabled">Comando indisponível</li>
-                        <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhum comando encontrado.</li>
+            <div class="fs-command-palette" id="paleta-claro">
+                <div class="fs-command-palette-dialog">
+                    <input type="text" class="fs-command-palette-input" placeholder="Digite um comando…">
+                    <ul class="fs-command-palette-list">
+                        <li class="fs-dropdown-header">Arquivo</li>
+                        <li class="fs-dropdown-item" data-value="new-file">Novo arquivo</li>
+                        <li class="fs-dropdown-item" data-value="open-file">Abrir arquivo…</li>
+                        <li class="fs-dropdown-header">Ver</li>
+                        <li class="fs-dropdown-item" data-value="toggle-theme">Alternar tema claro/escuro</li>
+                        <li class="fs-dropdown-item" data-value="open-settings">Abrir configurações</li>
+                        <li class="fs-dropdown-item is-disabled" data-value="disabled">Comando indisponível</li>
+                        <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum comando encontrado.</li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +58,7 @@
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 
 </body>
 </html>

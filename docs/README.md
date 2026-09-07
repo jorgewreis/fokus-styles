@@ -1,6 +1,6 @@
-# Documentação do Clarus CSS
+# Documentação do Fokus Styles
 
-Esta documentação acompanha o Clarus CSS do primeiro uso à referência técnica.
+Esta documentação acompanha o Fokus Styles do primeiro uso à referência técnica.
 Comece pelo caminho recomendado, consulte um guia quando precisar adaptar o
 sistema e use as páginas de componentes como contratos de HTML, CSS, JavaScript
 e acessibilidade.
@@ -74,8 +74,9 @@ limitações. Os exemplos funcionais ficam nos [laboratórios de
 
 ## Ecossistema, templates e contribuição
 
-Os pacotes opcionais estão documentados nos próprios READMEs: `clarus-icons`,
-`clarus-cli` e `clarus-react`. Os templates em [`mockup/templates/`](../mockup/templates)
+Os recursos opcionais do mesmo pacote estão documentados nos guias de
+[ícones](guides/icons.md), [theming](guides/theming.md) e
+[migração para Fokus Styles](guides/migration-clarus-to-fokus.md). Os templates em [`mockup/templates/`](../mockup/templates)
 mostram combinações completas para landing page, autenticação, dashboard e
 administração.
 

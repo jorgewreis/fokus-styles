@@ -3,7 +3,7 @@
 Copie o texto abaixo e substitua os campos entre colchetes antes de usar.
 
 ```text
-Atue como responsável pelo planejamento técnico e de design do Clarus CSS.
+Atue como responsável pelo planejamento técnico e de design do Fokus Styles.
 
 Quero criar um plano, sem implementar ainda, para o componente **[NOME DO COMPONENTE]**.
 
@@ -25,7 +25,7 @@ Leia, no mínimo, nesta ordem conforme forem aplicáveis:
 
 Localize o SCSS, JavaScript, documentação, laboratórios em `mockup/`, testes unitários, testes visuais e testes de acessibilidade do componente. Consulte também tokens e componentes relacionados quando houver acoplamento, padrões compartilhados ou risco de regressão.
 
-Priorize refinamento visual consistente com o sistema: use tokens semânticos e, quando cabível, tokens próprios do componente com fallback; não introduza valores soltos nem `!important`; preserve `@layer`, prefixos `.cl-*`, `.u-*`, `.is-*`, `--cl-*` e as convenções de API. Avalie responsividade, estados padrão/hover/focus-visible/active/disabled/erro, temas claro e escuro, contraste, teclado, ARIA, foco e `prefers-reduced-motion`. Considere SemVer e compatibilidade pública ao sugerir mudanças de classes, atributos, tokens, eventos ou API JavaScript.
+Priorize refinamento visual consistente com o sistema: use tokens semânticos e, quando cabível, tokens próprios do componente com fallback; não introduza valores soltos nem `!important`; preserve `@layer`, prefixos `.fs-*`, `.fs-u-*`, `.is-*`, `--fs-*` e as convenções de API. Avalie responsividade, estados padrão/hover/focus-visible/active/disabled/erro, temas claro e escuro, contraste, teclado, ARIA, foco e `prefers-reduced-motion`. Considere SemVer e compatibilidade pública ao sugerir mudanças de classes, atributos, tokens, eventos ou API JavaScript.
 
 Se faltarem informações que alterem materialmente o plano, você pode me fazer de **5 a 10 perguntas** antes de finalizá-lo. Para cada pergunta, apresente exatamente **5 alternativas**, incluindo uma alternativa recomendada identificada como **"Recomendada"** e acompanhada de uma explicação mais detalhada do motivo. Não faça perguntas apenas por formalidade: use-as para resolver incertezas reais de objetivo, escopo, prioridade, direção visual, compatibilidade ou critérios de aceite.
 

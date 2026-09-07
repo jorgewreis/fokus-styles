@@ -12,14 +12,14 @@ test.describe("Dropdown", () => {
   test("abre com clique, navega com ArrowDown, fecha com Escape e devolve o foco", async ({ page }) => {
     await page.goto(mockupUrl("examples/dropdown-tooltip.html"));
 
-    const toggle = page.locator(".cl-dropdown-toggle").first();
+    const toggle = page.locator(".fs-dropdown-toggle").first();
     await toggle.click();
 
     const menu = page.locator("#menu-claro");
     await expect(menu).toHaveClass(/is-open/);
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
 
-    const items = menu.locator(".cl-dropdown-item:not(.is-disabled)");
+    const items = menu.locator(".fs-dropdown-item:not(.is-disabled)");
     await expect(items.first()).toBeFocused();
 
     await page.keyboard.press("ArrowDown");
@@ -32,7 +32,7 @@ test.describe("Dropdown", () => {
 
   test("fecha ao clicar fora do menu", async ({ page }) => {
     await page.goto(mockupUrl("examples/dropdown-tooltip.html"));
-    const toggle = page.locator(".cl-dropdown-toggle").first();
+    const toggle = page.locator(".fs-dropdown-toggle").first();
     await toggle.click();
 
     await page.mouse.click(5, 5);
@@ -47,17 +47,17 @@ test.describe("Tooltip", () => {
     const trigger = page.locator('button[data-placement="top"]').first();
 
     await trigger.hover();
-    await expect(page.locator(".cl-tooltip.is-open")).toBeVisible();
+    await expect(page.locator(".fs-tooltip.is-open")).toBeVisible();
 
     await page.mouse.move(5, 5);
-    await expect(page.locator(".cl-tooltip.is-open")).toHaveCount(0);
+    await expect(page.locator(".fs-tooltip.is-open")).toHaveCount(0);
   });
 });
 
 test.describe("Modal", () => {
   test("abre com focus trap, fecha com Escape e devolve o foco ao gatilho", async ({ page }) => {
     await page.goto(mockupUrl("examples/modal-select.html"));
-    const trigger = page.locator('button[data-cl-target="#modal-claro"]');
+    const trigger = page.locator('button[data-fs-target="#modal-claro"]');
     await trigger.click();
 
     const modal = page.locator("#modal-claro");
@@ -71,7 +71,7 @@ test.describe("Modal", () => {
 
   test("data-backdrop=static ignora Escape e clique fora", async ({ page }) => {
     await page.goto(mockupUrl("examples/modal-select.html"));
-    await page.locator('button[data-cl-target="#modal-claro-static"]').click();
+    await page.locator('button[data-fs-target="#modal-claro-static"]').click();
 
     const modal = page.locator("#modal-claro-static");
 
@@ -81,7 +81,7 @@ test.describe("Modal", () => {
     await page.mouse.click(5, 5);
     await expect(modal).toHaveClass(/is-open/);
 
-    await modal.locator(".cl-btn-close").click();
+    await modal.locator(".fs-btn-close").click();
     await expect(modal).not.toHaveClass(/is-open/);
   });
 });
@@ -89,7 +89,7 @@ test.describe("Modal", () => {
 test.describe("Accordion", () => {
   test("só um painel aberto por vez (comportamento exclusivo por padrão)", async ({ page }) => {
     await page.goto(mockupUrl("examples/accordion-tabs-toast.html"));
-    const buttons = page.locator("#accordion-claro .cl-accordion-button");
+    const buttons = page.locator("#accordion-claro .fs-accordion-button");
 
     await expect(buttons.nth(0)).toHaveAttribute("aria-expanded", "true");
 
@@ -103,7 +103,7 @@ test.describe("Accordion", () => {
 test.describe("Tabs", () => {
   test("ArrowRight ativa a próxima aba e o painel correspondente", async ({ page }) => {
     await page.goto(mockupUrl("examples/accordion-tabs-toast.html"));
-    const tabs = page.locator("#tabs-claro .cl-nav-link");
+    const tabs = page.locator("#tabs-claro .fs-nav-link");
 
     await tabs.nth(0).focus();
     await page.keyboard.press("ArrowRight");
@@ -130,18 +130,18 @@ test.describe("Carousel", () => {
     await page.goto(mockupUrl("examples/carousel.html"));
 
     const carousel = page.locator("#carousel-slide");
-    const items = carousel.locator(".cl-carousel-item");
+    const items = carousel.locator(".fs-carousel-item");
 
     await expect(items.nth(0)).toHaveClass(/is-active/);
 
-    await carousel.locator(".cl-carousel-control-next").click();
+    await carousel.locator(".fs-carousel-control-next").click();
     await expect(items.nth(1)).toHaveClass(/is-active/);
 
     await carousel.focus();
     await page.keyboard.press("End");
     await expect(items.nth(2)).toHaveClass(/is-active/);
 
-    await carousel.locator(".cl-carousel-indicators button").nth(0).click();
+    await carousel.locator(".fs-carousel-indicators button").nth(0).click();
     await expect(items.nth(0)).toHaveClass(/is-active/);
 
     const box = await carousel.boundingBox();
@@ -156,8 +156,8 @@ test.describe("Carousel", () => {
     await page.goto(mockupUrl("examples/carousel.html"));
 
     const carousel = page.locator("#carousel-slide-autoplay");
-    const items = carousel.locator(".cl-carousel-item");
-    const toggle = carousel.locator("[data-cl-carousel-toggle]");
+    const items = carousel.locator(".fs-carousel-item");
+    const toggle = carousel.locator("[data-fs-carousel-toggle]");
 
     await expect(toggle).toHaveAttribute("aria-pressed", "true");
     await toggle.click();
@@ -189,17 +189,17 @@ test.describe("Stepper", () => {
     await page.goto(mockupUrl("examples/stepper.html"));
 
     const stepper = page.locator("#stepper-wizard");
-    const steps = stepper.locator(".cl-step");
+    const steps = stepper.locator(".fs-step");
 
-    await expect(steps.nth(0)).toHaveClass(/cl-step-active/);
+    await expect(steps.nth(0)).toHaveClass(/fs-step-active/);
     await expect(stepper.locator('[data-stepper="prev"]')).toBeDisabled();
 
     await stepper.locator('[data-stepper="next"]').click();
-    await expect(steps.nth(1)).toHaveClass(/cl-step-active/);
-    await expect(steps.nth(0)).toHaveClass(/cl-step-completed/);
+    await expect(steps.nth(1)).toHaveClass(/fs-step-active/);
+    await expect(steps.nth(0)).toHaveClass(/fs-step-completed/);
 
     await stepper.locator('[data-stepper="prev"]').click();
-    await expect(steps.nth(0)).toHaveClass(/cl-step-active/);
+    await expect(steps.nth(0)).toHaveClass(/fs-step-active/);
   });
 });
 
@@ -207,30 +207,30 @@ test.describe("Offcanvas", () => {
   test("abre pelo gatilho, bloqueia scroll, fecha com Escape e devolve o foco", async ({ page }) => {
     await page.goto(mockupUrl("examples/offcanvas-popover.html"));
 
-    const trigger = page.locator('button[data-cl-target="#offcanvas-start-claro"]');
+    const trigger = page.locator('button[data-fs-target="#offcanvas-start-claro"]');
     await trigger.click();
 
     const panel = page.locator("#offcanvas-start-claro");
     await expect(panel).toHaveClass(/is-open/);
-    await expect(page.locator(".cl-offcanvas-backdrop")).toHaveClass(/is-open/);
+    await expect(page.locator(".fs-offcanvas-backdrop")).toHaveClass(/is-open/);
 
     await page.keyboard.press("Escape");
     await expect(panel).not.toHaveClass(/is-open/);
-    await expect(page.locator(".cl-offcanvas-backdrop")).toHaveCount(0);
+    await expect(page.locator(".fs-offcanvas-backdrop")).toHaveCount(0);
     await expect(trigger).toBeFocused();
   });
 
   test("data-backdrop=static ignora Escape e clique fora, fecha só pelo dismiss", async ({ page }) => {
     await page.goto(mockupUrl("examples/offcanvas-popover.html"));
 
-    await page.click('button[data-cl-target="#offcanvas-static-claro"]');
+    await page.click('button[data-fs-target="#offcanvas-static-claro"]');
     const panel = page.locator("#offcanvas-static-claro");
     await expect(panel).toHaveClass(/is-open/);
 
     await page.keyboard.press("Escape");
     await expect(panel).toHaveClass(/is-open/);
 
-    await panel.locator('[data-cl-dismiss="offcanvas"]').click();
+    await panel.locator('[data-fs-dismiss="offcanvas"]').click();
     await expect(panel).not.toHaveClass(/is-open/);
   });
 });
@@ -239,11 +239,11 @@ test.describe("Popover", () => {
   test("clique no gatilho abre; clique dentro não fecha; clique fora fecha", async ({ page }) => {
     await page.goto(mockupUrl("examples/offcanvas-popover.html"));
 
-    await page.click('button[data-cl-target="#pop-click-claro"]');
+    await page.click('button[data-fs-target="#pop-click-claro"]');
     const panel = page.locator("#pop-click-claro");
     await expect(panel).toHaveClass(/is-open/);
 
-    await panel.locator(".cl-popover-body").click();
+    await panel.locator(".fs-popover-body").click();
     await expect(panel).toHaveClass(/is-open/);
 
     await page.mouse.click(5, 5);
@@ -253,7 +253,7 @@ test.describe("Popover", () => {
   test("modo hover mostra ao passar o mouse e esconde ao sair", async ({ page }) => {
     await page.goto(mockupUrl("examples/offcanvas-popover.html"));
 
-    const trigger = page.locator('button[data-cl-target="#pop-hover-claro"]');
+    const trigger = page.locator('button[data-fs-target="#pop-hover-claro"]');
     const panel = page.locator("#pop-hover-claro");
 
     await trigger.hover();

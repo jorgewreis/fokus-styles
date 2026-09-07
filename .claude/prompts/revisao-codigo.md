@@ -1,4 +1,4 @@
-# Prompt: Revisão de Código — Clarus CSS
+# Prompt: Revisão de Código — Fokus Styles
 
 > Uso: cole/execute este arquivo sempre que quiser uma varredura completa do
 > código em busca de erros, bugs, falhas e inconsistências. Este prompt
@@ -9,12 +9,12 @@
 
 ## Contexto do projeto
 
-O **Clarus CSS** é um framework CSS modular (SCSS + JS vanilla mínimo):
+O **Fokus Styles** é um framework CSS modular (SCSS + JS vanilla mínimo):
 
 - `scss/` — fonte SCSS, organizada em `base/`, `settings/`, `tokens/`,
   `themes/`, `layout/`, `forms/`, `components/`, `utilities/`, `tools/`,
-  `entries/`. Ponto de entrada: `scss/clarus.scss`.
-- `js/` — JS vanilla mínimo (`clarus.js`).
+  `entries/`. Ponto de entrada: `scss/fokus.scss`.
+- `js/` — JS vanilla mínimo (`fokus.js`).
 - `scripts/` — build (`build.mjs`) e watch (`watch.mjs`) em Node/esbuild/Sass/PostCSS.
 - `dist/` — saída gerada pelo build (não editar manualmente).
 - Lint: Stylelint com `stylelint-config-standard-scss` (`.stylelintrc.json`).
@@ -64,7 +64,7 @@ visível e reproduzível para quem usa o framework.
   errados ou invertidos.
 - Tokens de design (`tokens/`, `settings/`, `themes/`) com valores
   inconsistentes entre light/dark ou entre variantes de tema.
-- JS (`clarus.js`) com bugs de lógica que quebram interatividade
+- JS (`fokus.js`) com bugs de lógica que quebram interatividade
   (event listeners não removidos, seletores errados, `this` incorreto).
 - Duplicação de regras CSS que gera conflito silencioso (a última declaração
   vence, mas não é a intenção do autor).

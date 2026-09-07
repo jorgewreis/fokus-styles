@@ -1,0 +1,101 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Offcanvas: painel deslizante (fora da viewport por padrão, `.is-open` traz
+// para dentro via transform) + `.fs-offcanvas-backdrop` separado (não fixo
+// junto ao painel, como no Modal, porque o painel não cobre a tela toda —
+// o backdrop escurece o restante). Mesma faixa de z-index do Modal (1050),
+// já que são overlays mutuamente exclusivos.
+
+@layer components {
+  .fs-offcanvas {
+    position: fixed;
+    z-index: var(--fs-z-offcanvas);
+    display: flex;
+    flex-direction: column;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-lg);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .fs-offcanvas.is-open {
+    visibility: visible;
+    transform: none;
+  }
+
+  .fs-offcanvas-start {
+    inset: 0 auto 0 0;
+    width: 320px;
+    transform: translateX(-100%);
+  }
+
+  .fs-offcanvas-end {
+    inset: 0 0 0 auto;
+    width: 320px;
+    transform: translateX(100%);
+  }
+
+  .fs-offcanvas-top {
+    inset: 0 0 auto;
+    height: 40vh;
+    transform: translateY(-100%);
+  }
+
+  .fs-offcanvas-bottom {
+    inset: auto 0 0;
+    height: 40vh;
+    transform: translateY(100%);
+  }
+
+  .fs-offcanvas-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--fs-z-offcanvas) - 1);
+    background-color: rgb(0 0 0 / 50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .fs-offcanvas-backdrop.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .fs-offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--fs-color-border);
+  }
+
+  .fs-offcanvas-title {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-offcanvas-body {
+    flex: 1 1 auto;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .fs-offcanvas-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--fs-color-border);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-offcanvas,
+    .fs-offcanvas-backdrop {
+      transition: none;
+    }
+  }
+}

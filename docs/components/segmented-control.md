@@ -7,27 +7,27 @@ mesma técnica de input oculto + label irmã.
 ## Visão geral
 
 ```html
-<div class="cl-segmented-control">
-  <div class="cl-segmented-item">
-    <input type="radio" name="periodo" class="cl-segmented-input" id="p-dia" checked>
-    <label for="p-dia" class="cl-segmented-label">Dia</label>
+<div class="fs-segmented-control">
+  <div class="fs-segmented-item">
+    <input type="radio" name="periodo" class="fs-segmented-input" id="p-dia" checked>
+    <label for="p-dia" class="fs-segmented-label">Dia</label>
   </div>
-  <div class="cl-segmented-item">
-    <input type="radio" name="periodo" class="cl-segmented-input" id="p-semana">
-    <label for="p-semana" class="cl-segmented-label">Semana</label>
+  <div class="fs-segmented-item">
+    <input type="radio" name="periodo" class="fs-segmented-input" id="p-semana">
+    <label for="p-semana" class="fs-segmented-label">Semana</label>
   </div>
-  <div class="cl-segmented-item">
-    <input type="radio" name="periodo" class="cl-segmented-input" id="p-mes">
-    <label for="p-mes" class="cl-segmented-label">Mês</label>
+  <div class="fs-segmented-item">
+    <input type="radio" name="periodo" class="fs-segmented-input" id="p-mes">
+    <label for="p-mes" class="fs-segmented-label">Mês</label>
   </div>
 </div>
 ```
 
 ## Anatomia
 
-`.cl-segmented-control` (contêiner, borda externa única) >
-`.cl-segmented-item` (um por opção) > `.cl-segmented-input`
-(`<input>`, oculto via clip) + `.cl-segmented-label` (`<label for="...">`).
+`.fs-segmented-control` (contêiner, borda externa única) >
+`.fs-segmented-item` (um por opção) > `.fs-segmented-input`
+(`<input>`, oculto via clip) + `.fs-segmented-label` (`<label for="...">`).
 
 ## Variações
 
@@ -35,11 +35,11 @@ mesma técnica de input oculto + label irmã.
   `name` (só uma opção selecionada por vez — como no exemplo) ou
   `<input type="checkbox">` (cada item seleciona/deseleciona
   independentemente).
-- **Tamanho**: `.cl-segmented-control-sm`, `.cl-segmented-control-lg`; sem
+- **Tamanho**: `.fs-segmented-control-sm`, `.fs-segmented-control-lg`; sem
   sufixo = padrão (38px de altura).
 
 ```html
-<div class="cl-segmented-control cl-segmented-control-sm">...</div>
+<div class="fs-segmented-control fs-segmented-control-sm">...</div>
 ```
 
 ## Estados
@@ -61,20 +61,20 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-`--cl-color-border`, `--cl-color-surface`, `--cl-color-subtle` (hover),
-`--cl-color-primary` (selecionado), `--cl-radius-sm`.
+`--fs-color-border`, `--fs-color-surface`, `--fs-color-subtle` (hover),
+`--fs-color-primary` (selecionado), `--fs-radius-sm`.
 
 ## Exemplo
 
 ```html
-<div class="cl-segmented-control">
-  <div class="cl-segmented-item">
-    <input type="checkbox" class="cl-segmented-input" id="f-ativo" checked>
-    <label for="f-ativo" class="cl-segmented-label">Ativos</label>
+<div class="fs-segmented-control">
+  <div class="fs-segmented-item">
+    <input type="checkbox" class="fs-segmented-input" id="f-ativo" checked>
+    <label for="f-ativo" class="fs-segmented-label">Ativos</label>
   </div>
-  <div class="cl-segmented-item">
-    <input type="checkbox" class="cl-segmented-input" id="f-arquivado">
-    <label for="f-arquivado" class="cl-segmented-label">Arquivados</label>
+  <div class="fs-segmented-item">
+    <input type="checkbox" class="fs-segmented-input" id="f-arquivado">
+    <label for="f-arquivado" class="fs-segmented-label">Arquivados</label>
   </div>
 </div>
 ```

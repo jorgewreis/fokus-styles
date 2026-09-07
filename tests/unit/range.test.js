@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach } from "vitest";
-import { RangeSlider } from "../../packages/clarus-js/js/range.js";
+import { RangeSlider } from "../../packages/fokus-js/js/range.js";
 
 function buildRange({ min = 0, max = 100, value = 40, withOutput = true } = {}) {
   const wrapper = document.createElement("div");
@@ -10,7 +10,7 @@ function buildRange({ min = 0, max = 100, value = 40, withOutput = true } = {}) 
   document.body.appendChild(wrapper);
 
   const input = wrapper.querySelector("input");
-  if (withOutput) input.setAttribute("data-cl-target", "#volume-output");
+  if (withOutput) input.setAttribute("data-fs-target", "#volume-output");
 
   return { input, output: wrapper.querySelector("output") };
 }
@@ -26,14 +26,14 @@ describe("RangeSlider", () => {
     expect(RangeSlider.getInstance(input)).toBe(range);
   });
 
-  it("calcula --cl-range-percent a partir de min/max/value no momento da criação", () => {
+  it("calcula --fs-range-percent a partir de min/max/value no momento da criação", () => {
     const { input } = buildRange({ min: 0, max: 200, value: 50 });
     new RangeSlider(input);
 
-    expect(input.style.getPropertyValue("--cl-range-percent")).toBe("25%");
+    expect(input.style.getPropertyValue("--fs-range-percent")).toBe("25%");
   });
 
-  it("atualiza --cl-range-percent e o output associado ao disparar input", () => {
+  it("atualiza --fs-range-percent e o output associado ao disparar input", () => {
     const { input, output } = buildRange({ min: 0, max: 100, value: 40 });
     new RangeSlider(input);
 
@@ -43,10 +43,10 @@ describe("RangeSlider", () => {
     input.dispatchEvent(new Event("input", { bubbles: true }));
 
     expect(output.textContent).toBe("80");
-    expect(input.style.getPropertyValue("--cl-range-percent")).toBe("80%");
+    expect(input.style.getPropertyValue("--fs-range-percent")).toBe("80%");
   });
 
-  it("funciona sem output associado (data-cl-target ausente)", () => {
+  it("funciona sem output associado (data-fs-target ausente)", () => {
     const { input } = buildRange({ withOutput: false });
     expect(() => new RangeSlider(input)).not.toThrow();
   });

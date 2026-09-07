@@ -1,0 +1,129 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  @each $breakpoint, $min in $breakpoints {
+    $infix: breakpoint-infix($breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      @each $key, $value in $spacers {
+        .fs-u-m#{$infix}-#{$key} {
+          margin: $value;
+        }
+
+        .fs-u-mt#{$infix}-#{$key} {
+          margin-top: $value;
+        }
+
+        .fs-u-mr#{$infix}-#{$key} {
+          margin-right: $value;
+        }
+
+        .fs-u-mb#{$infix}-#{$key} {
+          margin-bottom: $value;
+        }
+
+        .fs-u-ml#{$infix}-#{$key} {
+          margin-left: $value;
+        }
+
+        .fs-u-mx#{$infix}-#{$key} {
+          margin-right: $value;
+          margin-left: $value;
+        }
+
+        .fs-u-my#{$infix}-#{$key} {
+          margin-top: $value;
+          margin-bottom: $value;
+        }
+
+        .fs-u-p#{$infix}-#{$key} {
+          padding: $value;
+        }
+
+        .fs-u-pt#{$infix}-#{$key} {
+          padding-top: $value;
+        }
+
+        .fs-u-pr#{$infix}-#{$key} {
+          padding-right: $value;
+        }
+
+        .fs-u-pb#{$infix}-#{$key} {
+          padding-bottom: $value;
+        }
+
+        .fs-u-pl#{$infix}-#{$key} {
+          padding-left: $value;
+        }
+
+        .fs-u-px#{$infix}-#{$key} {
+          padding-right: $value;
+          padding-left: $value;
+        }
+
+        .fs-u-py#{$infix}-#{$key} {
+          padding-top: $value;
+          padding-bottom: $value;
+        }
+
+        // Controla o gutter da grid (--fs-gutter-x/-y), consumido por .row/.row > *.
+        .fs-u-g#{$infix}-#{$key} {
+          --fs-gutter-x: #{$value};
+          --fs-gutter-y: #{$value};
+        }
+
+        .fs-u-gx#{$infix}-#{$key} {
+          --fs-gutter-x: #{$value};
+        }
+
+        .fs-u-gy#{$infix}-#{$key} {
+          --fs-gutter-y: #{$value};
+        }
+
+        // Gap literal (flex/grid), independente da grid de colunas.
+        .fs-u-gap#{$infix}-#{$key} {
+          gap: $value;
+        }
+
+        .fs-u-gap-x#{$infix}-#{$key} {
+          column-gap: $value;
+        }
+
+        .fs-u-gap-y#{$infix}-#{$key} {
+          row-gap: $value;
+        }
+      }
+
+      .fs-u-m#{$infix}-auto {
+        margin: auto;
+      }
+
+      .fs-u-mt#{$infix}-auto {
+        margin-top: auto;
+      }
+
+      .fs-u-mr#{$infix}-auto {
+        margin-right: auto;
+      }
+
+      .fs-u-mb#{$infix}-auto {
+        margin-bottom: auto;
+      }
+
+      .fs-u-ml#{$infix}-auto {
+        margin-left: auto;
+      }
+
+      .fs-u-mx#{$infix}-auto {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .fs-u-my#{$infix}-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}

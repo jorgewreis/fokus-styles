@@ -1,0 +1,16 @@
+@layer components {
+  // Wrapper posicionador do input — a listbox (`.fs-dropdown-menu`, mesma
+  // classe do Dropdown/Select) é reanexada a `document.body` pelo JS e
+  // posicionada via `core/positioning.js`; o wrapper só existe pra manter
+  // o layout inline do input no fluxo normal do documento.
+  .fs-combobox {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .fs-combobox-listbox {
+    overflow-y: auto;
+    max-height: 240px;
+  }
+}

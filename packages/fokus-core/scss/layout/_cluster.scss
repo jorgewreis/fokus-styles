@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// Agrupa itens horizontalmente com quebra de linha automática e
+// espaçamento consistente nos dois eixos — ideal para grupos de
+// tags/botões/badges que precisam "fluir" sem estourar o container.
+@layer layout {
+  .fs-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--fs-cluster-gap, #{map.get($spacers, 2)});
+  }
+
+  @each $key, $value in $spacers {
+    .fs-cluster-gap-#{$key} {
+      --fs-cluster-gap: #{$value};
+    }
+  }
+}

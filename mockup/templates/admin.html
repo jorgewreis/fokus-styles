@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template - Painel administrativo | Clarus CSS</title>
+    <title>Template - Painel administrativo | Fokus Styles</title>
 
     <!-- STYLES IMPORT -->
     <link rel="stylesheet" href="../../dist/css/fonts.css">
@@ -14,7 +14,7 @@
     <style>
         body {
             margin: 0;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         .app-shell {
@@ -23,8 +23,8 @@
         }
 
         .app-nav {
-            background-color: var(--cl-color-surface);
-            border-right: 1px solid var(--cl-color-border);
+            background-color: var(--fs-color-surface);
+            border-right: 1px solid var(--fs-color-border);
             display: flex;
             flex-direction: column;
             padding: 20px 16px;
@@ -44,7 +44,7 @@
             align-items: center;
             gap: 10px;
             padding: 4px 12px 20px;
-            color: var(--cl-color-text);
+            color: var(--fs-color-text);
             text-decoration: none;
         }
 
@@ -61,8 +61,8 @@
             align-items: center;
             gap: 16px;
             padding: 12px 24px;
-            background-color: var(--cl-color-surface);
-            border-bottom: 1px solid var(--cl-color-border);
+            background-color: var(--fs-color-surface);
+            border-bottom: 1px solid var(--fs-color-border);
         }
 
         .app-main {
@@ -76,7 +76,7 @@
             justify-content: flex-end;
         }
 
-        .row-actions .cl-btn {
+        .row-actions .fs-btn {
             padding: 0 8px;
         }
     </style>
@@ -91,168 +91,168 @@
   docs/README.md#templates-prontos.
 -->
 
-<div class="cl-sidebar cl-sidebar-gap-0 cl-sidebar-width-sm app-shell">
-    <aside class="cl-sidebar-aside app-nav">
+<div class="fs-sidebar fs-sidebar-gap-0 fs-sidebar-width-sm app-shell">
+    <aside class="fs-sidebar-aside app-nav">
         <a href="#" class="app-brand">
-            <svg class="cl-icon cl-icon-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            <span class="u-fs-lg u-fw-medium">Clarus Admin</span>
+            <svg class="fs-icon fs-icon-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <span class="fs-u-fs-lg fs-u-fw-medium">FokusStyles Admin</span>
         </a>
 
-        <nav class="cl-stack cl-stack-gap-1" aria-label="Navegação principal">
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+        <nav class="fs-stack fs-stack-gap-1" aria-label="Navegação principal">
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                 Dashboard
             </a>
-            <a href="#" class="cl-nav-link is-active">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+            <a href="#" class="fs-nav-link is-active">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                 Usuários
             </a>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                 Pedidos
             </a>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
                 Relatórios
             </a>
-            <div class="cl-divider u-my-2"></div>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+            <div class="fs-divider fs-u-my-2"></div>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
                 Configurações
             </a>
         </nav>
 
         <div class="app-nav-footer">
-            <div class="cl-dropdown">
-                <button type="button" class="cl-btn cl-dropdown-toggle" style="width: 100%; justify-content: flex-start;" data-cl="dropdown" data-cl-target="#user-menu">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="fs-dropdown">
+                <button type="button" class="fs-btn fs-dropdown-toggle" style="width: 100%; justify-content: flex-start;" data-fs="dropdown" data-fs-target="#user-menu">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Jorge Reis
                 </button>
-                <div class="cl-dropdown-menu" id="user-menu">
-                    <a href="#" class="cl-dropdown-item">Perfil</a>
-                    <a href="#" class="cl-dropdown-item">Configurações</a>
-                    <div class="cl-dropdown-divider"></div>
-                    <button type="button" class="cl-dropdown-item">Sair</button>
+                <div class="fs-dropdown-menu" id="user-menu">
+                    <a href="#" class="fs-dropdown-item">Perfil</a>
+                    <a href="#" class="fs-dropdown-item">Configurações</a>
+                    <div class="fs-dropdown-divider"></div>
+                    <button type="button" class="fs-dropdown-item">Sair</button>
                 </div>
             </div>
         </div>
     </aside>
 
-    <div class="cl-sidebar-content">
+    <div class="fs-sidebar-content">
         <header class="app-topbar">
-            <ol class="cl-breadcrumb u-mb-0">
-                <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-                <li class="cl-breadcrumb-item is-active">Usuários</li>
+            <ol class="fs-breadcrumb fs-u-mb-0">
+                <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+                <li class="fs-breadcrumb-item is-active">Usuários</li>
             </ol>
             <div style="margin-left: auto;">
-                <button type="button" class="cl-btn" id="theme-toggle" aria-label="Alternar tema escuro">
-                    <svg class="cl-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <button type="button" class="fs-btn" id="theme-toggle" aria-label="Alternar tema escuro">
+                    <svg class="fs-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
             </div>
         </header>
 
         <main class="app-main">
-            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-3">
+            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-3">
                 <div>
-                    <h1 class="u-fs-h3 u-fw-medium u-mb-0">Usuários</h1>
-                    <p class="cl-card-subtitle u-mb-0">Gerencie quem tem acesso à sua conta</p>
+                    <h1 class="fs-u-fs-h3 fs-u-fw-medium fs-u-mb-0">Usuários</h1>
+                    <p class="fs-card-subtitle fs-u-mb-0">Gerencie quem tem acesso à sua conta</p>
                 </div>
-                <button type="button" class="cl-btn cl-btn-primary" data-cl="modal" data-cl-target="#modal-new-user">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+                <button type="button" class="fs-btn fs-btn-primary" data-fs="modal" data-fs-target="#modal-new-user">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
                     Novo usuário
                 </button>
             </div>
 
-            <div class="cl-card u-mb-3">
-                <div class="cl-card-body">
-                    <div class="cl-datatable" id="users-table" data-cl="datatable" data-cl-page-size="5">
-                        <div class="cl-datatable-toolbar">
-                            <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar por nome ou e-mail…" style="flex: 1;">
-                            <select class="cl-form-select" data-cl="select" style="width: 160px;" aria-label="Filtrar por função">
+            <div class="fs-card fs-u-mb-3">
+                <div class="fs-card-body">
+                    <div class="fs-datatable" id="users-table" data-fs="datatable" data-fs-page-size="5">
+                        <div class="fs-datatable-toolbar">
+                            <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar por nome ou e-mail…" style="flex: 1;">
+                            <select class="fs-form-select" data-fs="select" style="width: 160px;" aria-label="Filtrar por função">
                                 <option value="">Todas as funções</option>
                                 <option value="admin">Administrador</option>
                                 <option value="editor">Editor</option>
                                 <option value="viewer">Leitor</option>
                             </select>
                         </div>
-                        <div class="cl-table-responsive">
-                            <table class="cl-table cl-table-striped cl-table-hover">
+                        <div class="fs-table-responsive">
+                            <table class="fs-table fs-table-striped fs-table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col" data-cl-sort="name">Nome</th>
-                                        <th scope="col" data-cl-sort="email">E-mail</th>
-                                        <th scope="col" data-cl-sort="role">Função</th>
-                                        <th scope="col" data-cl-sort="status">Status</th>
+                                        <th scope="col" data-fs-sort="name">Nome</th>
+                                        <th scope="col" data-fs-sort="email">E-mail</th>
+                                        <th scope="col" data-fs-sort="role">Função</th>
+                                        <th scope="col" data-fs-sort="status">Status</th>
                                         <th scope="col" style="width: 96px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>Ana Beatriz</td><td>ana.beatriz@empresa.com</td><td>Administrador</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Ana Beatriz"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Ana Beatriz"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
-                                    <tr><td>Bruno Costa</td><td>bruno.costa@empresa.com</td><td>Editor</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Bruno Costa"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Bruno Costa"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
-                                    <tr><td>Carla Dias</td><td>carla.dias@empresa.com</td><td>Leitor</td><td><span class="cl-badge cl-badge-sm">Convidado</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Carla Dias"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Carla Dias"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
-                                    <tr><td>Diego Alves</td><td>diego.alves@empresa.com</td><td>Editor</td><td><span class="cl-badge cl-badge-danger cl-badge-sm">Suspenso</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Diego Alves"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Diego Alves"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
-                                    <tr><td>Elisa Nunes</td><td>elisa.nunes@empresa.com</td><td>Administrador</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Elisa Nunes"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Elisa Nunes"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
-                                    <tr><td>Fábio Souza</td><td>fabio.souza@empresa.com</td><td>Leitor</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="cl-btn cl-btn-sm" aria-label="Editar Fábio Souza"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="cl-btn cl-btn-sm" aria-label="Remover Fábio Souza"><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Ana Beatriz</td><td>ana.beatriz@empresa.com</td><td>Administrador</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Ana Beatriz"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Ana Beatriz"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Bruno Costa</td><td>bruno.costa@empresa.com</td><td>Editor</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Bruno Costa"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Bruno Costa"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Carla Dias</td><td>carla.dias@empresa.com</td><td>Leitor</td><td><span class="fs-badge fs-badge-sm">Convidado</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Carla Dias"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Carla Dias"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Diego Alves</td><td>diego.alves@empresa.com</td><td>Editor</td><td><span class="fs-badge fs-badge-danger fs-badge-sm">Suspenso</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Diego Alves"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Diego Alves"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Elisa Nunes</td><td>elisa.nunes@empresa.com</td><td>Administrador</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Elisa Nunes"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Elisa Nunes"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
+                                    <tr><td>Fábio Souza</td><td>fabio.souza@empresa.com</td><td>Leitor</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Ativo</span></td><td><div class="row-actions"><button type="button" class="fs-btn fs-btn-sm" aria-label="Editar Fábio Souza"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button><button type="button" class="fs-btn fs-btn-sm" aria-label="Remover Fábio Souza"><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cl-empty-state" data-cl-datatable-empty hidden>
-                            <p class="cl-empty-state-title">Nenhum usuário encontrado.</p>
+                        <div class="fs-empty-state" data-fs-datatable-empty hidden>
+                            <p class="fs-empty-state-title">Nenhum usuário encontrado.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-card">
-                <div class="cl-card-header">
-                    <h3 class="cl-card-title">Preferências da conta</h3>
+            <div class="fs-card">
+                <div class="fs-card-header">
+                    <h3 class="fs-card-title">Preferências da conta</h3>
                 </div>
-                <div class="cl-card-body">
-                    <div class="cl-tabs" data-cl="tabs" id="settings-tabs">
-                        <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-profile">Perfil</a>
-                        <a href="#" class="cl-nav-link" data-cl-target="#tab-security">Segurança</a>
-                        <a href="#" class="cl-nav-link" data-cl-target="#tab-notifications">Notificações</a>
+                <div class="fs-card-body">
+                    <div class="fs-tabs" data-fs="tabs" id="settings-tabs">
+                        <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-profile">Perfil</a>
+                        <a href="#" class="fs-nav-link" data-fs-target="#tab-security">Segurança</a>
+                        <a href="#" class="fs-nav-link" data-fs-target="#tab-notifications">Notificações</a>
                     </div>
-                    <div class="cl-tab-content u-p-3">
-                        <div class="cl-tab-pane is-active" id="tab-profile">
-                            <div class="cl-form-row u-gap-x-2">
-                                <div class="cl-form-col">
-                                    <label for="profile-name" class="cl-form-label">Nome completo</label>
-                                    <input type="text" class="cl-form-control" id="profile-name" value="Jorge Reis">
+                    <div class="fs-tab-content fs-u-p-3">
+                        <div class="fs-tab-pane is-active" id="tab-profile">
+                            <div class="fs-form-row fs-u-gap-x-2">
+                                <div class="fs-form-col">
+                                    <label for="profile-name" class="fs-form-label">Nome completo</label>
+                                    <input type="text" class="fs-form-control" id="profile-name" value="Jorge Reis">
                                 </div>
-                                <div class="cl-form-col">
-                                    <label for="profile-email" class="cl-form-label">E-mail</label>
-                                    <input type="email" class="cl-form-control" id="profile-email" value="jorge@empresa.com">
-                                </div>
-                            </div>
-                            <button type="button" class="cl-btn cl-btn-primary u-mt-3">Salvar alterações</button>
-                        </div>
-                        <div class="cl-tab-pane" id="tab-security">
-                            <div class="cl-form-row u-gap-x-2">
-                                <div class="cl-form-col">
-                                    <label for="security-current" class="cl-form-label">Senha atual</label>
-                                    <input type="password" class="cl-form-control" id="security-current">
-                                </div>
-                                <div class="cl-form-col">
-                                    <label for="security-new" class="cl-form-label">Nova senha</label>
-                                    <input type="password" class="cl-form-control" id="security-new">
+                                <div class="fs-form-col">
+                                    <label for="profile-email" class="fs-form-label">E-mail</label>
+                                    <input type="email" class="fs-form-control" id="profile-email" value="jorge@empresa.com">
                                 </div>
                             </div>
-                            <button type="button" class="cl-btn cl-btn-primary u-mt-3">Atualizar senha</button>
+                            <button type="button" class="fs-btn fs-btn-primary fs-u-mt-3">Salvar alterações</button>
                         </div>
-                        <div class="cl-tab-pane" id="tab-notifications">
-                            <div class="cl-stack">
-                                <div class="cl-switch">
-                                    <input type="checkbox" class="cl-switch-input" id="notif-email" checked>
-                                    <label for="notif-email" class="cl-switch-label">Notificações por e-mail</label>
+                        <div class="fs-tab-pane" id="tab-security">
+                            <div class="fs-form-row fs-u-gap-x-2">
+                                <div class="fs-form-col">
+                                    <label for="security-current" class="fs-form-label">Senha atual</label>
+                                    <input type="password" class="fs-form-control" id="security-current">
                                 </div>
-                                <div class="cl-switch">
-                                    <input type="checkbox" class="cl-switch-input" id="notif-push">
-                                    <label for="notif-push" class="cl-switch-label">Notificações push</label>
+                                <div class="fs-form-col">
+                                    <label for="security-new" class="fs-form-label">Nova senha</label>
+                                    <input type="password" class="fs-form-control" id="security-new">
                                 </div>
-                                <div class="cl-switch">
-                                    <input type="checkbox" class="cl-switch-input" id="notif-weekly" checked>
-                                    <label for="notif-weekly" class="cl-switch-label">Resumo semanal por e-mail</label>
+                            </div>
+                            <button type="button" class="fs-btn fs-btn-primary fs-u-mt-3">Atualizar senha</button>
+                        </div>
+                        <div class="fs-tab-pane" id="tab-notifications">
+                            <div class="fs-stack">
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="notif-email" checked>
+                                    <label for="notif-email" class="fs-switch-label">Notificações por e-mail</label>
+                                </div>
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="notif-push">
+                                    <label for="notif-push" class="fs-switch-label">Notificações push</label>
+                                </div>
+                                <div class="fs-switch">
+                                    <input type="checkbox" class="fs-switch-input" id="notif-weekly" checked>
+                                    <label for="notif-weekly" class="fs-switch-label">Resumo semanal por e-mail</label>
                                 </div>
                             </div>
                         </div>
@@ -263,31 +263,31 @@
     </div>
 </div>
 
-<div class="cl-modal" id="modal-new-user">
-    <div class="cl-modal-dialog">
-        <div class="cl-modal-content">
-            <div class="cl-modal-header">
-                <h3 class="cl-modal-title">Novo usuário</h3>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+<div class="fs-modal" id="modal-new-user">
+    <div class="fs-modal-dialog">
+        <div class="fs-modal-content">
+            <div class="fs-modal-header">
+                <h3 class="fs-modal-title">Novo usuário</h3>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
             </div>
-            <div class="cl-modal-body">
+            <div class="fs-modal-body">
                 <form>
-                    <div class="cl-form-row u-mb-2">
-                        <div class="cl-form-col">
-                            <label for="new-user-name" class="cl-form-label">Nome completo</label>
-                            <input type="text" class="cl-form-control" id="new-user-name" placeholder="Nome do usuário" required>
+                    <div class="fs-form-row fs-u-mb-2">
+                        <div class="fs-form-col">
+                            <label for="new-user-name" class="fs-form-label">Nome completo</label>
+                            <input type="text" class="fs-form-control" id="new-user-name" placeholder="Nome do usuário" required>
                         </div>
                     </div>
-                    <div class="cl-form-row u-mb-2">
-                        <div class="cl-form-col">
-                            <label for="new-user-email" class="cl-form-label">E-mail</label>
-                            <input type="email" class="cl-form-control" id="new-user-email" placeholder="usuario@empresa.com" required>
+                    <div class="fs-form-row fs-u-mb-2">
+                        <div class="fs-form-col">
+                            <label for="new-user-email" class="fs-form-label">E-mail</label>
+                            <input type="email" class="fs-form-control" id="new-user-email" placeholder="usuario@empresa.com" required>
                         </div>
                     </div>
-                    <div class="cl-form-row">
-                        <div class="cl-form-col">
-                            <label for="new-user-role" class="cl-form-label">Função</label>
-                            <select class="cl-form-select" data-cl="select" id="new-user-role">
+                    <div class="fs-form-row">
+                        <div class="fs-form-col">
+                            <label for="new-user-role" class="fs-form-label">Função</label>
+                            <select class="fs-form-select" data-fs="select" id="new-user-role">
                                 <option value="admin">Administrador</option>
                                 <option value="editor">Editor</option>
                                 <option value="viewer">Leitor</option>
@@ -296,16 +296,16 @@
                     </div>
                 </form>
             </div>
-            <div class="cl-modal-footer">
-                <button type="button" class="cl-btn" data-cl-dismiss="modal">Cancelar</button>
-                <button type="button" class="cl-btn cl-btn-primary" data-cl-dismiss="modal">Criar usuário</button>
+            <div class="fs-modal-footer">
+                <button type="button" class="fs-btn" data-fs-dismiss="modal">Cancelar</button>
+                <button type="button" class="fs-btn fs-btn-primary" data-fs-dismiss="modal">Criar usuário</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- SCRIPTS IMPORT -->
-<script src="../../dist/js/clarus.js"></script>
+<script src="../../dist/js/fokus.js"></script>
 <script>
     // Alternância de tema — mesmo mecanismo de docs/guides/dark-mode.md.
     const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';

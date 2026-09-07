@@ -1,0 +1,20 @@
+// Tokens de gráficos: agnósticos de biblioteca — não é um wrapper de
+// Chart.js/ECharts/Recharts/etc., só cores/tema que qualquer uma delas pode
+// consumir via `getComputedStyle`/CSS custom properties. Aliases da camada
+// semântica já existente (mesma técnica de `_semantic.scss`), então
+// acompanham `data-theme`/`data-fs-brand` automaticamente sem token novo por
+// tema. Ver docs/guides/charts.md.
+@layer tokens {
+  :root {
+    --fs-chart-series-1: var(--fs-color-primary);
+    --fs-chart-series-2: var(--fs-color-success);
+    --fs-chart-series-3: var(--fs-color-warning);
+    --fs-chart-series-4: var(--fs-color-danger);
+    --fs-chart-series-5: var(--fs-color-info);
+    --fs-chart-series-6: var(--fs-color-secondary);
+    --fs-chart-grid: var(--fs-color-border);
+    --fs-chart-axis: var(--fs-color-muted);
+    --fs-chart-tooltip-bg: var(--fs-tooltip-bg);
+    --fs-chart-tooltip-text: var(--fs-tooltip-text);
+  }
+}

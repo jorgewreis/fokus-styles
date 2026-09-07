@@ -1,16 +1,16 @@
 import { describe, it, expect, afterEach, beforeEach, vi } from "vitest";
-import { Popover } from "../../packages/clarus-js/js/popover.js";
+import { Popover } from "../../packages/fokus-js/js/popover.js";
 
 function buildPopover({ trigger = "click" } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <button type="button" id="trigger" data-cl-target="#myPopover" data-trigger="${trigger}">Abrir</button>
-    <div class="cl-popover" id="myPopover">
-      <div class="cl-popover-arrow"></div>
-      <div class="cl-popover-header">Título</div>
-      <div class="cl-popover-body">
+    <button type="button" id="trigger" data-fs-target="#myPopover" data-trigger="${trigger}">Abrir</button>
+    <div class="fs-popover" id="myPopover">
+      <div class="fs-popover-arrow"></div>
+      <div class="fs-popover-header">Título</div>
+      <div class="fs-popover-body">
         <button type="button" id="innerBtn">Ação interna</button>
-        <button type="button" data-cl-dismiss="popover" id="dismissBtn">Fechar</button>
+        <button type="button" data-fs-dismiss="popover" id="dismissBtn">Fechar</button>
       </div>
     </div>
   `;
@@ -38,7 +38,7 @@ describe("Popover", () => {
     expect(popoverEl.parentElement).toBe(document.body);
     expect(popoverEl.getAttribute("role")).toBe("dialog");
     expect(popoverEl.getAttribute("aria-modal")).toBe("false");
-    expect(popoverEl.getAttribute("aria-labelledby")).toBe(popoverEl.querySelector(".cl-popover-header").id);
+    expect(popoverEl.getAttribute("aria-labelledby")).toBe(popoverEl.querySelector(".fs-popover-header").id);
     expect(triggerEl.getAttribute("aria-controls")).toBe(popoverEl.id);
     expect(triggerEl.getAttribute("aria-expanded")).toBe("false");
   });
@@ -72,7 +72,7 @@ describe("Popover", () => {
       expect(popoverEl.classList.contains("is-open")).toBe(true);
     });
 
-    it("elemento com data-cl-dismiss=popover fecha o painel", () => {
+    it("elemento com data-fs-dismiss=popover fecha o painel", () => {
       const { triggerEl, popoverEl } = buildPopover();
       triggerEl.click();
 
@@ -108,12 +108,12 @@ describe("Popover", () => {
       expect(document.body.style.overflow).toBe("");
     });
 
-    it("dispara cl:popover:shown e cl:popover:hidden", () => {
+    it("dispara fs:popover:shown e fs:popover:hidden", () => {
       const { triggerEl, popover } = buildPopover();
       const shownHandler = vi.fn();
       const hiddenHandler = vi.fn();
-      triggerEl.addEventListener("cl:popover:shown", shownHandler);
-      triggerEl.addEventListener("cl:popover:hidden", hiddenHandler);
+      triggerEl.addEventListener("fs:popover:shown", shownHandler);
+      triggerEl.addEventListener("fs:popover:hidden", hiddenHandler);
 
       popover.show();
       expect(shownHandler).toHaveBeenCalledTimes(1);

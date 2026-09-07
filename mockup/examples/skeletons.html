@@ -15,19 +15,19 @@
             flex-wrap: wrap;
             gap: 24px;
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .card-skeleton {
             width: 220px;
             padding: 16px;
-            background-color: var(--cl-color-surface);
-            border-radius: var(--cl-radius-md);
+            background-color: var(--fs-color-surface);
+            border-radius: var(--fs-radius-md);
         }
 
         .avatar-row {
@@ -36,16 +36,16 @@
             gap: 12px;
             width: 220px;
             padding: 16px;
-            background-color: var(--cl-color-surface);
-            border-radius: var(--cl-radius-md);
+            background-color: var(--fs-color-surface);
+            border-radius: var(--fs-radius-md);
         }
 
-        .avatar-row .cl-skeleton-circle {
+        .avatar-row .fs-skeleton-circle {
             width: 40px;
             height: 40px;
         }
 
-        .avatar-row .cl-skeleton-text-group {
+        .avatar-row .fs-skeleton-text-group {
             flex: 1;
         }
     </style>
@@ -55,25 +55,25 @@
 <body>
 <div class="theme-panel">
         <div class="avatar-row">
-            <div class="cl-skeleton cl-skeleton-circle"></div>
-            <div class="cl-skeleton-text-group">
-                <div class="cl-skeleton cl-skeleton-text" style="width: 60%;"></div>
-                <div class="cl-skeleton cl-skeleton-text" style="width: 40%;"></div>
+            <div class="fs-skeleton fs-skeleton-circle"></div>
+            <div class="fs-skeleton-text-group">
+                <div class="fs-skeleton fs-skeleton-text" style="width: 60%;"></div>
+                <div class="fs-skeleton fs-skeleton-text" style="width: 40%;"></div>
             </div>
         </div>
 
         <div class="card-skeleton">
-            <div class="cl-skeleton cl-skeleton-rect" style="height: 120px; margin-bottom: 12px;"></div>
-            <div class="cl-skeleton cl-skeleton-text"></div>
-            <div class="cl-skeleton cl-skeleton-text"></div>
-            <div class="cl-skeleton cl-skeleton-text"></div>
+            <div class="fs-skeleton fs-skeleton-rect" style="height: 120px; margin-bottom: 12px;"></div>
+            <div class="fs-skeleton fs-skeleton-text"></div>
+            <div class="fs-skeleton fs-skeleton-text"></div>
+            <div class="fs-skeleton fs-skeleton-text"></div>
         </div>
 
         <div class="card-skeleton">
-            <p class="u-fs-sm u-fw-medium u-mb-2">Variante wave</p>
-            <div class="cl-skeleton cl-skeleton-rect cl-skeleton-wave" style="height: 60px; margin-bottom: 12px;"></div>
-            <div class="cl-skeleton cl-skeleton-text cl-skeleton-wave"></div>
-            <div class="cl-skeleton cl-skeleton-text cl-skeleton-wave"></div>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Variante wave</p>
+            <div class="fs-skeleton fs-skeleton-rect fs-skeleton-wave" style="height: 60px; margin-bottom: 12px;"></div>
+            <div class="fs-skeleton fs-skeleton-text fs-skeleton-wave"></div>
+            <div class="fs-skeleton fs-skeleton-text fs-skeleton-wave"></div>
         </div>
     </div>
 

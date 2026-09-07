@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// Um lado com largura fixa (a "aside") e o outro preenchendo o espaço
+// restante, quebrando para empilhado quando o container fica estreito
+// demais — sem media query: `.fs-sidebar-content` força a quebra via
+// `min-width` quando não cabe ao lado da aside na mesma linha.
+@layer layout {
+  .fs-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fs-sidebar-gap, #{map.get($spacers, 3)});
+  }
+
+  .fs-sidebar-aside {
+    flex-basis: var(--fs-sidebar-width, 16rem);
+    flex-grow: 1;
+  }
+
+  .fs-sidebar-content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+  }
+
+  .fs-sidebar-reverse {
+    flex-direction: row-reverse;
+  }
+
+  @each $key, $value in $spacers {
+    .fs-sidebar-gap-#{$key} {
+      --fs-sidebar-gap: #{$value};
+    }
+  }
+
+  @each $key, $value in $column-max-widths {
+    .fs-sidebar-width-#{$key} {
+      --fs-sidebar-width: #{$value};
+    }
+  }
+}

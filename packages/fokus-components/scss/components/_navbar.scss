@@ -1,0 +1,61 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--fs-color-border);
+    background-color: var(--fs-color-surface);
+  }
+
+  .fs-navbar-brand {
+    color: var(--fs-color-text);
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+  }
+
+  .fs-navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  .fs-nav-link:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-nav-link:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-nav-link.is-active {
+    color: var(--fs-alert-primary-text);
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-nav-link.is-disabled {
+    color: var(--fs-color-muted);
+    pointer-events: none;
+  }
+}

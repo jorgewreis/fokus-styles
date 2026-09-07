@@ -1,12 +1,12 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { FileUploadAdvanced } from "../../packages/clarus-js/js/file-upload-advanced.js";
+import { FileUploadAdvanced } from "../../packages/fokus-js/js/file-upload-advanced.js";
 
 function buildUpload() {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <div class="cl-file-upload" id="upload">
-      <input type="file" class="cl-file-input" id="anexos" multiple>
-      <label for="anexos" class="cl-file-label">Escolher arquivos</label>
+    <div class="fs-file-upload" id="upload">
+      <input type="file" class="fs-file-input" id="anexos" multiple>
+      <label for="anexos" class="fs-file-label">Escolher arquivos</label>
     </div>
   `;
   document.body.appendChild(wrapper);
@@ -36,7 +36,7 @@ describe("FileUploadAdvanced", () => {
     document.body.innerHTML = "";
   });
 
-  it("lança erro se .cl-file-input não existe", () => {
+  it("lança erro se .fs-file-input não existe", () => {
     const div = document.createElement("div");
     expect(() => new FileUploadAdvanced(div)).toThrow();
   });
@@ -56,10 +56,10 @@ describe("FileUploadAdvanced", () => {
     expect(upload.getFiles().map((f) => f.name)).toEqual(["foto.png", "doc.pdf"]);
   });
 
-  it("dispara cl:file-upload:added com o id de cada item novo", () => {
+  it("dispara fs:file-upload:added com o id de cada item novo", () => {
     const { rootEl, input } = buildUpload();
     const handler = vi.fn();
-    rootEl.addEventListener("cl:file-upload:added", handler);
+    rootEl.addEventListener("fs:file-upload:added", handler);
 
     input.files = [makeFile("a.txt", 10)];
     input.dispatchEvent(new Event("change", { bubbles: true }));
@@ -71,10 +71,10 @@ describe("FileUploadAdvanced", () => {
     expect(typeof items[0].id).toBe("string");
   });
 
-  it("setProgress() atualiza --cl-progress-value do item", () => {
+  it("setProgress() atualiza --fs-progress-value do item", () => {
     const { rootEl, input, upload } = buildUpload();
     let id;
-    rootEl.addEventListener("cl:file-upload:added", (e) => {
+    rootEl.addEventListener("fs:file-upload:added", (e) => {
       id = e.detail.items[0].id;
     });
 
@@ -83,14 +83,14 @@ describe("FileUploadAdvanced", () => {
 
     upload.setProgress(id, 42);
 
-    const bar = rootEl.querySelector(`[data-file-id="${id}"] .cl-progress-bar`);
-    expect(bar.getAttribute("style")).toContain("--cl-progress-value: 42");
+    const bar = rootEl.querySelector(`[data-file-id="${id}"] .fs-progress-bar`);
+    expect(bar.getAttribute("style")).toContain("--fs-progress-value: 42");
   });
 
   it("setError() marca o item com is-error e mostra a mensagem no lugar do tamanho", () => {
     const { rootEl, input, upload } = buildUpload();
     let id;
-    rootEl.addEventListener("cl:file-upload:added", (e) => {
+    rootEl.addEventListener("fs:file-upload:added", (e) => {
       id = e.detail.items[0].id;
     });
 
@@ -101,23 +101,23 @@ describe("FileUploadAdvanced", () => {
 
     const itemEl = rootEl.querySelector(`[data-file-id="${id}"]`);
     expect(itemEl.classList.contains("is-error")).toBe(true);
-    expect(itemEl.querySelector(".cl-file-upload-size").textContent).toBe("Arquivo muito grande");
+    expect(itemEl.querySelector(".fs-file-upload-size").textContent).toBe("Arquivo muito grande");
   });
 
-  it("clicar em remover tira o item da lista, de getFiles() e dispara cl:file-upload:removed", () => {
+  it("clicar em remover tira o item da lista, de getFiles() e dispara fs:file-upload:removed", () => {
     const { rootEl, input, upload } = buildUpload();
 
     input.files = [makeFile("a.txt", 10)];
     input.dispatchEvent(new Event("change", { bubbles: true }));
 
     const handler = vi.fn();
-    rootEl.addEventListener("cl:file-upload:removed", handler);
+    rootEl.addEventListener("fs:file-upload:removed", handler);
 
     const removeBtn = rootEl.querySelector("[data-file-upload-remove]");
     removeBtn.click();
 
     expect(upload.getFiles()).toHaveLength(0);
-    expect(rootEl.querySelectorAll(".cl-file-upload-item")).toHaveLength(0);
+    expect(rootEl.querySelectorAll(".fs-file-upload-item")).toHaveLength(0);
     expect(handler).toHaveBeenCalledTimes(1);
   });
 
@@ -127,10 +127,10 @@ describe("FileUploadAdvanced", () => {
     input.files = [makeFile("foto.png", 10, "image/png"), makeFile("doc.pdf", 10, "application/pdf")];
     input.dispatchEvent(new Event("change", { bubbles: true }));
 
-    const items = rootEl.querySelectorAll(".cl-file-upload-item");
-    expect(items[0].querySelector(".cl-file-upload-thumb img")).not.toBeNull();
-    expect(items[1].querySelector(".cl-file-upload-thumb img")).toBeNull();
-    expect(items[1].querySelector(".cl-file-upload-thumb").textContent).toBe("PDF");
+    const items = rootEl.querySelectorAll(".fs-file-upload-item");
+    expect(items[0].querySelector(".fs-file-upload-thumb img")).not.toBeNull();
+    expect(items[1].querySelector(".fs-file-upload-thumb img")).toBeNull();
+    expect(items[1].querySelector(".fs-file-upload-thumb").textContent).toBe("PDF");
   });
 
   it("dispose() remove os listeners", () => {
@@ -140,6 +140,6 @@ describe("FileUploadAdvanced", () => {
     input.files = [makeFile("a.txt", 10)];
     input.dispatchEvent(new Event("change", { bubbles: true }));
 
-    expect(rootEl.querySelectorAll(".cl-file-upload-item")).toHaveLength(0);
+    expect(rootEl.querySelectorAll(".fs-file-upload-item")).toHaveLength(0);
   });
 });

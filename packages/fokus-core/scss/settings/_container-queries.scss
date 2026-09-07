@@ -1,0 +1,10 @@
+// Larguras de referência para os utilitários de container query
+// (`@container`) — ver `packages/fokus-utilities/scss/utilities/_container-queries.scss`.
+// Distintas da escala de `$breakpoints` (viewport): containers costumam
+// ser bem menores que a viewport (um card numa sidebar, por exemplo), daí
+// uma escala própria e mais compacta.
+$container-breakpoints: (
+  sm: 320px,
+  md: 480px,
+  lg: 640px
+) !default;

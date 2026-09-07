@@ -1,0 +1,101 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-pagination {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  .fs-page-link:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-page-link:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-page-item.is-active .fs-page-link {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-page-item.is-disabled .fs-page-link {
+    color: var(--fs-color-muted);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  // Bordered: itens colados (sem gap), borda contínua fundida (técnica do
+  // Input Group — margin negativo + z-index no item ativo/hover), cantos
+  // arredondados só nas pontas.
+  .fs-pagination-bordered {
+    gap: 0;
+  }
+
+  .fs-pagination-bordered .fs-page-link {
+    border-radius: 0;
+  }
+
+  .fs-pagination-bordered .fs-page-item:not(:first-child) .fs-page-link {
+    margin-left: -1px;
+  }
+
+  .fs-pagination-bordered .fs-page-item:first-child .fs-page-link {
+    border-top-left-radius: var(--fs-radius-sm);
+    border-bottom-left-radius: var(--fs-radius-sm);
+  }
+
+  .fs-pagination-bordered .fs-page-item:last-child .fs-page-link {
+    border-top-right-radius: var(--fs-radius-sm);
+    border-bottom-right-radius: var(--fs-radius-sm);
+  }
+
+  .fs-pagination-bordered .fs-page-link:hover,
+  .fs-pagination-bordered .fs-page-item.is-active .fs-page-link {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Compacta / grande — mesma escala sm/lg dos outros componentes.
+  .fs-pagination-sm .fs-page-link {
+    min-width: 26px;
+    height: 26px;
+    padding: 0 6px;
+    font-size: $font-size-xs;
+  }
+
+  .fs-pagination-lg .fs-page-link {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: $font-size-md;
+  }
+
+  // Prev/next descritivo: item com ícone + texto ("Anterior"/"Próxima") em
+  // vez de só "«"/"»" — `.fs-page-link` já acomoda largura variável
+  // (min-width é piso, não teto); só falta o espaçamento entre ícone e texto.
+  .fs-page-link-text {
+    gap: 6px;
+    padding: 0 14px;
+  }
+}

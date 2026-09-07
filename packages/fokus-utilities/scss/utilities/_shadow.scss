@@ -1,0 +1,13 @@
+@layer utilities {
+  .fs-u-shadow-sm {
+    box-shadow: var(--fs-shadow-sm);
+  }
+
+  .fs-u-shadow {
+    box-shadow: var(--fs-shadow-md);
+  }
+
+  .fs-u-shadow-lg {
+    box-shadow: var(--fs-shadow-lg);
+  }
+}

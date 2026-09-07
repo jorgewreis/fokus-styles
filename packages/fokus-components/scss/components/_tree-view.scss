@@ -1,0 +1,62 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-tree,
+  .fs-tree [role="group"] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-tree [role="group"] {
+    padding-left: 20px;
+  }
+
+  .fs-tree [role="treeitem"] {
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-tree [role="treeitem"]:focus-visible {
+    outline: none;
+  }
+
+  .fs-tree [role="treeitem"]:focus-visible > .fs-tree-label {
+    @include focus-ring;
+  }
+
+  .fs-tree-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    font-size: $font-size-md;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .fs-tree-label:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-tree [role="treeitem"][aria-selected="true"] > .fs-tree-label {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+  }
+
+  .fs-tree-toggle {
+    flex-shrink: 0;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid currentcolor;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  .fs-tree [role="treeitem"][aria-expanded="true"] > .fs-tree-label > .fs-tree-toggle {
+    transform: rotate(90deg);
+  }
+}

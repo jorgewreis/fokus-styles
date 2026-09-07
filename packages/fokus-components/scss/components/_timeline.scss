@@ -1,0 +1,138 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Linha do tempo, 100% CSS. Vertical por padrão (`.fs-timeline`); variante
+// `.fs-timeline-horizontal` inverte o eixo. Estados por item (`.fs-timeline-item`):
+// padrão (pendente), `.fs-timeline-active`, `.fs-timeline-completed`,
+// `.fs-timeline-failed` — mesma lógica de conector do Stepper
+// (scss/components/_stepper.scss): a linha entre marcadores fica na cor do
+// item concluído para indicar progresso.
+
+@layer components {
+  .fs-timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-timeline-item {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  .fs-timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .fs-timeline-marker {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    background-color: var(--fs-color-surface);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid var(--fs-color-border);
+    border-radius: 50%;
+  }
+
+  .fs-timeline-item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 7px;
+    width: 2px;
+    height: calc(100% - 22px);
+    background-color: var(--fs-color-border);
+  }
+
+  .fs-timeline-content {
+    flex: 1;
+    padding-top: 1px;
+  }
+
+  .fs-timeline-title {
+    margin: 0;
+    color: var(--fs-color-text);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-timeline-text {
+    margin: 4px 0 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+
+  .fs-timeline-time {
+    display: block;
+    margin-top: 2px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+  }
+
+  // Item ativo (em andamento).
+  .fs-timeline-active .fs-timeline-marker {
+    background-color: var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
+  }
+
+  // Item concluído: marcador preenchido com um "check" (mesmo ícone do
+  // Stepper) e o conector seguinte fica na cor de sucesso (indica progresso).
+  .fs-timeline-completed .fs-timeline-marker {
+    background-color: var(--fs-color-success);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5.5 4 8l4-6'/%3E%3C/svg%3E");
+    border-color: var(--fs-color-success);
+  }
+
+  .fs-timeline-completed:not(:last-child)::before {
+    background-color: var(--fs-color-success);
+  }
+
+  // Item com falha.
+  .fs-timeline-failed .fs-timeline-marker {
+    background-color: var(--fs-color-danger);
+    border-color: var(--fs-color-danger);
+  }
+
+  .fs-timeline-failed .fs-timeline-title {
+    color: var(--fs-alert-danger-text);
+  }
+
+  // Variante horizontal: cada item vira uma coluna, marcador no topo e
+  // conector correndo na horizontal entre os centros dos marcadores (mesma
+  // técnica do `.fs-step` padrão em scss/components/_stepper.scss).
+  .fs-timeline-horizontal {
+    flex-direction: row;
+  }
+
+  .fs-timeline-horizontal .fs-timeline-item {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  // No modo horizontal o marcador não precisa do deslocamento vertical usado
+  // para alinhar com a primeira linha de texto (margin-top no modo vertical);
+  // zerá-lo faz o conector cair exatamente no centro do círculo.
+  .fs-timeline-horizontal .fs-timeline-marker {
+    margin-top: 0;
+  }
+
+  .fs-timeline-horizontal .fs-timeline-item:not(:last-child)::before {
+    top: 7px;
+    left: calc(50% + 15px);
+    width: calc(100% - 30px);
+    height: 2px;
+  }
+
+  .fs-timeline-horizontal .fs-timeline-content {
+    padding-top: 0;
+  }
+}

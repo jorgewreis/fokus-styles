@@ -1,0 +1,98 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Três estilos visuais (linha = padrão, pill, depth), mais alinhamento e
+// tamanho — todos modificadores de `.fs-tabs`, reaproveitando `.fs-nav-link`
+// (_navbar.scss) como o item clicável em todos os três, então o HTML e a
+// navegação por teclado (ArrowLeft/ArrowRight/Home/End, `js/tabs.js`) não
+// mudam entre estilos.
+@layer components {
+  .fs-tabs {
+    display: flex;
+    border-bottom: var(--fs-border-width) solid var(--fs-color-border-default);
+  }
+
+  .fs-tabs .fs-nav-link {
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    border-radius: var(--fs-radius-sm) var(--fs-radius-sm) 0 0;
+  }
+
+  .fs-tabs .fs-nav-link.is-active {
+    border-bottom-color: var(--fs-color-primary);
+  }
+
+  // Pill: sem linha embaixo, cada item vira um "chip" com fundo próprio
+  // quando ativo — nada de forma circular, só o token de raio padrão.
+  .fs-tabs-pill {
+    gap: 4px;
+    border-bottom: none;
+  }
+
+  .fs-tabs-pill .fs-nav-link {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-tabs-pill .fs-nav-link.is-active {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+  }
+
+  // Depth: fundo neutro por trás dos itens; o ativo "sobe" com borda nos 3
+  // lados e fundo igual ao do conteúdo, criando a ilusão de aba de pasta
+  // fundida ao painel abaixo (a borda inferior do container fica por baixo
+  // do item ativo, escondida pela cor de fundo igual).
+  .fs-tabs-depth {
+    gap: 2px;
+    padding: 4px 4px 0;
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-tabs-depth .fs-nav-link {
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: var(--fs-radius-sm) var(--fs-radius-sm) 0 0;
+  }
+
+  .fs-tabs-depth .fs-nav-link.is-active {
+    border-color: var(--fs-color-border);
+    background-color: var(--fs-color-surface);
+  }
+
+  // Alinhamento dos itens dentro do container (padrão: início/esquerda).
+  .fs-tabs-center {
+    justify-content: center;
+  }
+
+  .fs-tabs-right {
+    justify-content: flex-end;
+  }
+
+  .fs-tabs-fill .fs-nav-link {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // Tamanhos — mesma escala sm/lg dos outros componentes.
+  .fs-tabs-sm .fs-nav-link {
+    padding: 6px 10px;
+    font-size: $font-size-sm;
+  }
+
+  .fs-tabs-lg .fs-nav-link {
+    padding: 10px 16px;
+    font-size: $font-size-lg;
+  }
+
+  .fs-tab-content > .fs-tab-pane {
+    display: none;
+  }
+
+  .fs-tab-content > .fs-tab-pane.is-active {
+    display: block;
+  }
+}

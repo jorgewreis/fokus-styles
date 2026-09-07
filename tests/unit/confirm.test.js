@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach } from "vitest";
-import { confirm } from "../../packages/clarus-js/js/confirm.js";
+import { confirm } from "../../packages/fokus-js/js/confirm.js";
 
 describe("confirm()", () => {
   afterEach(() => {
@@ -16,9 +16,9 @@ describe("confirm()", () => {
       variant: "danger",
     });
 
-    const modalEl = document.querySelector(".cl-modal.cl-alert-dialog");
-    expect(modalEl.querySelector(".cl-modal-title").textContent).toBe("Excluir item?");
-    expect(modalEl.querySelector(".cl-alert-dialog-message").textContent).toBe("Essa ação não pode ser desfeita.");
+    const modalEl = document.querySelector(".fs-modal.fs-alert-dialog");
+    expect(modalEl.querySelector(".fs-modal-title").textContent).toBe("Excluir item?");
+    expect(modalEl.querySelector(".fs-alert-dialog-message").textContent).toBe("Essa ação não pode ser desfeita.");
     expect(modalEl.querySelector('[data-action="confirm"]').textContent).toBe("Excluir");
     expect(modalEl.querySelector('[data-action="cancel"]').textContent).toBe("Voltar");
   });
@@ -26,16 +26,16 @@ describe("confirm()", () => {
   it("usa variant=danger e título/textos padrão quando nada é informado", async () => {
     confirm();
 
-    const modalEl = document.querySelector(".cl-modal.cl-alert-dialog");
-    expect(modalEl.querySelector(".cl-modal-title").textContent).toBe("Tem certeza?");
+    const modalEl = document.querySelector(".fs-modal.fs-alert-dialog");
+    expect(modalEl.querySelector(".fs-modal-title").textContent).toBe("Tem certeza?");
     expect(modalEl.querySelector('[data-action="confirm"]').textContent).toBe("Confirmar");
     expect(modalEl.querySelector('[data-action="cancel"]').textContent).toBe("Cancelar");
-    expect(modalEl.querySelector(".cl-alert-dialog-message")).toBeNull();
+    expect(modalEl.querySelector(".fs-alert-dialog-message")).toBeNull();
   });
 
   it("abre o modal (show) imediatamente", () => {
     confirm({ title: "Título" });
-    expect(document.querySelector(".cl-modal.cl-alert-dialog.is-open")).not.toBeNull();
+    expect(document.querySelector(".fs-modal.fs-alert-dialog.is-open")).not.toBeNull();
   });
 
   it("resolve true ao clicar em confirmar, e remove o modal do DOM", async () => {
@@ -45,7 +45,7 @@ describe("confirm()", () => {
     const result = await promise;
 
     expect(result).toBe(true);
-    expect(document.querySelector(".cl-modal.cl-alert-dialog")).toBeNull();
+    expect(document.querySelector(".fs-modal.fs-alert-dialog")).toBeNull();
   });
 
   it("resolve false ao clicar em cancelar", async () => {
@@ -80,8 +80,8 @@ describe("confirm()", () => {
   it("escapa HTML em título/mensagem (não interpreta marcação)", async () => {
     confirm({ title: "<img src=x onerror=alert(1)>", message: "<b>oi</b>" });
 
-    const modalEl = document.querySelector(".cl-modal.cl-alert-dialog");
-    expect(modalEl.querySelector(".cl-modal-title").innerHTML).not.toContain("<img");
-    expect(modalEl.querySelector(".cl-alert-dialog-message").innerHTML).not.toContain("<b>");
+    const modalEl = document.querySelector(".fs-modal.fs-alert-dialog");
+    expect(modalEl.querySelector(".fs-modal-title").innerHTML).not.toContain("<img");
+    expect(modalEl.querySelector(".fs-alert-dialog-message").innerHTML).not.toContain("<b>");
   });
 });

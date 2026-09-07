@@ -1,21 +1,21 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { Accordion } from "../../packages/clarus-js/js/accordion.js";
+import { Accordion } from "../../packages/fokus-js/js/accordion.js";
 
 function buildAccordion({ multiple = false } = {}) {
   const el = document.createElement("div");
   if (multiple) el.setAttribute("data-multiple", "true");
   el.innerHTML = `
-    <div class="cl-accordion-item">
-      <h3 class="cl-accordion-header">
-        <button type="button" class="cl-accordion-button" aria-expanded="true">Item 1</button>
+    <div class="fs-accordion-item">
+      <h3 class="fs-accordion-header">
+        <button type="button" class="fs-accordion-button" aria-expanded="true">Item 1</button>
       </h3>
-      <div class="cl-accordion-collapse"><div class="cl-accordion-body">Corpo 1</div></div>
+      <div class="fs-accordion-collapse"><div class="fs-accordion-body">Corpo 1</div></div>
     </div>
-    <div class="cl-accordion-item">
-      <h3 class="cl-accordion-header">
-        <button type="button" class="cl-accordion-button" aria-expanded="false">Item 2</button>
+    <div class="fs-accordion-item">
+      <h3 class="fs-accordion-header">
+        <button type="button" class="fs-accordion-button" aria-expanded="false">Item 2</button>
       </h3>
-      <div class="cl-accordion-collapse"><div class="cl-accordion-body">Corpo 2</div></div>
+      <div class="fs-accordion-collapse"><div class="fs-accordion-body">Corpo 2</div></div>
     </div>
   `;
   document.body.appendChild(el);
@@ -46,7 +46,7 @@ describe("Accordion", () => {
 
   it("esconde imediatamente os painéis que não começam abertos", () => {
     const { el } = buildAccordion();
-    const panels = el.querySelectorAll(".cl-accordion-collapse");
+    const panels = el.querySelectorAll(".fs-accordion-collapse");
 
     expect(panels[0].style.display).not.toBe("none");
     expect(panels[1].style.display).toBe("none");
@@ -54,8 +54,8 @@ describe("Accordion", () => {
 
   it("liga botão e painel via aria-controls/aria-labelledby/role=region", () => {
     const { el } = buildAccordion();
-    const button = el.querySelectorAll(".cl-accordion-button")[0];
-    const panel = el.querySelectorAll(".cl-accordion-collapse")[0];
+    const button = el.querySelectorAll(".fs-accordion-button")[0];
+    const panel = el.querySelectorAll(".fs-accordion-collapse")[0];
 
     expect(button.getAttribute("aria-controls")).toBe(panel.id);
     expect(panel.getAttribute("aria-labelledby")).toBe(button.id);
@@ -64,7 +64,7 @@ describe("Accordion", () => {
 
   it("por padrão, abrir um item fecha os demais (exclusivo)", async () => {
     const { el } = buildAccordion();
-    const buttons = el.querySelectorAll(".cl-accordion-button");
+    const buttons = el.querySelectorAll(".fs-accordion-button");
 
     buttons[1].click();
     await flushMicrotasks();
@@ -75,7 +75,7 @@ describe("Accordion", () => {
 
   it("com data-multiple=true, vários painéis podem ficar abertos ao mesmo tempo", async () => {
     const { el } = buildAccordion({ multiple: true });
-    const buttons = el.querySelectorAll(".cl-accordion-button");
+    const buttons = el.querySelectorAll(".fs-accordion-button");
 
     buttons[1].click();
     await flushMicrotasks();
@@ -86,7 +86,7 @@ describe("Accordion", () => {
 
   it("clicar num item já aberto fecha ele mesmo", async () => {
     const { el } = buildAccordion();
-    const buttons = el.querySelectorAll(".cl-accordion-button");
+    const buttons = el.querySelectorAll(".fs-accordion-button");
 
     buttons[0].click();
     await flushMicrotasks();
@@ -94,13 +94,13 @@ describe("Accordion", () => {
     expect(buttons[0].getAttribute("aria-expanded")).toBe("false");
   });
 
-  it("dispara cl:accordion:shown e cl:accordion:hidden", async () => {
+  it("dispara fs:accordion:shown e fs:accordion:hidden", async () => {
     const { el } = buildAccordion();
-    const buttons = el.querySelectorAll(".cl-accordion-button");
+    const buttons = el.querySelectorAll(".fs-accordion-button");
     const shownHandler = vi.fn();
     const hiddenHandler = vi.fn();
-    buttons[1].addEventListener("cl:accordion:shown", shownHandler);
-    buttons[0].addEventListener("cl:accordion:hidden", hiddenHandler);
+    buttons[1].addEventListener("fs:accordion:shown", shownHandler);
+    buttons[0].addEventListener("fs:accordion:hidden", hiddenHandler);
 
     buttons[1].click();
     await flushMicrotasks();

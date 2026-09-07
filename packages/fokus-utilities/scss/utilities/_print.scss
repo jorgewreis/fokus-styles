@@ -1,0 +1,27 @@
+@layer utilities {
+  @media print {
+    .fs-u-print-hide {
+      display: none !important;
+    }
+  }
+
+  @media not print {
+    .fs-u-print-only {
+      display: none !important;
+    }
+  }
+
+  @media print {
+    .fs-u-print-block {
+      display: block !important;
+    }
+
+    .fs-u-print-inline {
+      display: inline !important;
+    }
+
+    .fs-u-print-inline-block {
+      display: inline-block !important;
+    }
+  }
+}

@@ -15,8 +15,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
@@ -31,103 +31,103 @@
 
     <div class="theme-panel">
 <section>
-            <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Accordion — auto-init via data-cl, só um painel aberto por vez (data-multiple="true" permite vários)</p>
-            <div class="cl-accordion" data-cl="accordion" id="accordion-claro">
-                <div class="cl-accordion-item">
-                    <h3 class="cl-accordion-header">
-                        <button type="button" class="cl-accordion-button" aria-expanded="true">O que é o Clarus CSS?</button>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Accordion — auto-init via data-fs, só um painel aberto por vez (data-multiple="true" permite vários)</p>
+            <div class="fs-accordion" data-fs="accordion" id="accordion-claro">
+                <div class="fs-accordion-item">
+                    <h3 class="fs-accordion-header">
+                        <button type="button" class="fs-accordion-button" aria-expanded="true">O que é o Fokus Styles?</button>
                     </h3>
-                    <div class="cl-accordion-collapse">
-                        <div class="cl-accordion-body">Um framework CSS open source, próximo ao Bootstrap, com HTML/CSS/JS nativo e zero dependências.</div>
+                    <div class="fs-accordion-collapse">
+                        <div class="fs-accordion-body">Um framework CSS open source, próximo ao Bootstrap, com HTML/CSS/JS nativo e zero dependências.</div>
                     </div>
                 </div>
-                <div class="cl-accordion-item">
-                    <h3 class="cl-accordion-header">
-                        <button type="button" class="cl-accordion-button" aria-expanded="false">Como funciona o dark mode?</button>
+                <div class="fs-accordion-item">
+                    <h3 class="fs-accordion-header">
+                        <button type="button" class="fs-accordion-button" aria-expanded="false">Como funciona o dark mode?</button>
                     </h3>
-                    <div class="cl-accordion-collapse">
-                        <div class="cl-accordion-body">Via CSS Custom Properties, alternando com o atributo <code class="u-font-mono">data-theme="dark"</code>.</div>
+                    <div class="fs-accordion-collapse">
+                        <div class="fs-accordion-body">Via CSS Custom Properties, alternando com o atributo <code class="fs-u-font-mono">data-theme="dark"</code>.</div>
                     </div>
                 </div>
-                <div class="cl-accordion-item">
-                    <h3 class="cl-accordion-header">
-                        <button type="button" class="cl-accordion-button" aria-expanded="false">Reaproveita a infraestrutura da Fase 7?</button>
+                <div class="fs-accordion-item">
+                    <h3 class="fs-accordion-header">
+                        <button type="button" class="fs-accordion-button" aria-expanded="false">Reaproveita a infraestrutura da Fase 7?</button>
                     </h3>
-                    <div class="cl-accordion-collapse">
-                        <div class="cl-accordion-body">Sim — <code class="u-font-mono">collapse()</code>/<code class="u-font-mono">expand()</code> de <code class="u-font-mono">Clarus.core</code> animam a altura de cada painel.</div>
+                    <div class="fs-accordion-collapse">
+                        <div class="fs-accordion-body">Sim — <code class="fs-u-font-mono">collapse()</code>/<code class="fs-u-font-mono">expand()</code> de <code class="fs-u-font-mono">FokusStyles.core</code> animam a altura de cada painel.</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <p class="u-fs-sm u-fw-medium u-mb-2">Tabs — auto-init via data-cl, navegação por ArrowLeft/ArrowRight/Home/End</p>
-            <div class="cl-tabs" data-cl="tabs" id="tabs-claro">
-                <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-perfil-claro">Perfil</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-seguranca-claro">Segurança</a>
-                <a href="#" class="cl-nav-link is-disabled" data-cl-target="#tab-notificacoes-claro">Notificações</a>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — auto-init via data-fs, navegação por ArrowLeft/ArrowRight/Home/End</p>
+            <div class="fs-tabs" data-fs="tabs" id="tabs-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-perfil-claro">Perfil</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-seguranca-claro">Segurança</a>
+                <a href="#" class="fs-nav-link is-disabled" data-fs-target="#tab-notificacoes-claro">Notificações</a>
             </div>
-            <div class="cl-tab-content u-p-3">
-                <div class="cl-tab-pane is-active" id="tab-perfil-claro">Conteúdo da aba Perfil.</div>
-                <div class="cl-tab-pane" id="tab-seguranca-claro">Conteúdo da aba Segurança.</div>
-                <div class="cl-tab-pane" id="tab-notificacoes-claro">Conteúdo da aba Notificações (desabilitada).</div>
-            </div>
-        </section>
-
-        <section>
-            <p class="u-fs-sm u-fw-medium u-mb-2">Tabs — estilo pill, alinhado ao centro</p>
-            <div class="cl-tabs cl-tabs-pill cl-tabs-center" data-cl="tabs" id="tabs-pill-claro">
-                <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-pill-perfil-claro">Perfil</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-pill-seguranca-claro">Segurança</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-pill-notificacoes-claro">Notificações</a>
-            </div>
-            <div class="cl-tab-content u-p-3">
-                <div class="cl-tab-pane is-active" id="tab-pill-perfil-claro">Conteúdo da aba Perfil.</div>
-                <div class="cl-tab-pane" id="tab-pill-seguranca-claro">Conteúdo da aba Segurança.</div>
-                <div class="cl-tab-pane" id="tab-pill-notificacoes-claro">Conteúdo da aba Notificações.</div>
+            <div class="fs-tab-content fs-u-p-3">
+                <div class="fs-tab-pane is-active" id="tab-perfil-claro">Conteúdo da aba Perfil.</div>
+                <div class="fs-tab-pane" id="tab-seguranca-claro">Conteúdo da aba Segurança.</div>
+                <div class="fs-tab-pane" id="tab-notificacoes-claro">Conteúdo da aba Notificações (desabilitada).</div>
             </div>
         </section>
 
         <section>
-            <p class="u-fs-sm u-fw-medium u-mb-2">Tabs — estilo depth, fill, tamanho lg</p>
-            <div class="cl-tabs cl-tabs-depth cl-tabs-fill cl-tabs-lg" data-cl="tabs" id="tabs-depth-claro">
-                <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-depth-perfil-claro">Perfil</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-depth-seguranca-claro">Segurança</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-depth-notificacoes-claro">Notificações</a>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — estilo pill, alinhado ao centro</p>
+            <div class="fs-tabs fs-tabs-pill fs-tabs-center" data-fs="tabs" id="tabs-pill-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-pill-perfil-claro">Perfil</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-pill-seguranca-claro">Segurança</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-pill-notificacoes-claro">Notificações</a>
             </div>
-            <div class="cl-tab-content u-p-3">
-                <div class="cl-tab-pane is-active" id="tab-depth-perfil-claro">Conteúdo da aba Perfil.</div>
-                <div class="cl-tab-pane" id="tab-depth-seguranca-claro">Conteúdo da aba Segurança.</div>
-                <div class="cl-tab-pane" id="tab-depth-notificacoes-claro">Conteúdo da aba Notificações.</div>
-            </div>
-        </section>
-
-        <section>
-            <p class="u-fs-sm u-fw-medium u-mb-2">Tabs — linha, alinhado à direita, tamanho sm</p>
-            <div class="cl-tabs cl-tabs-right cl-tabs-sm" data-cl="tabs" id="tabs-right-claro">
-                <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-right-perfil-claro">Perfil</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-right-seguranca-claro">Segurança</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-right-notificacoes-claro">Notificações</a>
-            </div>
-            <div class="cl-tab-content u-p-3">
-                <div class="cl-tab-pane is-active" id="tab-right-perfil-claro">Conteúdo da aba Perfil.</div>
-                <div class="cl-tab-pane" id="tab-right-seguranca-claro">Conteúdo da aba Segurança.</div>
-                <div class="cl-tab-pane" id="tab-right-notificacoes-claro">Conteúdo da aba Notificações.</div>
+            <div class="fs-tab-content fs-u-p-3">
+                <div class="fs-tab-pane is-active" id="tab-pill-perfil-claro">Conteúdo da aba Perfil.</div>
+                <div class="fs-tab-pane" id="tab-pill-seguranca-claro">Conteúdo da aba Segurança.</div>
+                <div class="fs-tab-pane" id="tab-pill-notificacoes-claro">Conteúdo da aba Notificações.</div>
             </div>
         </section>
 
         <section>
-            <p class="u-fs-sm u-fw-medium u-mb-2">Toast — auto-init via data-cl, mostrado sob demanda com Clarus.Toast.getInstance().show(), auto-dismiss</p>
-            <button type="button" class="cl-btn cl-btn-primary" id="toast-trigger-claro">Mostrar toast</button>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — estilo depth, fill, tamanho lg</p>
+            <div class="fs-tabs fs-tabs-depth fs-tabs-fill fs-tabs-lg" data-fs="tabs" id="tabs-depth-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-depth-perfil-claro">Perfil</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-depth-seguranca-claro">Segurança</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-depth-notificacoes-claro">Notificações</a>
+            </div>
+            <div class="fs-tab-content fs-u-p-3">
+                <div class="fs-tab-pane is-active" id="tab-depth-perfil-claro">Conteúdo da aba Perfil.</div>
+                <div class="fs-tab-pane" id="tab-depth-seguranca-claro">Conteúdo da aba Segurança.</div>
+                <div class="fs-tab-pane" id="tab-depth-notificacoes-claro">Conteúdo da aba Notificações.</div>
+            </div>
         </section>
 
-        <div class="cl-toast-container">
-            <div class="cl-toast cl-toast-success" data-cl="toast" id="toast-claro" data-delay="4000">
-                <div class="cl-toast-header">
+        <section>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — linha, alinhado à direita, tamanho sm</p>
+            <div class="fs-tabs fs-tabs-right fs-tabs-sm" data-fs="tabs" id="tabs-right-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-right-perfil-claro">Perfil</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-right-seguranca-claro">Segurança</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-right-notificacoes-claro">Notificações</a>
+            </div>
+            <div class="fs-tab-content fs-u-p-3">
+                <div class="fs-tab-pane is-active" id="tab-right-perfil-claro">Conteúdo da aba Perfil.</div>
+                <div class="fs-tab-pane" id="tab-right-seguranca-claro">Conteúdo da aba Segurança.</div>
+                <div class="fs-tab-pane" id="tab-right-notificacoes-claro">Conteúdo da aba Notificações.</div>
+            </div>
+        </section>
+
+        <section>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Toast — auto-init via data-fs, mostrado sob demanda com FokusStyles.Toast.getInstance().show(), auto-dismiss</p>
+            <button type="button" class="fs-btn fs-btn-primary" id="toast-trigger-claro">Mostrar toast</button>
+        </section>
+
+        <div class="fs-toast-container">
+            <div class="fs-toast fs-toast-success" data-fs="toast" id="toast-claro" data-delay="4000">
+                <div class="fs-toast-header">
                     <span>Sucesso</span>
-                    <button type="button" class="cl-btn-close" data-cl-dismiss="toast" aria-label="Fechar"></button>
+                    <button type="button" class="fs-btn-close" data-fs-dismiss="toast" aria-label="Fechar"></button>
                 </div>
-                <div class="cl-toast-body">Operação concluída com sucesso.</div>
+                <div class="fs-toast-body">Operação concluída com sucesso.</div>
             </div>
         </div>
     </div>
@@ -135,13 +135,13 @@
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         document.getElementById("toast-trigger-claro").addEventListener("click", () => {
-            Clarus.Toast.getInstance(document.getElementById("toast-claro")).show();
+            FokusStyles.Toast.getInstance(document.getElementById("toast-claro")).show();
         });
-        document.getElementById("toast-trigger-escuro").addEventListener("click", () => {
-            Clarus.Toast.getInstance(document.getElementById("toast-escuro")).show();
+        document.getElementById("toast-trigger-escuro")?.addEventListener("click", () => {
+            FokusStyles.Toast.getInstance(document.getElementById("toast-escuro")).show();
         });
     </script>
 

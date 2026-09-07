@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template - Landing Page | Clarus CSS</title>
+    <title>Template - Landing Page | Fokus Styles</title>
 
     <!-- STYLES IMPORT -->
     <link rel="stylesheet" href="../../dist/css/fonts.css">
@@ -20,11 +20,11 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            background-color: var(--cl-color-surface);
-            border-bottom: 1px solid var(--cl-color-border);
+            background-color: var(--fs-color-surface);
+            border-bottom: 1px solid var(--fs-color-border);
         }
 
-        .landing-header .cl-navbar {
+        .landing-header .fs-navbar {
             max-width: 1140px;
             margin: 0 auto;
             padding: 12px 24px;
@@ -61,18 +61,18 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            border-radius: var(--cl-radius-md);
-            background-color: var(--cl-alert-primary-bg);
-            color: var(--cl-alert-primary-text);
+            border-radius: var(--fs-radius-md);
+            background-color: var(--fs-alert-primary-bg);
+            color: var(--fs-alert-primary-text);
             margin-bottom: 12px;
         }
 
         .stats-strip {
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         .stat-value {
-            font-size: var(--cl-font-size-h2);
+            font-size: var(--fs-font-size-h2);
             font-weight: 600;
             line-height: 1.2;
         }
@@ -83,14 +83,14 @@
             flex-direction: column;
         }
 
-        .pricing-card .cl-card-body {
+        .pricing-card .fs-card-body {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         .pricing-price {
-            font-size: var(--cl-font-size-h2);
+            font-size: var(--fs-font-size-h2);
             font-weight: 600;
         }
 
@@ -110,14 +110,14 @@
 
         .cta-banner {
             text-align: center;
-            background-color: var(--cl-color-primary);
+            background-color: var(--fs-color-primary);
             color: #fff;
-            border-radius: var(--cl-radius-lg);
+            border-radius: var(--fs-radius-lg);
             padding: 56px 24px;
         }
 
         .landing-footer {
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
             padding: 48px 24px 24px;
         }
     </style>
@@ -127,39 +127,39 @@
 <!--
   Template "Landing Page" — página de marketing genérica (hero, recursos,
   preços, CTA, rodapé), com marca fictícia "Orbit" só pra ilustrar o
-  conteúdo — não é a página oficial do Clarus CSS. Montada só com
+  conteúdo — não é a página oficial do Fokus Styles. Montada só com
   componentes/utilitários já publicados. Ver docs/README.md#templates-prontos.
 -->
 
 <header class="landing-header">
-    <nav class="cl-navbar">
-        <a href="#" class="cl-navbar-brand">
-            <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+    <nav class="fs-navbar">
+        <a href="#" class="fs-navbar-brand">
+            <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
             Orbit
         </a>
-        <ul class="cl-navbar-nav">
-            <li><a href="#features" class="cl-nav-link">Recursos</a></li>
-            <li><a href="#pricing" class="cl-nav-link">Preços</a></li>
-            <li><a href="#" class="cl-nav-link">FAQ</a></li>
+        <ul class="fs-navbar-nav">
+            <li><a href="#features" class="fs-nav-link">Recursos</a></li>
+            <li><a href="#pricing" class="fs-nav-link">Preços</a></li>
+            <li><a href="#" class="fs-nav-link">FAQ</a></li>
         </ul>
-        <button type="button" class="cl-btn" id="theme-toggle" aria-label="Alternar tema escuro">
-            <svg class="cl-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <button type="button" class="fs-btn" id="theme-toggle" aria-label="Alternar tema escuro">
+            <svg class="fs-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         </button>
-        <button type="button" class="cl-btn cl-btn-primary">Começar grátis</button>
+        <button type="button" class="fs-btn fs-btn-primary">Começar grátis</button>
     </nav>
 </header>
 
 <main>
     <section class="landing-hero">
         <div class="section-inner">
-            <span class="cl-badge cl-badge-primary u-mb-3">Novo — v1.0</span>
-            <h1 class="u-fs-h1 u-fw-medium">Organize sua equipe em um só lugar</h1>
-            <p class="u-fs-lg cl-card-subtitle">Orbit reúne tarefas, prazos e comunicação da sua equipe numa interface rápida e sem distração.</p>
-            <div class="cl-cluster" style="justify-content: center;">
-                <button type="button" class="cl-btn cl-btn-primary cl-btn-lg">Começar grátis</button>
-                <a href="#" class="cl-btn cl-btn-outline-primary cl-btn-lg">
+            <span class="fs-badge fs-badge-primary fs-u-mb-3">Novo — v1.0</span>
+            <h1 class="fs-u-fs-h1 fs-u-fw-medium">Organize sua equipe em um só lugar</h1>
+            <p class="fs-u-fs-lg fs-card-subtitle">Orbit reúne tarefas, prazos e comunicação da sua equipe numa interface rápida e sem distração.</p>
+            <div class="fs-cluster" style="justify-content: center;">
+                <button type="button" class="fs-btn fs-btn-primary fs-btn-lg">Começar grátis</button>
+                <a href="#" class="fs-btn fs-btn-outline-primary fs-btn-lg">
                     Ver no GitHub
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                 </a>
             </div>
         </div>
@@ -167,52 +167,52 @@
 
     <section id="features">
         <div class="section-inner">
-            <div class="u-text-center u-mb-4">
-                <h2 class="u-fs-h2 u-fw-medium">Tudo que sua equipe precisa</h2>
-                <p class="cl-card-subtitle">Sem plugins extras, sem configuração complicada.</p>
+            <div class="fs-u-text-center fs-u-mb-4">
+                <h2 class="fs-u-fs-h2 fs-u-fw-medium">Tudo que sua equipe precisa</h2>
+                <p class="fs-card-subtitle">Sem plugins extras, sem configuração complicada.</p>
             </div>
-            <div class="cl-row u-g-3">
-                <div class="cl-col-md-4">
+            <div class="fs-row fs-u-g-3">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Rápido por padrão</h3>
-                    <p class="cl-card-subtitle">Interface responde instantaneamente, mesmo com times grandes e milhares de tarefas.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Rápido por padrão</h3>
+                    <p class="fs-card-subtitle">Interface responde instantaneamente, mesmo com times grandes e milhares de tarefas.</p>
                 </div>
-                <div class="cl-col-md-4">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Segurança em primeiro lugar</h3>
-                    <p class="cl-card-subtitle">Permissões por time e por projeto, com histórico completo de alterações.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Segurança em primeiro lugar</h3>
+                    <p class="fs-card-subtitle">Permissões por time e por projeto, com histórico completo de alterações.</p>
                 </div>
-                <div class="cl-col-md-4">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Feito pra colaborar</h3>
-                    <p class="cl-card-subtitle">Comentários, menções e notificações em tempo real, sem sair da tarefa.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Feito pra colaborar</h3>
+                    <p class="fs-card-subtitle">Comentários, menções e notificações em tempo real, sem sair da tarefa.</p>
                 </div>
-                <div class="cl-col-md-4">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Relatórios claros</h3>
-                    <p class="cl-card-subtitle">Veja o progresso da equipe em painéis simples, sem planilha manual.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Relatórios claros</h3>
+                    <p class="fs-card-subtitle">Veja o progresso da equipe em painéis simples, sem planilha manual.</p>
                 </div>
-                <div class="cl-col-md-4">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Disponível em qualquer lugar</h3>
-                    <p class="cl-card-subtitle">Web, desktop e mobile, sempre sincronizados.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Disponível em qualquer lugar</h3>
+                    <p class="fs-card-subtitle">Web, desktop e mobile, sempre sincronizados.</p>
                 </div>
-                <div class="cl-col-md-4">
+                <div class="fs-col-md-4">
                     <div class="feature-icon">
-                        <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
-                    <h3 class="u-fs-lg u-fw-medium">Se adapta ao seu fluxo</h3>
-                    <p class="cl-card-subtitle">Automatize etapas repetitivas com regras simples, sem escrever código.</p>
+                    <h3 class="fs-u-fs-lg fs-u-fw-medium">Se adapta ao seu fluxo</h3>
+                    <p class="fs-card-subtitle">Automatize etapas repetitivas com regras simples, sem escrever código.</p>
                 </div>
             </div>
         </div>
@@ -220,22 +220,22 @@
 
     <section class="stats-strip">
         <div class="section-inner">
-            <div class="cl-row u-g-3 u-text-center">
-                <div class="cl-col-sm-3">
-                    <p class="stat-value u-mb-0">12 mil+</p>
-                    <p class="cl-card-subtitle u-mb-0">Equipes ativas</p>
+            <div class="fs-row fs-u-g-3 fs-u-text-center">
+                <div class="fs-col-sm-3">
+                    <p class="stat-value fs-u-mb-0">12 mil+</p>
+                    <p class="fs-card-subtitle fs-u-mb-0">Equipes ativas</p>
                 </div>
-                <div class="cl-col-sm-3">
-                    <p class="stat-value u-mb-0">99,95%</p>
-                    <p class="cl-card-subtitle u-mb-0">Disponibilidade</p>
+                <div class="fs-col-sm-3">
+                    <p class="stat-value fs-u-mb-0">99,95%</p>
+                    <p class="fs-card-subtitle fs-u-mb-0">Disponibilidade</p>
                 </div>
-                <div class="cl-col-sm-3">
-                    <p class="stat-value u-mb-0">40+</p>
-                    <p class="cl-card-subtitle u-mb-0">Integrações</p>
+                <div class="fs-col-sm-3">
+                    <p class="stat-value fs-u-mb-0">40+</p>
+                    <p class="fs-card-subtitle fs-u-mb-0">Integrações</p>
                 </div>
-                <div class="cl-col-sm-3">
-                    <p class="stat-value u-mb-0">24/7</p>
-                    <p class="cl-card-subtitle u-mb-0">Suporte</p>
+                <div class="fs-col-sm-3">
+                    <p class="stat-value fs-u-mb-0">24/7</p>
+                    <p class="fs-card-subtitle fs-u-mb-0">Suporte</p>
                 </div>
             </div>
         </div>
@@ -243,71 +243,71 @@
 
     <section id="pricing">
         <div class="section-inner">
-            <div class="u-text-center u-mb-4">
-                <h2 class="u-fs-h2 u-fw-medium">Planos para equipes de qualquer tamanho</h2>
-                <p class="cl-card-subtitle u-mb-3">Comece grátis, faça upgrade quando precisar.</p>
+            <div class="fs-u-text-center fs-u-mb-4">
+                <h2 class="fs-u-fs-h2 fs-u-fw-medium">Planos para equipes de qualquer tamanho</h2>
+                <p class="fs-card-subtitle fs-u-mb-3">Comece grátis, faça upgrade quando precisar.</p>
 
-                <div class="cl-segmented-control" id="billing-toggle">
-                    <div class="cl-segmented-item">
-                        <input type="radio" name="billing" id="billing-monthly" class="cl-segmented-input" value="monthly" checked>
-                        <label for="billing-monthly" class="cl-segmented-label">Mensal</label>
+                <div class="fs-segmented-control" id="billing-toggle">
+                    <div class="fs-segmented-item">
+                        <input type="radio" name="billing" id="billing-monthly" class="fs-segmented-input" value="monthly" checked>
+                        <label for="billing-monthly" class="fs-segmented-label">Mensal</label>
                     </div>
-                    <div class="cl-segmented-item">
-                        <input type="radio" name="billing" id="billing-yearly" class="cl-segmented-input" value="yearly">
-                        <label for="billing-yearly" class="cl-segmented-label">Anual (2 meses grátis)</label>
+                    <div class="fs-segmented-item">
+                        <input type="radio" name="billing" id="billing-yearly" class="fs-segmented-input" value="yearly">
+                        <label for="billing-yearly" class="fs-segmented-label">Anual (2 meses grátis)</label>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-row u-g-3">
-                <div class="cl-col-md-4">
-                    <div class="cl-card pricing-card">
-                        <div class="cl-card-body">
-                            <h3 class="cl-card-title">Starter</h3>
-                            <p class="cl-card-subtitle">Para times pequenos começando agora.</p>
-                            <p class="pricing-price u-mb-0">R$ 0</p>
-                            <p class="cl-card-subtitle">por usuário/mês</p>
+            <div class="fs-row fs-u-g-3">
+                <div class="fs-col-md-4">
+                    <div class="fs-card pricing-card">
+                        <div class="fs-card-body">
+                            <h3 class="fs-card-title">Starter</h3>
+                            <p class="fs-card-subtitle">Para times pequenos começando agora.</p>
+                            <p class="pricing-price fs-u-mb-0">R$ 0</p>
+                            <p class="fs-card-subtitle">por usuário/mês</p>
                             <ul class="pricing-features">
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Até 5 usuários</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Projetos ilimitados</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Suporte via e-mail</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Até 5 usuários</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Projetos ilimitados</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Suporte via e-mail</li>
                             </ul>
-                            <button type="button" class="cl-btn" style="width: 100%;">Começar grátis</button>
+                            <button type="button" class="fs-btn" style="width: 100%;">Começar grátis</button>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-md-4">
-                    <div class="cl-card pricing-card u-shadow-lg" style="border-color: var(--cl-color-primary);">
-                        <div class="cl-card-header">
-                            <span class="cl-badge cl-badge-primary">Mais popular</span>
+                <div class="fs-col-md-4">
+                    <div class="fs-card pricing-card fs-u-shadow-lg" style="border-color: var(--fs-color-primary);">
+                        <div class="fs-card-header">
+                            <span class="fs-badge fs-badge-primary">Mais popular</span>
                         </div>
-                        <div class="cl-card-body">
-                            <h3 class="cl-card-title">Pro</h3>
-                            <p class="cl-card-subtitle">Para equipes que precisam de mais controle.</p>
-                            <p class="pricing-price u-mb-0"><span data-price-monthly="R$ 49" data-price-yearly="R$ 39">R$ 49</span></p>
-                            <p class="cl-card-subtitle">por usuário/mês</p>
+                        <div class="fs-card-body">
+                            <h3 class="fs-card-title">Pro</h3>
+                            <p class="fs-card-subtitle">Para equipes que precisam de mais controle.</p>
+                            <p class="pricing-price fs-u-mb-0"><span data-price-monthly="R$ 49" data-price-yearly="R$ 39">R$ 49</span></p>
+                            <p class="fs-card-subtitle">por usuário/mês</p>
                             <ul class="pricing-features">
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Usuários ilimitados</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Automações e integrações</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Suporte prioritário</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Usuários ilimitados</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Automações e integrações</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Suporte prioritário</li>
                             </ul>
-                            <button type="button" class="cl-btn cl-btn-primary" style="width: 100%;">Assinar Pro</button>
+                            <button type="button" class="fs-btn fs-btn-primary" style="width: 100%;">Assinar Pro</button>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-md-4">
-                    <div class="cl-card pricing-card">
-                        <div class="cl-card-body">
-                            <h3 class="cl-card-title">Empresarial</h3>
-                            <p class="cl-card-subtitle">Para organizações com necessidades específicas.</p>
-                            <p class="pricing-price u-mb-0">Sob consulta</p>
-                            <p class="cl-card-subtitle">&nbsp;</p>
+                <div class="fs-col-md-4">
+                    <div class="fs-card pricing-card">
+                        <div class="fs-card-body">
+                            <h3 class="fs-card-title">Empresarial</h3>
+                            <p class="fs-card-subtitle">Para organizações com necessidades específicas.</p>
+                            <p class="pricing-price fs-u-mb-0">Sob consulta</p>
+                            <p class="fs-card-subtitle">&nbsp;</p>
                             <ul class="pricing-features">
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> SSO e SCIM</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> SLA dedicado</li>
-                                <li><svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Gerente de conta</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> SSO e SCIM</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> SLA dedicado</li>
+                                <li><svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Gerente de conta</li>
                             </ul>
-                            <button type="button" class="cl-btn" style="width: 100%;">Falar com vendas</button>
+                            <button type="button" class="fs-btn" style="width: 100%;">Falar com vendas</button>
                         </div>
                     </div>
                 </div>
@@ -317,47 +317,47 @@
 
     <section>
         <div class="section-inner cta-banner">
-            <h2 class="u-fs-h2 u-fw-medium">Pronto para organizar sua equipe?</h2>
-            <p class="u-fs-lg u-mb-3" style="opacity: 0.9;">Grátis para começar, sem cartão de crédito.</p>
-            <button type="button" class="cl-btn cl-btn-lg" style="background-color: #fff; color: var(--cl-color-primary); border-color: #fff;">Criar conta grátis</button>
+            <h2 class="fs-u-fs-h2 fs-u-fw-medium">Pronto para organizar sua equipe?</h2>
+            <p class="fs-u-fs-lg fs-u-mb-3" style="opacity: 0.9;">Grátis para começar, sem cartão de crédito.</p>
+            <button type="button" class="fs-btn fs-btn-lg" style="background-color: #fff; color: var(--fs-color-primary); border-color: #fff;">Criar conta grátis</button>
         </div>
     </section>
 </main>
 
 <footer class="landing-footer">
     <div class="section-inner">
-        <div class="cl-row u-g-3">
-            <div class="cl-col-md-4">
-                <div class="cl-navbar-brand u-mb-2" style="display: inline-flex;">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <div class="fs-row fs-u-g-3">
+            <div class="fs-col-md-4">
+                <div class="fs-navbar-brand fs-u-mb-2" style="display: inline-flex;">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                     Orbit
                 </div>
-                <p class="cl-card-subtitle">Construído com <a href="https://github.com/jorgewreis/clarus-css">Clarus CSS</a>.</p>
+                <p class="fs-card-subtitle">Construído com <a href="https://github.com/jorgewreis/fokus-styles">Fokus Styles</a>.</p>
             </div>
-            <div class="cl-col-md-4">
-                <p class="u-fw-medium u-mb-2">Produto</p>
-                <div class="cl-stack cl-stack-gap-1">
-                    <a href="#features" class="u-fs-sm">Recursos</a>
-                    <a href="#pricing" class="u-fs-sm">Preços</a>
-                    <a href="#" class="u-fs-sm">Changelog</a>
+            <div class="fs-col-md-4">
+                <p class="fs-u-fw-medium fs-u-mb-2">Produto</p>
+                <div class="fs-stack fs-stack-gap-1">
+                    <a href="#features" class="fs-u-fs-sm">Recursos</a>
+                    <a href="#pricing" class="fs-u-fs-sm">Preços</a>
+                    <a href="#" class="fs-u-fs-sm">Changelog</a>
                 </div>
             </div>
-            <div class="cl-col-md-4">
-                <p class="u-fw-medium u-mb-2">Empresa</p>
-                <div class="cl-stack cl-stack-gap-1">
-                    <a href="#" class="u-fs-sm">Sobre</a>
-                    <a href="#" class="u-fs-sm">Contato</a>
-                    <a href="#" class="u-fs-sm">Privacidade</a>
+            <div class="fs-col-md-4">
+                <p class="fs-u-fw-medium fs-u-mb-2">Empresa</p>
+                <div class="fs-stack fs-stack-gap-1">
+                    <a href="#" class="fs-u-fs-sm">Sobre</a>
+                    <a href="#" class="fs-u-fs-sm">Contato</a>
+                    <a href="#" class="fs-u-fs-sm">Privacidade</a>
                 </div>
             </div>
         </div>
-        <div class="cl-divider u-my-3"></div>
-        <p class="u-fs-sm cl-card-subtitle u-mb-0">© 2026 Orbit. Conteúdo fictício de demonstração.</p>
+        <div class="fs-divider fs-u-my-3"></div>
+        <p class="fs-u-fs-sm fs-card-subtitle fs-u-mb-0">© 2026 Orbit. Conteúdo fictício de demonstração.</p>
     </div>
 </footer>
 
 <!-- SCRIPTS IMPORT -->
-<script src="../../dist/js/clarus.js"></script>
+<script src="../../dist/js/fokus.js"></script>
 <script>
     // Alternância de tema — mesmo mecanismo de docs/guides/dark-mode.md.
     const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';

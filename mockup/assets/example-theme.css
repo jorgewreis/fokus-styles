@@ -1,6 +1,6 @@
 html[data-theme="dark"],
 html[data-theme="dark"] body {
   min-height: 100%;
-  color: var(--cl-color-text);
-  background-color: var(--cl-color-surface);
+  color: var(--fs-color-text);
+  background-color: var(--fs-color-surface);
 }

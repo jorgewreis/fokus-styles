@@ -1,25 +1,25 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { NestedMenu } from "../../packages/clarus-js/js/nested-menu.js";
+import { NestedMenu } from "../../packages/fokus-js/js/nested-menu.js";
 
 function build() {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <button type="button" id="toggle" class="cl-dropdown-toggle">Menu</button>
-    <div class="cl-dropdown-menu" id="root">
-      <a href="#" class="cl-dropdown-item" id="leaf1">Novo</a>
-      <div class="cl-dropdown-submenu">
-        <button type="button" class="cl-dropdown-item cl-dropdown-item-submenu" id="sub1">Compartilhar</button>
-        <div class="cl-dropdown-menu" id="submenu1">
-          <a href="#" class="cl-dropdown-item" id="leaf2">E-mail</a>
-          <div class="cl-dropdown-submenu">
-            <button type="button" class="cl-dropdown-item cl-dropdown-item-submenu" id="sub2">Redes</button>
-            <div class="cl-dropdown-menu" id="submenu2">
-              <a href="#" class="cl-dropdown-item" id="leaf3">Twitter</a>
+    <button type="button" id="toggle" class="fs-dropdown-toggle">Menu</button>
+    <div class="fs-dropdown-menu" id="root">
+      <a href="#" class="fs-dropdown-item" id="leaf1">Novo</a>
+      <div class="fs-dropdown-submenu">
+        <button type="button" class="fs-dropdown-item fs-dropdown-item-submenu" id="sub1">Compartilhar</button>
+        <div class="fs-dropdown-menu" id="submenu1">
+          <a href="#" class="fs-dropdown-item" id="leaf2">E-mail</a>
+          <div class="fs-dropdown-submenu">
+            <button type="button" class="fs-dropdown-item fs-dropdown-item-submenu" id="sub2">Redes</button>
+            <div class="fs-dropdown-menu" id="submenu2">
+              <a href="#" class="fs-dropdown-item" id="leaf3">Twitter</a>
             </div>
           </div>
         </div>
       </div>
-      <a href="#" class="cl-dropdown-item" id="leaf4">Excluir</a>
+      <a href="#" class="fs-dropdown-item" id="leaf4">Excluir</a>
     </div>
   `;
   document.body.appendChild(wrapper);
@@ -135,12 +135,12 @@ describe("NestedMenu", () => {
     expect(document.activeElement.id).toBe("sub1");
   });
 
-  it("dispara cl:nested-menu:shown e :hidden", () => {
+  it("dispara fs:nested-menu:shown e :hidden", () => {
     const { toggle, menu } = build();
     const shown = vi.fn();
     const hidden = vi.fn();
-    toggle.addEventListener("cl:nested-menu:shown", shown);
-    toggle.addEventListener("cl:nested-menu:hidden", hidden);
+    toggle.addEventListener("fs:nested-menu:shown", shown);
+    toggle.addEventListener("fs:nested-menu:hidden", hidden);
 
     menu.show();
     expect(shown).toHaveBeenCalledTimes(1);

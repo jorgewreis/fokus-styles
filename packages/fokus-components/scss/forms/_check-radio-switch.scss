@@ -1,0 +1,363 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Checkbox/radio/switch 100% CSS, reusando a técnica de input oculto +
+// label irmã do Segmented Control (_segmented-control.scss) e do Rating
+// (_rating.scss): `<input>` clipado visualmente (não `display: none` — teclado
+// e leitor de tela continuam enxergando o controle) + `<label for="id">`
+// como irmã, que desenha a caixa/trilho via `::before` e a marca/knob via
+// `::after`. O `<label>` é o alvo de clique/hover/estado, mas o input
+// continua sendo o elemento focável e semântico (checkbox/radio nativos).
+// Wrapper (`.fs-check`/`.fs-radio`/`.fs-switch`) carrega o tamanho
+// (`-sm`/`-lg`) e agrupa input+label, no mesmo papel de `.fs-segmented-item`.
+@layer components {
+  .fs-check,
+  .fs-radio,
+  .fs-switch {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .fs-check {
+    --fs-check-mark: var(--fs-color-on-primary);
+  }
+
+  .fs-check-input,
+  .fs-radio-input,
+  .fs-switch-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .fs-check-label,
+  .fs-radio-label,
+  .fs-switch-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding-left: 28px;
+    color: var(--fs-color-text);
+    font-size: $font-size-md;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  // Caixa (checkbox/radio) ou trilho (switch), desenhados no `::before` da
+  // label. Radio é a exceção redonda da regra anti-circular do projeto
+  // (junto do spinner) — ver docs/internal/plans.
+  .fs-check-label::before,
+  .fs-radio-label::before,
+  .fs-switch-label::before {
+    position: absolute;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid var(--fs-color-border);
+    background-color: var(--fs-color-surface);
+    content: "";
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+
+  .fs-check-label::before,
+  .fs-radio-label::before {
+    width: 18px;
+    height: 18px;
+  }
+
+  .fs-check-label::before {
+    border: 2px solid var(--fs-color-primary);
+    border-radius: 0;
+  }
+
+  .fs-radio-label::before {
+    border-radius: 50%;
+  }
+
+  // Marca de check (dois traços em "V", via borda rotacionada). Os estados
+  // indeterminado e inválido substituem essa geometria mais abaixo.
+  .fs-check-label::after {
+    position: absolute;
+    left: 4px;
+    width: 9px;
+    height: 5px;
+    content: "";
+    opacity: 0;
+    border-bottom: 2px solid var(--fs-check-mark);
+    border-left: 2px solid var(--fs-check-mark);
+    transform: translateY(-1px) rotate(-45deg);
+    transition: opacity 0.1s ease-in-out;
+  }
+
+  .fs-radio-label::after {
+    position: absolute;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+    background-color: var(--fs-color-on-primary);
+    transition: opacity 0.1s ease-in-out;
+  }
+
+  .fs-check-input:checked + .fs-check-label::before,
+  .fs-radio-input:checked + .fs-radio-label::before {
+    background-color: var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-check-input:checked + .fs-check-label::after,
+  .fs-radio-input:checked + .fs-radio-label::after {
+    opacity: 1;
+  }
+
+  .fs-check-input:not(:checked, :indeterminate, :disabled, .is-invalid) + .fs-check-label:hover::before {
+    background-color: color-mix(in srgb, var(--fs-color-primary) 10%, transparent);
+  }
+
+  .fs-check-input:not(:disabled, :indeterminate, .is-invalid) + .fs-check-label:active::before {
+    background-color: color-mix(in srgb, var(--fs-color-primary) 86%, var(--fs-color-black));
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-check-input:checked:not(:disabled, .is-invalid) + .fs-check-label:active::after {
+    transform: translateY(-1px) rotate(-45deg) scale(0.9);
+  }
+
+  // Switch: trilho retangular arredondado (não pílula) e knob também
+  // retangular arredondado — decisão de forma do projeto (nada circular além
+  // do radio/spinner). Desliza via `left` no `::after`.
+  .fs-switch-label {
+    padding-left: 44px;
+  }
+
+  .fs-switch-label::before {
+    width: 36px;
+    height: 20px;
+    border-radius: var(--fs-radius-md);
+  }
+
+  .fs-switch-label::after {
+    position: absolute;
+    left: 2px;
+    width: 16px;
+    height: 14px;
+    border-radius: var(--fs-radius-sm);
+    content: "";
+    background-color: var(--fs-color-border);
+    transition: left 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  }
+
+  .fs-switch-input:checked + .fs-switch-label::before {
+    background-color: var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-switch-input:checked + .fs-switch-label::after {
+    left: 18px;
+    background-color: var(--fs-color-on-primary);
+  }
+
+  // Foco: anel sobre a caixa/trilho (`::before`), não sobre o texto.
+  .fs-check-input:focus-visible + .fs-check-label::before,
+  .fs-radio-input:focus-visible + .fs-radio-label::before,
+  .fs-switch-input:focus-visible + .fs-switch-label::before {
+    @include focus-ring;
+  }
+
+  .fs-radio-input:disabled + .fs-radio-label,
+  .fs-switch-input:disabled + .fs-switch-label {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .fs-check-input:disabled + .fs-check-label {
+    color: var(--fs-color-muted);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .fs-check-input:disabled:not(:checked, :indeterminate) + .fs-check-label::before {
+    border-color: var(--fs-color-border);
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-check-input:disabled:checked + .fs-check-label::before {
+    border-color: color-mix(in srgb, var(--fs-color-primary) 55%, var(--fs-color-border));
+    background-color: color-mix(in srgb, var(--fs-color-primary) 45%, var(--fs-color-subtle));
+  }
+
+  .fs-check-input:disabled:checked + .fs-check-label::after {
+    opacity: 0.72;
+  }
+
+  // Validação (mesma convenção de `.fs-form-control.is-valid`/`.is-invalid`).
+  .fs-radio-input.is-valid + .fs-radio-label::before {
+    border-color: var(--fs-color-success);
+  }
+
+  .fs-check-input.is-invalid + .fs-check-label::before,
+  .fs-radio-input.is-invalid + .fs-radio-label::before {
+    border-color: var(--fs-color-danger);
+  }
+
+  // Tamanhos: reescalam caixa/trilho/knob e o espaço reservado para eles
+  // (`padding-left`) proporcionalmente.
+  .fs-check-sm .fs-check-label,
+  .fs-radio-sm .fs-radio-label {
+    min-height: 16px;
+    padding-left: 24px;
+    font-size: $font-size-sm;
+  }
+
+  .fs-check-sm .fs-check-label::before,
+  .fs-radio-sm .fs-radio-label::before {
+    width: 15px;
+    height: 15px;
+  }
+
+  .fs-check-sm .fs-check-label::after {
+    left: 3px;
+    width: 8px;
+    height: 4px;
+  }
+
+  .fs-radio-sm .fs-radio-label::after {
+    left: 4px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .fs-check-lg .fs-check-label,
+  .fs-radio-lg .fs-radio-label {
+    min-height: 24px;
+    padding-left: 34px;
+    font-size: $font-size-lg;
+  }
+
+  .fs-check-lg .fs-check-label::before,
+  .fs-radio-lg .fs-radio-label::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .fs-check-lg .fs-check-label::after {
+    left: 5px;
+    width: 11px;
+    height: 6px;
+  }
+
+  .fs-radio-lg .fs-radio-label::after {
+    left: 6px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .fs-switch-sm .fs-switch-label {
+    min-height: 16px;
+    padding-left: 38px;
+    font-size: $font-size-sm;
+  }
+
+  .fs-switch-sm .fs-switch-label::before {
+    width: 30px;
+    height: 16px;
+  }
+
+  .fs-switch-sm .fs-switch-label::after {
+    width: 12px;
+    height: 10px;
+  }
+
+  .fs-switch-sm .fs-switch-input:checked + .fs-switch-label::after {
+    left: 16px;
+  }
+
+  .fs-switch-lg .fs-switch-label {
+    min-height: 26px;
+    padding-left: 52px;
+    font-size: $font-size-lg;
+  }
+
+  .fs-switch-lg .fs-switch-label::before {
+    width: 44px;
+    height: 24px;
+  }
+
+  .fs-switch-lg .fs-switch-label::after {
+    width: 20px;
+    height: 18px;
+  }
+
+  .fs-switch-lg .fs-switch-input:checked + .fs-switch-label::after {
+    left: 22px;
+  }
+
+  // Estado parcial: borda tracejada em primary e traço horizontal. Mantém o
+  // fundo definido para não se confundir com a superfície ao redor.
+  .fs-check-input:indeterminate + .fs-check-label::before {
+    border: 2px dashed var(--fs-color-primary);
+    background-color: var(--fs-color-surface);
+  }
+
+  .fs-check-input:indeterminate + .fs-check-label::after {
+    left: 4px;
+    width: 10px;
+    height: 0;
+    opacity: 1;
+    border-bottom: 2px solid var(--fs-color-primary);
+    border-left: 0;
+    transform: translateY(3px) rotate(0deg);
+  }
+
+  .fs-check-sm .fs-check-input:indeterminate + .fs-check-label::after {
+    left: 3px;
+    width: 8px;
+  }
+
+  .fs-check-lg .fs-check-input:indeterminate + .fs-check-label::after {
+    left: 5px;
+    width: 12px;
+  }
+
+  // Erro: X branco sobre fundo danger, visível mesmo quando o checkbox não
+  // está marcado. Os gradientes desenham o símbolo sem conteúdo decorativo no
+  // HTML e preservam o input nativo como fonte de semântica.
+  .fs-check-input.is-invalid + .fs-check-label::before {
+    background-color: var(--fs-color-danger);
+  }
+
+  .fs-check-input.is-invalid + .fs-check-label::after {
+    top: 6px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    border: 0;
+    background-image:
+      linear-gradient(45deg, transparent 42%, #{color-contrast($fokus-color-danger)} 42% 58%, transparent 58%),
+      linear-gradient(-45deg, transparent 42%, #{color-contrast($fokus-color-danger)} 42% 58%, transparent 58%);
+    transform: none;
+  }
+
+  .fs-check-sm .fs-check-input.is-invalid + .fs-check-label::after {
+    top: 5px;
+    left: 4px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .fs-check-lg .fs-check-input.is-invalid + .fs-check-label::after {
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "fokus-utilities",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Workspace interno do Fokus Styles — usado apenas pelo build agregado do pacote público fokus-styles.",
+  "license": "MIT"
+}

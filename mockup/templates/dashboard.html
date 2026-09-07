@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template - Dashboard | Clarus CSS</title>
+    <title>Template - Dashboard | Fokus Styles</title>
 
     <!-- STYLES IMPORT -->
     <link rel="stylesheet" href="../../dist/css/fonts.css">
@@ -14,7 +14,7 @@
     <style>
         body {
             margin: 0;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         .app-shell {
@@ -23,8 +23,8 @@
         }
 
         .app-nav {
-            background-color: var(--cl-color-surface);
-            border-right: 1px solid var(--cl-color-border);
+            background-color: var(--fs-color-surface);
+            border-right: 1px solid var(--fs-color-border);
             display: flex;
             flex-direction: column;
             padding: 20px 16px;
@@ -44,7 +44,7 @@
             align-items: center;
             gap: 10px;
             padding: 4px 12px 20px;
-            color: var(--cl-color-text);
+            color: var(--fs-color-text);
             text-decoration: none;
         }
 
@@ -61,8 +61,8 @@
             align-items: center;
             gap: 16px;
             padding: 12px 24px;
-            background-color: var(--cl-color-surface);
-            border-bottom: 1px solid var(--cl-color-border);
+            background-color: var(--fs-color-surface);
+            border-bottom: 1px solid var(--fs-color-border);
         }
 
         .app-topbar-search {
@@ -81,11 +81,11 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            border-radius: var(--cl-radius-md);
+            border-radius: var(--fs-radius-md);
         }
 
         .kpi-value {
-            font-size: var(--cl-font-size-xxl, 28px);
+            font-size: var(--fs-font-size-xxl, 28px);
             font-weight: 600;
             line-height: 1.2;
         }
@@ -95,7 +95,7 @@
             align-items: flex-end;
             gap: 16px;
             height: 160px;
-            border-bottom: 1px solid var(--cl-chart-axis);
+            border-bottom: 1px solid var(--fs-chart-axis);
             padding: 0 4px;
             margin-top: 16px;
         }
@@ -134,7 +134,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
             flex-shrink: 0;
         }
     </style>
@@ -143,225 +143,225 @@
 
 <!--
   Template "Dashboard" — ponto de partida real para um painel administrativo
-  com navegação lateral, KPIs, gráfico (tokens --cl-chart-*) e DataTable.
-  Montado só com componentes/utilitários já publicados do Clarus CSS — sem
+  com navegação lateral, KPIs, gráfico (tokens --fs-chart-*) e DataTable.
+  Montado só com componentes/utilitários já publicados do Fokus Styles — sem
   nenhuma classe nova. Ver docs/README.md#templates-prontos.
 -->
 
-<div class="cl-sidebar cl-sidebar-gap-0 cl-sidebar-width-sm app-shell">
-    <aside class="cl-sidebar-aside app-nav">
+<div class="fs-sidebar fs-sidebar-gap-0 fs-sidebar-width-sm app-shell">
+    <aside class="fs-sidebar-aside app-nav">
         <a href="#" class="app-brand">
-            <svg class="cl-icon cl-icon-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            <span class="u-fs-lg u-fw-medium">Clarus Admin</span>
+            <svg class="fs-icon fs-icon-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <span class="fs-u-fs-lg fs-u-fw-medium">FokusStyles Admin</span>
         </a>
 
-        <nav class="cl-stack cl-stack-gap-1" aria-label="Navegação principal">
-            <a href="#" class="cl-nav-link is-active">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+        <nav class="fs-stack fs-stack-gap-1" aria-label="Navegação principal">
+            <a href="#" class="fs-nav-link is-active">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                 Dashboard
             </a>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                 Usuários
             </a>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                 Pedidos
-                <span class="cl-badge cl-badge-primary cl-badge-sm">12</span>
+                <span class="fs-badge fs-badge-primary fs-badge-sm">12</span>
             </a>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-6"/><path d="M12 21V9"/><path d="M19 21V3"/></svg>
                 Relatórios
             </a>
-            <div class="cl-divider u-my-2"></div>
-            <a href="#" class="cl-nav-link">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+            <div class="fs-divider fs-u-my-2"></div>
+            <a href="#" class="fs-nav-link">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
                 Configurações
             </a>
         </nav>
 
         <div class="app-nav-footer">
-            <div class="cl-dropdown">
-                <button type="button" class="cl-btn cl-dropdown-toggle" style="width: 100%; justify-content: flex-start;" data-cl="dropdown" data-cl-target="#user-menu">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div class="fs-dropdown">
+                <button type="button" class="fs-btn fs-dropdown-toggle" style="width: 100%; justify-content: flex-start;" data-fs="dropdown" data-fs-target="#user-menu">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     Jorge Reis
                 </button>
-                <div class="cl-dropdown-menu" id="user-menu">
-                    <a href="#" class="cl-dropdown-item">Perfil</a>
-                    <a href="#" class="cl-dropdown-item">Configurações</a>
-                    <div class="cl-dropdown-divider"></div>
-                    <button type="button" class="cl-dropdown-item">Sair</button>
+                <div class="fs-dropdown-menu" id="user-menu">
+                    <a href="#" class="fs-dropdown-item">Perfil</a>
+                    <a href="#" class="fs-dropdown-item">Configurações</a>
+                    <div class="fs-dropdown-divider"></div>
+                    <button type="button" class="fs-dropdown-item">Sair</button>
                 </div>
             </div>
         </div>
     </aside>
 
-    <div class="cl-sidebar-content">
+    <div class="fs-sidebar-content">
         <header class="app-topbar">
-            <div class="cl-input-group app-topbar-search">
-                <span class="cl-input-group-text">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+            <div class="fs-input-group app-topbar-search">
+                <span class="fs-input-group-text">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
                 </span>
-                <input type="search" class="cl-form-control" placeholder="Buscar…" aria-label="Buscar">
+                <input type="search" class="fs-form-control" placeholder="Buscar…" aria-label="Buscar">
             </div>
 
             <div style="margin-left: auto;">
-                <button type="button" class="cl-btn" id="theme-toggle" aria-label="Alternar tema escuro">
-                    <svg class="cl-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <button type="button" class="fs-btn" id="theme-toggle" aria-label="Alternar tema escuro">
+                    <svg class="fs-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </button>
             </div>
         </header>
 
         <main class="app-main">
-            <ol class="cl-breadcrumb u-mb-2">
-                <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-                <li class="cl-breadcrumb-item is-active">Dashboard</li>
+            <ol class="fs-breadcrumb fs-u-mb-2">
+                <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+                <li class="fs-breadcrumb-item is-active">Dashboard</li>
             </ol>
 
-            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-3">
+            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-3">
                 <div>
-                    <h1 class="u-fs-h3 u-fw-medium u-mb-0">Visão geral</h1>
-                    <p class="cl-card-subtitle u-mb-0">Resumo das últimas 4 semanas</p>
+                    <h1 class="fs-u-fs-h3 fs-u-fw-medium fs-u-mb-0">Visão geral</h1>
+                    <p class="fs-card-subtitle fs-u-mb-0">Resumo das últimas 4 semanas</p>
                 </div>
-                <button type="button" class="cl-btn cl-btn-primary">
-                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                <button type="button" class="fs-btn fs-btn-primary">
+                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                     Novo relatório
                 </button>
             </div>
 
-            <div class="cl-row u-g-3 u-mb-3">
-                <div class="cl-col-sm-6 cl-col-lg-3">
-                    <div class="cl-card">
-                        <div class="cl-card-body">
-                            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-2">
-                                <span class="kpi-icon" style="background-color: var(--cl-alert-primary-bg); color: var(--cl-alert-primary-text);">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="fs-row fs-u-g-3 fs-u-mb-3">
+                <div class="fs-col-sm-6 fs-col-lg-3">
+                    <div class="fs-card">
+                        <div class="fs-card-body">
+                            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-2">
+                                <span class="kpi-icon" style="background-color: var(--fs-alert-primary-bg); color: var(--fs-alert-primary-text);">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                                 </span>
-                                <span class="cl-badge cl-badge-success cl-badge-sm">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+                                <span class="fs-badge fs-badge-success fs-badge-sm">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
                                     12%
                                 </span>
                             </div>
                             <p class="kpi-value">R$ 48.2k</p>
-                            <p class="cl-card-subtitle u-mb-0">Receita no mês</p>
+                            <p class="fs-card-subtitle fs-u-mb-0">Receita no mês</p>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-sm-6 cl-col-lg-3">
-                    <div class="cl-card">
-                        <div class="cl-card-body">
-                            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-2">
-                                <span class="kpi-icon" style="background-color: var(--cl-alert-info-bg); color: var(--cl-alert-info-text);">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                <div class="fs-col-sm-6 fs-col-lg-3">
+                    <div class="fs-card">
+                        <div class="fs-card-body">
+                            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-2">
+                                <span class="kpi-icon" style="background-color: var(--fs-alert-info-bg); color: var(--fs-alert-info-text);">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                                 </span>
-                                <span class="cl-badge cl-badge-success cl-badge-sm">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+                                <span class="fs-badge fs-badge-success fs-badge-sm">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
                                     4%
                                 </span>
                             </div>
                             <p class="kpi-value">1.204</p>
-                            <p class="cl-card-subtitle u-mb-0">Novos usuários</p>
+                            <p class="fs-card-subtitle fs-u-mb-0">Novos usuários</p>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-sm-6 cl-col-lg-3">
-                    <div class="cl-card">
-                        <div class="cl-card-body">
-                            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-2">
-                                <span class="kpi-icon" style="background-color: var(--cl-alert-warning-bg); color: var(--cl-alert-warning-text);">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                <div class="fs-col-sm-6 fs-col-lg-3">
+                    <div class="fs-card">
+                        <div class="fs-card-body">
+                            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-2">
+                                <span class="kpi-icon" style="background-color: var(--fs-alert-warning-bg); color: var(--fs-alert-warning-text);">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                                 </span>
-                                <span class="cl-badge cl-badge-danger cl-badge-sm">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg>
+                                <span class="fs-badge fs-badge-danger fs-badge-sm">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg>
                                     3%
                                 </span>
                             </div>
                             <p class="kpi-value">342</p>
-                            <p class="cl-card-subtitle u-mb-0">Pedidos em aberto</p>
+                            <p class="fs-card-subtitle fs-u-mb-0">Pedidos em aberto</p>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-sm-6 cl-col-lg-3">
-                    <div class="cl-card">
-                        <div class="cl-card-body">
-                            <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-2">
-                                <span class="kpi-icon" style="background-color: var(--cl-alert-success-bg); color: var(--cl-alert-success-text);">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+                <div class="fs-col-sm-6 fs-col-lg-3">
+                    <div class="fs-card">
+                        <div class="fs-card-body">
+                            <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-2">
+                                <span class="kpi-icon" style="background-color: var(--fs-alert-success-bg); color: var(--fs-alert-success-text);">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
                                 </span>
-                                <span class="cl-badge cl-badge-success cl-badge-sm">
-                                    <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+                                <span class="fs-badge fs-badge-success fs-badge-sm">
+                                    <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
                                     2%
                                 </span>
                             </div>
                             <p class="kpi-value">98,4%</p>
-                            <p class="cl-card-subtitle u-mb-0">Taxa de conclusão</p>
+                            <p class="fs-card-subtitle fs-u-mb-0">Taxa de conclusão</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cl-row u-g-3 u-mb-3">
-                <div class="cl-col-lg-8">
-                    <div class="cl-card">
-                        <div class="cl-card-header">
-                            <h3 class="cl-card-title">Receita mensal</h3>
+            <div class="fs-row fs-u-g-3 fs-u-mb-3">
+                <div class="fs-col-lg-8">
+                    <div class="fs-card">
+                        <div class="fs-card-header">
+                            <h3 class="fs-card-title">Receita mensal</h3>
                         </div>
-                        <div class="cl-card-body">
+                        <div class="fs-card-body">
                             <div class="chart-demo">
-                                <div class="chart-demo-bar" style="height: 45%; background-color: var(--cl-chart-series-1);"></div>
-                                <div class="chart-demo-bar" style="height: 60%; background-color: var(--cl-chart-series-1);"></div>
-                                <div class="chart-demo-bar" style="height: 52%; background-color: var(--cl-chart-series-1);"></div>
-                                <div class="chart-demo-bar" style="height: 70%; background-color: var(--cl-chart-series-1);"></div>
-                                <div class="chart-demo-bar" style="height: 66%; background-color: var(--cl-chart-series-1);"></div>
-                                <div class="chart-demo-bar" style="height: 85%; background-color: var(--cl-chart-series-2);"></div>
-                                <div class="chart-demo-bar" style="height: 78%; background-color: var(--cl-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 45%; background-color: var(--fs-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 60%; background-color: var(--fs-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 52%; background-color: var(--fs-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 70%; background-color: var(--fs-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 66%; background-color: var(--fs-chart-series-1);"></div>
+                                <div class="chart-demo-bar" style="height: 85%; background-color: var(--fs-chart-series-2);"></div>
+                                <div class="chart-demo-bar" style="height: 78%; background-color: var(--fs-chart-series-1);"></div>
                             </div>
                             <div class="chart-demo-labels">
-                                <span class="u-fs-xs">Fev</span>
-                                <span class="u-fs-xs">Mar</span>
-                                <span class="u-fs-xs">Abr</span>
-                                <span class="u-fs-xs">Mai</span>
-                                <span class="u-fs-xs">Jun</span>
-                                <span class="u-fs-xs">Jul</span>
-                                <span class="u-fs-xs">Ago</span>
+                                <span class="fs-u-fs-xs">Fev</span>
+                                <span class="fs-u-fs-xs">Mar</span>
+                                <span class="fs-u-fs-xs">Abr</span>
+                                <span class="fs-u-fs-xs">Mai</span>
+                                <span class="fs-u-fs-xs">Jun</span>
+                                <span class="fs-u-fs-xs">Jul</span>
+                                <span class="fs-u-fs-xs">Ago</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="cl-col-lg-4">
-                    <div class="cl-card">
-                        <div class="cl-card-header">
-                            <h3 class="cl-card-title">Atividade recente</h3>
+                <div class="fs-col-lg-4">
+                    <div class="fs-card">
+                        <div class="fs-card-header">
+                            <h3 class="fs-card-title">Atividade recente</h3>
                         </div>
-                        <div class="cl-card-body">
-                            <div class="cl-stack">
+                        <div class="fs-card-body">
+                            <div class="fs-stack">
                                 <div class="activity-item">
                                     <span class="activity-icon" aria-hidden="true">
-                                        <svg class="cl-icon cl-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                                        <svg class="fs-icon fs-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                                     </span>
                                     <div>
-                                        <p class="u-mb-0 u-fs-sm">Novo pedido <strong>#4821</strong> recebido</p>
-                                        <p class="u-mb-0 u-fs-xs cl-card-subtitle">há 12 minutos</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-sm">Novo pedido <strong>#4821</strong> recebido</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-xs fs-card-subtitle">há 12 minutos</p>
                                     </div>
                                 </div>
-                                <div class="cl-divider"></div>
+                                <div class="fs-divider"></div>
                                 <div class="activity-item">
                                     <span class="activity-icon" aria-hidden="true">
-                                        <svg class="cl-icon cl-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+                                        <svg class="fs-icon fs-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
                                     </span>
                                     <div>
-                                        <p class="u-mb-0 u-fs-sm">Novo usuário cadastrado</p>
-                                        <p class="u-mb-0 u-fs-xs cl-card-subtitle">há 48 minutos</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-sm">Novo usuário cadastrado</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-xs fs-card-subtitle">há 48 minutos</p>
                                     </div>
                                 </div>
-                                <div class="cl-divider"></div>
+                                <div class="fs-divider"></div>
                                 <div class="activity-item">
                                     <span class="activity-icon" aria-hidden="true">
-                                        <svg class="cl-icon cl-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+                                        <svg class="fs-icon fs-icon-sm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
                                     </span>
                                     <div>
-                                        <p class="u-mb-0 u-fs-sm">Pedido <strong>#4790</strong> marcado como concluído</p>
-                                        <p class="u-mb-0 u-fs-xs cl-card-subtitle">há 2 horas</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-sm">Pedido <strong>#4790</strong> marcado como concluído</p>
+                                        <p class="fs-u-mb-0 fs-u-fs-xs fs-card-subtitle">há 2 horas</p>
                                     </div>
                                 </div>
                             </div>
@@ -370,39 +370,39 @@
                 </div>
             </div>
 
-            <div class="cl-card">
-                <div class="cl-card-header">
-                    <h3 class="cl-card-title">Pedidos recentes</h3>
+            <div class="fs-card">
+                <div class="fs-card-header">
+                    <h3 class="fs-card-title">Pedidos recentes</h3>
                 </div>
-                <div class="cl-card-body">
-                    <div class="cl-datatable" id="orders-table" data-cl="datatable" data-cl-page-size="5">
-                        <div class="cl-datatable-toolbar">
-                            <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar por cliente…">
+                <div class="fs-card-body">
+                    <div class="fs-datatable" id="orders-table" data-fs="datatable" data-fs-page-size="5">
+                        <div class="fs-datatable-toolbar">
+                            <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar por cliente…">
                         </div>
-                        <div class="cl-table-responsive">
-                            <table class="cl-table cl-table-striped cl-table-hover">
+                        <div class="fs-table-responsive">
+                            <table class="fs-table fs-table-striped fs-table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col" data-cl-sort="order">Pedido</th>
-                                        <th scope="col" data-cl-sort="client">Cliente</th>
-                                        <th scope="col" data-cl-sort="status">Status</th>
-                                        <th scope="col" data-cl-sort="total">Total</th>
+                                        <th scope="col" data-fs-sort="order">Pedido</th>
+                                        <th scope="col" data-fs-sort="client">Cliente</th>
+                                        <th scope="col" data-fs-sort="status">Status</th>
+                                        <th scope="col" data-fs-sort="total">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>#4821</td><td>Ana Beatriz</td><td><span class="cl-badge cl-badge-warning cl-badge-sm">Pendente</span></td><td>R$ 349,90</td></tr>
-                                    <tr><td>#4820</td><td>Bruno Costa</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Concluído</span></td><td>R$ 129,00</td></tr>
-                                    <tr><td>#4819</td><td>Carla Dias</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Concluído</span></td><td>R$ 899,00</td></tr>
-                                    <tr><td>#4818</td><td>Diego Alves</td><td><span class="cl-badge cl-badge-danger cl-badge-sm">Cancelado</span></td><td>R$ 59,90</td></tr>
-                                    <tr><td>#4817</td><td>Elisa Nunes</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Concluído</span></td><td>R$ 210,00</td></tr>
-                                    <tr><td>#4816</td><td>Fábio Souza</td><td><span class="cl-badge cl-badge-warning cl-badge-sm">Pendente</span></td><td>R$ 149,90</td></tr>
-                                    <tr><td>#4815</td><td>Giulia Rocha</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Concluído</span></td><td>R$ 429,00</td></tr>
-                                    <tr><td>#4814</td><td>Hugo Martins</td><td><span class="cl-badge cl-badge-success cl-badge-sm">Concluído</span></td><td>R$ 79,90</td></tr>
+                                    <tr><td>#4821</td><td>Ana Beatriz</td><td><span class="fs-badge fs-badge-warning fs-badge-sm">Pendente</span></td><td>R$ 349,90</td></tr>
+                                    <tr><td>#4820</td><td>Bruno Costa</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Concluído</span></td><td>R$ 129,00</td></tr>
+                                    <tr><td>#4819</td><td>Carla Dias</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Concluído</span></td><td>R$ 899,00</td></tr>
+                                    <tr><td>#4818</td><td>Diego Alves</td><td><span class="fs-badge fs-badge-danger fs-badge-sm">Cancelado</span></td><td>R$ 59,90</td></tr>
+                                    <tr><td>#4817</td><td>Elisa Nunes</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Concluído</span></td><td>R$ 210,00</td></tr>
+                                    <tr><td>#4816</td><td>Fábio Souza</td><td><span class="fs-badge fs-badge-warning fs-badge-sm">Pendente</span></td><td>R$ 149,90</td></tr>
+                                    <tr><td>#4815</td><td>Giulia Rocha</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Concluído</span></td><td>R$ 429,00</td></tr>
+                                    <tr><td>#4814</td><td>Hugo Martins</td><td><span class="fs-badge fs-badge-success fs-badge-sm">Concluído</span></td><td>R$ 79,90</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="cl-empty-state" data-cl-datatable-empty hidden>
-                            <p class="cl-empty-state-title">Nenhum pedido encontrado.</p>
+                        <div class="fs-empty-state" data-fs-datatable-empty hidden>
+                            <p class="fs-empty-state-title">Nenhum pedido encontrado.</p>
                         </div>
                     </div>
                 </div>
@@ -412,7 +412,7 @@
 </div>
 
 <!-- SCRIPTS IMPORT -->
-<script src="../../dist/js/clarus.js"></script>
+<script src="../../dist/js/fokus.js"></script>
 <script>
     // Alternância de tema — mesmo mecanismo de docs/guides/dark-mode.md,
     // só trocando o gatilho (checkbox) por um botão com ícone sol/lua.

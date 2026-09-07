@@ -16,8 +16,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
@@ -38,21 +38,21 @@
 
     <div class="theme-panel">
 <section>
-            <p class="u-fs-sm u-fw-medium u-mb-1">DataTable — ordene por coluna, filtre e pagine (5 linhas/página)</p>
-            <div class="cl-datatable" id="datatable-claro" data-cl="datatable" data-cl-page-size="5">
-                <div class="cl-datatable-toolbar">
-                    <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar por nome ou framework…">
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-1">DataTable — ordene por coluna, filtre e pagine (5 linhas/página)</p>
+            <div class="fs-datatable" id="datatable-claro" data-fs="datatable" data-fs-page-size="5">
+                <div class="fs-datatable-toolbar">
+                    <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar por nome ou framework…">
                 </div>
-                <table class="cl-table cl-table-striped cl-table-hover">
+                <table class="fs-table fs-table-striped fs-table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" data-cl-sort="name">Nome</th>
-                            <th scope="col" data-cl-sort="framework">Framework</th>
-                            <th scope="col" data-cl-sort="year">Lançamento</th>
+                            <th scope="col" data-fs-sort="name">Nome</th>
+                            <th scope="col" data-fs-sort="framework">Framework</th>
+                            <th scope="col" data-fs-sort="year">Lançamento</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Ana</td><td>Clarus CSS</td><td>2026</td></tr>
+                        <tr><td>Ana</td><td>Fokus Styles</td><td>2026</td></tr>
                         <tr><td>Bruno</td><td>Cirrus UI</td><td>2018</td></tr>
                         <tr><td>Carla</td><td>UIkit</td><td>2013</td></tr>
                         <tr><td>Diego</td><td>Bulma</td><td>2016</td></tr>
@@ -66,25 +66,25 @@
                         <tr><td>Lucas</td><td>Almost Flat</td><td>2013</td></tr>
                     </tbody>
                 </table>
-                <div class="cl-empty-state" data-cl-datatable-empty hidden>
-                    <div class="cl-empty-state-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg></div>
-                    <p class="cl-empty-state-title">Nenhum resultado encontrado.</p>
+                <div class="fs-empty-state" data-fs-datatable-empty hidden>
+                    <div class="fs-empty-state-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg></div>
+                    <p class="fs-empty-state-title">Nenhum resultado encontrado.</p>
                 </div>
-                <div class="cl-datatable-loading" data-cl-datatable-loading hidden>
-                    <div class="cl-skeleton cl-skeleton-text" style="width: 100%; height: 20px; margin-bottom: 8px;"></div>
-                    <div class="cl-skeleton cl-skeleton-text" style="width: 100%; height: 20px; margin-bottom: 8px;"></div>
-                    <div class="cl-skeleton cl-skeleton-text" style="width: 100%; height: 20px;"></div>
+                <div class="fs-datatable-loading" data-fs-datatable-loading hidden>
+                    <div class="fs-skeleton fs-skeleton-text" style="width: 100%; height: 20px; margin-bottom: 8px;"></div>
+                    <div class="fs-skeleton fs-skeleton-text" style="width: 100%; height: 20px; margin-bottom: 8px;"></div>
+                    <div class="fs-skeleton fs-skeleton-text" style="width: 100%; height: 20px;"></div>
                 </div>
-                <div class="cl-empty-state" data-cl-datatable-error hidden>
-                    <div class="cl-empty-state-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
-                    <p class="cl-empty-state-title">Falha ao carregar dados</p>
-                    <p class="cl-empty-state-text" data-cl-datatable-error-message></p>
+                <div class="fs-empty-state" data-fs-datatable-error hidden>
+                    <div class="fs-empty-state-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+                    <p class="fs-empty-state-title">Falha ao carregar dados</p>
+                    <p class="fs-empty-state-text" data-fs-datatable-error-message></p>
                 </div>
             </div>
             <div class="demo-actions">
-                <button type="button" class="cl-btn cl-btn-sm" data-demo-action="loading" data-demo-target="datatable-claro">Simular carregando</button>
-                <button type="button" class="cl-btn cl-btn-sm" data-demo-action="error" data-demo-target="datatable-claro">Simular erro</button>
-                <button type="button" class="cl-btn cl-btn-sm" data-demo-action="reset" data-demo-target="datatable-claro">Normal</button>
+                <button type="button" class="fs-btn fs-btn-sm" data-demo-action="loading" data-demo-target="datatable-claro">Simular carregando</button>
+                <button type="button" class="fs-btn fs-btn-sm" data-demo-action="error" data-demo-target="datatable-claro">Simular erro</button>
+                <button type="button" class="fs-btn fs-btn-sm" data-demo-action="reset" data-demo-target="datatable-claro">Normal</button>
             </div>
         </section>
     </div>
@@ -92,13 +92,13 @@
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         // Só pro mockup: os botões abaixo demonstram setLoading()/setError(),
         // que na vida real seriam chamados ao redor de uma requisição real.
         document.querySelectorAll("[data-demo-action]").forEach((btn) => {
             btn.addEventListener("click", () => {
-                const instance = Clarus.DataTable.getInstance(document.getElementById(btn.dataset.demoTarget));
+                const instance = FokusStyles.DataTable.getInstance(document.getElementById(btn.dataset.demoTarget));
                 if (btn.dataset.demoAction === "loading") instance.setLoading(true);
                 else if (btn.dataset.demoAction === "error") instance.setError("Não foi possível conectar ao servidor.");
                 else {

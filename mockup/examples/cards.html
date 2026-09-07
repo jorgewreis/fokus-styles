@@ -15,15 +15,15 @@
             flex-wrap: wrap;
             gap: 16px;
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
-        .cl-card {
+        .fs-card {
             width: 260px;
         }
     </style>
@@ -32,97 +32,97 @@
 </head>
 <body>
 <div class="theme-panel">
-        <div class="cl-card">
-            <div class="cl-card-header">
-                <span class="cl-badge cl-badge-primary">Novo</span>
+        <div class="fs-card">
+            <div class="fs-card-header">
+                <span class="fs-badge fs-badge-primary">Novo</span>
             </div>
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">Título do card</h3>
-                <p class="cl-card-subtitle">Subtítulo de apoio</p>
-                <p class="cl-card-text">Texto de exemplo demonstrando a composição de header, body e footer do componente.</p>
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">Título do card</h3>
+                <p class="fs-card-subtitle">Subtítulo de apoio</p>
+                <p class="fs-card-text">Texto de exemplo demonstrando a composição de header, body e footer do componente.</p>
             </div>
-            <div class="cl-card-footer">
-                <button type="button" class="cl-btn cl-btn-primary cl-btn-sm u-mr-2">Confirmar</button>
-                <button type="button" class="cl-btn cl-btn-outline-primary cl-btn-sm">Cancelar</button>
-            </div>
-        </div>
-
-        <div class="cl-card">
-            <div class="cl-card-header">
-                <h3 class="cl-card-title">Card fechável</h3>
-                <button type="button" class="cl-btn-close" aria-label="Fechar"></button>
-            </div>
-            <div class="cl-card-body">
-                <p class="cl-card-text">card-header com título e botão de fechar alinhados nas pontas.</p>
+            <div class="fs-card-footer">
+                <button type="button" class="fs-btn fs-btn-primary fs-btn-sm fs-u-mr-2">Confirmar</button>
+                <button type="button" class="fs-btn fs-btn-outline-primary fs-btn-sm">Cancelar</button>
             </div>
         </div>
 
-        <div class="cl-card">
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">Só body</h3>
-                <p class="cl-card-text">Card sem header/footer, para conferir o raio nos quatro cantos.</p>
+        <div class="fs-card">
+            <div class="fs-card-header">
+                <h3 class="fs-card-title">Card fechável</h3>
+                <button type="button" class="fs-btn-close" aria-label="Fechar"></button>
+            </div>
+            <div class="fs-card-body">
+                <p class="fs-card-text">card-header com título e botão de fechar alinhados nas pontas.</p>
             </div>
         </div>
 
-        <div class="cl-card cl-card-sm">
-            <div class="cl-card-header">
-                <span class="cl-badge cl-badge-sm cl-badge-success">Small</span>
-            </div>
-            <div class="cl-card-body">
-                <p class="cl-card-text">card-sm: padding reduzido.</p>
-            </div>
-            <div class="cl-card-footer">
-                <button type="button" class="cl-btn cl-btn-sm">OK</button>
+        <div class="fs-card">
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">Só body</h3>
+                <p class="fs-card-text">Card sem header/footer, para conferir o raio nos quatro cantos.</p>
             </div>
         </div>
 
-        <div class="cl-card cl-card-lg">
-            <div class="cl-card-header">
-                <span class="cl-badge cl-badge-lg cl-badge-warning">Large</span>
+        <div class="fs-card fs-card-sm">
+            <div class="fs-card-header">
+                <span class="fs-badge fs-badge-sm fs-badge-success">Small</span>
             </div>
-            <div class="cl-card-body">
-                <p class="cl-card-text">card-lg: padding ampliado.</p>
+            <div class="fs-card-body">
+                <p class="fs-card-text">card-sm: padding reduzido.</p>
             </div>
-            <div class="cl-card-footer">
-                <button type="button" class="cl-btn cl-btn-lg">OK</button>
-            </div>
-        </div>
-
-        <div class="cl-card u-shadow-sm">
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">shadow-sm</h3>
-                <p class="cl-card-text">Card + utilitário .shadow-sm, mantendo a borda.</p>
+            <div class="fs-card-footer">
+                <button type="button" class="fs-btn fs-btn-sm">OK</button>
             </div>
         </div>
 
-        <div class="cl-card u-shadow">
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">shadow</h3>
-                <p class="cl-card-text">Utilitário .shadow (elevação média).</p>
+        <div class="fs-card fs-card-lg">
+            <div class="fs-card-header">
+                <span class="fs-badge fs-badge-lg fs-badge-warning">Large</span>
+            </div>
+            <div class="fs-card-body">
+                <p class="fs-card-text">card-lg: padding ampliado.</p>
+            </div>
+            <div class="fs-card-footer">
+                <button type="button" class="fs-btn fs-btn-lg">OK</button>
             </div>
         </div>
 
-        <div class="cl-card u-shadow-lg">
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">shadow-lg</h3>
-                <p class="cl-card-text">Utilitário .shadow-lg (elevação alta, para overlays futuros).</p>
+        <div class="fs-card fs-u-shadow-sm">
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">shadow-sm</h3>
+                <p class="fs-card-text">Card + utilitário .shadow-sm, mantendo a borda.</p>
             </div>
         </div>
 
-        <div class="cl-card cl-card-clickable">
-            <div class="cl-card-body">
-                <h3 class="cl-card-title"><a href="#" class="cl-stretched-link">Card clicável</a></h3>
-                <p class="cl-card-text">card-clickable + .stretched-link: o card inteiro é a área de clique/foco, sem aninhar elementos interativos.</p>
+        <div class="fs-card fs-u-shadow">
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">shadow</h3>
+                <p class="fs-card-text">Utilitário .shadow (elevação média).</p>
             </div>
         </div>
 
-        <div class="cl-card cl-card-horizontal" style="width: 360px;">
-            <div class="cl-card-header">
-                <span class="cl-badge cl-badge-info">Tag</span>
+        <div class="fs-card fs-u-shadow-lg">
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">shadow-lg</h3>
+                <p class="fs-card-text">Utilitário .shadow-lg (elevação alta, para overlays futuros).</p>
             </div>
-            <div class="cl-card-body">
-                <h3 class="cl-card-title">Card horizontal</h3>
-                <p class="cl-card-text">card-horizontal: header vira coluna lateral, com raio e borda ajustados.</p>
+        </div>
+
+        <div class="fs-card fs-card-clickable">
+            <div class="fs-card-body">
+                <h3 class="fs-card-title"><a href="#" class="fs-stretched-link">Card clicável</a></h3>
+                <p class="fs-card-text">card-clickable + .stretched-link: o card inteiro é a área de clique/foco, sem aninhar elementos interativos.</p>
+            </div>
+        </div>
+
+        <div class="fs-card fs-card-horizontal" style="width: 360px;">
+            <div class="fs-card-header">
+                <span class="fs-badge fs-badge-info">Tag</span>
+            </div>
+            <div class="fs-card-body">
+                <h3 class="fs-card-title">Card horizontal</h3>
+                <p class="fs-card-text">card-horizontal: header vira coluna lateral, com raio e borda ajustados.</p>
             </div>
         </div>
     </div>

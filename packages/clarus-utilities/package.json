@@ -1,7 +1,0 @@
-{
-  "name": "clarus-utilities",
-  "version": "0.4.0",
-  "private": true,
-  "description": "Workspace interno do Clarus CSS — usado apenas pelo build agregado do pacote público clarus-css.",
-  "license": "MIT"
-}

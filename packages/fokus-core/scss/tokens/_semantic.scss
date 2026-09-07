@@ -1,0 +1,31 @@
+// Camada semântica: nomeia tokens por PAPEL (o que a cor faz na interface),
+// não por valor. Cada token aqui é um alias `var()` de um token primitivo
+// (`_root.scss`) — não introduz nenhuma cor nova, só um vocabulário estável
+// entre o primitivo e o consumo por componente (ver `_component-buttons.scss`
+// como referência de como um componente deve consumir esta camada).
+// Por que alias e não recalcular o valor: um `var()` encadeado continua
+// resolvendo o fallback sRGB/OKLCH já decidido em `_root.scss` — não precisa
+// repetir a lógica de `@supports` aqui.
+@layer tokens {
+  :root {
+    // Superfícies
+    --fs-color-bg-surface: var(--fs-color-surface);
+    --fs-color-bg-subtle: var(--fs-color-subtle);
+
+    // Texto
+    --fs-color-text-primary: var(--fs-color-text);
+    --fs-color-text-muted: var(--fs-color-muted);
+
+    // Bordas
+    --fs-color-border-default: var(--fs-color-border);
+    --fs-color-focus: var(--fs-color-primary);
+    --fs-color-surface-raised: var(--fs-color-surface);
+    --fs-color-surface-interactive: var(--fs-color-subtle);
+
+    // Ação (mapeiam para a cor de tema correspondente — existem para dar um
+    // nome estável a "a cor de ação primária", independente de qual token
+    // primitivo ela usa por baixo).
+    --fs-color-action-primary: var(--fs-color-primary);
+    --fs-color-action-danger: var(--fs-color-danger);
+  }
+}

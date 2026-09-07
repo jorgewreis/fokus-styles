@@ -18,8 +18,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .control-row {
@@ -29,7 +29,7 @@
             gap: 20px;
         }
 
-        .cl-check-invalid-demo {
+        .fs-check-invalid-demo {
             display: grid;
             gap: 4px;
         }
@@ -40,103 +40,103 @@
 <body>
 
     <div class="theme-panel">
-<p class="u-fs-sm u-fw-medium u-mb-0">Checkbox — estados</p>
+<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Checkbox — estados</p>
         <div class="control-row">
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-unchecked">
-                <label for="check-unchecked" class="cl-check-label">Não marcado</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-unchecked">
+                <label for="check-unchecked" class="fs-check-label">Não marcado</label>
             </div>
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-checked" checked>
-                <label for="check-checked" class="cl-check-label">Marcado</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-checked" checked>
+                <label for="check-checked" class="fs-check-label">Marcado</label>
             </div>
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-indeterminate">
-                <label for="check-indeterminate" class="cl-check-label">Indeterminado</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-indeterminate">
+                <label for="check-indeterminate" class="fs-check-label">Indeterminado</label>
             </div>
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-disabled" disabled>
-                <label for="check-disabled" class="cl-check-label">Desabilitado</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-disabled" disabled>
+                <label for="check-disabled" class="fs-check-label">Desabilitado</label>
             </div>
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-disabled-checked" checked disabled>
-                <label for="check-disabled-checked" class="cl-check-label">Desabilitado + marcado</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-disabled-checked" checked disabled>
+                <label for="check-disabled-checked" class="fs-check-label">Desabilitado + marcado</label>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Checkbox — validação e tamanhos</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Checkbox — validação e tamanhos</p>
         <div class="control-row">
-            <div class="cl-check cl-check-invalid-demo">
-                <input type="checkbox" class="cl-check-input is-invalid" id="check-invalid">
-                <label for="check-invalid" class="cl-check-label">Inválido</label>
-                <div class="cl-invalid-feedback">Selecione esta opção para continuar.</div>
+            <div class="fs-check fs-check-invalid-demo">
+                <input type="checkbox" class="fs-check-input is-invalid" id="check-invalid">
+                <label for="check-invalid" class="fs-check-label">Inválido</label>
+                <div class="fs-invalid-feedback">Selecione esta opção para continuar.</div>
             </div>
-            <div class="cl-check cl-check-sm">
-                <input type="checkbox" class="cl-check-input" id="check-sm" checked>
-                <label for="check-sm" class="cl-check-label">sm</label>
+            <div class="fs-check fs-check-sm">
+                <input type="checkbox" class="fs-check-input" id="check-sm" checked>
+                <label for="check-sm" class="fs-check-label">sm</label>
             </div>
-            <div class="cl-check">
-                <input type="checkbox" class="cl-check-input" id="check-md" checked>
-                <label for="check-md" class="cl-check-label">md (padrão)</label>
+            <div class="fs-check">
+                <input type="checkbox" class="fs-check-input" id="check-md" checked>
+                <label for="check-md" class="fs-check-label">md (padrão)</label>
             </div>
-            <div class="cl-check cl-check-lg">
-                <input type="checkbox" class="cl-check-input" id="check-lg" checked>
-                <label for="check-lg" class="cl-check-label">lg</label>
+            <div class="fs-check fs-check-lg">
+                <input type="checkbox" class="fs-check-input" id="check-lg" checked>
+                <label for="check-lg" class="fs-check-label">lg</label>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Radio — estados e tamanhos</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Radio — estados e tamanhos</p>
         <div class="control-row">
-            <div class="cl-radio">
-                <input type="radio" name="radio-claro" class="cl-radio-input" id="radio-1" checked>
-                <label for="radio-1" class="cl-radio-label">Opção 1</label>
+            <div class="fs-radio">
+                <input type="radio" name="radio-claro" class="fs-radio-input" id="radio-1" checked>
+                <label for="radio-1" class="fs-radio-label">Opção 1</label>
             </div>
-            <div class="cl-radio">
-                <input type="radio" name="radio-claro" class="cl-radio-input" id="radio-2">
-                <label for="radio-2" class="cl-radio-label">Opção 2</label>
+            <div class="fs-radio">
+                <input type="radio" name="radio-claro" class="fs-radio-input" id="radio-2">
+                <label for="radio-2" class="fs-radio-label">Opção 2</label>
             </div>
-            <div class="cl-radio">
-                <input type="radio" name="radio-claro-disabled" class="cl-radio-input" id="radio-disabled" disabled>
-                <label for="radio-disabled" class="cl-radio-label">Desabilitado</label>
+            <div class="fs-radio">
+                <input type="radio" name="radio-claro-disabled" class="fs-radio-input" id="radio-disabled" disabled>
+                <label for="radio-disabled" class="fs-radio-label">Desabilitado</label>
             </div>
-            <div class="cl-radio cl-radio-sm">
-                <input type="radio" name="radio-sm" class="cl-radio-input" id="radio-sm" checked>
-                <label for="radio-sm" class="cl-radio-label">sm</label>
+            <div class="fs-radio fs-radio-sm">
+                <input type="radio" name="radio-sm" class="fs-radio-input" id="radio-sm" checked>
+                <label for="radio-sm" class="fs-radio-label">sm</label>
             </div>
-            <div class="cl-radio cl-radio-lg">
-                <input type="radio" name="radio-lg" class="cl-radio-input" id="radio-lg" checked>
-                <label for="radio-lg" class="cl-radio-label">lg</label>
+            <div class="fs-radio fs-radio-lg">
+                <input type="radio" name="radio-lg" class="fs-radio-input" id="radio-lg" checked>
+                <label for="radio-lg" class="fs-radio-label">lg</label>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Switch — estados e tamanhos (knob retangular arredondado)</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Switch — estados e tamanhos (knob retangular arredondado)</p>
         <div class="control-row">
-            <div class="cl-switch">
-                <input type="checkbox" class="cl-switch-input" id="switch-off">
-                <label for="switch-off" class="cl-switch-label">Desligado</label>
+            <div class="fs-switch">
+                <input type="checkbox" class="fs-switch-input" id="switch-off">
+                <label for="switch-off" class="fs-switch-label">Desligado</label>
             </div>
-            <div class="cl-switch">
-                <input type="checkbox" class="cl-switch-input" id="switch-on" checked>
-                <label for="switch-on" class="cl-switch-label">Ligado</label>
+            <div class="fs-switch">
+                <input type="checkbox" class="fs-switch-input" id="switch-on" checked>
+                <label for="switch-on" class="fs-switch-label">Ligado</label>
             </div>
-            <div class="cl-switch">
-                <input type="checkbox" class="cl-switch-input" id="switch-disabled" disabled>
-                <label for="switch-disabled" class="cl-switch-label">Desabilitado</label>
+            <div class="fs-switch">
+                <input type="checkbox" class="fs-switch-input" id="switch-disabled" disabled>
+                <label for="switch-disabled" class="fs-switch-label">Desabilitado</label>
             </div>
-            <div class="cl-switch cl-switch-sm">
-                <input type="checkbox" class="cl-switch-input" id="switch-sm" checked>
-                <label for="switch-sm" class="cl-switch-label">sm</label>
+            <div class="fs-switch fs-switch-sm">
+                <input type="checkbox" class="fs-switch-input" id="switch-sm" checked>
+                <label for="switch-sm" class="fs-switch-label">sm</label>
             </div>
-            <div class="cl-switch cl-switch-lg">
-                <input type="checkbox" class="cl-switch-input" id="switch-lg" checked>
-                <label for="switch-lg" class="cl-switch-label">lg</label>
+            <div class="fs-switch fs-switch-lg">
+                <input type="checkbox" class="fs-switch-input" id="switch-lg" checked>
+                <label for="switch-lg" class="fs-switch-label">lg</label>
             </div>
         </div>
     </div>
 
     
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         document.getElementById("check-indeterminate").indeterminate = true;
     </script>

@@ -11,26 +11,26 @@
     .theme-panel { padding: 24px; }
 
     html[data-theme="dark"] .theme-panel {
-      color: var(--cl-color-text);
-      background-color: var(--cl-color-surface);
+      color: var(--fs-color-text);
+      background-color: var(--fs-color-surface);
     }
 
-    .cl-alert { max-width: 480px; }
+    .fs-alert { max-width: 480px; }
   </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
     <script src="../assets/example-theme.js"></script>
 </head>
 <body>
   <main class="theme-panel">
-    <h1 class="u-fs-lg u-fw-medium">Alertas</h1>
-    <p class="u-fs-sm u-mt-1 u-mb-3">Mensagens persistentes com bordas semânticas vivas e cantos retos.</p>
+    <h1 class="fs-u-fs-lg fs-u-fw-medium">Alertas</h1>
+    <p class="fs-u-fs-sm fs-u-mt-1 fs-u-mb-3">Mensagens persistentes com bordas semânticas vivas e cantos retos.</p>
 
-    <div class="cl-alert u-mb-2">Alerta neutro: mensagem informativa padrão sem cor de estado.</div>
-    <div class="cl-alert cl-alert-primary u-mb-2">Alerta primary: ação recomendada ou destaque neutro de marca.</div>
-    <div class="cl-alert cl-alert-success u-mb-2">Alerta success: operação concluída com sucesso.</div>
-    <div class="cl-alert cl-alert-warning u-mb-2">Alerta warning: atenção, revise antes de continuar.</div>
-    <div class="cl-alert cl-alert-danger u-mb-2">Alerta danger: falha ao processar a solicitação.</div>
-    <div class="cl-alert cl-alert-info">Alerta info: informação adicional relevante para o usuário.</div>
+    <div class="fs-alert fs-u-mb-2">Alerta neutro: mensagem informativa padrão sem cor de estado.</div>
+    <div class="fs-alert fs-alert-primary fs-u-mb-2">Alerta primary: ação recomendada ou destaque neutro de marca.</div>
+    <div class="fs-alert fs-alert-success fs-u-mb-2">Alerta success: operação concluída com sucesso.</div>
+    <div class="fs-alert fs-alert-warning fs-u-mb-2">Alerta warning: atenção, revise antes de continuar.</div>
+    <div class="fs-alert fs-alert-danger fs-u-mb-2">Alerta danger: falha ao processar a solicitação.</div>
+    <div class="fs-alert fs-alert-info">Alerta info: informação adicional relevante para o usuário.</div>
   </main>
   <script>
     if (new URLSearchParams(window.location.search).get("theme") === "dark") {

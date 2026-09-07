@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@use "tokens";
-@use "base";
-@use "forms";
-@use "themes";
+@use "../../packages/fokus-core/scss/tokens";
+@use "../../packages/fokus-core/scss/base";
+@use "../../packages/fokus-components/scss/forms";
+@use "../../packages/fokus-core/scss/themes";

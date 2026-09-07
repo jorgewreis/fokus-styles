@@ -1,15 +1,15 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Combobox } from "../../packages/clarus-js/js/combobox.js";
+import { Combobox } from "../../packages/fokus-js/js/combobox.js";
 
 function buildCombobox() {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <input type="text" id="input" data-cl-target="#listbox">
-    <ul class="cl-dropdown-menu" id="listbox">
-      <li class="cl-dropdown-item" data-value="react">React</li>
-      <li class="cl-dropdown-item" data-value="vue">Vue</li>
-      <li class="cl-dropdown-item is-disabled" data-value="angular">Angular (indisponível)</li>
-      <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhum resultado encontrado.</li>
+    <input type="text" id="input" data-fs-target="#listbox">
+    <ul class="fs-dropdown-menu" id="listbox">
+      <li class="fs-dropdown-item" data-value="react">React</li>
+      <li class="fs-dropdown-item" data-value="vue">Vue</li>
+      <li class="fs-dropdown-item is-disabled" data-value="angular">Angular (indisponível)</li>
+      <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum resultado encontrado.</li>
     </ul>
   `;
   document.body.appendChild(wrapper);
@@ -25,7 +25,7 @@ describe("Combobox", () => {
     document.body.innerHTML = "";
   });
 
-  it("lança erro se a listbox (data-cl-target) não existir", () => {
+  it("lança erro se a listbox (data-fs-target) não existir", () => {
     const input = document.createElement("input");
     document.body.appendChild(input);
 
@@ -76,18 +76,18 @@ describe("Combobox", () => {
     input.dispatchEvent(new Event("input", { bubbles: true }));
 
     expect(listbox.classList.contains("is-open")).toBe(true);
-    const options = listbox.querySelectorAll(".cl-dropdown-item:not([data-cl-empty])");
+    const options = listbox.querySelectorAll(".fs-dropdown-item:not([data-fs-empty])");
     expect(options[0].hidden).toBe(true); // React
     expect(options[1].hidden).toBe(false); // Vue
   });
 
-  it("mostra o item data-cl-empty quando nenhuma opção corresponde à busca", () => {
+  it("mostra o item data-fs-empty quando nenhuma opção corresponde à busca", () => {
     const { input, listbox } = buildCombobox();
 
     input.value = "zzz";
     input.dispatchEvent(new Event("input", { bubbles: true }));
 
-    expect(listbox.querySelector("[data-cl-empty]").hidden).toBe(false);
+    expect(listbox.querySelector("[data-fs-empty]").hidden).toBe(false);
   });
 
   it("ArrowDown navega só entre opções habilitadas e visíveis, com wrap", () => {
@@ -120,31 +120,31 @@ describe("Combobox", () => {
     expect(input.value).toBe("Vue");
     expect(combobox.value).toBe("vue");
     expect(listbox.classList.contains("is-open")).toBe(false);
-    const options = listbox.querySelectorAll(".cl-dropdown-item:not([data-cl-empty])");
+    const options = listbox.querySelectorAll(".fs-dropdown-item:not([data-fs-empty])");
     expect(options[1].getAttribute("aria-selected")).toBe("true");
     expect(options[0].getAttribute("aria-selected")).toBe("false");
   });
 
-  it("clicar numa opção seleciona, dispara change e cl:combobox:changed", () => {
+  it("clicar numa opção seleciona, dispara change e fs:combobox:changed", () => {
     const { input, listbox } = buildCombobox();
     const changeHandler = vi.fn();
-    const clarusHandler = vi.fn();
+    const fokusHandler = vi.fn();
     input.addEventListener("change", changeHandler);
-    input.addEventListener("cl:combobox:changed", clarusHandler);
+    input.addEventListener("fs:combobox:changed", fokusHandler);
 
-    listbox.querySelectorAll(".cl-dropdown-item")[0].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
-    listbox.querySelectorAll(".cl-dropdown-item")[0].click();
+    listbox.querySelectorAll(".fs-dropdown-item")[0].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+    listbox.querySelectorAll(".fs-dropdown-item")[0].click();
 
     expect(input.value).toBe("React");
     expect(changeHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler.mock.calls[0][0].detail.value).toBe("react");
+    expect(fokusHandler).toHaveBeenCalledTimes(1);
+    expect(fokusHandler.mock.calls[0][0].detail.value).toBe("react");
   });
 
   it("clicar numa opção desabilitada não seleciona nada", () => {
     const { input, listbox } = buildCombobox();
 
-    listbox.querySelectorAll(".cl-dropdown-item")[2].click();
+    listbox.querySelectorAll(".fs-dropdown-item")[2].click();
 
     expect(input.value).toBe("");
   });

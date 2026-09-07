@@ -1,0 +1,50 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Nested Menu (Etapa 10): Dropdown com submenus recursivos. Reaproveita
+// `.fs-dropdown-menu`/`.fs-dropdown-item` (scss/components/_dropdown.scss) sem
+// reestilizar — só adiciona o posicionamento em cascata dos submenus e a seta
+// indicadora. Abertura por hover é 100% CSS; teclado/clique e o flip de borda
+// ficam no js/nested-menu.js (FokusStyles.NestedMenu), que adiciona `.is-open`.
+
+// Cada nível de submenu é envolto por `.fs-dropdown-submenu`, que serve de âncora
+// de posicionamento para o `.fs-dropdown-menu` filho.
+
+@layer components {
+  .fs-dropdown-submenu {
+    position: relative;
+  }
+
+  // Item que abre um submenu: seta apontando para o lado (em vez da seta pra
+  // baixo do `.fs-dropdown-toggle`), empurrada para a direita do item.
+  .fs-dropdown-item-submenu {
+    justify-content: space-between;
+  }
+
+  .fs-dropdown-item-submenu::after {
+    margin-left: 8px;
+    content: "";
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentcolor;
+  }
+
+  // Submenu abre à direita do item, alinhado ao topo (compensa o padding + borda
+  // do menu pai para os primeiros itens ficarem na mesma linha).
+  .fs-dropdown-submenu > .fs-dropdown-menu {
+    top: -7px;
+    left: 100%;
+    margin: 0;
+  }
+
+  .fs-dropdown-submenu:hover > .fs-dropdown-menu,
+  .fs-dropdown-submenu > .fs-dropdown-menu.is-open {
+    display: block;
+  }
+
+  // Sem espaço à direita: o JS marca `.fs-dropdown-submenu-left` e o submenu abre
+  // para a esquerda.
+  .fs-dropdown-submenu-left > .fs-dropdown-menu {
+    right: 100%;
+    left: auto;
+  }
+}

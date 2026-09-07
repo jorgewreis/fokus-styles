@@ -1,27 +1,27 @@
 # Theming
 
-Toda a identidade visual do Clarus CSS é exposta via CSS Custom Properties
-(prefixo `--cl-*`) — customize redefinindo a variável no seu próprio CSS,
+Toda a identidade visual do Fokus Styles é exposta via CSS Custom Properties
+(prefixo `--fs-*`) — customize redefinindo a variável no seu próprio CSS,
 sem fork e sem recompilar.
 
 ## As 3 camadas de tokens
 
 1. **Primitivo** — valores Sass em tempo de compilação
-   (`packages/clarus-core/scss/settings/`): `$color-blue-500`, `$radius-md`,
+   (`packages/fokus-core/scss/settings/`): `$color-blue-500`, `$radius-md`,
    `$spacers`. Não são emitidos como CSS diretamente; só existem para gerar
    as camadas seguintes.
 2. **Semântico** — CSS Custom Properties nomeadas por papel, não por valor
-   (`packages/clarus-core/scss/tokens/`): `--cl-color-primary`,
-   `--cl-color-bg-surface`, `--cl-color-text-primary`,
-   `--cl-color-border-default`. É aqui que você customiza na prática.
+   (`packages/fokus-core/scss/tokens/`): `--fs-color-primary`,
+   `--fs-color-bg-surface`, `--fs-color-text-primary`,
+   `--fs-color-border-default`. É aqui que você customiza na prática.
 3. **Componente** — alguns componentes expõem tokens próprios, com fallback
-   pra um token semântico (ex.: `.cl-btn` tem `--cl-btn-bg`/`--cl-btn-color`/
-   `--cl-btn-border-color`) — permite sobrescrever **uma instância**
+   pra um token semântico (ex.: `.fs-btn` tem `--fs-btn-bg`/`--fs-btn-color`/
+   `--fs-btn-border-color`) — permite sobrescrever **uma instância**
    específica sem afetar o resto:
 
    ```css
    .meu-botao-especial {
-     --cl-btn-bg: #6d28d9;
+     --fs-btn-bg: #6d28d9;
    }
    ```
 
@@ -36,9 +36,9 @@ usam):
 
 ```css
 :root {
-  --cl-color-primary: #6d28d9;
-  --cl-radius-md: 10px;
-  --cl-font-sans: "Inter", sans-serif;
+  --fs-color-primary: #6d28d9;
+  --fs-radius-md: 10px;
+  --fs-font-sans: "Inter", sans-serif;
 }
 ```
 
@@ -53,12 +53,12 @@ hex→oklch→hex). Cada token de cor é declarado duas vezes:
 
 ```css
 :root {
-  --cl-color-primary: #1a61e6; /* fallback sRGB, todo navegador */
+  --fs-color-primary: #1a61e6; /* fallback sRGB, todo navegador */
 }
 
 @supports (color: oklch(0% 0 0)) {
   :root {
-    --cl-color-primary: oklch(53.6% 0.213 261.6deg); /* nativo, navegadores modernos */
+    --fs-color-primary: oklch(53.6% 0.213 261.6deg); /* nativo, navegadores modernos */
   }
 }
 ```
@@ -75,39 +75,39 @@ Para quem compila o próprio bundle (em vez de sobrescrever CSS em runtime),
 os valores primitivos aceitam override na hora do `@use`:
 
 ```scss
-@use "clarus-css/scss/clarus" with (
+@use "fokus-styles/scss/fokus" with (
   $radius-md: 10px,
   $font-family-sans: "Inter", sans-serif
 );
 ```
 
 Qualquer variável marcada `!default` nos arquivos de
-`packages/clarus-core/scss/settings/` pode ser sobrescrita dessa forma.
+`packages/fokus-core/scss/settings/` pode ser sobrescrita dessa forma.
 
 ## Escala de espaçamento e breakpoints
 
-`$spacers` (0–5, usado pelos utilitários `.u-m*`/`.u-p*`/`.u-g*`) e
+`$spacers` (0–5, usado pelos utilitários `.fs-u-m*`/`.fs-u-p*`/`.fs-u-g*`) e
 `$breakpoints` (`xs`–`xxxl`, usado pelo grid e por todo utilitário
-responsivo `.u-*-{breakpoint}`) também são customizáveis via Sass — não têm
+responsivo `.fs-u-*-{breakpoint}`) também são customizáveis via Sass — não têm
 equivalente em CSS Custom Property, porque alimentam a geração de classes
 (nomes de classe fixos em `.css`, não podem reagir a uma variável em
 runtime). Ver [`docs/reference/design-tokens.md`](../reference/design-tokens.md).
 
 ## Multi-brand
 
-Além de `data-theme` (claro/escuro), o Clarus suporta `data-brand="x"` para
+Além de `data-theme` (claro/escuro), o FokusStyles suporta `data-fs-brand="x"` para
 trocar a **cor de ação primária** em runtime, sem recompilar CSS — útil pra
 produtos white-label ou múltiplas marcas sobre o mesmo design system:
 
 ```html
-<html data-brand="violet">
+<html data-fs-brand="violet">
 ```
 
 ```html
-<html data-brand="violet" data-theme="dark">
+<html data-fs-brand="violet" data-theme="dark">
 ```
 
-Três presets vêm prontos em `packages/clarus-core/scss/themes/_brands.scss`,
+Três presets vêm prontos em `packages/fokus-core/scss/themes/_brands.scss`,
 provando que a troca funciona combinada com claro e escuro:
 
 - `violet` — o mesmo tom do exemplo de customização acima.
@@ -120,16 +120,16 @@ Só a cor de ação primária muda por marca — `secondary`/`success`/`warning`
 está ativa).
 
 Pra adicionar sua própria marca, siga o mesmo padrão do arquivo de exemplo:
-um bloco `[data-brand="sua-marca"]` (mais o par `@supports` OKLCH e a
-combinação com `[data-theme="dark"]`) redefinindo `--cl-color-primary`,
-`--cl-alert-primary-bg`, `--cl-alert-primary-text` e
-`--cl-feedback-primary-bg`.
+um bloco `[data-fs-brand="sua-marca"]` (mais o par `@supports` OKLCH e a
+combinação com `[data-theme="dark"]`) redefinindo `--fs-color-primary`,
+`--fs-alert-primary-bg`, `--fs-alert-primary-text` e
+`--fs-feedback-primary-bg`.
 
-**Limitação conhecida:** `.cl-btn-primary`/`.cl-badge-primary` (preenchimento
+**Limitação conhecida:** `.fs-btn-primary`/`.fs-badge-primary` (preenchimento
 sólido) calculam a cor do texto em tempo de build via `color-contrast()` a
 partir do primary **padrão** (azul) — não recalculam por marca. Escolha um
 primitivo de marca escuro o bastante pro texto branco continuar legível
-(como no exemplo `violet`), ou sobrescreva `--cl-btn-color`/`--cl-badge-color`
+(como no exemplo `violet`), ou sobrescreva `--fs-btn-color`/`--fs-badge-color`
 manualmente se o primitivo da sua marca for muito claro. Rode
 `npm run contrast` depois de adicionar uma marca — o relatório já audita os
 pares `brand violet`/`brand corporate`/`brand vibrant` como referência

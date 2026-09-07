@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const docsDir = path.join(root, "docs");
 const componentsDir = path.join(docsDir, "components");
-const scssDir = path.join(root, "packages", "clarus-components", "scss", "components");
+const scssDir = path.join(root, "packages", "fokus-components", "scss", "components");
 const requiredSections = ["## Visão geral", "## Estados", "## A11y"];
 const aliases = new Map([
   ["alerts", "alert"], ["badges", "badge"], ["breadcrumbs", "breadcrumb"],

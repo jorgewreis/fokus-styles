@@ -58,7 +58,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ### Fixed
 
-- `.cl-empty-state[hidden]` não escondia o elemento: `.cl-empty-state`
+- `.fs-empty-state[hidden]` não escondia o elemento: `.fs-empty-state`
   define `display: flex` em `@layer components`, e author styles sempre
   vencem a regra `[hidden] { display: none }` do user-agent stylesheet,
   mesmo dentro de `@layer` — sem uma regra author explícita pro atributo
@@ -68,10 +68,10 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `this.emptyEl`/`this.errorEl`, então o estado vazio/erro ficava sempre
   visível por baixo da tabela com dados — inclusive no mockup oficial
   (`mockup/datatable.html`, baseline visual atualizada). Corrigido com
-  `.cl-empty-state[hidden] { display: none; }` em
+  `.fs-empty-state[hidden] { display: none; }` em
   `packages/clarus-components/scss/components/_empty-state.scss`, mesmo
-  padrão já usado em `.cl-notification-badge[hidden]`/
-  `.cl-notification-empty[hidden]`.
+  padrão já usado em `.fs-notification-badge[hidden]`/
+  `.fs-notification-empty[hidden]`.
 
 ### Changed
 
@@ -89,11 +89,11 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   gerado por `DataTable` (`packages/clarus-js/js/datatable.js`) trocou
   `‹`/`›` pelos mesmos chevrons (SVG embutido como string — `clarus-js`
   não pode depender do pacote opcional `clarus-icons` em runtime).
-  `.cl-btn`/`.cl-badge`/`.cl-alert`/`.cl-breadcrumb-item a` ganharam `gap`
+  `.fs-btn`/`.fs-badge`/`.fs-alert`/`.fs-breadcrumb-item a` ganharam `gap`
   próprio pra espaçar ícone+texto corretamente (antes só funcionava por
   acidente, via colapso de espaço em branco do HTML); ajustado
-  `.cl-dropdown-toggle::after` (removido `margin-left` redundante, já que
-  agora conta como item flex do `.cl-btn` e herda o `gap`). Pagination
+  `.fs-dropdown-toggle::after` (removido `margin-left` redundante, já que
+  agora conta como item flex do `.fs-btn` e herda o `gap`). Pagination
   ganhou `aria-label`/`aria-hidden` explícitos nos itens só-ícone.
 
 ### Added
@@ -123,41 +123,41 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
     `packages/clarus-core/scss/themes/_brands.scss`: `corporate`
     (azul-marinho sóbrio) e `vibrant` (laranja energético) — mesma técnica
     OKLCH do preset `violet` existente. O primitivo do "vibrant" é claro o
-    bastante pra o texto branco padrão de `.cl-btn-primary`/
-    `.cl-badge-primary` cair abaixo de 4.5:1 (pego pelo gate `test:a11y`);
+    bastante pra o texto branco padrão de `.fs-btn-primary`/
+    `.fs-badge-primary` cair abaixo de 4.5:1 (pego pelo gate `test:a11y`);
     corrigido com um override em `@layer overrides` (a camada de maior
     prioridade — cascade layers ignoram especificidade, então um seletor
     mais específico dentro de `@layer tokens` perderia mesmo assim). Ao
-    investigar o fix, descoberto que `.cl-badge-primary` fixava `color`
-    diretamente (ao contrário de `.cl-btn-primary`, que já seguia a
+    investigar o fix, descoberto que `.fs-badge-primary` fixava `color`
+    diretamente (ao contrário de `.fs-btn-primary`, que já seguia a
     convenção de só sobrescrever uma custom property) — alinhado
-    (`--cl-badge-color`/`--cl-badge-bg`, mesmo padrão de `.cl-btn`).
+    (`--fs-badge-color`/`--fs-badge-bg`, mesmo padrão de `.fs-btn`).
   - Pacote `clarus-cli` (`packages/clarus-cli/`): comandos `build`
     (compila um entry `.scss` de um projeto consumidor com o mesmo
     pipeline sass→autoprefixer→cssnano do build interno), `theme` (gera um
-    preset `data-brand` em CSS puro via `color-mix()`, sem dependência de
-    Sass, decidindo automaticamente `--cl-btn-color`/`--cl-badge-color`
+    preset `data-fs-brand` em CSS puro via `color-mix()`, sem dependência de
+    Sass, decidindo automaticamente `--fs-btn-color`/`--fs-badge-color`
     pelo contraste com a cor informada) e `analyze` (tamanho bruto/gzip de
     qualquer arquivo, versão genérica de `scripts/size.mjs`).
-  - Tokens de gráficos agnósticos de biblioteca (`--cl-chart-series-1..6`,
-    `--cl-chart-grid`, `--cl-chart-axis`, `--cl-chart-tooltip-bg/text`,
+  - Tokens de gráficos agnósticos de biblioteca (`--fs-chart-series-1..6`,
+    `--fs-chart-grid`, `--fs-chart-axis`, `--fs-chart-tooltip-bg/text`,
     `packages/clarus-core/scss/tokens/_charts.scss`) — aliases da camada
     semântica existente, sem wrapper de nenhuma lib específica. Documentado
     em `docs/guides/charts.md`, mockup `mockup/charts.html`.
-  - Range/Slider (`.cl-form-range`,
+  - Range/Slider (`.fs-form-range`,
     `packages/clarus-components/scss/forms/_range.scss`): trilha/thumb
     estilizados via pseudo-elementos vendor-prefixados; teclado e ARIA já
     vêm do `<input type="range">` nativo. JS opcional
-    (`packages/clarus-js/js/range.js`, `data-cl="range"`) só pinta a
-    trilha preenchida (`--cl-range-percent`, necessário porque só o
+    (`packages/clarus-js/js/range.js`, `data-fs="range"`) só pinta a
+    trilha preenchida (`--fs-range-percent`, necessário porque só o
     Firefox suporta `::-moz-range-progress`) e espelha o valor num
     `<output>` associado. Documentado em `docs/components/range.md`,
     mockup `mockup/range.html`.
   - Upload avançado (`packages/clarus-js/js/file-upload-advanced.js`,
-    `data-cl="file-upload-advanced"`): evolução do File Upload simples —
+    `data-fs="file-upload-advanced"`): evolução do File Upload simples —
     múltiplos arquivos, preview (thumbnail de imagem via
     `URL.createObjectURL`, nome, tamanho), progresso individual
-    (`setProgress`/`setError`, reusa `.cl-progress`) e remoção por item.
+    (`setProgress`/`setError`, reusa `.fs-progress`) e remoção por item.
     Agnóstico de backend (não faz upload de verdade, só expõe a API pro
     consumidor plugar o próprio XHR/fetch). Documentado em
     `docs/components/file-upload-advanced.md`, mockup
@@ -179,7 +179,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   não tem nenhuma dependência de runtime. Dois formatos de consumo: SVG
   puro (`clarus-icons/svg/<nome>.svg`) e módulos ES tree-shakeable
   (`clarus-icons/icons/<nome>.js`, mais um barrel `clarus-icons` com nomes
-  em camelCase). Nova classe utilitária `.cl-icon` (com `-xs`/`-sm`/`-lg`/`-xl`)
+  em camelCase). Nova classe utilitária `.fs-icon` (com `-xs`/`-sm`/`-lg`/`-xl`)
   em `packages/clarus-utilities/scss/utilities/_icon.scss`, sempre
   disponível no `clarus-css` independente do pacote de ícones estar
   instalado. Documentado em `docs/guides/icons.md`, mockup
@@ -202,9 +202,9 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 - **Command Palette e Tree View**:
   `packages/clarus-js/js/command-palette.js`, diálogo de busca/comandos
-  disparado por botão ou por atalho global (`data-cl-shortcut="mod+k"`),
+  disparado por botão ou por atalho global (`data-fs-shortcut="mod+k"`),
   combinando o overlay/focus trap do Modal com o filtro/navegação por
-  teclado do Combobox — reusa `.cl-dropdown-item` pros itens da lista.
+  teclado do Combobox — reusa `.fs-dropdown-item` pros itens da lista.
   `packages/clarus-js/js/tree-view.js`, lista hierárquica seguindo o
   padrão [WAI-ARIA Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/):
   marcação `<ul>`/`<li>` nativa aninhada, botão de expandir/colapsar
@@ -219,12 +219,12 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - **DataTable v1**:
   `packages/clarus-js/js/datatable.js`, camada JS opcional sobre uma
   [Table](docs/components/table.md) comum — ordenação por coluna
-  (`data-cl-sort`, ciclo asc → desc → nenhuma, `aria-sort` seguindo o
+  (`data-fs-sort`, ciclo asc → desc → nenhuma, `aria-sort` seguindo o
   padrão [WAI-ARIA Table Sort](https://www.w3.org/WAI/ARIA/apg/patterns/table/examples/sortable-table/)),
-  filtro por texto (`[data-cl-datatable-filter]`, substring
+  filtro por texto (`[data-fs-datatable-filter]`, substring
   case-insensitive em qualquer célula) e paginação client-side
-  (`data-cl-page-size`, reusa `.cl-pagination`/`.cl-page-link`). Estados de
-  vazio/carregando/erro reusam `.cl-empty-state`/`.cl-skeleton`
+  (`data-fs-page-size`, reusa `.fs-pagination`/`.fs-page-link`). Estados de
+  vazio/carregando/erro reusam `.fs-empty-state`/`.fs-skeleton`
   (`setLoading()`/`setError()`). Roving `tabindex` nas células do corpo com
   navegação completa por setas/`Home`/`End`/`Ctrl+Home`/`Ctrl+End`. 18
   testes unitários, mockup (`mockup/datatable.html`), a11y e visual
@@ -243,9 +243,9 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 - **Datepicker/Timepicker**: duas
   abordagens. **CSS-only**:
-  `<input type="date">`/`<input type="time">` herdam `.cl-form-control`
+  `<input type="date">`/`<input type="time">` herdam `.fs-form-control`
   normalmente; corrige o indicador nativo (ícone calendário/relógio) no
-  tema escuro, invisível por padrão sobre `--cl-color-surface` escuro.
+  tema escuro, invisível por padrão sobre `--fs-color-surface` escuro.
   **Datepicker customizado (JS)**, `packages/clarus-js/js/datepicker.js`:
   calendário completo seguindo o padrão
   [WAI-ARIA Date Picker Dialog](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/)
@@ -274,18 +274,18 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   destaque de navegação via `aria-activedescendant` (foco nunca sai do
   input). Teclado completo (`ArrowUp`/`ArrowDown` com wrap,
   `Home`/`End`, `Enter` seleciona, `Escape` fecha sem alterar o valor).
-  Reusa `js/core/positioning.js` e as classes `.cl-dropdown-menu`/
-  `.cl-dropdown-item` do Dropdown/Select para a listbox flutuante — só
+  Reusa `js/core/positioning.js` e as classes `.fs-dropdown-menu`/
+  `.fs-dropdown-item` do Dropdown/Select para a listbox flutuante — só
   `packages/clarus-components/scss/components/_combobox.scss` (wrapper +
-  `max-height` com scroll) é novo em CSS. Item opcional `data-cl-empty`
+  `max-height` com scroll) é novo em CSS. Item opcional `data-fs-empty`
   para mensagem de "sem resultados", com visibilidade alternada
   automaticamente. Testes unitários (13 casos), mockup em
   `mockup/combobox.html`, documentado em
   [`docs/components/combobox.md`](docs/components/combobox.md).
 
 - **Theming multi-brand**: suporte a
-  `data-brand="x"` sobre a camada de tokens semânticos existente,
-  sobrescrevendo só a cor de ação primária (`--cl-color-primary` e os
+  `data-fs-brand="x"` sobre a camada de tokens semânticos existente,
+  sobrescrevendo só a cor de ação primária (`--fs-color-primary` e os
   tokens derivados de alert/feedback) — `secondary`/`success`/`warning`/
   `danger`/`info` continuam universais entre marcas. Combina corretamente
   com `data-theme="dark"` (mesma técnica de mistura OKLCH de
@@ -298,16 +298,16 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   sólido calculado em build a partir do primary padrão, não por marca).
 
 - **Layout avançado**: três novas
-  primitivas de layout CSS-only, `.cl-stack` (empilhamento vertical com
-  `gap`), `.cl-cluster` (grupo horizontal com quebra automática) e
-  `.cl-sidebar` (aside de largura fixa + conteúdo flexível, com variante
-  `.cl-sidebar-reverse`) — todas com modificador de gap
-  (`.cl-{stack,cluster,sidebar}-gap-{0..5}`), em
+  primitivas de layout CSS-only, `.fs-stack` (empilhamento vertical com
+  `gap`), `.fs-cluster` (grupo horizontal com quebra automática) e
+  `.fs-sidebar` (aside de largura fixa + conteúdo flexível, com variante
+  `.fs-sidebar-reverse`) — todas com modificador de gap
+  (`.fs-{stack,cluster,sidebar}-gap-{0..5}`), em
   `packages/clarus-core/scss/layout/`. Utilitários `.u-sticky-top`/
   `.u-sticky-bottom` (posição fixa ao rolar, com offset configurável).
   Utilitários de container query (`.u-cq` + `.u-cq-{sm,md,lg}-d-*`),
   reagindo à largura do container mais próximo em vez da viewport, com
-  tokens de referência `--cl-cq-sm/md/lg` (320/480/640px). Documentado em
+  tokens de referência `--fs-cq-sm/md/lg` (320/480/640px). Documentado em
   [`docs/guides/layout-advanced.md`](docs/guides/layout-advanced.md), com
   exemplo em `mockup/layout.html`.
 
@@ -317,7 +317,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
     Descobriu e corrigiu violações reais de contraste em texto sobre
     fundo (link/nav ativo, botão `outline-*`, feedback de formulário,
     step/timeline de erro) que usavam a cor de token "crua" — agora usam
-    `--cl-alert-{nome}-text` (já calibrado ≥4.5:1 nos dois temas) — e uma
+    `--fs-alert-{nome}-text` (já calibrado ≥4.5:1 nos dois temas) — e uma
     violação de nome acessível ausente em `role="progressbar"`
     (`aria-label` adicionado nos exemplos, guia atualizado em
     [`docs/components/progress.md`](docs/components/progress.md)).
@@ -362,18 +362,18 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   atualizadas para os novos caminhos.
 
 - **BREAKING** — Refundação técnica rumo à v1.0.0:
-  - Rename mecânico de toda a API pública com prefixo `cl-`, para não colidir
+  - Rename mecânico de toda a API pública com prefixo `fs-`, para não colidir
     com classes de outras bibliotecas/CSS de terceiros na mesma página: toda
-    classe de componente ganha o prefixo `cl-` (`.btn` → `.cl-btn`,
-    `.dropdown-menu` → `.cl-dropdown-menu` etc.), utilitários passam a usar
+    classe de componente ganha o prefixo `fs-` (`.btn` → `.fs-btn`,
+    `.dropdown-menu` → `.fs-dropdown-menu` etc.), utilitários passam a usar
     `u-` (`.d-flex` → `.u-d-flex`, `.mt-3` → `.u-mt-3`), e os estados
     controlados por JavaScript usam `.is-*` (`.show` → `.is-open`, `.active`
     → `.is-active`, `.disabled` → `.is-disabled`; `.is-valid`/`.is-invalid`
-    já seguiam a convenção). Tokens CSS (`--clarus-*` → `--cl-*`), o atributo
-    de auto-init (`data-clarus` → `data-cl`) e os atributos de alvo/dispensa
-    (`data-target`/`data-dismiss` → `data-cl-target`/`data-cl-dismiss`)
+    já seguiam a convenção). Tokens CSS (`--clarus-*` → `--fs-*`), o atributo
+    de auto-init (`data-fsarus` → `data-fs`) e os atributos de alvo/dispensa
+    (`data-target`/`data-dismiss` → `data-fs-target`/`data-fs-dismiss`)
     seguem o mesmo prefixo, assim como os eventos DOM customizados
-    (`clarus:*` → `cl:*`). O global JavaScript (`window.Clarus`) e o nome do
+    (`clarus:*` → `fs:*`). O global JavaScript (`window.Clarus`) e o nome do
     pacote npm (`clarus-css`) **não mudam**. Afeta todo HTML que consome o
     framework — quem atualizar precisa migrar as classes/atributos/eventos
     citados acima.
@@ -399,13 +399,13 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
     navegador atualizado para moderno com fallback progressivo (Safari/iOS
     16.4+; ver `docs/reference/browser-support.md`).
   - Nova camada semântica de tokens (`packages/clarus-core/scss/tokens/_semantic.scss`:
-    `--cl-color-bg-surface`, `--cl-color-text-primary`,
-    `--cl-color-border-default` etc., todos alias `var()` dos tokens
+    `--fs-color-bg-surface`, `--fs-color-text-primary`,
+    `--fs-color-border-default` etc., todos alias `var()` dos tokens
     primitivos) e primeiro componente migrado para tokens próprios
-    (`.cl-btn` ganha `--cl-btn-bg`/`--cl-btn-color`/`--cl-btn-border-color`,
+    (`.fs-btn` ganha `--fs-btn-bg`/`--fs-btn-color`/`--fs-btn-border-color`,
     sobrescrevíveis por instância sem `!important`) — ver
     `docs/reference/scss-architecture.md` para o padrão a seguir em outros componentes.
-  - Nova escala tipográfica compacta (`--cl-font-size-*`): corpo ~13px, piso
+  - Nova escala tipográfica compacta (`--fs-font-size-*`): corpo ~13px, piso
     ~11px reservado a texto de apoio; headings (`h1`–`h6`) ganham tamanho e
     peso próprios pela primeira vez (antes usavam o padrão do navegador).
     Utilitários `.u-fs-*`/`.u-fw-*` expandidos (`xl`, `h1`–`h6`,
@@ -419,25 +419,25 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ### Added
 
-- **Componentes e refinamentos Cirrus**, já na convenção `cl-`/`@layer`/tokens:
+- **Componentes e refinamentos Cirrus**, já na convenção `fs-`/`@layer`/tokens:
   - Checkbox/radio/switch 100% CSS (`packages/clarus-components/scss/forms/_check-radio-switch.scss`):
-    `.cl-check`/`.cl-radio`/`.cl-switch`, técnica de input oculto + label
+    `.fs-check`/`.fs-radio`/`.fs-switch`, técnica de input oculto + label
     irmã (mesma do Segmented Control/Rating). Estados checked/disabled/
     indeterminate/`:focus-visible`, validação `is-valid`/`is-invalid`,
     tamanhos sm/md/lg. Switch com knob retangular arredondado (não circular).
-  - Tile (`_tile.scss`): `.cl-tile` > `.cl-tile-icon` / `.cl-tile-body`
-    (`-title`/`-subtitle`) / `.cl-tile-actions` (à direita por padrão,
-    `.cl-tile-actions-bottom` pra embaixo). Variante `.cl-tile-clickable`
-    reusa `.cl-stretched-link` do Card. Tamanhos sm/lg.
-  - Pagination (`_pagination.scss`): `.cl-pagination-bordered` (itens
-    colados, borda fundida), tamanhos sm/lg, `.cl-page-link-text` para
+  - Tile (`_tile.scss`): `.fs-tile` > `.fs-tile-icon` / `.fs-tile-body`
+    (`-title`/`-subtitle`) / `.fs-tile-actions` (à direita por padrão,
+    `.fs-tile-actions-bottom` pra embaixo). Variante `.fs-tile-clickable`
+    reusa `.fs-stretched-link` do Card. Tamanhos sm/lg.
+  - Pagination (`_pagination.scss`): `.fs-pagination-bordered` (itens
+    colados, borda fundida), tamanhos sm/lg, `.fs-page-link-text` para
     prev/next descritivo (texto em vez de só «/»).
-  - Tabs (`_tabs.scss`): estilos `.cl-tabs-pill` e `.cl-tabs-depth` (além do
-    padrão em linha), alinhamento `.cl-tabs-center`/`-right`/`-fill`,
-    tamanhos sm/lg — tudo modificador de `.cl-tabs`, reaproveita `.cl-nav-link`
+  - Tabs (`_tabs.scss`): estilos `.fs-tabs-pill` e `.fs-tabs-depth` (além do
+    padrão em linha), alinhamento `.fs-tabs-center`/`-right`/`-fill`,
+    tamanhos sm/lg — tudo modificador de `.fs-tabs`, reaproveita `.fs-nav-link`
     e a navegação por teclado existente (`js/tabs.js`) sem mudar o HTML.
-  - Tags (`_tag.scss`): escala própria `.cl-tag-xs`…`-xl`, agrupamento
-    (`.cl-tag-group`), feedback tátil (`:active`) no botão de dispensa.
+  - Tags (`_tag.scss`): escala própria `.fs-tag-xs`…`-xl`, agrupamento
+    (`.fs-tag-group`), feedback tátil (`:active`) no botão de dispensa.
   - Mockups novos: `mockup/check-radio-switch.html`, `mockup/tile.html`;
     exemplos adicionados a `mockup/pagination-breadcrumbs.html`,
     `mockup/accordion-tabs-toast.html`, `mockup/tag.html`.
@@ -535,7 +535,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   - Collapse standalone (`scss/components/_collapse.scss`, `js/collapse.js`):
     extrai `collapse()`/`expand()` de `js/core/transition.js` (já usado pelo
     Accordion) para uma seção expansível independente. `Clarus.Collapse`
-    segue a API da seção 20 (`data-clarus="collapse"`, `data-target`,
+    segue a API da seção 20 (`data-fsarus="collapse"`, `data-target`,
     `getInstance()`, `.show()`/`.hide()`/`.toggle()`/`.dispose()`, eventos
     `clarus:collapse:shown`/`-hidden`). Mockup `mockup/collapse.html`.
   - Breadcrumb avançado (`scss/components/_breadcrumbs.scss`,
@@ -756,7 +756,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   alinhamento configurável (`data-align="start"`/`"center"`/`"end"`, padrão
   `"start"`), navegação por ArrowUp/ArrowDown, fecha com clique fora/em um
   item/Escape (foco retorna ao toggle). Primeiro componente a seguir a API
-  JS da seção 20: auto-init via `data-clarus="dropdown"`, `Clarus.Dropdown`
+  JS da seção 20: auto-init via `data-fsarus="dropdown"`, `Clarus.Dropdown`
   com `getInstance()`/`.show()`/`.hide()`/`.toggle()`/`.dispose()`, eventos
   `clarus:dropdown:shown`/`-hidden`.
 - `computePosition()` (`js/core/positioning.js`) ganhou a opção `align`
@@ -767,10 +767,10 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   (top/bottom/left/right) e novos tokens `--clarus-tooltip-bg`/`-text`
   (invertidos no dark mode); show/hide por hover/foco/blur e Escape,
   `aria-describedby` ligando referência e tooltip; mesma API JS do
-  Dropdown (`Clarus.Tooltip`, `data-clarus="tooltip"`, eventos
+  Dropdown (`Clarus.Tooltip`, `data-fsarus="tooltip"`, eventos
   `clarus:tooltip:shown`/`-hidden`).
 - `js/core/register.js` (`autoInit()`/`createInstanceRegistry()`):
-  generaliza o padrão de auto-inicialização via `data-clarus` e registro de
+  generaliza o padrão de auto-inicialização via `data-fsarus` e registro de
   instância (`getInstance()`) para os próximos componentes interativos.
 - Componente Modal (`scss/components/_modal.scss`, `js/modal.js`):
   `.modal`/`.modal-dialog`/`.modal-content`/`.modal-header`/`.modal-title`/
@@ -779,11 +779,11 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `createFocusTrap()`, fecha com Escape/clique fora (foco volta ao
   gatilho) ou `data-dismiss="modal"`; `data-backdrop="static"` desativa
   fechar por Escape/clique fora. Segue a mesma API JS de Dropdown/Tooltip
-  (`Clarus.Modal`, `data-clarus="modal"`, eventos
+  (`Clarus.Modal`, `data-fsarus="modal"`, eventos
   `clarus:modal:shown`/`-hidden`).
 - Select customizado (`js/select.js`, `Clarus.Select`): gera a marcação
   (`.form-select` + `.dropdown-menu`/`.dropdown-item` por `<option>`) a
-  partir de um `<select>` nativo (`data-clarus="select"`, oculto mas
+  partir de um `<select>` nativo (`data-fsarus="select"`, oculto mas
   sincronizado para submissão de formulário) e compõe uma instância de
   `Dropdown` por cima, reaproveitando posicionamento/navegação/fechamento
   da Fase 8 em vez de duplicar essa lógica; dispara `change` nativo e
@@ -795,13 +795,13 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `expand()` de `Clarus.core` (Fase 7) para animar a altura de cada painel;
   só um painel aberto por vez por padrão (`data-multiple="true"` permite
   vários); segue a API JS da seção 20 (`Clarus.Accordion`,
-  `data-clarus="accordion"`, eventos `clarus:accordion:shown`/`-hidden`).
+  `data-fsarus="accordion"`, eventos `clarus:accordion:shown`/`-hidden`).
 - Componente Tabs (`scss/components/_tabs.scss`, `js/tabs.js`):
   `.tabs`/`.tab-content`/`.tab-pane`, reaproveitando `.nav-link` (Navbar,
   Fase 4) com indicador de sublinhado escopado a `.tabs`. Navegação por
   ArrowLeft/ArrowRight/Home/End (`role="tablist"`/`"tab"`/`"tabpanel"`,
   `aria-selected`, `tabindex` roving), disparando `clarus:tab:changed`
-  (`Clarus.Tabs`, `data-clarus="tabs"`).
+  (`Clarus.Tabs`, `data-fsarus="tabs"`).
 - Componente Toast (`scss/components/_toasts.scss`, `js/toast.js`):
   `.toast-container`/`.toast`/`.toast-header`/`.toast-body`, variantes de
   cor de estado (`.toast-#{nome}`, reaproveitando os tokens
@@ -809,7 +809,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `collapse()` de `Clarus.core` para mostrar/esconder, com timer de
   auto-dismiss configurável (`data-delay`, `data-autohide="false"` para
   desativar) e dismiss via `data-dismiss="toast"`; segue a API JS da seção
-  20 (`Clarus.Toast`, `data-clarus="toast"`, eventos
+  20 (`Clarus.Toast`, `data-fsarus="toast"`, eventos
   `clarus:toast:shown`/`-hidden`).
 - Formulários avançados (`scss/forms/_forms.scss`): estados de validação
   `.form-control.is-valid`/`.is-invalid` (borda e anel de foco em

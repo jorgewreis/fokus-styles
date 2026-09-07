@@ -1,14 +1,14 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Dropdown } from "../../packages/clarus-js/js/dropdown.js";
+import { Dropdown } from "../../packages/fokus-js/js/dropdown.js";
 
 function buildDropdown() {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
     <button type="button" id="toggle">Abrir</button>
-    <div class="cl-dropdown-menu" id="menu">
-      <a href="#" class="cl-dropdown-item">Item 1</a>
-      <a href="#" class="cl-dropdown-item">Item 2</a>
-      <a href="#" class="cl-dropdown-item is-disabled">Item 3 (desabilitado)</a>
+    <div class="fs-dropdown-menu" id="menu">
+      <a href="#" class="fs-dropdown-item">Item 1</a>
+      <a href="#" class="fs-dropdown-item">Item 2</a>
+      <a href="#" class="fs-dropdown-item is-disabled">Item 3 (desabilitado)</a>
     </div>
   `;
   document.body.appendChild(wrapper);
@@ -66,12 +66,12 @@ describe("Dropdown", () => {
     expect(menu.classList.contains("is-open")).toBe(false);
   });
 
-  it("dispara cl:dropdown:shown e cl:dropdown:hidden", () => {
+  it("dispara fs:dropdown:shown e fs:dropdown:hidden", () => {
     const { toggle, dropdown } = buildDropdown();
     const shownHandler = vi.fn();
     const hiddenHandler = vi.fn();
-    toggle.addEventListener("cl:dropdown:shown", shownHandler);
-    toggle.addEventListener("cl:dropdown:hidden", hiddenHandler);
+    toggle.addEventListener("fs:dropdown:shown", shownHandler);
+    toggle.addEventListener("fs:dropdown:hidden", hiddenHandler);
 
     dropdown.show();
     expect(shownHandler).toHaveBeenCalledTimes(1);
@@ -84,7 +84,7 @@ describe("Dropdown", () => {
     const { menu, dropdown } = buildDropdown();
     dropdown.show();
 
-    const items = menu.querySelectorAll(".cl-dropdown-item:not(.is-disabled)");
+    const items = menu.querySelectorAll(".fs-dropdown-item:not(.is-disabled)");
     items[0].focus();
 
     menu.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
@@ -108,7 +108,7 @@ describe("Dropdown", () => {
     const { toggle, menu, dropdown } = buildDropdown();
     dropdown.show();
 
-    menu.querySelector(".cl-dropdown-item").click();
+    menu.querySelector(".fs-dropdown-item").click();
 
     expect(menu.classList.contains("is-open")).toBe(false);
     expect(document.activeElement).toBe(toggle);

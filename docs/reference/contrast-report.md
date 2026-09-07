@@ -1,8 +1,8 @@
 # Relatório de contraste
 
 `npm run contrast` audita a razão de contraste WCAG dos pares
-texto/fundo emitidos pelos tokens (`packages/clarus-core/scss/tokens/_root.scss`,
-`packages/clarus-core/scss/themes/_dark.scss`), nos temas claro e escuro:
+texto/fundo emitidos pelos tokens (`packages/fokus-core/scss/tokens/_root.scss`,
+`packages/fokus-core/scss/themes/_dark.scss`), nos temas claro e escuro:
 texto base sobre superfície, botões sólidos e alerts, nas seis cores de tema
 (`primary`/`secondary`/`success`/`warning`/`danger`/`info`).
 
@@ -26,17 +26,17 @@ abaixo do mínimo AA — é o comando rodado pelo gate `contrast:check` do CI
 
 ## Por que o tema escuro precisa de pesos próprios
 
-O texto de um botão sólido (`.cl-btn-primary` etc.) é decidido uma vez, em
+O texto de um botão sólido (`.fs-btn-primary` etc.) é decidido uma vez, em
 tempo de build, por `color-contrast()` (branco ou preto, o que der mais
 contraste contra a cor sólida no **tema claro**) e gravado como valor
-estático em `--cl-btn-color`. Ele não é recalculado por tema. O fundo, por
-outro lado, muda no escuro (`--cl-color-{nome}` é misturado em direção ao
+estático em `--fs-btn-color`. Ele não é recalculado por tema. O fundo, por
+outro lado, muda no escuro (`--fs-color-{nome}` é misturado em direção ao
 branco). Isso significa que uma cor de texto escolhida para o fundo claro
 pode ficar com contraste ruim contra o fundo (mais claro) do tema escuro — é
 exatamente esse cenário que o relatório cobre nas linhas `dark: btn-* text
 (light)/bg(dark)`.
 
-Da mesma forma, os pesos de mistura de `--cl-alert-*-bg`/`-text` no escuro
+Da mesma forma, os pesos de mistura de `--fs-alert-*-bg`/`-text` no escuro
 (`$dark-alert-bg-weight`/`$dark-alert-text-weight` em `themes/_dark.scss`)
 foram ajustados a partir do relatório — os pesos "óbvios" (mistura simétrica)
 davam ~4.0–4.3:1 em quatro das seis cores, abaixo do mínimo AA de 4.5:1. Se

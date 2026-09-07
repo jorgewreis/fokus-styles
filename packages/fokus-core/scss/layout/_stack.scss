@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// Empilha os filhos diretos verticalmente com espaçamento consistente —
+// `gap` em vez de margin, evita o problema clássico de "último filho não
+// deve ter margin-bottom" sem seletor extra.
+@layer layout {
+  .fs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fs-stack-gap, #{map.get($spacers, 3)});
+  }
+
+  @each $key, $value in $spacers {
+    .fs-stack-gap-#{$key} {
+      --fs-stack-gap: #{$value};
+    }
+  }
+}

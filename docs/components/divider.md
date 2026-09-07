@@ -5,18 +5,18 @@ Linha divisória, 100% CSS — traço simples ou com rótulo centralizado.
 ## Visão geral
 
 ```html
-<hr class="cl-divider">
+<hr class="fs-divider">
 
-<div class="cl-divider"><span class="cl-divider-label">ou</span></div>
+<div class="fs-divider"><span class="fs-divider-label">ou</span></div>
 ```
 
 ## Anatomia
 
 Duas formas, conforme o elemento:
 
-- `<hr class="cl-divider">` — traço simples, uma linha (`<hr>` não aceita
+- `<hr class="fs-divider">` — traço simples, uma linha (`<hr>` não aceita
   filhos).
-- `<div class="cl-divider">` com `.cl-divider-label` dentro — texto
+- `<div class="fs-divider">` com `.fs-divider-label` dentro — texto
   centralizado, flanqueado por duas linhas desenhadas via
   `::before`/`::after` (precisa ser `<div>`, não `<hr>`, por causa do
   filho).
@@ -42,16 +42,16 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-`--cl-color-border`, `--cl-color-muted` (texto do label).
+`--fs-color-border`, `--fs-color-muted` (texto do label).
 
 ## Exemplo
 
 ```html
 <p>Conteúdo acima.</p>
-<hr class="cl-divider">
+<hr class="fs-divider">
 <p>Conteúdo abaixo.</p>
 
-<div class="cl-divider"><span class="cl-divider-label">ou entre com</span></div>
+<div class="fs-divider"><span class="fs-divider-label">ou entre com</span></div>
 ```
 
 Mockup: [laboratório do componente](../../mockup/foundations.html#divider).

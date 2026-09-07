@@ -1,0 +1,14 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Alert Dialog / Confirm: variante do Modal (scss/components/_modal.scss) para
+// confirmação, montada dinamicamente por FokusStyles.confirm() (js/confirm.js) —
+// reaproveita .fs-modal/.fs-modal-dialog/.fs-modal-content/.fs-modal-footer sem duplicar
+// layout, só adiciona a mensagem abaixo do título.
+
+@layer components {
+  .fs-alert-dialog-message {
+    margin: 4px 0 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+}

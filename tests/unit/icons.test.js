@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import check from "../../packages/clarus-icons/icons/check.js";
-import arrowRight from "../../packages/clarus-icons/icons/arrow-right.js";
-import deleteIcon from "../../packages/clarus-icons/icons/delete.js";
-import { check as checkFromBarrel, arrowRight as arrowRightFromBarrel, deleteIcon as deleteIconFromBarrel } from "../../packages/clarus-icons/index.js";
+import check from "../../packages/fokus-icons/icons/check.js";
+import arrowRight from "../../packages/fokus-icons/icons/arrow-right.js";
+import deleteIcon from "../../packages/fokus-icons/icons/delete.js";
+import { check as checkFromBarrel, arrowRight as arrowRightFromBarrel, deleteIcon as deleteIconFromBarrel } from "../../packages/fokus-icons/index.js";
 
-describe("clarus-icons", () => {
-  it("cada módulo de ícone exporta uma string de SVG válida com class=cl-icon", () => {
-    expect(check).toMatch(/^<svg class="cl-icon"/);
+describe("fokus-icons", () => {
+  it("cada módulo de ícone exporta uma string de SVG válida com class=fs-icon", () => {
+    expect(check).toMatch(/^<svg class="fs-icon"/);
     expect(check).toContain("</svg>");
     expect(check).not.toContain("lucide-check");
   });

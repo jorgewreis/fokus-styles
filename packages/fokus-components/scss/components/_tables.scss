@@ -1,0 +1,61 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer components {
+  .fs-table {
+    width: 100%;
+    margin-bottom: 0;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    border-collapse: collapse;
+  }
+
+  .fs-table th,
+  .fs-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--fs-color-border);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .fs-table thead th {
+    border-bottom-width: 2px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }
+
+  .fs-table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-table-hover tbody tr:hover {
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-table-bordered th,
+  .fs-table-bordered td {
+    border: 1px solid var(--fs-color-border);
+  }
+
+  .fs-table-borderless th,
+  .fs-table-borderless td {
+    border: 0;
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-table-#{$name} {
+      background-color: var(--fs-alert-#{$name}-bg);
+      color: var(--fs-alert-#{$name}-text);
+    }
+  }
+
+  .fs-table-sm th,
+  .fs-table-sm td {
+    padding: 4px 8px;
+  }
+
+  .fs-table-responsive {
+    overflow-x: auto;
+  }
+}

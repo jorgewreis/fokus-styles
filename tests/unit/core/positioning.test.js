@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { computePosition, applyPosition } from "../../../packages/clarus-js/js/core/positioning.js";
+import { computePosition, applyPosition } from "../../../packages/fokus-js/js/core/positioning.js";
 
 function mockRect(el, rect) {
   el.getBoundingClientRect = () => ({

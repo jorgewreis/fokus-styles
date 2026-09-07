@@ -1,6 +1,6 @@
 # Acessibilidade
 
-Acessibilidade não é um retrofit no Clarus CSS — foco, teclado e ARIA fazem
+Acessibilidade não é um retrofit no Fokus Styles — foco, teclado e ARIA fazem
 parte da API de todo componente interativo desde a primeira versão. Este
 guia documenta os padrões **compartilhados** entre componentes; o
 comportamento específico de cada um está na sua página em
@@ -11,7 +11,7 @@ comportamento específico de cada um está na sua página em
 Todo elemento interativo (botões, links, inputs, itens de menu) usa
 `:focus-visible` (não `:focus`) para o anel de destaque — aparece só na
 navegação por teclado, não em cliques de mouse, evitando o "flash" de foco
-indesejado ao clicar. O mixin `focus-ring` (`packages/clarus-core/scss/tools/_mixins.scss`)
+indesejado ao clicar. O mixin `focus-ring` (`packages/fokus-core/scss/tools/_mixins.scss`)
 centraliza esse estilo; todo componente novo deve reusá-lo em vez de
 desenhar um anel de foco próprio.
 
@@ -20,7 +20,7 @@ desenhar um anel de foco próprio.
 Componentes que sobrepõem a página inteira (Modal, Offcanvas) prendem o
 foco dentro de si enquanto abertos — `Tab` no último elemento focável volta
 pro primeiro, `Shift+Tab` no primeiro vai pro último
-(`packages/clarus-js/js/core/focus.js`, `createFocusTrap()`). Ao abrir, o
+(`packages/fokus-js/js/core/focus.js`, `createFocusTrap()`). Ao abrir, o
 foco vai para o primeiro elemento focável do painel; ao fechar, volta para o
 elemento que abriu (o gatilho).
 
@@ -49,7 +49,7 @@ grupo de uma vez, e as setas navegam **dentro** dele:
 Alguns atributos ARIA são calculados e aplicados pelo próprio JS na
 inicialização (não precisam ser escritos manualmente no HTML) — por
 exemplo, Tabs aplica `role="tablist"`/`role="tab"`/`aria-selected`/
-`aria-controls` aos elementos com `data-cl="tabs"`. Onde isso acontece, a
+`aria-controls` aos elementos com `data-fs="tabs"`. Onde isso acontece, a
 página do componente avisa explicitamente; o resto (`aria-label` em botões
 sem texto visível, `alt` em imagens, etc.) é responsabilidade de quem
 escreve o HTML — o framework não adivinha texto alternativo.
@@ -57,7 +57,7 @@ escreve o HTML — o framework não adivinha texto alternativo.
 ## `prefers-reduced-motion`
 
 Toda transição de altura acionada por JS (Collapse, Accordion, Toast via
-`packages/clarus-js/js/core/transition.js`) verifica
+`packages/fokus-js/js/core/transition.js`) verifica
 `window.matchMedia("(prefers-reduced-motion: reduce)")` e pula direto para
 o estado final — sem animação — quando o usuário pediu menos movimento no
 sistema operacional. A camada base do CSS também reduz automaticamente
@@ -78,7 +78,7 @@ depois de qualquer mudança de cor de token.
 ## Formulários
 
 Inputs de validação (`.is-valid`/`.is-invalid`) e os textos de apoio
-(`.cl-valid-feedback`/`.cl-invalid-feedback`, `.cl-form-text`) são
+(`.fs-valid-feedback`/`.fs-invalid-feedback`, `.fs-form-text`) são
 elementos visuais — associe-os ao input via `aria-describedby` no seu HTML
 para que leitores de tela anunciem a mensagem ao focar o campo. O
 framework não injeta esse atributo automaticamente, porque o `id` do texto

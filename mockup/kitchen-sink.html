@@ -17,8 +17,8 @@
         }
 
         [data-theme="dark"].theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
@@ -33,70 +33,70 @@
 <body>
 
 <!--
-  Kitchen sink: um exemplo compacto de cada componente do Clarus, nos dois
+  Kitchen sink: um exemplo compacto de cada componente do FokusStyles, nos dois
   temas — smoke test visual rápido (docs/internal/plans, sub-fase 5.8).
   Não substitui os mockups individuais (que cobrem variações/estados), só
   complementa como visão geral de uma página só.
 -->
 
 <div class="theme-panel">
-    <h2 class="u-fs-lg u-fw-medium">Claro</h2>
+    <h2 class="fs-u-fs-lg fs-u-fw-medium">Claro</h2>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Button</h3>
-        <button type="button" class="cl-btn u-mr-2">Padrão</button>
-        <button type="button" class="cl-btn cl-btn-primary u-mr-2">Primary</button>
-        <button type="button" class="cl-btn cl-btn-outline-primary">Outline</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Button</h3>
+        <button type="button" class="fs-btn fs-u-mr-2">Padrão</button>
+        <button type="button" class="fs-btn fs-btn-primary fs-u-mr-2">Primary</button>
+        <button type="button" class="fs-btn fs-btn-outline-primary">Outline</button>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Card</h3>
-        <div class="cl-card">
-            <div class="cl-card-header">
-                <h3 class="cl-card-title">Título do card</h3>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Card</h3>
+        <div class="fs-card">
+            <div class="fs-card-header">
+                <h3 class="fs-card-title">Título do card</h3>
             </div>
-            <div class="cl-card-body">
-                <p class="cl-card-text">Corpo de texto do card.</p>
-                <button type="button" class="cl-btn cl-btn-primary">Ação</button>
+            <div class="fs-card-body">
+                <p class="fs-card-text">Corpo de texto do card.</p>
+                <button type="button" class="fs-btn fs-btn-primary">Ação</button>
             </div>
-            <div class="cl-card-footer">
-                <span class="cl-badge cl-badge-success">Ativo</span>
+            <div class="fs-card-footer">
+                <span class="fs-badge fs-badge-success">Ativo</span>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Badge &amp; Tag</h3>
-        <span class="cl-badge cl-badge-primary u-mr-2">Primary</span>
-        <span class="cl-badge cl-tag" data-cl="tag">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Badge &amp; Tag</h3>
+        <span class="fs-badge fs-badge-primary fs-u-mr-2">Primary</span>
+        <span class="fs-badge fs-tag" data-fs="tag">
             Frontend
-            <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Frontend"></button>
+            <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button>
         </span>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Alert</h3>
-        <div class="cl-alert cl-alert-success">Operação concluída com sucesso.</div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Alert</h3>
+        <div class="fs-alert fs-alert-success">Operação concluída com sucesso.</div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Table &amp; DataTable</h3>
-        <table class="cl-table cl-table-striped cl-table-hover u-mb-3">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Table &amp; DataTable</h3>
+        <table class="fs-table fs-table-striped fs-table-hover fs-u-mb-3">
             <thead><tr><th>Nome</th><th>Status</th></tr></thead>
             <tbody>
                 <tr><td>Ana</td><td>Ativo</td></tr>
                 <tr><td>Bruno</td><td>Inativo</td></tr>
             </tbody>
         </table>
-        <div class="cl-datatable" data-cl="datatable" data-cl-page-size="5">
-            <div class="cl-datatable-toolbar">
-                <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar…">
+        <div class="fs-datatable" data-fs="datatable" data-fs-page-size="5">
+            <div class="fs-datatable-toolbar">
+                <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar…">
             </div>
-            <table class="cl-table cl-table-striped cl-table-hover">
+            <table class="fs-table fs-table-striped fs-table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-cl-sort="name">Nome</th>
-                        <th scope="col" data-cl-sort="age">Idade</th>
+                        <th scope="col" data-fs-sort="name">Nome</th>
+                        <th scope="col" data-fs-sort="age">Idade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,257 +108,257 @@
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Divider, Empty State, Tile, Skeleton</h3>
-        <hr class="cl-divider">
-        <div class="cl-empty-state u-mb-3">
-            <h3 class="cl-empty-state-title">Nenhum resultado encontrado</h3>
-            <p class="cl-empty-state-text">Tente ajustar os filtros.</p>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Divider, Empty State, Tile, Skeleton</h3>
+        <hr class="fs-divider">
+        <div class="fs-empty-state fs-u-mb-3">
+            <h3 class="fs-empty-state-title">Nenhum resultado encontrado</h3>
+            <p class="fs-empty-state-text">Tente ajustar os filtros.</p>
         </div>
-        <div class="cl-tile u-mb-3">
-            <div class="cl-tile-body">
-                <p class="cl-tile-title">Relatório mensal.pdf</p>
-                <p class="cl-tile-subtitle">2.4 MB · Atualizado há 2h</p>
+        <div class="fs-tile fs-u-mb-3">
+            <div class="fs-tile-body">
+                <p class="fs-tile-title">Relatório mensal.pdf</p>
+                <p class="fs-tile-subtitle">2.4 MB · Atualizado há 2h</p>
             </div>
         </div>
-        <div class="cl-skeleton cl-skeleton-text"></div>
+        <div class="fs-skeleton fs-skeleton-text"></div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Forms</h3>
-        <div class="cl-form-col u-mb-2">
-            <label for="ks-nome" class="cl-form-label">Nome completo</label>
-            <input type="text" class="cl-form-control" id="ks-nome" placeholder="Seu nome">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Forms</h3>
+        <div class="fs-form-col fs-u-mb-2">
+            <label for="ks-nome" class="fs-form-label">Nome completo</label>
+            <input type="text" class="fs-form-control" id="ks-nome" placeholder="Seu nome">
         </div>
-        <div class="cl-input-group u-mb-2">
-            <span class="cl-input-group-text">R$</span>
-            <input type="number" class="cl-form-control" aria-label="Valor em reais">
+        <div class="fs-input-group fs-u-mb-2">
+            <span class="fs-input-group-text">R$</span>
+            <input type="number" class="fs-form-control" aria-label="Valor em reais">
         </div>
-        <select class="cl-form-select u-mb-2" data-cl="select" id="ks-pais">
+        <select class="fs-form-select fs-u-mb-2" data-fs="select" id="ks-pais">
             <option value="br">Brasil</option>
             <option value="pt">Portugal</option>
         </select>
-        <div class="cl-combobox u-mb-2">
-            <input type="text" class="cl-form-control" data-cl="combobox" data-cl-target="#ks-lista-combo" placeholder="Buscar…">
+        <div class="fs-combobox fs-u-mb-2">
+            <input type="text" class="fs-form-control" data-fs="combobox" data-fs-target="#ks-lista-combo" placeholder="Buscar…">
         </div>
-        <ul class="cl-dropdown-menu cl-combobox-listbox" id="ks-lista-combo">
-            <li class="cl-dropdown-item" data-value="a">Opção A</li>
-            <li class="cl-dropdown-item" data-value="b">Opção B</li>
+        <ul class="fs-dropdown-menu fs-combobox-listbox" id="ks-lista-combo">
+            <li class="fs-dropdown-item" data-value="a">Opção A</li>
+            <li class="fs-dropdown-item" data-value="b">Opção B</li>
         </ul>
-        <input type="date" class="cl-form-control u-mb-2" aria-label="Data">
-        <div class="cl-check u-mb-2">
-            <input type="checkbox" class="cl-check-input" id="ks-aceite">
-            <label for="ks-aceite" class="cl-check-label">Aceito os termos</label>
+        <input type="date" class="fs-form-control fs-u-mb-2" aria-label="Data">
+        <div class="fs-check fs-u-mb-2">
+            <input type="checkbox" class="fs-check-input" id="ks-aceite">
+            <label for="ks-aceite" class="fs-check-label">Aceito os termos</label>
         </div>
-        <div class="cl-radio u-mb-2">
-            <input type="radio" name="ks-periodo" class="cl-radio-input" id="ks-dia" checked>
-            <label for="ks-dia" class="cl-radio-label">Dia</label>
+        <div class="fs-radio fs-u-mb-2">
+            <input type="radio" name="ks-periodo" class="fs-radio-input" id="ks-dia" checked>
+            <label for="ks-dia" class="fs-radio-label">Dia</label>
         </div>
-        <div class="cl-switch u-mb-2">
-            <input type="checkbox" class="cl-switch-input" id="ks-notif" checked>
-            <label for="ks-notif" class="cl-switch-label">Notificações</label>
+        <div class="fs-switch fs-u-mb-2">
+            <input type="checkbox" class="fs-switch-input" id="ks-notif" checked>
+            <label for="ks-notif" class="fs-switch-label">Notificações</label>
         </div>
-        <div class="cl-file-upload">
-            <input type="file" class="cl-file-input" id="ks-arquivo">
-            <label for="ks-arquivo" class="cl-file-label">Escolher arquivo</label>
+        <div class="fs-file-upload">
+            <input type="file" class="fs-file-input" id="ks-arquivo">
+            <label for="ks-arquivo" class="fs-file-label">Escolher arquivo</label>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Navbar, Tabs, Breadcrumb, Pagination</h3>
-        <nav class="cl-navbar u-mb-3">
-            <a href="#" class="cl-navbar-brand">Minha Marca</a>
-            <ul class="cl-navbar-nav">
-                <li><a href="#" class="cl-nav-link is-active">Início</a></li>
-                <li><a href="#" class="cl-nav-link">Produtos</a></li>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Navbar, Tabs, Breadcrumb, Pagination</h3>
+        <nav class="fs-navbar fs-u-mb-3">
+            <a href="#" class="fs-navbar-brand">Minha Marca</a>
+            <ul class="fs-navbar-nav">
+                <li><a href="#" class="fs-nav-link is-active">Início</a></li>
+                <li><a href="#" class="fs-nav-link">Produtos</a></li>
             </ul>
         </nav>
-        <div class="cl-tabs u-mb-1" data-cl="tabs">
-            <a href="#" class="cl-nav-link is-active" data-cl-target="#ks-perfil">Perfil</a>
-            <a href="#" class="cl-nav-link" data-cl-target="#ks-seguranca">Segurança</a>
+        <div class="fs-tabs fs-u-mb-1" data-fs="tabs">
+            <a href="#" class="fs-nav-link is-active" data-fs-target="#ks-perfil">Perfil</a>
+            <a href="#" class="fs-nav-link" data-fs-target="#ks-seguranca">Segurança</a>
         </div>
-        <div class="cl-tab-content u-mb-3">
-            <div class="cl-tab-pane is-active" id="ks-perfil">Conteúdo Perfil.</div>
-            <div class="cl-tab-pane" id="ks-seguranca">Conteúdo Segurança.</div>
+        <div class="fs-tab-content fs-u-mb-3">
+            <div class="fs-tab-pane is-active" id="ks-perfil">Conteúdo Perfil.</div>
+            <div class="fs-tab-pane" id="ks-seguranca">Conteúdo Segurança.</div>
         </div>
-        <nav aria-label="breadcrumb" class="u-mb-3">
-            <ol class="cl-breadcrumb">
-                <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-                <li class="cl-breadcrumb-item is-active">Página atual</li>
+        <nav aria-label="breadcrumb" class="fs-u-mb-3">
+            <ol class="fs-breadcrumb">
+                <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+                <li class="fs-breadcrumb-item is-active">Página atual</li>
             </ol>
         </nav>
-        <ul class="cl-pagination">
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
+        <ul class="fs-pagination">
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
         </ul>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Dropdown, Nested Menu, Tree View</h3>
-        <div class="cl-dropdown u-mr-2">
-            <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="dropdown" data-cl-target="#ks-menu">Opções</button>
-            <div class="cl-dropdown-menu" id="ks-menu">
-                <a href="#" class="cl-dropdown-item">Editar</a>
-                <a href="#" class="cl-dropdown-item">Excluir</a>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Dropdown, Nested Menu, Tree View</h3>
+        <div class="fs-dropdown fs-u-mr-2">
+            <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="dropdown" data-fs-target="#ks-menu">Opções</button>
+            <div class="fs-dropdown-menu" id="ks-menu">
+                <a href="#" class="fs-dropdown-item">Editar</a>
+                <a href="#" class="fs-dropdown-item">Excluir</a>
             </div>
         </div>
-        <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="nested-menu" data-cl-target="#ks-menu-aninhado">Arquivo</button>
-        <div class="cl-dropdown-menu" id="ks-menu-aninhado">
-            <a href="#" class="cl-dropdown-item">Novo</a>
-            <div class="cl-dropdown-submenu">
-                <a href="#" class="cl-dropdown-item cl-dropdown-item-submenu">Exportar</a>
-                <div class="cl-dropdown-menu">
-                    <a href="#" class="cl-dropdown-item">PDF</a>
+        <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="nested-menu" data-fs-target="#ks-menu-aninhado">Arquivo</button>
+        <div class="fs-dropdown-menu" id="ks-menu-aninhado">
+            <a href="#" class="fs-dropdown-item">Novo</a>
+            <div class="fs-dropdown-submenu">
+                <a href="#" class="fs-dropdown-item fs-dropdown-item-submenu">Exportar</a>
+                <div class="fs-dropdown-menu">
+                    <a href="#" class="fs-dropdown-item">PDF</a>
                 </div>
             </div>
         </div>
-        <ul class="cl-tree u-mt-3" data-cl="tree-view">
+        <ul class="fs-tree fs-u-mt-3" data-fs="tree-view">
             <li>
-                <span class="cl-tree-label">src</span>
+                <span class="fs-tree-label">src</span>
                 <ul>
-                    <li><span class="cl-tree-label">index.js</span></li>
+                    <li><span class="fs-tree-label">index.js</span></li>
                 </ul>
             </li>
-            <li><span class="cl-tree-label">README.md</span></li>
+            <li><span class="fs-tree-label">README.md</span></li>
         </ul>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Accordion &amp; Collapse</h3>
-        <div class="cl-accordion u-mb-3" data-cl="accordion">
-            <div class="cl-accordion-item">
-                <h3 class="cl-accordion-header">
-                    <button type="button" class="cl-accordion-button" aria-expanded="true">Pergunta 1</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Accordion &amp; Collapse</h3>
+        <div class="fs-accordion fs-u-mb-3" data-fs="accordion">
+            <div class="fs-accordion-item">
+                <h3 class="fs-accordion-header">
+                    <button type="button" class="fs-accordion-button" aria-expanded="true">Pergunta 1</button>
                 </h3>
-                <div class="cl-accordion-collapse">
-                    <div class="cl-accordion-body">Resposta 1.</div>
+                <div class="fs-accordion-collapse">
+                    <div class="fs-accordion-body">Resposta 1.</div>
                 </div>
             </div>
         </div>
-        <button type="button" class="cl-btn" data-cl="collapse" data-cl-target="#ks-detalhes">Ver detalhes</button>
-        <div class="cl-collapse" id="ks-detalhes">Conteúdo que expande/recolhe.</div>
+        <button type="button" class="fs-btn" data-fs="collapse" data-fs-target="#ks-detalhes">Ver detalhes</button>
+        <div class="fs-collapse" id="ks-detalhes">Conteúdo que expande/recolhe.</div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Stepper</h3>
-        <div class="cl-stepper" data-cl="stepper">
-            <ol class="cl-stepper-header">
-                <li class="cl-step cl-step-active"><span class="cl-step-indicator">1</span><span class="cl-step-label">Conta</span></li>
-                <li class="cl-step"><span class="cl-step-indicator">2</span><span class="cl-step-label">Perfil</span></li>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Stepper</h3>
+        <div class="fs-stepper" data-fs="stepper">
+            <ol class="fs-stepper-header">
+                <li class="fs-step fs-step-active"><span class="fs-step-indicator">1</span><span class="fs-step-label">Conta</span></li>
+                <li class="fs-step"><span class="fs-step-indicator">2</span><span class="fs-step-label">Perfil</span></li>
             </ol>
-            <div class="cl-stepper-content">
-                <div class="cl-step-panel is-active">Passo 1.</div>
-                <div class="cl-step-panel">Passo 2.</div>
+            <div class="fs-stepper-content">
+                <div class="fs-step-panel is-active">Passo 1.</div>
+                <div class="fs-step-panel">Passo 2.</div>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Modal, Offcanvas, Tooltip, Popover, Command Palette</h3>
-        <button type="button" class="cl-btn cl-btn-primary u-mr-2" data-cl="modal" data-cl-target="#ks-modal">Abrir modal</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="offcanvas" data-cl-target="#ks-offcanvas">Abrir menu</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="tooltip" title="Uma dica útil">Tooltip</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="popover" data-cl-target="#ks-popover">Popover</button>
-        <button type="button" class="cl-btn" data-cl="command-palette" data-cl-target="#ks-paleta">Comandos</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Modal, Offcanvas, Tooltip, Popover, Command Palette</h3>
+        <button type="button" class="fs-btn fs-btn-primary fs-u-mr-2" data-fs="modal" data-fs-target="#ks-modal">Abrir modal</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="offcanvas" data-fs-target="#ks-offcanvas">Abrir menu</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="tooltip" title="Uma dica útil">Tooltip</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="popover" data-fs-target="#ks-popover">Popover</button>
+        <button type="button" class="fs-btn" data-fs="command-palette" data-fs-target="#ks-paleta">Comandos</button>
 
-        <div class="cl-modal" id="ks-modal">
-            <div class="cl-modal-dialog">
-                <div class="cl-modal-content">
-                    <div class="cl-modal-header">
-                        <h3 class="cl-modal-title">Título</h3>
-                        <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+        <div class="fs-modal" id="ks-modal">
+            <div class="fs-modal-dialog">
+                <div class="fs-modal-content">
+                    <div class="fs-modal-header">
+                        <h3 class="fs-modal-title">Título</h3>
+                        <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <div class="cl-modal-body">Conteúdo do modal.</div>
+                    <div class="fs-modal-body">Conteúdo do modal.</div>
                 </div>
             </div>
         </div>
-        <div class="cl-offcanvas cl-offcanvas-start" id="ks-offcanvas">
-            <div class="cl-offcanvas-header">
-                <h3 class="cl-offcanvas-title">Menu</h3>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="offcanvas" aria-label="Fechar"></button>
+        <div class="fs-offcanvas fs-offcanvas-start" id="ks-offcanvas">
+            <div class="fs-offcanvas-header">
+                <h3 class="fs-offcanvas-title">Menu</h3>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="offcanvas" aria-label="Fechar"></button>
             </div>
-            <div class="cl-offcanvas-body">Conteúdo do painel.</div>
+            <div class="fs-offcanvas-body">Conteúdo do painel.</div>
         </div>
-        <div class="cl-popover" id="ks-popover">
-            <div class="cl-popover-header">Título</div>
-            <div class="cl-popover-body">Conteúdo detalhado aqui.</div>
+        <div class="fs-popover" id="ks-popover">
+            <div class="fs-popover-header">Título</div>
+            <div class="fs-popover-body">Conteúdo detalhado aqui.</div>
         </div>
-        <div class="cl-command-palette" id="ks-paleta">
-            <div class="cl-command-palette-dialog">
-                <input type="text" class="cl-command-palette-input" placeholder="Digite um comando…">
-                <ul class="cl-command-palette-list">
-                    <li class="cl-dropdown-item" data-value="new-file">Novo arquivo</li>
+        <div class="fs-command-palette" id="ks-paleta">
+            <div class="fs-command-palette-dialog">
+                <input type="text" class="fs-command-palette-input" placeholder="Digite um comando…">
+                <ul class="fs-command-palette-list">
+                    <li class="fs-dropdown-item" data-value="new-file">Novo arquivo</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Toast &amp; Notification Center</h3>
-        <div class="cl-toast-container">
-            <div class="cl-toast cl-toast-success" data-cl="toast" id="ks-toast" data-delay="4000">
-                <div class="cl-toast-header">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Toast &amp; Notification Center</h3>
+        <div class="fs-toast-container">
+            <div class="fs-toast fs-toast-success" data-fs="toast" id="ks-toast" data-delay="4000">
+                <div class="fs-toast-header">
                     <span>Sucesso</span>
-                    <button type="button" class="cl-btn-close" data-cl-dismiss="toast" aria-label="Fechar"></button>
+                    <button type="button" class="fs-btn-close" data-fs-dismiss="toast" aria-label="Fechar"></button>
                 </div>
-                <div class="cl-toast-body">Operação concluída com sucesso.</div>
+                <div class="fs-toast-body">Operação concluída com sucesso.</div>
             </div>
         </div>
-        <button type="button" class="cl-btn" data-cl="notification-center" data-cl-target="#ks-painel-notif" aria-label="Notificações">Notificações</button>
-        <div class="cl-notification-center" id="ks-painel-notif">
-            <div class="cl-notification-center-header">
-                <span class="cl-notification-center-title">Notificações</span>
+        <button type="button" class="fs-btn" data-fs="notification-center" data-fs-target="#ks-painel-notif" aria-label="Notificações">Notificações</button>
+        <div class="fs-notification-center" id="ks-painel-notif">
+            <div class="fs-notification-center-header">
+                <span class="fs-notification-center-title">Notificações</span>
             </div>
-            <ul class="cl-notification-list"></ul>
-            <p class="cl-notification-empty">Nenhuma notificação.</p>
+            <ul class="fs-notification-list"></ul>
+            <p class="fs-notification-empty">Nenhuma notificação.</p>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Spinner &amp; Progress</h3>
-        <div class="cl-spinner u-mr-3" role="status" aria-label="Carregando"></div>
-        <div class="cl-progress">
-            <div class="cl-progress-bar" style="--cl-progress-value: 60;"></div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Spinner &amp; Progress</h3>
+        <div class="fs-spinner fs-u-mr-3" role="status" aria-label="Carregando"></div>
+        <div class="fs-progress">
+            <div class="fs-progress-bar" style="--fs-progress-value: 60;"></div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Carousel, Rating, Segmented Control, Timeline</h3>
-        <div class="cl-carousel u-mb-3" data-cl="carousel">
-            <div class="cl-carousel-inner">
-                <div class="cl-carousel-item is-active"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
-                <div class="cl-carousel-item"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Carousel, Rating, Segmented Control, Timeline</h3>
+        <div class="fs-carousel fs-u-mb-3" data-fs="carousel">
+            <div class="fs-carousel-inner">
+                <div class="fs-carousel-item is-active"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
+                <div class="fs-carousel-item"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
             </div>
-            <button type="button" class="cl-carousel-control-prev" aria-label="Anterior"></button>
-            <button type="button" class="cl-carousel-control-next" aria-label="Próximo"></button>
+            <button type="button" class="fs-carousel-control-prev" aria-label="Anterior"></button>
+            <button type="button" class="fs-carousel-control-next" aria-label="Próximo"></button>
         </div>
-        <div class="cl-rating u-mb-3">
-            <input type="radio" name="ks-nota" class="cl-rating-input" id="ks-nota-5" value="5">
-            <label for="ks-nota-5" class="cl-rating-star" aria-label="5 estrelas">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <div class="fs-rating fs-u-mb-3">
+            <input type="radio" name="ks-nota" class="fs-rating-input" id="ks-nota-5" value="5">
+            <label for="ks-nota-5" class="fs-rating-star" aria-label="5 estrelas">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
             </label>
         </div>
-        <div class="cl-segmented-control u-mb-3">
-            <div class="cl-segmented-item">
-                <input type="radio" name="ks-periodo" class="cl-segmented-input" id="ks-p-dia" checked>
-                <label for="ks-p-dia" class="cl-segmented-label">Dia</label>
+        <div class="fs-segmented-control fs-u-mb-3">
+            <div class="fs-segmented-item">
+                <input type="radio" name="ks-periodo" class="fs-segmented-input" id="ks-p-dia" checked>
+                <label for="ks-p-dia" class="fs-segmented-label">Dia</label>
             </div>
-            <div class="cl-segmented-item">
-                <input type="radio" name="ks-periodo" class="cl-segmented-input" id="ks-p-semana">
-                <label for="ks-p-semana" class="cl-segmented-label">Semana</label>
+            <div class="fs-segmented-item">
+                <input type="radio" name="ks-periodo" class="fs-segmented-input" id="ks-p-semana">
+                <label for="ks-p-semana" class="fs-segmented-label">Semana</label>
             </div>
         </div>
-        <ol class="cl-timeline">
-            <li class="cl-timeline-item cl-timeline-completed">
-                <div class="cl-timeline-marker"></div>
-                <div class="cl-timeline-content">
-                    <p class="cl-timeline-title">Pedido criado</p>
+        <ol class="fs-timeline">
+            <li class="fs-timeline-item fs-timeline-completed">
+                <div class="fs-timeline-marker"></div>
+                <div class="fs-timeline-content">
+                    <p class="fs-timeline-title">Pedido criado</p>
                 </div>
             </li>
-            <li class="cl-timeline-item cl-timeline-active">
-                <div class="cl-timeline-marker"></div>
-                <div class="cl-timeline-content">
-                    <p class="cl-timeline-title">Em preparação</p>
+            <li class="fs-timeline-item fs-timeline-active">
+                <div class="fs-timeline-marker"></div>
+                <div class="fs-timeline-content">
+                    <p class="fs-timeline-title">Em preparação</p>
                 </div>
             </li>
         </ol>
@@ -366,63 +366,63 @@
 </div>
 
 <div class="theme-panel" data-theme="dark">
-    <h2 class="u-fs-lg u-fw-medium">Escuro</h2>
+    <h2 class="fs-u-fs-lg fs-u-fw-medium">Escuro</h2>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Button</h3>
-        <button type="button" class="cl-btn u-mr-2">Padrão</button>
-        <button type="button" class="cl-btn cl-btn-primary u-mr-2">Primary</button>
-        <button type="button" class="cl-btn cl-btn-outline-primary">Outline</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Button</h3>
+        <button type="button" class="fs-btn fs-u-mr-2">Padrão</button>
+        <button type="button" class="fs-btn fs-btn-primary fs-u-mr-2">Primary</button>
+        <button type="button" class="fs-btn fs-btn-outline-primary">Outline</button>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Card</h3>
-        <div class="cl-card">
-            <div class="cl-card-header">
-                <h3 class="cl-card-title">Título do card</h3>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Card</h3>
+        <div class="fs-card">
+            <div class="fs-card-header">
+                <h3 class="fs-card-title">Título do card</h3>
             </div>
-            <div class="cl-card-body">
-                <p class="cl-card-text">Corpo de texto do card.</p>
-                <button type="button" class="cl-btn cl-btn-primary">Ação</button>
+            <div class="fs-card-body">
+                <p class="fs-card-text">Corpo de texto do card.</p>
+                <button type="button" class="fs-btn fs-btn-primary">Ação</button>
             </div>
-            <div class="cl-card-footer">
-                <span class="cl-badge cl-badge-success">Ativo</span>
+            <div class="fs-card-footer">
+                <span class="fs-badge fs-badge-success">Ativo</span>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Badge &amp; Tag</h3>
-        <span class="cl-badge cl-badge-primary u-mr-2">Primary</span>
-        <span class="cl-badge cl-tag" data-cl="tag">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Badge &amp; Tag</h3>
+        <span class="fs-badge fs-badge-primary fs-u-mr-2">Primary</span>
+        <span class="fs-badge fs-tag" data-fs="tag">
             Frontend
-            <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover tag Frontend"></button>
+            <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button>
         </span>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Alert</h3>
-        <div class="cl-alert cl-alert-success">Operação concluída com sucesso.</div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Alert</h3>
+        <div class="fs-alert fs-alert-success">Operação concluída com sucesso.</div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Table &amp; DataTable</h3>
-        <table class="cl-table cl-table-striped cl-table-hover u-mb-3">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Table &amp; DataTable</h3>
+        <table class="fs-table fs-table-striped fs-table-hover fs-u-mb-3">
             <thead><tr><th>Nome</th><th>Status</th></tr></thead>
             <tbody>
                 <tr><td>Ana</td><td>Ativo</td></tr>
                 <tr><td>Bruno</td><td>Inativo</td></tr>
             </tbody>
         </table>
-        <div class="cl-datatable" data-cl="datatable" data-cl-page-size="5">
-            <div class="cl-datatable-toolbar">
-                <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar…">
+        <div class="fs-datatable" data-fs="datatable" data-fs-page-size="5">
+            <div class="fs-datatable-toolbar">
+                <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar…">
             </div>
-            <table class="cl-table cl-table-striped cl-table-hover">
+            <table class="fs-table fs-table-striped fs-table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-cl-sort="name">Nome</th>
-                        <th scope="col" data-cl-sort="age">Idade</th>
+                        <th scope="col" data-fs-sort="name">Nome</th>
+                        <th scope="col" data-fs-sort="age">Idade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -434,263 +434,263 @@
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Divider, Empty State, Tile, Skeleton</h3>
-        <hr class="cl-divider">
-        <div class="cl-empty-state u-mb-3">
-            <h3 class="cl-empty-state-title">Nenhum resultado encontrado</h3>
-            <p class="cl-empty-state-text">Tente ajustar os filtros.</p>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Divider, Empty State, Tile, Skeleton</h3>
+        <hr class="fs-divider">
+        <div class="fs-empty-state fs-u-mb-3">
+            <h3 class="fs-empty-state-title">Nenhum resultado encontrado</h3>
+            <p class="fs-empty-state-text">Tente ajustar os filtros.</p>
         </div>
-        <div class="cl-tile u-mb-3">
-            <div class="cl-tile-body">
-                <p class="cl-tile-title">Relatório mensal.pdf</p>
-                <p class="cl-tile-subtitle">2.4 MB · Atualizado há 2h</p>
+        <div class="fs-tile fs-u-mb-3">
+            <div class="fs-tile-body">
+                <p class="fs-tile-title">Relatório mensal.pdf</p>
+                <p class="fs-tile-subtitle">2.4 MB · Atualizado há 2h</p>
             </div>
         </div>
-        <div class="cl-skeleton cl-skeleton-text"></div>
+        <div class="fs-skeleton fs-skeleton-text"></div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Forms</h3>
-        <div class="cl-form-col u-mb-2">
-            <label for="ks-nome-d" class="cl-form-label">Nome completo</label>
-            <input type="text" class="cl-form-control" id="ks-nome-d" placeholder="Seu nome">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Forms</h3>
+        <div class="fs-form-col fs-u-mb-2">
+            <label for="ks-nome-d" class="fs-form-label">Nome completo</label>
+            <input type="text" class="fs-form-control" id="ks-nome-d" placeholder="Seu nome">
         </div>
-        <div class="cl-input-group u-mb-2">
-            <span class="cl-input-group-text">R$</span>
-            <input type="number" class="cl-form-control" aria-label="Valor em reais">
+        <div class="fs-input-group fs-u-mb-2">
+            <span class="fs-input-group-text">R$</span>
+            <input type="number" class="fs-form-control" aria-label="Valor em reais">
         </div>
-        <select class="cl-form-select u-mb-2" data-cl="select" id="ks-pais-d">
+        <select class="fs-form-select fs-u-mb-2" data-fs="select" id="ks-pais-d">
             <option value="br">Brasil</option>
             <option value="pt">Portugal</option>
         </select>
-        <div class="cl-combobox u-mb-2">
-            <input type="text" class="cl-form-control" data-cl="combobox" data-cl-target="#ks-lista-combo-d" placeholder="Buscar…">
+        <div class="fs-combobox fs-u-mb-2">
+            <input type="text" class="fs-form-control" data-fs="combobox" data-fs-target="#ks-lista-combo-d" placeholder="Buscar…">
         </div>
-        <ul class="cl-dropdown-menu cl-combobox-listbox" id="ks-lista-combo-d">
-            <li class="cl-dropdown-item" data-value="a">Opção A</li>
-            <li class="cl-dropdown-item" data-value="b">Opção B</li>
+        <ul class="fs-dropdown-menu fs-combobox-listbox" id="ks-lista-combo-d">
+            <li class="fs-dropdown-item" data-value="a">Opção A</li>
+            <li class="fs-dropdown-item" data-value="b">Opção B</li>
         </ul>
-        <input type="date" class="cl-form-control u-mb-2" aria-label="Data">
-        <div class="cl-check u-mb-2">
-            <input type="checkbox" class="cl-check-input" id="ks-aceite-d">
-            <label for="ks-aceite-d" class="cl-check-label">Aceito os termos</label>
+        <input type="date" class="fs-form-control fs-u-mb-2" aria-label="Data">
+        <div class="fs-check fs-u-mb-2">
+            <input type="checkbox" class="fs-check-input" id="ks-aceite-d">
+            <label for="ks-aceite-d" class="fs-check-label">Aceito os termos</label>
         </div>
-        <div class="cl-radio u-mb-2">
-            <input type="radio" name="ks-periodo-d" class="cl-radio-input" id="ks-dia-d" checked>
-            <label for="ks-dia-d" class="cl-radio-label">Dia</label>
+        <div class="fs-radio fs-u-mb-2">
+            <input type="radio" name="ks-periodo-d" class="fs-radio-input" id="ks-dia-d" checked>
+            <label for="ks-dia-d" class="fs-radio-label">Dia</label>
         </div>
-        <div class="cl-switch u-mb-2">
-            <input type="checkbox" class="cl-switch-input" id="ks-notif-d" checked>
-            <label for="ks-notif-d" class="cl-switch-label">Notificações</label>
+        <div class="fs-switch fs-u-mb-2">
+            <input type="checkbox" class="fs-switch-input" id="ks-notif-d" checked>
+            <label for="ks-notif-d" class="fs-switch-label">Notificações</label>
         </div>
-        <div class="cl-file-upload">
-            <input type="file" class="cl-file-input" id="ks-arquivo-d">
-            <label for="ks-arquivo-d" class="cl-file-label">Escolher arquivo</label>
+        <div class="fs-file-upload">
+            <input type="file" class="fs-file-input" id="ks-arquivo-d">
+            <label for="ks-arquivo-d" class="fs-file-label">Escolher arquivo</label>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Navbar, Tabs, Breadcrumb, Pagination</h3>
-        <nav class="cl-navbar u-mb-3">
-            <a href="#" class="cl-navbar-brand">Minha Marca</a>
-            <ul class="cl-navbar-nav">
-                <li><a href="#" class="cl-nav-link is-active">Início</a></li>
-                <li><a href="#" class="cl-nav-link">Produtos</a></li>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Navbar, Tabs, Breadcrumb, Pagination</h3>
+        <nav class="fs-navbar fs-u-mb-3">
+            <a href="#" class="fs-navbar-brand">Minha Marca</a>
+            <ul class="fs-navbar-nav">
+                <li><a href="#" class="fs-nav-link is-active">Início</a></li>
+                <li><a href="#" class="fs-nav-link">Produtos</a></li>
             </ul>
         </nav>
-        <div class="cl-tabs u-mb-1" data-cl="tabs">
-            <a href="#" class="cl-nav-link is-active" data-cl-target="#ks-perfil-d">Perfil</a>
-            <a href="#" class="cl-nav-link" data-cl-target="#ks-seguranca-d">Segurança</a>
+        <div class="fs-tabs fs-u-mb-1" data-fs="tabs">
+            <a href="#" class="fs-nav-link is-active" data-fs-target="#ks-perfil-d">Perfil</a>
+            <a href="#" class="fs-nav-link" data-fs-target="#ks-seguranca-d">Segurança</a>
         </div>
-        <div class="cl-tab-content u-mb-3">
-            <div class="cl-tab-pane is-active" id="ks-perfil-d">Conteúdo Perfil.</div>
-            <div class="cl-tab-pane" id="ks-seguranca-d">Conteúdo Segurança.</div>
+        <div class="fs-tab-content fs-u-mb-3">
+            <div class="fs-tab-pane is-active" id="ks-perfil-d">Conteúdo Perfil.</div>
+            <div class="fs-tab-pane" id="ks-seguranca-d">Conteúdo Segurança.</div>
         </div>
-        <nav aria-label="breadcrumb" class="u-mb-3">
-            <ol class="cl-breadcrumb">
-                <li class="cl-breadcrumb-item"><a href="#">Início</a></li>
-                <li class="cl-breadcrumb-item is-active">Página atual</li>
+        <nav aria-label="breadcrumb" class="fs-u-mb-3">
+            <ol class="fs-breadcrumb">
+                <li class="fs-breadcrumb-item"><a href="#">Início</a></li>
+                <li class="fs-breadcrumb-item is-active">Página atual</li>
             </ol>
         </nav>
-        <ul class="cl-pagination">
-            <li class="cl-page-item"><a href="#" class="cl-page-link">1</a></li>
-            <li class="cl-page-item is-active"><a href="#" class="cl-page-link">2</a></li>
-            <li class="cl-page-item"><a href="#" class="cl-page-link">3</a></li>
+        <ul class="fs-pagination">
+            <li class="fs-page-item"><a href="#" class="fs-page-link">1</a></li>
+            <li class="fs-page-item is-active"><a href="#" class="fs-page-link">2</a></li>
+            <li class="fs-page-item"><a href="#" class="fs-page-link">3</a></li>
         </ul>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Dropdown, Nested Menu, Tree View</h3>
-        <div class="cl-dropdown u-mr-2">
-            <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="dropdown" data-cl-target="#ks-menu-d">Opções</button>
-            <div class="cl-dropdown-menu" id="ks-menu-d">
-                <a href="#" class="cl-dropdown-item">Editar</a>
-                <a href="#" class="cl-dropdown-item">Excluir</a>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Dropdown, Nested Menu, Tree View</h3>
+        <div class="fs-dropdown fs-u-mr-2">
+            <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="dropdown" data-fs-target="#ks-menu-d">Opções</button>
+            <div class="fs-dropdown-menu" id="ks-menu-d">
+                <a href="#" class="fs-dropdown-item">Editar</a>
+                <a href="#" class="fs-dropdown-item">Excluir</a>
             </div>
         </div>
-        <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="nested-menu" data-cl-target="#ks-menu-aninhado-d">Arquivo</button>
-        <div class="cl-dropdown-menu" id="ks-menu-aninhado-d">
-            <a href="#" class="cl-dropdown-item">Novo</a>
-            <div class="cl-dropdown-submenu">
-                <a href="#" class="cl-dropdown-item cl-dropdown-item-submenu">Exportar</a>
-                <div class="cl-dropdown-menu">
-                    <a href="#" class="cl-dropdown-item">PDF</a>
+        <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="nested-menu" data-fs-target="#ks-menu-aninhado-d">Arquivo</button>
+        <div class="fs-dropdown-menu" id="ks-menu-aninhado-d">
+            <a href="#" class="fs-dropdown-item">Novo</a>
+            <div class="fs-dropdown-submenu">
+                <a href="#" class="fs-dropdown-item fs-dropdown-item-submenu">Exportar</a>
+                <div class="fs-dropdown-menu">
+                    <a href="#" class="fs-dropdown-item">PDF</a>
                 </div>
             </div>
         </div>
-        <ul class="cl-tree u-mt-3" data-cl="tree-view">
+        <ul class="fs-tree fs-u-mt-3" data-fs="tree-view">
             <li>
-                <span class="cl-tree-label">src</span>
+                <span class="fs-tree-label">src</span>
                 <ul>
-                    <li><span class="cl-tree-label">index.js</span></li>
+                    <li><span class="fs-tree-label">index.js</span></li>
                 </ul>
             </li>
-            <li><span class="cl-tree-label">README.md</span></li>
+            <li><span class="fs-tree-label">README.md</span></li>
         </ul>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Accordion &amp; Collapse</h3>
-        <div class="cl-accordion u-mb-3" data-cl="accordion">
-            <div class="cl-accordion-item">
-                <h3 class="cl-accordion-header">
-                    <button type="button" class="cl-accordion-button" aria-expanded="true">Pergunta 1</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Accordion &amp; Collapse</h3>
+        <div class="fs-accordion fs-u-mb-3" data-fs="accordion">
+            <div class="fs-accordion-item">
+                <h3 class="fs-accordion-header">
+                    <button type="button" class="fs-accordion-button" aria-expanded="true">Pergunta 1</button>
                 </h3>
-                <div class="cl-accordion-collapse">
-                    <div class="cl-accordion-body">Resposta 1.</div>
+                <div class="fs-accordion-collapse">
+                    <div class="fs-accordion-body">Resposta 1.</div>
                 </div>
             </div>
         </div>
-        <button type="button" class="cl-btn" data-cl="collapse" data-cl-target="#ks-detalhes-d">Ver detalhes</button>
-        <div class="cl-collapse" id="ks-detalhes-d">Conteúdo que expande/recolhe.</div>
+        <button type="button" class="fs-btn" data-fs="collapse" data-fs-target="#ks-detalhes-d">Ver detalhes</button>
+        <div class="fs-collapse" id="ks-detalhes-d">Conteúdo que expande/recolhe.</div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Stepper</h3>
-        <div class="cl-stepper" data-cl="stepper">
-            <ol class="cl-stepper-header">
-                <li class="cl-step cl-step-active"><span class="cl-step-indicator">1</span><span class="cl-step-label">Conta</span></li>
-                <li class="cl-step"><span class="cl-step-indicator">2</span><span class="cl-step-label">Perfil</span></li>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Stepper</h3>
+        <div class="fs-stepper" data-fs="stepper">
+            <ol class="fs-stepper-header">
+                <li class="fs-step fs-step-active"><span class="fs-step-indicator">1</span><span class="fs-step-label">Conta</span></li>
+                <li class="fs-step"><span class="fs-step-indicator">2</span><span class="fs-step-label">Perfil</span></li>
             </ol>
-            <div class="cl-stepper-content">
-                <div class="cl-step-panel is-active">Passo 1.</div>
-                <div class="cl-step-panel">Passo 2.</div>
+            <div class="fs-stepper-content">
+                <div class="fs-step-panel is-active">Passo 1.</div>
+                <div class="fs-step-panel">Passo 2.</div>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Modal, Offcanvas, Tooltip, Popover, Command Palette</h3>
-        <button type="button" class="cl-btn cl-btn-primary u-mr-2" data-cl="modal" data-cl-target="#ks-modal-d">Abrir modal</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="offcanvas" data-cl-target="#ks-offcanvas-d">Abrir menu</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="tooltip" title="Uma dica útil">Tooltip</button>
-        <button type="button" class="cl-btn u-mr-2" data-cl="popover" data-cl-target="#ks-popover-d">Popover</button>
-        <button type="button" class="cl-btn" data-cl="command-palette" data-cl-target="#ks-paleta-d">Comandos</button>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Modal, Offcanvas, Tooltip, Popover, Command Palette</h3>
+        <button type="button" class="fs-btn fs-btn-primary fs-u-mr-2" data-fs="modal" data-fs-target="#ks-modal-d">Abrir modal</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="offcanvas" data-fs-target="#ks-offcanvas-d">Abrir menu</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="tooltip" title="Uma dica útil">Tooltip</button>
+        <button type="button" class="fs-btn fs-u-mr-2" data-fs="popover" data-fs-target="#ks-popover-d">Popover</button>
+        <button type="button" class="fs-btn" data-fs="command-palette" data-fs-target="#ks-paleta-d">Comandos</button>
 
-        <div class="cl-modal" id="ks-modal-d">
-            <div class="cl-modal-dialog">
-                <div class="cl-modal-content">
-                    <div class="cl-modal-header">
-                        <h3 class="cl-modal-title">Título</h3>
-                        <button type="button" class="cl-btn-close" data-cl-dismiss="modal" aria-label="Fechar"></button>
+        <div class="fs-modal" id="ks-modal-d">
+            <div class="fs-modal-dialog">
+                <div class="fs-modal-content">
+                    <div class="fs-modal-header">
+                        <h3 class="fs-modal-title">Título</h3>
+                        <button type="button" class="fs-btn-close" data-fs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <div class="cl-modal-body">Conteúdo do modal.</div>
+                    <div class="fs-modal-body">Conteúdo do modal.</div>
                 </div>
             </div>
         </div>
-        <div class="cl-offcanvas cl-offcanvas-start" id="ks-offcanvas-d">
-            <div class="cl-offcanvas-header">
-                <h3 class="cl-offcanvas-title">Menu</h3>
-                <button type="button" class="cl-btn-close" data-cl-dismiss="offcanvas" aria-label="Fechar"></button>
+        <div class="fs-offcanvas fs-offcanvas-start" id="ks-offcanvas-d">
+            <div class="fs-offcanvas-header">
+                <h3 class="fs-offcanvas-title">Menu</h3>
+                <button type="button" class="fs-btn-close" data-fs-dismiss="offcanvas" aria-label="Fechar"></button>
             </div>
-            <div class="cl-offcanvas-body">Conteúdo do painel.</div>
+            <div class="fs-offcanvas-body">Conteúdo do painel.</div>
         </div>
-        <div class="cl-popover" id="ks-popover-d">
-            <div class="cl-popover-header">Título</div>
-            <div class="cl-popover-body">Conteúdo detalhado aqui.</div>
+        <div class="fs-popover" id="ks-popover-d">
+            <div class="fs-popover-header">Título</div>
+            <div class="fs-popover-body">Conteúdo detalhado aqui.</div>
         </div>
-        <div class="cl-command-palette" id="ks-paleta-d">
-            <div class="cl-command-palette-dialog">
-                <input type="text" class="cl-command-palette-input" placeholder="Digite um comando…">
-                <ul class="cl-command-palette-list">
-                    <li class="cl-dropdown-item" data-value="new-file">Novo arquivo</li>
+        <div class="fs-command-palette" id="ks-paleta-d">
+            <div class="fs-command-palette-dialog">
+                <input type="text" class="fs-command-palette-input" placeholder="Digite um comando…">
+                <ul class="fs-command-palette-list">
+                    <li class="fs-dropdown-item" data-value="new-file">Novo arquivo</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Toast &amp; Notification Center</h3>
-        <div class="cl-toast-container">
-            <div class="cl-toast cl-toast-success" data-cl="toast" id="ks-toast-d" data-delay="4000">
-                <div class="cl-toast-header">
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Toast &amp; Notification Center</h3>
+        <div class="fs-toast-container">
+            <div class="fs-toast fs-toast-success" data-fs="toast" id="ks-toast-d" data-delay="4000">
+                <div class="fs-toast-header">
                     <span>Sucesso</span>
-                    <button type="button" class="cl-btn-close" data-cl-dismiss="toast" aria-label="Fechar"></button>
+                    <button type="button" class="fs-btn-close" data-fs-dismiss="toast" aria-label="Fechar"></button>
                 </div>
-                <div class="cl-toast-body">Operação concluída com sucesso.</div>
+                <div class="fs-toast-body">Operação concluída com sucesso.</div>
             </div>
         </div>
-        <button type="button" class="cl-btn" data-cl="notification-center" data-cl-target="#ks-painel-notif-d" aria-label="Notificações">Notificações</button>
-        <div class="cl-notification-center" id="ks-painel-notif-d">
-            <div class="cl-notification-center-header">
-                <span class="cl-notification-center-title">Notificações</span>
+        <button type="button" class="fs-btn" data-fs="notification-center" data-fs-target="#ks-painel-notif-d" aria-label="Notificações">Notificações</button>
+        <div class="fs-notification-center" id="ks-painel-notif-d">
+            <div class="fs-notification-center-header">
+                <span class="fs-notification-center-title">Notificações</span>
             </div>
-            <ul class="cl-notification-list"></ul>
-            <p class="cl-notification-empty">Nenhuma notificação.</p>
+            <ul class="fs-notification-list"></ul>
+            <p class="fs-notification-empty">Nenhuma notificação.</p>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Spinner &amp; Progress</h3>
-        <div class="cl-spinner u-mr-3" role="status" aria-label="Carregando"></div>
-        <div class="cl-progress">
-            <div class="cl-progress-bar" style="--cl-progress-value: 60;"></div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Spinner &amp; Progress</h3>
+        <div class="fs-spinner fs-u-mr-3" role="status" aria-label="Carregando"></div>
+        <div class="fs-progress">
+            <div class="fs-progress-bar" style="--fs-progress-value: 60;"></div>
         </div>
     </section>
 
     <section>
-        <h3 class="u-fs-sm u-fw-medium">Carousel, Rating, Segmented Control, Timeline</h3>
-        <div class="cl-carousel u-mb-3" data-cl="carousel">
-            <div class="cl-carousel-inner">
-                <div class="cl-carousel-item is-active"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
-                <div class="cl-carousel-item"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
+        <h3 class="fs-u-fs-sm fs-u-fw-medium">Carousel, Rating, Segmented Control, Timeline</h3>
+        <div class="fs-carousel fs-u-mb-3" data-fs="carousel">
+            <div class="fs-carousel-inner">
+                <div class="fs-carousel-item is-active"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
+                <div class="fs-carousel-item"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" alt=""></div>
             </div>
-            <button type="button" class="cl-carousel-control-prev" aria-label="Anterior"></button>
-            <button type="button" class="cl-carousel-control-next" aria-label="Próximo"></button>
+            <button type="button" class="fs-carousel-control-prev" aria-label="Anterior"></button>
+            <button type="button" class="fs-carousel-control-next" aria-label="Próximo"></button>
         </div>
-        <div class="cl-rating u-mb-3">
-            <input type="radio" name="ks-nota-d" class="cl-rating-input" id="ks-nota-5-d" value="5">
-            <label for="ks-nota-5-d" class="cl-rating-star" aria-label="5 estrelas">
-                <svg class="cl-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <div class="fs-rating fs-u-mb-3">
+            <input type="radio" name="ks-nota-d" class="fs-rating-input" id="ks-nota-5-d" value="5">
+            <label for="ks-nota-5-d" class="fs-rating-star" aria-label="5 estrelas">
+                <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
             </label>
         </div>
-        <div class="cl-segmented-control u-mb-3">
-            <div class="cl-segmented-item">
-                <input type="radio" name="ks-periodo-d" class="cl-segmented-input" id="ks-p-dia-d" checked>
-                <label for="ks-p-dia-d" class="cl-segmented-label">Dia</label>
+        <div class="fs-segmented-control fs-u-mb-3">
+            <div class="fs-segmented-item">
+                <input type="radio" name="ks-periodo-d" class="fs-segmented-input" id="ks-p-dia-d" checked>
+                <label for="ks-p-dia-d" class="fs-segmented-label">Dia</label>
             </div>
-            <div class="cl-segmented-item">
-                <input type="radio" name="ks-periodo-d" class="cl-segmented-input" id="ks-p-semana-d">
-                <label for="ks-p-semana-d" class="cl-segmented-label">Semana</label>
+            <div class="fs-segmented-item">
+                <input type="radio" name="ks-periodo-d" class="fs-segmented-input" id="ks-p-semana-d">
+                <label for="ks-p-semana-d" class="fs-segmented-label">Semana</label>
             </div>
         </div>
-        <ol class="cl-timeline">
-            <li class="cl-timeline-item cl-timeline-completed">
-                <div class="cl-timeline-marker"></div>
-                <div class="cl-timeline-content">
-                    <p class="cl-timeline-title">Pedido criado</p>
+        <ol class="fs-timeline">
+            <li class="fs-timeline-item fs-timeline-completed">
+                <div class="fs-timeline-marker"></div>
+                <div class="fs-timeline-content">
+                    <p class="fs-timeline-title">Pedido criado</p>
                 </div>
             </li>
-            <li class="cl-timeline-item cl-timeline-active">
-                <div class="cl-timeline-marker"></div>
-                <div class="cl-timeline-content">
-                    <p class="cl-timeline-title">Em preparação</p>
+            <li class="fs-timeline-item fs-timeline-active">
+                <div class="fs-timeline-marker"></div>
+                <div class="fs-timeline-content">
+                    <p class="fs-timeline-title">Em preparação</p>
                 </div>
             </li>
         </ol>
     </section>
 </div>
 
-<script src="../dist/js/clarus.js"></script>
+<script src="../dist/js/fokus.js"></script>
 </body>
 </html>

@@ -15,18 +15,18 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
-        .cl-stepper {
+        .fs-stepper {
             max-width: 600px;
         }
 
-        .cl-step-panel {
+        .fs-step-panel {
             padding: 16px;
-            border: 1px solid var(--cl-color-border);
-            border-radius: var(--cl-radius-md);
+            border: 1px solid var(--fs-color-border);
+            border-radius: var(--fs-radius-md);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -35,77 +35,77 @@
 <body>
 
     <div class="theme-panel">
-<p class="u-fs-sm u-fw-medium u-mt-3 u-mb-2">Wizard horizontal — navegação next/prev, painéis e evento de validação</p>
-        <div class="cl-stepper" data-cl="stepper" id="stepper-wizard">
-            <ol class="cl-stepper-header">
-                <li class="cl-step cl-step-active">
-                    <span class="cl-step-indicator">1</span>
-                    <span class="cl-step-label">Conta</span>
+<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Wizard horizontal — navegação next/prev, painéis e evento de validação</p>
+        <div class="fs-stepper" data-fs="stepper" id="stepper-wizard">
+            <ol class="fs-stepper-header">
+                <li class="fs-step fs-step-active">
+                    <span class="fs-step-indicator">1</span>
+                    <span class="fs-step-label">Conta</span>
                 </li>
-                <li class="cl-step">
-                    <span class="cl-step-indicator">2</span>
-                    <span class="cl-step-label">Perfil</span>
+                <li class="fs-step">
+                    <span class="fs-step-indicator">2</span>
+                    <span class="fs-step-label">Perfil</span>
                 </li>
-                <li class="cl-step">
-                    <span class="cl-step-indicator">3</span>
-                    <span class="cl-step-label">Confirmação</span>
+                <li class="fs-step">
+                    <span class="fs-step-indicator">3</span>
+                    <span class="fs-step-label">Confirmação</span>
                 </li>
             </ol>
-            <div class="cl-stepper-content">
-                <div class="cl-step-panel is-active">Passo 1 — dados da conta (e-mail e senha).</div>
-                <div class="cl-step-panel">Passo 2 — dados do perfil (nome e avatar).</div>
-                <div class="cl-step-panel">Passo 3 — revise e confirme os dados.</div>
+            <div class="fs-stepper-content">
+                <div class="fs-step-panel is-active">Passo 1 — dados da conta (e-mail e senha).</div>
+                <div class="fs-step-panel">Passo 2 — dados do perfil (nome e avatar).</div>
+                <div class="fs-step-panel">Passo 3 — revise e confirme os dados.</div>
             </div>
-            <div class="cl-stepper-actions">
-                <button class="cl-btn" type="button" data-stepper="prev">Anterior</button>
-                <button class="cl-btn cl-btn-primary" type="button" data-stepper="next">Próximo</button>
+            <div class="fs-stepper-actions">
+                <button class="fs-btn" type="button" data-stepper="prev">Anterior</button>
+                <button class="fs-btn fs-btn-primary" type="button" data-stepper="next">Próximo</button>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-4 u-mb-2">Estados (estático): concluído, ativo, erro e pendente</p>
-        <div class="cl-stepper" id="stepper-states-claro">
-            <ol class="cl-stepper-header">
-                <li class="cl-step cl-step-completed">
-                    <span class="cl-step-indicator">1</span>
-                    <span class="cl-step-label">Concluído</span>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-4 fs-u-mb-2">Estados (estático): concluído, ativo, erro e pendente</p>
+        <div class="fs-stepper" id="stepper-states-claro">
+            <ol class="fs-stepper-header">
+                <li class="fs-step fs-step-completed">
+                    <span class="fs-step-indicator">1</span>
+                    <span class="fs-step-label">Concluído</span>
                 </li>
-                <li class="cl-step cl-step-active">
-                    <span class="cl-step-indicator">2</span>
-                    <span class="cl-step-label">Ativo</span>
+                <li class="fs-step fs-step-active">
+                    <span class="fs-step-indicator">2</span>
+                    <span class="fs-step-label">Ativo</span>
                 </li>
-                <li class="cl-step cl-step-error">
-                    <span class="cl-step-indicator">3</span>
-                    <span class="cl-step-label">Erro</span>
+                <li class="fs-step fs-step-error">
+                    <span class="fs-step-indicator">3</span>
+                    <span class="fs-step-label">Erro</span>
                 </li>
-                <li class="cl-step">
-                    <span class="cl-step-indicator">4</span>
-                    <span class="cl-step-label">Pendente</span>
+                <li class="fs-step">
+                    <span class="fs-step-indicator">4</span>
+                    <span class="fs-step-label">Pendente</span>
                 </li>
             </ol>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-4 u-mb-2">Vertical</p>
-        <div class="cl-stepper cl-stepper-vertical" id="stepper-vertical-claro">
-            <ol class="cl-stepper-header">
-                <li class="cl-step cl-step-completed">
-                    <span class="cl-step-indicator">1</span>
-                    <span class="cl-step-content">
-                        <span class="cl-step-label">Pedido recebido</span>
-                        <span class="cl-step-description">Confirmado às 09:12</span>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-4 fs-u-mb-2">Vertical</p>
+        <div class="fs-stepper fs-stepper-vertical" id="stepper-vertical-claro">
+            <ol class="fs-stepper-header">
+                <li class="fs-step fs-step-completed">
+                    <span class="fs-step-indicator">1</span>
+                    <span class="fs-step-content">
+                        <span class="fs-step-label">Pedido recebido</span>
+                        <span class="fs-step-description">Confirmado às 09:12</span>
                     </span>
                 </li>
-                <li class="cl-step cl-step-active">
-                    <span class="cl-step-indicator">2</span>
-                    <span class="cl-step-content">
-                        <span class="cl-step-label">Em separação</span>
-                        <span class="cl-step-description">Preparando os itens</span>
+                <li class="fs-step fs-step-active">
+                    <span class="fs-step-indicator">2</span>
+                    <span class="fs-step-content">
+                        <span class="fs-step-label">Em separação</span>
+                        <span class="fs-step-description">Preparando os itens</span>
                     </span>
                 </li>
-                <li class="cl-step">
-                    <span class="cl-step-indicator">3</span>
-                    <span class="cl-step-content">
-                        <span class="cl-step-label">Enviado</span>
-                        <span class="cl-step-description">Aguardando transportadora</span>
+                <li class="fs-step">
+                    <span class="fs-step-indicator">3</span>
+                    <span class="fs-step-content">
+                        <span class="fs-step-label">Enviado</span>
+                        <span class="fs-step-description">Aguardando transportadora</span>
                     </span>
                 </li>
             </ol>
@@ -114,6 +114,6 @@
 
     
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 </body>
 </html>

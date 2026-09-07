@@ -16,8 +16,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .upload-demo {
@@ -30,19 +30,19 @@
 <body>
 
     <div class="theme-panel">
-<div class="cl-file-upload upload-demo" data-cl="file-upload-advanced" id="upload-claro">
-            <input type="file" class="cl-file-input" id="anexos-claro" multiple>
-            <label for="anexos-claro" class="cl-file-label cl-file-label-dropzone" data-cl="file-drop">
+<div class="fs-file-upload upload-demo" data-fs="file-upload-advanced" id="upload-claro">
+            <input type="file" class="fs-file-input" id="anexos-claro" multiple>
+            <label for="anexos-claro" class="fs-file-label fs-file-label-dropzone" data-fs="file-drop">
                 Arraste arquivos ou clique para escolher
-                <span class="cl-file-dropzone-hint">Vários arquivos, até 5MB cada</span>
+                <span class="fs-file-dropzone-hint">Vários arquivos, até 5MB cada</span>
             </label>
         </div>
-        <button type="button" class="cl-btn u-mt-2" data-simulate="upload-claro">Simular progresso do 1º arquivo</button>
+        <button type="button" class="fs-btn fs-u-mt-2" data-simulate="upload-claro">Simular progresso do 1º arquivo</button>
     </div>
 
     
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         // Demonstra a API `setProgress`/`setError` sem depender de um backend
         // real — um `setInterval` simula um upload progressivo no 1º arquivo
@@ -50,8 +50,8 @@
         document.querySelectorAll("[data-simulate]").forEach((button) => {
             button.addEventListener("click", () => {
                 const rootEl = document.getElementById(button.getAttribute("data-simulate"));
-                const upload = Clarus.FileUploadAdvanced.getInstance(rootEl);
-                const firstItem = rootEl.querySelector(".cl-file-upload-item");
+                const upload = FokusStyles.FileUploadAdvanced.getInstance(rootEl);
+                const firstItem = rootEl.querySelector(".fs-file-upload-item");
                 if (!firstItem) return;
 
                 const id = firstItem.getAttribute("data-file-id");

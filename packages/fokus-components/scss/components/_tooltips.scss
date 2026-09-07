@@ -1,0 +1,55 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer components {
+  .fs-tooltip {
+    position: absolute;
+    z-index: var(--fs-z-tooltip);
+    display: none;
+    max-width: 220px;
+  }
+
+  .fs-tooltip.is-open {
+    display: block;
+  }
+
+  .fs-tooltip-inner {
+    padding: 6px 10px;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-tooltip-text);
+    background-color: var(--fs-tooltip-bg);
+    font-size: $font-size-xs;
+    text-align: center;
+  }
+
+  .fs-tooltip-arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--fs-tooltip-bg);
+    transform: rotate(45deg);
+  }
+
+  .fs-tooltip[data-placement="top"] .fs-tooltip-arrow {
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4px;
+  }
+
+  .fs-tooltip[data-placement="bottom"] .fs-tooltip-arrow {
+    top: -4px;
+    left: 50%;
+    margin-left: -4px;
+  }
+
+  .fs-tooltip[data-placement="left"] .fs-tooltip-arrow {
+    top: 50%;
+    right: -4px;
+    margin-top: -4px;
+  }
+
+  .fs-tooltip[data-placement="right"] .fs-tooltip-arrow {
+    top: 50%;
+    left: -4px;
+    margin-top: -4px;
+  }
+}

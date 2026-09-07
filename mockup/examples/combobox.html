@@ -16,8 +16,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         section {
@@ -32,21 +32,21 @@
 
     <div class="theme-panel">
 <section>
-            <p class="u-fs-sm u-fw-medium u-mb-1">Combobox — digite pra filtrar (ex.: "css")</p>
-            <label for="combobox-claro" class="cl-form-label">Framework CSS favorito</label>
-            <div class="cl-combobox">
-                <input type="text" class="cl-form-control" id="combobox-claro" data-cl="combobox" data-cl-target="#combobox-claro-listbox" placeholder="Buscar framework…">
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-1">Combobox — digite pra filtrar (ex.: "css")</p>
+            <label for="combobox-claro" class="fs-form-label">Framework CSS favorito</label>
+            <div class="fs-combobox">
+                <input type="text" class="fs-form-control" id="combobox-claro" data-fs="combobox" data-fs-target="#combobox-claro-listbox" placeholder="Buscar framework…">
             </div>
-            <ul class="cl-dropdown-menu cl-combobox-listbox" id="combobox-claro-listbox">
-                <li class="cl-dropdown-item" data-value="bootstrap">Bootstrap</li>
-                <li class="cl-dropdown-item" data-value="tailwind">Tailwind CSS</li>
-                <li class="cl-dropdown-item" data-value="bulma">Bulma</li>
-                <li class="cl-dropdown-item" data-value="foundation">Foundation</li>
-                <li class="cl-dropdown-item" data-value="uikit">UIkit</li>
-                <li class="cl-dropdown-item" data-value="cirrus">Cirrus</li>
-                <li class="cl-dropdown-item" data-value="clarus">Clarus CSS</li>
-                <li class="cl-dropdown-item is-disabled" data-value="descontinuado">Framework descontinuado</li>
-                <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhum resultado encontrado.</li>
+            <ul class="fs-dropdown-menu fs-combobox-listbox" id="combobox-claro-listbox">
+                <li class="fs-dropdown-item" data-value="bootstrap">Bootstrap</li>
+                <li class="fs-dropdown-item" data-value="tailwind">Tailwind CSS</li>
+                <li class="fs-dropdown-item" data-value="bulma">Bulma</li>
+                <li class="fs-dropdown-item" data-value="foundation">Foundation</li>
+                <li class="fs-dropdown-item" data-value="uikit">UIkit</li>
+                <li class="fs-dropdown-item" data-value="cirrus">Cirrus</li>
+                <li class="fs-dropdown-item" data-value="fokus">Fokus Styles</li>
+                <li class="fs-dropdown-item is-disabled" data-value="descontinuado">Framework descontinuado</li>
+                <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum resultado encontrado.</li>
             </ul>
         </section>
     </div>
@@ -54,7 +54,7 @@
     
 
     <!-- SCRIPTS IMPORT -->
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
 
 </body>
 </html>

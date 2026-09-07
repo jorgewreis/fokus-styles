@@ -48,6 +48,9 @@ jobs:
       - name: Types check
         run: npm run types:check
 
+      - name: Documentation check
+        run: npm run docs:check
+
       - name: Contrast check (WCAG AA)
         run: npm run contrast:check
 
@@ -63,10 +66,9 @@ jobs:
       - name: A11y tests (axe)
         run: npm run test:a11y
 
-      # Cada publish é idempotente: se aquela versao ja estiver no npm, pula em
-      # vez de falhar com 403. Sem isso, um re-run do job aborta no primeiro
-      # pacote ja publicado e nunca chega a publicar os demais.
-      - name: Publish clarus-css
+      # O repositório publica exclusivamente o pacote agregado fokus-styles.
+      # Cada publish é idempotente, para permitir reruns seguros do workflow.
+      - name: Publish fokus-styles
         run: |
           NAME=$(node -p "require('./package.json').name")
           VERSION=$(node -p "require('./package.json').version")
@@ -75,44 +77,5 @@ jobs:
           else
             npm publish --provenance --access public
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish clarus-icons
-        run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "$NAME@$VERSION ja publicado -- pulando."
-          else
-            npm publish --provenance --access public
-          fi
-        working-directory: packages/clarus-icons
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish clarus-cli
-        run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "$NAME@$VERSION ja publicado -- pulando."
-          else
-            npm publish --provenance --access public
-          fi
-        working-directory: packages/clarus-cli
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish clarus-react
-        run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "$NAME@$VERSION ja publicado -- pulando."
-          else
-            npm publish --provenance --access public
-          fi
-        working-directory: packages/clarus-react
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

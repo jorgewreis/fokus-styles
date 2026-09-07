@@ -1,0 +1,54 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  @each $breakpoint, $min in $breakpoints {
+    $infix: breakpoint-infix($breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      .fs-u-align-items#{$infix}-start {
+        align-items: flex-start;
+      }
+
+      .fs-u-align-items#{$infix}-center {
+        align-items: center;
+      }
+
+      .fs-u-align-items#{$infix}-end {
+        align-items: flex-end;
+      }
+
+      .fs-u-justify-content#{$infix}-start {
+        justify-content: flex-start;
+      }
+
+      .fs-u-justify-content#{$infix}-center {
+        justify-content: center;
+      }
+
+      .fs-u-justify-content#{$infix}-end {
+        justify-content: flex-end;
+      }
+
+      .fs-u-justify-content#{$infix}-around {
+        justify-content: space-around;
+      }
+
+      .fs-u-justify-content#{$infix}-between {
+        justify-content: space-between;
+      }
+
+      .fs-u-align-self#{$infix}-start {
+        align-self: flex-start;
+      }
+
+      .fs-u-align-self#{$infix}-center {
+        align-self: center;
+      }
+
+      .fs-u-align-self#{$infix}-end {
+        align-self: flex-end;
+      }
+    }
+  }
+}

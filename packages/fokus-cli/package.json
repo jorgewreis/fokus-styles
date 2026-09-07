@@ -1,0 +1,43 @@
+{
+  "name": "fokus-cli",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CLI oficial do Fokus Styles — build de SCSS customizado, scaffolding de marca (data-fs-brand) e análise de tamanho de bundle.",
+  "keywords": [
+    "cli",
+    "fokus-styles",
+    "sass",
+    "build"
+  ],
+  "homepage": "https://github.com/jorgewreis/fokus-styles/tree/main/packages/fokus-cli#readme",
+  "bugs": {
+    "url": "https://github.com/jorgewreis/fokus-styles/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgewreis/fokus-styles.git",
+    "directory": "packages/fokus-cli"
+  },
+  "license": "MIT",
+  "author": "Jorge Reis",
+  "type": "module",
+  "bin": {
+    "fokus": "./bin/fokus.mjs"
+  },
+  "main": "./lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Bloco padrão para listas/telas vazias, 100% CSS. `.fs-empty-state-icon` é um
+// slot vazio (o consumidor põe seu próprio SVG/emoji/ilustração dentro) — ao
+// contrário do ícone do Alert Dialog, aqui não há um conjunto fixo de
+// variantes de estado para gerar via CSS.
+
+@layer components {
+  .fs-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  // `[hidden]` sozinho não bastaria: a regra do user-agent stylesheet
+  // perde pra `display: flex` acima (author styles sempre vencem UA
+  // styles, mesmo em `@layer`) — sem isso, `.fs-empty-state[hidden]`
+  // continua visível (bug real pego no DataTable, que alterna esse
+  // atributo em `js/datatable.js`). Mesmo padrão já usado em
+  // `.fs-notification-badge[hidden]`/`.fs-notification-empty[hidden]`.
+  .fs-empty-state[hidden] {
+    display: none;
+  }
+
+  .fs-empty-state-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-subtle);
+    font-size: 28px;
+  }
+
+  .fs-empty-state-title {
+    margin: 0;
+    color: var(--fs-color-text);
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-empty-state-text {
+    max-width: 360px;
+    margin: 4px 0 20px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+}

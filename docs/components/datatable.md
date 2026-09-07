@@ -3,22 +3,22 @@
 Camada JS opcional sobre uma [Table](table.md) comum: ordenação por coluna,
 filtro por texto e paginação client-side, tudo sobre a marcação `<table>`
 semântica já existente — sem framework de dados, sem dependência externa.
-Reusa `.cl-table` para a tabela, `.cl-pagination`/`.cl-page-link` para o
+Reusa `.fs-table` para a tabela, `.fs-pagination`/`.fs-page-link` para o
 paginador (mesmas classes do [Pagination](pagination.md)) e
-`.cl-empty-state` para a lista vazia.
+`.fs-empty-state` para a lista vazia.
 
 ## Visão geral
 
 ```html
-<div class="cl-datatable" data-cl="datatable" data-cl-page-size="5">
-  <div class="cl-datatable-toolbar">
-    <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar…">
+<div class="fs-datatable" data-fs="datatable" data-fs-page-size="5">
+  <div class="fs-datatable-toolbar">
+    <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar…">
   </div>
-  <table class="cl-table cl-table-striped cl-table-hover">
+  <table class="fs-table fs-table-striped fs-table-hover">
     <thead>
       <tr>
-        <th scope="col" data-cl-sort="name">Nome</th>
-        <th scope="col" data-cl-sort="age">Idade</th>
+        <th scope="col" data-fs-sort="name">Nome</th>
+        <th scope="col" data-fs-sort="age">Idade</th>
       </tr>
     </thead>
     <tbody>
@@ -26,60 +26,60 @@ paginador (mesmas classes do [Pagination](pagination.md)) e
       <tr><td>Bruno</td><td>19</td></tr>
     </tbody>
   </table>
-  <div class="cl-empty-state" data-cl-datatable-empty hidden>
-    <p class="cl-empty-state-title">Nenhum resultado encontrado.</p>
+  <div class="fs-empty-state" data-fs-datatable-empty hidden>
+    <p class="fs-empty-state-title">Nenhum resultado encontrado.</p>
   </div>
 </div>
 ```
 
-Auto-init em `data-cl="datatable"`, colocado no `<div>` que envolve
+Auto-init em `data-fs="datatable"`, colocado no `<div>` que envolve
 toolbar/tabela/estados — não no `<table>` diretamente. O JS lê as linhas de
 `<tbody>` uma vez na inicialização; se a tabela for repovoada por fora
 (ex.: resposta de uma API), chame `instance.refresh()`.
 
 ## Anatomia
 
-`.cl-datatable[data-cl="datatable"]` > opcionalmente `.cl-datatable-toolbar`
-(com `input[data-cl-datatable-filter]`) + `table.cl-table` (com
-`th[data-cl-sort]` no `<thead>`) + opcionalmente
-`[data-cl-datatable-empty]`/`[data-cl-datatable-loading]`/`[data-cl-datatable-error]`
-+ `nav[data-cl-datatable-pagination]` (criado automaticamente se ausente).
+`.fs-datatable[data-fs="datatable"]` > opcionalmente `.fs-datatable-toolbar`
+(com `input[data-fs-datatable-filter]`) + `table.fs-table` (com
+`th[data-fs-sort]` no `<thead>`) + opcionalmente
+`[data-fs-datatable-empty]`/`[data-fs-datatable-loading]`/`[data-fs-datatable-error]`
++ `nav[data-fs-datatable-pagination]` (criado automaticamente se ausente).
 
 ## Variações
 
-- `data-cl-sort="chave"` num `<th>` o torna ordenável — o JS envolve o
-  conteúdo existente num `<button class="cl-datatable-sort-btn">`
+- `data-fs-sort="chave"` num `<th>` o torna ordenável — o JS envolve o
+  conteúdo existente num `<button class="fs-datatable-sort-btn">`
   automaticamente (não escreva o botão você mesmo).
-- `data-cl-sort-type="number"`, `"currency"` ou `"date"` no `<th>` ativa
+- `data-fs-sort-type="number"`, `"currency"` ou `"date"` no `<th>` ativa
   comparação tipada; sem o atributo, a ordenação usa texto. Combine com
-  `data-cl-sort-value` quando o valor exibido for formatado.
-- `data-cl-sort-value` numa `<td>` define o valor usado pra ordenar aquela
+  `data-fs-sort-value` quando o valor exibido for formatado.
+- `data-fs-sort-value` numa `<td>` define o valor usado pra ordenar aquela
   célula, se for diferente do texto exibido (ex.: data ISO por trás de um
   texto formatado, número por trás de um texto com símbolo).
-- `data-cl-page-size="N"` no elemento raiz define quantas linhas por
+- `data-fs-page-size="N"` no elemento raiz define quantas linhas por
   página (padrão: 10).
-- `[data-cl-datatable-filter]` — um `<input>` (dentro do elemento raiz)
+- `[data-fs-datatable-filter]` — um `<input>` (dentro do elemento raiz)
   que filtra por substring em qualquer célula da linha, case-insensitive.
-- `[data-cl-datatable-empty]` — bloco (tipicamente `.cl-empty-state`)
+- `[data-fs-datatable-empty]` — bloco (tipicamente `.fs-empty-state`)
   mostrado no lugar da tabela quando o filtro não encontra nenhuma linha.
-- `[data-cl-datatable-loading]` / `[data-cl-datatable-error]` — blocos
+- `[data-fs-datatable-loading]` / `[data-fs-datatable-error]` — blocos
   mostrados via `setLoading()`/`setError()` (ver API JS); nenhum dos dois é
   obrigatório.
-- `[data-cl-datatable-pagination]` — se você quiser controlar onde o
+- `[data-fs-datatable-pagination]` — se você quiser controlar onde o
   paginador aparece, forneça o elemento; senão o JS cria um `<nav>` e
   anexa ao final do elemento raiz.
 
 ## Estados
 
 - **Vazio**: filtro sem correspondências — tabela ocultada,
-  `[data-cl-datatable-empty]` exibido (se fornecido; sem ele, a tabela só
+  `[data-fs-datatable-empty]` exibido (se fornecido; sem ele, a tabela só
   fica com zero linhas visíveis).
 - **Carregando**: acionado por `instance.setLoading(true)` — tabela e
-  paginador ocultados, `[data-cl-datatable-loading]` exibido (tipicamente
-  linhas `.cl-skeleton-text`).
+  paginador ocultados, `[data-fs-datatable-loading]` exibido (tipicamente
+  linhas `.fs-skeleton-text`).
 - **Erro**: acionado por `instance.setError("mensagem")` — tabela e
-  paginador ocultados, `[data-cl-datatable-error]` exibido, com o texto
-  escrito em `[data-cl-datatable-error-message]` dentro dele (se existir).
+  paginador ocultados, `[data-fs-datatable-error]` exibido, com o texto
+  escrito em `[data-fs-datatable-error-message]` dentro dele (se existir).
 - Paginação: o `<nav>` só é exibido quando há mais de uma página.
 
 ## A11y
@@ -106,12 +106,12 @@ ascendente → descendente → nenhuma.
 
 ## API JS
 
-Auto-init via `data-cl="datatable"` no elemento raiz.
+Auto-init via `data-fs="datatable"` no elemento raiz.
 `DataTable.getInstance(rootEl)`.
 
 | Método | Descrição |
 |---|---|
-| `sort(key, direction)` | Ordena pela coluna com `data-cl-sort="key"`. `direction`: `"asc"` \| `"desc"` \| `"none"`. |
+| `sort(key, direction)` | Ordena pela coluna com `data-fs-sort="key"`. `direction`: `"asc"` \| `"desc"` \| `"none"`. |
 | `filter(query)` | Filtra por substring (aplica também no input, se houver um). |
 | `goToPage(page)` | Navega pra página (1-indexado, com clamp nos limites). |
 | `refresh()` | Relê as linhas de `<tbody>` do zero — use após repovoar a tabela por fora. |
@@ -125,33 +125,33 @@ Auto-init via `data-cl="datatable"` no elemento raiz.
 | `filterQuery` | Texto de filtro atual. |
 | `currentPage` / `pageCount` | Página atual e total de páginas (considerando o filtro). |
 | `rowCount` | Quantidade de linhas que correspondem ao filtro atual. |
-| `pageSize` | Linhas por página (lido de `data-cl-page-size`, ou 10). |
+| `pageSize` | Linhas por página (lido de `data-fs-page-size`, ou 10). |
 
 | Evento (no elemento raiz) | Cancelável | Quando |
 |---|---|---|
-| `cl:datatable:sorted` | Não | Após ordenar, com `detail.key`/`detail.direction`. |
-| `cl:datatable:filtered` | Não | Após filtrar, com `detail.query`/`detail.matched`. |
-| `cl:datatable:paged` | Não | Após trocar de página, com `detail.page`/`detail.pageCount`. |
+| `fs:datatable:sorted` | Não | Após ordenar, com `detail.key`/`detail.direction`. |
+| `fs:datatable:filtered` | Não | Após filtrar, com `detail.query`/`detail.matched`. |
+| `fs:datatable:paged` | Não | Após trocar de página, com `detail.page`/`detail.pageCount`. |
 
 ## Tokens
 
 Reusa os tokens de [Table](table.md) e [Pagination](pagination.md) — sem
-tokens próprios de cor. `.cl-datatable-sort-btn` usa
-`var(--cl-color-muted)`/`var(--cl-color-text)` pro indicador de direção
+tokens próprios de cor. `.fs-datatable-sort-btn` usa
+`var(--fs-color-muted)`/`var(--fs-color-text)` pro indicador de direção
 (↕/↑/↓).
 
 ## Exemplo
 
 ```html
-<div class="cl-datatable" data-cl="datatable" data-cl-page-size="3">
-  <div class="cl-datatable-toolbar">
-    <input type="search" class="cl-form-control" data-cl-datatable-filter placeholder="Filtrar por nome ou status…">
+<div class="fs-datatable" data-fs="datatable" data-fs-page-size="3">
+  <div class="fs-datatable-toolbar">
+    <input type="search" class="fs-form-control" data-fs-datatable-filter placeholder="Filtrar por nome ou status…">
   </div>
-  <table class="cl-table cl-table-striped">
+  <table class="fs-table fs-table-striped">
     <thead>
       <tr>
-        <th scope="col" data-cl-sort="name">Nome</th>
-        <th scope="col" data-cl-sort="status">Status</th>
+        <th scope="col" data-fs-sort="name">Nome</th>
+        <th scope="col" data-fs-sort="status">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -159,12 +159,12 @@ tokens próprios de cor. `.cl-datatable-sort-btn` usa
       <tr><td>Bruno</td><td>Inativo</td></tr>
     </tbody>
   </table>
-  <div class="cl-empty-state" data-cl-datatable-empty hidden>
-    <p class="cl-empty-state-title">Nenhum resultado encontrado.</p>
+  <div class="fs-empty-state" data-fs-datatable-empty hidden>
+    <p class="fs-empty-state-title">Nenhum resultado encontrado.</p>
   </div>
 </div>
 <script>
-  document.querySelector(".cl-datatable").addEventListener("cl:datatable:sorted", (e) => {
+  document.querySelector(".fs-datatable").addEventListener("fs:datatable:sorted", (e) => {
     console.log("ordenado por", e.detail.key, e.detail.direction);
   });
 </script>

@@ -1,6 +1,6 @@
 ---
 name: Sugestão de funcionalidade
-about: Propor um componente, utilitário ou melhoria para o Clarus CSS
+about: Propor um componente, utilitário ou melhoria para o Fokus Styles
 title: "[feature] "
 labels: enhancement
 ---
@@ -14,7 +14,7 @@ de fazer X")
 
 Descreva a solução desejada. Se for um componente novo, inclua anatomia,
 estados esperados e como se encaixa nas convenções existentes
-(`.cl-*`/`.u-*`/`.is-*`, tokens `--cl-*`).
+(`.fs-*`/`.fs-u-*`/`.is-*`, tokens `--fs-*`).
 
 ## Alternativas consideradas
 

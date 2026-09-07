@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template - Autenticação | Clarus CSS</title>
+    <title>Template - Autenticação | Fokus Styles</title>
 
     <!-- STYLES IMPORT -->
     <link rel="stylesheet" href="../../dist/css/fonts.css">
@@ -28,8 +28,8 @@
             gap: 24px;
             padding: 48px;
             color: #fff;
-            background-color: var(--cl-color-primary);
-            background: linear-gradient(160deg, var(--cl-color-primary), color-mix(in oklch, var(--cl-color-primary), black 30%));
+            background-color: var(--fs-color-primary);
+            background: linear-gradient(160deg, var(--fs-color-primary), color-mix(in oklch, var(--fs-color-primary), black 30%));
         }
 
         @media (max-width: 767px) {
@@ -85,21 +85,21 @@
 
 <!--
   Template "Autenticação" — login/cadastro num painel dividido, com Tabs
-  (data-cl="tabs") pra alternar entre os dois formulários e um toggle de
-  visibilidade de senha via .cl-input-group + botão. Ver
+  (data-fs="tabs") pra alternar entre os dois formulários e um toggle de
+  visibilidade de senha via .fs-input-group + botão. Ver
   docs/README.md#templates-prontos.
 -->
 
 <div class="auth-shell">
     <div class="auth-brand-panel">
-        <div class="u-d-flex u-align-items-center" style="gap: 10px;">
+        <div class="fs-u-d-flex fs-u-align-items-center" style="gap: 10px;">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-            <span class="u-fs-xl u-fw-medium">Clarus</span>
+            <span class="fs-u-fs-xl fs-u-fw-medium">FokusStyles</span>
         </div>
-        <h1 class="u-fs-h2 u-fw-medium u-mb-0">Construa interfaces consistentes, mais rápido.</h1>
-        <p class="u-fs-md u-mb-0" style="opacity: 0.85;">Componentes acessíveis, tema escuro nativo e zero dependências — tudo pronto pra usar.</p>
+        <h1 class="fs-u-fs-h2 fs-u-fw-medium fs-u-mb-0">Construa interfaces consistentes, mais rápido.</h1>
+        <p class="fs-u-fs-md fs-u-mb-0" style="opacity: 0.85;">Componentes acessíveis, tema escuro nativo e zero dependências — tudo pronto pra usar.</p>
 
-        <div class="cl-stack u-mt-3">
+        <div class="fs-stack fs-u-mt-3">
             <div class="auth-brand-feature">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
                 <span>WCAG 2.1 AA por padrão, em todos os componentes</span>
@@ -116,75 +116,75 @@
     </div>
 
     <div class="auth-form-panel">
-        <button type="button" class="cl-btn auth-theme-toggle" id="theme-toggle" aria-label="Alternar tema escuro">
-            <svg class="cl-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <button type="button" class="fs-btn auth-theme-toggle" id="theme-toggle" aria-label="Alternar tema escuro">
+            <svg class="fs-icon" id="theme-toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         </button>
 
         <div class="auth-form-panel-inner">
-            <div class="cl-tabs cl-tabs-pill u-mb-3" data-cl="tabs" id="auth-tabs">
-                <a href="#" class="cl-nav-link is-active" data-cl-target="#tab-login">Entrar</a>
-                <a href="#" class="cl-nav-link" data-cl-target="#tab-cadastro">Criar conta</a>
+            <div class="fs-tabs fs-tabs-pill fs-u-mb-3" data-fs="tabs" id="auth-tabs">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-login">Entrar</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-cadastro">Criar conta</a>
             </div>
 
-            <div class="cl-tab-content">
-                <div class="cl-tab-pane is-active" id="tab-login">
+            <div class="fs-tab-content">
+                <div class="fs-tab-pane is-active" id="tab-login">
                     <form>
-                        <div class="cl-form-row u-mb-2">
-                            <div class="cl-form-col">
-                                <label for="login-email" class="cl-form-label">E-mail</label>
-                                <input type="email" class="cl-form-control" id="login-email" placeholder="voce@empresa.com" required>
+                        <div class="fs-form-row fs-u-mb-2">
+                            <div class="fs-form-col">
+                                <label for="login-email" class="fs-form-label">E-mail</label>
+                                <input type="email" class="fs-form-control" id="login-email" placeholder="voce@empresa.com" required>
                             </div>
                         </div>
-                        <div class="cl-form-row u-mb-2">
-                            <div class="cl-form-col">
-                                <label for="login-password" class="cl-form-label">Senha</label>
-                                <div class="cl-input-group" data-password-visible="false" id="login-password-group">
-                                    <input type="password" class="cl-form-control" id="login-password" placeholder="••••••••" required>
-                                    <button type="button" class="cl-btn" data-password-toggle="login-password" data-password-group="login-password-group" aria-label="Mostrar senha">
-                                        <svg class="cl-icon password-toggle-icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
-                                        <svg class="cl-icon password-toggle-icon-closed" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>
+                        <div class="fs-form-row fs-u-mb-2">
+                            <div class="fs-form-col">
+                                <label for="login-password" class="fs-form-label">Senha</label>
+                                <div class="fs-input-group" data-password-visible="false" id="login-password-group">
+                                    <input type="password" class="fs-form-control" id="login-password" placeholder="••••••••" required>
+                                    <button type="button" class="fs-btn" data-password-toggle="login-password" data-password-group="login-password-group" aria-label="Mostrar senha">
+                                        <svg class="fs-icon password-toggle-icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                        <svg class="fs-icon password-toggle-icon-closed" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="u-d-flex u-justify-content-between u-align-items-center u-mb-3">
-                            <div class="cl-check">
-                                <input type="checkbox" class="cl-check-input" id="login-remember">
-                                <label for="login-remember" class="cl-check-label cl-form-size-md">Lembrar de mim</label>
+                        <div class="fs-u-d-flex fs-u-justify-content-between fs-u-align-items-center fs-u-mb-3">
+                            <div class="fs-check">
+                                <input type="checkbox" class="fs-check-input" id="login-remember">
+                                <label for="login-remember" class="fs-check-label fs-form-size-md">Lembrar de mim</label>
                             </div>
-                            <a href="#" class="u-fs-sm">Esqueceu a senha?</a>
+                            <a href="#" class="fs-u-fs-sm">Esqueceu a senha?</a>
                         </div>
-                        <button type="submit" class="cl-btn cl-btn-primary" style="width: 100%;">Entrar</button>
+                        <button type="submit" class="fs-btn fs-btn-primary" style="width: 100%;">Entrar</button>
                     </form>
                 </div>
 
-                <div class="cl-tab-pane" id="tab-cadastro">
+                <div class="fs-tab-pane" id="tab-cadastro">
                     <form>
-                        <div class="cl-form-row u-mb-2">
-                            <div class="cl-form-col">
-                                <label for="signup-name" class="cl-form-label">Nome completo</label>
-                                <input type="text" class="cl-form-control" id="signup-name" placeholder="Seu nome" required>
+                        <div class="fs-form-row fs-u-mb-2">
+                            <div class="fs-form-col">
+                                <label for="signup-name" class="fs-form-label">Nome completo</label>
+                                <input type="text" class="fs-form-control" id="signup-name" placeholder="Seu nome" required>
                             </div>
                         </div>
-                        <div class="cl-form-row u-mb-2">
-                            <div class="cl-form-col">
-                                <label for="signup-email" class="cl-form-label">E-mail</label>
-                                <input type="email" class="cl-form-control" id="signup-email" placeholder="voce@empresa.com" required>
+                        <div class="fs-form-row fs-u-mb-2">
+                            <div class="fs-form-col">
+                                <label for="signup-email" class="fs-form-label">E-mail</label>
+                                <input type="email" class="fs-form-control" id="signup-email" placeholder="voce@empresa.com" required>
                             </div>
                         </div>
-                        <div class="cl-form-row u-mb-2">
-                            <div class="cl-form-col">
-                                <label for="signup-password" class="cl-form-label">Senha</label>
-                                <input type="password" class="cl-form-control" id="signup-password" placeholder="Mínimo 8 caracteres" required>
+                        <div class="fs-form-row fs-u-mb-2">
+                            <div class="fs-form-col">
+                                <label for="signup-password" class="fs-form-label">Senha</label>
+                                <input type="password" class="fs-form-control" id="signup-password" placeholder="Mínimo 8 caracteres" required>
                             </div>
                         </div>
-                        <div class="u-mb-3">
-                            <div class="cl-check">
-                                <input type="checkbox" class="cl-check-input" id="signup-terms" required>
-                                <label for="signup-terms" class="cl-check-label cl-form-size-md">Aceito os termos de uso e a política de privacidade</label>
+                        <div class="fs-u-mb-3">
+                            <div class="fs-check">
+                                <input type="checkbox" class="fs-check-input" id="signup-terms" required>
+                                <label for="signup-terms" class="fs-check-label fs-form-size-md">Aceito os termos de uso e a política de privacidade</label>
                             </div>
                         </div>
-                        <button type="submit" class="cl-btn cl-btn-primary" style="width: 100%;">Criar conta</button>
+                        <button type="submit" class="fs-btn fs-btn-primary" style="width: 100%;">Criar conta</button>
                     </form>
                 </div>
             </div>
@@ -193,7 +193,7 @@
 </div>
 
 <!-- SCRIPTS IMPORT -->
-<script src="../../dist/js/clarus.js"></script>
+<script src="../../dist/js/fokus.js"></script>
 <script>
     // Alternância de tema — mesmo mecanismo de docs/guides/dark-mode.md.
     const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';

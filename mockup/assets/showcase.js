@@ -134,7 +134,7 @@ const detailedAccessibilityProfiles = {
   badge: [
     {
       label: "Semântica correta",
-      text: "Um Badge comum é uma informação curta e estática, portanto pode usar um elemento simples como <span> dentro do conteúdo que ele complementa. A classe .cl-badge altera apenas a aparência; ela não transforma o elemento em ação, filtro ou anúncio automático. Se a pessoa puder clicar para mudar um filtro ou abrir uma lista, use um <button> com o badge dentro dele, em vez de adicionar role=\"button\" a um <span> apenas para parecer interativo.",
+      text: "Um Badge comum é uma informação curta e estática, portanto pode usar um elemento simples como <span> dentro do conteúdo que ele complementa. A classe .fs-badge altera apenas a aparência; ela não transforma o elemento em ação, filtro ou anúncio automático. Se a pessoa puder clicar para mudar um filtro ou abrir uma lista, use um <button> com o badge dentro dele, em vez de adicionar role=\"button\" a um <span> apenas para parecer interativo.",
     },
     {
       label: "Nome acessível",
@@ -142,7 +142,7 @@ const detailedAccessibilityProfiles = {
     },
     {
       label: "Estados anunciados",
-      text: "A variante visual .cl-badge-success, .cl-badge-warning ou .cl-badge-danger não é uma mensagem acessível por si só. Escreva o estado no conteúdo, como “Pagamento aprovado”, “Aguardando confirmação” ou “Falha no envio”. Se uma contagem ou status mudar depois de uma ação sem a pessoa ter solicitado a leitura, anuncie a alteração na região adequada com aria-live; não transforme cada badge estático em uma região live.",
+      text: "A variante visual .fs-badge-success, .fs-badge-warning ou .fs-badge-danger não é uma mensagem acessível por si só. Escreva o estado no conteúdo, como “Pagamento aprovado”, “Aguardando confirmação” ou “Falha no envio”. Se uma contagem ou status mudar depois de uma ação sem a pessoa ter solicitado a leitura, anuncie a alteração na região adequada com aria-live; não transforme cada badge estático em uma região live.",
     },
     {
       label: "Conteúdo não visual",
@@ -252,7 +252,7 @@ function documentationPath(item) {
 function apiCategory(entry) {
   const label = entry.label || "";
   if (/data-|aria-|\[data-/.test(label)) return "Atributos de configuração";
-  if (/Clarus\.|\(\)|API JS/.test(label)) return "API JavaScript";
+  if (/FokusStyles\.|\(\)|API JS/.test(label)) return "API JavaScript";
   if (/\.is-|active|disabled|loading|error/i.test(label)) return "Estados internos";
   if (/outline|sm|lg|fade|side|stacked|multiple|horizontal|vertical|placement|variant/i.test(label)) return "Variações";
   return "Estrutura e classes";
@@ -263,7 +263,7 @@ function tokenKind(token) {
 }
 
 function appendFormattedText(target, text) {
-  const tokenPattern = /("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|“[^”]*”|<\/?[a-z][^>]*>|--cl-[\w-]+|\.[a-z][\w-]*|(?:aria|data)-[\w-]+|\b(?:role|disabled|required|readonly|checked|selected|value|min|max|step|href|type|alt|title|id|class)\b)/gi;
+  const tokenPattern = /("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|“[^”]*”|<\/?[a-z][^>]*>|--fs-[\w-]+|\.[a-z][\w-]*|(?:aria|data)-[\w-]+|\b(?:role|disabled|required|readonly|checked|selected|value|min|max|step|href|type|alt|title|id|class)\b)/gi;
   let cursor = 0;
   String(text).replace(tokenPattern, (match, _capture, offset) => {
     target.append(document.createTextNode(String(text).slice(cursor, offset)));
@@ -282,201 +282,201 @@ function appendFormattedText(target, text) {
 
 const apiExtensions = {
   button: [
-    { label: ".cl-btn", code: true, text: "classe-base aplicada a <button>; use <a href> apenas quando a ação for navegação." },
-    { label: ".cl-btn-primary / -secondary / -success / -warning / -danger / -info", code: true, text: "escolhem a ênfase semântica da ação." },
-    { label: ".cl-btn-outline-* / .cl-btn-sm / .cl-btn-lg / disabled", code: true, text: "criam variante contornada, alteram densidade e impedem acionamento nativo." },
-    { label: ".cl-btn-close", code: true, text: "botão somente de ícone usado para dispensar Card, Modal, Toast e Tag; sempre informe aria-label." },
+    { label: ".fs-btn", code: true, text: "classe-base aplicada a <button>; use <a href> apenas quando a ação for navegação." },
+    { label: ".fs-btn-primary / -secondary / -success / -warning / -danger / -info", code: true, text: "escolhem a ênfase semântica da ação." },
+    { label: ".fs-btn-outline-* / .fs-btn-sm / .fs-btn-lg / disabled", code: true, text: "criam variante contornada, alteram densidade e impedem acionamento nativo." },
+    { label: ".fs-btn-close", code: true, text: "botão somente de ícone usado para dispensar Card, Modal, Toast e Tag; sempre informe aria-label." },
   ],
   badge: [
-    { label: ".cl-badge", code: true, text: "rótulo-base para status curto ou contagem." },
-    { label: ".cl-badge-{primary|secondary|success|warning|danger|info}", code: true, text: "define a cor semântica; acompanhe-a de texto que explique o estado." },
-    { label: ".cl-badge-soft-{cor} / .cl-badge-outline-{cor} / .cl-badge-sm / .cl-badge-lg", code: true, text: "criam aparência suave, contornada ou alteram a densidade do rótulo." },
-    { label: ".cl-badge-dot / .cl-badge-count / .cl-badge-split", code: true, text: "adicionam ponto, algarismos tabulares ou rótulo e valor conectados; split exige .cl-badge-split-label e .cl-badge-split-value." },
+    { label: ".fs-badge", code: true, text: "rótulo-base para status curto ou contagem." },
+    { label: ".fs-badge-{primary|secondary|success|warning|danger|info}", code: true, text: "define a cor semântica; acompanhe-a de texto que explique o estado." },
+    { label: ".fs-badge-soft-{cor} / .fs-badge-outline-{cor} / .fs-badge-sm / .fs-badge-lg", code: true, text: "criam aparência suave, contornada ou alteram a densidade do rótulo." },
+    { label: ".fs-badge-dot / .fs-badge-count / .fs-badge-split", code: true, text: "adicionam ponto, algarismos tabulares ou rótulo e valor conectados; split exige .fs-badge-split-label e .fs-badge-split-value." },
   ],
   alert: [
-    { label: ".cl-alert", code: true, text: "contêiner da mensagem persistente." },
-    { label: ".cl-alert-{primary|secondary|success|warning|danger|info}", code: true, text: "seleciona a intenção visual da mensagem." },
-    { label: ".cl-alert-heading / .cl-alert-link", code: true, text: "destacam título e link contextual dentro do alerta." },
+    { label: ".fs-alert", code: true, text: "contêiner da mensagem persistente." },
+    { label: ".fs-alert-{primary|secondary|success|warning|danger|info}", code: true, text: "seleciona a intenção visual da mensagem." },
+    { label: ".fs-alert-heading / .fs-alert-link", code: true, text: "destacam título e link contextual dentro do alerta." },
   ],
   tag: [
-    { label: ".cl-tag", code: true, text: "estrutura base para filtro, categoria ou seleção curta." },
-    { label: ".cl-tag-{primary|secondary|success|warning|danger|info}", code: true, text: "aplica a variante semântica." },
-    { label: ".cl-tag-icon / .cl-tag-label / .cl-tag-truncate / .cl-tag-group", code: true, text: "organizam ícone, texto, truncamento e grupos de tags." },
-    { label: ".cl-tag-protected / .cl-tag-lock / .cl-tag-overflow", code: true, text: "criam tag protegida, seu indicador e o botão para revelar itens excedentes." },
-    { label: "data-cl=\"tag\" / data-cl-dismiss=\"tag\" / .is-loading / aria-busy", code: true, text: "inicializam a remoção, identificam o botão de dispensa e expõem carregamento; Tag.getInstance(el).dismiss() e setLoading(true) são as APIs públicas." },
+    { label: ".fs-tag", code: true, text: "estrutura base para filtro, categoria ou seleção curta." },
+    { label: ".fs-tag-{primary|secondary|success|warning|danger|info}", code: true, text: "aplica a variante semântica." },
+    { label: ".fs-tag-icon / .fs-tag-label / .fs-tag-truncate / .fs-tag-group", code: true, text: "organizam ícone, texto, truncamento e grupos de tags." },
+    { label: ".fs-tag-protected / .fs-tag-lock / .fs-tag-overflow", code: true, text: "criam tag protegida, seu indicador e o botão para revelar itens excedentes." },
+    { label: "data-fs=\"tag\" / data-fs-dismiss=\"tag\" / .is-loading / aria-busy", code: true, text: "inicializam a remoção, identificam o botão de dispensa e expõem carregamento; Tag.getInstance(el).dismiss() e setLoading(true) são as APIs públicas." },
   ],
   "empty-state": [
-    { label: ".cl-empty-state", code: true, text: "contêiner centralizado para ausência de conteúdo." },
-    { label: ".cl-empty-state-icon / -title / -text / -action", code: true, text: "organizam ícone decorativo, mensagem, explicação e CTA opcional." },
+    { label: ".fs-empty-state", code: true, text: "contêiner centralizado para ausência de conteúdo." },
+    { label: ".fs-empty-state-icon / -title / -text / -action", code: true, text: "organizam ícone decorativo, mensagem, explicação e CTA opcional." },
   ],
   skeleton: [
-    { label: ".cl-skeleton", code: true, text: "bloco-base de espaço reservado durante carregamento." },
-    { label: ".cl-skeleton-text / -avatar / -button / -card", code: true, text: "simulam formas previsíveis de conteúdo; aplique aria-hidden à decoração." },
+    { label: ".fs-skeleton", code: true, text: "bloco-base de espaço reservado durante carregamento." },
+    { label: ".fs-skeleton-text / -avatar / -button / -card", code: true, text: "simulam formas previsíveis de conteúdo; aplique aria-hidden à decoração." },
   ],
   progress: [
-    { label: ".cl-spinner / .cl-spinner-sm / .cl-spinner-lg", code: true, text: "indicador indeterminado; use texto de status fora do ícone quando necessário." },
-    { label: ".cl-progress > .cl-progress-bar", code: true, text: "trilha e preenchimento de progresso mensurável." },
+    { label: ".fs-spinner / .fs-spinner-sm / .fs-spinner-lg", code: true, text: "indicador indeterminado; use texto de status fora do ícone quando necessário." },
+    { label: ".fs-progress > .fs-progress-bar", code: true, text: "trilha e preenchimento de progresso mensurável." },
     { label: "role=\"progressbar\" + aria-valuemin/max/now", code: true, text: "expõe o valor atual quando a barra representa avanço conhecido." },
   ],
   card: [
-    { label: ".cl-card-title / .cl-card-subtitle / .cl-card-text", code: true, text: "tipografia de título, contexto secundário e corpo; use dentro do header ou body conforme a hierarquia." },
-    { label: ".cl-card-sm / .cl-card-lg", code: true, text: "reduzem ou ampliam a densidade interna; não alteram a largura do card." },
+    { label: ".fs-card-title / .fs-card-subtitle / .fs-card-text", code: true, text: "tipografia de título, contexto secundário e corpo; use dentro do header ou body conforme a hierarquia." },
+    { label: ".fs-card-sm / .fs-card-lg", code: true, text: "reduzem ou ampliam a densidade interna; não alteram a largura do card." },
   ],
   tile: [
-    { label: ".cl-tile-title / .cl-tile-subtitle", code: true, text: "título e contexto secundário; ambos truncam visualmente quando não há espaço." },
-    { label: ".cl-tile-actions", code: true, text: "envolve botões, badge ou switch na extremidade da linha." },
-    { label: ".cl-tile-sm / .cl-tile-lg", code: true, text: "reduzem ou ampliam a densidade do item." },
+    { label: ".fs-tile-title / .fs-tile-subtitle", code: true, text: "título e contexto secundário; ambos truncam visualmente quando não há espaço." },
+    { label: ".fs-tile-actions", code: true, text: "envolve botões, badge ou switch na extremidade da linha." },
+    { label: ".fs-tile-sm / .fs-tile-lg", code: true, text: "reduzem ou ampliam a densidade do item." },
   ],
   timeline: [
-    { label: ".cl-timeline-marker / .cl-timeline-content", code: true, text: "formam o marcador e o bloco de informação de cada evento." },
-    { label: ".cl-timeline-title / .cl-timeline-text / .cl-timeline-time", code: true, text: "título, descrição e data/hora de cada evento; texto e horário são opcionais." },
+    { label: ".fs-timeline-marker / .fs-timeline-content", code: true, text: "formam o marcador e o bloco de informação de cada evento." },
+    { label: ".fs-timeline-title / .fs-timeline-text / .fs-timeline-time", code: true, text: "título, descrição e data/hora de cada evento; texto e horário são opcionais." },
   ],
   table: [
-    { label: ".cl-table-{primary|secondary|success|warning|danger|info}", code: true, text: "tingem a tabela inteira com uma cor semântica; use somente quando o significado não depender apenas da cor." },
+    { label: ".fs-table-{primary|secondary|success|warning|danger|info}", code: true, text: "tingem a tabela inteira com uma cor semântica; use somente quando o significado não depender apenas da cor." },
   ],
   datatable: [
-    { label: ".cl-datatable-toolbar", code: true, text: "agrupa busca e controles acima da tabela; é opcional." },
-    { label: "[data-cl-datatable-pagination]", code: true, text: "define onde o navegador deve inserir a paginação; se ausente, o componente cria um nav ao final." },
-    { label: "[data-cl-datatable-loading] / [data-cl-datatable-error-message]", code: true, text: "identificam o painel de carregamento e o local em que setError() escreve a mensagem." },
+    { label: ".fs-datatable-toolbar", code: true, text: "agrupa busca e controles acima da tabela; é opcional." },
+    { label: "[data-fs-datatable-pagination]", code: true, text: "define onde o navegador deve inserir a paginação; se ausente, o componente cria um nav ao final." },
+    { label: "[data-fs-datatable-loading] / [data-fs-datatable-error-message]", code: true, text: "identificam o painel de carregamento e o local em que setError() escreve a mensagem." },
   ],
   input: [
-    { label: ".cl-form-control / .cl-form-label / .cl-form-text", code: true, text: "estilizam campo, rótulo persistente e texto de ajuda associado." },
-    { label: ".is-valid / .is-invalid / .cl-valid-feedback / .cl-invalid-feedback", code: true, text: "aplicam e descrevem validação; associe a mensagem ao campo com aria-describedby." },
+    { label: ".fs-form-control / .fs-form-label / .fs-form-text", code: true, text: "estilizam campo, rótulo persistente e texto de ajuda associado." },
+    { label: ".is-valid / .is-invalid / .fs-valid-feedback / .fs-invalid-feedback", code: true, text: "aplicam e descrevem validação; associe a mensagem ao campo com aria-describedby." },
     { label: "disabled / readonly / required / aria-describedby", code: true, text: "mantêm os comportamentos nativos de disponibilidade, obrigatoriedade e ajuda/erro." },
   ],
   select: [
-    { label: ".cl-select / .cl-form-label / .cl-form-text", code: true, text: "aplicam acabamento ao <select> nativo e ao seu contexto de formulário." },
+    { label: ".fs-select / .fs-form-label / .fs-form-text", code: true, text: "aplicam acabamento ao <select> nativo e ao seu contexto de formulário." },
     { label: "required / disabled / multiple / size", code: true, text: "configuram seleção obrigatória, indisponível, múltipla e lista visível nativa." },
   ],
   "input-group": [
-    { label: ".cl-input-group / .cl-input-group-text / .cl-input-group-sm / .cl-input-group-lg", code: true, text: "agrupam campo, prefixo, sufixo ou ação e ajustam sua densidade." },
+    { label: ".fs-input-group / .fs-input-group-text / .fs-input-group-sm / .fs-input-group-lg", code: true, text: "agrupam campo, prefixo, sufixo ou ação e ajustam sua densidade." },
   ],
   "check-radio-switch": [
-    { label: ".cl-check / .cl-check-input / .cl-check-label / .cl-radio", code: true, text: "estruturam checkbox e radio nativos com rótulo associado." },
-    { label: ".cl-switch / .cl-switch-input / .cl-switch-label / .cl-switch-sm / .cl-switch-lg", code: true, text: "estruturam a preferência em interruptor e suas variações de tamanho." },
+    { label: ".fs-check / .fs-check-input / .fs-check-label / .fs-radio", code: true, text: "estruturam checkbox e radio nativos com rótulo associado." },
+    { label: ".fs-switch / .fs-switch-input / .fs-switch-label / .fs-switch-sm / .fs-switch-lg", code: true, text: "estruturam a preferência em interruptor e suas variações de tamanho." },
     { label: "checked / indeterminate / disabled / required", code: true, text: "são estados nativos do controle; indeterminate é definido via JavaScript na checkbox." },
   ],
   range: [
-    { label: ".cl-range / input[type=range]", code: true, text: "aplicam o acabamento Clarus ao controle nativo de faixa." },
+    { label: ".fs-range / input[type=range]", code: true, text: "aplicam o acabamento FokusStyles ao controle nativo de faixa." },
     { label: "min / max / step / value / aria-valuetext", code: true, text: "definem limites, granularidade, valor inicial e descrição compreensível do valor." },
   ],
   "segmented-control": [
-    { label: ".cl-segmented-control / .cl-segmented-control-item / .cl-segmented-control-label", code: true, text: "formam o grupo de escolhas exclusivas e seus rótulos." },
-    { label: ".cl-segmented-control-sm / .cl-segmented-control-lg / input[type=radio]", code: true, text: "alteram densidade e preservam seleção exclusiva nativa." },
+    { label: ".fs-segmented-control / .fs-segmented-control-item / .fs-segmented-control-label", code: true, text: "formam o grupo de escolhas exclusivas e seus rótulos." },
+    { label: ".fs-segmented-control-sm / .fs-segmented-control-lg / input[type=radio]", code: true, text: "alteram densidade e preservam seleção exclusiva nativa." },
   ],
   rating: [
-    { label: ".cl-rating / .cl-rating-input / .cl-rating-label", code: true, text: "estruturam a escala interativa com radios acessíveis." },
+    { label: ".fs-rating / .fs-rating-input / .fs-rating-label", code: true, text: "estruturam a escala interativa com radios acessíveis." },
     { label: "data-rating / disabled / input[type=radio]", code: true, text: "definem a nota inicial, disponibilidade e a escolha nativa; Rating.getInstance(el).set(value) altera a nota." },
   ],
   datepicker: [
-    { label: ".cl-datepicker / .cl-form-control / input[type=date] / input[type=time]", code: true, text: "envolvem ou estilizam controles nativos de data e hora." },
-    { label: "min / max / required / disabled / data-cl=\"datepicker\"", code: true, text: "restringem intervalo e disponibilidade; o atributo data-cl ativa somente os aprimoramentos publicados." },
+    { label: ".fs-datepicker / .fs-form-control / input[type=date] / input[type=time]", code: true, text: "envolvem ou estilizam controles nativos de data e hora." },
+    { label: "min / max / required / disabled / data-fs=\"datepicker\"", code: true, text: "restringem intervalo e disponibilidade; o atributo data-fs ativa somente os aprimoramentos publicados." },
   ],
   combobox: [
-    { label: ".cl-combobox / .cl-combobox-input / .cl-combobox-listbox / .cl-combobox-option", code: true, text: "formam campo, lista e opções pesquisáveis." },
-    { label: "data-cl=\"combobox\" / data-cl-combobox-input / data-cl-combobox-listbox / data-value", code: true, text: "inicializam o componente e identificam suas partes e valores; Combobox.getInstance(el) expõe select(), clear() e dispose()." },
+    { label: ".fs-combobox / .fs-combobox-input / .fs-combobox-listbox / .fs-combobox-option", code: true, text: "formam campo, lista e opções pesquisáveis." },
+    { label: "data-fs=\"combobox\" / data-fs-combobox-input / data-fs-combobox-listbox / data-value", code: true, text: "inicializam o componente e identificam suas partes e valores; Combobox.getInstance(el) expõe select(), clear() e dispose()." },
   ],
   "file-upload": [
-    { label: ".cl-file-upload / .cl-file-input / .cl-file-label / .cl-file-label-sm|lg / .cl-file-label-dropzone / .cl-file-dropzone-hint", code: true, text: "estruturam o upload simples, tamanhos e a área de soltar arquivos." },
-    { label: "accept / multiple / disabled / data-cl=\"file-drop\" / .is-dragover", code: true, text: "restringem tipos e quantidade, desabilitam o input e ativam drag-and-drop na label; FileDrop.getInstance(label).dispose() remove o comportamento." },
-    { label: "data-cl=\"file-upload-advanced\" / .cl-file-upload-list / .cl-file-upload-item / .cl-file-upload-remove / .is-error", code: true, text: "ativam fila avançada, itens e remoção; FileUploadAdvanced.getInstance(el) expõe getFiles(), setProgress(), setError() e remove()." },
+    { label: ".fs-file-upload / .fs-file-input / .fs-file-label / .fs-file-label-sm|lg / .fs-file-label-dropzone / .fs-file-dropzone-hint", code: true, text: "estruturam o upload simples, tamanhos e a área de soltar arquivos." },
+    { label: "accept / multiple / disabled / data-fs=\"file-drop\" / .is-dragover", code: true, text: "restringem tipos e quantidade, desabilitam o input e ativam drag-and-drop na label; FileDrop.getInstance(label).dispose() remove o comportamento." },
+    { label: "data-fs=\"file-upload-advanced\" / .fs-file-upload-list / .fs-file-upload-item / .fs-file-upload-remove / .is-error", code: true, text: "ativam fila avançada, itens e remoção; FileUploadAdvanced.getInstance(el) expõe getFiles(), setProgress(), setError() e remove()." },
   ],
   "file-drop": [
-    { label: ".cl-file-drop / .cl-file-drop-input / .cl-file-drop-label / .is-dragover", code: true, text: "estruturam área de arrastar, input nativo, rótulo e realce temporário." },
-    { label: "accept / disabled / data-cl=\"file-drop\"", code: true, text: "restringem formatos, disponibilidade e inicializam o comportamento de drop." },
+    { label: ".fs-file-drop / .fs-file-drop-input / .fs-file-drop-label / .is-dragover", code: true, text: "estruturam área de arrastar, input nativo, rótulo e realce temporário." },
+    { label: "accept / disabled / data-fs=\"file-drop\"", code: true, text: "restringem formatos, disponibilidade e inicializam o comportamento de drop." },
   ],
   layout: [
-    { label: ".cl-container / .cl-container-fluid / .cl-row / .cl-col-{breakpoint}-{1..12}", code: true, text: "definem contêiner, linhas e colunas responsivas da grade." },
-    { label: ".u-m-* / .u-p-* / .u-gap-* / .u-d-* / .u-flex-*", code: true, text: "utilitários publicados para espaçamento, display e alinhamento; combine somente o necessário." },
+    { label: ".fs-container / .fs-container-fluid / .fs-row / .fs-col-{breakpoint}-{1..12}", code: true, text: "definem contêiner, linhas e colunas responsivas da grade." },
+    { label: ".fs-u-m-* / .fs-u-p-* / .fs-u-gap-* / .fs-u-d-* / .fs-u-flex-*", code: true, text: "utilitários publicados para espaçamento, display e alinhamento; combine somente o necessário." },
   ],
   theming: [
-    { label: "data-theme=\"dark\" / data-brand=\"violet|corporate|vibrant\"", code: true, text: "ativam aliases de tema e marca no <html> ou em um contêiner." },
-    { label: "--cl-color-* / --cl-font-* / --cl-space-* / --cl-radius-*", code: true, text: "tokens públicos para personalização sem valores literais em componentes." },
+    { label: "data-theme=\"dark\" / data-fs-brand=\"violet|corporate|vibrant\"", code: true, text: "ativam aliases de tema e marca no <html> ou em um contêiner." },
+    { label: "--fs-color-* / --fs-font-* / --fs-space-* / --fs-radius-*", code: true, text: "tokens públicos para personalização sem valores literais em componentes." },
   ],
   icons: [
-    { label: ".cl-icon / .cl-icon-xs / .cl-icon-sm / .cl-icon-lg / .cl-icon-xl", code: true, text: "normalizam SVG inline e definem os tamanhos publicados." },
+    { label: ".fs-icon / .fs-icon-xs / .fs-icon-sm / .fs-icon-lg / .fs-icon-xl", code: true, text: "normalizam SVG inline e definem os tamanhos publicados." },
   ],
   divider: [
-    { label: ".cl-divider / .cl-divider-vertical / .cl-divider-dashed / .cl-divider-text", code: true, text: "criam divisor horizontal, vertical, tracejado ou com texto central." },
+    { label: ".fs-divider / .fs-divider-vertical / .fs-divider-dashed / .fs-divider-text", code: true, text: "criam divisor horizontal, vertical, tracejado ou com texto central." },
   ],
   "js-foundation": [
-    { label: "Clarus.core.computePosition() / createFocusTrap() / collapse() / expand()", code: true, text: "utilitários JavaScript públicos usados pelos componentes avançados; não exigem data-cl." },
+    { label: "FokusStyles.core.computePosition() / createFocusTrap() / collapse() / expand()", code: true, text: "utilitários JavaScript públicos usados pelos componentes avançados; não exigem data-fs." },
   ],
   navbar: [
-    { label: ".cl-navbar / .cl-navbar-brand / .cl-navbar-nav / .cl-navbar-item / .cl-navbar-link", code: true, text: "estruturam marca e destinos da navegação principal." },
-    { label: ".cl-navbar-toggler / .cl-navbar-collapse / data-cl=\"navbar\" / data-cl-target", code: true, text: "configuram o menu compacto e o destino que será aberto." },
+    { label: ".fs-navbar / .fs-navbar-brand / .fs-navbar-nav / .fs-navbar-item / .fs-navbar-link", code: true, text: "estruturam marca e destinos da navegação principal." },
+    { label: ".fs-navbar-toggler / .fs-navbar-collapse / data-fs=\"navbar\" / data-fs-target", code: true, text: "configuram o menu compacto e o destino que será aberto." },
   ],
   breadcrumb: [
-    { label: ".cl-breadcrumb / .cl-breadcrumb-item / .is-active", code: true, text: "estruturam os níveis e identificam a página atual." },
-    { label: "data-cl=\"breadcrumb\" / data-max-items", code: true, text: "ativam truncamento e definem quantos itens permanecem visíveis antes do colapso." },
+    { label: ".fs-breadcrumb / .fs-breadcrumb-item / .is-active", code: true, text: "estruturam os níveis e identificam a página atual." },
+    { label: "data-fs=\"breadcrumb\" / data-max-items", code: true, text: "ativam truncamento e definem quantos itens permanecem visíveis antes do colapso." },
   ],
   pagination: [
-    { label: ".cl-pagination / .cl-page-item / .cl-page-link / .is-active / .is-disabled", code: true, text: "estruturam páginas, destino atual e limites indisponíveis." },
-    { label: ".cl-pagination-sm / .cl-pagination-lg / aria-current=\"page\"", code: true, text: "alteram densidade e expõem a página atual." },
+    { label: ".fs-pagination / .fs-page-item / .fs-page-link / .is-active / .is-disabled", code: true, text: "estruturam páginas, destino atual e limites indisponíveis." },
+    { label: ".fs-pagination-sm / .fs-pagination-lg / aria-current=\"page\"", code: true, text: "alteram densidade e expõem a página atual." },
   ],
   accordion: [
-    { label: ".cl-accordion / .cl-accordion-item / .cl-accordion-header / .cl-accordion-button / .cl-accordion-collapse / .cl-accordion-body", code: true, text: "formam a anatomia completa de cada painel." },
-    { label: "data-cl=\"accordion\" / data-multiple=\"true\" / aria-expanded / aria-controls", code: true, text: "inicializam o grupo, permitem vários painéis e comunicam o estado; Accordion.getInstance(el).dispose() é a API pública." },
+    { label: ".fs-accordion / .fs-accordion-item / .fs-accordion-header / .fs-accordion-button / .fs-accordion-collapse / .fs-accordion-body", code: true, text: "formam a anatomia completa de cada painel." },
+    { label: "data-fs=\"accordion\" / data-multiple=\"true\" / aria-expanded / aria-controls", code: true, text: "inicializam o grupo, permitem vários painéis e comunicam o estado; Accordion.getInstance(el).dispose() é a API pública." },
   ],
   tabs: [
-    { label: ".cl-tabs / .cl-nav-link / .cl-tab-content / .cl-tab-pane / .is-active / .is-disabled", code: true, text: "formam abas, painéis e seus estados." },
-    { label: "data-cl=\"tabs\" / data-cl-target / data-tabs-activation=\"manual\"", code: true, text: "inicializam, ligam aba ao painel e separam foco de ativação; Tabs.getInstance(el).show(tab) é a API pública." },
+    { label: ".fs-tabs / .fs-nav-link / .fs-tab-content / .fs-tab-pane / .is-active / .is-disabled", code: true, text: "formam abas, painéis e seus estados." },
+    { label: "data-fs=\"tabs\" / data-fs-target / data-tabs-activation=\"manual\"", code: true, text: "inicializam, ligam aba ao painel e separam foco de ativação; Tabs.getInstance(el).show(tab) é a API pública." },
   ],
   collapse: [
-    { label: ".cl-collapse / .is-showing / .is-shown", code: true, text: "definem painel recolhível e seus estados de transição e aberto." },
-    { label: "data-cl=\"collapse\" / data-cl-target / aria-expanded", code: true, text: "identificam gatilho, destino e estado; Collapse.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-collapse / .is-showing / .is-shown", code: true, text: "definem painel recolhível e seus estados de transição e aberto." },
+    { label: "data-fs=\"collapse\" / data-fs-target / aria-expanded", code: true, text: "identificam gatilho, destino e estado; Collapse.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   stepper: [
-    { label: ".cl-stepper / .cl-step / .cl-step-label / .cl-step-content / .is-active / .is-completed / .is-error", code: true, text: "estruturam sequência, conteúdo e estados de cada etapa." },
-    { label: "data-cl=\"stepper\" / data-stepper-next / data-stepper-prev / data-stepper-complete", code: true, text: "inicializam e identificam controles; Stepper.getInstance(el) expõe next(), prev(), goTo() e complete()." },
+    { label: ".fs-stepper / .fs-step / .fs-step-label / .fs-step-content / .is-active / .is-completed / .is-error", code: true, text: "estruturam sequência, conteúdo e estados de cada etapa." },
+    { label: "data-fs=\"stepper\" / data-stepper-next / data-stepper-prev / data-stepper-complete", code: true, text: "inicializam e identificam controles; Stepper.getInstance(el) expõe next(), prev(), goTo() e complete()." },
   ],
   "nested-menu": [
-    { label: ".cl-nested-menu / .cl-nested-menu-item / .cl-nested-menu-link / .cl-nested-menu-submenu / .is-open", code: true, text: "estruturam a árvore de destinos e seu estado aberto." },
-    { label: "data-cl=\"nested-menu\" / data-cl-nested-menu-toggle / data-cl-nested-menu-submenu", code: true, text: "inicializam e identificam gatilho e submenu; NestedMenu.getInstance(el).dispose() remove o comportamento." },
+    { label: ".fs-nested-menu / .fs-nested-menu-item / .fs-nested-menu-link / .fs-nested-menu-submenu / .is-open", code: true, text: "estruturam a árvore de destinos e seu estado aberto." },
+    { label: "data-fs=\"nested-menu\" / data-fs-nested-menu-toggle / data-fs-nested-menu-submenu", code: true, text: "inicializam e identificam gatilho e submenu; NestedMenu.getInstance(el).dispose() remove o comportamento." },
   ],
   "tree-view": [
-    { label: ".cl-tree / .cl-tree-item / .cl-tree-label / .cl-tree-children / .cl-tree-toggle", code: true, text: "formam raiz, nó, rótulo, grupo filho e controle de expansão." },
-    { label: "data-cl=\"tree-view\" / data-value / aria-selected / aria-expanded", code: true, text: "inicializam a árvore, fornecem valor e estado; TreeView.getInstance(el) expõe expand(), collapse(), toggle() e select()." },
+    { label: ".fs-tree / .fs-tree-item / .fs-tree-label / .fs-tree-children / .fs-tree-toggle", code: true, text: "formam raiz, nó, rótulo, grupo filho e controle de expansão." },
+    { label: "data-fs=\"tree-view\" / data-value / aria-selected / aria-expanded", code: true, text: "inicializam a árvore, fornecem valor e estado; TreeView.getInstance(el) expõe expand(), collapse(), toggle() e select()." },
   ],
   dropdown: [
-    { label: ".cl-dropdown / .cl-dropdown-menu / .cl-dropdown-item / .cl-dropdown-divider / .is-open", code: true, text: "estruturam gatilho, menu, itens, separador e estado aberto." },
-    { label: "data-cl=\"dropdown\" / data-cl-dropdown-toggle / data-align=\"end\" / disabled", code: true, text: "inicializam, identificam o gatilho, alinham o menu e desabilitam opções; Dropdown.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-dropdown / .fs-dropdown-menu / .fs-dropdown-item / .fs-dropdown-divider / .is-open", code: true, text: "estruturam gatilho, menu, itens, separador e estado aberto." },
+    { label: "data-fs=\"dropdown\" / data-fs-dropdown-toggle / data-align=\"end\" / disabled", code: true, text: "inicializam, identificam o gatilho, alinham o menu e desabilitam opções; Dropdown.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   tooltip: [
-    { label: "data-cl=\"tooltip\" / title / data-title / data-placement=\"top|bottom|left|right\"", code: true, text: "inicializam a dica, fornecem seu texto e definem posicionamento; o JS gera .cl-tooltip, .cl-tooltip-arrow e .cl-tooltip-inner." },
-    { label: "new Clarus.Tooltip(el, { title, placement })", code: true, text: "cria manualmente uma instância; show(), hide(), toggle() e dispose() são os métodos públicos." },
+    { label: "data-fs=\"tooltip\" / title / data-title / data-placement=\"top|bottom|left|right\"", code: true, text: "inicializam a dica, fornecem seu texto e definem posicionamento; o JS gera .fs-tooltip, .fs-tooltip-arrow e .fs-tooltip-inner." },
+    { label: "new FokusStyles.Tooltip(el, { title, placement })", code: true, text: "cria manualmente uma instância; show(), hide(), toggle() e dispose() são os métodos públicos." },
   ],
   "hover-card": [
-    { label: "data-cl=\"hover-card\" / data-cl-hover-card-content / data-cl-hover-card-placement", code: true, text: "inicializam a prévia e definem conteúdo e posicionamento; o cartão é gerado pelo JavaScript." },
+    { label: "data-fs=\"hover-card\" / data-fs-hover-card-content / data-fs-hover-card-placement", code: true, text: "inicializam a prévia e definem conteúdo e posicionamento; o cartão é gerado pelo JavaScript." },
     { label: "HoverCard.getInstance(el).show() / hide() / dispose()", code: true, text: "métodos públicos para controlar o cartão programaticamente." },
   ],
   popover: [
-    { label: "data-cl=\"popover\" / data-cl-popover-content / data-cl-popover-placement", code: true, text: "inicializam conteúdo e posicionamento da sobreposição." },
+    { label: "data-fs=\"popover\" / data-fs-popover-content / data-fs-popover-placement", code: true, text: "inicializam conteúdo e posicionamento da sobreposição." },
     { label: "Popover.getInstance(el).show() / hide() / toggle() / dispose()", code: true, text: "métodos públicos de controle; o popover visual é gerado pelo JavaScript." },
   ],
   offcanvas: [
-    { label: ".cl-offcanvas / .cl-offcanvas-start / .cl-offcanvas-end / .cl-offcanvas-header / .cl-offcanvas-body", code: true, text: "estruturam painel, lado de entrada, cabeçalho e conteúdo." },
-    { label: "data-cl=\"offcanvas\" / data-cl-target / data-cl-dismiss=\"offcanvas\" / data-backdrop=\"static\"", code: true, text: "identificam gatilho, destino, fechamento e bloqueio de backdrop; Offcanvas.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-offcanvas / .fs-offcanvas-start / .fs-offcanvas-end / .fs-offcanvas-header / .fs-offcanvas-body", code: true, text: "estruturam painel, lado de entrada, cabeçalho e conteúdo." },
+    { label: "data-fs=\"offcanvas\" / data-fs-target / data-fs-dismiss=\"offcanvas\" / data-backdrop=\"static\"", code: true, text: "identificam gatilho, destino, fechamento e bloqueio de backdrop; Offcanvas.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   modal: [
-    { label: ".cl-modal / .cl-modal-dialog / .cl-modal-content / .cl-modal-header / .cl-modal-body / .cl-modal-footer / .cl-modal-sm|lg|xl", code: true, text: "formam diálogo, conteúdo, seções e larguras publicadas." },
-    { label: "data-cl=\"modal\" / data-cl-target / data-cl-dismiss=\"modal\" / data-backdrop=\"static\"", code: true, text: "identificam gatilho, destino, fechamento e backdrop; Modal.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-modal / .fs-modal-dialog / .fs-modal-content / .fs-modal-header / .fs-modal-body / .fs-modal-footer / .fs-modal-sm|lg|xl", code: true, text: "formam diálogo, conteúdo, seções e larguras publicadas." },
+    { label: "data-fs=\"modal\" / data-fs-target / data-fs-dismiss=\"modal\" / data-backdrop=\"static\"", code: true, text: "identificam gatilho, destino, fechamento e backdrop; Modal.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   "alert-dialog": [
-    { label: "Clarus.confirm({ title, message, confirmText, cancelText, variant })", code: true, text: "cria o diálogo de confirmação e retorna Promise<boolean>; variant aceita uma cor de tema." },
-    { label: ".cl-alert-dialog / .cl-alert-dialog-message", code: true, text: "classes geradas internamente sobre a estrutura de Modal; não é necessário escrever a marcação manualmente." },
+    { label: "FokusStyles.confirm({ title, message, confirmText, cancelText, variant })", code: true, text: "cria o diálogo de confirmação e retorna Promise<boolean>; variant aceita uma cor de tema." },
+    { label: ".fs-alert-dialog / .fs-alert-dialog-message", code: true, text: "classes geradas internamente sobre a estrutura de Modal; não é necessário escrever a marcação manualmente." },
   ],
   "command-palette": [
-    { label: ".cl-command-palette / .cl-command-palette-input / .cl-command-palette-list / .cl-command-palette-item", code: true, text: "estruturam diálogo, busca, resultados e comando." },
-    { label: "data-cl=\"command-palette\" / data-cl-command-palette-input / data-cl-command-palette-list / data-command", code: true, text: "inicializam e identificam partes e comandos; CommandPalette.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-command-palette / .fs-command-palette-input / .fs-command-palette-list / .fs-command-palette-item", code: true, text: "estruturam diálogo, busca, resultados e comando." },
+    { label: "data-fs=\"command-palette\" / data-fs-command-palette-input / data-fs-command-palette-list / data-command", code: true, text: "inicializam e identificam partes e comandos; CommandPalette.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   toast: [
-    { label: ".cl-toast-container / .cl-toast / .cl-toast-header / .cl-toast-body / .cl-toast-{cor}", code: true, text: "estruturam região, mensagem, seções e variante semântica do cabeçalho." },
-    { label: "data-cl=\"toast\" / data-delay=\"4000\" / data-autohide=\"false\" / data-cl-dismiss=\"toast\"", code: true, text: "inicializam, configuram duração e fechamento; Toast.getInstance(el).show(), hide() e toggle() são públicos." },
+    { label: ".fs-toast-container / .fs-toast / .fs-toast-header / .fs-toast-body / .fs-toast-{cor}", code: true, text: "estruturam região, mensagem, seções e variante semântica do cabeçalho." },
+    { label: "data-fs=\"toast\" / data-delay=\"4000\" / data-autohide=\"false\" / data-fs-dismiss=\"toast\"", code: true, text: "inicializam, configuram duração e fechamento; Toast.getInstance(el).show(), hide() e toggle() são públicos." },
   ],
   "notification-center": [
-    { label: ".cl-notification-badge / .cl-notification-center / .cl-notification-center-header / .cl-notification-center-title / .cl-notification-list / .cl-notification-empty", code: true, text: "estruturam contagem, painel, cabeçalho, título, lista e estado vazio." },
-    { label: ".cl-notification-item-{cor} / .cl-notification-item-unread / data-cl=\"notification-center\" / data-cl-target", code: true, text: "aplicam variante e não lida, inicializam o gatilho e apontam o painel." },
+    { label: ".fs-notification-badge / .fs-notification-center / .fs-notification-center-header / .fs-notification-center-title / .fs-notification-list / .fs-notification-empty", code: true, text: "estruturam contagem, painel, cabeçalho, título, lista e estado vazio." },
+    { label: ".fs-notification-item-{cor} / .fs-notification-item-unread / data-fs=\"notification-center\" / data-fs-target", code: true, text: "aplicam variante e não lida, inicializam o gatilho e apontam o painel." },
     { label: "data-notification=\"clear\" / data-storage=\"local\" / data-storage-key / data-toast-container", code: true, text: "limpam histórico, configuram persistência e definem o contêiner de toasts; NotificationCenter.getInstance(el) expõe push(), remove(), clear(), open(), close() e toggle()." },
   ],
 };
@@ -488,8 +488,8 @@ if (new URLSearchParams(window.location.search).get("theme") === "dark") {
 
 function createDetails(item) {
   const details = document.createElement("div");
-  details.className = "cl-accordion showcase-details";
-  details.setAttribute("data-cl", "accordion");
+  details.className = "fs-accordion showcase-details";
+  details.setAttribute("data-fs", "accordion");
   details.setAttribute("data-multiple", "true");
   const api = Array.isArray(item.api) ? item.api : [{ text: item.api }];
   const extensions = apiExtensions[item.id] || [];
@@ -504,20 +504,20 @@ function createDetails(item) {
   ];
   for (const [index, [label, value]] of values.entries()) {
     const wrapper = document.createElement("div");
-    wrapper.className = "cl-accordion-item";
+    wrapper.className = "fs-accordion-item";
     const heading = document.createElement("h3");
-    heading.className = "cl-accordion-header";
+    heading.className = "fs-accordion-header";
     const trigger = document.createElement("button");
     trigger.type = "button";
-    trigger.className = "cl-accordion-button";
+    trigger.className = "fs-accordion-button";
     trigger.setAttribute("aria-expanded", String(index === 0));
     trigger.textContent = label === "Classes e atributos" && Array.isArray(value)
       ? `${label} · ${value.length} opções`
       : label;
     const panel = document.createElement("div");
-    panel.className = "cl-accordion-collapse";
+    panel.className = "fs-accordion-collapse";
     const definition = document.createElement("div");
-    definition.className = "cl-accordion-body showcase-detail-body";
+    definition.className = "fs-accordion-body showcase-detail-body";
     if (value === null) {
       definition.dataset.showcaseExampleApi = "";
       definition.textContent = "Lendo as classes e atributos usados na demonstração…";
@@ -582,7 +582,7 @@ function renderExampleApi(section, document, source) {
   const attributes = new Set();
   document.querySelectorAll("[class], *").forEach((element) => {
     element.classList?.forEach((className) => {
-      if (className.startsWith("cl-") || className.startsWith("is-")) classes.add(`.${className}`);
+      if (className.startsWith("fs-") || className.startsWith("is-")) classes.add(`.${className}`);
     });
     Array.from(element.attributes).forEach((attribute) => {
       if (attribute.name.startsWith("data-") || attribute.name.startsWith("aria-")) {

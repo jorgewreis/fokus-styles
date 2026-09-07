@@ -1,0 +1,52 @@
+// Plus Jakarta Sans e Source Code Pro self-hosted (docs/definitions.md,
+// seção 18.2): arquivos em assets/fonts/, licença OFL (ver OFL.txt em cada
+// pasta), no lugar do @import do Google Fonts — cumpre a meta de "dependência
+// externa zero em tempo de execução" (seção 6) para as duas fontes. Um único
+// arquivo variável por família cobre toda a faixa de peso, como o próprio
+// Google Fonts serve para navegadores com suporte a fontes variáveis.
+
+// Distribuído à parte (dist/css/fonts.css) fora dos bundles principais: as
+// `url()` das fontes não podem ser resolvidas por bundlers sem loader de
+// woff2 (ex.: o webpack do bundlephobia), então mantê-las no `main`
+// (fokus.css) quebrava a análise do pacote. Quem quiser as fontes
+// self-hosted importa fonts.css explicitamente; sem ele, a pilha de
+// `font-family` cai no sans-serif/monospace do sistema.
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../../assets/fonts/plus-jakarta-sans/plus-jakarta-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../../assets/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../../assets/fonts/source-code-pro/source-code-pro-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../../assets/fonts/source-code-pro/source-code-pro-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}

@@ -1,0 +1,71 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: $font-size-sm;
+  }
+
+  .fs-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--fs-color-muted);
+  }
+
+  .fs-breadcrumb-item + .fs-breadcrumb-item::before {
+    color: var(--fs-color-muted);
+    content: "/";
+  }
+
+  .fs-breadcrumb-item a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--fs-alert-primary-text);
+    text-decoration: none;
+  }
+
+  .fs-breadcrumb-item a:hover {
+    text-decoration: underline;
+  }
+
+  .fs-breadcrumb-item.is-active {
+    color: var(--fs-color-text);
+  }
+
+  // Breadcrumb avançado (js/breadcrumb.js): trunca labels longos com reticências
+  // (tooltip com o texto completo é anexado via js/tooltip.js só quando o texto
+  // realmente transborda) e, em telas pequenas, recolhe os níveis
+  // intermediários num único item "…" que abre um dropdown (js/dropdown.js)
+  // com os links ocultos.
+  .fs-breadcrumb-item-truncate {
+    display: inline-block;
+    max-width: 160px;
+    vertical-align: bottom;
+
+    @include truncate;
+  }
+
+  .fs-breadcrumb-more {
+    padding: 0;
+    border: none;
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-surface-raised);
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+  }
+
+  .fs-breadcrumb-more:hover {
+    color: var(--fs-color-text);
+  }
+}

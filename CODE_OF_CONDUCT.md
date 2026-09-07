@@ -3,7 +3,7 @@
 ## Nosso compromisso
 
 Como mantenedores e colaboradores deste projeto, nos comprometemos a manter a
-participação no Clarus CSS livre de assédio para todos, independentemente de
+participação no Fokus Styles livre de assédio para todos, independentemente de
 idade, corpo, deficiência, etnia, identidade e expressão de gênero, nível de
 experiência, nacionalidade, aparência pessoal, raça, religião ou identidade e
 orientação sexual.

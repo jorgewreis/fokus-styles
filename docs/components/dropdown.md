@@ -7,30 +7,30 @@ clicar fora ou `Escape`.
 ## Visão geral
 
 ```html
-<div class="cl-dropdown">
-  <button type="button" class="cl-btn cl-dropdown-toggle" data-cl="dropdown" data-cl-target="#meu-menu">
+<div class="fs-dropdown">
+  <button type="button" class="fs-btn fs-dropdown-toggle" data-fs="dropdown" data-fs-target="#meu-menu">
     Opções
   </button>
-  <div class="cl-dropdown-menu" id="meu-menu">
-    <a href="#" class="cl-dropdown-item">Editar</a>
-    <a href="#" class="cl-dropdown-item">Duplicar</a>
-    <div class="cl-dropdown-divider"></div>
-    <a href="#" class="cl-dropdown-item">Excluir</a>
+  <div class="fs-dropdown-menu" id="meu-menu">
+    <a href="#" class="fs-dropdown-item">Editar</a>
+    <a href="#" class="fs-dropdown-item">Duplicar</a>
+    <div class="fs-dropdown-divider"></div>
+    <a href="#" class="fs-dropdown-item">Excluir</a>
   </div>
 </div>
 ```
 
-Sem `data-cl-target`, o menu é o próximo irmão do gatilho no HTML — usar
-`data-cl-target` é mais explícito e não exige ordem específica no DOM (o
+Sem `data-fs-target`, o menu é o próximo irmão do gatilho no HTML — usar
+`data-fs-target` é mais explícito e não exige ordem específica no DOM (o
 JS move o menu pra `<body>` na inicialização, pra escapar de
 `overflow: hidden` de containers ancestrais).
 
 ## Anatomia
 
-`.cl-dropdown` (posicionamento relativo, opcional — só necessário se você
-não usa `data-cl-target`) > gatilho (`.cl-dropdown-toggle`, qualquer
-elemento clicável) + `.cl-dropdown-menu` > `.cl-dropdown-item` (link ou
-botão), `.cl-dropdown-divider` (separador), `.cl-dropdown-header` (rótulo
+`.fs-dropdown` (posicionamento relativo, opcional — só necessário se você
+não usa `data-fs-target`) > gatilho (`.fs-dropdown-toggle`, qualquer
+elemento clicável) + `.fs-dropdown-menu` > `.fs-dropdown-item` (link ou
+botão), `.fs-dropdown-divider` (separador), `.fs-dropdown-header` (rótulo
 de grupo, sem interação).
 
 ## Variações
@@ -41,14 +41,14 @@ de grupo, sem interação).
   pedida.
 
 ```html
-<button class="cl-btn cl-dropdown-toggle" data-cl="dropdown" data-cl-target="#menu2" data-placement="top" data-align="end">
+<button class="fs-btn fs-dropdown-toggle" data-fs="dropdown" data-fs-target="#menu2" data-placement="top" data-align="end">
   Opções
 </button>
 ```
 
 ## Estados
 
-`.cl-dropdown-item.is-active` (fundo primário), `.cl-dropdown-item.is-disabled`
+`.fs-dropdown-item.is-active` (fundo primário), `.fs-dropdown-item.is-disabled`
 (opacidade reduzida, sem interação/fora da navegação por seta).
 
 ## A11y
@@ -61,7 +61,7 @@ num item fecha e devolve o foco ao gatilho também.
 
 ## API JS
 
-Auto-init via `data-cl="dropdown"`. `Dropdown.getInstance(el)` (`el` é o
+Auto-init via `data-fs="dropdown"`. `Dropdown.getInstance(el)` (`el` é o
 **gatilho**, não o menu).
 
 | Método | Descrição |
@@ -73,29 +73,29 @@ Auto-init via `data-cl="dropdown"`. `Dropdown.getInstance(el)` (`el` é o
 
 | Evento (no gatilho) | Cancelável | Quando |
 |---|---|---|
-| `cl:dropdown:shown` | Não | Depois de abrir. |
-| `cl:dropdown:hidden` | Não | Depois de fechar. |
+| `fs:dropdown:shown` | Não | Depois de abrir. |
+| `fs:dropdown:hidden` | Não | Depois de fechar. |
 
 ## Tokens
 
-`--cl-color-border`, `--cl-color-surface`, `--cl-color-text`,
-`--cl-color-subtle` (hover), `--cl-color-primary` (item ativo),
-`--cl-color-muted` (header/desabilitado), `--cl-radius-md`,
-`--cl-shadow-md`.
+`--fs-color-border`, `--fs-color-surface`, `--fs-color-text`,
+`--fs-color-subtle` (hover), `--fs-color-primary` (item ativo),
+`--fs-color-muted` (header/desabilitado), `--fs-radius-md`,
+`--fs-shadow-md`.
 
 ## Exemplo
 
 ```html
-<div class="cl-dropdown">
-  <button type="button" class="cl-btn cl-btn-outline-secondary cl-dropdown-toggle" data-cl="dropdown" data-cl-target="#acoes">
+<div class="fs-dropdown">
+  <button type="button" class="fs-btn fs-btn-outline-secondary fs-dropdown-toggle" data-fs="dropdown" data-fs-target="#acoes">
     Ações
   </button>
-  <div class="cl-dropdown-menu" id="acoes">
-    <div class="cl-dropdown-header">Conta</div>
-    <a href="#" class="cl-dropdown-item">Perfil</a>
-    <a href="#" class="cl-dropdown-item is-disabled">Configurações (em breve)</a>
-    <div class="cl-dropdown-divider"></div>
-    <a href="#" class="cl-dropdown-item">Sair</a>
+  <div class="fs-dropdown-menu" id="acoes">
+    <div class="fs-dropdown-header">Conta</div>
+    <a href="#" class="fs-dropdown-item">Perfil</a>
+    <a href="#" class="fs-dropdown-item is-disabled">Configurações (em breve)</a>
+    <div class="fs-dropdown-divider"></div>
+    <a href="#" class="fs-dropdown-item">Sair</a>
   </div>
 </div>
 ```

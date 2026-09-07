@@ -1,0 +1,164 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+// Stepper / Wizard. Cabeçalho com os passos (`.fs-step`) e, opcionalmente, painéis
+// de conteúdo (`.fs-step-panel`) e ações de navegação (`.fs-stepper-actions`).
+// Estados por passo: padrão (pendente), `.fs-step-active`, `.fs-step-completed`,
+// `.fs-step-error` — controlados por `js/stepper.js`.
+
+@layer components {
+  .fs-stepper-header {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-step {
+    position: relative;
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .fs-step-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-surface);
+    border: 2px solid var(--fs-color-border);
+    border-radius: 50%;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-step-label {
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-step-description {
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+  }
+
+  // Conector entre passos: linha do centro deste passo ao centro do próximo.
+  .fs-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: calc(50% + 20px);
+    width: calc(100% - 40px);
+    height: 2px;
+    background-color: var(--fs-color-border);
+  }
+
+  // Passo ativo.
+  .fs-step-active .fs-step-indicator {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-step-active .fs-step-label {
+    color: var(--fs-color-text);
+  }
+
+  // Passo concluído: círculo preenchido com um "check" no lugar do número, e o
+  // conector à direita fica na cor primária (indica progresso).
+  .fs-step-completed .fs-step-indicator {
+    color: transparent;
+    background-color: var(--fs-color-primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5 6.5 12 13 4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: var(--fs-color-primary);
+  }
+
+  .fs-step-completed .fs-step-label {
+    color: var(--fs-color-text);
+  }
+
+  // `:not(:last-child)` casa a especificidade da regra base do conector
+  // (senão o cinza dela venceria e o progresso não apareceria).
+  .fs-step-completed:not(:last-child)::after {
+    background-color: var(--fs-color-primary);
+  }
+
+  // Passo em erro.
+  .fs-step-error .fs-step-indicator {
+    color: color-contrast($fokus-color-danger);
+    background-color: var(--fs-color-danger);
+    border-color: var(--fs-color-danger);
+  }
+
+  .fs-step-error .fs-step-label {
+    color: var(--fs-alert-danger-text);
+  }
+
+  // Passo clicável (navegação para trás via cabeçalho).
+  .fs-step.fs-step-clickable {
+    cursor: pointer;
+  }
+
+  .fs-step.fs-step-clickable:focus-visible {
+    outline: 2px solid var(--fs-color-primary);
+    outline-offset: 2px;
+    border-radius: var(--fs-radius-sm);
+  }
+
+  // Variante vertical.
+  .fs-stepper-vertical .fs-stepper-header {
+    flex-direction: column;
+  }
+
+  .fs-stepper-vertical .fs-step {
+    flex-direction: row;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 56px;
+    text-align: left;
+  }
+
+  .fs-stepper-vertical .fs-step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 5px;
+  }
+
+  .fs-stepper-vertical .fs-step:not(:last-child)::after {
+    top: 34px;
+    left: 15px;
+    width: 2px;
+    height: calc(100% - 22px);
+  }
+
+  // Painéis de conteúdo (wizard) e ações de navegação.
+  .fs-step-panel {
+    display: none;
+  }
+
+  .fs-step-panel.is-active {
+    display: block;
+  }
+
+  .fs-stepper-content {
+    margin-top: 20px;
+  }
+
+  .fs-stepper-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 20px;
+  }
+}

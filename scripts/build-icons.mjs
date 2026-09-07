@@ -2,14 +2,14 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Gera packages/clarus-icons/ a partir do `lucide-static` (devDependency,
+// Gera packages/fokus-icons/ a partir do `lucide-static` (devDependency,
 // só usado em build-time — o pacote publicado não tem dependência de
-// runtime nenhuma, mesma filosofia do resto do Clarus). Ver
+// runtime nenhuma, mesma filosofia do resto do FokusStyles). Ver
 // docs/guides/icons.md pro contexto da decisão.
 
 const rootDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const sourceDir = path.join(rootDir, "node_modules", "lucide-static", "icons");
-const pkgDir = path.join(rootDir, "packages", "clarus-icons");
+const pkgDir = path.join(rootDir, "packages", "fokus-icons");
 const svgOutDir = path.join(pkgDir, "svg");
 const jsOutDir = path.join(pkgDir, "icons");
 
@@ -38,7 +38,7 @@ function toExportName(name) {
 function cleanSvg(raw) {
   return raw
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/\sclass="lucide[^"]*"/, ' class="cl-icon"')
+    .replace(/\sclass="lucide[^"]*"/, ' class="fs-icon"')
     .replace(/\s+/g, " ")
     .replace(/> </g, "><")
     .replace(/\s+\/>/g, "/>")
@@ -86,9 +86,9 @@ async function run() {
   await fs.writeFile(path.join(pkgDir, "index.js"), `${indexLines.join("\n")}\n`);
 
   const { version } = JSON.parse(await fs.readFile(path.join(rootDir, "node_modules", "lucide-static", "package.json"), "utf8"));
-  console.log(`Gerados ${names.length} ícones (lucide-static@${version}) em packages/clarus-icons/{svg,icons}/ + index.js`);
+  console.log(`Gerados ${names.length} ícones (lucide-static@${version}) em packages/fokus-icons/{svg,icons}/ + index.js`);
   if (skipped > 0) {
-    console.log(`${skipped} nome(s) colidiram no camelCase e ficaram fora do barrel (acessíveis só via "clarus-icons/icons/<nome>.js").`);
+    console.log(`${skipped} nome(s) colidiram no camelCase e ficaram fora do barrel (acessíveis só via "fokus-styles/icons/<nome>.js").`);
   }
 }
 

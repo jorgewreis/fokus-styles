@@ -11,7 +11,7 @@ mecanismo de [`docs/guides/dark-mode.md`](../../docs/guides/dark-mode.md)).
 
 | Arquivo | O que mostra |
 |---|---|
-| [`dashboard.html`](dashboard.html) | Navegação lateral, KPIs, gráfico (tokens `--cl-chart-*`) e DataTable. |
+| [`dashboard.html`](dashboard.html) | Navegação lateral, KPIs, gráfico (tokens `--fs-chart-*`) e DataTable. |
 | [`auth.html`](auth.html) | Login/cadastro com Tabs, painel dividido e toggle de visibilidade de senha. |
 | [`landing.html`](landing.html) | Página de marketing: hero, recursos, preços (com toggle mensal/anual) e CTA. Marca "Orbit" é fictícia, só para ilustrar o conteúdo. |
 | [`admin.html`](admin.html) | Gestão (CRUD) de usuários: DataTable com ações por linha, Modal de criação e Tabs de configurações. |

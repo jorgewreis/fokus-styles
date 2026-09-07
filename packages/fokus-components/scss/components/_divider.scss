@@ -1,0 +1,33 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Linha divisória, 100% CSS. `<hr class="divider">` para o traço simples;
+// `<div class="divider">` (não pode ser `<hr>`, que não aceita filhos) com
+// `.fs-divider-label` para o texto centralizado, flanqueado por duas linhas via
+// pseudo-elementos.
+
+@layer components {
+  .fs-divider {
+    margin: 16px 0;
+    border: 0;
+    border-top: 1px solid var(--fs-color-border);
+  }
+
+  .fs-divider:not(hr) {
+    display: flex;
+    align-items: center;
+    border-top: none;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+
+  .fs-divider:not(hr)::before,
+  .fs-divider:not(hr)::after {
+    flex: 1;
+    content: "";
+    border-top: 1px solid var(--fs-color-border);
+  }
+
+  .fs-divider-label {
+    padding: 0 12px;
+  }
+}

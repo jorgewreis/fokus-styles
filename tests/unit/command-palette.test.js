@@ -1,18 +1,18 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { CommandPalette } from "../../packages/clarus-js/js/command-palette.js";
+import { CommandPalette } from "../../packages/fokus-js/js/command-palette.js";
 
 function buildCommandPalette(options) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <button type="button" id="trigger" data-cl-target="#palette">Abrir</button>
+    <button type="button" id="trigger" data-fs-target="#palette">Abrir</button>
     <div id="palette">
-      <div class="cl-command-palette-dialog">
-        <input type="text" class="cl-command-palette-input">
-        <ul class="cl-command-palette-list">
-          <li class="cl-dropdown-item" data-value="new-file">Novo arquivo</li>
-          <li class="cl-dropdown-item" data-value="open-settings">Abrir configurações</li>
-          <li class="cl-dropdown-item is-disabled" data-value="disabled">Indisponível</li>
-          <li class="cl-dropdown-item is-disabled" data-cl-empty hidden>Nenhum comando encontrado.</li>
+      <div class="fs-command-palette-dialog">
+        <input type="text" class="fs-command-palette-input">
+        <ul class="fs-command-palette-list">
+          <li class="fs-dropdown-item" data-value="new-file">Novo arquivo</li>
+          <li class="fs-dropdown-item" data-value="open-settings">Abrir configurações</li>
+          <li class="fs-dropdown-item is-disabled" data-value="disabled">Indisponível</li>
+          <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum comando encontrado.</li>
         </ul>
       </div>
     </div>
@@ -30,7 +30,7 @@ describe("CommandPalette", () => {
     document.body.innerHTML = "";
   });
 
-  it("lança erro se o painel (data-cl-target) não existir", () => {
+  it("lança erro se o painel (data-fs-target) não existir", () => {
     const trigger = document.createElement("button");
     document.body.appendChild(trigger);
 
@@ -72,19 +72,19 @@ describe("CommandPalette", () => {
     instance.inputEl.value = "config";
     instance.inputEl.dispatchEvent(new Event("input", { bubbles: true }));
 
-    const items = instance.listEl.querySelectorAll(".cl-dropdown-item:not([data-cl-empty])");
+    const items = instance.listEl.querySelectorAll(".fs-dropdown-item:not([data-fs-empty])");
     expect(items[0].hidden).toBe(true); // Novo arquivo
     expect(items[1].hidden).toBe(false); // Abrir configurações
   });
 
-  it("mostra o item data-cl-empty quando nenhum comando corresponde à busca", () => {
+  it("mostra o item data-fs-empty quando nenhum comando corresponde à busca", () => {
     const { instance } = buildCommandPalette();
     instance.show();
 
     instance.inputEl.value = "zzz";
     instance.inputEl.dispatchEvent(new Event("input", { bubbles: true }));
 
-    expect(instance.listEl.querySelector("[data-cl-empty]").hidden).toBe(false);
+    expect(instance.listEl.querySelector("[data-fs-empty]").hidden).toBe(false);
   });
 
   it("ArrowDown/ArrowUp navegam só entre itens habilitados e visíveis", () => {
@@ -99,10 +99,10 @@ describe("CommandPalette", () => {
     expect(active.textContent).toBe("Abrir configurações");
   });
 
-  it("Enter seleciona o item ativo: dispara cl:command-palette:selected e fecha", () => {
+  it("Enter seleciona o item ativo: dispara fs:command-palette:selected e fecha", () => {
     const { trigger, palette, instance } = buildCommandPalette();
     const handler = vi.fn();
-    trigger.addEventListener("cl:command-palette:selected", handler);
+    trigger.addEventListener("fs:command-palette:selected", handler);
     instance.show();
 
     instance.inputEl.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
@@ -112,14 +112,14 @@ describe("CommandPalette", () => {
     expect(palette.classList.contains("is-open")).toBe(false);
   });
 
-  it("clicar num item dispara cl:command-palette:selected com o valor certo", () => {
+  it("clicar num item dispara fs:command-palette:selected com o valor certo", () => {
     const { instance, trigger } = buildCommandPalette();
     const handler = vi.fn();
-    trigger.addEventListener("cl:command-palette:selected", handler);
+    trigger.addEventListener("fs:command-palette:selected", handler);
     instance.show();
 
-    instance.listEl.querySelectorAll(".cl-dropdown-item")[1].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
-    instance.listEl.querySelectorAll(".cl-dropdown-item")[1].click();
+    instance.listEl.querySelectorAll(".fs-dropdown-item")[1].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+    instance.listEl.querySelectorAll(".fs-dropdown-item")[1].click();
 
     expect(handler.mock.calls[0][0].detail.value).toBe("open-settings");
   });
@@ -127,10 +127,10 @@ describe("CommandPalette", () => {
   it("clicar num item desabilitado não seleciona nada", () => {
     const { instance, trigger } = buildCommandPalette();
     const handler = vi.fn();
-    trigger.addEventListener("cl:command-palette:selected", handler);
+    trigger.addEventListener("fs:command-palette:selected", handler);
     instance.show();
 
-    instance.listEl.querySelectorAll(".cl-dropdown-item")[2].click();
+    instance.listEl.querySelectorAll(".fs-dropdown-item")[2].click();
 
     expect(handler).not.toHaveBeenCalled();
   });
@@ -145,14 +145,14 @@ describe("CommandPalette", () => {
     expect(document.activeElement).toBe(trigger);
   });
 
-  it("options.shortcut (equivalente a data-cl-shortcut) abre/fecha via atalho global", () => {
+  it("options.shortcut (equivalente a data-fs-shortcut) abre/fecha via atalho global", () => {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = `
-      <button type="button" id="trigger2" data-cl-target="#palette2"></button>
+      <button type="button" id="trigger2" data-fs-target="#palette2"></button>
       <div id="palette2">
-        <div class="cl-command-palette-dialog">
-          <input type="text" class="cl-command-palette-input">
-          <ul class="cl-command-palette-list"><li class="cl-dropdown-item">Item</li></ul>
+        <div class="fs-command-palette-dialog">
+          <input type="text" class="fs-command-palette-input">
+          <ul class="fs-command-palette-list"><li class="fs-dropdown-item">Item</li></ul>
         </div>
       </div>
     `;

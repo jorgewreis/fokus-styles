@@ -1,10 +1,10 @@
 import { describe, it, expect, afterEach, beforeEach, vi } from "vitest";
-import { Datepicker } from "../../packages/clarus-js/js/datepicker.js";
+import { Datepicker } from "../../packages/fokus-js/js/datepicker.js";
 
 function buildDatepicker(initialValue = "") {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <input type="text" id="input" value="${initialValue}" data-cl-target="#panel">
+    <input type="text" id="input" value="${initialValue}" data-fs-target="#panel">
     <div id="panel"></div>
   `;
   document.body.appendChild(wrapper);
@@ -16,7 +16,7 @@ function buildDatepicker(initialValue = "") {
 }
 
 function dayButton(panel, year, month, day) {
-  return panel.querySelector(`.cl-datepicker-day[data-year="${year}"][data-month="${month}"][data-day="${day}"]`);
+  return panel.querySelector(`.fs-datepicker-day[data-year="${year}"][data-month="${month}"][data-day="${day}"]`);
 }
 
 describe("Datepicker", () => {
@@ -30,7 +30,7 @@ describe("Datepicker", () => {
     document.body.innerHTML = "";
   });
 
-  it("lança erro se o painel (data-cl-target) não existir", () => {
+  it("lança erro se o painel (data-fs-target) não existir", () => {
     const input = document.createElement("input");
     document.body.appendChild(input);
 
@@ -72,7 +72,7 @@ describe("Datepicker", () => {
     const { panel, datepicker } = buildDatepicker("15/03/2026");
     datepicker.show();
 
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/março.*2026/i);
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/março.*2026/i);
     const selected = dayButton(panel, 2026, 2, 15); // mês 0-indexado: março = 2
     expect(selected.classList.contains("is-selected")).toBe(true);
   });
@@ -80,9 +80,9 @@ describe("Datepicker", () => {
   it("clicar num dia seleciona: preenche o input, fecha o painel e dispara os eventos", () => {
     const { input, panel, datepicker } = buildDatepicker();
     const changeHandler = vi.fn();
-    const clarusHandler = vi.fn();
+    const fokusHandler = vi.fn();
     input.addEventListener("change", changeHandler);
-    input.addEventListener("cl:datepicker:changed", clarusHandler);
+    input.addEventListener("fs:datepicker:changed", fokusHandler);
 
     datepicker.show();
     dayButton(panel, 2026, 6, 20).click(); // julho = mês 6
@@ -91,8 +91,8 @@ describe("Datepicker", () => {
     expect(datepicker.value).toBe("2026-07-20");
     expect(panel.classList.contains("is-open")).toBe(false);
     expect(changeHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler).toHaveBeenCalledTimes(1);
-    expect(clarusHandler.mock.calls[0][0].detail.value).toBe("2026-07-20");
+    expect(fokusHandler).toHaveBeenCalledTimes(1);
+    expect(fokusHandler.mock.calls[0][0].detail.value).toBe("2026-07-20");
   });
 
   it("clicar em dia desabilitado não seleciona nada", () => {
@@ -110,12 +110,12 @@ describe("Datepicker", () => {
     const { panel, datepicker } = buildDatepicker("15/03/2026");
     datepicker.show();
 
-    panel.querySelector("[data-cl-datepicker-next]").click();
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/abril.*2026/i);
+    panel.querySelector("[data-fs-datepicker-next]").click();
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/abril.*2026/i);
 
-    panel.querySelector("[data-cl-datepicker-prev]").click();
-    panel.querySelector("[data-cl-datepicker-prev]").click();
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/fevereiro.*2026/i);
+    panel.querySelector("[data-fs-datepicker-prev]").click();
+    panel.querySelector("[data-fs-datepicker-prev]").click();
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/fevereiro.*2026/i);
   });
 
   it("ArrowDown com foco no input (não num dia) abre o painel e move o foco pro dia tabável", () => {
@@ -124,7 +124,7 @@ describe("Datepicker", () => {
 
     input.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
 
-    expect(document.activeElement.classList.contains("cl-datepicker-day")).toBe(true);
+    expect(document.activeElement.classList.contains("fs-datepicker-day")).toBe(true);
   });
 
   it("ArrowDown com o painel fechado reabre e move o foco pro grid", () => {
@@ -133,7 +133,7 @@ describe("Datepicker", () => {
     input.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
 
     expect(panel.classList.contains("is-open")).toBe(true);
-    expect(document.activeElement.classList.contains("cl-datepicker-day")).toBe(true);
+    expect(document.activeElement.classList.contains("fs-datepicker-day")).toBe(true);
   });
 
   it("selecionar uma data e depois apertar ArrowDown no input reabre o painel (sem regressão do suppressNextFocus)", () => {
@@ -154,7 +154,7 @@ describe("Datepicker", () => {
     dayButton(panel, 2026, 6, 31).focus();
     document.activeElement.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
 
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/agosto.*2026/i);
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/agosto.*2026/i);
     expect(document.activeElement).toBe(dayButton(panel, 2026, 7, 1));
   });
 
@@ -174,10 +174,10 @@ describe("Datepicker", () => {
 
     dayButton(panel, 2026, 6, 7).focus();
     document.activeElement.dispatchEvent(new KeyboardEvent("keydown", { key: "PageDown", bubbles: true }));
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/agosto.*2026/i);
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/agosto.*2026/i);
 
     document.activeElement.dispatchEvent(new KeyboardEvent("keydown", { key: "PageDown", bubbles: true, shiftKey: true }));
-    expect(panel.querySelector(".cl-datepicker-title").textContent).toMatch(/agosto.*2027/i);
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/agosto.*2027/i);
   });
 
   it("Enter seleciona o dia com foco atual", () => {

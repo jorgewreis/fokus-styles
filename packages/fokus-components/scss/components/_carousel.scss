@@ -1,0 +1,466 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+@use "sass:map";
+
+@layer components {
+  .fs-carousel {
+    --fs-carousel-radius: var(--fs-radius-md);
+    --fs-carousel-transition-duration: var(--fs-transition-normal);
+    --fs-carousel-transition-easing: var(--fs-ease-standard);
+    --fs-carousel-control-size: 44px;
+    --fs-carousel-control-inset: var(--fs-space-2);
+    --fs-carousel-control-gap: var(--fs-space-1);
+    --fs-carousel-control-color: var(--fs-color-white);
+    --fs-carousel-control-paused-color: var(--fs-color-warning);
+    --fs-carousel-control-bg: rgb(15 23 42 / 72%);
+    --fs-carousel-control-bg-hover: rgb(15 23 42 / 88%);
+    --fs-carousel-focus-color: var(--fs-color-white);
+    --fs-carousel-indicator-size: 8px;
+    --fs-carousel-indicator-active-width: 24px;
+    --fs-carousel-indicator-color: rgb(255 255 255 / 62%);
+    --fs-carousel-indicator-active-color: var(--fs-color-white);
+    --fs-carousel-caption-scrim: rgb(15 23 42 / 78%);
+    --fs-carousel-top-safe-area: calc(var(--fs-carousel-control-size) + (var(--fs-carousel-control-inset) * 2));
+    --fs-carousel-bottom-safe-area: calc(32px + var(--fs-space-2) + 24px);
+    --fs-carousel-progress-height: 3px;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--fs-carousel-radius);
+  }
+
+  .fs-carousel::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: calc(var(--fs-carousel-control-size) + (var(--fs-carousel-control-inset) * 2));
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(to bottom, rgb(15 23 42 / 76%), rgb(15 23 42 / 32%));
+    opacity: 0;
+    transition: opacity var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-carousel-inner {
+    display: flex;
+    transition: transform var(--fs-carousel-transition-duration) var(--fs-carousel-transition-easing);
+  }
+
+  .fs-carousel-item {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .fs-carousel-item img {
+    display: block;
+    width: 100%;
+  }
+
+  .fs-carousel.is-dragging .fs-carousel-inner {
+    cursor: grabbing;
+    transition: none;
+    user-select: none;
+  }
+
+  .fs-carousel:not(.is-static) .fs-carousel-inner {
+    cursor: grab;
+    touch-action: pan-y;
+  }
+
+  .fs-carousel-fade .fs-carousel-inner {
+    display: block;
+    transform: none;
+  }
+
+  .fs-carousel-fade .fs-carousel-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--fs-carousel-transition-duration) var(--fs-carousel-transition-easing);
+  }
+
+  .fs-carousel-fade .fs-carousel-item.is-active {
+    position: relative;
+    opacity: 1;
+  }
+
+  .fs-carousel-control-prev,
+  .fs-carousel-control-next,
+  .fs-carousel-control-toggle {
+    position: absolute;
+    top: var(--fs-carousel-control-inset);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--fs-carousel-control-size);
+    height: var(--fs-carousel-control-size);
+    padding: 0;
+    color: var(--fs-carousel-control-color);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: background-color var(--fs-transition-fast) var(--fs-ease-standard),
+      opacity var(--fs-transition-fast) var(--fs-ease-standard),
+      transform var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-carousel-control-prev,
+  .fs-carousel-control-next {
+    transform: none;
+  }
+
+  .fs-carousel-control-prev {
+    left: var(--fs-carousel-control-inset);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4 6 9l5 5'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel-control-next {
+    left: calc(var(--fs-carousel-control-inset) + var(--fs-carousel-control-size) + var(--fs-carousel-control-gap));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 4 5 5-5 5'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel-control-toggle {
+    left: calc(var(--fs-carousel-control-inset) + var(--fs-carousel-control-size) + var(--fs-carousel-control-gap));
+  }
+
+  .fs-carousel:has(.fs-carousel-control-toggle) .fs-carousel-control-next {
+    left: calc(var(--fs-carousel-control-inset) + ((var(--fs-carousel-control-size) + var(--fs-carousel-control-gap)) * 2));
+  }
+
+  .fs-carousel-control-toggle[aria-pressed="true"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M7 5v8M11 5v8'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel-control-toggle[aria-pressed="false"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23ffffff'%3E%3Cpath d='m7 4 7 5-7 5z'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel.is-autoplay-paused .fs-carousel-control-toggle[aria-pressed="true"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23f0b40e' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M7 5v8M11 5v8'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel.is-autoplay-paused .fs-carousel-control-toggle[aria-pressed="false"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23f0b40e'%3E%3Cpath d='m7 4 7 5-7 5z'/%3E%3C/svg%3E");
+  }
+
+  .fs-carousel-control-prev:hover,
+  .fs-carousel-control-next:hover,
+  .fs-carousel-control-toggle:hover {
+    background-color: var(--fs-carousel-control-bg-hover);
+  }
+
+  .fs-carousel-control-prev:active,
+  .fs-carousel-control-next:active,
+  .fs-carousel-control-toggle:active {
+    transform: scale(0.94);
+  }
+
+  .fs-carousel-control-prev:focus-visible,
+  .fs-carousel-control-next:focus-visible,
+  .fs-carousel-control-toggle:focus-visible,
+  .fs-carousel-indicators button:focus-visible {
+    @include focus-ring(var(--fs-carousel-focus-color));
+  }
+
+  .fs-carousel:hover .fs-carousel-control-prev,
+  .fs-carousel:hover .fs-carousel-control-next,
+  .fs-carousel:hover .fs-carousel-control-toggle,
+  .fs-carousel:focus-within .fs-carousel-control-prev,
+  .fs-carousel:focus-within .fs-carousel-control-next,
+  .fs-carousel:focus-within .fs-carousel-control-toggle {
+    opacity: 1;
+  }
+
+  .fs-carousel:hover::before,
+  .fs-carousel:focus-within::before {
+    opacity: 1;
+  }
+
+  .fs-carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: var(--fs-space-2);
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-carousel-indicators button {
+    position: relative;
+    display: grid;
+    width: 28px;
+    height: 32px;
+    padding: 0;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .fs-carousel-indicators button::before {
+    width: var(--fs-carousel-indicator-size);
+    height: var(--fs-carousel-indicator-size);
+    content: "";
+    background-color: var(--fs-carousel-indicator-color);
+    border-radius: var(--fs-radius-lg);
+    transition: width var(--fs-transition-fast) var(--fs-ease-standard),
+      background-color var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-carousel-indicators button.is-active::before {
+    width: var(--fs-carousel-indicator-active-width);
+    background-color: var(--fs-carousel-indicator-active-color);
+  }
+
+  .fs-carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: var(--fs-carousel-bottom-safe-area);
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    max-width: min(100%, 42rem);
+    max-block-size: calc(100% - var(--fs-carousel-top-safe-area) - var(--fs-carousel-bottom-safe-area));
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--fs-space-2);
+    padding: calc(var(--fs-space-4) + 20px) var(--fs-space-4) var(--fs-space-3);
+    color: var(--fs-color-white);
+  }
+
+  .fs-carousel-caption::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: calc(var(--fs-carousel-bottom-safe-area) * -1);
+    left: 0;
+    z-index: -1;
+    content: "";
+    background: linear-gradient(to top, var(--fs-carousel-caption-scrim), transparent);
+  }
+
+  .fs-carousel-caption > * {
+    margin: 0;
+  }
+
+  .fs-carousel-caption .fs-btn {
+    --fs-btn-color: var(--fs-color-text-primary);
+    --fs-btn-bg: var(--fs-color-white);
+    --fs-btn-border-color: var(--fs-color-white);
+    --fs-btn-hover-bg: var(--fs-color-subtle);
+    --fs-btn-active-bg: var(--fs-color-border-default);
+  }
+
+  .fs-carousel-caption-side .fs-carousel-caption {
+    top: var(--fs-carousel-top-safe-area);
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(42%, 28rem);
+    max-width: none;
+    max-block-size: none;
+    padding: var(--fs-space-4) var(--fs-space-4)
+      calc(var(--fs-carousel-bottom-safe-area) + var(--fs-space-2));
+    background: rgb(15 23 42 / 84%);
+  }
+
+  // A legenda lateral fica à direita por padrão. Esta variação permite
+  // preservar o assunto principal da imagem quando ele estiver à direita.
+  .fs-carousel-caption-side .fs-carousel-caption-start {
+    right: auto;
+    left: 0;
+  }
+
+  .fs-carousel-caption-side .fs-carousel-caption::before,
+  .fs-carousel-caption-stacked .fs-carousel-caption::before {
+    display: none;
+  }
+
+  .fs-carousel-caption-stacked {
+    --fs-carousel-bottom-safe-area: 0px;
+  }
+
+  .fs-carousel-caption-stacked .fs-carousel-caption {
+    position: static;
+    max-width: none;
+    max-block-size: none;
+    overflow: visible;
+    padding: var(--fs-space-4);
+    color: var(--fs-color-text-primary);
+    background: var(--fs-color-bg-surface);
+  }
+
+  .fs-carousel-caption-stacked .fs-carousel-indicators {
+    position: relative;
+    bottom: auto;
+    background: var(--fs-color-bg-surface);
+  }
+
+  .fs-carousel-counter {
+    position: absolute;
+    right: var(--fs-space-3);
+    bottom: var(--fs-space-2);
+    z-index: 2;
+    color: var(--fs-color-white);
+    font-size: $font-size-sm;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fs-carousel-progress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    height: var(--fs-carousel-progress-height);
+    overflow: hidden;
+    background-color: rgb(255 255 255 / 24%);
+  }
+
+  .fs-carousel-progress > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fs-color-white);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .fs-carousel-progress.is-running > span {
+    animation: fs-carousel-progress var(--fs-carousel-progress-duration, 5000ms) linear forwards;
+  }
+
+  .fs-carousel.is-two-slides.fs-carousel-hide-indicators-two .fs-carousel-indicators {
+    display: none;
+  }
+
+  .fs-carousel-no-media .fs-carousel-item {
+    min-block-size: 15rem;
+    background-color: var(--fs-color-bg-surface);
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+  }
+
+  .fs-carousel-no-media .fs-carousel-counter {
+    color: var(--fs-color-text-muted);
+  }
+
+  .fs-carousel-no-media .fs-carousel-progress {
+    background-color: var(--fs-color-border-default);
+  }
+
+  .fs-carousel-no-media .fs-carousel-progress > span {
+    background-color: var(--fs-color-action-primary);
+  }
+
+  .fs-carousel-media-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: inherit;
+    padding: calc(var(--fs-carousel-top-safe-area) + var(--fs-space-4)) var(--fs-space-4)
+      calc(var(--fs-carousel-bottom-safe-area) + var(--fs-space-4));
+  }
+
+  .fs-carousel-media-placeholder > * {
+    max-width: 36rem;
+    margin: 0;
+  }
+
+  .fs-carousel-media-placeholder > * + * {
+    margin-top: var(--fs-space-2);
+  }
+
+  .fs-carousel-media {
+    min-block-size: 18rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .fs-carousel.is-static .fs-carousel-control-prev,
+  .fs-carousel.is-static .fs-carousel-control-next,
+  .fs-carousel.is-static .fs-carousel-control-toggle,
+  .fs-carousel.is-static .fs-carousel-indicators {
+    display: none;
+  }
+
+  @media (max-width: map.get($breakpoints, sm) - 1px) {
+    .fs-carousel {
+      --fs-carousel-control-inset: var(--fs-space-1);
+    }
+
+    .fs-carousel-caption {
+      padding: calc(var(--fs-space-3) + 20px) var(--fs-space-3) var(--fs-space-3);
+    }
+
+    .fs-carousel-caption-side .fs-carousel-caption {
+      top: auto;
+      bottom: var(--fs-carousel-bottom-safe-area);
+      width: auto;
+      max-block-size: calc(100% - var(--fs-carousel-top-safe-area) - var(--fs-carousel-bottom-safe-area));
+      overflow: clip;
+      align-items: flex-end;
+      padding: calc(var(--fs-space-3) + 20px) var(--fs-space-3)
+        calc(var(--fs-carousel-bottom-safe-area) + var(--fs-space-2));
+      text-align: end;
+      background: transparent;
+    }
+
+    .fs-carousel-caption-side .fs-carousel-caption-start {
+      right: 0;
+      left: 0;
+      align-items: flex-start;
+      text-align: start;
+    }
+
+    .fs-carousel-caption-side .fs-carousel-item::after {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      content: "";
+      background: linear-gradient(
+        to top,
+        var(--fs-carousel-caption-scrim) 0%,
+        rgb(15 23 42 / 52%) 56%,
+        transparent 100%
+      );
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-carousel-inner,
+    .fs-carousel-fade .fs-carousel-item,
+    .fs-carousel-control-prev,
+    .fs-carousel-control-next,
+    .fs-carousel-control-toggle,
+    .fs-carousel-indicators button::before,
+    .fs-carousel-progress.is-running > span {
+      transition: none;
+      animation: none;
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes fs-carousel-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}

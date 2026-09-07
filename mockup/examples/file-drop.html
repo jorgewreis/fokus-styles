@@ -15,12 +15,12 @@
             flex-direction: column;
             gap: 16px;
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .theme-panel > div {
@@ -29,7 +29,7 @@
 
         #resultado {
             font-size: 0.85rem;
-            color: var(--cl-color-muted);
+            color: var(--fs-color-muted);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -37,33 +37,33 @@
 </head>
 <body>
 <div class="theme-panel">
-        <p class="u-fs-sm u-fw-medium u-mb-0">Arraste um arquivo para a área abaixo (ou clique)</p>
-        <div class="cl-file-upload">
-            <input type="file" class="cl-file-input" id="arquivo-1">
-            <label for="arquivo-1" class="cl-file-label cl-file-label-dropzone" data-cl="file-drop">
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Arraste um arquivo para a área abaixo (ou clique)</p>
+        <div class="fs-file-upload">
+            <input type="file" class="fs-file-input" id="arquivo-1">
+            <label for="arquivo-1" class="fs-file-label fs-file-label-dropzone" data-fs="file-drop">
                 <span>Arraste um arquivo aqui</span>
-                <span class="cl-file-dropzone-hint">ou clique para escolher</span>
+                <span class="fs-file-dropzone-hint">ou clique para escolher</span>
             </label>
         </div>
         <p id="resultado">Nenhum arquivo selecionado.</p>
 
-        <p class="u-fs-sm u-fw-medium u-mb-0">Botão padrão (mesma funcionalidade, sem o visual de dropzone)</p>
-        <div class="cl-file-upload">
-            <input type="file" class="cl-file-input" id="arquivo-2">
-            <label for="arquivo-2" class="cl-file-label" data-cl="file-drop">Escolher arquivo</label>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Botão padrão (mesma funcionalidade, sem o visual de dropzone)</p>
+        <div class="fs-file-upload">
+            <input type="file" class="fs-file-input" id="arquivo-2">
+            <label for="arquivo-2" class="fs-file-label" data-fs="file-drop">Escolher arquivo</label>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mb-0">Desabilitado</p>
-        <div class="cl-file-upload">
-            <input type="file" class="cl-file-input" id="arquivo-3" disabled>
-            <label for="arquivo-3" class="cl-file-label cl-file-label-dropzone" data-cl="file-drop">
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Desabilitado</p>
+        <div class="fs-file-upload">
+            <input type="file" class="fs-file-input" id="arquivo-3" disabled>
+            <label for="arquivo-3" class="fs-file-label fs-file-label-dropzone" data-fs="file-drop">
                 <span>Desabilitado</span>
             </label>
         </div>
     </div>
 
 
-    <script src="../../dist/js/clarus.js"></script>
+    <script src="../../dist/js/fokus.js"></script>
     <script>
         document.getElementById("arquivo-1").addEventListener("change", (event) => {
             const file = event.target.files[0];

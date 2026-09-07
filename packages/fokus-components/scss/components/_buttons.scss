@@ -1,0 +1,126 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  // Tokens de componente: cada `.fs-btn-*` abaixo só sobrescreve estas três
+  // custom properties (nunca `color`/`background-color`/`border-color`
+  // diretamente) — permite customizar um botão específico via CSS
+  // (`.minha-classe { --fs-btn-bg: ...; }`) sem precisar de `!important` nem
+  // repetir a declaração de layout. Ver docs/scss-architecture.md.
+  .fs-btn {
+    --fs-btn-color: var(--fs-color-text-primary);
+    --fs-btn-bg: var(--fs-color-bg-subtle);
+    --fs-btn-border-color: var(--fs-color-border-default);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fs-space-1);
+    min-height: var(--fs-control-height);
+    padding: 0 var(--fs-control-padding-x);
+    border: var(--fs-border-width) solid var(--fs-btn-border-color);
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-btn-color);
+    background-color: var(--fs-btn-bg);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color var(--fs-transition-fast) var(--fs-ease-standard),
+      background-color var(--fs-transition-fast) var(--fs-ease-standard),
+      border-color var(--fs-transition-fast) var(--fs-ease-standard),
+      box-shadow var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-btn:hover {
+    --fs-btn-bg: var(--fs-btn-hover-bg, var(--fs-color-subtle));
+  }
+
+  .fs-btn:active {
+    --fs-btn-bg: var(--fs-btn-active-bg, var(--fs-color-border));
+  }
+
+  .fs-btn:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-btn:disabled,
+  .fs-btn.is-disabled {
+    opacity: var(--fs-disabled-opacity);
+    pointer-events: none;
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-btn-#{$name} {
+      --fs-btn-color: var(--fs-color-on-#{$name});
+      --fs-btn-bg: var(--fs-color-#{$name});
+      --fs-btn-border-color: var(--fs-color-#{$name});
+      --fs-btn-hover-bg: var(--fs-color-#{$name});
+      --fs-btn-active-bg: var(--fs-color-#{$name});
+    }
+
+    .fs-btn-outline-#{$name} {
+      --fs-btn-color: var(--fs-alert-#{$name}-text);
+      --fs-btn-bg: transparent;
+      --fs-btn-border-color: var(--fs-color-#{$name});
+    }
+
+    .fs-btn-outline-#{$name}:hover,
+    .fs-btn-outline-#{$name}:active {
+      --fs-btn-color: var(--fs-color-on-#{$name});
+      --fs-btn-bg: var(--fs-color-#{$name});
+    }
+  }
+
+  .fs-btn-sm {
+    min-height: var(--fs-control-height-sm);
+    padding: 0 var(--fs-control-padding-x-sm);
+    font-size: $font-size-sm;
+  }
+
+  .fs-btn-lg {
+    min-height: var(--fs-control-height-lg);
+    padding: 0 var(--fs-control-padding-x-lg);
+    font-size: $font-size-lg;
+  }
+
+  .fs-btn-close {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-surface-raised);
+    cursor: pointer;
+  }
+
+  .fs-btn-close::before,
+  .fs-btn-close::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: currentcolor;
+    content: "";
+  }
+
+  .fs-btn-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .fs-btn-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .fs-btn-close:hover {
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-btn-close:focus-visible {
+    @include focus-ring;
+  }
+}

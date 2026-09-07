@@ -1,6 +1,6 @@
 # Design tokens
 
-Referência completa dos tokens do Clarus CSS. Escolha primeiro o token pelo
+Referência completa dos tokens do Fokus Styles. Escolha primeiro o token pelo
 papel que ele desempenha; consulte [Theming](../guides/theming.md) para
 customizá-lo em runtime ou via Sass.
 
@@ -10,45 +10,45 @@ customizá-lo em runtime ou via Sass.
 
 | Token | Papel |
 |---|---|
-| `--cl-color-text` | Texto principal |
-| `--cl-color-muted` | Texto secundário/discreto |
-| `--cl-color-border` | Bordas padrão |
-| `--cl-color-surface` | Fundo de superfície (card, modal, input) |
-| `--cl-color-subtle` | Fundo levemente destacado (hover, header de card) |
-| `--cl-color-white` / `--cl-color-black` | Acromáticos, sem variação por tema |
+| `--fs-color-text` | Texto principal |
+| `--fs-color-muted` | Texto secundário/discreto |
+| `--fs-color-border` | Bordas padrão |
+| `--fs-color-surface` | Fundo de superfície (card, modal, input) |
+| `--fs-color-subtle` | Fundo levemente destacado (hover, header de card) |
+| `--fs-color-white` / `--fs-color-black` | Acromáticos, sem variação por tema |
 
-### Aliases por papel (`packages/clarus-core/scss/tokens/_semantic.scss`)
+### Aliases por papel (`packages/fokus-core/scss/tokens/_semantic.scss`)
 
 Mesmos valores dos acima, com nome por função — use estes quando o nome
 comunica melhor a intenção no seu código:
 
 | Token | Alias de |
 |---|---|
-| `--cl-color-bg-surface` | `--cl-color-surface` |
-| `--cl-color-bg-subtle` | `--cl-color-subtle` |
-| `--cl-color-surface-raised` | `--cl-color-surface` |
-| `--cl-color-text-primary` | `--cl-color-text` |
-| `--cl-color-text-muted` | `--cl-color-muted` |
-| `--cl-color-border-default` | `--cl-color-border` |
-| `--cl-color-action-primary` | `--cl-color-primary` |
-| `--cl-color-action-danger` | `--cl-color-danger` |
+| `--fs-color-bg-surface` | `--fs-color-surface` |
+| `--fs-color-bg-subtle` | `--fs-color-subtle` |
+| `--fs-color-surface-raised` | `--fs-color-surface` |
+| `--fs-color-text-primary` | `--fs-color-text` |
+| `--fs-color-text-muted` | `--fs-color-muted` |
+| `--fs-color-border-default` | `--fs-color-border` |
+| `--fs-color-action-primary` | `--fs-color-primary` |
+| `--fs-color-action-danger` | `--fs-color-danger` |
 
-### Gráficos (`packages/clarus-core/scss/tokens/_charts.scss`)
+### Gráficos (`packages/fokus-core/scss/tokens/_charts.scss`)
 
 Agnósticos de biblioteca — ver [guia de gráficos](../guides/charts.md).
 
 | Token | Alias de |
 |---|---|
-| `--cl-chart-series-1` | `--cl-color-primary` |
-| `--cl-chart-series-2` | `--cl-color-success` |
-| `--cl-chart-series-3` | `--cl-color-warning` |
-| `--cl-chart-series-4` | `--cl-color-danger` |
-| `--cl-chart-series-5` | `--cl-color-info` |
-| `--cl-chart-series-6` | `--cl-color-secondary` |
-| `--cl-chart-grid` | `--cl-color-border` |
-| `--cl-chart-axis` | `--cl-color-muted` |
-| `--cl-chart-tooltip-bg` | `--cl-tooltip-bg` |
-| `--cl-chart-tooltip-text` | `--cl-tooltip-text` |
+| `--fs-chart-series-1` | `--fs-color-primary` |
+| `--fs-chart-series-2` | `--fs-color-success` |
+| `--fs-chart-series-3` | `--fs-color-warning` |
+| `--fs-chart-series-4` | `--fs-color-danger` |
+| `--fs-chart-series-5` | `--fs-color-info` |
+| `--fs-chart-series-6` | `--fs-color-secondary` |
+| `--fs-chart-grid` | `--fs-color-border` |
+| `--fs-chart-axis` | `--fs-color-muted` |
+| `--fs-chart-tooltip-bg` | `--fs-tooltip-bg` |
+| `--fs-chart-tooltip-text` | `--fs-tooltip-text` |
 
 ### Cores de tema
 
@@ -59,10 +59,10 @@ Seis papéis, cada um com 3 tokens derivados automaticamente do primitivo
 
 | Padrão de token | Exemplo (`primary`) | Uso |
 |---|---|---|
-| `--cl-color-{nome}` | `--cl-color-primary` | Cor sólida (fundo de botão, borda ativa) |
-| `--cl-alert-{nome}-bg` | `--cl-alert-primary-bg` | Fundo tintado (alerta) |
-| `--cl-alert-{nome}-text` | `--cl-alert-primary-text` | Texto sobre o fundo tintado |
-| `--cl-feedback-{nome}-bg` | `--cl-feedback-primary-bg` | Fundo tintado mais sutil (badge suave, notificação) |
+| `--fs-color-{nome}` | `--fs-color-primary` | Cor sólida (fundo de botão, borda ativa) |
+| `--fs-alert-{nome}-bg` | `--fs-alert-primary-bg` | Fundo tintado (alerta) |
+| `--fs-alert-{nome}-text` | `--fs-alert-primary-text` | Texto sobre o fundo tintado |
+| `--fs-feedback-{nome}-bg` | `--fs-feedback-primary-bg` | Fundo tintado mais sutil (badge suave, notificação) |
 
 ### Componente
 
@@ -72,41 +72,41 @@ local. Eles têm fallback para um token semântico e podem ser alterados sem
 
 ```css
 .meu-botao-especial {
-  --cl-btn-bg: var(--cl-color-action-primary);
+  --fs-btn-bg: var(--fs-color-action-primary);
 }
 ```
 
 Consulte a página do componente para a lista completa. Por exemplo,
-`.cl-btn` documenta `--cl-btn-bg`, `--cl-btn-color` e
-`--cl-btn-border-color`. Prefira nomes de intenção, como
-`--cl-color-action-primary`, em vez de nomes baseados no valor da cor.
+`.fs-btn` documenta `--fs-btn-bg`, `--fs-btn-color` e
+`--fs-btn-border-color`. Prefira nomes de intenção, como
+`--fs-color-action-primary`, em vez de nomes baseados no valor da cor.
 
 O Carousel expõe tokens locais para que controles, indicadores, transições e
-legendas possam ser ajustados por instância: `--cl-carousel-radius`,
-`--cl-carousel-transition-duration`, `--cl-carousel-transition-easing`,
-`--cl-carousel-control-*`, `--cl-carousel-indicator-*` e
-`--cl-carousel-caption-scrim`. Consulte a [página do Carousel](../components/carousel.md)
+legendas possam ser ajustados por instância: `--fs-carousel-radius`,
+`--fs-carousel-transition-duration`, `--fs-carousel-transition-easing`,
+`--fs-carousel-control-*`, `--fs-carousel-indicator-*` e
+`--fs-carousel-caption-scrim`. Consulte a [página do Carousel](../components/carousel.md)
 para os nomes completos e seus fallbacks.
 
 ## Tipografia
 
 | Token | Valor | Uso |
 |---|---|---|
-| `--cl-font-sans` | Plus Jakarta Sans, sans-serif | Corpo, UI |
-| `--cl-font-mono` | Source Code Pro, monospace | Código |
-| `--cl-font-size-md` | 0.8125rem (13px) | Corpo — único tamanho de texto exposto como token; `xs`/`sm`/`lg`/`xl` são variáveis Sass (`$font-size-*`), não CSS Custom Properties, por serem só usadas em geração de classe |
-| `--cl-font-size-h1`…`h6` | 1.75rem → 0.875rem | Headings |
-| `--cl-font-weight-semibold` | 600 | Peso dos headings |
-| `--cl-line-height-base` | 1.5 | Corpo |
-| `--cl-line-height-heading` | 1.25 | Headings |
+| `--fs-font-sans` | Plus Jakarta Sans, sans-serif | Corpo, UI |
+| `--fs-font-mono` | Source Code Pro, monospace | Código |
+| `--fs-font-size-md` | 0.8125rem (13px) | Corpo — único tamanho de texto exposto como token; `xs`/`sm`/`lg`/`xl` são variáveis Sass (`$font-size-*`), não CSS Custom Properties, por serem só usadas em geração de classe |
+| `--fs-font-size-h1`…`h6` | 1.75rem → 0.875rem | Headings |
+| `--fs-font-weight-semibold` | 600 | Peso dos headings |
+| `--fs-line-height-base` | 1.5 | Corpo |
+| `--fs-line-height-heading` | 1.25 | Headings |
 
 ## Formato
 
 | Token | Valor |
 |---|---|
-| `--cl-radius-sm` | 4px |
-| `--cl-radius-md` | 6px |
-| `--cl-radius-lg` | 8px |
+| `--fs-radius-sm` | 4px |
+| `--fs-radius-md` | 6px |
+| `--fs-radius-lg` | 8px |
 
 Circular só é usado em dois lugares deliberadamente (radio, spinner) — o
 resto do framework é quadrado/arredondado por decisão de design, não por
@@ -119,58 +119,58 @@ componentes e extensões mantenham a mesma escala visual:
 
 | Token | Papel |
 |---|---|
-| `--cl-space-0` … `--cl-space-5` | Escala de espaçamento baseada em `$spacers` |
-| `--cl-z-dropdown` … `--cl-z-tooltip` | Camadas padronizadas para overlays |
-| `--cl-control-height` / `--cl-control-height-sm` / `--cl-control-height-lg` | Alturas dos controles de formulário |
-| `--cl-control-padding-x` / `--cl-control-padding-x-sm` / `--cl-control-padding-x-lg` | Padding horizontal dos controles |
-| `--cl-border-width` | Espessura padrão de bordas |
-| `--cl-disabled-opacity` | Opacidade visual de controles desabilitados |
-| `--cl-color-on-primary` … `--cl-color-on-info` | Cor de conteúdo sobre cada cor de tema |
+| `--fs-space-0` … `--fs-space-5` | Escala de espaçamento baseada em `$spacers` |
+| `--fs-z-dropdown` … `--fs-z-tooltip` | Camadas padronizadas para overlays |
+| `--fs-control-height` / `--fs-control-height-sm` / `--fs-control-height-lg` | Alturas dos controles de formulário |
+| `--fs-control-padding-x` / `--fs-control-padding-x-sm` / `--fs-control-padding-x-lg` | Padding horizontal dos controles |
+| `--fs-border-width` | Espessura padrão de bordas |
+| `--fs-disabled-opacity` | Opacidade visual de controles desabilitados |
+| `--fs-color-on-primary` … `--fs-color-on-info` | Cor de conteúdo sobre cada cor de tema |
 
 ## Interação e movimento
 
 | Token | Papel |
 |---|---|
-| `--cl-color-focus` | Cor semântica do foco de teclado |
-| `--cl-focus-width` / `--cl-focus-offset` | Geometria do anel de foco |
-| `--cl-focus-ring-alpha` | Intensidade do halo de foco |
-| `--cl-transition-fast` / `--cl-transition-normal` | Durações de transição |
-| `--cl-ease-standard` | Curva de movimento padrão |
+| `--fs-color-focus` | Cor semântica do foco de teclado |
+| `--fs-focus-width` / `--fs-focus-offset` | Geometria do anel de foco |
+| `--fs-focus-ring-alpha` | Intensidade do halo de foco |
+| `--fs-transition-fast` / `--fs-transition-normal` | Durações de transição |
+| `--fs-ease-standard` | Curva de movimento padrão |
 
 O framework respeita `prefers-reduced-motion: reduce`, reduzindo transições e
 animações CSS ao mínimo sem remover estados ou interações.
 
-Use `--cl-color-on-{nome}` em texto e ícones sobre fundos de tema. Isso
+Use `--fs-color-on-{nome}` em texto e ícones sobre fundos de tema. Isso
 permite que uma marca altere o contraste sem duplicar regras de componente.
 
 ## Sombra
 
 | Token |
 |---|
-| `--cl-shadow-sm` |
-| `--cl-shadow-md` |
-| `--cl-shadow-lg` |
+| `--fs-shadow-sm` |
+| `--fs-shadow-md` |
+| `--fs-shadow-lg` |
 
 ## Grid
 
 | Token | Valor |
 |---|
-| `--cl-gutter-x` | 1.5rem |
-| `--cl-gutter-y` | 0px |
+| `--fs-gutter-x` | 1.5rem |
+| `--fs-gutter-y` | 0px |
 
-Controlados em runtime pelas classes `.u-g-*`/`.u-gx-*`/`.u-gy-*` — ver
+Controlados em runtime pelas classes `.fs-u-g-*`/`.fs-u-gx-*`/`.fs-u-gy-*` — ver
 [`docs/reference/scss-architecture.md`](scss-architecture.md#layout).
 
 ## Layout avançado (Stack/Cluster/Sidebar/sticky/container queries)
 
 | Token | Valor padrão |
 |---|---|
-| `--cl-stack-gap` | `1rem` (`.cl-stack-gap-{0..5}` sobrescreve) |
-| `--cl-cluster-gap` | `0.5rem` (`.cl-cluster-gap-{0..5}` sobrescreve) |
-| `--cl-sidebar-gap` | `1rem` (`.cl-sidebar-gap-{0..5}` sobrescreve) |
-| `--cl-sidebar-width` | `16rem` (`.cl-sidebar-width-{sm..xxxl}` sobrescreve) |
-| `--cl-sticky-top` / `--cl-sticky-bottom` | `0` |
-| `--cl-cq-sm` / `--cl-cq-md` / `--cl-cq-lg` | `320px` / `480px` / `640px` — só informativos, ver [Layout avançado](../guides/layout-advanced.md#container-queries-container) |
+| `--fs-stack-gap` | `1rem` (`.fs-stack-gap-{0..5}` sobrescreve) |
+| `--fs-cluster-gap` | `0.5rem` (`.fs-cluster-gap-{0..5}` sobrescreve) |
+| `--fs-sidebar-gap` | `1rem` (`.fs-sidebar-gap-{0..5}` sobrescreve) |
+| `--fs-sidebar-width` | `16rem` (`.fs-sidebar-width-{sm..xxxl}` sobrescreve) |
+| `--fs-sticky-top` / `--fs-sticky-bottom` | `0` |
+| `--fs-cq-sm` / `--fs-cq-md` / `--fs-cq-lg` | `320px` / `480px` / `640px` — só informativos, ver [Layout avançado](../guides/layout-advanced.md#container-queries-container) |
 
 Ver [Layout avançado](../guides/layout-advanced.md) para a documentação
 completa de uso.
@@ -183,11 +183,11 @@ runtime):
 
 | Variável Sass | Uso |
 |---|---|
-| `$spacers` | Escala de espaçamento (`.u-m*`/`.u-p*`/`.u-g*`) |
-| `$breakpoints` | Grid e utilitários responsivos (`.u-*-{breakpoint}`) |
+| `$spacers` | Escala de espaçamento (`.fs-u-m*`/`.fs-u-p*`/`.fs-u-g*`) |
+| `$breakpoints` | Grid e utilitários responsivos (`.fs-u-*-{breakpoint}`) |
 | `$container-max-widths` / `$column-max-widths` | Containers e colunas com largura máxima |
-| `$font-size-xs`/`-sm`/`-lg`/`-xl` | Escala de tamanho de texto (utilitários `.u-fs-*` e tamanhos `-sm`/`-lg` de componente) |
-| `$font-weight-regular`/`-medium`/`-bold` | Peso de texto (`.u-fw-*`) |
+| `$font-size-xs`/`-sm`/`-lg`/`-xl` | Escala de tamanho de texto (utilitários `.fs-u-fs-*` e tamanhos `-sm`/`-lg` de componente) |
+| `$font-weight-regular`/`-medium`/`-bold` | Peso de texto (`.fs-u-fw-*`) |
 | `$theme-colors` / `$theme-bg-colors` | Mapas usados pelos `@each` que geram as variantes de cor de cada componente |
 
 Customizáveis só via `@use ... with (...)` na compilação — ver

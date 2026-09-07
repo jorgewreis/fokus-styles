@@ -1,0 +1,24 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer components {
+  .fs-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 1px solid var(--fs-color-border);
+    border-left: 5px solid var(--fs-color-border);
+    border-radius: 0;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    font-size: $font-size-sm;
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-alert-#{$name} {
+      color: var(--fs-alert-#{$name}-text);
+      background-color: var(--fs-alert-#{$name}-bg);
+      border-color: var(--fs-color-#{$name});
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
-import { Tag } from "../../packages/clarus-js/js/tag.js";
+import { Tag } from "../../packages/fokus-js/js/tag.js";
 
 function buildTag() {
   const el = document.createElement("span");
-  el.className = "cl-badge cl-tag";
+  el.className = "fs-badge fs-tag";
   el.innerHTML = `
     Frontend
-    <button type="button" class="cl-btn-close" data-cl-dismiss="tag" aria-label="Remover"></button>
+    <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button>
   `;
   document.body.appendChild(el);
 
@@ -26,7 +26,7 @@ describe("Tag", () => {
   it("clicar no .btn-close remove a tag do DOM", () => {
     const { el } = buildTag();
 
-    el.querySelector(".cl-btn-close").click();
+    el.querySelector(".fs-btn-close").click();
 
     expect(document.body.contains(el)).toBe(false);
   });
@@ -39,22 +39,22 @@ describe("Tag", () => {
     expect(document.body.contains(el)).toBe(true);
   });
 
-  it("dispara cl:tag:dismissed (cancelável) antes de remover", () => {
+  it("dispara fs:tag:dismissed (cancelável) antes de remover", () => {
     const { el } = buildTag();
     const handler = vi.fn();
-    el.addEventListener("cl:tag:dismissed", handler);
+    el.addEventListener("fs:tag:dismissed", handler);
 
-    el.querySelector(".cl-btn-close").click();
+    el.querySelector(".fs-btn-close").click();
 
     expect(handler).toHaveBeenCalledTimes(1);
     expect(handler.mock.calls[0][0].cancelable).toBe(true);
   });
 
-  it("preventDefault() em cl:tag:dismissed cancela a remoção", () => {
+  it("preventDefault() em fs:tag:dismissed cancela a remoção", () => {
     const { el } = buildTag();
-    el.addEventListener("cl:tag:dismissed", (event) => event.preventDefault());
+    el.addEventListener("fs:tag:dismissed", (event) => event.preventDefault());
 
-    el.querySelector(".cl-btn-close").click();
+    el.querySelector(".fs-btn-close").click();
 
     expect(document.body.contains(el)).toBe(true);
   });
@@ -69,7 +69,7 @@ describe("Tag", () => {
 
   it("setLoading bloqueia o dismiss e informa aria-busy", () => {
     const { el, tag } = buildTag();
-    const dismissButton = el.querySelector(".cl-btn-close");
+    const dismissButton = el.querySelector(".fs-btn-close");
 
     expect(tag.setLoading(true)).toBe(tag);
     expect(el.classList.contains("is-loading")).toBe(true);
@@ -87,7 +87,7 @@ describe("Tag", () => {
     const { el, tag } = buildTag();
     tag.dispose();
 
-    el.querySelector(".cl-btn-close").click();
+    el.querySelector(".fs-btn-close").click();
 
     expect(document.body.contains(el)).toBe(true);
     expect(Tag.getInstance(el)).toBeUndefined();

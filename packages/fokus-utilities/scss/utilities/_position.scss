@@ -1,0 +1,16 @@
+// z-index 1020: mesma faixa numérica usada pelos componentes de overlay
+// (dropdown 1000, modal/offcanvas 1050, popover 1070...) — fica acima de
+// conteúdo normal e do dropdown, abaixo de qualquer overlay modal.
+@layer utilities {
+  .fs-u-sticky-top {
+    position: sticky;
+    top: var(--fs-sticky-top, 0);
+    z-index: 1020;
+  }
+
+  .fs-u-sticky-bottom {
+    position: sticky;
+    bottom: var(--fs-sticky-bottom, 0);
+    z-index: 1020;
+  }
+}

@@ -15,12 +15,12 @@
             flex-direction: column;
             gap: 12px;
             padding: 24px;
-            background-color: var(--cl-color-subtle);
+            background-color: var(--fs-color-subtle);
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
 
         .tile-col {
@@ -35,68 +35,68 @@
 </head>
 <body>
 <div class="theme-panel">
-        <p class="u-fs-sm u-fw-medium u-mb-0">Padrão (ações à direita)</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Padrão (ações à direita)</p>
         <div class="tile-col">
-            <div class="cl-tile">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title">Relatório mensal.pdf</p>
-                    <p class="cl-tile-subtitle">2.4 MB · Atualizado há 2h</p>
+            <div class="fs-tile">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title">Relatório mensal.pdf</p>
+                    <p class="fs-tile-subtitle">2.4 MB · Atualizado há 2h</p>
                 </div>
-                <div class="cl-tile-actions">
-                    <button type="button" class="cl-btn cl-btn-sm">Abrir</button>
+                <div class="fs-tile-actions">
+                    <button type="button" class="fs-btn fs-btn-sm">Abrir</button>
                 </div>
             </div>
-            <div class="cl-tile">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title">Tema escuro</p>
-                    <p class="cl-tile-subtitle">Alterna a aparência da interface</p>
+            <div class="fs-tile">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title">Tema escuro</p>
+                    <p class="fs-tile-subtitle">Alterna a aparência da interface</p>
                 </div>
-                <div class="cl-tile-actions">
-                    <div class="cl-switch">
-                        <input type="checkbox" class="cl-switch-input" id="tile-switch" checked aria-label="Ativar tema escuro">
-                        <label for="tile-switch" class="cl-switch-label"></label>
+                <div class="fs-tile-actions">
+                    <div class="fs-switch">
+                        <input type="checkbox" class="fs-switch-input" id="tile-switch" checked aria-label="Ativar tema escuro">
+                        <label for="tile-switch" class="fs-switch-label"></label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Ações embaixo</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Ações embaixo</p>
         <div class="tile-col">
-            <div class="cl-tile cl-tile-actions-bottom">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title">Plano expira em 3 dias</p>
-                    <p class="cl-tile-subtitle">Renove para manter acesso aos recursos pagos.</p>
+            <div class="fs-tile fs-tile-actions-bottom">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title">Plano expira em 3 dias</p>
+                    <p class="fs-tile-subtitle">Renove para manter acesso aos recursos pagos.</p>
                 </div>
-                <div class="cl-tile-actions">
-                    <button type="button" class="cl-btn cl-btn-outline-secondary cl-btn-sm">Depois</button>
-                    <button type="button" class="cl-btn cl-btn-primary cl-btn-sm">Renovar</button>
+                <div class="fs-tile-actions">
+                    <button type="button" class="fs-btn fs-btn-outline-secondary fs-btn-sm">Depois</button>
+                    <button type="button" class="fs-btn fs-btn-primary fs-btn-sm">Renovar</button>
                 </div>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-0">Clicável (stretched-link) e tamanhos (sm / padrão / lg)</p>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Clicável (stretched-link) e tamanhos (sm / padrão / lg)</p>
         <div class="tile-col">
-            <div class="cl-tile cl-tile-clickable">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title"><a href="#" class="cl-stretched-link">Jorge Reis</a></p>
-                    <p class="cl-tile-subtitle">Ver perfil</p>
+            <div class="fs-tile fs-tile-clickable">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title"><a href="#" class="fs-stretched-link">Jorge Reis</a></p>
+                    <p class="fs-tile-subtitle">Ver perfil</p>
                 </div>
             </div>
-            <div class="cl-tile cl-tile-sm">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title">sm</p>
+            <div class="fs-tile fs-tile-sm">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title">sm</p>
                 </div>
             </div>
-            <div class="cl-tile cl-tile-lg">
-                <div class="cl-tile-icon" aria-hidden="true"><svg class="cl-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
-                <div class="cl-tile-body">
-                    <p class="cl-tile-title">lg</p>
-                    <p class="cl-tile-subtitle">Notificações push</p>
+            <div class="fs-tile fs-tile-lg">
+                <div class="fs-tile-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
+                <div class="fs-tile-body">
+                    <p class="fs-tile-title">lg</p>
+                    <p class="fs-tile-subtitle">Notificações push</p>
                 </div>
             </div>
         </div>

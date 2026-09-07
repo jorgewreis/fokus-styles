@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "lib": ["ES2018", "DOM"]
   },
-  "include": ["packages/clarus-js/js/**/*.d.ts", "tests/types/**/*.ts"]
+  "include": ["packages/fokus-js/js/**/*.d.ts", "tests/types/**/*.ts"]
 }

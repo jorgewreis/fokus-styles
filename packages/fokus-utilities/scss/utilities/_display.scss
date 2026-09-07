@@ -1,0 +1,21 @@
+@layer utilities {
+  .fs-u-d-none {
+    display: none;
+  }
+
+  .fs-u-d-block {
+    display: block;
+  }
+
+  .fs-u-d-inline {
+    display: inline;
+  }
+
+  .fs-u-d-inline-block {
+    display: inline-block;
+  }
+
+  .fs-u-d-flex {
+    display: flex;
+  }
+}

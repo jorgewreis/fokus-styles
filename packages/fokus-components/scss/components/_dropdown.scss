@@ -1,0 +1,88 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-dropdown {
+    position: relative;
+    display: inline-flex;
+  }
+
+  // Sem margin-left: `.fs-dropdown-toggle` é sempre usado com `.fs-btn`
+  // (ver docs/components/dropdown.md), que já tem `gap` pros filhos —
+  // incluindo este `::after`, que conta como item flex do `.fs-btn`.
+  .fs-dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+
+  .fs-dropdown-menu {
+    position: absolute;
+    display: none;
+    min-width: 180px;
+    margin: 0;
+    padding: 6px 0;
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-md);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-md);
+    z-index: var(--fs-z-dropdown);
+  }
+
+  .fs-dropdown-menu.is-open {
+    display: block;
+  }
+
+  .fs-dropdown-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 16px;
+    border: 0;
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface-raised);
+    font-size: $font-size-md;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .fs-dropdown-item:hover,
+  .fs-dropdown-item:focus-visible {
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-subtle);
+    outline: none;
+  }
+
+  .fs-dropdown-item.is-active {
+    color: var(--fs-color-on-primary);
+    background-color: var(--fs-color-primary);
+  }
+
+  .fs-dropdown-item.is-disabled {
+    color: var(--fs-color-muted);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .fs-dropdown-divider {
+    height: 1px;
+    margin: 6px 0;
+    border: none;
+    background-color: var(--fs-color-border);
+  }
+
+  .fs-dropdown-header {
+    padding: 4px 16px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }
+}

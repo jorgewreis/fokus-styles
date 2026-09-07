@@ -1,0 +1,33 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+// Utilitários de container query — reagem à largura do container mais
+// próximo (`.fs-u-cq`), não da viewport. Complementam (não substituem) os
+// utilitários de display responsivos por viewport já existentes
+// (`_display.scss`); ver `docs/guides/layout-advanced.md`.
+@layer utilities {
+  // Opt-in: aplique num elemento pai pra que os filhos possam reagir à
+  // largura dele via os utilitários `.fs-u-cq-{sm,md,lg}-d-*` abaixo.
+  .fs-u-cq {
+    container-type: inline-size;
+  }
+
+  @each $name, $width in $container-breakpoints {
+    @container (min-width: #{$width}) {
+      .fs-u-cq-#{$name}-d-none {
+        display: none;
+      }
+
+      .fs-u-cq-#{$name}-d-block {
+        display: block;
+      }
+
+      .fs-u-cq-#{$name}-d-inline-block {
+        display: inline-block;
+      }
+
+      .fs-u-cq-#{$name}-d-flex {
+        display: flex;
+      }
+    }
+  }
+}

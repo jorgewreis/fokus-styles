@@ -6,28 +6,28 @@ real quando os dados chegam).
 ## Visão geral
 
 ```html
-<div class="cl-skeleton cl-skeleton-text"></div>
-<div class="cl-skeleton cl-skeleton-text"></div>
-<div class="cl-skeleton cl-skeleton-circle" style="width: 48px; height: 48px;"></div>
+<div class="fs-skeleton fs-skeleton-text"></div>
+<div class="fs-skeleton fs-skeleton-text"></div>
+<div class="fs-skeleton fs-skeleton-circle" style="width: 48px; height: 48px;"></div>
 ```
 
 ## Anatomia
 
-`.cl-skeleton` (base — cor + animação de pulso) combinado com uma forma:
-`.cl-skeleton-text` (linha de texto, 1em de altura; o último de uma
+`.fs-skeleton` (base — cor + animação de pulso) combinado com uma forma:
+`.fs-skeleton-text` (linha de texto, 1em de altura; o último de uma
 sequência automaticamente encolhe pra 80% de largura, imitando o fim de um
-parágrafo), `.cl-skeleton-circle` (avatar), `.cl-skeleton-rect` (bloco/
+parágrafo), `.fs-skeleton-circle` (avatar), `.fs-skeleton-rect` (bloco/
 imagem). Tamanho de circle/rect é livre — defina `width`/`height` via
 `style` inline ou classe própria.
 
 ## Variações
 
-`.cl-skeleton-wave` — em vez de pulsar a opacidade inteira, varre um
+`.fs-skeleton-wave` — em vez de pulsar a opacidade inteira, varre um
 brilho da esquerda pra direita (substitui a animação padrão, não combine
 os dois).
 
 ```html
-<div class="cl-skeleton cl-skeleton-rect cl-skeleton-wave" style="width: 100%; height: 120px;"></div>
+<div class="fs-skeleton fs-skeleton-rect fs-skeleton-wave" style="width: 100%; height: 120px;"></div>
 ```
 
 ## Estados
@@ -50,16 +50,16 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-`--cl-color-subtle` (cor de base), `--cl-radius-sm`/`-md`.
+`--fs-color-subtle` (cor de base), `--fs-radius-sm`/`-md`.
 
 ## Exemplo
 
 ```html
-<div class="cl-tile" aria-busy="true">
-  <div class="cl-skeleton cl-skeleton-circle" style="width: 40px; height: 40px;"></div>
-  <div class="cl-tile-body" style="width: 100%;">
-    <div class="cl-skeleton cl-skeleton-text" style="width: 60%;"></div>
-    <div class="cl-skeleton cl-skeleton-text"></div>
+<div class="fs-tile" aria-busy="true">
+  <div class="fs-skeleton fs-skeleton-circle" style="width: 40px; height: 40px;"></div>
+  <div class="fs-tile-body" style="width: 100%;">
+    <div class="fs-skeleton fs-skeleton-text" style="width: 60%;"></div>
+    <div class="fs-skeleton fs-skeleton-text"></div>
   </div>
 </div>
 ```

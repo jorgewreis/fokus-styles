@@ -6,16 +6,16 @@ teclado, foco e semântica são os do navegador; o framework só estiliza.
 ## Visão geral
 
 ```html
-<div class="cl-check">
-  <input type="checkbox" class="cl-check-input" id="aceite">
-  <label for="aceite" class="cl-check-label">Aceito os termos</label>
+<div class="fs-check">
+  <input type="checkbox" class="fs-check-input" id="aceite">
+  <label for="aceite" class="fs-check-label">Aceito os termos</label>
 </div>
 ```
 
 ## Anatomia
 
-`.cl-check` (wrapper) > `.cl-check-input` (`<input>`, visualmente oculto
-via clip — continua focável/anunciado por leitor de tela) + `.cl-check-label`
+`.fs-check` (wrapper) > `.fs-check-input` (`<input>`, visualmente oculto
+via clip — continua focável/anunciado por leitor de tela) + `.fs-check-label`
 (`<label for="...">`, desenha a caixa via `::before` e a marca via
 `::after`). Input e label são **irmãos**, não aninhados — a associação é só
 por `for`/`id` (mesma técnica de [Segmented Control](segmented-control.md)
@@ -26,15 +26,15 @@ checkbox, e leitores de tela não anunciam o rótulo.
 
 ## Variações
 
-Tamanho: `.cl-check-sm`, `.cl-check-lg` no wrapper (sem sufixo = padrão).
+Tamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).
 O checkbox é quadrado (`border-radius: 0`): desmarcado tem borda `primary`,
 marcado usa preenchimento `primary` e check branco.
 No hover desmarcado, o fundo recebe um tom sutil de `primary`; em `:active`,
 o preenchimento fica mais intenso para confirmar o clique.
 
 ```html
-<div class="cl-check cl-check-sm">...</div>
-<div class="cl-check cl-check-lg">...</div>
+<div class="fs-check fs-check-sm">...</div>
+<div class="fs-check fs-check-lg">...</div>
 ```
 
 ## Estados
@@ -53,8 +53,8 @@ o preenchimento fica mais intenso para confirmar o clique.
   (`::before` da label), não sobre o texto.
 
 ```html
-<input type="checkbox" class="cl-check-input is-invalid" id="c1">
-<label for="c1" class="cl-check-label">Campo obrigatório</label>
+<input type="checkbox" class="fs-check-input is-invalid" id="c1">
+<label for="c1" class="fs-check-label">Campo obrigatório</label>
 ```
 
 ```js
@@ -73,24 +73,24 @@ document.getElementById("c2").indeterminate = true;
 ## API JS
 
 Nenhuma — 100% CSS. `indeterminate` é uma propriedade do DOM nativo do
-`<input>`, não uma API do Clarus.
+`<input>`, não uma API do FokusStyles.
 
 ## Tokens
 
-Sem tokens de componente próprios — usa `--cl-color-primary` (caixa
-marcada), `--cl-color-border`/`--cl-color-surface` (caixa vazia),
-`--cl-color-success`/`--cl-color-danger` (validação), `--cl-radius-sm`.
+Sem tokens de componente próprios — usa `--fs-color-primary` (caixa
+marcada), `--fs-color-border`/`--fs-color-surface` (caixa vazia),
+`--fs-color-success`/`--fs-color-danger` (validação), `--fs-radius-sm`.
 
 ## Exemplo
 
 ```html
-<div class="cl-check">
-  <input type="checkbox" class="cl-check-input" id="c1" checked>
-  <label for="c1" class="cl-check-label">Marcado</label>
+<div class="fs-check">
+  <input type="checkbox" class="fs-check-input" id="c1" checked>
+  <label for="c1" class="fs-check-label">Marcado</label>
 </div>
-<div class="cl-check">
-  <input type="checkbox" class="cl-check-input" id="c2" disabled>
-  <label for="c2" class="cl-check-label">Desabilitado</label>
+<div class="fs-check">
+  <input type="checkbox" class="fs-check-input" id="c2" disabled>
+  <label for="c2" class="fs-check-label">Desabilitado</label>
 </div>
 ```
 

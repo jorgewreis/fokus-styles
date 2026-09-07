@@ -1,0 +1,46 @@
+{
+  "name": "fokus-icons",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Ícones SVG opcionais para o Fokus Styles, gerados a partir do conjunto Lucide (ISC) — tree-shakeable, zero dependências em runtime.",
+  "keywords": [
+    "icons",
+    "svg",
+    "fokus-styles",
+    "lucide"
+  ],
+  "homepage": "https://github.com/jorgewreis/fokus-styles/tree/main/packages/fokus-icons#readme",
+  "bugs": {
+    "url": "https://github.com/jorgewreis/fokus-styles/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgewreis/fokus-styles.git",
+    "directory": "packages/fokus-icons"
+  },
+  "license": "MIT",
+  "author": "Jorge Reis",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./icons/*": "./icons/*.js",
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "icons",
+    "svg",
+    "index.js",
+    "LICENSE",
+    "LICENSE-LUCIDE.txt",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

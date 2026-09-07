@@ -7,7 +7,7 @@ teclado em alguns navegadores).
 ## Visão geral
 
 ```html
-<button type="button" class="cl-btn" data-cl="tooltip" title="Copiar para a área de transferência">
+<button type="button" class="fs-btn" data-fs="tooltip" title="Copiar para a área de transferência">
   Copiar
 </button>
 ```
@@ -18,9 +18,9 @@ recria como conteúdo do tooltip.
 
 ## Anatomia
 
-Gerado inteiramente pelo JS: `.cl-tooltip` (`role="tooltip"`) >
-`.cl-tooltip-arrow` + `.cl-tooltip-inner` (texto). Não escreva essa
-marcação manualmente — só o elemento de referência com `title`/`data-cl="tooltip"`.
+Gerado inteiramente pelo JS: `.fs-tooltip` (`role="tooltip"`) >
+`.fs-tooltip-arrow` + `.fs-tooltip-inner` (texto). Não escreva essa
+marcação manualmente — só o elemento de referência com `title`/`data-fs="tooltip"`.
 
 ## Variações
 
@@ -28,7 +28,7 @@ marcação manualmente — só o elemento de referência com `title`/`data-cl="t
 de referência. Reposiciona automaticamente se não couber.
 
 ```html
-<button class="cl-btn" data-cl="tooltip" data-placement="right" title="Mais opções">⋮</button>
+<button class="fs-btn" data-fs="tooltip" data-placement="right" title="Mais opções">⋮</button>
 ```
 
 ## Estados
@@ -46,8 +46,8 @@ nativo, que só mostra no hover).
 
 ## API JS
 
-Auto-init via `data-cl="tooltip"` **ou** instanciação manual
-(`new Clarus.Tooltip(el, { title, placement })` — útil quando o texto vem
+Auto-init via `data-fs="tooltip"` **ou** instanciação manual
+(`new FokusStyles.Tooltip(el, { title, placement })` — útil quando o texto vem
 de outro lugar, não de um atributo estático; é assim que
 [Breadcrumb](breadcrumb.md) anexa tooltips a labels truncados).
 `Tooltip.getInstance(el)`.
@@ -61,17 +61,17 @@ de outro lugar, não de um atributo estático; é assim que
 
 | Evento (no elemento de referência) | Cancelável | Quando |
 |---|---|---|
-| `cl:tooltip:shown` | Não | Depois de mostrar. |
-| `cl:tooltip:hidden` | Não | Depois de esconder. |
+| `fs:tooltip:shown` | Não | Depois de mostrar. |
+| `fs:tooltip:hidden` | Não | Depois de esconder. |
 
 ## Tokens
 
-`--cl-tooltip-bg`, `--cl-tooltip-text`, `--cl-radius-sm`.
+`--fs-tooltip-bg`, `--fs-tooltip-text`, `--fs-radius-sm`.
 
 ## Exemplo
 
 ```html
-<button type="button" class="cl-btn-close" data-cl="tooltip" title="Fechar" aria-label="Fechar"></button>
+<button type="button" class="fs-btn-close" data-fs="tooltip" title="Fechar" aria-label="Fechar"></button>
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#tooltip).

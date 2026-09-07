@@ -1,4 +1,4 @@
-# Contribuindo com o Clarus CSS
+# Contribuindo com o Fokus Styles
 
 Ao participar deste projeto, você concorda em seguir o
 [Código de Conduta](CODE_OF_CONDUCT.md).
@@ -15,10 +15,10 @@ npm install
 
 ## Scripts
 
-- `npm run build` — compila `packages/*/scss` e `packages/clarus-js/js` para
+- `npm run build` — compila `packages/*/scss` e `packages/fokus-js/js` para
   `dist/` (CSS expandido + minificado com source maps, JS via esbuild).
 - `npm run watch` — recompila automaticamente ao editar arquivos em
-  `packages/*/scss` ou `packages/clarus-js/js`.
+  `packages/*/scss` ou `packages/fokus-js/js`.
 - `npm run lint` — roda o stylelint sobre `scss/**/*.scss` e `packages/*/scss/**/*.scss`.
 - `npm test` — roda os testes unitários (Vitest).
 - `npm run test:visual` — roda a regressão visual (Playwright).
@@ -43,8 +43,8 @@ Antes de criar ou alterar módulos SCSS, leia
 organização em monorepo e o uso de cascade layers (`@layer`). Resumo do fluxo
 para novos componentes:
 
-1. Criar `packages/clarus-components/scss/components/_nome-do-componente.scss`.
-2. Adicionar o arquivo em `packages/clarus-components/scss/components/_index.scss`.
+1. Criar `packages/fokus-components/scss/components/_nome-do-componente.scss`.
+2. Adicionar o arquivo em `packages/fokus-components/scss/components/_index.scss`.
 3. Documentar a API de classes em Markdown.
 4. Adicionar exemplo em `mockup/` quando fizer sentido.
 5. Adicionar ou atualizar teste unitário, regressão visual e cenário de
@@ -64,7 +64,7 @@ Antes de propor um componente novo, consulte
 caso pode ser resolvido compondo recursos existentes.
 
 Uma nova funcionalidade deve demonstrar necessidade recorrente, API coerente
-com `cl-`, `u-`, `is-*`, `data-cl` e eventos `cl:*`, documentação de uso,
+com `fs-`, `fs-u-`, `is-*`, `data-fs` e eventos `fs:*`, documentação de uso,
 testes funcionais, regressão visual, acessibilidade e impacto de bundle
 conhecido. Componentes avançados podem permanecer como extensões sem serem
 promovidos ao núcleo.
@@ -75,8 +75,8 @@ O projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/)
 estrito:
 
 - **Major**: qualquer mudança breaking na API pública (classes, atributos
-  `data-cl-*`, eventos `cl:*`, tokens `--cl-*`, assinatura de métodos
-  JS/`Clarus.*`).
+  `data-fs-*`, eventos `fs:*`, tokens `--fs-*`, assinatura de métodos
+  JS/`FokusStyles.*`).
 - **Minor**: novos componentes, novas classes/utilitários, novos tokens —
   sempre aditivos.
 - **Patch**: correções de bug sem mudança de API.
@@ -118,9 +118,8 @@ Só quem mantém o projeto corta releases. Passo a passo, na ordem:
 5. Commit dessas mudanças, depois `git tag vx.y.z` e `git push origin main
    --tags`.
 6. O push da tag dispara `.github/workflows/release.yml`: reroda a suíte
-   completa e publica `clarus-css`, `clarus-icons`, `clarus-cli` e
-   `clarus-react` no npm com `--provenance`. `clarus-icons`/`clarus-cli`/
-   `clarus-react` têm versionamento próprio (independente da tag/raiz) —
+   completa e publica exclusivamente `fokus-styles` no npm com `--provenance`.
+   Ícones, CLI e React são subpaths do mesmo pacote e seguem a versão da tag —
    só bumpe a versão deles quando o pacote específico mudar.
 
 ## Reportando bugs e propondo funcionalidades

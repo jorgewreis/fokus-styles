@@ -7,53 +7,53 @@ não cobre a tela inteira.
 ## Visão geral
 
 ```html
-<button type="button" class="cl-btn" data-cl="offcanvas" data-cl-target="#meuPainel">
+<button type="button" class="fs-btn" data-fs="offcanvas" data-fs-target="#meuPainel">
   Abrir menu
 </button>
 
-<div class="cl-offcanvas cl-offcanvas-start" id="meuPainel">
-  <div class="cl-offcanvas-header">
-    <h3 class="cl-offcanvas-title">Menu</h3>
-    <button type="button" class="cl-btn-close" data-cl-dismiss="offcanvas" aria-label="Fechar"></button>
+<div class="fs-offcanvas fs-offcanvas-start" id="meuPainel">
+  <div class="fs-offcanvas-header">
+    <h3 class="fs-offcanvas-title">Menu</h3>
+    <button type="button" class="fs-btn-close" data-fs-dismiss="offcanvas" aria-label="Fechar"></button>
   </div>
-  <div class="cl-offcanvas-body">Conteúdo do painel.</div>
+  <div class="fs-offcanvas-body">Conteúdo do painel.</div>
 </div>
 ```
 
-`data-cl` vai no gatilho, como no Modal.
+`data-fs` vai no gatilho, como no Modal.
 
 ## Anatomia
 
-Gatilho + `.cl-offcanvas` (painel, `position: fixed`, fora da viewport até
-abrir) > `.cl-offcanvas-header` (título + `.cl-btn-close`, opcional) +
-`.cl-offcanvas-body` (rola internamente) + `.cl-offcanvas-footer`
-(opcional). Um `.cl-offcanvas-backdrop` é criado/removido dinamicamente
+Gatilho + `.fs-offcanvas` (painel, `position: fixed`, fora da viewport até
+abrir) > `.fs-offcanvas-header` (título + `.fs-btn-close`, opcional) +
+`.fs-offcanvas-body` (rola internamente) + `.fs-offcanvas-footer`
+(opcional). Um `.fs-offcanvas-backdrop` é criado/removido dinamicamente
 pelo JS a cada abertura (não escreva no HTML).
 
 ## Variações
 
 Borda de entrada — obrigatório escolher uma:
 
-- `.cl-offcanvas-start` — esquerda, 320px de largura.
-- `.cl-offcanvas-end` — direita, 320px de largura.
-- `.cl-offcanvas-top` — topo, 40vh de altura.
-- `.cl-offcanvas-bottom` — base, 40vh de altura.
+- `.fs-offcanvas-start` — esquerda, 320px de largura.
+- `.fs-offcanvas-end` — direita, 320px de largura.
+- `.fs-offcanvas-top` — topo, 40vh de altura.
+- `.fs-offcanvas-bottom` — base, 40vh de altura.
 
 ## Estados
 
 `.is-open` — controlado pelo JS, anima via `transform`/`transition`
 (desativada automaticamente sob `prefers-reduced-motion: reduce`).
 
-**Backdrop**: `data-backdrop="false"` no `.cl-offcanvas` remove o
+**Backdrop**: `data-backdrop="false"` no `.fs-offcanvas` remove o
 backdrop (painel some, mas o resto da página continua interativa por
 baixo); `data-backdrop="static"` mantém o backdrop mas desativa
-`Escape`/clique-fora (só `data-cl-dismiss="offcanvas"` fecha) — mesma
+`Escape`/clique-fora (só `data-fs-dismiss="offcanvas"` fecha) — mesma
 semântica do Modal.
 
 ## A11y
 
 Ao inicializar, o componente controla `aria-hidden` e, quando encontra
-`.cl-offcanvas-title`, cria automaticamente o vínculo `aria-labelledby`. Um
+`.fs-offcanvas-title`, cria automaticamente o vínculo `aria-labelledby`. Um
 `id` existente no título é preservado.
 
 `role="dialog"` + `aria-modal="true"` aplicados automaticamente. Foco
@@ -64,7 +64,7 @@ focável (com um pequeno atraso técnico pra garantir que a transição de
 
 ## API JS
 
-Auto-init via `data-cl="offcanvas"` **no gatilho**. `Offcanvas.getInstance(triggerEl)`.
+Auto-init via `data-fs="offcanvas"` **no gatilho**. `Offcanvas.getInstance(triggerEl)`.
 
 | Método | Descrição |
 |---|---|
@@ -75,26 +75,26 @@ Auto-init via `data-cl="offcanvas"` **no gatilho**. `Offcanvas.getInstance(trigg
 
 | Evento (no gatilho) | Cancelável | Quando |
 |---|---|---|
-| `cl:offcanvas:shown` | Não | Depois de abrir. |
-| `cl:offcanvas:hidden` | Não | Depois de fechar. |
+| `fs:offcanvas:shown` | Não | Depois de abrir. |
+| `fs:offcanvas:hidden` | Não | Depois de fechar. |
 
 ## Tokens
 
-`--cl-color-surface`, `--cl-color-text`, `--cl-color-border`,
-`--cl-shadow-lg`.
+`--fs-color-surface`, `--fs-color-text`, `--fs-color-border`,
+`--fs-shadow-lg`.
 
 ## Exemplo
 
 ```html
-<button type="button" class="cl-btn" data-cl="offcanvas" data-cl-target="#filtros">Filtros</button>
-<div class="cl-offcanvas cl-offcanvas-end" id="filtros" data-backdrop="static">
-  <div class="cl-offcanvas-header">
-    <h3 class="cl-offcanvas-title">Filtros</h3>
-    <button type="button" class="cl-btn-close" data-cl-dismiss="offcanvas" aria-label="Fechar"></button>
+<button type="button" class="fs-btn" data-fs="offcanvas" data-fs-target="#filtros">Filtros</button>
+<div class="fs-offcanvas fs-offcanvas-end" id="filtros" data-backdrop="static">
+  <div class="fs-offcanvas-header">
+    <h3 class="fs-offcanvas-title">Filtros</h3>
+    <button type="button" class="fs-btn-close" data-fs-dismiss="offcanvas" aria-label="Fechar"></button>
   </div>
-  <div class="cl-offcanvas-body">...</div>
-  <div class="cl-offcanvas-footer">
-    <button type="button" class="cl-btn cl-btn-primary" data-cl-dismiss="offcanvas">Aplicar</button>
+  <div class="fs-offcanvas-body">...</div>
+  <div class="fs-offcanvas-footer">
+    <button type="button" class="fs-btn fs-btn-primary" data-fs-dismiss="offcanvas">Aplicar</button>
   </div>
 </div>
 ```

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { collapse, expand, onTransitionEnd } from "../../../packages/clarus-js/js/core/transition.js";
+import { collapse, expand, onTransitionEnd } from "../../../packages/fokus-js/js/core/transition.js";
 
 function dispatchTransitionEnd(el, propertyName = "height") {
   const event = new Event("transitionend", { bubbles: false });

@@ -15,8 +15,8 @@
         }
 
         html[data-theme="dark"] .theme-panel {
-            color: var(--cl-color-text);
-            background-color: var(--cl-color-surface);
+            color: var(--fs-color-text);
+            background-color: var(--fs-color-surface);
         }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
@@ -25,47 +25,47 @@
 <body>
 
     <div class="theme-panel">
-<p class="u-fs-sm u-fw-medium u-mt-3 u-mb-1">Validação - .is-valid / .is-invalid</p>
-        <div class="cl-form-row u-gap-x-2">
-            <div class="cl-form-col">
-                <label for="input-valid" class="cl-form-label cl-form-size-md">E-mail</label>
-                <input type="email" class="cl-form-control cl-form-size-xxl is-valid" id="input-valid" value="jorge@clarus.dev">
-                <span class="cl-valid-feedback cl-form-size-xxl">E-mail válido.</span>
+<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Validação - .is-valid / .is-invalid</p>
+        <div class="fs-form-row fs-u-gap-x-2">
+            <div class="fs-form-col">
+                <label for="input-valid" class="fs-form-label fs-form-size-md">E-mail</label>
+                <input type="email" class="fs-form-control fs-form-size-xxl is-valid" id="input-valid" value="jorge@fokus.dev">
+                <span class="fs-valid-feedback fs-form-size-xxl">E-mail válido.</span>
             </div>
-            <div class="cl-form-col">
-                <label for="input-invalid" class="cl-form-label cl-form-size-md">E-mail</label>
-                <input type="email" class="cl-form-control cl-form-size-xxl is-invalid" id="input-invalid" value="jorge@clarus">
-                <span class="cl-invalid-feedback cl-form-size-xxl">Informe um e-mail válido.</span>
+            <div class="fs-form-col">
+                <label for="input-invalid" class="fs-form-label fs-form-size-md">E-mail</label>
+                <input type="email" class="fs-form-control fs-form-size-xxl is-invalid" id="input-invalid" value="jorge@fokus">
+                <span class="fs-invalid-feedback fs-form-size-xxl">Informe um e-mail válido.</span>
             </div>
         </div>
 
-        <p class="u-fs-sm u-fw-medium u-mt-3 u-mb-1">Upload de arquivo estilizado</p>
-        <div class="cl-form-row u-gap-x-2">
-            <div class="cl-form-col">
-                <span class="cl-form-label cl-form-size-md">Padrão</span>
-                <div class="cl-file-upload">
-                    <input type="file" class="cl-file-input" id="file-default">
-                    <label for="file-default" class="cl-file-label">Escolher arquivo</label>
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Upload de arquivo estilizado</p>
+        <div class="fs-form-row fs-u-gap-x-2">
+            <div class="fs-form-col">
+                <span class="fs-form-label fs-form-size-md">Padrão</span>
+                <div class="fs-file-upload">
+                    <input type="file" class="fs-file-input" id="file-default">
+                    <label for="file-default" class="fs-file-label">Escolher arquivo</label>
                 </div>
             </div>
-            <div class="cl-form-col">
-                <span class="cl-form-label cl-form-size-md">Tamanhos</span>
-                <div class="cl-form-row u-gap-x-2">
-                    <div class="cl-file-upload">
-                        <input type="file" class="cl-file-input" id="file-sm">
-                        <label for="file-sm" class="cl-file-label cl-file-label-sm">Small</label>
+            <div class="fs-form-col">
+                <span class="fs-form-label fs-form-size-md">Tamanhos</span>
+                <div class="fs-form-row fs-u-gap-x-2">
+                    <div class="fs-file-upload">
+                        <input type="file" class="fs-file-input" id="file-sm">
+                        <label for="file-sm" class="fs-file-label fs-file-label-sm">Small</label>
                     </div>
-                    <div class="cl-file-upload">
-                        <input type="file" class="cl-file-input" id="file-lg">
-                        <label for="file-lg" class="cl-file-label cl-file-label-lg">Large</label>
+                    <div class="fs-file-upload">
+                        <input type="file" class="fs-file-input" id="file-lg">
+                        <label for="file-lg" class="fs-file-label fs-file-label-lg">Large</label>
                     </div>
                 </div>
             </div>
-            <div class="cl-form-col">
-                <span class="cl-form-label cl-form-size-md">Desabilitado</span>
-                <div class="cl-file-upload">
-                    <input type="file" class="cl-file-input" id="file-disabled" disabled>
-                    <label for="file-disabled" class="cl-file-label">Escolher arquivo</label>
+            <div class="fs-form-col">
+                <span class="fs-form-label fs-form-size-md">Desabilitado</span>
+                <div class="fs-file-upload">
+                    <input type="file" class="fs-file-input" id="file-disabled" disabled>
+                    <label for="file-disabled" class="fs-file-label">Escolher arquivo</label>
                 </div>
             </div>
         </div>

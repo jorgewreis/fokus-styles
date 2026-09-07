@@ -1,7 +1,7 @@
 import { vi } from "vitest";
 
 // Sem isso, React 18 avisa "not configured to support act(...)" em todo
-// teste de tests/unit/clarus-react.test.js — a flag informa ao React que
+// teste de tests/unit/fokus-react.test.js — a flag informa ao React que
 // o ambiente atual (vitest + jsdom) sabe lidar com act().
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 

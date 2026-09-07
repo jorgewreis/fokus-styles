@@ -1,0 +1,51 @@
+@use "sass:math";
+@use "../settings" as *;
+@use "../tools" as *;
+
+@layer layout {
+  $grid-columns: 12;
+
+  .fs-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--fs-gutter-y) * -1);
+    margin-right: calc(var(--fs-gutter-x) / -2);
+    margin-left: calc(var(--fs-gutter-x) / -2);
+  }
+
+  .fs-row > * {
+    margin-top: var(--fs-gutter-y);
+    padding-right: calc(var(--fs-gutter-x) / 2);
+    padding-left: calc(var(--fs-gutter-x) / 2);
+  }
+
+  .fs-row-fluid {
+    width: 100%;
+  }
+
+  .fs-col-fluid {
+    width: 100%;
+  }
+
+  @each $breakpoint, $min in $breakpoints {
+    $infix: breakpoint-infix($breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      .fs-col#{$infix} {
+        flex: 1 0 0%;
+      }
+
+      .fs-col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $i from 1 through $grid-columns {
+        .fs-col#{$infix}-#{$i} {
+          flex: 0 0 auto;
+          width: math.percentage(math.div($i, $grid-columns));
+        }
+      }
+    }
+  }
+}

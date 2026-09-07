@@ -8,23 +8,23 @@ embutido; para um menu suspenso dentro da navbar, combine com
 ## Visão geral
 
 ```html
-<nav class="cl-navbar">
-  <a href="#" class="cl-navbar-brand">Minha Marca</a>
-  <ul class="cl-navbar-nav">
-    <li><a href="#" class="cl-nav-link is-active">Início</a></li>
-    <li><a href="#" class="cl-nav-link">Produtos</a></li>
-    <li><a href="#" class="cl-nav-link is-disabled">Em breve</a></li>
+<nav class="fs-navbar">
+  <a href="#" class="fs-navbar-brand">Minha Marca</a>
+  <ul class="fs-navbar-nav">
+    <li><a href="#" class="fs-nav-link is-active">Início</a></li>
+    <li><a href="#" class="fs-nav-link">Produtos</a></li>
+    <li><a href="#" class="fs-nav-link is-disabled">Em breve</a></li>
   </ul>
 </nav>
 ```
 
 ## Anatomia
 
-`.cl-navbar` (flex, `justify-content: space-between`, quebra linha se não
-houver espaço) > `.cl-navbar-brand` (nome/logo) + `.cl-navbar-nav`
-(`<ul>` sem marcadores) > `<li>` > `.cl-nav-link`.
+`.fs-navbar` (flex, `justify-content: space-between`, quebra linha se não
+houver espaço) > `.fs-navbar-brand` (nome/logo) + `.fs-navbar-nav`
+(`<ul>` sem marcadores) > `<li>` > `.fs-nav-link`.
 
-`.cl-nav-link` é compartilhado com [Tabs](tabs.md) — o mesmo estilo de
+`.fs-nav-link` é compartilhado com [Tabs](tabs.md) — o mesmo estilo de
 link de navegação serve pros dois contextos.
 
 ## Variações
@@ -34,9 +34,9 @@ composição (o que vai dentro) que muda.
 
 ## Estados
 
-- `.cl-nav-link.is-active` — destaque de cor primária + peso de fonte
+- `.fs-nav-link.is-active` — destaque de cor primária + peso de fonte
   maior.
-- `.cl-nav-link.is-disabled` — cor muted, não clicável.
+- `.fs-nav-link.is-disabled` — cor muted, não clicável.
 
 ## A11y
 
@@ -51,19 +51,19 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-`--cl-color-border` (borda inferior), `--cl-color-surface` (fundo),
-`--cl-color-text`, `--cl-color-primary` (ativo), `--cl-color-muted`
-(desabilitado), `--cl-radius-sm` (hover do link).
+`--fs-color-border` (borda inferior), `--fs-color-surface` (fundo),
+`--fs-color-text`, `--fs-color-primary` (ativo), `--fs-color-muted`
+(desabilitado), `--fs-radius-sm` (hover do link).
 
 ## Exemplo
 
 ```html
-<nav class="cl-navbar" aria-label="Navegação principal">
-  <a href="#" class="cl-navbar-brand">Clarus</a>
-  <ul class="cl-navbar-nav">
-    <li><a href="#" class="cl-nav-link is-active">Dashboard</a></li>
-    <li><a href="#" class="cl-nav-link">Relatórios</a></li>
-    <li><a href="#" class="cl-nav-link">Configurações</a></li>
+<nav class="fs-navbar" aria-label="Navegação principal">
+  <a href="#" class="fs-navbar-brand">FokusStyles</a>
+  <ul class="fs-navbar-nav">
+    <li><a href="#" class="fs-nav-link is-active">Dashboard</a></li>
+    <li><a href="#" class="fs-nav-link">Relatórios</a></li>
+    <li><a href="#" class="fs-nav-link">Configurações</a></li>
   </ul>
 </nav>
 ```

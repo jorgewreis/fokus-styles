@@ -60,7 +60,7 @@ renderizado de fato nos mockups (via o gate axe).
 
 - **Nativo**: comportamento do elemento HTML nativo (`button`, `input`,
   links), sem JS do framework.
-- **Automático**: o JS do Clarus aplica/atualiza o atributo ou o
+- **Automático**: o JS do FokusStyles aplica/atualiza o atributo ou o
   comportamento de teclado ao inicializar — nada a fazer no HTML.
 - **Manual**: precisa ser adicionado por quem usa o componente (o framework
   não infere texto/contexto).

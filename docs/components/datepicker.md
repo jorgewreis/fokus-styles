@@ -3,7 +3,7 @@
 Duas abordagens complementares: **CSS-only**
 (`<input type="date">`/`<input type="time">` nativo, só estilizado) para
 quem quer o seletor do próprio sistema operacional/navegador, e um
-**Datepicker JS customizado** (`.cl-datepicker`) para quando o design
+**Datepicker JS customizado** (`.fs-datepicker`) para quando o design
 precisa de controle total sobre a aparência do calendário — os nativos não
 podem ser restilizados além de cor/borda/fonte do campo (o popup em si é
 chrome do navegador, fora do alcance de CSS).
@@ -13,26 +13,26 @@ chrome do navegador, fora do alcance de CSS).
 ### CSS-only (`<input type="date">`/`"time"`)
 
 ```html
-<input type="date" class="cl-form-control">
-<input type="time" class="cl-form-control">
+<input type="date" class="fs-form-control">
+<input type="time" class="fs-form-control">
 ```
 
-Herdam `.cl-form-control` normalmente (borda, fundo, foco). A única
+Herdam `.fs-form-control` normalmente (borda, fundo, foco). A única
 correção específica do framework é o indicador nativo (ícone de
 calendário/relógio) no tema escuro — por padrão o navegador desenha um
-ícone escuro fixo, invisível sobre `--cl-color-surface` escuro; o Clarus
+ícone escuro fixo, invisível sobre `--fs-color-surface` escuro; o FokusStyles
 aplica `filter: invert(1)` nele sob `[data-theme="dark"]`.
 
 ### Datepicker customizado (JS)
 
 ```html
-<div class="cl-datepicker">
-  <input type="text" class="cl-form-control" data-cl="datepicker" data-cl-target="#dp-entrega" placeholder="dd/mm/aaaa">
+<div class="fs-datepicker">
+  <input type="text" class="fs-form-control" data-fs="datepicker" data-fs-target="#dp-entrega" placeholder="dd/mm/aaaa">
 </div>
 <div id="dp-entrega"></div>
 ```
 
-O elemento apontado por `data-cl-target` é o painel do calendário — fica
+O elemento apontado por `data-fs-target` é o painel do calendário — fica
 vazio no HTML, o JS constrói o cabeçalho (mês/ano + navegação) e a grade de
 dias dinamicamente a cada abertura/troca de mês. Se o `<input>` já tiver um
 valor em `dd/mm/aaaa` (formato de exibição, pt-BR), o Datepicker abre no mês
@@ -40,17 +40,17 @@ correspondente com o dia já marcado como selecionado.
 
 ## Anatomia
 
-`.cl-datepicker` (wrapper posicionador) > `input[role="combobox"]` +
-`.cl-datepicker-panel` (reanexado a `document.body`, posicionado via
-`packages/clarus-js/js/core/positioning.js`) > `.cl-datepicker-header` (`.cl-datepicker-nav` ×2 +
-`.cl-datepicker-title`) + `.cl-datepicker-grid[role="grid"]` (uma
-`.cl-datepicker-week[role="row"]` por semana, cada uma com 7
-`.cl-datepicker-day[role="gridcell"]`).
+`.fs-datepicker` (wrapper posicionador) > `input[role="combobox"]` +
+`.fs-datepicker-panel` (reanexado a `document.body`, posicionado via
+`packages/fokus-js/js/core/positioning.js`) > `.fs-datepicker-header` (`.fs-datepicker-nav` ×2 +
+`.fs-datepicker-title`) + `.fs-datepicker-grid[role="grid"]` (uma
+`.fs-datepicker-week[role="row"]` por semana, cada uma com 7
+`.fs-datepicker-day[role="gridcell"]`).
 
 ## Variações
 
 - Dias fora do mês corrente (preenchendo a primeira/última semana):
-  `.cl-datepicker-day.is-outside`.
+  `.fs-datepicker-day.is-outside`.
 - Sem suporte a `min`/`max` (intervalo de datas permitido) nesta versão —
   todo dia é selecionável.
 
@@ -91,7 +91,7 @@ adaptado (sem o modal — o painel é um popup não-modal, mesma filosofia do
 
 ## API JS
 
-Auto-init via `data-cl="datepicker"` **no `<input>`**, com `data-cl-target`
+Auto-init via `data-fs="datepicker"` **no `<input>`**, com `data-fs-target`
 apontando pro painel (convenção idêntica ao Dropdown/Combobox).
 `Datepicker.getInstance(inputEl)`.
 
@@ -109,24 +109,24 @@ apontando pro painel (convenção idêntica ao Dropdown/Combobox).
 | Evento (no input) | Cancelável | Quando |
 |---|---|---|
 | `change` (nativo) | Não | Ao selecionar um dia (clique ou `Enter`/`Space`). |
-| `cl:datepicker:changed` | Não | Mesmo momento, com `event.detail.value` (ISO) e `event.detail.date` (`Date`). |
-| `cl:datepicker:shown` | Não | Depois de abrir o painel. |
-| `cl:datepicker:hidden` | Não | Depois de fechar. |
+| `fs:datepicker:changed` | Não | Mesmo momento, com `event.detail.value` (ISO) e `event.detail.date` (`Date`). |
+| `fs:datepicker:shown` | Não | Depois de abrir o painel. |
+| `fs:datepicker:hidden` | Não | Depois de fechar. |
 
 ## Tokens
 
-Reusa `--cl-color-border`/`-surface`/`-text`/`-muted`/`-primary`,
-`--cl-radius-sm`/`-md` e `--cl-shadow-md` — sem tokens próprios.
+Reusa `--fs-color-border`/`-surface`/`-text`/`-muted`/`-primary`,
+`--fs-radius-sm`/`-md` e `--fs-shadow-md` — sem tokens próprios.
 
 ## Exemplo
 
 ```html
-<div class="cl-datepicker">
-  <input type="text" class="cl-form-control" id="entrega" data-cl="datepicker" data-cl-target="#entrega-painel" placeholder="dd/mm/aaaa">
+<div class="fs-datepicker">
+  <input type="text" class="fs-form-control" id="entrega" data-fs="datepicker" data-fs-target="#entrega-painel" placeholder="dd/mm/aaaa">
 </div>
 <div id="entrega-painel"></div>
 <script>
-  document.getElementById("entrega").addEventListener("cl:datepicker:changed", (e) => {
+  document.getElementById("entrega").addEventListener("fs:datepicker:changed", (e) => {
     console.log("data escolhida:", e.detail.value); // "2026-07-20"
   });
 </script>

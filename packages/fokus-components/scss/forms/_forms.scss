@@ -1,0 +1,365 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px 16px;
+    width: 100%;
+  }
+
+  .fs-form-col {
+    display: flex;
+    flex: 1 1 240px;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .fs-form-label {
+    width: auto;
+    margin: 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+  }
+
+  .fs-form-text {
+    width: auto;
+    margin: 0;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+  }
+
+  .fs-form-text,
+  .fs-valid-feedback,
+  .fs-invalid-feedback {
+    min-height: 1.25rem;
+    padding: 3px 8px;
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-form-text {
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+  }
+
+  .fs-valid-feedback,
+  .fs-invalid-feedback {
+    display: none;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+
+  }
+
+  .fs-valid-feedback {
+    color: var(--fs-alert-success-text);
+    background-color: var(--fs-feedback-success-bg);
+  }
+
+  .fs-invalid-feedback {
+    color: var(--fs-alert-danger-text);
+    background-color: var(--fs-feedback-danger-bg);
+  }
+
+  .is-valid ~ .fs-valid-feedback,
+  .is-invalid ~ .fs-invalid-feedback {
+    display: block;
+  }
+
+  .fs-form-control {
+    width: 100%;
+    min-width: 0;
+    height: var(--fs-control-height);
+    padding: 0 7px;
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-form-control::placeholder {
+    color: var(--fs-color-muted);
+  }
+
+  .fs-form-control:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-form-control:disabled {
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-subtle);
+    opacity: var(--fs-disabled-opacity);
+    pointer-events: none;
+  }
+
+  .fs-form-control:read-only {
+    background-color: var(--fs-color-subtle);
+    cursor: default;
+  }
+
+  .fs-form-control-sm {
+    height: var(--fs-control-height-sm);
+    font-size: $font-size-xs;
+  }
+
+  .fs-form-control-lg {
+    height: var(--fs-control-height-lg);
+    font-size: $font-size-md;
+  }
+
+  .fs-form-size-sm {
+    width: 120px;
+  }
+
+  .fs-form-size-md {
+    width: 180px;
+  }
+
+  .fs-form-size-lg {
+    width: 240px;
+  }
+
+  .fs-form-size-xl {
+    width: 300px;
+  }
+
+  .fs-form-size-xxl {
+    width: 360px;
+  }
+
+  .fs-form-control.is-valid {
+    border-color: var(--fs-color-success);
+  }
+
+  .fs-form-control.is-valid:focus-visible {
+    @include focus-ring(var(--fs-color-success));
+  }
+
+  .fs-form-control.is-invalid {
+    border-color: var(--fs-color-danger);
+  }
+
+  .fs-form-control.is-invalid:focus-visible {
+    @include focus-ring(var(--fs-color-danger));
+  }
+
+  .fs-form-select {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--fs-control-height);
+    padding: 0 7px;
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .fs-form-select::after {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    content: "";
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+
+  .fs-form-select:focus-visible {
+    @include focus-ring;
+  }
+
+  .fs-form-select:disabled {
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-subtle);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .fs-form-select-sm {
+    height: var(--fs-control-height-sm);
+    font-size: $font-size-xs;
+  }
+
+  .fs-form-select-lg {
+    height: var(--fs-control-height-lg);
+    font-size: $font-size-md;
+  }
+
+  .fs-file-upload {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .fs-file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .fs-file-label {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-sm);
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-subtle);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    user-select: none;
+    transition: filter var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-file-label:hover {
+    filter: brightness(0.96);
+  }
+
+  .fs-file-input:focus-visible + .fs-file-label {
+    @include focus-ring;
+  }
+
+  .fs-file-input:disabled + .fs-file-label {
+    color: var(--fs-color-muted);
+    opacity: var(--fs-disabled-opacity);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .fs-file-label-sm {
+    height: 30px;
+    padding: 0 10px;
+    font-size: $font-size-xs;
+  }
+
+  .fs-file-label-lg {
+    height: 46px;
+    padding: 0 18px;
+    font-size: $font-size-lg;
+  }
+
+  // Drag-and-drop (js/file-drop.js): estado visual ao arrastar um arquivo por
+  // cima do `.fs-file-label`, e uma variante maior (dropzone) para quando o alvo
+  // de soltar precisa ser mais generoso que o botão padrão de `.fs-file-label`.
+  .fs-file-label.is-dragover {
+    border-color: var(--fs-color-primary);
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-file-label-dropzone {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    height: auto;
+    padding: 32px 16px;
+    border-style: dashed;
+    border-width: 2px;
+    font-weight: $font-weight-regular;
+    text-align: center;
+  }
+
+  .fs-file-label-dropzone .fs-file-dropzone-hint {
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+  }
+
+  // Input Group: funde `.fs-form-control` (ou `.fs-form-select`/`.fs-btn`) com "addons"
+  // de texto/ícone de prefixo/sufixo, reaproveitando os tokens visuais do
+  // próprio `.fs-form-control` (borda, cor, radius). 100% CSS — a altura do addon
+  // acompanha a do controle via `align-items: stretch` (herdado), sem precisar
+  // fixar `height` nele.
+  .fs-input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .fs-input-group > .fs-form-control,
+  .fs-input-group > .fs-form-select {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+  }
+
+  .fs-input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 1px solid var(--fs-color-border);
+    color: var(--fs-color-muted);
+    background-color: var(--fs-color-subtle);
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+  }
+
+  // Funde as bordas dos itens adjacentes (remove a dupla borda) e mantém o
+  // item focado por cima da sobreposição de -1px, senão a borda de foco fica
+  // parcialmente escondida atrás do vizinho.
+  .fs-input-group > :not(:first-child) {
+    margin-left: -1px;
+  }
+
+  .fs-input-group > :focus-visible,
+  .fs-input-group > :focus-within {
+    position: relative;
+    z-index: 1;
+  }
+
+  .fs-input-group > * {
+    border-radius: 0;
+  }
+
+  .fs-input-group > :first-child {
+    border-top-left-radius: var(--fs-radius-sm);
+    border-bottom-left-radius: var(--fs-radius-sm);
+  }
+
+  .fs-input-group > :last-child {
+    border-top-right-radius: var(--fs-radius-sm);
+    border-bottom-right-radius: var(--fs-radius-sm);
+  }
+
+  .fs-input-group-sm > .fs-form-control,
+  .fs-input-group-sm > .fs-form-select,
+  .fs-input-group-sm > .fs-input-group-text {
+    height: 30px;
+    padding: 0 8px;
+    font-size: $font-size-xs;
+  }
+
+  .fs-input-group-lg > .fs-form-control,
+  .fs-input-group-lg > .fs-form-select,
+  .fs-input-group-lg > .fs-input-group-text {
+    height: 46px;
+    padding: 0 16px;
+    font-size: $font-size-lg;
+  }
+}

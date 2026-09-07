@@ -7,9 +7,9 @@ const packagesDir = path.join(rootDir, "packages");
 const reportEntry = path.join(rootDir, "scripts", "contrast-report.scss");
 
 const scssLoadPaths = [
-  path.join(packagesDir, "clarus-core", "scss"),
-  path.join(packagesDir, "clarus-components", "scss"),
-  path.join(packagesDir, "clarus-utilities", "scss"),
+  path.join(packagesDir, "fokus-core", "scss"),
+  path.join(packagesDir, "fokus-components", "scss"),
+  path.join(packagesDir, "fokus-utilities", "scss"),
 ];
 
 const strict = process.argv.includes("--strict");
