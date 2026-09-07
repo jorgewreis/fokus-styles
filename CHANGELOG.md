@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.6.0] - 2026-09-07
+
+- refina visualmente Checkbox, Radio e Switch com tokens próprios, propriedades lógicas e área de interação consistente;
+- adiciona estados hover, active, valid, invalid, forced colors e reduced motion aos controles nativos;
+- documenta grupos com `fieldset/legend`, `aria-describedby`, RTL e tokens de componente.
+
 ## [2.5.0] - 2026-09-07
 
 - expande a Utility API com display, flex, gap, tipografia, estados e variantes responsivas configuráveis;

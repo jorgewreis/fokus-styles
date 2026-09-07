@@ -33,6 +33,16 @@
             display: grid;
             gap: 4px;
         }
+
+        .choice-fieldset {
+            display: grid;
+            gap: 8px;
+            max-inline-size: 420px;
+        }
+
+        .choice-fieldset .fs-form-text {
+            margin-block: 0 4px;
+        }
     </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
     <script src="../assets/example-theme.js"></script>
@@ -40,7 +50,20 @@
 <body>
 
     <div class="theme-panel">
-<p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Checkbox — estados</p>
+        <fieldset class="fs-form-fieldset choice-fieldset" dir="auto">
+            <legend class="fs-form-label">Preferências de contato</legend>
+            <p class="fs-form-text" id="contact-help">Escolha uma opção; o controle permanece nativo e acessível.</p>
+            <div class="fs-radio">
+                <input type="radio" name="contact" class="fs-radio-input" id="contact-email" aria-describedby="contact-help" checked>
+                <label for="contact-email" class="fs-radio-label">E-mail</label>
+            </div>
+            <div class="fs-radio">
+                <input type="radio" name="contact" class="fs-radio-input" id="contact-phone" aria-describedby="contact-help">
+                <label for="contact-phone" class="fs-radio-label">Telefone</label>
+            </div>
+        </fieldset>
+
+        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Checkbox — estados</p>
         <div class="control-row">
             <div class="fs-check">
                 <input type="checkbox" class="fs-check-input" id="check-unchecked">
@@ -67,9 +90,9 @@
         <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Checkbox — validação e tamanhos</p>
         <div class="control-row">
             <div class="fs-check fs-check-invalid-demo">
-                <input type="checkbox" class="fs-check-input is-invalid" id="check-invalid">
+                <input type="checkbox" class="fs-check-input is-invalid" id="check-invalid" aria-invalid="true" aria-describedby="check-invalid-help">
                 <label for="check-invalid" class="fs-check-label">Inválido</label>
-                <div class="fs-invalid-feedback">Selecione esta opção para continuar.</div>
+                <div class="fs-invalid-feedback" id="check-invalid-help">Selecione esta opção para continuar.</div>
             </div>
             <div class="fs-check fs-check-sm">
                 <input type="checkbox" class="fs-check-input" id="check-sm" checked>
@@ -130,6 +153,10 @@
             <div class="fs-switch fs-switch-lg">
                 <input type="checkbox" class="fs-switch-input" id="switch-lg" checked>
                 <label for="switch-lg" class="fs-switch-label">lg</label>
+            </div>
+            <div class="fs-switch">
+                <input type="checkbox" class="fs-switch-input" id="switch-aria" aria-label="Ativar notificações por e-mail">
+                <label for="switch-aria" class="fs-switch-label"></label>
             </div>
         </div>
     </div>

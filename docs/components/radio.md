@@ -36,6 +36,9 @@ Tamanho: `.fs-radio-sm`, `.fs-radio-lg` no wrapper.
 - **checked**, **disabled**, validação (`.is-valid`/`.is-invalid`) e foco —
   mesmo padrão do [Checkbox](checkbox.md). Não existe `indeterminate` para
   radio.
+- Hover e active também alteram a superfície do círculo vazio e selecionado.
+- O controle acompanha `dir="rtl"`, `prefers-reduced-motion` e
+  `forced-colors: active`.
 
 ## A11y
 
@@ -45,6 +48,8 @@ Tamanho: `.fs-radio-sm`, `.fs-radio-lg` no wrapper.
   `Tab`/`Shift+Tab` entram/saem do grupo de uma vez (o item selecionado, ou
   o primeiro se nenhum estiver selecionado, é o único no fluxo de tab).
 - Sempre associe `label` via `for`/`id`.
+- Agrupe opções relacionadas com `fieldset`/`legend` e associe instruções ou
+  erros por `aria-describedby`.
 
 ## API JS
 
@@ -52,7 +57,12 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-Mesmos do [Checkbox](checkbox.md) — sem tokens próprios.
+| Token | Fallback | Uso |
+|---|---|---|
+| `--fs-radio-size` | `18px` | Círculo externo |
+| `--fs-radio-dot-size` | `8px` | Ponto selecionado |
+| `--fs-radio-radius` | `50%` | Forma circular |
+| `--fs-radio-gap` | `--fs-space-2` | Distância até o texto |
 
 ## Exemplo
 

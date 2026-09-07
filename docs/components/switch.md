@@ -26,9 +26,9 @@ Tamanho: `.fs-switch-sm`, `.fs-switch-lg` no wrapper.
 
 ## Estados
 
-checked/disabled/foco — mesmo padrão do [Checkbox](checkbox.md). Sem
-`indeterminate` nem validação (switch não é um campo de formulário
-validável, é um controle de preferência/estado).
+checked/disabled/foco — mesmo padrão do [Checkbox](checkbox.md). O switch
+também possui hover, active, valid/invalid opcional para uso em formulário,
+forced colors e redução de movimento. Não há `indeterminate`.
 
 ## A11y
 
@@ -40,6 +40,8 @@ validável, é um controle de preferência/estado).
 - Quando não houver texto visível ao lado (ex.: dentro de um
   [Tile](tile.md), como no exemplo abaixo), use `aria-label` no `<input>`
   em vez de deixar a `<label>` vazia.
+- O Fokus Styles não injeta `role="switch"`: o contrato oficial continua
+  sendo o checkbox nativo, com `Space` e anúncio de marcado/desmarcado.
 
 ```html
 <div class="fs-switch">
@@ -54,9 +56,17 @@ Nenhuma — 100% CSS.
 
 ## Tokens
 
-Sem tokens de componente próprios — usa `--fs-color-primary` (trilho
-ligado), `--fs-color-border` (knob desligado), `--fs-radius-md` (trilho),
-`--fs-radius-sm` (knob).
+| Token | Fallback | Uso |
+|---|---|---|
+| `--fs-switch-track-width` | `36px` | Largura do trilho |
+| `--fs-switch-track-height` | `20px` | Altura do trilho |
+| `--fs-switch-thumb-width` | `16px` | Largura do knob |
+| `--fs-switch-thumb-height` | `14px` | Altura do knob |
+| `--fs-switch-thumb-offset` | `2px` | Posição desligada |
+| `--fs-switch-on-offset` | `18px` | Posição ligada |
+| `--fs-switch-radius` | `--fs-radius-md` | Raio do trilho |
+| `--fs-switch-thumb-radius` | `--fs-radius-sm` | Raio do knob |
+| `--fs-switch-gap` | `--fs-space-2` | Distância até o texto |
 
 ## Exemplo
 

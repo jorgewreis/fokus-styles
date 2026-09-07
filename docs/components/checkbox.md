@@ -51,6 +51,10 @@ o preenchimento fica mais intenso para confirmar o clique.
   versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.
 - **Foco**: `:focus-visible` no input desenha o anel sobre a caixa
   (`::before` da label), não sobre o texto.
+- **Hover/active**: superfície e borda confirmam a interação sem depender
+  apenas da cor do texto.
+- **RTL e movimento**: propriedades lógicas acompanham `dir="rtl"` e as
+  transições são desativadas em `prefers-reduced-motion: reduce`.
 
 ```html
 <input type="checkbox" class="fs-check-input is-invalid" id="c1">
@@ -69,6 +73,9 @@ document.getElementById("c2").indeterminate = true;
 - Sempre associe `label` via `for`/`id` — não use só `aria-label` no input
   se houver texto visível ao lado (duplica a leitura ou some com o clique
   no texto).
+- Para grupos relacionados, use `fieldset`/`legend`. Associe ajuda ou erro
+  com `aria-describedby` e indique erro com `aria-invalid="true"` quando
+  aplicável.
 
 ## API JS
 
@@ -77,9 +84,15 @@ Nenhuma — 100% CSS. `indeterminate` é uma propriedade do DOM nativo do
 
 ## Tokens
 
-Sem tokens de componente próprios — usa `--fs-color-primary` (caixa
-marcada), `--fs-color-border`/`--fs-color-surface` (caixa vazia),
-`--fs-color-success`/`--fs-color-danger` (validação), `--fs-radius-sm`.
+Tokens de componente podem ser sobrescritos por instância sem `!important`:
+
+| Token | Fallback | Uso |
+|---|---|---|
+| `--fs-check-size` | `18px` | Caixa visual |
+| `--fs-check-border-width` | `--fs-border-width` | Borda |
+| `--fs-check-radius` | `--fs-radius-sm` | Raio |
+| `--fs-check-gap` | `--fs-space-2` | Distância até o texto |
+| `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |
 
 ## Exemplo
 

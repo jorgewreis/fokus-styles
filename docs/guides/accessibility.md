@@ -84,6 +84,13 @@ para que leitores de tela anunciem a mensagem ao focar o campo. O
 framework não injeta esse atributo automaticamente, porque o `id` do texto
 de apoio é definido por você.
 
+Para Checkbox, Radio e Switch, mantenha o input nativo e associe o texto com
+`for`/`id`. Opções relacionadas devem ficar em `fieldset` com `legend`.
+Mensagens de ajuda e erro devem ser referenciadas por `aria-describedby`, e
+um campo inválido pode usar `aria-invalid="true"` junto de `.is-invalid`.
+Switch não recebe `role="switch"` automaticamente; a semântica oficial é a
+do checkbox nativo, inclusive para a tecla `Space`.
+
 ## Testes automatizados
 
 A regressão visual (`npm run test:visual`, Playwright) cobre

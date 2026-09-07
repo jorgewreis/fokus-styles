@@ -20,6 +20,10 @@ e AAA:
   para o texto de botões sólidos, que é sempre bold/UI, não corpo de leitura).
 - **7:1** — AAA, opcional.
 
+Checkbox, Radio e Switch reutilizam esses tokens semânticos para bordas,
+superfícies, estados de ação e validação. O relatório visual dos laboratórios
+também deve ser executado após qualquer ajuste nos tokens locais dos controles.
+
 `npm run contrast -- --strict` sai com código de erro se algum par ficar
 abaixo do mínimo AA — é o comando rodado pelo gate `contrast:check` do CI
 (`.github/workflows/ci.yml`).

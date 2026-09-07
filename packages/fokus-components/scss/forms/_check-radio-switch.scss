@@ -1,25 +1,55 @@
 @use "../../../fokus-core/scss/settings" as *;
 @use "../../../fokus-core/scss/tools" as *;
 
-// Checkbox/radio/switch 100% CSS, reusando a técnica de input oculto +
-// label irmã do Segmented Control (_segmented-control.scss) e do Rating
-// (_rating.scss): `<input>` clipado visualmente (não `display: none` — teclado
-// e leitor de tela continuam enxergando o controle) + `<label for="id">`
-// como irmã, que desenha a caixa/trilho via `::before` e a marca/knob via
-// `::after`. O `<label>` é o alvo de clique/hover/estado, mas o input
-// continua sendo o elemento focável e semântico (checkbox/radio nativos).
-// Wrapper (`.fs-check`/`.fs-radio`/`.fs-switch`) carrega o tamanho
-// (`-sm`/`-lg`) e agrupa input+label, no mesmo papel de `.fs-segmented-item`.
+// Controles nativos: o input preserva semântica e teclado; o label fornece
+// somente a camada visual. Todas as dimensões públicas são tokens locais para
+// permitir customização por instância sem !important.
 @layer components {
   .fs-check,
   .fs-radio,
   .fs-switch {
     display: inline-flex;
     align-items: center;
+    min-inline-size: 0;
   }
 
   .fs-check {
-    --fs-check-mark: var(--fs-color-on-primary);
+    --fs-check-size: 18px;
+    --fs-check-border-width: 2px;
+    --fs-check-radius: var(--fs-radius-sm);
+    --fs-check-gap: var(--fs-space-2);
+    --fs-check-mark-color: var(--fs-color-on-primary);
+    --fs-control-hover-bg: var(--fs-color-subtle);
+    --fs-control-active-bg: var(--fs-alert-primary-bg);
+    --fs-control-error-color: var(--fs-color-danger);
+    --fs-control-success-color: var(--fs-color-success);
+  }
+
+  .fs-radio {
+    --fs-radio-size: 18px;
+    --fs-radio-dot-size: 8px;
+    --fs-radio-radius: 50%;
+    --fs-radio-gap: var(--fs-space-2);
+    --fs-control-hover-bg: var(--fs-color-subtle);
+    --fs-control-active-bg: var(--fs-alert-primary-bg);
+    --fs-control-error-color: var(--fs-color-danger);
+    --fs-control-success-color: var(--fs-color-success);
+  }
+
+  .fs-switch {
+    --fs-switch-track-width: 36px;
+    --fs-switch-track-height: 20px;
+    --fs-switch-thumb-width: 16px;
+    --fs-switch-thumb-height: 14px;
+    --fs-switch-thumb-offset: 2px;
+    --fs-switch-on-offset: 18px;
+    --fs-switch-radius: var(--fs-radius-md);
+    --fs-switch-thumb-radius: var(--fs-radius-sm);
+    --fs-switch-gap: var(--fs-space-2);
+    --fs-control-hover-bg: var(--fs-color-subtle);
+    --fs-control-active-bg: var(--fs-alert-primary-bg);
+    --fs-control-error-color: var(--fs-color-danger);
+    --fs-control-success-color: var(--fs-color-success);
   }
 
   .fs-check-input,
@@ -42,75 +72,95 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    min-height: 20px;
-    padding-left: 28px;
+    min-block-size: 24px;
+    min-inline-size: 24px;
     color: var(--fs-color-text);
     font-size: $font-size-md;
+    line-height: 1.35;
     cursor: pointer;
     user-select: none;
   }
 
-  // Caixa (checkbox/radio) ou trilho (switch), desenhados no `::before` da
-  // label. Radio é a exceção redonda da regra anti-circular do projeto
-  // (junto do spinner) — ver docs/internal/plans.
+  .fs-check-label {
+    padding-inline-start: calc(var(--fs-check-size) + var(--fs-check-gap));
+  }
+
+  .fs-radio-label {
+    padding-inline-start: calc(var(--fs-radio-size) + var(--fs-radio-gap));
+  }
+
+  .fs-switch-label {
+    padding-inline-start: calc(var(--fs-switch-track-width) + var(--fs-switch-gap));
+  }
+
   .fs-check-label::before,
   .fs-radio-label::before,
   .fs-switch-label::before {
     position: absolute;
-    left: 0;
+    inset-block-start: 50%;
     box-sizing: border-box;
-    border: 1px solid var(--fs-color-border);
+    border: var(--fs-border-width) solid var(--fs-color-border);
     background-color: var(--fs-color-surface);
     content: "";
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  }
-
-  .fs-check-label::before,
-  .fs-radio-label::before {
-    width: 18px;
-    height: 18px;
+    transform: translateY(-50%);
+    transition:
+      background-color var(--fs-transition-fast) var(--fs-ease-standard),
+      border-color var(--fs-transition-fast) var(--fs-ease-standard),
+      box-shadow var(--fs-transition-fast) var(--fs-ease-standard);
   }
 
   .fs-check-label::before {
-    border: 2px solid var(--fs-color-primary);
-    border-radius: 0;
+    inset-inline-start: 0;
+    width: var(--fs-check-size);
+    height: var(--fs-check-size);
+    border-width: var(--fs-check-border-width);
+    border-radius: var(--fs-check-radius);
   }
 
   .fs-radio-label::before {
-    border-radius: 50%;
+    inset-inline-start: 0;
+    width: var(--fs-radio-size);
+    height: var(--fs-radio-size);
+    border-radius: var(--fs-radio-radius);
   }
 
-  // Marca de check (dois traços em "V", via borda rotacionada). Os estados
-  // indeterminado e inválido substituem essa geometria mais abaixo.
-  .fs-check-label::after {
+  .fs-check-label::after,
+  .fs-radio-label::after,
+  .fs-switch-label::after {
     position: absolute;
-    left: 4px;
-    width: 9px;
-    height: 5px;
     content: "";
     opacity: 0;
-    border-bottom: 2px solid var(--fs-check-mark);
-    border-left: 2px solid var(--fs-check-mark);
-    transform: translateY(-1px) rotate(-45deg);
-    transition: opacity 0.1s ease-in-out;
+    transition:
+      opacity var(--fs-transition-fast) var(--fs-ease-standard),
+      background-color var(--fs-transition-fast) var(--fs-ease-standard),
+      inset-inline-start var(--fs-transition-fast) var(--fs-ease-standard),
+      transform var(--fs-transition-fast) var(--fs-ease-standard);
+  }
+
+  .fs-check-label::after {
+    inset-inline-start: calc((var(--fs-check-size) - 9px) / 2);
+    inset-block-start: 50%;
+    width: 9px;
+    height: 5px;
+    border-block-end: 2px solid var(--fs-check-mark-color);
+    border-inline-start: 2px solid var(--fs-check-mark-color);
+    transform: translateY(-65%) rotate(-45deg);
   }
 
   .fs-radio-label::after {
-    position: absolute;
-    left: 5px;
-    width: 8px;
-    height: 8px;
+    inset-inline-start: calc((var(--fs-radio-size) - var(--fs-radio-dot-size)) / 2);
+    inset-block-start: 50%;
+    width: var(--fs-radio-dot-size);
+    height: var(--fs-radio-dot-size);
     border-radius: 50%;
-    content: "";
-    opacity: 0;
     background-color: var(--fs-color-on-primary);
-    transition: opacity 0.1s ease-in-out;
+    transform: translateY(-50%);
   }
 
   .fs-check-input:checked + .fs-check-label::before,
   .fs-radio-input:checked + .fs-radio-label::before {
-    background-color: var(--fs-color-primary);
     border-color: var(--fs-color-primary);
+    background-color: var(--fs-color-primary);
   }
 
   .fs-check-input:checked + .fs-check-label::after,
@@ -118,246 +168,227 @@
     opacity: 1;
   }
 
-  .fs-check-input:not(:checked, :indeterminate, :disabled, .is-invalid) + .fs-check-label:hover::before {
-    background-color: color-mix(in srgb, var(--fs-color-primary) 10%, transparent);
+  .fs-check-input:not(:disabled, :indeterminate, .is-invalid) + .fs-check-label:hover::before,
+  .fs-radio-input:not(:disabled, .is-invalid) + .fs-radio-label:hover::before,
+  .fs-switch-input:not(:disabled, .is-invalid) + .fs-switch-label:hover::before {
+    background-color: var(--fs-control-hover-bg);
   }
 
-  .fs-check-input:not(:disabled, :indeterminate, .is-invalid) + .fs-check-label:active::before {
-    background-color: color-mix(in srgb, var(--fs-color-primary) 86%, var(--fs-color-black));
+  .fs-check-input:checked:not(:disabled, .is-invalid) + .fs-check-label:hover::before,
+  .fs-radio-input:checked:not(:disabled, .is-invalid) + .fs-radio-label:hover::before,
+  .fs-switch-input:checked:not(:disabled, .is-invalid) + .fs-switch-label:hover::before {
+    background-color: color-mix(in srgb, var(--fs-color-primary) 88%, var(--fs-color-black));
+  }
+
+  .fs-check-input:not(:disabled, .is-invalid) + .fs-check-label:active::before,
+  .fs-radio-input:not(:disabled, .is-invalid) + .fs-radio-label:active::before,
+  .fs-switch-input:not(:disabled, .is-invalid) + .fs-switch-label:active::before {
+    background-color: var(--fs-control-active-bg);
     border-color: var(--fs-color-primary);
-  }
-
-  .fs-check-input:checked:not(:disabled, .is-invalid) + .fs-check-label:active::after {
-    transform: translateY(-1px) rotate(-45deg) scale(0.9);
-  }
-
-  // Switch: trilho retangular arredondado (não pílula) e knob também
-  // retangular arredondado — decisão de forma do projeto (nada circular além
-  // do radio/spinner). Desliza via `left` no `::after`.
-  .fs-switch-label {
-    padding-left: 44px;
   }
 
   .fs-switch-label::before {
-    width: 36px;
-    height: 20px;
-    border-radius: var(--fs-radius-md);
+    inset-inline-start: 0;
+    width: var(--fs-switch-track-width);
+    height: var(--fs-switch-track-height);
+    border-radius: var(--fs-switch-radius);
   }
 
   .fs-switch-label::after {
-    position: absolute;
-    left: 2px;
-    width: 16px;
-    height: 14px;
-    border-radius: var(--fs-radius-sm);
-    content: "";
+    inset-inline-start: var(--fs-switch-thumb-offset);
+    inset-block-start: 50%;
+    width: var(--fs-switch-thumb-width);
+    height: var(--fs-switch-thumb-height);
+    border-radius: var(--fs-switch-thumb-radius);
     background-color: var(--fs-color-border);
-    transition: left 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    opacity: 1;
+    transform: translateY(-50%);
   }
 
   .fs-switch-input:checked + .fs-switch-label::before {
-    background-color: var(--fs-color-primary);
     border-color: var(--fs-color-primary);
+    background-color: var(--fs-color-primary);
   }
 
   .fs-switch-input:checked + .fs-switch-label::after {
-    left: 18px;
+    inset-inline-start: var(--fs-switch-on-offset);
     background-color: var(--fs-color-on-primary);
   }
 
-  // Foco: anel sobre a caixa/trilho (`::before`), não sobre o texto.
   .fs-check-input:focus-visible + .fs-check-label::before,
   .fs-radio-input:focus-visible + .fs-radio-label::before,
   .fs-switch-input:focus-visible + .fs-switch-label::before {
     @include focus-ring;
   }
 
+  .fs-check-input:disabled + .fs-check-label,
   .fs-radio-input:disabled + .fs-radio-label,
   .fs-switch-input:disabled + .fs-switch-label {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  .fs-check-input:disabled + .fs-check-label {
     color: var(--fs-color-muted);
-    opacity: 1;
+    cursor: default;
+    opacity: var(--fs-disabled-opacity);
     pointer-events: none;
   }
 
-  .fs-check-input:disabled:not(:checked, :indeterminate) + .fs-check-label::before {
+  .fs-check-input:disabled + .fs-check-label::before,
+  .fs-radio-input:disabled + .fs-radio-label::before,
+  .fs-switch-input:disabled + .fs-switch-label::before {
     border-color: var(--fs-color-border);
     background-color: var(--fs-color-subtle);
   }
 
-  .fs-check-input:disabled:checked + .fs-check-label::before {
+  .fs-check-input:disabled:checked + .fs-check-label::before,
+  .fs-radio-input:disabled:checked + .fs-radio-label::before,
+  .fs-switch-input:disabled:checked + .fs-switch-label::before {
     border-color: color-mix(in srgb, var(--fs-color-primary) 55%, var(--fs-color-border));
     background-color: color-mix(in srgb, var(--fs-color-primary) 45%, var(--fs-color-subtle));
   }
 
-  .fs-check-input:disabled:checked + .fs-check-label::after {
-    opacity: 0.72;
-  }
-
-  // Validação (mesma convenção de `.fs-form-control.is-valid`/`.is-invalid`).
-  .fs-radio-input.is-valid + .fs-radio-label::before {
-    border-color: var(--fs-color-success);
+  .fs-check-input.is-valid + .fs-check-label::before,
+  .fs-radio-input.is-valid + .fs-radio-label::before,
+  .fs-switch-input.is-valid + .fs-switch-label::before,
+  .fs-check-input[aria-invalid="false"] + .fs-check-label::before,
+  .fs-radio-input[aria-invalid="false"] + .fs-radio-label::before,
+  .fs-switch-input[aria-invalid="false"] + .fs-switch-label::before {
+    border-color: var(--fs-control-success-color);
   }
 
   .fs-check-input.is-invalid + .fs-check-label::before,
-  .fs-radio-input.is-invalid + .fs-radio-label::before {
-    border-color: var(--fs-color-danger);
+  .fs-radio-input.is-invalid + .fs-radio-label::before,
+  .fs-switch-input.is-invalid + .fs-switch-label::before,
+  .fs-check-input[aria-invalid="true"] + .fs-check-label::before,
+  .fs-radio-input[aria-invalid="true"] + .fs-radio-label::before,
+  .fs-switch-input[aria-invalid="true"] + .fs-switch-label::before {
+    border-color: var(--fs-control-error-color);
   }
 
-  // Tamanhos: reescalam caixa/trilho/knob e o espaço reservado para eles
-  // (`padding-left`) proporcionalmente.
-  .fs-check-sm .fs-check-label,
-  .fs-radio-sm .fs-radio-label {
-    min-height: 16px;
-    padding-left: 24px;
-    font-size: $font-size-sm;
+  .fs-check-input.is-invalid + .fs-check-label::before,
+  .fs-check-input[aria-invalid="true"] + .fs-check-label::before {
+    background-color: var(--fs-control-error-color);
   }
 
-  .fs-check-sm .fs-check-label::before,
-  .fs-radio-sm .fs-radio-label::before {
-    width: 15px;
-    height: 15px;
+  .fs-check-input.is-invalid + .fs-check-label::after,
+  .fs-check-input[aria-invalid="true"] + .fs-check-label::after {
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    width: 9px;
+    height: 9px;
+    border: 0;
+    background-image:
+      linear-gradient(45deg, transparent 42%, var(--fs-color-on-danger, var(--fs-color-white)) 42% 58%, transparent 58%),
+      linear-gradient(-45deg, transparent 42%, var(--fs-color-on-danger, var(--fs-color-white)) 42% 58%, transparent 58%);
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 
-  .fs-check-sm .fs-check-label::after {
-    left: 3px;
-    width: 8px;
-    height: 4px;
-  }
-
-  .fs-radio-sm .fs-radio-label::after {
-    left: 4px;
-    width: 7px;
-    height: 7px;
-  }
-
-  .fs-check-lg .fs-check-label,
-  .fs-radio-lg .fs-radio-label {
-    min-height: 24px;
-    padding-left: 34px;
-    font-size: $font-size-lg;
-  }
-
-  .fs-check-lg .fs-check-label::before,
-  .fs-radio-lg .fs-radio-label::before {
-    width: 22px;
-    height: 22px;
-  }
-
-  .fs-check-lg .fs-check-label::after {
-    left: 5px;
-    width: 11px;
-    height: 6px;
-  }
-
-  .fs-radio-lg .fs-radio-label::after {
-    left: 6px;
-    width: 10px;
-    height: 10px;
-  }
-
-  .fs-switch-sm .fs-switch-label {
-    min-height: 16px;
-    padding-left: 38px;
-    font-size: $font-size-sm;
-  }
-
-  .fs-switch-sm .fs-switch-label::before {
-    width: 30px;
-    height: 16px;
-  }
-
-  .fs-switch-sm .fs-switch-label::after {
-    width: 12px;
-    height: 10px;
-  }
-
-  .fs-switch-sm .fs-switch-input:checked + .fs-switch-label::after {
-    left: 16px;
-  }
-
-  .fs-switch-lg .fs-switch-label {
-    min-height: 26px;
-    padding-left: 52px;
-    font-size: $font-size-lg;
-  }
-
-  .fs-switch-lg .fs-switch-label::before {
-    width: 44px;
-    height: 24px;
-  }
-
-  .fs-switch-lg .fs-switch-label::after {
-    width: 20px;
-    height: 18px;
-  }
-
-  .fs-switch-lg .fs-switch-input:checked + .fs-switch-label::after {
-    left: 22px;
-  }
-
-  // Estado parcial: borda tracejada em primary e traço horizontal. Mantém o
-  // fundo definido para não se confundir com a superfície ao redor.
   .fs-check-input:indeterminate + .fs-check-label::before {
-    border: 2px dashed var(--fs-color-primary);
+    border-color: var(--fs-color-primary);
     background-color: var(--fs-color-surface);
   }
 
   .fs-check-input:indeterminate + .fs-check-label::after {
-    left: 4px;
+    inset-inline-start: calc((var(--fs-check-size) - 10px) / 2);
+    inset-block-start: 50%;
     width: 10px;
-    height: 0;
-    opacity: 1;
-    border-bottom: 2px solid var(--fs-color-primary);
-    border-left: 0;
-    transform: translateY(3px) rotate(0deg);
-  }
-
-  .fs-check-sm .fs-check-input:indeterminate + .fs-check-label::after {
-    left: 3px;
-    width: 8px;
-  }
-
-  .fs-check-lg .fs-check-input:indeterminate + .fs-check-label::after {
-    left: 5px;
-    width: 12px;
-  }
-
-  // Erro: X branco sobre fundo danger, visível mesmo quando o checkbox não
-  // está marcado. Os gradientes desenham o símbolo sem conteúdo decorativo no
-  // HTML e preservam o input nativo como fonte de semântica.
-  .fs-check-input.is-invalid + .fs-check-label::before {
-    background-color: var(--fs-color-danger);
-  }
-
-  .fs-check-input.is-invalid + .fs-check-label::after {
-    top: 6px;
-    left: 5px;
-    width: 8px;
-    height: 8px;
-    opacity: 1;
+    height: 2px;
     border: 0;
-    background-image:
-      linear-gradient(45deg, transparent 42%, #{color-contrast($fokus-color-danger)} 42% 58%, transparent 58%),
-      linear-gradient(-45deg, transparent 42%, #{color-contrast($fokus-color-danger)} 42% 58%, transparent 58%);
-    transform: none;
+    border-radius: 1px;
+    background-color: var(--fs-color-primary);
+    opacity: 1;
+    transform: translateY(-50%);
   }
 
-  .fs-check-sm .fs-check-input.is-invalid + .fs-check-label::after {
-    top: 5px;
-    left: 4px;
-    width: 7px;
-    height: 7px;
+  .fs-check-sm,
+  .fs-radio-sm,
+  .fs-switch-sm {
+    font-size: $font-size-sm;
   }
 
-  .fs-check-lg .fs-check-input.is-invalid + .fs-check-label::after {
-    top: 6px;
-    left: 6px;
-    width: 10px;
-    height: 10px;
+  .fs-check-sm {
+    --fs-check-size: 15px;
+    --fs-check-gap: 9px;
+  }
+
+  .fs-radio-sm {
+    --fs-radio-size: 15px;
+    --fs-radio-dot-size: 7px;
+    --fs-radio-gap: 9px;
+  }
+
+  .fs-switch-sm {
+    --fs-switch-track-width: 30px;
+    --fs-switch-track-height: 16px;
+    --fs-switch-thumb-width: 12px;
+    --fs-switch-thumb-height: 10px;
+    --fs-switch-on-offset: 16px;
+  }
+
+  .fs-check-lg,
+  .fs-radio-lg,
+  .fs-switch-lg {
+    font-size: $font-size-lg;
+  }
+
+  .fs-check-lg {
+    --fs-check-size: 22px;
+    --fs-check-gap: 12px;
+  }
+
+  .fs-radio-lg {
+    --fs-radio-size: 22px;
+    --fs-radio-dot-size: 10px;
+    --fs-radio-gap: 12px;
+  }
+
+  .fs-switch-lg {
+    --fs-switch-track-width: 44px;
+    --fs-switch-track-height: 24px;
+    --fs-switch-thumb-width: 20px;
+    --fs-switch-thumb-height: 18px;
+    --fs-switch-on-offset: 22px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-check-label::before,
+    .fs-check-label::after,
+    .fs-radio-label::before,
+    .fs-radio-label::after,
+    .fs-switch-label::before,
+    .fs-switch-label::after {
+      transition-duration: 0ms;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .fs-check,
+    .fs-radio,
+    .fs-switch {
+      --fs-border-width: 2px;
+      --fs-focus-width: 3px;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .fs-check-label::before,
+    .fs-radio-label::before,
+    .fs-switch-label::before,
+    .fs-switch-label::after {
+      border-color: ButtonText;
+      forced-color-adjust: auto;
+    }
+
+    .fs-check-input:checked + .fs-check-label::before,
+    .fs-radio-input:checked + .fs-radio-label::before,
+    .fs-switch-input:checked + .fs-switch-label::before {
+      background-color: Highlight;
+      border-color: Highlight;
+    }
+
+    .fs-check-input:focus-visible + .fs-check-label::before,
+    .fs-radio-input:focus-visible + .fs-radio-label::before,
+    .fs-switch-input:focus-visible + .fs-switch-label::before {
+      outline: 3px solid Highlight;
+      outline-offset: 2px;
+    }
   }
 }

@@ -2,6 +2,22 @@
 @use "../../../fokus-core/scss/tools" as *;
 
 @layer components {
+  .fs-form-fieldset {
+    min-inline-size: 0;
+    margin: 0;
+    padding: var(--fs-space-3);
+    border: var(--fs-border-width) solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+  }
+
+  .fs-form-fieldset > legend {
+    max-inline-size: 100%;
+    padding-inline: var(--fs-space-1);
+    color: var(--fs-color-text);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+  }
+
   .fs-form-row {
     display: flex;
     flex-direction: row;

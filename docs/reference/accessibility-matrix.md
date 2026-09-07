@@ -25,7 +25,7 @@ renderizado de fato nos mockups (via o gate axe).
 | [Button](../components/button.md) | Nativo | Manual (`aria-label` em só-ícone) | Foco visível padrão | ✓ | Sim |
 | [Card](../components/card.md) | Nativo (stretched-link) | — | Foco no link real | ✓ | Sim |
 | [Carousel](../components/carousel.md) | Automático (setas/Home/End e arraste) | Automático (`aria-hidden`, `aria-current`, toggle) | Recebe foco no contêiner; autoplay pausável | ✓ | Sim |
-| [Checkbox](../components/checkbox.md) | Nativo | Nativo | — | ✓ | Sim |
+| [Checkbox](../components/checkbox.md) | Nativo (Space) | Nativo + `aria-describedby` manual | Foco visível no controle | ✓ | Sim |
 | [Collapse](../components/collapse.md) | Nativo (gatilho) | Automático | — | ✓ | Sim |
 | [Divider](../components/divider.md) | N/A | Implícito (`<hr>`) | — | ✓ | Sim |
 | [Dropdown](../components/dropdown.md) | Automático (setas/Escape) | Automático | Primeiro item ao abrir; devolve ao gatilho | ✓ | Sim |
@@ -41,13 +41,13 @@ renderizado de fato nos mockups (via o gate axe).
 | [Pagination](../components/pagination.md) | Nativo (links) | Manual (`<nav aria-label>`, `aria-current`) | — | ✓ | Sim |
 | [Popover](../components/popover.md) | Automático (Escape) | Automático | Devolve ao gatilho | ✓ | Sim |
 | [Spinner / Progress](../components/progress.md) | N/A | Manual (`role`+`aria-label`/`aria-valuenow`) | — | ✓ | Sim |
-| [Radio](../components/radio.md) | Nativo (setas no grupo) | Nativo | — | ✓ | Sim |
+| [Radio](../components/radio.md) | Nativo (setas no grupo) | Nativo + `fieldset/legend` manual | Foco visível no controle | ✓ | Sim |
 | [Rating](../components/rating.md) | Nativo (setas no grupo) | Manual (`aria-label` por estrela) | — | ✓ | Sim |
 | [Segmented Control](../components/segmented-control.md) | Nativo (setas no grupo) | Nativo | — | ✓ | Sim |
 | [Select (custom)](../components/select.md) | Herdado do Dropdown | Automático (`role="listbox"`) | Herdado do Dropdown | ✓ | Sim |
 | [Skeleton](../components/skeleton.md) | N/A | Manual (`aria-busy` opcional) | — | ✓ | Sim |
 | [Stepper](../components/stepper.md) | Automático (passos clicáveis) | Automático (`aria-current="step"`) | — | ✓ | Sim |
-| [Switch](../components/switch.md) | Nativo | Nativo (+ `aria-label` sem texto visível) | — | ✓ | Sim |
+| [Switch](../components/switch.md) | Nativo (Space) | Checkbox nativo; nome manual sem texto | Foco visível no trilho | ✓ | Sim |
 | [Table](../components/table.md) | Nativo | Manual (`scope`, `<caption>`) | — | ✓ | Sim |
 | [Tabs](../components/tabs.md) | Automático (roving tabindex) | Automático (`role="tab"`/`"tabpanel"`) | — | ✓ | Sim |
 | [Tag](../components/tag.md) | Nativo (botão de fechar) | Manual (`aria-label` descritivo) | — | ✓ | Sim |

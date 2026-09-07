@@ -88,6 +88,20 @@ legendas possam ser ajustados por instância: `--fs-carousel-radius`,
 `--fs-carousel-caption-scrim`. Consulte a [página do Carousel](../components/carousel.md)
 para os nomes completos e seus fallbacks.
 
+### Check, Radio e Switch
+
+Os controles nativos de seleção expõem tokens locais, sempre com fallback
+para a escala semântica do framework:
+
+| Família | Tokens |
+|---|---|
+| Checkbox | `--fs-check-size`, `--fs-check-border-width`, `--fs-check-radius`, `--fs-check-gap`, `--fs-check-mark-color` |
+| Radio | `--fs-radio-size`, `--fs-radio-dot-size`, `--fs-radio-radius`, `--fs-radio-gap` |
+| Switch | `--fs-switch-track-width`, `--fs-switch-track-height`, `--fs-switch-thumb-width`, `--fs-switch-thumb-height`, `--fs-switch-thumb-offset`, `--fs-switch-on-offset`, `--fs-switch-radius`, `--fs-switch-thumb-radius`, `--fs-switch-gap` |
+
+Eles podem ser sobrescritos no wrapper do controle sem `!important`. As
+variantes `sm` e `lg` alteram os valores desses tokens.
+
 ## Tipografia
 
 | Token | Valor | Uso |
