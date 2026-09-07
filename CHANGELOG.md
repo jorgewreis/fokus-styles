@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0] - 2026-09-07
+
+- adiciona Utility API Sass configurável para cores, espaçamento, sizing e variantes responsivas;
+- adiciona tokens de configuração para presets e inclusão seletiva de famílias de utilitários;
+- adiciona `Spinner`, `Pagination` dinâmica e fallback de Scrollspy sem `IntersectionObserver`;
+- adiciona suporte a `inert`/`aria-hidden` no focus trap e estilos do spinner com redução de movimento.
+
 ## Unreleased
 
 - refina o Carousel com tokens locais, controles compactos, indicadores em

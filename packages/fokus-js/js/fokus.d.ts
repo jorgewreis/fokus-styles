@@ -29,3 +29,5 @@ export { Navbar } from "./navbar.js";
 export { Scrollspy } from "./scrollspy.js";
 export { FormValidation } from "./form-validation.js";
 export { createFocusTrap, getFocusableElements, onEscapeKey } from "./focus-trap.js";
+export { Spinner } from "./spinner.js";
+export { Pagination } from "./pagination.js";

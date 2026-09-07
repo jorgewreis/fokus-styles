@@ -6,6 +6,23 @@ export function getFocusableElements(container) {
 }
 
 export function createFocusTrap(container) {
+  const inertSiblings = [];
+  const setSiblingsInert = (value) => {
+    if (!container.parentElement) return;
+    [...container.parentElement.children].filter((el) => el !== container).forEach((el) => {
+      if (value) {
+        inertSiblings.push({ el, value: el.inert, ariaHidden: el.getAttribute("aria-hidden") });
+        el.inert = true;
+        el.setAttribute("aria-hidden", "true");
+      } else {
+        const previous = inertSiblings.find((item) => item.el === el);
+        if (previous) {
+          el.inert = previous.value;
+          previous.ariaHidden === null ? el.removeAttribute("aria-hidden") : el.setAttribute("aria-hidden", previous.ariaHidden);
+        }
+      }
+    });
+  };
   function handleKeydown(event) {
     if (event.key !== "Tab") return;
 
@@ -32,11 +49,14 @@ export function createFocusTrap(container) {
 
   return {
     activate() {
+      setSiblingsInert(true);
       const focusable = getFocusableElements(container);
       if (focusable.length > 0) focusable[0].focus();
     },
     deactivate() {
       container.removeEventListener("keydown", handleKeydown);
+      setSiblingsInert(false);
+      inertSiblings.length = 0;
     },
   };
 }

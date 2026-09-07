@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../../fokus-core/scss/settings" as *;
+@use "../../fokus-core/scss/tools" as tools;
+
+// Utility API do Fokus Styles: os mapas são públicos e podem ser estendidos
+// antes do @use do entry-point pelo consumidor.
+$fs-utility-colors: $theme-colors !default;
+$fs-utility-spacers: $spacers !default;
+$fs-utility-sizes: (25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto) !default;
+
+@layer utilities {
+  @if fs-config-list-enabled(colors, color) {
+    @each $name, $value in $fs-utility-colors {
+      .fs-u-color-#{$name} { color: var(--fs-color-#{$name}, #{$value}) !important; }
+      .fs-u-bg-#{$name} { background-color: var(--fs-color-#{$name}, #{$value}) !important; }
+    }
+  }
+
+  @if fs-config-list-enabled(spacing, margin) and fs-config-list-enabled(spacing, padding) {
+    @each $name, $value in $fs-utility-spacers {
+      .fs-u-m-#{$name} { margin: $value !important; }
+      .fs-u-mx-#{$name} { margin-inline: $value !important; }
+      .fs-u-my-#{$name} { margin-block: $value !important; }
+      .fs-u-p-#{$name} { padding: $value !important; }
+      .fs-u-px-#{$name} { padding-inline: $value !important; }
+      .fs-u-py-#{$name} { padding-block: $value !important; }
+    }
+  }
+
+  @if fs-config-list-enabled(sizing, width) {
+    @each $name, $value in $fs-utility-sizes {
+      .fs-u-w-#{$name} { width: $value !important; }
+      .fs-u-h-#{$name} { height: $value !important; }
+    }
+  }
+
+  @if fs-config-get(responsive, true) {
+    @each $breakpoint, $min in $breakpoints {
+      @if $min != 0 {
+        @media (min-width: $min) {
+          .fs-u-d-#{$breakpoint}-flex { display: flex !important; }
+          .fs-u-d-#{$breakpoint}-none { display: none !important; }
+          .fs-u-text-#{$breakpoint}-start { text-align: start !important; }
+        }
+      }
+    }
+  }
+}

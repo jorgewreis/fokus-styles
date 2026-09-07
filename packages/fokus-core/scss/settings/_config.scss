@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:list";
 
 // Configuration centralizada. O mapa pode ser sobrescrito antes de importar
 // qualquer entry-point, mantendo os presets previsíveis para consumidores.
@@ -6,10 +7,26 @@ $fs-config: (
   preset: full,
   components: all,
   utilities: all,
+  colors: all,
+  spacing: all,
+  sizing: all,
+  responsive: true,
+  states: true,
   pseudo-variants: (responsive, focus-visible, disabled, checked, hover, print),
   fluid-type: true,
   color-modes: true
 ) !default;
+
+@function fs-config-list-enabled($key, $item) {
+
+  $value: fs-config-get($key, all);
+
+  @if $value == all { @return true; }
+
+  @if $value == none or $value == false { @return false; }
+
+  @return list.index($value, $item) != null;
+}
 
 @function fs-config-get($key, $fallback: null) {
   @if map.has-key($fs-config, $key) {
