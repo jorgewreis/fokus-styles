@@ -47,6 +47,14 @@ export class Modal {
     return instances.get(el);
   }
 
+  static getOrCreateInstance(el, options = {}) {
+    return this.getInstance(el) ?? new Modal(el, options);
+  }
+
+  static show(el, options = {}) { return this.getOrCreateInstance(el, options).show(); }
+  static hide(el) { return this.getInstance(el)?.hide(); }
+  static toggle(el, options = {}) { return this.getOrCreateInstance(el, options).toggle(); }
+
   _handleTriggerClick(event) {
     event.preventDefault();
     this.show();
@@ -60,6 +68,7 @@ export class Modal {
 
   show() {
     if (this.isOpen) return;
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
 
     this.modalEl.classList.add("is-open");
@@ -73,11 +82,13 @@ export class Modal {
       this._outsideClickCleanup = onClickOutside(this.dialogEl, () => this.hide());
     }
 
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:modal:shown", { bubbles: true }));
   }
 
   hide() {
     if (!this.isOpen) return;
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     this.isOpen = false;
 
     this.modalEl.classList.remove("is-open");
@@ -92,6 +103,7 @@ export class Modal {
 
     this.triggerEl.focus();
 
+    this.triggerEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:modal:hidden", { bubbles: true }));
   }
 

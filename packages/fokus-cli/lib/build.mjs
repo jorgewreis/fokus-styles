@@ -9,7 +9,7 @@ import cssnano from "cssnano";
 // `fokus-styles/scss` ou qualquer outro pacote Sass) usando o mesmo pipeline
 // do build interno do FokusStyles (sass -> autoprefixer -> cssnano opcional),
 // sem exigir que o consumidor monte a própria toolchain.
-export async function buildCss({ entry, out, minify = false, loadPaths = [] }) {
+export async function buildCss({ entry, out, minify = false, loadPaths = [], exclude = [] }) {
   const entryPath = path.resolve(entry);
   const outPath = path.resolve(out);
 
@@ -20,7 +20,17 @@ export async function buildCss({ entry, out, minify = false, loadPaths = [] }) {
     style: "expanded",
   });
 
-  const plugins = minify ? [autoprefixer, cssnano] : [autoprefixer];
+  const excluded = exclude.map((name) => String(name).replace(/^fs-/, "").trim()).filter(Boolean);
+  const excludePlugin = {
+    postcssPlugin: "fokus-exclude-components",
+    Once(root) {
+      if (excluded.length === 0) return;
+      root.walkRules((rule) => {
+        if (excluded.some((name) => rule.selector.includes(`.fs-${name}`) || rule.selector.includes(`[data-fs=\"${name}\"]`))) rule.remove();
+      });
+    },
+  };
+  const plugins = minify ? [excludePlugin, autoprefixer, cssnano] : [excludePlugin, autoprefixer];
   const result = await postcss(plugins).process(compiled.css, {
     from: entryPath,
     to: outPath,

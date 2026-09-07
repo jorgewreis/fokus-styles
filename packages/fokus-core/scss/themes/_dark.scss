@@ -34,7 +34,8 @@
   $dark-alert-bg-weight: 15%;
   $dark-alert-text-weight: 55%;
 
-  [data-theme="dark"] {
+  [data-theme="dark"],
+  [data-fs-theme="dark"] {
     --fs-color-text: #{rgb-fallback($dark-text)};
     --fs-color-muted: #{rgb-fallback($dark-muted)};
     --fs-color-border: #{rgb-fallback($dark-border)};
@@ -65,7 +66,8 @@
   }
 
   @supports (color: oklch(0% 0 0)) {
-    [data-theme="dark"] {
+    [data-theme="dark"],
+    [data-fs-theme="dark"] {
       --fs-color-text: #{$dark-text};
       --fs-color-muted: #{$dark-muted};
       --fs-color-border: #{$dark-border};
@@ -90,6 +92,40 @@
         --fs-alert-#{$name}-text: #{color.mix($color, $color-white, $dark-alert-text-weight, $method: oklch)};
         --fs-feedback-#{$name}-bg: #{color.mix($color, $color-gray-900, $dark-alert-bg-weight, $method: oklch)};
       }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-fs-theme="auto"] {
+      --fs-color-text: #{rgb-fallback($dark-text)};
+      --fs-color-muted: #{rgb-fallback($dark-muted)};
+      --fs-color-border: #{rgb-fallback($dark-border)};
+      --fs-color-surface: #{rgb-fallback($dark-surface)};
+      --fs-color-subtle: #{rgb-fallback($dark-subtle)};
+      --fs-color-bg-surface: var(--fs-color-surface);
+      --fs-color-bg-subtle: var(--fs-color-subtle);
+      --fs-color-surface-raised: var(--fs-color-surface);
+      --fs-color-surface-interactive: var(--fs-color-subtle);
+      --fs-color-text-primary: var(--fs-color-text);
+      --fs-color-text-muted: var(--fs-color-muted);
+      --fs-color-border-default: var(--fs-color-border);
+      --fs-color-focus: var(--fs-color-primary);
+      --fs-tooltip-bg: #{rgb-fallback($color-gray-100)};
+      --fs-tooltip-text: #{rgb-fallback($color-gray-900)};
+    }
+  }
+
+  @media (forced-colors: active) {
+    :root,
+    [data-theme="dark"],
+    [data-fs-theme="light"],
+    [data-fs-theme="dark"],
+    [data-fs-theme="auto"] {
+      --fs-color-border: CanvasText;
+      --fs-color-text: CanvasText;
+      --fs-color-surface: Canvas;
+      --fs-color-subtle: Canvas;
+      --fs-focus-color: Highlight;
     }
   }
 }

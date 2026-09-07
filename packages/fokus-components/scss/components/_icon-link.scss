@@ -1,0 +1,8 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-icon-link { display: inline-flex; gap: .5em; align-items: center; }
+  .fs-icon-link svg { width: 1em; height: 1em; flex: 0 0 auto; }
+  .fs-icon-link:hover svg { transform: translateX(.15em); }
+
+  @media (prefers-reduced-motion: reduce) { .fs-icon-link svg { transition: none; } }
+}

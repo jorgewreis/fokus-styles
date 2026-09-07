@@ -1,0 +1,26 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-list-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+  }
+
+  .fs-list-group-item {
+    position: relative;
+    display: block;
+    padding: var(--fs-space-3) var(--fs-space-4);
+    color: var(--fs-color-text);
+    background: var(--fs-color-surface);
+    border-block-end: 1px solid var(--fs-color-border);
+  }
+
+  .fs-list-group-item:last-child { border-block-end: 0; }
+  button.fs-list-group-item, a.fs-list-group-item { width: 100%; text-align: start; cursor: pointer; }
+  .fs-list-group-item:hover { background: var(--fs-color-subtle); }
+  .fs-list-group-item.is-active { color: var(--fs-color-on-primary); background: var(--fs-color-primary); }
+}

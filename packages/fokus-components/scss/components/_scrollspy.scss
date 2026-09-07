@@ -1,0 +1,5 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  [data-fs-scrollspy] .is-active { color: var(--fs-color-primary); font-weight: 600; }
+  .fs-scrollspy-nav { position: sticky; inset-block-start: var(--fs-space-4); }
+}

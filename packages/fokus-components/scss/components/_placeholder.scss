@@ -1,0 +1,13 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-placeholder { display: inline-block; min-height: 1em; vertical-align: middle; cursor: wait; background: currentcolor; opacity: .18; }
+  .fs-placeholder-glow { animation: fs-placeholder-glow 1.5s ease-in-out infinite; }
+  .fs-placeholder-wave { background: linear-gradient(90deg, transparent, rgb(255 255 255 / 35%), transparent), currentcolor; background-size: 200% 100%; animation: fs-placeholder-wave 1.5s linear infinite; }
+  .fs-placeholder-btn { width: 6rem; height: 2.5rem; border-radius: var(--fs-radius-sm); }
+
+  @keyframes fs-placeholder-glow { 50% { opacity: .08; } }
+
+  @keyframes fs-placeholder-wave { to { background-position: -200% 0; } }
+
+  @media (prefers-reduced-motion: reduce) { .fs-placeholder-glow, .fs-placeholder-wave { animation: none; } }
+}

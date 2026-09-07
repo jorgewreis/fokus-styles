@@ -1,0 +1,45 @@
+/* stylelint-disable property-no-deprecated, selector-not-notation */
+@layer reset {
+  :focus-visible {
+    outline: var(--fs-focus-width) solid var(--fs-focus-color);
+    outline-offset: var(--fs-focus-offset);
+  }
+
+  @media (forced-colors: active) {
+    :focus-visible {
+      outline: 2px solid CanvasText;
+      outline-offset: 2px;
+    }
+  }
+}
+
+@layer utilities {
+  .fs-u-visually-hidden:not(:focus):not(:focus-within),
+  .fs-u-visually-hidden-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .fs-skip-link {
+    position: fixed;
+    z-index: 1000;
+    inset-block-start: var(--fs-space-2);
+    inset-inline-start: var(--fs-space-2);
+    transform: translateY(-200%);
+    padding: var(--fs-space-2) var(--fs-space-3);
+    color: var(--fs-color-on-primary);
+    background: var(--fs-color-primary);
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-skip-link:focus {
+    transform: translateY(0);
+  }
+}

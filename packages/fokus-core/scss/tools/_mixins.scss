@@ -3,6 +3,14 @@
 @use "sass:color";
 @use "../settings" as *;
 
+@mixin fs-fluid-type($min, $max, $min-vw: 320px, $max-vw: 1280px) {
+  font-size: clamp($min, calc(#{$min} + (#{ $max } - #{ $min }) * ((100vw - #{ $min-vw }) / (#{ $max-vw } - #{ $min-vw }))), $max);
+}
+
+@mixin fs-fluid-value($property, $min, $max, $min-vw: 320px, $max-vw: 1280px) {
+  #{$property}: clamp($min, calc(#{$min} + (#{ $max } - #{ $min }) * ((100vw - #{ $min-vw }) / (#{ $max-vw } - #{ $min-vw }))), $max);
+}
+
 @mixin media-breakpoint-up($name) {
   $min: map.get($breakpoints, $name);
 

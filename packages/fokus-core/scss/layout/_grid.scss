@@ -31,6 +31,24 @@
     $infix: breakpoint-infix($breakpoint);
 
     @include media-breakpoint-up($breakpoint) {
+      .fs-row-cols#{$infix}-auto > * {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $count from 1 through 6 {
+        .fs-row-cols#{$infix}-#{$count} > * {
+          flex: 0 0 auto;
+          width: math.percentage(math.div(1, $count));
+        }
+      }
+
+      @for $order from 0 through $grid-columns {
+        .fs-order#{$infix}-#{$order} {
+          order: $order;
+        }
+      }
+
       .fs-col#{$infix} {
         flex: 1 0 0%;
       }

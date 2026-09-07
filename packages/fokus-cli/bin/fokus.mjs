@@ -10,6 +10,7 @@ const HELP = `fokus — CLI do Fokus Styles
 
 Uso:
   fokus build <entry.scss> -o <saida.css> [--minify]
+  fokus build <entry.scss> -o <saida.css> [--preset core|components|utilities|full]
   fokus theme <nome> --primary <#hex> [-o <saida.css>]
   fokus analyze <arquivo...>
 
@@ -40,6 +41,12 @@ function parseFlags(args) {
     } else if (arg === "--primary") {
       flags.primary = args[i + 1];
       i += 1;
+    } else if (arg === "--preset") {
+      flags.preset = args[i + 1];
+      i += 1;
+    } else if (arg === "--exclude") {
+      flags.exclude = args[i + 1]?.split(",").filter(Boolean) ?? [];
+      i += 1;
     } else {
       positional.push(arg);
     }
@@ -58,7 +65,17 @@ async function runBuild(args) {
     return;
   }
 
-  const { outPath } = await buildCss({ entry, out: flags.out, minify: Boolean(flags.minify) });
+  const presetEntries = { core: ["scss", "entries", "core-entry.scss"], components: ["scss", "entries", "components-entry.scss"], utilities: ["scss", "entries", "utilities-entry.scss"], full: ["scss", "fokus.scss"] };
+  const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+  const resolvedEntry = flags.preset && presetEntries[flags.preset]
+    ? path.join(projectRoot, ...presetEntries[flags.preset])
+    : entry;
+  if (flags.preset && !presetEntries[flags.preset]) {
+    console.error(`Preset desconhecido: ${flags.preset}`);
+    process.exitCode = 1;
+    return;
+  }
+  const { outPath } = await buildCss({ entry: resolvedEntry, out: flags.out, minify: Boolean(flags.minify), exclude: flags.exclude ?? [] });
   console.log(`CSS compilado em ${outPath}`);
 }
 

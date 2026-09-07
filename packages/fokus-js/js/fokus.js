@@ -24,3 +24,8 @@ export { CommandPalette } from "./command-palette.js";
 export { TreeView } from "./tree-view.js";
 export { RangeSlider } from "./range.js";
 export { FileUploadAdvanced } from "./file-upload-advanced.js";
+export { Theme } from "./theme.js";
+export { Navbar } from "./navbar.js";
+export { Scrollspy } from "./scrollspy.js";
+export { FormValidation } from "./form-validation.js";
+export { createFocusTrap, getFocusableElements, onEscapeKey } from "./focus-trap.js";

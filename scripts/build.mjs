@@ -27,10 +27,14 @@ const scssLoadPaths = [
 ];
 
 const cssEntries = [
+  { entryPath: path.join(entriesDir, "core-entry.scss"), outName: "fokus-core" },
   { entryPath: path.join(entriesDir, "layout-entry.scss"), outName: "layout" },
   { entryPath: path.join(entriesDir, "forms-entry.scss"), outName: "forms" },
   { entryPath: path.join(entriesDir, "components-entry.scss"), outName: "components" },
   { entryPath: path.join(entriesDir, "utilities-entry.scss"), outName: "helpers" },
+  { entryPath: path.join(entriesDir, "utilities-entry.scss"), outName: "fokus-utilities" },
+  { entryPath: path.join(entriesDir, "components-entry.scss"), outName: "fokus-components" },
+  { entryPath: path.join(entriesDir, "dark-entry.scss"), outName: "fokus-dark" },
   { entryPath: path.join(entriesDir, "fonts-entry.scss"), outName: "fonts" },
   { entryPath: path.join(scssDir, "fokus.scss"), outName: "fokus" },
 ];

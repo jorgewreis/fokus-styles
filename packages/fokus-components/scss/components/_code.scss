@@ -1,0 +1,19 @@
+@layer components {
+  .fs-code {
+    padding: .125em .35em;
+    color: var(--fs-color-danger);
+    background: var(--fs-color-subtle);
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-pre {
+    display: block;
+    max-width: 100%;
+    padding: var(--fs-space-4);
+    overflow: auto;
+    color: var(--fs-color-text);
+    background: var(--fs-color-subtle);
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-md);
+  }
+}

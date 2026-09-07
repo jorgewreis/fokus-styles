@@ -1,0 +1,14 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-button-group {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .fs-button-group > .fs-btn { border-radius: 0; }
+  .fs-button-group > .fs-btn:first-child { border-start-start-radius: var(--fs-radius-sm); border-end-start-radius: var(--fs-radius-sm); }
+  .fs-button-group > .fs-btn:last-child { border-start-end-radius: var(--fs-radius-sm); border-end-end-radius: var(--fs-radius-sm); }
+  .fs-button-group > .fs-btn + .fs-btn { margin-inline-start: -1px; }
+  .fs-button-group-vertical { flex-direction: column; align-items: flex-start; }
+  .fs-button-group-vertical > .fs-btn { width: 100%; }
+}

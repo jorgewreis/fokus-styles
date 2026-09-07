@@ -1,0 +1,19 @@
+@layer utilities {
+  .fs-u-focus-ring:focus-visible {
+    outline: var(--fs-focus-width) solid var(--fs-focus-color);
+    outline-offset: var(--fs-focus-offset);
+    box-shadow: 0 0 0 var(--fs-focus-ring-size) var(--fs-focus-ring-color);
+  }
+
+  .fs-u-disabled,
+  .fs-u-disabled[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: var(--fs-disabled-opacity);
+    pointer-events: none;
+  }
+
+  @media print {
+    .fs-u-print-hidden { display: none !important; }
+    .fs-u-print-visible { display: block !important; }
+  }
+}

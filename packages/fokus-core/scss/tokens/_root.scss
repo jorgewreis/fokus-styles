@@ -55,12 +55,26 @@
     --fs-control-padding-x-lg: 16px;
     --fs-focus-width: 2px;
     --fs-focus-offset: 2px;
+    --fs-focus-color: var(--fs-color-primary);
+    --fs-focus-ring-size: 3px;
+    --fs-focus-ring-color: color-mix(in srgb, var(--fs-focus-color) 22%, transparent);
     --fs-focus-ring-alpha: 22%;
     --fs-transition-fast: 150ms;
     --fs-transition-normal: 220ms;
+    --fs-motion-duration-fast: var(--fs-transition-fast);
+    --fs-motion-duration-normal: var(--fs-transition-normal);
+    --fs-motion-ease-standard: var(--fs-ease-standard);
     --fs-ease-standard: cubic-bezier(0.2, 0, 0, 1);
     --fs-border-width: 1px;
     --fs-disabled-opacity: 0.5;
+    --fs-safe-area-top: env(safe-area-inset-top, 0px);
+    --fs-safe-area-right: env(safe-area-inset-right, 0px);
+    --fs-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --fs-safe-area-left: env(safe-area-inset-left, 0px);
+    --fs-component-control-height: var(--fs-control-height);
+    --fs-component-overlay-backdrop: rgb(0 0 0 / 55%);
+    --fs-component-panel-radius: var(--fs-radius-md);
+    --fs-component-panel-shadow: var(--fs-shadow-lg);
 
     // Referência dos limiares usados pelos utilitários `@container` (ver
     // `packages/fokus-utilities/scss/utilities/_container-queries.scss`).

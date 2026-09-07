@@ -1,0 +1,10 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-ratio { position: relative; width: 100%; }
+  .fs-ratio::before { display: block; padding-top: var(--fs-ratio, 56.25%); content: ""; }
+  .fs-ratio > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .fs-ratio-1x1 { --fs-ratio: 100%; }
+  .fs-ratio-4x3 { --fs-ratio: 75%; }
+  .fs-ratio-16x9 { --fs-ratio: 56.25%; }
+  .fs-ratio-21x9 { --fs-ratio: 42.857%; }
+}
