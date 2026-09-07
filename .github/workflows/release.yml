@@ -79,3 +79,12 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Deprecate legacy Clarus packages
+        if: github.ref_name == 'v2.0.0'
+        run: |
+          for PACKAGE in clarus-css clarus-icons clarus-cli clarus-react; do
+            npm deprecate "$PACKAGE" "Este pacote foi descontinuado. Migre para fokus-styles: https://www.npmjs.com/package/fokus-styles"
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
