@@ -1,0 +1,23 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
+@layer components {
+  .fs-stack { display: flex; flex-direction: column; gap: var(--fs-stack-gap, var(--fs-space-3)); }
+  .fs-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--fs-cluster-gap, var(--fs-space-2)); }
+  .fs-responsive-media { width: 100%; height: auto; object-fit: cover; }
+
+  @media (width <= 639.98px) {
+    .fs-modal-dialog, .fs-offcanvas { max-width: 100%; margin-inline: 0; border-radius: 0; }
+    .fs-table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .fs-btn-group-responsive, .fs-btn-group-responsive > .fs-btn { width: 100%; }
+    .fs-btn-group-responsive { flex-direction: column; }
+  }
+
+  @media (width >= 640px) {
+    .fs-stack-md-row { flex-direction: row; align-items: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .fs-stack, .fs-cluster { scroll-behavior: auto; } }
+
+  @media (forced-colors: active) {
+    .fs-card, .fs-dropdown-menu, .fs-modal-content, .fs-offcanvas, .fs-toast { border: 1px solid CanvasText; box-shadow: none; }
+  }
+}

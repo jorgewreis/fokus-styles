@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0] - 2026-09-07
+
+- expande a Utility API com display, flex, gap, tipografia, estados e variantes responsivas configuráveis;
+- padroniza APIs estáticas de Dropdown, Tabs e Carousel e eventos comuns `fs:shown`/`fs:hidden`;
+- adiciona pausa de Toast por foco/hover, layouts Stack/Cluster e regras responsivas para telas estreitas;
+- reforça composição RTL, forced colors, redução de movimento e layouts responsivos sem alterar a API `fs-*` existente.
+
 ## [2.4.0] - 2026-09-07
 
 - adiciona preset `fokus-rtl.css` e export `fokus-styles/rtl.css`;

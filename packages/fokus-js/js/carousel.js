@@ -91,6 +91,11 @@ export class Carousel {
     return instances.get(el);
   }
 
+  static getOrCreateInstance(el) { return this.getInstance(el) ?? new Carousel(el); }
+  static next(el) { return this.getOrCreateInstance(el).next(); }
+  static prev(el) { return this.getOrCreateInstance(el).prev(); }
+  static goTo(el, index) { return this.getOrCreateInstance(el).goTo(index); }
+
   _isDocumentVisible() {
     return document.visibilityState !== "hidden";
   }
@@ -165,6 +170,9 @@ export class Carousel {
 
     this.index = to;
     this._render();
+    this.carouselEl.dispatchEvent(
+      new CustomEvent("fs:shown", { bubbles: true, detail: { from, to } }),
+    );
     this.carouselEl.dispatchEvent(
       new CustomEvent("fs:carousel:slid", { bubbles: true, detail: { from, to } }),
     );

@@ -45,6 +45,10 @@ export class Tabs {
     return instances.get(el);
   }
 
+  static getOrCreateInstance(el) { return this.getInstance(el) ?? new Tabs(el); }
+  static show(el, tab) { return this.getOrCreateInstance(el).show(tab); }
+  static dispose(el) { return this.getInstance(el)?.dispose(); }
+
   _handleClick(event) {
     const tab = event.target.closest(".fs-nav-link:not(.is-disabled)");
     if (!tab || !this.tabs.includes(tab)) return;
@@ -86,6 +90,7 @@ export class Tabs {
       if (pane) pane.hidden = !isActive;
     });
 
+    tab.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
     tab.dispatchEvent(
       new CustomEvent("fs:tab:changed", { bubbles: true, detail: { target: tab.getAttribute("data-fs-target") } }),
     );

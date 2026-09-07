@@ -10,13 +10,20 @@ export class Toast {
     this.autohide = toastEl.getAttribute("data-autohide") !== "false";
     this.isOpen = false;
     this._hideTimer = null;
+    this._paused = false;
 
     toastEl.setAttribute("role", "status");
     toastEl.setAttribute("aria-live", "polite");
     toastEl.style.display = "none";
 
     this._handleDismissClick = this._handleDismissClick.bind(this);
+    this._pause = () => { this._paused = true; clearTimeout(this._hideTimer); };
+    this._resume = () => { this._paused = false; if (this.isOpen && this.autohide) this._scheduleHide(); };
     toastEl.addEventListener("click", this._handleDismissClick);
+    toastEl.addEventListener("mouseenter", this._pause);
+    toastEl.addEventListener("mouseleave", this._resume);
+    toastEl.addEventListener("focusin", this._pause);
+    toastEl.addEventListener("focusout", this._resume);
 
     instances.set(toastEl, this);
   }
@@ -41,10 +48,10 @@ export class Toast {
       this.toastEl.dispatchEvent(new CustomEvent("fs:toast:shown", { bubbles: true }));
     });
 
-    if (this.autohide) {
-      this._hideTimer = setTimeout(() => this.hide(), this.delay);
-    }
+    this._scheduleHide();
   }
+
+  _scheduleHide() { clearTimeout(this._hideTimer); if (this.autohide && !this._paused) this._hideTimer = setTimeout(() => this.hide(), this.delay); }
 
   hide() {
     if (!this.isOpen) return;
@@ -71,6 +78,10 @@ export class Toast {
   dispose() {
     clearTimeout(this._hideTimer);
     this.toastEl.removeEventListener("click", this._handleDismissClick);
+    this.toastEl.removeEventListener("mouseenter", this._pause);
+    this.toastEl.removeEventListener("mouseleave", this._resume);
+    this.toastEl.removeEventListener("focusin", this._pause);
+    this.toastEl.removeEventListener("focusout", this._resume);
     instances.delete(this.toastEl);
   }
 }

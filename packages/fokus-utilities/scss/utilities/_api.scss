@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-single-line-max-declarations */
 @use "sass:map";
 @use "../../fokus-core/scss/settings" as *;
 @use "../../fokus-core/scss/tools" as tools;
@@ -7,6 +8,8 @@
 $fs-utility-colors: $theme-colors !default;
 $fs-utility-spacers: $spacers !default;
 $fs-utility-sizes: (25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto) !default;
+$fs-utility-displays: (block, inline, inline-block, flex, grid, none) !default;
+$fs-utility-flex-directions: (row, column, row-reverse, column-reverse) !default;
 
 @layer utilities {
   @if fs-config-list-enabled(colors, color) {
@@ -44,5 +47,50 @@ $fs-utility-sizes: (25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto) !default;
         }
       }
     }
+  }
+
+  @if fs-config-list-enabled(display, display) {
+    @each $display in $fs-utility-displays {
+      .fs-u-d-#{$display} { display: $display !important; }
+    }
+  }
+
+  @if fs-config-list-enabled(flex, flex) {
+    @each $direction in $fs-utility-flex-directions {
+      .fs-u-flex-#{$direction} { flex-direction: $direction !important; }
+    }
+    .fs-u-flex-wrap { flex-wrap: wrap !important; }
+    .fs-u-flex-nowrap { flex-wrap: nowrap !important; }
+    .fs-u-justify-start { justify-content: flex-start !important; }
+    .fs-u-justify-center { justify-content: center !important; }
+    .fs-u-justify-end { justify-content: flex-end !important; }
+    .fs-u-justify-between { justify-content: space-between !important; }
+    .fs-u-align-start { align-items: flex-start !important; }
+    .fs-u-align-center { align-items: center !important; }
+    .fs-u-align-end { align-items: flex-end !important; }
+  }
+
+  @if fs-config-list-enabled(gap, gap) {
+    @each $name, $value in $fs-utility-spacers {
+      .fs-u-gap-#{$name} { gap: $value !important; }
+      .fs-u-row-gap-#{$name} { row-gap: $value !important; }
+      .fs-u-column-gap-#{$name} { column-gap: $value !important; }
+    }
+  }
+
+  @if fs-config-list-enabled(typography, typography) {
+    .fs-u-text-start { text-align: start !important; }
+    .fs-u-text-center { text-align: center !important; }
+    .fs-u-text-end { text-align: end !important; }
+    .fs-u-text-wrap { white-space: normal !important; }
+    .fs-u-text-nowrap { white-space: nowrap !important; }
+    .fs-u-fw-normal { font-weight: 400 !important; }
+    .fs-u-fw-semibold { font-weight: 600 !important; }
+    .fs-u-fw-bold { font-weight: 700 !important; }
+  }
+
+  @if fs-config-list-enabled(states, states) {
+    .fs-u-focus-ring:focus-visible { outline: var(--fs-focus-width) solid var(--fs-focus-color); outline-offset: var(--fs-focus-offset); }
+    .fs-u-disabled:disabled, .fs-u-disabled[aria-disabled="true"] { pointer-events: none; opacity: var(--fs-disabled-opacity); }
   }
 }

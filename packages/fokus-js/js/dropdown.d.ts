@@ -13,6 +13,10 @@ export class Dropdown {
   constructor(toggleEl: HTMLElement, options?: DropdownOptions);
 
   static getInstance(el: Element): Dropdown | undefined;
+  static getOrCreateInstance(el: Element, options?: DropdownOptions): Dropdown;
+  static show(el: Element, options?: DropdownOptions): void;
+  static hide(el: Element): void;
+  static toggle(el: Element, options?: DropdownOptions): void;
 
   show(): void;
   hide(): void;

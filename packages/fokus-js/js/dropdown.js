@@ -57,6 +57,11 @@ export class Dropdown {
     return instances.get(el);
   }
 
+  static getOrCreateInstance(el, options = {}) { return this.getInstance(el) ?? new Dropdown(el, options); }
+  static show(el, options = {}) { return this.getOrCreateInstance(el, options).show(); }
+  static hide(el) { return this.getInstance(el)?.hide(); }
+  static toggle(el, options = {}) { return this.getOrCreateInstance(el, options).toggle(); }
+
   _handleToggleClick(event) {
     event.preventDefault();
     this.toggle();
@@ -127,6 +132,7 @@ export class Dropdown {
       this.hide();
     });
 
+    this.toggleEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
     this.toggleEl.dispatchEvent(new CustomEvent("fs:dropdown:shown", { bubbles: true }));
   }
 
@@ -145,6 +151,7 @@ export class Dropdown {
     this._positionCleanup?.();
     this._positionCleanup = null;
 
+    this.toggleEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
     this.toggleEl.dispatchEvent(new CustomEvent("fs:dropdown:hidden", { bubbles: true }));
   }
 
