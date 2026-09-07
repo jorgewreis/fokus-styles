@@ -65,7 +65,7 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "fokus": "./packages/fokus-cli/bin/fokus.mjs"
+    "fokus": "packages/fokus-cli/bin/fokus.mjs"
   },
   "files": [
     "assets",
