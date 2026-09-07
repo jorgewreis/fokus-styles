@@ -1,21 +1,199 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
 @layer components {
   .fs-spinner {
+    --fs-spinner-size: 20px;
+    --fs-spinner-stroke: 2px;
+    --fs-spinner-duration: 0.8s;
+
     display: inline-block;
-    width: 1.25rem;
-    height: 1.25rem;
-    border: 0.15rem solid currentcolor;
-    border-inline-end-color: transparent;
+    box-sizing: border-box;
+    width: var(--fs-spinner-size);
+    height: var(--fs-spinner-size);
+    vertical-align: middle;
+    border: var(--fs-spinner-stroke) solid color-mix(in srgb, currentcolor 20%, transparent);
+    border-top-color: currentcolor;
     border-radius: 50%;
-    animation: fs-spin 0.75s linear infinite;
-    vertical-align: -0.2em;
+    animation: fokus-spin var(--fs-spinner-duration) linear infinite;
+    will-change: transform;
   }
 
-  [aria-busy="true"] .fs-spinner,
-  .fs-spinner[data-fs-loading] { visibility: visible; }
+  .fs-spinner-sm {
+    --fs-spinner-size: 14px;
+    --fs-spinner-stroke: 2px;
+  }
 
-  @keyframes fs-spin { to { transform: rotate(360deg); } }
+  .fs-spinner-lg {
+    --fs-spinner-size: 32px;
+    --fs-spinner-stroke: 3px;
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-spinner-#{$name} {
+      color: var(--fs-color-#{$name});
+    }
+  }
+
+  @keyframes fokus-spin { to { transform: rotate(360deg); } }
+
+  .fs-progress {
+    --fs-progress-height: 8px;
+    --fs-progress-track: var(--fs-color-subtle);
+    --fs-progress-radius: 0;
+
+    position: relative;
+    display: flex;
+    height: var(--fs-progress-height);
+    overflow: hidden;
+    background-color: var(--fs-progress-track);
+    border-radius: var(--fs-progress-radius);
+  }
+
+  .fs-progress-bar {
+    --fs-progress-bar-bg: var(--fs-color-primary);
+    --fs-progress-color: var(--fs-color-on-primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--fs-progress-value, 0) * 1%);
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--fs-progress-color);
+    background-color: var(--fs-progress-bar-bg);
+    font-size: 0;
+    line-height: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: width 0.25s ease-out;
+  }
+
+  @each $name, $color in $theme-colors {
+    .fs-progress-bar-#{$name} {
+      --fs-progress-bar-bg: var(--fs-color-#{$name});
+      --fs-progress-color: #{color-contrast($color)};
+    }
+  }
+
+  .fs-spinner[data-fs-loading="false"] {
+    display: none;
+  }
+
+  .fs-progress-sm {
+    --fs-progress-height: 4px;
+  }
+
+  .fs-progress-lg {
+    --fs-progress-height: 16px;
+  }
+
+  .fs-progress-lg .fs-progress-bar {
+    padding-inline: 6px;
+    font-size: $font-size-xs;
+  }
+
+  .fs-progress-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 480px;
+    margin-bottom: 6px;
+    color: var(--fs-color-text);
+    font-size: $font-size-sm;
+  }
+
+  .fs-progress-value {
+    color: var(--fs-color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fs-progress-indeterminate .fs-progress-bar {
+    width: 36%;
+    animation: fokus-progress-indeterminate 1.25s ease-in-out infinite;
+  }
+
+  .fs-progress-indeterminate {
+    --fs-progress-track: color-mix(in srgb, var(--fs-color-primary) 18%, transparent);
+  }
+
+  @keyframes fokus-progress-indeterminate { from { transform: translateX(-110%); } to { transform: translateX(290%); } }
+
+  .fs-progress-complete .fs-progress-bar {
+    --fs-progress-bar-bg: var(--fs-color-success);
+    --fs-progress-color: #{color-contrast($fokus-color-success)};
+  }
+
+  .fs-progress-error .fs-progress-bar {
+    --fs-progress-bar-bg: var(--fs-color-danger);
+    --fs-progress-color: #{color-contrast($fokus-color-danger)};
+  }
+
+  .fs-progress-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-sm;
+  }
+
+  .fs-progress-status-icon {
+    display: inline-grid;
+    width: 14px;
+    height: 14px;
+    place-items: center;
+    color: var(--fs-alert-success-text);
+  }
+
+  .fs-progress-status-icon .fs-icon {
+    width: 14px;
+    height: 14px;
+    stroke: currentcolor;
+  }
+
+  .fs-progress-status-danger,
+  .fs-progress-error + .fs-progress-status {
+    color: var(--fs-alert-danger-text);
+  }
+
+  .fs-progress-marker {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--fs-progress-marker-value) * 1%);
+    width: 2px;
+    background-color: var(--fs-color-text);
+    pointer-events: none;
+    transform: translateX(-1px);
+  }
+
+  .fs-progress-minimum .fs-progress-bar {
+    width: max(calc(var(--fs-progress-value, 0) * 1%), 4px);
+  }
+
+  .fs-progress-bar-striped {
+    background-image: linear-gradient(45deg, color-mix(in srgb, currentcolor 16%, transparent) 25%, transparent 25%, transparent 50%, color-mix(in srgb, currentcolor 16%, transparent) 50%, color-mix(in srgb, currentcolor 16%, transparent) 75%, transparent 75%, transparent);
+    background-size: 16px 16px;
+  }
+  .fs-progress-bar-animated { animation: fokus-progress-stripes 1s linear infinite; }
+
+  @keyframes fokus-progress-stripes { from { background-position: 16px 0; } to { background-position: 0 0; } }
 
   @media (prefers-reduced-motion: reduce) {
-    .fs-spinner { animation-duration: 1.5s; }
+    .fs-spinner {
+      --fs-spinner-duration: 1.5s;
+    }
+
+    .fs-progress-bar-animated {
+      animation-duration: 1.5s;
+    }
+
+    .fs-progress-indeterminate .fs-progress-bar {
+      animation-duration: 1.8s;
+    }
   }
 }

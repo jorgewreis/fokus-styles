@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.0] - 2026-09-07
+
+- adiciona registro compartilhado de overlays, evitando múltiplos Modal/Offcanvas concorrentes;
+- amplia o contrato TypeScript do núcleo de overlay;
+- mantém o gerenciamento de foco, `inert`, scroll lock e eventos `fs:*` coordenados entre componentes.
+
 ## [2.2.0] - 2026-09-07
 
 - adiciona Utility API Sass configurável para cores, espaçamento, sizing e variantes responsivas;

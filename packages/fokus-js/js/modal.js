@@ -1,4 +1,4 @@
-import { lockScroll, unlockScroll, onClickOutside } from "./core/overlay.js";
+import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay } from "./core/overlay.js";
 import { createFocusTrap, onEscapeKey } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
@@ -70,6 +70,7 @@ export class Modal {
     if (this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
+    registerOverlay(this);
 
     this.modalEl.classList.add("is-open");
     this.modalEl.setAttribute("aria-hidden", "false");
@@ -90,6 +91,7 @@ export class Modal {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this.modalEl.classList.remove("is-open");
     this.modalEl.setAttribute("aria-hidden", "true");

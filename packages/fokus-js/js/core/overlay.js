@@ -2,6 +2,16 @@ let lockCount = 0;
 let paddingCompensated = false;
 let previousOverflow = "";
 let previousPaddingRight = "";
+const activeOverlays = [];
+
+export function registerOverlay(instance) {
+  if (!activeOverlays.includes(instance)) activeOverlays.push(instance);
+}
+
+export function unregisterOverlay(instance) {
+  const index = activeOverlays.lastIndexOf(instance);
+  if (index >= 0) activeOverlays.splice(index, 1);
+}
 
 export function lockScroll() {
   lockCount += 1;

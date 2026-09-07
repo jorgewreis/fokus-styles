@@ -1,4 +1,4 @@
-import { lockScroll, unlockScroll, onClickOutside } from "./core/overlay.js";
+import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay } from "./core/overlay.js";
 import { createFocusTrap, onEscapeKey } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
@@ -71,6 +71,7 @@ export class Offcanvas {
     if (this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
+    registerOverlay(this);
 
     if (this.hasBackdrop) {
       this._backdropEl = document.createElement("div");
@@ -113,6 +114,7 @@ export class Offcanvas {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this.offcanvasEl.classList.remove("is-open");
     this.offcanvasEl.setAttribute("aria-hidden", "true");
