@@ -35,6 +35,7 @@ const cssEntries = [
   { entryPath: path.join(entriesDir, "utilities-entry.scss"), outName: "fokus-utilities" },
   { entryPath: path.join(entriesDir, "components-entry.scss"), outName: "fokus-components" },
   { entryPath: path.join(entriesDir, "dark-entry.scss"), outName: "fokus-dark" },
+  { entryPath: path.join(entriesDir, "rtl-entry.scss"), outName: "fokus-rtl" },
   { entryPath: path.join(entriesDir, "fonts-entry.scss"), outName: "fonts" },
   { entryPath: path.join(scssDir, "fokus.scss"), outName: "fokus" },
 ];

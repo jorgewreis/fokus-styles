@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.0] - 2026-09-07
+
+- adiciona preset `fokus-rtl.css` e export `fokus-styles/rtl.css`;
+- amplia tokens para `prefers-contrast: more` e regras de `forced-colors: active`;
+- documenta RTL, alto contraste, foco e preferências de movimento/cor do sistema.
+
 ## [2.3.0] - 2026-09-07
 
 - adiciona registro compartilhado de overlays, evitando múltiplos Modal/Offcanvas concorrentes;

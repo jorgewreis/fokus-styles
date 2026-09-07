@@ -75,6 +75,8 @@
     --fs-component-overlay-backdrop: rgb(0 0 0 / 55%);
     --fs-component-panel-radius: var(--fs-radius-md);
     --fs-component-panel-shadow: var(--fs-shadow-lg);
+    --fs-contrast-border-width: var(--fs-border-width);
+    --fs-contrast-focus-width: var(--fs-focus-width);
 
     // Referência dos limiares usados pelos utilitários `@container` (ver
     // `packages/fokus-utilities/scss/utilities/_container-queries.scss`).
@@ -126,6 +128,15 @@
       @each $name, $bg in $theme-bg-colors {
         --fs-feedback-#{$name}-bg: #{$bg};
       }
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --fs-contrast-border-width: 2px;
+      --fs-contrast-focus-width: 3px;
+      --fs-focus-width: var(--fs-contrast-focus-width);
+      --fs-border-width: var(--fs-contrast-border-width);
     }
   }
 }
