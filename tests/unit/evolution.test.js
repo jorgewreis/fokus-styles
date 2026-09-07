@@ -3,6 +3,7 @@ import { Theme } from "../../packages/fokus-js/js/theme.js";
 import { FormValidation } from "../../packages/fokus-js/js/form-validation.js";
 import { Navbar } from "../../packages/fokus-js/js/navbar.js";
 import { Scrollspy } from "../../packages/fokus-js/js/scrollspy.js";
+import { Accordion } from "../../packages/fokus-js/js/accordion.js";
 
 afterEach(() => { document.body.innerHTML = ""; });
 
@@ -42,5 +43,14 @@ describe("Fokus Styles evolution API", () => {
     instance.activate(document.querySelector("#two"));
     expect(nav.querySelector('a[href="#two"]').classList.contains("is-active")).toBe(true);
     instance.dispose();
+  });
+
+  it("preserva um painel aberto no modo always-open", () => {
+    document.body.innerHTML = '<div data-fs="accordion" data-fs-always-open="true"><div class="fs-accordion-item"><button class="fs-accordion-button" aria-expanded="true">Um</button><div class="fs-accordion-collapse"><div class="fs-accordion-body">Conteúdo</div></div></div></div>';
+    const accordion = new Accordion(document.querySelector("[data-fs=accordion]"));
+    const button = document.querySelector(".fs-accordion-button");
+    button.click();
+    expect(button.getAttribute("aria-expanded")).toBe("true");
+    accordion.dispose();
   });
 });

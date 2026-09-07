@@ -7,7 +7,8 @@ let idCounter = 0;
 export class Accordion {
   constructor(accordionEl) {
     this.accordionEl = accordionEl;
-    this.exclusive = accordionEl.getAttribute("data-multiple") !== "true";
+    this.exclusive = accordionEl.getAttribute("data-multiple") !== "true" && accordionEl.getAttribute("data-fs-always-open") !== "true";
+    this.alwaysOpen = accordionEl.getAttribute("data-fs-always-open") === "true";
     this.items = [];
 
     const buttons = Array.from(accordionEl.querySelectorAll(".fs-accordion-button"));
@@ -46,6 +47,7 @@ export class Accordion {
     const isOpen = entry.button.getAttribute("aria-expanded") === "true";
 
     if (isOpen) {
+      if (this.alwaysOpen) return;
       this._close(entry);
       return;
     }

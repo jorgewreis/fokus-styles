@@ -61,6 +61,9 @@ explícito fecha. Use para fluxos que exigem uma decisão explícita.
 
 ## A11y
 
+Use `.fs-modal-sm`, `.fs-modal-lg`, `.fs-modal-xl`, `.fs-modal-fullscreen` e
+`.fs-modal-scrollable` conforme o fluxo. Em telas menores o diálogo respeita safe areas.
+
 Ao inicializar, o componente controla `aria-hidden` e, quando encontra
 `.fs-modal-title`, cria automaticamente o vínculo `aria-labelledby`. Um
 `id` existente no título é preservado.

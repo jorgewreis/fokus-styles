@@ -35,6 +35,25 @@
     border-radius: var(--fs-radius-md);
   }
 
+  .fs-skeleton-card {
+    display: grid;
+    gap: var(--fs-space-3);
+    min-height: 10rem;
+    padding: var(--fs-space-4);
+    border-radius: var(--fs-radius-md);
+  }
+
+  .fs-skeleton-table {
+    height: 1.25rem;
+    margin-block-end: var(--fs-space-2);
+  }
+
+  .fs-skeleton-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+
   @keyframes fokus-skeleton-pulse {
     0%,
     100% {

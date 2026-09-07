@@ -98,6 +98,9 @@ de `aria-label` (`"Anterior"`/`"Próxima"`) já que o SVG é `aria-hidden`.
 
 ## A11y
 
+Envolva a paginação em `.fs-pagination-scroll` quando houver muitos itens. Use `nav`
+nomeado, `aria-current="page"` e desabilite controles sem destino real.
+
 - Envolva a lista num `<nav aria-label="Paginação">` — o elemento `<nav>`
   não é gerado pelo framework, adicione no seu HTML.
 - Marque a página atual com `aria-current="page"` no link ativo, além de

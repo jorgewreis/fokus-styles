@@ -40,6 +40,9 @@ composição (o que vai dentro) que muda.
 
 ## A11y
 
+O padrão responsivo usa `.fs-navbar-toggler`, `.fs-navbar-collapse` e `data-fs-target`.
+Mantenha `aria-expanded` e um nome acessível no botão.
+
 - Use `<nav>` como elemento raiz (já no exemplo) — landmark de navegação
   pra leitores de tela.
 - Se houver mais de uma navbar na página, diferencie com

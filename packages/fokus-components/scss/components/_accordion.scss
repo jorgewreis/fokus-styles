@@ -27,6 +27,19 @@
     border-bottom-left-radius: var(--fs-radius-md);
   }
 
+  .fs-accordion-flush .fs-accordion-item {
+    border-inline: 0;
+    border-radius: 0;
+  }
+
+  .fs-accordion-flush .fs-accordion-item:first-child {
+    border-block-start: 0;
+  }
+
+  .fs-accordion-always-open .fs-accordion-button[aria-expanded="true"]::after {
+    transform: rotate(-135deg);
+  }
+
   .fs-accordion-header {
     margin: 0;
   }
@@ -78,5 +91,11 @@
     padding: 16px;
     border-top: 1px solid var(--fs-color-border);
     background-color: var(--fs-color-surface-raised);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-accordion-button::after {
+      transition: none;
+    }
   }
 }

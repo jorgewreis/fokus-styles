@@ -29,6 +29,53 @@
     list-style: none;
   }
 
+  .fs-navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px;
+    color: var(--fs-color-text);
+    background: transparent;
+    border: 1px solid var(--fs-color-border);
+    border-radius: var(--fs-radius-sm);
+    cursor: pointer;
+  }
+
+  .fs-navbar-collapse {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .fs-navbar-collapse:not(.is-open) {
+    display: none;
+  }
+
+  .fs-navbar-collapse.is-open .fs-navbar-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @media (width >= 768px) {
+    .fs-navbar-toggler {
+      display: none;
+    }
+
+    .fs-navbar-collapse,
+    .fs-navbar-collapse:not(.is-open) {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      justify-content: flex-end;
+      width: auto;
+    }
+
+    .fs-navbar-collapse .fs-navbar-nav {
+      flex-direction: row;
+    }
+  }
+
   .fs-nav-link {
     display: inline-flex;
     align-items: center;

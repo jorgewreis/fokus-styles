@@ -53,6 +53,9 @@ opcional que reusa `.fs-table`.
 
 ## A11y
 
+Use `.fs-table-responsive` para rolagem horizontal, `.fs-table-caption` para legenda e
+`.fs-table-empty` para estados sem dados. `.fs-table-priority` preserva colunas essenciais.
+
 - Use `<th scope="col">`/`<th scope="row">` conforme o cabeçalho for de
   coluna ou linha — não é aplicado automaticamente.
 - Para tabelas grandes/complexas, considere `<caption>` descrevendo o

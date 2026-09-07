@@ -92,6 +92,25 @@
     border-top: 1px solid var(--fs-color-border);
   }
 
+  .fs-offcanvas-responsive {
+    width: min(100%, 420px);
+  }
+
+  @media (width >= 1024px) {
+    .fs-offcanvas-lg {
+      position: static;
+      width: auto;
+      height: auto;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .fs-offcanvas-lg + .fs-offcanvas-backdrop {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .fs-offcanvas,
     .fs-offcanvas-backdrop {

@@ -10,6 +10,16 @@
     list-style: none;
   }
 
+  .fs-pagination-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    padding-block: 2px;
+  }
+
+  .fs-pagination-scroll .fs-pagination {
+    width: max-content;
+  }
+
   .fs-page-link {
     display: inline-flex;
     align-items: center;

@@ -29,6 +29,15 @@
     max-width: 720px;
   }
 
+  .fs-modal-dialog.fs-modal-xl {
+    max-width: 1140px;
+  }
+
+  .fs-modal-dialog.fs-modal-fullscreen {
+    max-width: none;
+    height: 100%;
+  }
+
   .fs-modal-content {
     display: flex;
     flex-direction: column;
@@ -57,6 +66,33 @@
   .fs-modal-body {
     padding: 20px;
     overflow-y: auto;
+  }
+
+  .fs-modal-scrollable .fs-modal-content {
+    overflow: hidden;
+  }
+
+  .fs-modal-scrollable .fs-modal-body {
+    overflow-y: auto;
+  }
+
+  @media (width < 640px) {
+    .fs-modal {
+      align-items: flex-end;
+      padding: 0;
+    }
+
+    .fs-modal-dialog,
+    .fs-modal-dialog.fs-modal-sm,
+    .fs-modal-dialog.fs-modal-lg,
+    .fs-modal-dialog.fs-modal-xl {
+      max-width: none;
+    }
+
+    .fs-modal-content {
+      max-height: calc(100dvh - var(--fs-safe-area-top));
+      border-radius: var(--fs-radius-md) var(--fs-radius-md) 0 0;
+    }
   }
 
   .fs-modal-footer {

@@ -55,6 +55,9 @@ força todos fechados).
 
 ## A11y
 
+Use `.fs-accordion-flush` para remover bordas externas. Com `data-fs-always-open="true"`,
+um painel aberto não pode ser fechado isoladamente.
+
 `aria-controls`/`aria-expanded` (botão) e `role="region"`/
 `aria-labelledby` (painel) aplicados automaticamente. Cada botão é um
 `<button>` nativo dentro de um heading (`<h3>`) — navegável por `Tab` e

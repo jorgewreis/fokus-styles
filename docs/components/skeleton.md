@@ -38,6 +38,9 @@ dados reais chegarem.
 
 ## A11y
 
+As variantes `.fs-skeleton-card`, `.fs-skeleton-table` e `.fs-skeleton-avatar` são visuais;
+anuncie o carregamento no contêiner com `aria-busy="true"`.
+
 A animação para automaticamente sob `prefers-reduced-motion: reduce`
 (fica estática, sem pulso/varredura). Se o carregamento for anunciado a
 leitores de tela, envolva o conjunto de skeletons num contêiner com

@@ -107,6 +107,35 @@
     cursor: default;
   }
 
+  .fs-floating-label {
+    position: relative;
+  }
+
+  .fs-floating-label > .fs-form-control {
+    height: 56px;
+    padding-top: 20px;
+  }
+
+  .fs-floating-label > .fs-form-label {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 8px;
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    pointer-events: none;
+  }
+
+  .fs-form-control[aria-invalid="true"],
+  .fs-was-validated .fs-form-control:invalid {
+    border-color: var(--fs-color-danger);
+  }
+
+  .fs-form-control[aria-invalid="false"],
+  .fs-was-validated .fs-form-control:valid {
+    border-color: var(--fs-color-success);
+  }
+
   .fs-form-control-sm {
     height: var(--fs-control-height-sm);
     font-size: $font-size-xs;

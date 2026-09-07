@@ -58,4 +58,24 @@
   .fs-table-responsive {
     overflow-x: auto;
   }
+
+  .fs-table-caption {
+    caption-side: top;
+    padding: var(--fs-space-2) 0;
+    color: var(--fs-color-muted);
+    text-align: start;
+  }
+
+  .fs-table-empty {
+    padding: var(--fs-space-5);
+    color: var(--fs-color-muted);
+    text-align: center;
+  }
+
+  @media (width < 640px) {
+    .fs-table-priority th:nth-child(n + 4),
+    .fs-table-priority td:nth-child(n + 4) {
+      display: none;
+    }
+  }
 }
