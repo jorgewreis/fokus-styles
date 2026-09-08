@@ -12,28 +12,17 @@
     --fs-tooltip-transition-duration: 120ms;
 
     position: absolute;
-    inset: 0 auto auto 0;
     z-index: var(--fs-z-tooltip);
     display: none;
-    visibility: hidden;
     max-inline-size: min(var(--fs-tooltip-max-width), calc(100vw - 16px));
     min-inline-size: 0;
-    opacity: 0;
-    pointer-events: none;
     overflow-wrap: anywhere;
-    transform: translateY(2px);
-    transition: opacity var(--fs-tooltip-transition-duration) ease,
-      transform var(--fs-tooltip-transition-duration) ease,
-      visibility 0s linear var(--fs-tooltip-transition-duration);
   }
 
   .fs-tooltip.is-open {
     display: block;
-    visibility: visible;
-    opacity: 1;
     pointer-events: none;
-    transform: translateY(0);
-    transition-delay: 0s;
+    animation: fs-tooltip-in var(--fs-tooltip-transition-duration) ease-out;
   }
 
   .fs-tooltip-inner {
@@ -83,8 +72,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .fs-tooltip {
-      transition: none;
-      transform: none;
+      animation: none;
     }
   }
 
@@ -103,5 +91,10 @@
       border-color: currentcolor;
       box-shadow: none;
     }
+  }
+
+  @keyframes fs-tooltip-in {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
