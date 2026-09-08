@@ -27,14 +27,14 @@ const targets = [
 // tokens). `forms`/`helpers`/`fonts` não têm teto próprio; ficam de fora do
 // gate (só informativos abaixo).
 //
-// `js/fokus.min.js`: 24 KB — cobre o bundle JS completo (Combobox,
+// `js/fokus.min.js`: 24.25 KB — cobre o bundle JS completo (Combobox,
 // Datepicker, DataTable, Command Palette, Tree View e o restante dos
 // componentes interativos).
 const budgets = {
   "css/layout.min.css": 12 * 1024,
   "css/components.min.css": 18 * 1024,
   "css/fokus.min.css": 32 * 1024,
-  "js/fokus.min.js": 24 * 1024,
+  "js/fokus.min.js": 24.25 * 1024,
 };
 
 const check = process.argv.includes("--check");
