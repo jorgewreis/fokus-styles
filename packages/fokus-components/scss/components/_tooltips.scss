@@ -14,7 +14,7 @@
     position: absolute;
     inset: 0 auto auto 0;
     z-index: var(--fs-z-tooltip);
-    display: block;
+    display: none;
     visibility: hidden;
     max-inline-size: min(var(--fs-tooltip-max-width), calc(100vw - 16px));
     min-inline-size: 0;
@@ -28,6 +28,7 @@
   }
 
   .fs-tooltip.is-open {
+    display: block;
     visibility: visible;
     opacity: 1;
     pointer-events: none;
