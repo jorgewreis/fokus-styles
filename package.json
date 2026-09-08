@@ -1,6 +1,6 @@
 {
   "name": "fokus-styles",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Fokus Styles is a complete CSS framework with components, utilities, vanilla JavaScript, icons, React wrappers, and a CLI.",
   "keywords": [
     "css",
@@ -82,25 +82,27 @@
     "fokus": "packages/fokus-cli/bin/fokus.mjs"
   },
   "files": [
-    "assets",
-    "dist",
-    "scss",
+    "assets/fonts",
+    "dist/css/*.css",
+    "dist/js/*.js",
+    "scss/**/*.scss",
     "packages/fokus-core/scss",
     "packages/fokus-components/scss",
     "packages/fokus-utilities/scss",
     "packages/fokus-fonts/scss",
-    "packages/fokus-js/js",
-    "packages/fokus-icons",
-    "packages/fokus-react/src",
-    "packages/fokus-cli/bin",
-    "packages/fokus-cli/lib",
-    "docs",
-    "scripts/migrate-fokus.mjs",
-    "scripts/migrate-fokus-map.json",
-    "mockup",
+    "packages/fokus-js/js/**/*.js",
+    "packages/fokus-js/js/**/*.d.ts",
+    "packages/fokus-icons/index.js",
+    "packages/fokus-icons/icons/**/*.js",
+    "packages/fokus-icons/svg/**/*.svg",
+    "packages/fokus-icons/LICENSE",
+    "packages/fokus-icons/LICENSE-LUCIDE.txt",
+    "packages/fokus-react/src/**/*.js",
+    "packages/fokus-react/src/**/*.d.ts",
+    "packages/fokus-cli/bin/**/*.mjs",
+    "packages/fokus-cli/lib/**/*.mjs",
     "LICENSE",
-    "README.md",
-    "CHANGELOG.md"
+    "README.md"
   ],
   "engines": {
     "node": ">=18"
