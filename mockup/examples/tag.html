@@ -1,105 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mockup - Tag / Badge Dismissível</title>
-
-    <!-- STYLES IMPORT -->
+    <title>Fokus Styles — Tags</title>
     <link rel="stylesheet" href="../../dist/css/fonts.css">
     <link rel="stylesheet" href="../../dist/css/components.css">
     <link rel="stylesheet" href="../../dist/css/helpers.css">
-    <style>
-        .theme-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            padding: 24px;
-            background-color: var(--fs-color-subtle);
-        }
-
-        html[data-theme="dark"] .theme-panel {
-            color: var(--fs-color-text);
-            background-color: var(--fs-color-surface);
-        }
-
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-    </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
     <script src="../assets/example-theme.js"></script>
+    <style>
+        :root { --demo-max-width: 1080px; --demo-panel-bg: var(--fs-color-surface); --demo-soft-bg: var(--fs-color-subtle); --demo-panel-border: var(--fs-color-border); --demo-accent: var(--fs-color-primary); }
+        * { box-sizing: border-box; }
+        body { min-block-size: 100vh; margin: 0; color: var(--fs-color-text); background: var(--fs-color-bg-subtle); }
+        .demo-page { max-inline-size: var(--demo-max-width); margin-inline: auto; padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+        .demo-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-block-end: 32px; }
+        .demo-eyebrow { margin: 0 0 8px; color: var(--demo-accent); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        html[data-fs-theme="dark"] .demo-eyebrow { color: var(--fs-color-text); }
+        .demo-title { max-inline-size: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+        .demo-lead { max-inline-size: 720px; margin: 16px 0 0; color: var(--fs-color-muted); font-size: 1.05rem; line-height: 1.6; }
+        .demo-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-block: 24px; padding: 12px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); }
+        .demo-actions, .demo-tag-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .demo-section { margin-block-start: 32px; }
+        .demo-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-block-end: 14px; }
+        .demo-heading h2, .demo-card h3, .demo-reference h2 { margin: 0; }
+        .demo-heading p, .demo-card p, .demo-reference p, .demo-status p { color: var(--fs-color-muted); }
+        .demo-heading p { max-inline-size: 650px; margin: 0; font-size: .9rem; }
+        .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .demo-card, .demo-playground, .demo-reference { border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); box-shadow: var(--fs-shadow-sm); }
+        .demo-card { min-block-size: 180px; padding: 20px; }
+        .demo-card p { margin: 10px 0 20px; line-height: 1.55; }
+        .demo-icon { display: grid; inline-size: 36px; block-size: 36px; place-items: center; margin-block-end: 16px; border-radius: var(--fs-radius-sm); color: var(--fs-color-primary); background: var(--demo-soft-bg); font-weight: 700; }
+        .demo-playground { padding: clamp(18px, 3vw, 28px); }
+        .demo-columns { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr); gap: 28px; }
+        .demo-group + .demo-group { margin-block-start: 28px; }
+        .demo-group h3 { margin: 0; font-size: 1rem; }
+        .demo-group > p { margin: 6px 0 14px; color: var(--fs-color-muted); font-size: .9rem; }
+        .demo-sample { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-sample + .demo-sample { margin-block-start: 10px; }
+        .demo-label { flex: 1 1 150px; color: var(--fs-color-muted); font-size: .82rem; }
+        .demo-status { display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-status h3 { margin: 0; }
+        .demo-status p { margin: 8px 0 0; font-size: .9rem; line-height: 1.5; }
+        .demo-status-output { margin: 0; padding: 12px; border-inline-start: 3px solid var(--demo-accent); color: var(--fs-color-text) !important; background: var(--demo-panel-bg); font-size: .85rem !important; }
+        .demo-code { margin: 0; padding: 14px; overflow: auto; border-radius: var(--fs-radius-sm); color: var(--fs-color-text); background: var(--demo-panel-bg); font: .76rem/1.6 var(--fs-font-mono, ui-monospace, monospace); white-space: pre-wrap; }
+        .demo-reference { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: clamp(18px, 3vw, 28px); }
+        .demo-reference p { margin: 8px 0 16px; line-height: 1.5; }
+        .demo-reference ul { margin: 0; padding-inline-start: 20px; color: var(--fs-color-muted); line-height: 1.8; }
+        .demo-reference code { color: var(--fs-color-primary); }
+        @media (max-width: 760px) { .demo-hero, .demo-columns, .demo-reference { grid-template-columns: 1fr; } .demo-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-<div class="theme-panel">
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Tags removíveis (clique no "x")</p>
-        <div class="tag-row" id="tags-claro">
-            <span class="fs-badge fs-tag" data-fs="tag">
-                Frontend
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button>
-            </span>
-            <span class="fs-badge fs-badge-primary fs-tag" data-fs="tag">
-                Urgente
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Urgente"></button>
-            </span>
-            <span class="fs-badge fs-badge-success fs-tag" data-fs="tag">
-                Aprovado
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Aprovado"></button>
-            </span>
-            <span class="fs-badge fs-badge-danger fs-tag" data-fs="tag">
-                Bloqueado
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Bloqueado"></button>
-            </span>
-        </div>
+    <main class="demo-page">
+        <header class="demo-hero">
+            <div>
+                <p class="demo-eyebrow">Fokus Styles · extensão do Badge</p>
+                <h1 class="demo-title">Tags para filtros, categorias e seleções removíveis.</h1>
+                <p class="demo-lead">Tag mantém o visual compacto do Badge, mas adiciona uma ação explícita de remoção. Ícones ajudam a orientar a leitura; o texto continua sendo a fonte principal do significado.</p>
+                <div class="demo-tag-row" aria-label="Exemplos rápidos">
+                    <span class="fs-badge fs-tag fs-badge-soft-primary" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button></span>
+                    <span class="fs-badge fs-tag fs-badge-success" data-fs="tag"><span class="fs-tag-icon" aria-hidden="true"><svg class="fs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span class="fs-tag-label">Aprovado</span><button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Aprovado"></button></span>
+                </div>
+            </div>
+            <span class="fs-badge fs-badge-outline-primary">Badge + dismiss</span>
+        </header>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Agrupamento (.fs-tag-group)</p>
-        <div class="fs-tag-group">
-            <span class="fs-badge fs-tag" data-fs="tag">Design<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="fs-badge fs-tag" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="fs-badge fs-tag" data-fs="tag">Backend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="fs-badge fs-tag" data-fs="tag">DevOps<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
-            <span class="fs-badge fs-tag" data-fs="tag">QA<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover"></button></span>
-        </div>
+        <nav class="demo-toolbar" aria-label="Controles da demonstração">
+            <div class="demo-actions"><button class="fs-btn fs-btn-primary fs-btn-sm" type="button" id="reset-demo">Restaurar demonstração</button><button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button></div>
+            <span class="fs-form-text">Remova tags com o botão de fechar ou use Tab e Enter.</span>
+        </nav>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Ícone, texto longo e operação pendente</p>
-        <div class="tag-row">
-            <span class="fs-badge fs-badge-soft-primary fs-tag" data-fs="tag">
-                <span class="fs-tag-icon" aria-hidden="true"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
-                <span class="fs-tag-label">Documento</span>
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Documento"></button>
-            </span>
-            <span class="fs-badge fs-tag fs-tag-truncate" data-fs="tag" style="--fs-tag-max-inline-size: 190px;" title="Revisão de acessibilidade e compatibilidade entre navegadores">
-                <span class="fs-tag-label">Revisão de acessibilidade e compatibilidade entre navegadores</span>
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Revisão de acessibilidade e compatibilidade entre navegadores"></button>
-            </span>
-            <span class="fs-badge fs-badge-warning fs-tag is-loading" data-fs="tag" aria-busy="true">
-                <span class="fs-tag-label">Salvando</span>
-                <span class="fs-spinner" aria-hidden="true"></span>
-                <button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Salvando" disabled></button>
-            </span>
-        </div>
+        <section class="demo-section" aria-labelledby="why-title">
+            <div class="demo-heading"><div><h2 id="why-title">Badge, Tag ou Alert?</h2><p>Escolha pelo papel da informação: ler, gerenciar uma seleção ou compreender uma mensagem.</p></div></div>
+            <div class="demo-grid">
+                <article class="demo-card"><span class="demo-icon" aria-hidden="true">#</span><h3>Badge informa</h3><p>Status e classificação são estáticos e complementam um item que já tem contexto.</p><span class="fs-badge fs-badge-success">Ativo</span></article>
+                <article class="demo-card"><span class="demo-icon" aria-hidden="true">×</span><h3>Tag remove</h3><p>Filtros e categorias selecionadas podem ser gerenciados pelo botão de fechar.</p><span class="fs-badge fs-tag fs-badge-primary" data-fs="tag">Urgente<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Urgente"></button></span></article>
+                <article class="demo-card"><span class="demo-icon" aria-hidden="true">!</span><h3>Alert explica</h3><p>Quando existe contexto, consequência ou próxima ação, use uma mensagem persistente.</p><div class="fs-alert fs-alert-warning" role="status">Revise os filtros antes de continuar.</div></article>
+            </div>
+        </section>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-0">Overflow de agrupamento</p>
-        <div class="fs-tag-group" aria-label="Tags do projeto">
-            <span class="fs-badge fs-tag" data-fs="tag">Design<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Design"></button></span>
-            <span class="fs-badge fs-tag" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button></span>
-            <button type="button" class="fs-badge fs-tag fs-tag-overflow" aria-label="Mostrar mais 3 tags" aria-expanded="false"><svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"/><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"/><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"/></svg></button>
-        </div>
+        <section class="demo-section" aria-labelledby="playground-title">
+            <div class="demo-heading"><div><h2 id="playground-title">Laboratório de Tags</h2><p>Os exemplos abaixo demonstram ícones, estados, grupos e truncamento sem transformar a Tag inteira em botão.</p></div><span class="fs-badge fs-badge-outline-success">interativo</span></div>
+            <div class="demo-playground"><div class="demo-columns"><div>
+                <div class="demo-group"><h3>Ícones e estados</h3><p>Use ícones decorativos quando o texto já comunica o significado. O botão de fechar permanece a única ação.</p><div class="demo-sample"><span class="demo-label">Ícone inicial</span><span class="fs-badge fs-tag fs-badge-soft-primary" data-fs="tag"><span class="fs-tag-icon" aria-hidden="true"><svg class="fs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7"/><path d="M16 2v4M8 2v4M4 10h16"/><path d="m16 16 2 2 4-4"/></svg></span><span class="fs-tag-label">Documento</span><button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Documento"></button></span></div><div class="demo-sample"><span class="demo-label">Ícone final</span><span class="fs-badge fs-tag fs-badge-soft-success" data-fs="tag"><span class="fs-tag-label">Sincronizado</span><span class="fs-tag-icon fs-tag-icon-end" aria-hidden="true"><svg class="fs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Sincronizado"></button></span></div><div class="demo-sample"><span class="demo-label">Loading</span><span class="fs-badge fs-tag fs-badge-warning is-loading" data-fs="tag" aria-busy="true"><span class="fs-tag-label">Salvando</span><span class="fs-spinner" aria-hidden="true"></span><button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Salvando" disabled></button></span></div></div>
+                <div class="demo-group"><h3>Grupo, truncamento e overflow</h3><p>Em grupos densos, o foco revela a Tag ativa e o overflow representa itens que não cabem.</p><div class="demo-sample"><span class="demo-label">Grupo</span><div class="fs-tag-group" aria-label="Filtros selecionados"><span class="fs-badge fs-tag" data-fs="tag">Design<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Design"></button></span><span class="fs-badge fs-tag" data-fs="tag">Frontend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Frontend"></button></span><span class="fs-badge fs-tag" data-fs="tag">Backend<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Backend"></button></span><button type="button" class="fs-badge fs-tag fs-tag-overflow" aria-label="Mostrar mais 3 tags" aria-expanded="false">+3</button></div></div><div class="demo-sample"><span class="demo-label">Truncada</span><span class="fs-badge fs-tag fs-tag-truncate fs-badge-soft-primary" data-fs="tag" style="--fs-tag-max-inline-size: 230px;" title="Revisão de acessibilidade e compatibilidade entre navegadores"><span class="fs-tag-icon" aria-hidden="true">◆</span><span class="fs-tag-label">Revisão de acessibilidade e compatibilidade entre navegadores</span><button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover tag Revisão de acessibilidade e compatibilidade entre navegadores"></button></span></div></div>
+                <div class="demo-group"><h3>Protegida</h3><p>Quando a seleção não pode ser removida, não renderize um botão desabilitado: comunique a proteção.</p><div class="demo-sample"><span class="demo-label">Somente leitura</span><span class="fs-badge fs-tag fs-badge-warning fs-tag-protected" aria-disabled="true"><span class="fs-tag-label">Obrigatória</span><span class="fs-tag-lock" aria-hidden="true"><svg class="fs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></span></div></div>
+            </div><aside class="demo-status" aria-labelledby="status-title"><div><h3 id="status-title">Contrato da Tag</h3><p>A Tag herda a aparência do Badge, mas somente o botão de fechar remove o elemento.</p></div><p class="demo-status-output" id="demo-status" role="status" aria-live="polite">Demonstração pronta.</p><pre class="demo-code"><code>.fs-badge.fs-tag
+.fs-tag-icon
+.fs-tag-icon-end
+.fs-tag-label
+.fs-btn-close
+.fs-tag-truncate
+.fs-tag-group
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-0">Tag protegida (não removível)</p>
-        <div class="tag-row">
-            <span class="fs-badge fs-badge-warning fs-tag fs-tag-protected" aria-disabled="true">
-                <span class="fs-tag-label">Protegida</span>
-                <span class="fs-tag-lock" aria-hidden="true">
-                    <svg class="fs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                </span>
-            </span>
-        </div>
-    </div>
+/* tokens locais */
+--fs-tag-icon-size
+--fs-tag-icon-gap
+--fs-tag-close-size</code></pre></aside></div></div>
+        </section>
 
-
+        <section class="demo-section" aria-labelledby="a11y-title"><div class="demo-heading"><div><h2 id="a11y-title">Contratos preservados</h2><p>Ícones são apoio visual: estados importantes continuam escritos e o nome da remoção fica no botão.</p></div></div><div class="demo-reference"><div><h2>Uso acessível</h2><ul><li>Use <code>aria-hidden="true"</code> quando o ícone for decorativo.</li><li>Inclua o nome da Tag no <code>aria-label</code> do fechamento.</li><li>Não use Tag somente com ícone como padrão.</li><li>O texto completo continua no DOM quando houver truncamento.</li></ul></div><div><h2>Interação</h2><ul><li>Tab chega ao botão de remoção, não à Tag inteira.</li><li>Após remover com foco, a próxima Tag recebe foco.</li><li>Loading usa <code>aria-busy</code> e bloqueia remoção.</li><li>RTL usa propriedades lógicas e mantém a ordem visual.</li></ul></div></div></section>
+    </main>
     <script src="../../dist/js/fokus.js"></script>
+    <script>
+        const page = document.querySelector(".demo-page");
+        const status = document.getElementById("demo-status");
+        const directionButton = document.getElementById("toggle-direction");
+        document.querySelectorAll('[data-fs-dismiss="tag"]').forEach((button) => button.addEventListener("click", () => { status.textContent = "Tag removida da demonstração."; }));
+        document.getElementById("reset-demo").addEventListener("click", () => { page.setAttribute("dir", "ltr"); directionButton.setAttribute("aria-pressed", "false"); directionButton.textContent = "Testar RTL"; status.textContent = "Demonstração restaurada em LTR."; });
+        directionButton.addEventListener("click", () => { const rtl = page.getAttribute("dir") !== "rtl"; page.setAttribute("dir", rtl ? "rtl" : "ltr"); directionButton.setAttribute("aria-pressed", String(rtl)); directionButton.textContent = rtl ? "Voltar para LTR" : "Testar RTL"; status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada."; });
+    </script>
 </body>
 </html>

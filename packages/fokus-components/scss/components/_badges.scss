@@ -10,7 +10,10 @@
     --fs-badge-bg: var(--fs-color-subtle);
     --fs-badge-border: transparent;
     --fs-badge-height: 22px;
-    --fs-badge-radius: 0;
+    --fs-badge-radius: var(--fs-radius-sm);
+    --fs-badge-padding-inline: 8px;
+    --fs-badge-padding-block-start: 2px;
+    --fs-badge-padding-block-end: 2px;
 
     display: inline-flex;
     align-items: center;
@@ -18,9 +21,8 @@
     justify-content: center;
     min-height: var(--fs-badge-height);
 
-    // O peso óptico da fonte fica ligeiramente abaixo do centro geométrico.
-    // Um pixel extra abaixo reposiciona a linha de texto para cima.
-    padding: 1px 8px 3px;
+    // O padding vertical simétrico mantém a linha de texto no centro geométrico.
+    padding: var(--fs-badge-padding-block-start) var(--fs-badge-padding-inline) var(--fs-badge-padding-block-end);
     border: 1px solid var(--fs-badge-border);
     border-radius: var(--fs-badge-radius);
     color: var(--fs-badge-color);
@@ -53,15 +55,19 @@
 
   .fs-badge-sm {
     --fs-badge-height: 18px;
+    --fs-badge-padding-inline: 6px;
+    --fs-badge-padding-block-start: 1px;
+    --fs-badge-padding-block-end: 1px;
 
-    padding: 0 6px 2px;
     font-size: $font-size-xs;
   }
 
   .fs-badge-lg {
     --fs-badge-height: 26px;
+    --fs-badge-padding-inline: 10px;
+    --fs-badge-padding-block-start: 3px;
+    --fs-badge-padding-block-end: 3px;
 
-    padding: 2px 10px 4px;
     font-size: $font-size-md;
   }
 
@@ -81,13 +87,20 @@
     font-variant-numeric: tabular-nums;
   }
 
+  .fs-badge-count-circle {
+    aspect-ratio: 1;
+    min-width: var(--fs-badge-height);
+    padding-inline: 0;
+    border-radius: 50%;
+  }
+
   .fs-badge-split {
     --fs-badge-split-label-bg: var(--fs-color-black);
     --fs-badge-split-label-color: var(--fs-color-white);
     --fs-badge-split-value-bg: var(--fs-color-primary);
     --fs-badge-split-value-color: #{color-contrast(map.get($theme-colors, primary))};
     --fs-badge-split-height: 22px;
-    --fs-badge-split-radius: 0;
+    --fs-badge-split-radius: var(--fs-radius-sm);
 
     display: inline-flex;
     min-height: var(--fs-badge-split-height);
@@ -105,7 +118,8 @@
     display: inline-flex;
     align-items: center;
     min-height: var(--fs-badge-split-height);
-    padding: 1px 8px 3px;
+    padding-block: 2px;
+    padding-inline: 8px;
   }
 
   .fs-badge-split-label {
@@ -143,11 +157,13 @@
 
   .fs-badge-split.fs-badge-sm .fs-badge-split-label,
   .fs-badge-split.fs-badge-sm .fs-badge-split-value {
-    padding: 0 6px 2px;
+    padding-block: 1px;
+    padding-inline: 6px;
   }
 
   .fs-badge-split.fs-badge-lg .fs-badge-split-label,
   .fs-badge-split.fs-badge-lg .fs-badge-split-value {
-    padding: 2px 10px 4px;
+    padding-block: 3px;
+    padding-inline: 10px;
   }
 }

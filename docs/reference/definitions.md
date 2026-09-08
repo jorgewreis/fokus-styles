@@ -527,7 +527,7 @@ abas habilitadas (`role="tablist"`/`"tab"`/`"tabpanel"`, `aria-selected`,
 `tabindex` roving), disparando `fs:tab:changed`.
 
 **Toast** (`.fs-toast-container`/`.fs-toast`/`.fs-toast-header`/`.fs-toast-body`,
-variantes de cor de estado via `.fs-toast-#{nome}`,
+slots opcionais de ícone, ações e progresso, variantes de cor de estado via `.fs-toast-#{nome}`,
 `packages/fokus-components/scss/components/_toasts.scss`): `packages/fokus-js/js/toast.js` usa `expand()`/`collapse()`
 para mostrar/esconder, com timer de auto-dismiss configurável (`data-delay`,
 `data-autohide="false"` para desativar) e dismiss via
@@ -810,6 +810,10 @@ Tag removível (`.fs-tag`, `packages/fokus-components/scss/components/_tag.scss`
 tamanho do botão de fechar (14×14px) para caber num badge. Precisa de
 JavaScript, mas de forma mínima:
 `packages/fokus-js/js/tag.js` (`FokusStyles.Tag`) só ouve o clique em `[data-fs-dismiss="tag"]`.
+Tags suportam ícones decorativos iniciais ou de estado finais em
+`.fs-tag-icon`/`.fs-tag-icon-end`; esses ícones não substituem o texto
+acessível. Quando o botão focado remove uma Tag de um grupo, o foco é
+transferido para a próxima Tag ou, na ausência dela, para a anterior.
 Antes de remover o elemento do DOM, dispara o evento **cancelável**
 `fs:tag:dismissed` (mesmo espírito de `fs:stepper:beforechange`) —
 `preventDefault()` bloqueia a remoção.

@@ -6,6 +6,7 @@ import { autoInit, createInstanceRegistry } from "./core/register.js";
 const instances = createInstanceRegistry();
 let idCounter = 0;
 const HOVER_HIDE_DELAY = 100;
+const openPopovers = new Set();
 
 export class Popover {
   constructor(triggerEl, options = {}) {
@@ -25,6 +26,7 @@ export class Popover {
     this._outsideClickCleanup = null;
     this._removeEscapeListener = null;
     this._hideTimer = null;
+    this._suppressNextFocus = false;
     this._positionCleanup = null;
     this._originalParent = popoverEl.parentNode;
     this._originalNextSibling = popoverEl.nextSibling;
@@ -41,6 +43,12 @@ export class Popover {
     if (headerEl) {
       if (!headerEl.id) headerEl.id = `fokus-popover-header-${idCounter}`;
       popoverEl.setAttribute("aria-labelledby", headerEl.id);
+    }
+
+    const descriptionEl = popoverEl.querySelector(".fs-popover-text");
+    if (descriptionEl) {
+      if (!descriptionEl.id) descriptionEl.id = `fokus-popover-text-${idCounter}`;
+      popoverEl.setAttribute("aria-describedby", descriptionEl.id);
     }
 
     triggerEl.setAttribute("aria-controls", popoverEl.id);
@@ -80,7 +88,13 @@ export class Popover {
       this.popoverEl.addEventListener("mouseenter", this._handleMouseEnter);
       this.popoverEl.addEventListener("mouseleave", this._handleMouseLeave);
     } else if (this.trigger === "focus") {
-      this._handleTriggerFocus = () => this.show();
+      this._handleTriggerFocus = () => {
+        if (this._suppressNextFocus) {
+          this._suppressNextFocus = false;
+          return;
+        }
+        this.show();
+      };
       this._handleTriggerFocusOut = (event) => {
         if (this.popoverEl.contains(event.relatedTarget)) return;
         this.hide();
@@ -105,7 +119,12 @@ export class Popover {
 
   _handleDismissClick(event) {
     if (event.target.closest('[data-fs-dismiss="popover"]')) {
+      const restoreFocus = this.popoverEl.contains(document.activeElement);
+      if (restoreFocus && this.trigger === "focus") this._suppressNextFocus = true;
       this.hide();
+      if (restoreFocus && typeof this.triggerEl.focus === "function") {
+        this.triggerEl.focus();
+      }
     }
   }
 
@@ -122,6 +141,10 @@ export class Popover {
 
     this.popoverEl.classList.add("is-open");
 
+    openPopovers.forEach((popover) => {
+      if (popover !== this) popover.hide();
+    });
+
     const position = computePosition(this.triggerEl, this.popoverEl, {
       placement: this.placement,
       align: this.align,
@@ -134,6 +157,7 @@ export class Popover {
       offset: 10,
     });
     this.popoverEl.setAttribute("data-placement", position.placement);
+    openPopovers.add(this);
 
     this.triggerEl.setAttribute("aria-expanded", "true");
 
@@ -150,6 +174,7 @@ export class Popover {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    openPopovers.delete(this);
 
     this.popoverEl.classList.remove("is-open");
     this._positionCleanup?.();

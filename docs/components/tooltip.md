@@ -25,7 +25,13 @@ marcação manualmente — só o elemento de referência com `title`/`data-fs="t
 ## Variações
 
 `data-placement` (`top` — padrão, `bottom`, `left`, `right`) no elemento
-de referência. Reposiciona automaticamente se não couber.
+de referência. Reposiciona automaticamente se não couber. A posição efetiva
+fica em `data-placement` no Tooltip gerado.
+
+Também são aceitos alinhamentos compostos, como `top-start`, `top-end`,
+`bottom-start`, `bottom-end`, `left-start` e `right-end`. A forma manual
+equivalente é `{ placement: "top", align: "start" }`. Use `data-offset` ou
+`offset` para controlar a distância entre o gatilho e a dica.
 
 ```html
 <button class="fs-btn" data-fs="tooltip" data-placement="right" title="Mais opções">⋮</button>
@@ -35,6 +41,25 @@ de referência. Reposiciona automaticamente se não couber.
 
 `.is-open` — controlado pelo JS ao mostrar/esconder; não defina
 manualmente.
+
+### Delays e touch
+
+Use `data-show-delay` e `data-hide-delay` para evitar abertura acidental:
+
+```html
+<button data-fs="tooltip" data-show-delay="300" data-hide-delay="100"
+  title="Ajuda complementar">Ajuda</button>
+```
+
+O Tooltip também responde a foco e ponteiro. Em touch, toque fora fecha a dica.
+Escape fecha sem mover o foco. Tooltips concorrentes são fechados quando uma
+nova dica é aberta.
+
+Sem configuração, a abertura é imediata; use `data-show-delay` para evitar
+aberturas acidentais em interações com ponteiro. O foco de teclado abre
+imediatamente. Elementos `disabled` não
+recebem foco nem eventos nativos: envolva-os em um elemento focável quando
+precisar explicar seu estado.
 
 ## A11y
 
@@ -68,10 +93,21 @@ de outro lugar, não de um atributo estático; é assim que
 
 `--fs-tooltip-bg`, `--fs-tooltip-text`, `--fs-radius-sm`.
 
+O componente também expõe tokens locais como `--fs-tooltip-max-width`,
+`--fs-tooltip-padding-block`, `--fs-tooltip-padding-inline`,
+`--fs-tooltip-radius`, `--fs-tooltip-shadow` e `--fs-tooltip-arrow-size`.
+Eles podem ser sobrescritos por instância sem alterar tokens globais.
+
 ## Exemplo
 
 ```html
 <button type="button" class="fs-btn-close" data-fs="tooltip" title="Fechar" aria-label="Fechar"></button>
 ```
 
-Mockup: [laboratório do componente](../../mockup/overlays-commands.html#tooltip).
+O Tooltip não deve conter links ou botões e não substitui label, texto de erro
+ou instrução essencial; nesses casos use conteúdo visível ou Popover.
+
+Quando o gatilho já possui `aria-describedby`, o Tooltip acrescenta somente o
+próprio ID e restaura a lista original ao executar `dispose()`.
+
+Mockup: [laboratório independente do componente](../../mockup/examples/tooltip.html).

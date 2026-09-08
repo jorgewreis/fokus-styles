@@ -8,8 +8,18 @@
 // o texto e o "x". O dismiss em si é feito por js/tag.js (FokusStyles.Tag).
 @layer components {
   .fs-tag {
+    --fs-tag-icon-size: var(--fs-tag-close-size);
+    --fs-tag-icon-glyph-size: 12px;
+    --fs-tag-icon-gap: 4px;
+    --fs-tag-icon-color: currentcolor;
+    --fs-tag-close-size: calc(var(--fs-badge-height) - 2px);
+    --fs-tag-close-gap: 4px;
+    --fs-tag-padding-inline-start: 8px;
+    --fs-tag-padding-inline-end: 2px;
+
     gap: 0;
-    padding: 0 0 0 8px;
+    padding-inline-start: var(--fs-tag-padding-inline-start);
+    padding-inline-end: var(--fs-tag-padding-inline-end);
   }
 
   // O texto fica em um elemento próprio quando a tag puder ser truncada. A
@@ -30,25 +40,32 @@
 
   .fs-tag-icon {
     display: inline-grid;
-    width: 12px;
-    height: 12px;
-    flex: 0 0 12px;
-    margin-right: 4px;
+    width: var(--fs-tag-icon-size);
+    height: var(--fs-tag-icon-size);
+    flex: 0 0 var(--fs-tag-icon-size);
     place-items: center;
+    color: var(--fs-tag-icon-color);
+    margin-inline-end: var(--fs-tag-icon-gap);
+  }
+
+  .fs-tag-icon-end {
+    margin-inline-start: auto;
+    margin-inline-end: var(--fs-tag-icon-gap);
   }
 
   .fs-tag-icon .fs-icon {
-    width: 12px;
-    height: 12px;
+    display: block;
+    width: var(--fs-tag-icon-glyph-size);
+    height: var(--fs-tag-icon-glyph-size);
     stroke: currentcolor;
   }
 
   .fs-tag .fs-btn-close {
-    width: calc(var(--fs-badge-height) - 2px);
-    height: calc(var(--fs-badge-height) - 2px);
-    flex: 0 0 calc(var(--fs-badge-height) - 2px);
-    margin-left: 4px;
-    border-radius: 0;
+    width: var(--fs-tag-close-size);
+    height: var(--fs-tag-close-size);
+    flex: 0 0 var(--fs-tag-close-size);
+    margin-inline-start: var(--fs-tag-close-gap);
+    border-radius: var(--fs-badge-radius);
     background-color: transparent;
 
     // Herda a cor de texto do badge (contraste automático por variante) em vez
@@ -61,7 +78,7 @@
 
   .fs-tag .fs-btn-close::before,
   .fs-tag .fs-btn-close::after {
-    top: calc(50% + 1px);
+    top: 50%;
     width: 8px;
   }
 
@@ -143,6 +160,12 @@
     background-color: color-mix(in srgb, currentcolor 18%, transparent);
   }
 
+  // Um ícone inicial ocupa a área reservada à esquerda; reduzir o padding
+  // mantém a composição equilibrada sem empurrar o texto para dentro.
+  .fs-tag:has(> .fs-tag-icon:not(.fs-tag-icon-end)) {
+    --fs-tag-padding-inline-start: 2px;
+  }
+
   // Um botão de overflow representa as tags não exibidas. A abertura da lista
   // ou popover é responsabilidade da composição que o utiliza.
   .fs-tag-overflow {
@@ -200,7 +223,7 @@
     display: inline-grid;
     width: calc(var(--fs-badge-height) - 2px);
     height: calc(var(--fs-badge-height) - 2px);
-    margin-left: 4px;
+    margin-inline-start: var(--fs-tag-close-gap);
     place-items: center;
   }
 

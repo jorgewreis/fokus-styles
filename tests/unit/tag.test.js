@@ -92,4 +92,54 @@ describe("Tag", () => {
     expect(document.body.contains(el)).toBe(true);
     expect(Tag.getInstance(el)).toBeUndefined();
   });
+
+  it("move o foco para a próxima tag quando a tag focada é removida", () => {
+    const group = document.createElement("div");
+    group.className = "fs-tag-group";
+    group.innerHTML = `
+      <span class="fs-badge fs-tag" data-fs="tag">Primeira<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover primeira"></button></span>
+      <span class="fs-badge fs-tag" data-fs="tag">Segunda<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover segunda"></button></span>
+    `;
+    document.body.appendChild(group);
+    const first = new Tag(group.children[0]);
+    new Tag(group.children[1]);
+    const firstButton = group.children[0].querySelector(".fs-btn-close");
+    const secondButton = group.children[1].querySelector(".fs-btn-close");
+
+    firstButton.focus();
+    first.dismiss();
+
+    expect(document.activeElement).toBe(secondButton);
+  });
+
+  it("move o foco para a tag anterior quando não existe próxima", () => {
+    const group = document.createElement("div");
+    group.className = "fs-tag-group";
+    group.innerHTML = `
+      <span class="fs-badge fs-tag" data-fs="tag">Primeira<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover primeira"></button></span>
+      <span class="fs-badge fs-tag" data-fs="tag">Segunda<button type="button" class="fs-btn-close" data-fs-dismiss="tag" aria-label="Remover segunda"></button></span>
+    `;
+    document.body.appendChild(group);
+    new Tag(group.children[0]);
+    const second = new Tag(group.children[1]);
+    const firstButton = group.children[0].querySelector(".fs-btn-close");
+    const secondButton = group.children[1].querySelector(".fs-btn-close");
+
+    secondButton.focus();
+    second.dismiss();
+
+    expect(document.activeElement).toBe(firstButton);
+  });
+
+  it("não move o foco quando a remoção é programática", () => {
+    const { el, tag } = buildTag();
+    const outside = document.createElement("button");
+    document.body.appendChild(outside);
+    outside.focus();
+
+    tag.dismiss();
+
+    expect(document.activeElement).toBe(outside);
+    expect(document.body.contains(el)).toBe(false);
+  });
 });

@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- refina Alert com raio, borda semântica lógica, tokens locais, slots opcionais para ícone, conteúdo, ações e fechamento visual responsivo;
+- adiciona grupos, variante inline, composição de loading com Spinner e fallback visual para forced colors;
+- refina Toast com posicionamento lógico, safe area, tokens locais, slots de ícone/ações e progresso opcional sincronizado ao auto-dismiss;
+- refina Popover com tokens locais, composição rica, seta responsiva, foco previsível e laboratório independente;
+- refina Tooltip com tokens locais, posicionamento lógico, fallback, delays opcionais, suporte a ponteiro/touch e laboratório independente;
+- documenta o uso manual de `role="status"`/`role="alert"` e mantém Alert CSS-only, sem mover foco ou fechar automaticamente.
+
 ## [2.6.0] - 2026-09-07
 
 - refina visualmente Checkbox, Radio e Switch com tokens próprios, propriedades lógicas e área de interação consistente;
@@ -35,6 +44,12 @@
 
 ## Unreleased
 
+- arredonda badges e badges split com `--fs-radius-sm`, preservando os tokens
+  locais de personalização;
+- adiciona tokens de densidade, contagem circular opcional e cobertura visual
+  dedicada para badges nos temas claro e escuro;
+- refina Tags com tokens de ícones, ícone final, fechamento arredondado,
+  foco após remoção e laboratório visual de estados;
 - refina o Carousel com tokens locais, controles compactos, indicadores em
   pill, legendas opt-in, arraste aprimorado e autoplay pausável/retomável;
 - consolida tokens públicos de foco, transição, densidade, alturas e padding dos controles;

@@ -1,41 +1,115 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mockup - Alerts</title>
-  <link rel="stylesheet" href="../../dist/css/fonts.css">
-  <link rel="stylesheet" href="../../dist/css/components.css">
-  <link rel="stylesheet" href="../../dist/css/helpers.css">
-  <style>
-    .theme-panel { padding: 24px; }
-
-    html[data-theme="dark"] .theme-panel {
-      color: var(--fs-color-text);
-      background-color: var(--fs-color-surface);
-    }
-
-    .fs-alert { max-width: 480px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokus Styles — Alerts</title>
+    <link rel="stylesheet" href="../../dist/css/fonts.css">
+    <link rel="stylesheet" href="../../dist/css/components.css">
+    <link rel="stylesheet" href="../../dist/css/helpers.css">
     <link rel="stylesheet" href="../assets/example-theme.css">
     <script src="../assets/example-theme.js"></script>
+    <style>
+        :root { --demo-max-width: 1080px; --demo-panel-bg: var(--fs-color-surface); --demo-soft-bg: var(--fs-color-subtle); --demo-panel-border: var(--fs-color-border); --demo-accent: var(--fs-color-primary); }
+        * { box-sizing: border-box; }
+        body { min-block-size: 100vh; margin: 0; color: var(--fs-color-text); background: var(--fs-color-bg-subtle); }
+        .demo-page { max-inline-size: var(--demo-max-width); margin-inline: auto; padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+        .demo-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-block-end: 32px; }
+        .demo-eyebrow { margin: 0 0 8px; color: var(--demo-accent); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        html[data-fs-theme="dark"] .demo-eyebrow { color: var(--fs-color-text); }
+        .demo-title { max-inline-size: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+        .demo-lead { max-inline-size: 720px; margin: 16px 0 0; color: var(--fs-color-muted); font-size: 1.05rem; line-height: 1.6; }
+        .demo-alert-row, .demo-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .demo-alert-row { margin-block-start: 20px; }
+        .demo-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-block: 24px; padding: 12px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); }
+        .demo-section { margin-block-start: 32px; }
+        .demo-section-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-block-end: 14px; }
+        .demo-section-heading h2, .demo-card h3, .demo-reference h2, .demo-playground h3 { margin: 0; }
+        .demo-section-heading p, .demo-card p, .demo-reference p, .demo-status p { color: var(--fs-color-muted); }
+        .demo-section-heading p { max-inline-size: 620px; margin: 0; font-size: .9rem; }
+        .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .demo-card, .demo-playground, .demo-reference { border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); box-shadow: var(--fs-shadow-sm); }
+        .demo-card { min-block-size: 190px; padding: 20px; }
+        .demo-card p { margin: 10px 0 20px; line-height: 1.55; }
+        .demo-card-icon { display: grid; inline-size: 36px; block-size: 36px; place-items: center; margin-block-end: 16px; border-radius: var(--fs-radius-sm); color: var(--fs-color-primary); background: var(--demo-soft-bg); font-size: 1.2rem; font-weight: 700; }
+        .demo-playground { padding: clamp(18px, 3vw, 28px); }
+        .demo-playground-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr); gap: 28px; }
+        .demo-demo-group + .demo-demo-group { margin-block-start: 28px; }
+        .demo-demo-group h3 { font-size: 1rem; }
+        .demo-demo-group > p { margin: 6px 0 14px; color: var(--fs-color-muted); font-size: .9rem; }
+        .demo-sample { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-sample + .demo-sample { margin-block-start: 10px; }
+        .demo-sample-label { flex: 1 1 150px; color: var(--fs-color-muted); font-size: .82rem; }
+        .demo-status { display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-status h3 { margin: 0; }
+        .demo-status p { margin: 8px 0 0; font-size: .9rem; line-height: 1.5; }
+        .demo-status-output { margin: 0; padding: 12px; border-inline-start: 3px solid var(--demo-accent); color: var(--fs-color-text) !important; background: var(--demo-panel-bg); font-size: .85rem !important; }
+        .demo-code { margin: 0; padding: 14px; overflow: auto; border-radius: var(--fs-radius-sm); color: var(--fs-color-text); background: var(--demo-panel-bg); font: .76rem/1.6 var(--fs-font-mono, ui-monospace, monospace); white-space: pre-wrap; }
+        .demo-reference { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: clamp(18px, 3vw, 28px); }
+        .demo-reference p { margin: 8px 0 16px; line-height: 1.5; }
+        .demo-reference ul { margin: 0; padding-inline-start: 20px; color: var(--fs-color-muted); line-height: 1.8; }
+        .demo-reference code { color: var(--fs-color-primary); }
+        .demo-note { margin-block-start: 14px !important; font-size: .85rem; }
+        html[data-demo-forced-colors] .demo-page { --demo-panel-bg: Canvas; --demo-soft-bg: Canvas; --demo-panel-border: CanvasText; color: CanvasText; background: Canvas; }
+        @media (max-width: 760px) { .demo-hero, .demo-playground-grid, .demo-reference { grid-template-columns: 1fr; } .demo-hero { align-items: start; } .demo-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
-  <main class="theme-panel">
-    <h1 class="fs-u-fs-lg fs-u-fw-medium">Alertas</h1>
-    <p class="fs-u-fs-sm fs-u-mt-1 fs-u-mb-3">Mensagens persistentes com bordas semânticas vivas e cantos retos.</p>
+    <main class="demo-page">
+        <header class="demo-hero">
+            <div>
+                <p class="demo-eyebrow">Fokus Styles · mensagem persistente</p>
+                <h1 class="demo-title">Alertas que explicam estados e orientam próximas ações.</h1>
+                <p class="demo-lead">Use Alert para feedback contextual que precisa permanecer visível. Ícones, títulos e ações são opcionais; o texto continua sendo a fonte principal do significado.</p>
+                <div class="demo-alert-row" aria-label="Exemplos rápidos"><span class="fs-badge fs-badge-soft-info">Informação</span><span class="fs-badge fs-badge-soft-success">Sucesso</span><span class="fs-badge fs-badge-soft-warning">Atenção</span><span class="fs-badge fs-badge-soft-danger">Erro</span></div>
+            </div>
+            <span class="fs-badge fs-badge-outline-primary">CSS-only</span>
+        </header>
 
-    <div class="fs-alert fs-u-mb-2">Alerta neutro: mensagem informativa padrão sem cor de estado.</div>
-    <div class="fs-alert fs-alert-primary fs-u-mb-2">Alerta primary: ação recomendada ou destaque neutro de marca.</div>
-    <div class="fs-alert fs-alert-success fs-u-mb-2">Alerta success: operação concluída com sucesso.</div>
-    <div class="fs-alert fs-alert-warning fs-u-mb-2">Alerta warning: atenção, revise antes de continuar.</div>
-    <div class="fs-alert fs-alert-danger fs-u-mb-2">Alerta danger: falha ao processar a solicitação.</div>
-    <div class="fs-alert fs-alert-info">Alerta info: informação adicional relevante para o usuário.</div>
-  </main>
-  <script>
-    if (new URLSearchParams(window.location.search).get("theme") === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  </script>
+        <nav class="demo-toolbar" aria-label="Controles da demonstração"><div class="demo-action-row"><button class="fs-btn fs-btn-primary fs-btn-sm" type="button" id="reset-demo">Restaurar demonstração</button><button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button><button class="fs-btn fs-btn-outline-secondary fs-btn-sm" type="button" id="toggle-forced-colors" aria-pressed="false">Testar alto contraste</button></div><span class="fs-form-text">Compare variantes, composições e estados sem depender apenas de cor.</span></nav>
+
+        <section class="demo-section" aria-labelledby="why-title">
+            <div class="demo-section-heading"><div><h2 id="why-title">Escolha o padrão certo</h2><p>Badge resume, Tag gerencia uma seleção, Alert explica contexto e Toast comunica algo transitório.</p></div></div>
+            <div class="demo-grid">
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">#</span><h3>Badge informa</h3><p>Status e classificação são curtos e complementam um item que já tem contexto.</p><span class="fs-badge fs-badge-success">Ativo</span></article>
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">!</span><h3>Alert explica</h3><p>Quando existe consequência, instrução ou próxima ação, use uma mensagem persistente.</p><div class="fs-alert fs-alert-warning" role="status">Revise o cadastro antes de publicar.</div></article>
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">↗</span><h3>Toast avisa</h3><p>Para confirmação breve que não exige leitura prolongada, prefira uma mensagem transitória.</p><span class="fs-badge fs-badge-outline-info">Temporário</span></article>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="playground-title">
+            <div class="demo-section-heading"><div><h2 id="playground-title">Laboratório de Alertas</h2><p>Compare variantes, anatomia, ações, fechamento manual, grupos, inline, loading e mensagens longas.</p></div><span class="fs-badge fs-badge-outline-success">ao vivo</span></div>
+            <div class="demo-playground"><div class="demo-playground-grid"><div>
+                <div class="demo-demo-group"><h3>Variantes semânticas</h3><p>O texto comunica a intenção; a barra lateral reforça a hierarquia visual.</p><div class="demo-sample"><span class="demo-sample-label">Neutro e informação</span><div class="fs-alert">Informação neutra para o contexto atual.</div><div class="fs-alert fs-alert-info" role="status">Há uma nova versão pronta para revisão.</div></div><div class="demo-sample"><span class="demo-sample-label">Sucesso, atenção e erro</span><div class="fs-alert fs-alert-success" role="status">Operação concluída com sucesso.</div><div class="fs-alert fs-alert-warning" role="status">Revise antes de continuar.</div><div class="fs-alert fs-alert-danger" role="alert">Não foi possível salvar.</div></div></div>
+                <div class="demo-demo-group"><h3>Anatomia e ações</h3><p>Ícone, título, descrição, link, botão e fechamento são slots opcionais e composicionais.</p><div class="demo-sample"><span class="demo-sample-label">Mensagem rica</span><div class="fs-alert fs-alert-warning" role="status"><span class="fs-alert-icon" aria-hidden="true"><svg class="fs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 9 17H3L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg></span><div class="fs-alert-content"><h3 class="fs-alert-heading">Sessão expirando</h3><p class="fs-alert-text">Salve seu trabalho para não perder alterações.</p><div class="fs-alert-actions"><button class="fs-btn fs-btn-warning fs-btn-sm" type="button">Continuar sessão</button><a class="fs-alert-link" href="#ajuda">Saiba mais</a></div></div></div></div><div class="demo-sample"><span class="demo-sample-label">Fechamento manual</span><div class="fs-alert fs-alert-success"><div class="fs-alert-content"><h3 class="fs-alert-heading">Convite enviado</h3><p class="fs-alert-text">A pessoa receberá um e-mail para entrar no projeto.</p></div><button class="fs-btn-close fs-alert-close" type="button" aria-label="Fechar aviso de convite enviado"></button></div></div></div>
+                <div class="demo-demo-group"><h3>Densidade, grupos e loading</h3><p>Use a variante inline perto de campos e aria-busy durante operações assíncronas.</p><div class="demo-sample"><span class="demo-sample-label">Inline</span><div class="fs-alert fs-alert-inline fs-alert-warning" role="status"><span class="fs-alert-icon" aria-hidden="true">!</span><div class="fs-alert-content"><p class="fs-alert-text">Campo obrigatório.</p></div></div></div><div class="demo-sample"><span class="demo-sample-label">Grupo</span><div class="fs-alert-group" aria-label="Mensagens do projeto"><div class="fs-alert fs-alert-info">A sincronização será iniciada em instantes.</div><div class="fs-alert fs-alert-success">Última sincronização concluída.</div></div></div><div class="demo-sample"><span class="demo-sample-label">Loading</span><div class="fs-alert fs-alert-info" role="status" aria-busy="true"><span class="fs-spinner fs-spinner-sm" aria-hidden="true"></span><div class="fs-alert-content"><p class="fs-alert-text">Atualizando dados…</p></div></div></div></div>
+                <div class="demo-demo-group"><h3>Mensagem longa e responsiva</h3><p>Conteúdo, links e ações quebram sem causar overflow horizontal em telas estreitas.</p><div class="demo-sample"><span class="demo-sample-label">Responsivo</span><div class="fs-alert fs-alert-primary" role="status"><div class="fs-alert-content"><h3 class="fs-alert-heading">Mensagem com várias linhas</h3><p class="fs-alert-text">Alertas preservam a leitura em telas estreitas e permitem que títulos, descrições e links quebrem livremente.</p><div class="fs-alert-actions"><a class="fs-alert-link" href="#documentacao">Abrir documentação com endereço longo</a></div></div></div></div></div>
+            </div><aside class="demo-status" aria-labelledby="status-title"><div><h3 id="status-title">Contrato do Alert</h3><p>Alert permanece no contexto, não move foco e não fecha sozinho. O fechamento visual depende da lógica da aplicação.</p></div><p class="demo-status-output" id="demo-status" role="status" aria-live="polite">Demonstração pronta.</p><pre class="demo-code"><code>.fs-alert
+.fs-alert-{color}
+.fs-alert-icon
+.fs-alert-content
+.fs-alert-actions
+.fs-alert-close
+.fs-alert-group
+.fs-alert-inline
+
+/* tokens locais */
+--fs-alert-radius
+--fs-alert-gap
+--fs-alert-icon-size</code></pre></aside></div></div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="a11y-title"><div class="demo-section-heading"><div><h2 id="a11y-title">Contratos preservados</h2><p>O significado permanece disponível sem depender de cor, ícone, foco automático ou desaparecimento temporizado.</p></div></div><div class="demo-reference"><div><h2>Uso acessível</h2><ul><li>Use <code>role="status"</code> para atualização calma e <code>role="alert"</code> somente para urgência.</li><li>Ícones decorativos usam <code>aria-hidden="true"</code>.</li><li>Botões e links mantêm nomes e foco visível.</li><li>Loading usa <code>aria-busy="true"</code> e texto compreensível.</li></ul></div><div><h2>Limites do componente</h2><ul><li>Alert não injeta ARIA nem move foco.</li><li>Não use Alert para decisões críticas; prefira Alert Dialog.</li><li>Não use Alert para feedback temporário; prefira Toast.</li><li>RTL, dark mode e forced colors preservam a leitura.</li></ul></div></div></section>
+    </main>
+    <script>
+        const page = document.querySelector(".demo-page");
+        const status = document.getElementById("demo-status");
+        const directionButton = document.getElementById("toggle-direction");
+        const forcedColorsButton = document.getElementById("toggle-forced-colors");
+        document.querySelectorAll(".fs-alert-close").forEach((button) => button.addEventListener("click", () => { button.closest(".fs-alert")?.remove(); status.textContent = "Alert removido manualmente da demonstração."; }));
+        document.getElementById("reset-demo").addEventListener("click", () => { location.reload(); });
+        directionButton.addEventListener("click", () => { const rtl = page.getAttribute("dir") !== "rtl"; page.setAttribute("dir", rtl ? "rtl" : "ltr"); directionButton.setAttribute("aria-pressed", String(rtl)); directionButton.textContent = rtl ? "Voltar para LTR" : "Testar RTL"; status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada."; });
+        forcedColorsButton.addEventListener("click", () => { const active = forcedColorsButton.getAttribute("aria-pressed") !== "true"; forcedColorsButton.setAttribute("aria-pressed", String(active)); forcedColorsButton.textContent = active ? "Voltar ao tema" : "Testar alto contraste"; document.documentElement.toggleAttribute("data-demo-forced-colors", active); status.textContent = active ? "Modo de alto contraste demonstrativo ativado." : "Modo de alto contraste demonstrativo desativado."; });
+    </script>
 </body>
 </html>

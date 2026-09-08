@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fokus Styles — Tooltip</title>
+  <link rel="stylesheet" href="../../dist/css/fonts.css">
+  <link rel="stylesheet" href="../../dist/css/components.css">
+  <link rel="stylesheet" href="../../dist/css/helpers.css">
+  <link rel="stylesheet" href="../assets/example-theme.css">
+  <script src="../assets/example-theme.js"></script>
+  <style>
+    .tooltip-stage { display: grid; min-block-size: 240px; place-items: center; padding: 32px; border: 1px dashed var(--fs-color-border); border-radius: var(--fs-radius-md); background: var(--fs-color-subtle); }
+    .tooltip-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+    .tooltip-truncated { max-inline-size: 220px; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .tooltip-contract code { display: block; padding: 12px; border-radius: var(--fs-radius-sm); background: var(--fs-color-subtle); font-size: .8rem; line-height: 1.7; }
+    :root { --demo-panel-bg: var(--fs-color-surface); --demo-soft-bg: var(--fs-color-subtle); --demo-panel-border: var(--fs-color-border); --demo-accent: var(--fs-color-primary); }
+    * { box-sizing: border-box; }
+    body { min-block-size: 100vh; margin: 0; color: var(--fs-color-text); background: var(--fs-color-bg-subtle); }
+    .demo-page { max-inline-size: 1080px; margin-inline: auto; padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+    .showcase-hero { margin-block-end: 32px; }
+    .showcase-eyebrow { margin: 0 0 8px; color: var(--demo-accent); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .showcase-title { max-inline-size: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+    .showcase-lead { max-inline-size: 720px; margin: 16px 0 0; color: var(--fs-color-muted); font-size: 1.05rem; line-height: 1.6; }
+    .demo-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-block-start: 20px; }
+    .showcase-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-block: 24px; padding: 12px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); }
+    .demo-section { margin-block-start: 32px; }
+    .demo-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-block-end: 14px; }
+    .demo-heading h2, .demo-card h3, .demo-status h3 { margin: 0; }
+    .demo-heading p, .demo-card p, .demo-status p { color: var(--fs-color-muted); }
+    .demo-heading p { max-inline-size: 650px; margin: 0; font-size: .9rem; }
+    .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .demo-card, .demo-playground, .demo-status { border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); box-shadow: var(--fs-shadow-sm); }
+    .demo-card { min-block-size: 180px; padding: 20px; }
+    .demo-card p { margin: 10px 0 20px; line-height: 1.55; }
+    .demo-card-kicker { display: block; margin-block-end: 8px; color: var(--fs-color-muted); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .demo-playground { padding: clamp(18px, 3vw, 28px); }
+    .demo-playground > .demo-grid { margin-block-start: 24px; }
+    .demo-status { display: flex; flex-direction: column; gap: 16px; margin-block-start: 24px; padding: 20px; background: var(--demo-soft-bg); }
+    .demo-status-output { margin: 0; padding: 12px; border-inline-start: 3px solid var(--demo-accent); color: var(--fs-color-text) !important; background: var(--demo-panel-bg); font-size: .85rem !important; }
+    @media (max-width: 760px) { .demo-grid { grid-template-columns: 1fr; } .showcase-toolbar { justify-content: flex-start; } }
+  </style>
+</head>
+<body>
+  <main class="showcase-shell demo-page">
+    <header class="showcase-hero">
+      <p class="showcase-eyebrow">Fokus Styles · extensão de interface</p>
+      <h1 class="showcase-title">Tooltip</h1>
+      <p class="showcase-lead">Dicas curtas para complementar um controle existente, com foco, hover, posicionamento adaptável e suporte aos temas do sistema.</p>
+      <div class="demo-badges" aria-label="Características do componente"><span class="fs-badge fs-badge-outline-primary">não interativo</span><span class="fs-badge fs-badge-outline-success">acessível por foco</span><span class="fs-badge fs-badge-outline-secondary">role=tooltip</span></div>
+    </header>
+    <div class="showcase-toolbar" aria-label="Controles da demonstração"><button class="fs-btn fs-btn-primary" type="button" data-showcase-theme>Usar tema escuro</button><button class="fs-btn" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button><button class="fs-btn" type="button" id="reset-demo">Resetar</button></div>
+    <section class="demo-section" aria-labelledby="compare-title"><div class="demo-heading"><div><h2 id="compare-title">Escolha o padrão certo</h2><p>Use cada componente conforme a quantidade e a importância do conteúdo.</p></div></div><div class="demo-grid"><article class="demo-card"><span class="demo-card-kicker">breve</span><h3>Tooltip</h3><p>Explica rapidamente um ícone, termo ou controle já nomeado.</p><span class="fs-badge fs-badge-outline-info">não interativo</span></article><article class="demo-card"><span class="demo-card-kicker">contextual</span><h3>Popover</h3><p>Oferece contexto mais rico, descrição, links ou ações.</p><span class="fs-badge fs-badge-outline-warning">conteúdo rico</span></article><article class="demo-card"><span class="demo-card-kicker">essencial</span><h3>Texto visível</h3><p>Instruções, erros e informações importantes não devem ficar ocultos.</p><span class="fs-badge fs-badge-outline-success">sempre disponível</span></article></div></section>
+    <section class="demo-section" aria-labelledby="playground-title"><div class="demo-heading"><div><h2 id="playground-title">Laboratório de Tooltip</h2><p>Experimente posições, delays, foco, fallback de viewport e truncamento.</p></div><span class="fs-badge fs-badge-outline-success">interativo</span></div><div class="demo-playground"><div class="tooltip-stage" aria-label="Controles de posicionamento"><div class="tooltip-actions"><button class="fs-btn fs-btn-outline-primary" type="button" data-fs="tooltip" data-placement="top" title="Tooltip acima do controle">Top</button><button class="fs-btn fs-btn-outline-primary" type="button" data-fs="tooltip" data-placement="bottom" title="Tooltip abaixo do controle">Bottom</button><button class="fs-btn fs-btn-outline-primary" type="button" data-fs="tooltip" data-placement="left" title="Tooltip à esquerda">Left</button><button class="fs-btn fs-btn-outline-primary" type="button" data-fs="tooltip" data-placement="right" title="Tooltip à direita">Right</button><button class="fs-btn fs-btn-outline-warning" type="button" data-fs="tooltip" data-show-delay="400" data-hide-delay="150" title="Aparece após um pequeno atraso">Com delay</button><button class="fs-btn-close" type="button" aria-label="Ajuda sobre configurações" data-fs="tooltip" title="Ajuda sobre configurações"></button></div></div><div class="demo-grid"><article class="demo-card"><span class="demo-card-kicker">conteúdo</span><h3>Truncamento e fallback</h3><p class="tooltip-truncated" data-fs="tooltip" data-title="Este é o texto completo preservado para o usuário">Este texto foi truncado visualmente</p><button class="fs-btn fs-btn-outline-danger fs-btn-sm" type="button" data-fs="tooltip" data-placement="bottom" title="Uma mensagem longa quebra em várias linhas sem causar overflow horizontal">Mensagem longa</button></article><article class="demo-card"><span class="demo-card-kicker">teclado</span><h3>Foco e Escape</h3><p>Use Tab para entrar no controle, leia a dica e pressione Escape para fechar.</p><button class="fs-btn fs-btn-success fs-btn-sm" type="button" data-fs="tooltip" title="A dica também aparece quando o controle recebe foco">Focar com teclado</button></article></div><aside class="demo-status tooltip-contract" aria-labelledby="contract-title"><div><h3 id="contract-title">Contrato do componente</h3><p>O Tooltip complementa o gatilho e nunca contém ações próprias.</p></div><p id="demo-status" class="demo-status-output" role="status" aria-live="polite">Demonstração pronta.</p><code>data-fs="tooltip" · title / data-title · data-placement · data-show-delay / data-hide-delay</code></aside></div></section>
+    <section class="demo-section" aria-labelledby="a11y-title"><div class="demo-heading"><div><h2 id="a11y-title">Acessibilidade e limites</h2><p>O conteúdo essencial continua visível e o Tooltip não assume o papel de Popover.</p></div></div><div class="demo-grid"><article class="demo-card"><h3>Foco</h3><p>O foco permanece no elemento de referência. Escape fecha a dica sem criar um novo foco.</p></article><article class="demo-card"><h3>Sem interação</h3><p>Não coloque links, botões ou controles dentro de um Tooltip. Use Popover quando necessário.</p></article><article class="demo-card"><h3>Sem dependência de cor</h3><p>Ícones, hover e cor apenas complementam uma mensagem que já deve ser compreensível.</p></article></div></section>
+    <section class="demo-section" aria-labelledby="alignment-title"><div class="demo-heading"><div><h2 id="alignment-title">Alinhamento e offset</h2><p>A API aceita combinações como <code>top-start</code> e preserva o alinhamento durante o fallback.</p></div></div><div class="demo-grid"><article class="demo-card"><h3>Superior</h3><div class="tooltip-actions"><button class="fs-btn fs-btn-sm fs-btn-outline-primary" data-fs="tooltip" data-placement="top-start" title="Superior à esquerda">start</button><button class="fs-btn fs-btn-sm fs-btn-outline-primary" data-fs="tooltip" data-placement="top-end" title="Superior à direita">end</button></div></article><article class="demo-card"><h3>Inferior</h3><div class="tooltip-actions"><button class="fs-btn fs-btn-sm fs-btn-outline-primary" data-fs="tooltip" data-placement="bottom-start" title="Inferior à esquerda">start</button><button class="fs-btn fs-btn-sm fs-btn-outline-primary" data-fs="tooltip" data-placement="bottom-end" title="Inferior à direita">end</button></div></article><article class="demo-card"><h3>Distância</h3><button class="fs-btn fs-btn-sm fs-btn-outline-warning" data-fs="tooltip" data-offset="16" title="Este Tooltip usa um offset de 16 pixels">Offset 16px</button></article></div></section>
+  </main>
+  <script src="../../dist/js/fokus.js"></script>
+  <script>
+    const page = document.querySelector(".demo-page");
+    const status = document.getElementById("demo-status");
+    const direction = document.getElementById("toggle-direction");
+    direction.addEventListener("click", () => { const rtl = page.getAttribute("dir") !== "rtl"; page.setAttribute("dir", rtl ? "rtl" : "ltr"); direction.setAttribute("aria-pressed", String(rtl)); direction.textContent = rtl ? "Voltar para LTR" : "Testar RTL"; status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada."; });
+    document.getElementById("reset-demo").addEventListener("click", () => location.reload());
+    document.querySelectorAll('[data-fs="tooltip"]').forEach((element) => { element.addEventListener("fs:tooltip:shown", () => { const open = document.querySelector(".fs-tooltip.is-open"); status.textContent = `Tooltip aberto · placement efetivo: ${open?.dataset.placement ?? "auto"}.`; }); element.addEventListener("fs:tooltip:hidden", () => { status.textContent = "Tooltip fechado."; }); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokus Styles — Toasts</title>
+    <link rel="stylesheet" href="../../dist/css/fonts.css">
+    <link rel="stylesheet" href="../../dist/css/components.css">
+    <link rel="stylesheet" href="../../dist/css/helpers.css">
+    <link rel="stylesheet" href="../assets/example-theme.css">
+    <script src="../assets/example-theme.js"></script>
+    <style>
+        :root { --demo-max-width: 1080px; --demo-panel-bg: var(--fs-color-surface); --demo-soft-bg: var(--fs-color-subtle); --demo-panel-border: var(--fs-color-border); --demo-accent: var(--fs-color-primary); }
+        * { box-sizing: border-box; }
+        body { min-block-size: 100vh; margin: 0; color: var(--fs-color-text); background: var(--fs-color-bg-subtle); }
+        .demo-page { max-inline-size: var(--demo-max-width); margin-inline: auto; padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+        .demo-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-block-end: 32px; }
+        .demo-eyebrow { margin: 0 0 8px; color: var(--demo-accent); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        html[data-fs-theme="dark"] .demo-eyebrow { color: var(--fs-color-text); }
+        .demo-title { max-inline-size: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+        .demo-lead { max-inline-size: 720px; margin: 16px 0 0; color: var(--fs-color-muted); font-size: 1.05rem; line-height: 1.6; }
+        .demo-toast-row, .demo-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .demo-toast-row { margin-block-start: 20px; }
+        .demo-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-block: 24px; padding: 12px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); }
+        .demo-section { margin-block-start: 32px; }
+        .demo-section-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-block-end: 14px; }
+        .demo-section-heading h2, .demo-card h3, .demo-reference h2, .demo-playground h3 { margin: 0; }
+        .demo-section-heading p, .demo-card p, .demo-reference p, .demo-status p { color: var(--fs-color-muted); }
+        .demo-section-heading p { max-inline-size: 620px; margin: 0; font-size: .9rem; }
+        .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .demo-card, .demo-playground, .demo-reference { border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); box-shadow: var(--fs-shadow-sm); }
+        .demo-card { min-block-size: 190px; padding: 20px; }
+        .demo-card p { margin: 10px 0 20px; line-height: 1.55; }
+        .demo-card-icon { display: grid; inline-size: 36px; block-size: 36px; place-items: center; margin-block-end: 16px; border-radius: var(--fs-radius-sm); color: var(--fs-color-primary); background: var(--demo-soft-bg); font-size: 1.2rem; font-weight: 700; }
+        .demo-playground { padding: clamp(18px, 3vw, 28px); }
+        .demo-playground-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr); gap: 28px; }
+        .demo-demo-group + .demo-demo-group { margin-block-start: 28px; }
+        .demo-demo-group h3 { font-size: 1rem; }
+        .demo-demo-group > p { margin: 6px 0 14px; color: var(--fs-color-muted); font-size: .9rem; }
+        .demo-sample { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-sample + .demo-sample { margin-block-start: 10px; }
+        .demo-sample-label { flex: 1 1 150px; color: var(--fs-color-muted); font-size: .82rem; }
+        .demo-status { display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-status h3 { margin: 0; }
+        .demo-status p { margin: 8px 0 0; font-size: .9rem; line-height: 1.5; }
+        .demo-status-output { margin: 0; padding: 12px; border-inline-start: 3px solid var(--demo-accent); color: var(--fs-color-text) !important; background: var(--demo-panel-bg); font-size: .85rem !important; }
+        .demo-code { margin: 0; padding: 14px; overflow: auto; border-radius: var(--fs-radius-sm); color: var(--fs-color-text); background: var(--demo-panel-bg); font: .76rem/1.6 var(--fs-font-mono, ui-monospace, monospace); white-space: pre-wrap; }
+        .demo-reference { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: clamp(18px, 3vw, 28px); }
+        .demo-reference ul { margin: 0; padding-inline-start: 20px; color: var(--fs-color-muted); line-height: 1.8; }
+        .demo-reference code { color: var(--fs-color-primary); }
+        @media (max-width: 760px) { .demo-hero, .demo-playground-grid, .demo-reference { grid-template-columns: 1fr; } .demo-hero { align-items: start; } .demo-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main class="demo-page">
+        <header class="demo-hero"><div><p class="demo-eyebrow">Fokus Styles · feedback flutuante</p><h1 class="demo-title">Toasts que confirmam ações sem interromper o fluxo.</h1><p class="demo-lead">Toast é temporário, empilhado e acionado por JavaScript. Use-o para confirmações breves; para mensagens persistentes, prefira Alert.</p><div class="demo-toast-row" aria-label="Características"><span class="fs-badge fs-badge-soft-info">Flutuante</span><span class="fs-badge fs-badge-soft-success">Auto-dismiss</span><span class="fs-badge fs-badge-outline-primary">CSS + JS</span></div></div><span class="fs-badge fs-badge-outline-primary">role=status</span></header>
+        <nav class="demo-toolbar" aria-label="Controles da demonstração"><div class="demo-action-row"><button class="fs-btn fs-btn-primary fs-btn-sm" type="button" id="reset-demo">Restaurar demonstração</button><button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button></div><span class="fs-form-text">Passe o mouse ou use Tab sobre o Toast para pausar o timer.</span></nav>
+        <section class="demo-section" aria-labelledby="why-title"><div class="demo-section-heading"><div><h2 id="why-title">Toast, Alert ou Notification Center?</h2><p>Escolha pela duração e pelo contexto da mensagem, sem transformar uma confirmação breve em uma interrupção.</p></div></div><div class="demo-grid"><article class="demo-card"><span class="demo-card-icon" aria-hidden="true">✓</span><h3>Toast confirma</h3><p>Feedback breve após uma ação não bloqueante, com auto-dismiss e pausa durante interação.</p><button class="fs-btn fs-btn-success fs-btn-sm" type="button" data-show-toast="success">Mostrar Toast</button></article><article class="demo-card"><span class="demo-card-icon" aria-hidden="true">!</span><h3>Alert permanece</h3><p>Mensagem contextual que precisa continuar visível na região afetada.</p><span class="fs-badge fs-btn-sm fs-badge-warning">Persistente</span></article><article class="demo-card"><span class="demo-card-icon" aria-hidden="true">≡</span><h3>Notification Center guarda</h3><p>Histórico para notificações que precisam ser revisitadas ou marcadas como lidas.</p><span class="fs-badge fs-btn-sm fs-badge-outline-info">Histórico</span></article></div></section>
+        <section class="demo-section" aria-labelledby="playground-title"><div class="demo-section-heading"><div><h2 id="playground-title">Laboratório de Toasts</h2><p>Compare variantes, slots, tempo, ações, empilhamento e comportamento em telas estreitas.</p></div><span class="fs-badge fs-badge-outline-success">interativo</span></div><div class="demo-playground"><div class="demo-playground-grid"><div><div class="demo-demo-group"><h3>Variantes e composição</h3><p>Ícones são apoio visual; títulos, corpo e ações permanecem compreensíveis sem depender da cor.</p><div class="demo-sample"><span class="demo-sample-label">Variantes</span><button class="fs-btn fs-btn-outline-success fs-btn-sm" type="button" data-show-toast="success">Sucesso</button><button class="fs-btn fs-btn-outline-warning fs-btn-sm" type="button" data-show-toast="warning">Atenção</button><button class="fs-btn fs-btn-outline-danger fs-btn-sm" type="button" data-show-toast="danger">Erro persistente</button></div><div class="demo-sample"><span class="demo-sample-label">Progresso</span><button class="fs-btn fs-btn-primary fs-btn-sm" type="button" data-show-toast="progress">Mostrar com progresso</button><button class="fs-btn fs-btn-secondary fs-btn-sm" type="button" data-show-toast="action">Mostrar com ação</button></div></div><div class="demo-demo-group"><h3>Empilhamento e responsividade</h3><p>Toasts usam uma única região fixa, preservam a largura em 320px e permanecem acima do conteúdo.</p><div class="demo-sample"><span class="demo-sample-label">Empilhar</span><button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="stack-toast">Adicionar três Toasts</button></div><div class="demo-sample"><span class="demo-sample-label">Persistente</span><button class="fs-btn fs-btn-outline-danger fs-btn-sm" type="button" data-show-toast="persistent">Sem auto-dismiss</button></div></div><div class="demo-demo-group"><h3>Contratos de pausa</h3><p>Hover e foco pausam o timer; o fechamento manual não move o foco para outro Toast.</p><div class="demo-sample"><span class="demo-sample-label">Teclado</span><button class="fs-btn fs-btn-outline-secondary fs-btn-sm" type="button" data-show-toast="keyboard">Mostrar e navegar com Tab</button></div></div></div><aside class="demo-status" aria-labelledby="status-title"><div><h3 id="status-title">Contrato do Toast</h3><p>A API atual continua pública: `show`, `hide`, `toggle`, `dispose`, `data-delay` e `data-autohide`.</p></div><p class="demo-status-output" id="demo-status" role="status" aria-live="polite">Demonstração pronta.</p><pre class="demo-code"><code>.fs-toast-container
+.fs-toast
+.fs-toast-header
+.fs-toast-body
+.fs-toast-icon
+.fs-toast-actions
+.fs-toast-progress
+
+data-toast-progress="true"
+data-delay="4000"
+data-autohide="false"</code></pre></aside></div></div></section>
+        <section class="demo-section" aria-labelledby="a11y-title"><div class="demo-section-heading"><div><h2 id="a11y-title">Contratos preservados</h2><p>O Toast anuncia sem interromper, não rouba foco e oferece tempo para leitura e interação.</p></div></div><div class="demo-reference"><div><h2>Acessibilidade</h2><ul><li><code>role="status"</code> e <code>aria-live="polite"</code> são aplicados pelo JS.</li><li>O Toast não recebe foco automaticamente.</li><li>Hover e foco pausam o auto-dismiss.</li><li>Ícones decorativos usam <code>aria-hidden="true"</code>.</li></ul></div><div><h2>Limites</h2><ul><li>Use Alert para mensagens persistentes.</li><li>Use <code>data-autohide="false"</code> para erros que exigem ação.</li><li>Não comunique somente por cor ou ícone.</li><li>RTL, dark mode, reduced motion e forced colors são considerados.</li></ul></div></div></section>
+    </main>
+    <div class="fs-toast-container" aria-label="Notificações"><div class="fs-toast fs-toast-success" data-fs="toast" id="toast-success" data-delay="4000"><div class="fs-toast-header"><span class="fs-toast-icon" aria-hidden="true">✓</span><div class="fs-toast-heading"><strong class="fs-toast-title">Operação concluída</strong><span class="fs-toast-meta">Agora</span></div><button class="fs-btn-close fs-toast-close" type="button" data-fs-dismiss="toast" aria-label="Fechar operação concluída"></button></div><div class="fs-toast-body">O arquivo foi salvo com sucesso.</div></div><div class="fs-toast fs-toast-warning" data-fs="toast" id="toast-progress" data-delay="6000" data-toast-progress="true"><div class="fs-toast-header"><span class="fs-toast-icon" aria-hidden="true">!</span><div class="fs-toast-heading"><strong class="fs-toast-title">Atenção</strong><span class="fs-toast-meta" data-toast-countdown>6 segundos</span></div><button class="fs-btn-close fs-toast-close" type="button" data-fs-dismiss="toast" aria-label="Fechar atenção"></button></div><div class="fs-toast-body">Este Toast demonstra a barra de tempo restante.</div><div class="fs-toast-progress" aria-hidden="true"></div></div><div class="fs-toast fs-toast-danger" data-fs="toast" id="toast-persistent" data-autohide="false"><div class="fs-toast-header"><span class="fs-toast-icon" aria-hidden="true">!</span><div class="fs-toast-heading"><strong class="fs-toast-title">Falha ao sincronizar</strong></div><button class="fs-btn-close fs-toast-close" type="button" data-fs-dismiss="toast" aria-label="Fechar falha ao sincronizar"></button></div><div class="fs-toast-body">Tente novamente ou consulte os detalhes da operação.</div><div class="fs-toast-actions"><button type="button" class="fs-btn fs-btn-danger fs-btn-sm">Tentar novamente</button><a href="#detalhes" class="fs-toast-link">Ver detalhes</a></div></div></div>
+    <script src="../../dist/js/fokus.js"></script><script>
+        const page = document.querySelector(".demo-page");
+        const status = document.getElementById("demo-status");
+        const directionButton = document.getElementById("toggle-direction");
+        const countdownTimers = new Map();
+        const updateCountdown = (toast) => {
+            const label = toast.querySelector("[data-toast-countdown]");
+            if (!label) return;
+            const delay = Number(toast.dataset.delay) || 4000;
+            const state = countdownTimers.get(toast) || { remaining: delay, last: performance.now() };
+            if (!toast.classList.contains("is-paused") && getComputedStyle(toast).display !== "none") {
+                const now = performance.now();
+                state.remaining = Math.max(0, state.remaining - (now - state.last));
+                state.last = now;
+            } else {
+                state.last = performance.now();
+            }
+            label.textContent = `${Math.ceil(state.remaining / 1000)} segundos`;
+            countdownTimers.set(toast, state);
+        };
+        const show = (id) => {
+            const toast = document.getElementById(id);
+            const instance = FokusStyles.Toast.getInstance(toast);
+            const delay = Number(toast.dataset.delay) || 4000;
+            countdownTimers.set(toast, { remaining: delay, last: performance.now() });
+            instance.show();
+            updateCountdown(toast);
+            status.textContent = `Toast ${toast.className.match(/fs-toast-(\\w+)/)?.[1] || ""} exibido.`;
+        };
+        setInterval(() => document.querySelectorAll("[data-toast-countdown]").forEach((label) => updateCountdown(label.closest(".fs-toast"))), 100);
+        document.querySelectorAll("[data-show-toast]").forEach((button) => button.addEventListener("click", () => {
+            const type = button.dataset.showToast;
+            show(type === "progress" ? "toast-progress" : type === "warning" ? "toast-progress" : type === "danger" || type === "persistent" ? "toast-persistent" : "toast-success");
+        }));
+        document.getElementById("stack-toast").addEventListener("click", () => { show("toast-success"); setTimeout(() => show("toast-progress"), 80); setTimeout(() => show("toast-persistent"), 160); });
+        document.getElementById("reset-demo").addEventListener("click", () => location.reload());
+        directionButton.addEventListener("click", () => { const rtl = page.getAttribute("dir") !== "rtl"; page.setAttribute("dir", rtl ? "rtl" : "ltr"); directionButton.setAttribute("aria-pressed", String(rtl)); directionButton.textContent = rtl ? "Voltar para LTR" : "Testar RTL"; status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada."; });
+        document.querySelectorAll(".fs-toast").forEach((toast) => toast.addEventListener("fs:toast:hidden", () => { status.textContent = "Toast ocultado."; }));
+    </script>
+</body>
+</html>

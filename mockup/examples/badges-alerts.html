@@ -1,77 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mockup - Badges & Alerts</title>
-
-    <!-- STYLES IMPORT -->
+    <title>Fokus Styles — Badges</title>
     <link rel="stylesheet" href="../../dist/css/fonts.css">
     <link rel="stylesheet" href="../../dist/css/components.css">
     <link rel="stylesheet" href="../../dist/css/helpers.css">
-    <style>
-        .theme-panel {
-            padding: 24px;
-        }
-
-        html[data-theme="dark"] .theme-panel {
-            color: var(--fs-color-text);
-            background-color: var(--fs-color-surface);
-        }
-
-    </style>
     <link rel="stylesheet" href="../assets/example-theme.css">
     <script src="../assets/example-theme.js"></script>
+    <style>
+        :root { --demo-max-width: 1080px; --demo-panel-bg: var(--fs-color-surface); --demo-soft-bg: var(--fs-color-subtle); --demo-panel-border: var(--fs-color-border); --demo-accent: var(--fs-color-primary); }
+        * { box-sizing: border-box; }
+        body { min-block-size: 100vh; margin: 0; color: var(--fs-color-text); background: var(--fs-color-bg-subtle); }
+        .demo-page { max-inline-size: var(--demo-max-width); margin-inline: auto; padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+        .demo-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-block-end: 32px; }
+        .demo-eyebrow { margin: 0 0 8px; color: var(--demo-accent); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        html[data-fs-theme="dark"] .demo-eyebrow { color: var(--fs-color-text); }
+        .demo-title { max-inline-size: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -.04em; }
+        .demo-lead { max-inline-size: 720px; margin: 16px 0 0; color: var(--fs-color-muted); font-size: 1.05rem; line-height: 1.6; }
+        .demo-badge-row, .demo-action-row, .demo-chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+        .demo-badge-row { margin-block-start: 20px; }
+        .demo-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-block: 24px; padding: 12px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); }
+        .demo-section { margin-block-start: 32px; }
+        .demo-section-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-block-end: 14px; }
+        .demo-section-heading h2, .demo-card h3, .demo-reference h2, .demo-playground h3 { margin: 0; }
+        .demo-section-heading p, .demo-card p, .demo-reference p, .demo-status p { color: var(--fs-color-muted); }
+        .demo-section-heading p { max-inline-size: 620px; margin: 0; font-size: .9rem; }
+        .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .demo-card, .demo-playground, .demo-reference { border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-md); background: var(--demo-panel-bg); box-shadow: var(--fs-shadow-sm); }
+        .demo-card { min-block-size: 190px; padding: 20px; }
+        .demo-card p { margin: 10px 0 20px; line-height: 1.55; }
+        .demo-card-icon { display: grid; inline-size: 36px; block-size: 36px; place-items: center; margin-block-end: 16px; border-radius: var(--fs-radius-sm); color: var(--fs-color-primary); background: var(--demo-soft-bg); font-size: 1.2rem; font-weight: 700; }
+        .demo-playground { padding: clamp(18px, 3vw, 28px); }
+        .demo-playground-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr); gap: 28px; }
+        .demo-demo-group + .demo-demo-group { margin-block-start: 28px; }
+        .demo-demo-group h3 { font-size: 1rem; }
+        .demo-demo-group > p { margin: 6px 0 14px; color: var(--fs-color-muted); font-size: .9rem; }
+        .demo-sample { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; border: var(--fs-border-width) solid var(--demo-panel-border); border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-sample + .demo-sample { margin-block-start: 10px; }
+        .demo-sample-label { flex: 1 1 150px; color: var(--fs-color-muted); font-size: .82rem; }
+        .demo-status { display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: var(--fs-radius-sm); background: var(--demo-soft-bg); }
+        .demo-status h3 { margin: 0; }
+        .demo-status p { margin: 8px 0 0; font-size: .9rem; line-height: 1.5; }
+        .demo-status-output { margin: 0; padding: 12px; border-inline-start: 3px solid var(--demo-accent); color: var(--fs-color-text) !important; background: var(--demo-panel-bg); font-size: .85rem !important; }
+        .demo-code { margin: 0; padding: 14px; overflow: auto; border-radius: var(--fs-radius-sm); color: var(--fs-color-text); background: var(--demo-panel-bg); font: .76rem/1.6 var(--fs-font-mono, ui-monospace, monospace); white-space: pre-wrap; }
+        .demo-reference { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: clamp(18px, 3vw, 28px); }
+        .demo-reference p { margin: 8px 0 16px; line-height: 1.5; }
+        .demo-reference ul { margin: 0; padding-inline-start: 20px; color: var(--fs-color-muted); line-height: 1.8; }
+        .demo-reference code { color: var(--fs-color-primary); }
+        .demo-note { margin-block-start: 14px !important; font-size: .85rem; }
+        @media (max-width: 760px) { .demo-hero, .demo-playground-grid, .demo-reference { grid-template-columns: 1fr; } .demo-hero { align-items: start; } .demo-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
+    <main class="demo-page">
+        <header class="demo-hero">
+            <div>
+                <p class="demo-eyebrow">Fokus Styles · componente essencial</p>
+                <h1 class="demo-title">Badges que comunicam estados breves com clareza.</h1>
+                <p class="demo-lead">Use rótulos compactos para status, contagens e classificações. Esta página demonstra variantes visuais, tokens de densidade e composição com alertas sem depender apenas de cor.</p>
+                <div class="demo-badge-row" aria-label="Exemplos rápidos"><span class="fs-badge fs-badge-primary">Em análise</span><span class="fs-badge fs-badge-soft-success fs-badge-dot">Disponível</span><span class="fs-badge fs-badge-count fs-badge-danger" aria-label="3 notificações não lidas">3</span></div>
+            </div>
+            <span class="fs-badge fs-badge-outline-primary">CSS-only</span>
+        </header>
+        <nav class="demo-toolbar" aria-label="Controles da demonstração"><div class="demo-action-row"><button class="fs-btn fs-btn-primary fs-btn-sm" type="button" id="reset-demo">Restaurar demonstração</button><button class="fs-btn fs-btn-outline-primary fs-btn-sm" type="button" id="toggle-direction" aria-pressed="false">Testar RTL</button></div><span class="fs-form-text">Use as seções abaixo para comparar variantes, tamanhos e combinações.</span></nav>
 
-    <div class="theme-panel">
-        <h2 class="fs-u-fs-lg fs-u-fw-medium">Badges e alertas</h2>
+        <section class="demo-section" aria-labelledby="why-title">
+            <div class="demo-section-heading"><div><h2 id="why-title">Escolha o padrão certo</h2><p>Badge informa algo curto que já tem contexto na tela; Alert permanece para mensagens que precisam ser lidas e compreendidas.</p></div></div>
+            <div class="demo-grid">
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">#</span><h3>Status e classificação</h3><p>Use uma variante semântica ao lado do item que ela qualifica, como pedido, plano ou usuário.</p><span class="fs-badge fs-badge-success">Aprovado</span></article>
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">1</span><h3>Contagem compacta</h3><p>Para números curtos, use contagem tabular; a forma circular é opcional e indicada para um único dígito.</p><span class="fs-badge fs-badge-count fs-badge-danger fs-u-mr-2" aria-label="12 notificações não lidas">12</span><span class="fs-badge fs-badge-count fs-badge-count-circle fs-badge-primary" aria-label="1 tarefa pendente">1</span></article>
+                <article class="demo-card"><span class="demo-card-icon" aria-hidden="true">!</span><h3>Mensagem contextual</h3><p>Quando há explicação ou próxima ação, complemente o badge com um Alert.</p><div class="fs-alert fs-alert-warning" role="status">Atenção: revise o cadastro antes de publicar.</div></article>
+            </div>
+        </section>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Badges — neutro e sólidos</p>
-        <span class="fs-badge fs-u-mr-2">Badge</span>
-        <span class="fs-badge fs-badge-primary fs-u-mr-2">Primary</span>
-        <span class="fs-badge fs-badge-success fs-u-mr-2">Success</span>
-        <span class="fs-badge fs-badge-warning fs-u-mr-2">Warning</span>
-        <span class="fs-badge fs-badge-danger fs-u-mr-2">Danger</span>
-        <span class="fs-badge fs-badge-info">Info</span>
+        <section class="demo-section" aria-labelledby="playground-title">
+            <div class="demo-section-heading"><div><h2 id="playground-title">Laboratório de variantes</h2><p>Compare cor, peso visual, indicador, contagem, split e tamanho usando a mesma marcação pública documentada.</p></div><span class="fs-badge fs-badge-outline-success">ao vivo</span></div>
+            <div class="demo-playground"><div class="demo-playground-grid"><div>
+                <div class="demo-demo-group"><h3>Pesos visuais</h3><p>Variantes sólidas destacam; soft e outline reduzem o peso para metadados e estados recorrentes.</p><div class="demo-sample"><span class="demo-sample-label">Neutro e sólido</span><span class="fs-badge">Padrão</span><span class="fs-badge fs-badge-primary">Primary</span><span class="fs-badge fs-badge-success">Success</span><span class="fs-badge fs-badge-warning">Warning</span><span class="fs-badge fs-badge-danger">Danger</span><span class="fs-badge fs-badge-info">Info</span></div><div class="demo-sample"><span class="demo-sample-label">Soft e outline</span><span class="fs-badge fs-badge-soft-primary">Em revisão</span><span class="fs-badge fs-badge-soft-success fs-badge-dot">Disponível</span><span class="fs-badge fs-badge-outline-warning">Beta</span><span class="fs-badge fs-badge-outline-danger">Restrito</span></div></div>
+                <div class="demo-demo-group"><h3>Contagem e indicadores</h3><p>O texto continua carregando o significado; a forma circular é apenas uma compactação visual.</p><div class="demo-sample"><span class="demo-sample-label">Status e contagem</span><span class="fs-badge fs-badge-soft-info fs-badge-dot">Sincronizando</span><span class="fs-badge fs-badge-count fs-badge-danger" aria-label="12 notificações não lidas">12</span><span class="fs-badge fs-badge-count fs-badge-primary">99+</span><span class="fs-badge fs-badge-count fs-badge-count-circle fs-badge-success" aria-label="1 notificação não lida">1</span></div></div>
+                <div class="demo-demo-group"><h3>Rótulo e valor</h3><p>O split mantém os segmentos conectados e aceita o mesmo raio pequeno do sistema.</p><div class="demo-sample"><span class="demo-sample-label">Split</span><span class="fs-badge-split fs-badge-split-primary"><span class="fs-badge-split-label">New</span><span class="fs-badge-split-value">0.7.1</span></span><span class="fs-badge-split fs-badge-split-success"><span class="fs-badge-split-label">Deploy</span><span class="fs-badge-split-value">Pronto</span></span><span class="fs-badge-split fs-badge-split-warning fs-badge-sm"><span class="fs-badge-split-label">API</span><span class="fs-badge-split-value">Beta</span></span></div></div>
+            </div><aside class="demo-status" aria-labelledby="status-title"><div><h3 id="status-title">Contrato do componente</h3><p>Badge é estático, não entra no Tab e não substitui botão, filtro ou mensagem de erro.</p></div><p class="demo-status-output" id="demo-status" role="status" aria-live="polite">Demonstração pronta.</p><pre class="demo-code"><code>.fs-badge
+.fs-badge-{color}
+.fs-badge-soft-{color}
+.fs-badge-outline-{color}
+.fs-badge-dot
+.fs-badge-count
+.fs-badge-count-circle
+.fs-badge-split
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Badges — soft e outline</p>
-        <span class="fs-badge fs-badge-soft-primary fs-u-mr-2">Em revisão</span>
-        <span class="fs-badge fs-badge-soft-success fs-badge-dot fs-u-mr-2">Disponível</span>
-        <span class="fs-badge fs-badge-outline-warning fs-u-mr-2">Beta</span>
-        <span class="fs-badge fs-badge-outline-danger">Restrito</span>
+/* tokens locais */
+--fs-badge-radius
+--fs-badge-padding-inline</code></pre></aside></div></div>
+        </section>
 
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Badges — status e contagem</p>
-        <span class="fs-badge fs-badge-soft-info fs-badge-dot fs-u-mr-2">Sincronizando</span>
-        <span class="fs-badge fs-badge-count fs-badge-danger fs-u-mr-2" aria-label="12 notificações não lidas">12</span>
-        <span class="fs-badge fs-badge-count fs-badge-primary">99+</span>
-
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Badges — rótulo e valor</p>
-        <span class="fs-badge-split fs-badge-split-primary fs-u-mr-2">
-            <span class="fs-badge-split-label">New</span>
-            <span class="fs-badge-split-value">0.7.1</span>
-        </span>
-        <span class="fs-badge-split fs-badge-split-success fs-u-mr-2">
-            <span class="fs-badge-split-label">Deploy</span>
-            <span class="fs-badge-split-value">Pronto</span>
-        </span>
-        <span class="fs-badge-split fs-badge-split-warning fs-badge-sm">
-            <span class="fs-badge-split-label">API</span>
-            <span class="fs-badge-split-value">Beta</span>
-        </span>
-
-        <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-1">Badges - tamanhos</p>
-        <span class="fs-badge fs-badge-primary fs-badge-sm fs-u-mr-2">Small</span>
-        <span class="fs-badge fs-badge-primary fs-u-mr-2">Default</span>
-        <span class="fs-badge fs-badge-primary fs-badge-lg">Large</span>
-
-    </div>
-
+        <section class="demo-section" aria-labelledby="sizes-title"><div class="demo-section-heading"><div><h2 id="sizes-title">Tamanhos, tokens e temas</h2><p>As classes de tamanho preservam a mesma semântica; os tokens locais permitem ajustes pontuais sem CSS paralelo.</p></div></div><div class="demo-reference"><div><h2>Escala visual</h2><p>Use o tamanho pequeno em tabelas e o grande apenas quando o badge precisar acompanhar uma hierarquia maior.</p><div class="demo-chip-row"><span class="fs-badge fs-badge-primary fs-badge-sm">Small</span><span class="fs-badge fs-badge-primary">Default</span><span class="fs-badge fs-badge-primary fs-badge-lg">Large</span></div><p class="demo-note">O raio padrão usa <code>--fs-radius-sm</code>; o count circular é opt-in para valores curtos.</p></div><div><h2>Contratos preservados</h2><ul><li>Texto e contexto não dependem apenas de cor.</li><li>Badges estáticos não recebem foco de teclado.</li><li>Contagens significativas podem receber <code>aria-label</code>.</li><li>Soft e outline devem ser conferidos em claro e escuro.</li><li>RTL usa propriedades lógicas sem duplicar estilos.</li></ul></div></div></section>
+    </main>
     <script>
-        if (new URLSearchParams(window.location.search).get("theme") === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-        }
+        const resetButton = document.getElementById("reset-demo");
+        const directionButton = document.getElementById("toggle-direction");
+        const page = document.querySelector(".demo-page");
+        const status = document.getElementById("demo-status");
+        resetButton.addEventListener("click", () => { page.setAttribute("dir", "ltr"); directionButton.setAttribute("aria-pressed", "false"); directionButton.textContent = "Testar RTL"; status.textContent = "Demonstração restaurada em LTR."; });
+        directionButton.addEventListener("click", () => { const rtl = page.getAttribute("dir") !== "rtl"; page.setAttribute("dir", rtl ? "rtl" : "ltr"); directionButton.setAttribute("aria-pressed", String(rtl)); directionButton.textContent = rtl ? "Voltar para LTR" : "Testar RTL"; status.textContent = rtl ? "Direção RTL ativada." : "Direção LTR ativada."; });
     </script>
 </body>
 </html>

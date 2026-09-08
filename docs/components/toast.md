@@ -1,15 +1,14 @@
 # Toast
 
-Notificação temporária, empilhada num canto da tela, com dispensa manual
-ou automática por tempo. Base do [Notification Center](notification-center.md).
+Notificação flutuante e temporária para confirmar uma ação não bloqueante.
+Para mensagens persistentes no contexto da página use [Alert](alert.md); para
+histórico e revisão posterior use [Notification Center](notification-center.md).
 
 ## Visão geral
 
 ```html
-<button type="button" class="fs-btn fs-btn-primary" id="btn-toast">Mostrar toast</button>
-
 <div class="fs-toast-container">
-  <div class="fs-toast fs-toast-success" data-fs="toast" id="meuToast" data-delay="4000">
+  <div class="fs-toast fs-toast-success" data-fs="toast" data-delay="4000">
     <div class="fs-toast-header">
       <span>Sucesso</span>
       <button type="button" class="fs-btn-close" data-fs-dismiss="toast" aria-label="Fechar"></button>
@@ -19,77 +18,91 @@ ou automática por tempo. Base do [Notification Center](notification-center.md).
 </div>
 ```
 
-```js
-document.getElementById("btn-toast").addEventListener("click", () => {
-  FokusStyles.Toast.getInstance(document.getElementById("meuToast")).show();
-});
-```
-
-Ao contrário de Modal/Offcanvas, o Toast **não** abre sozinho ao clicar num
-gatilho com `data-fs-target` — ele é mostrado programaticamente via
-`.show()`, porque geralmente é disparado por um evento da sua aplicação
-(sucesso de uma requisição, etc.), não diretamente por um clique.
+O Toast é inicializado pelo atributo `data-fs="toast"`, mas só aparece quando
+`.show()` é chamado. O container é fixo, empilha mensagens e usa propriedades
+lógicas para funcionar em RTL e respeitar áreas seguras móveis.
 
 ## Anatomia
 
-`.fs-toast-container` (posição fixa num canto — um só por página,
-compartilhado por todos os toasts) > `.fs-toast` (`data-fs="toast"`) >
-`.fs-toast-header` (título + `.fs-btn-close`) + `.fs-toast-body`.
-
-## Variações
-
-Cor: `.fs-toast-{primary|secondary|success|warning|danger|info}` no
-`.fs-toast` — tinge só o header.
-
-## Estados
-
-`.is-open` — controlado pelo JS (o toast começa com `display: none`
-inline até a primeira `show()`).
-
-- `data-delay` (ms, padrão `4000`) — tempo até auto-esconder.
-- `data-autohide="false"` — desativa o auto-esconder; só fecha pelo
-  `.fs-btn-close` ou `.hide()` programático.
-
-## A11y
-
-`role="status"` + `aria-live="polite"` aplicados automaticamente — leitor
-de tela anuncia o conteúdo ao aparecer, sem interromper o que está sendo
-lido (diferente de `aria-live="assertive"`, que interromperia).
-
-## API JS
-
-Auto-init via `data-fs="toast"` (registra a instância, mas **não** mostra
-automaticamente). `Toast.getInstance(el)`.
-
-| Método | Descrição |
-|---|---|
-| `show()` | Mostra (anima expansão), inicia o temporizador de auto-esconder se `autohide` estiver ativo. |
-| `hide()` | Esconde (anima recolhimento), cancela o temporizador. |
-| `toggle()` | Alterna. |
-| `dispose()` | Cancela o temporizador, remove listeners, desregistra a instância. |
-
-| Evento | Cancelável | Quando |
-|---|---|---|
-| `fs:toast:shown` | Não | Depois que a animação de mostrar termina. |
-| `fs:toast:hidden` | Não | Depois que a animação de esconder termina (inclusive auto-hide). |
-
-## Tokens
-
-`--fs-color-border`, `--fs-color-surface`, `--fs-alert-{nome}-bg`/`-text`
-(header colorido), `--fs-radius-md`, `--fs-shadow-md`.
-
-## Exemplo
+`.fs-toast-container` contém um ou mais `.fs-toast`. Dentro dele, os slots
+opcionais são `.fs-toast-header`, `.fs-toast-icon`, `.fs-toast-heading`,
+`.fs-toast-title`, `.fs-toast-meta`, `.fs-toast-body`, `.fs-toast-actions`,
+`.fs-toast-link`, `.fs-toast-close` e `.fs-toast-progress`.
 
 ```html
-<div class="fs-toast-container">
-  <div class="fs-toast fs-toast-danger" data-fs="toast" id="erroToast" data-autohide="false">
-    <div class="fs-toast-header">
-      <span>Erro</span>
-      <button type="button" class="fs-btn-close" data-fs-dismiss="toast" aria-label="Fechar"></button>
+<div class="fs-toast fs-toast-success" data-fs="toast" data-delay="5000" data-toast-progress="true">
+  <div class="fs-toast-header">
+    <span class="fs-toast-icon" aria-hidden="true">✓</span>
+    <div class="fs-toast-heading">
+      <strong class="fs-toast-title">Arquivo salvo</strong>
+      <span class="fs-toast-meta">Agora</span>
     </div>
-    <div class="fs-toast-body">Falha ao salvar. Tente novamente.</div>
+    <button type="button" class="fs-btn-close fs-toast-close" data-fs-dismiss="toast" aria-label="Fechar aviso de arquivo salvo"></button>
   </div>
+  <div class="fs-toast-body">O documento foi salvo com sucesso.</div>
+  <div class="fs-toast-actions">
+    <button type="button" class="fs-btn fs-btn-sm fs-btn-success">Desfazer</button>
+    <a href="#detalhes" class="fs-toast-link">Ver detalhes</a>
+  </div>
+  <div class="fs-toast-progress" aria-hidden="true"></div>
 </div>
 ```
 
-Mockup: [laboratório do componente](../../mockup/overlays-commands.html#toast).
+O ícone é fornecido pelo consumidor e deve ser decorativo quando o texto já
+explicar o estado. Ações usam Button; o fechamento continua sendo o único
+controle obrigatório da dispensa.
+
+## Variações e estados
+
+Variantes: `.fs-toast-primary`, `.fs-toast-secondary`, `.fs-toast-success`,
+`.fs-toast-warning`, `.fs-toast-danger` e `.fs-toast-info`.
+
+- `data-delay="4000"` define o tempo de auto-dismiss em milissegundos;
+- `data-autohide="false"` mantém o Toast aberto;
+- `data-toast-progress="true"` exibe a barra de tempo quando o auto-dismiss está ativo;
+- hover, foco e interação pausam o timer e a barra de progresso;
+- `prefers-reduced-motion` elimina a animação contínua do progresso.
+
+## Estados
+
+O Toast começa oculto, entra em `.is-open` durante a exibição e pode ser
+pausado por hover ou foco. `hide()` e auto-dismiss cancelam o timer e ocultam
+o elemento sem transferir foco.
+
+## A11y
+
+O JavaScript aplica `role="status"` e `aria-live="polite"`. O Toast não move
+foco automaticamente e não deve usar `aria-live="assertive"` por padrão.
+Botões de fechamento precisam de `aria-label` específico; links e ações devem
+ter nomes compreensíveis. Ícones decorativos usam `aria-hidden="true"` e não
+substituem texto.
+
+Use `data-autohide="false"` para erros que exigem ação. Não use Toast para
+decisões críticas, conteúdo extenso ou mensagens que precisam permanecer no
+contexto da região afetada.
+
+## API JS
+
+```js
+const toast = FokusStyles.Toast.getInstance(document.querySelector(".fs-toast"));
+toast.show();
+toast.hide();
+toast.toggle();
+toast.dispose();
+```
+
+Eventos preservados: `fs:toast:shown` e `fs:toast:hidden`. O componente pausa
+o auto-dismiss durante hover e foco, sem transferir foco para outro Toast.
+
+## Tokens
+
+Container: `--fs-toast-offset`, `--fs-toast-gap`, `--fs-toast-width` e
+`--fs-toast-max-width`. Instância: `--fs-toast-padding-block`,
+`--fs-toast-padding-inline`, `--fs-toast-gap`, `--fs-toast-radius`,
+`--fs-toast-shadow`, `--fs-toast-icon-size`, `--fs-toast-title-gap`,
+`--fs-toast-actions-gap`, `--fs-toast-border-width` e
+`--fs-toast-progress-height`.
+
+## Mockup
+
+[Laboratório independente do Toast](../../mockup/examples/toast.html).

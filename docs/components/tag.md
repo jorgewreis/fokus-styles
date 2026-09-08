@@ -24,9 +24,14 @@ Badge, não um componente separado) contendo texto + `.fs-btn-close` com
 - **Tamanho**: apenas o tamanho padrão. Tags são controles compactos de
   remoção; usar uma única densidade evita variações de alvo e de texto em
   filtros e formulários.
-- **Ícone inicial**: envolva um SVG de `fokus-styles/icons` em `.fs-tag-icon` antes
-  de `.fs-tag-label`. O ícone é decorativo (`aria-hidden="true"`) quando o
-  texto já descreve a tag.
+- **Ícones**: envolva um SVG de `fokus-styles/icons` em `.fs-tag-icon` antes
+  de `.fs-tag-label` para ícone inicial ou use `.fs-tag-icon-end` depois do
+  texto para indicar um estado. O contêiner do ícone usa a mesma dimensão
+  visual do botão de fechamento; `--fs-tag-icon-size`,
+  `--fs-tag-icon-glyph-size`, `--fs-tag-icon-gap` e `--fs-tag-icon-color`
+  permitem ajustes locais. O
+  ícone é decorativo (`aria-hidden="true"`) quando o texto já descreve a tag;
+  nunca use uma Tag somente com ícone como padrão.
 - **Texto longo**: use `.fs-tag-truncate` na tag e `.fs-tag-label` no texto.
   Defina `--fs-tag-max-inline-size` conforme o contexto; o texto integral
   continua no DOM e pode ser exposto em `title` como apoio visual.
@@ -43,6 +48,9 @@ Badge, não um componente separado) contendo texto + `.fs-btn-close` com
   não exibidas.
   Conecte-o a um popover ou a uma lista expandida e mantenha `aria-expanded`
   sincronizado com essa interface.
+
+O botão de fechamento usa `--fs-tag-close-size` e `--fs-tag-close-gap`, herda
+o raio do Badge e é a única ação de remoção. A Tag inteira não é um botão.
 
 ```html
 <div class="fs-tag-group">
@@ -69,6 +77,11 @@ remoção é desabilitado até que o estado seja removido.
   Frontend", não só "Remover") — é um botão só-ícone.
 - A remoção só acontece ao clicar no botão de fechar, nunca ao clicar na
   tag inteira — evita remoção acidental.
+- Se o botão de fechar estiver focado quando a Tag for removida, o foco vai
+  para a próxima Tag do mesmo grupo; se não houver, vai para a anterior.
+  Remoções programáticas sem foco no botão não movem o foco.
+- Ícones com significado próprio precisam ser acompanhados por texto ou
+  descrição acessível; não dependa apenas do desenho ou da cor.
 - Para tags truncadas, mantenha a string completa dentro de `.fs-tag-label`;
   ela continua disponível para tecnologias assistivas. `title` é apenas uma
   ajuda adicional para ponteiro.
@@ -91,7 +104,9 @@ Auto-init via `data-fs="tag"`. `Tag.getInstance(el)`.
 
 ## Tokens
 
-Usa os tokens de [Badge](badge.md). Sem tokens de componente próprios.
+Usa os tokens de [Badge](badge.md) e expõe tokens locais para composição:
+`--fs-tag-icon-size`, `--fs-tag-icon-glyph-size`, `--fs-tag-icon-gap`, `--fs-tag-icon-color`,
+`--fs-tag-close-size` e `--fs-tag-close-gap`.
 
 ## Exemplo
 

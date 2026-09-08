@@ -33,12 +33,29 @@ export class Tag {
   dismiss() {
     if (this._isLoading) return false;
 
+    const dismissButton = this.tagEl.querySelector('[data-fs-dismiss="tag"]');
+    const shouldRestoreFocus = dismissButton && document.activeElement === dismissButton;
     const event = new CustomEvent("fs:tag:dismissed", { bubbles: true, cancelable: true });
     this.tagEl.dispatchEvent(event);
     if (event.defaultPrevented) return false;
 
+    const focusTarget = shouldRestoreFocus ? this._getFocusTarget() : null;
     this.tagEl.remove();
+    focusTarget?.focus();
     return true;
+  }
+
+  _getFocusTarget() {
+    const group = this.tagEl.closest(".fs-tag-group");
+    if (!group) return null;
+
+    const buttons = [...group.querySelectorAll('[data-fs-dismiss="tag"]')]
+      .filter((button) => !button.disabled && !button.hidden && button.getAttribute("aria-hidden") !== "true");
+    const currentButton = this.tagEl.querySelector('[data-fs-dismiss="tag"]');
+    const currentIndex = buttons.indexOf(currentButton);
+    const remaining = buttons.filter((button) => button !== currentButton);
+
+    return remaining[currentIndex] || remaining[currentIndex - 1] || null;
   }
 
   // Estado útil enquanto uma remoção ou atualização assíncrona está pendente.

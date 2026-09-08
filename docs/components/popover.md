@@ -19,9 +19,10 @@ aparência de card de superfície em vez do chip escuro.
 ## Anatomia
 
 Gatilho (qualquer elemento) + `.fs-popover` > `.fs-popover-header`
-(opcional) + `.fs-popover-body` + `.fs-popover-footer` (opcional, ações
-alinhadas à direita). A seta (`.fs-popover-arrow`) é gerada
-automaticamente.
+(opcional) + `.fs-popover-body` + `.fs-popover-footer` (opcional). Slots
+aditivos incluem `.fs-popover-icon`, `.fs-popover-heading`,
+`.fs-popover-title`, `.fs-popover-meta`, `.fs-popover-text` e
+`.fs-popover-close`. A seta (`.fs-popover-arrow`) é posicionada junto ao painel.
 
 ## Variações
 
@@ -52,7 +53,9 @@ automaticamente.
 
 ## Estados
 
-`.is-open` — controlado pelo JS.
+`.is-open` — controlado pelo JS. Escape, clique externo (trigger click) e
+`data-fs-dismiss="popover"` fecham conforme o tipo de gatilho. Popover não é
+modal: não bloqueia scroll nem cria focus trap.
 
 ## A11y
 
@@ -62,6 +65,12 @@ automaticamente.
 clique fora fecha. Um elemento dentro do popover com
 `data-fs-dismiss="popover"` fecha ao ser clicado (útil pra um botão "OK"
 no footer).
+
+Ao abrir outro Popover, o painel anterior é fechado para evitar sobreposição.
+O posicionamento testa alternativas quando o lado solicitado não cabe na
+viewport, e a seta acompanha o alinhamento do gatilho. Para conteúdo carregado
+de forma assíncrona, use `aria-busy="true"` e componha um `.fs-spinner` com
+texto de carregamento.
 
 ## API JS
 
@@ -83,7 +92,12 @@ Auto-init via `data-fs="popover"`. `Popover.getInstance(el)` (`el` é o
 ## Tokens
 
 `--fs-color-border`, `--fs-color-surface`, `--fs-color-subtle` (header),
-`--fs-color-text`, `--fs-radius-md`, `--fs-shadow-md`.
+`--fs-color-text`, `--fs-radius-md`, `--fs-shadow-md` e os tokens locais
+`--fs-popover-width`, `--fs-popover-max-width`, `--fs-popover-padding-block`,
+`--fs-popover-padding-inline`, `--fs-popover-gap`, `--fs-popover-radius`,
+`--fs-popover-shadow`, `--fs-popover-icon-size`, `--fs-popover-heading-gap`,
+`--fs-popover-footer-gap`, `--fs-popover-arrow-size` e
+`--fs-popover-border-width`.
 
 ## Exemplo
 
@@ -101,5 +115,4 @@ Auto-init via `data-fs="popover"`. `Popover.getInstance(el)` (`el` é o
 </div>
 ```
 
-Mockup: [laboratório do componente](../../mockup/overlays-commands.html#popover),
-[`mockup/overlays-commands.html#hover-card`](../../mockup/overlays-commands.html#popover).
+Mockup: [laboratório independente do componente](../../mockup/examples/popover.html).

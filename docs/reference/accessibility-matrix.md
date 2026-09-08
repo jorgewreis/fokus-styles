@@ -19,7 +19,7 @@ renderizado de fato nos mockups (via o gate axe).
 |---|---|---|---|---|---|
 | [Accordion](../components/accordion.md) | Nativo (`<button>`) | Automático | — | ✓ | Sim |
 | [Alert Dialog](../components/alert-dialog.md) | Herdado do Modal | Herdado do Modal | Focus trap + devolve ao gatilho | ✓ | Sim |
-| [Alert](../components/alert.md) | N/A | Manual (`role="alert"`/`"status"`) | — | ✓ | Sim |
+| [Alert](../components/alert.md) | Nativo quando houver link/botão | Manual (`role="alert"`/`"status"`) | Nenhuma automática | ✓ | Sim |
 | [Badge](../components/badge.md) | N/A (decorativo) | N/A | — | ✓ | Sim |
 | [Breadcrumb](../components/breadcrumb.md) | Nativo (links) | Manual (`<nav aria-label>`) | — | ✓ | Sim |
 | [Button](../components/button.md) | Nativo | Manual (`aria-label` em só-ícone) | Foco visível padrão | ✓ | Sim |
@@ -50,11 +50,11 @@ renderizado de fato nos mockups (via o gate axe).
 | [Switch](../components/switch.md) | Nativo (Space) | Checkbox nativo; nome manual sem texto | Foco visível no trilho | ✓ | Sim |
 | [Table](../components/table.md) | Nativo | Manual (`scope`, `<caption>`) | — | ✓ | Sim |
 | [Tabs](../components/tabs.md) | Automático (roving tabindex) | Automático (`role="tab"`/`"tabpanel"`) | — | ✓ | Sim |
-| [Tag](../components/tag.md) | Nativo (botão de fechar) | Manual (`aria-label` descritivo) | — | ✓ | Sim |
+| [Tag](../components/tag.md) | Nativo (botão de fechar) | Manual (`aria-label` descritivo, `aria-busy`) | Foco preservado/transferido após dismiss | ✓ | Sim |
 | [Tile](../components/tile.md) | Nativo (link real) | — | Foco no link, não no `::after` | ✓ | Sim |
 | [Timeline](../components/timeline.md) | N/A (sem interação própria) | — | — | ✓ | Sim |
-| [Toast](../components/toast.md) | N/A | Automático (`role="status"`, `aria-live`) | — | ✓ | Sim |
-| [Tooltip](../components/tooltip.md) | Nativo (`focus`/`blur`) | Automático (`aria-describedby`) | — | ✓ | Sim |
+| [Toast](../components/toast.md) | Nativo em fechamento e ações | Automático (`role="status"`, `aria-live="polite"`) | Nenhuma automática; pausa em foco/hover | ✓ | Sim |
+| [Tooltip](../components/tooltip.md) | Nativo (`focus`/`blur`, ponteiro e Escape) | Automático (`role="tooltip"`, `aria-describedby`) | Nenhuma; foco permanece no gatilho | ✓ | Sim |
 
 ## Legenda
 

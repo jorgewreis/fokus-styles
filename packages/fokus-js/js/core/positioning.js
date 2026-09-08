@@ -32,21 +32,18 @@ function alignCrossAxis(align, referenceStart, referenceSize, floatingSize) {
 }
 
 export function computePosition(referenceEl, floatingEl, options = {}) {
-  const { placement = "bottom", align = "center", offset = 8, padding = 8 } = options;
+  const { placement = "bottom", align = "center", offset = 8, padding = 8, fallbackPlacements } = options;
 
   const referenceRect = referenceEl.getBoundingClientRect();
   const floatingRect = floatingEl.getBoundingClientRect();
   const viewportWidth = document.documentElement.clientWidth;
   const viewportHeight = document.documentElement.clientHeight;
 
-  let finalPlacement = placement;
-
-  if (
-    !fitsPlacement(placement, referenceRect, floatingRect, offset, viewportWidth, viewportHeight) &&
-    fitsPlacement(OPPOSITE_PLACEMENT[placement], referenceRect, floatingRect, offset, viewportWidth, viewportHeight)
-  ) {
-    finalPlacement = OPPOSITE_PLACEMENT[placement];
-  }
+  const candidates = [...new Set(fallbackPlacements ?? [placement, OPPOSITE_PLACEMENT[placement], "bottom", "top", "right", "left"])]
+    .filter(Boolean);
+  const primaryCandidates = candidates.slice(0, 2);
+  const finalPlacement = primaryCandidates.find((candidate) => fitsPlacement(candidate, referenceRect, floatingRect, offset, viewportWidth, viewportHeight))
+    ?? placement;
 
   let top;
   let left;
@@ -70,10 +67,18 @@ export function computePosition(referenceEl, floatingEl, options = {}) {
   left = Math.min(Math.max(left, padding), maxLeft);
   top = Math.min(Math.max(top, padding), maxTop);
 
+  const crossSize = finalPlacement === "top" || finalPlacement === "bottom" ? floatingRect.width : floatingRect.height;
+  const crossStart = finalPlacement === "top" || finalPlacement === "bottom" ? left : top;
+  const referenceCenter = finalPlacement === "top" || finalPlacement === "bottom"
+    ? referenceRect.left + referenceRect.width / 2
+    : referenceRect.top + referenceRect.height / 2;
+  const crossOffset = Math.min(Math.max(referenceCenter - crossStart, 8), Math.max(8, crossSize - 8));
+
   return {
     top: top + window.scrollY,
     left: left + window.scrollX,
     placement: finalPlacement,
+    arrowOffset: `${crossOffset}px`,
   };
 }
 
@@ -109,4 +114,8 @@ export function applyPosition(floatingEl, position) {
   floatingEl.style.position = "absolute";
   floatingEl.style.top = `${position.top}px`;
   floatingEl.style.left = `${position.left}px`;
+  if (position.arrowOffset) {
+    floatingEl.style.setProperty("--fs-popover-arrow-offset", position.arrowOffset);
+    floatingEl.style.setProperty("--fs-tooltip-arrow-offset", position.arrowOffset);
+  }
 }

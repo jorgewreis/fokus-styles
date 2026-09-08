@@ -2,54 +2,104 @@
 
 @layer components {
   .fs-tooltip {
+    --fs-tooltip-max-width: 240px;
+    --fs-tooltip-padding-block: 6px;
+    --fs-tooltip-padding-inline: 10px;
+    --fs-tooltip-radius: var(--fs-radius-sm);
+    --fs-tooltip-offset: 8px;
+    --fs-tooltip-shadow: var(--fs-shadow-sm, 0 2px 8px rgb(0 0 0 / 18%));
+    --fs-tooltip-arrow-size: 8px;
+    --fs-tooltip-transition-duration: 120ms;
+
     position: absolute;
     z-index: var(--fs-z-tooltip);
-    display: none;
-    max-width: 220px;
+    display: block;
+    visibility: hidden;
+    max-inline-size: min(var(--fs-tooltip-max-width), calc(100vw - 16px));
+    min-inline-size: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow-wrap: anywhere;
+    transform: translateY(2px);
+    transition: opacity var(--fs-tooltip-transition-duration) ease,
+      transform var(--fs-tooltip-transition-duration) ease,
+      visibility 0s linear var(--fs-tooltip-transition-duration);
   }
 
   .fs-tooltip.is-open {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: none;
+    transform: translateY(0);
+    transition-delay: 0s;
   }
 
   .fs-tooltip-inner {
-    padding: 6px 10px;
-    border-radius: var(--fs-radius-sm);
+    padding-block: var(--fs-tooltip-padding-block);
+    padding-inline: var(--fs-tooltip-padding-inline);
+    border: 1px solid transparent;
+    border-radius: var(--fs-tooltip-radius);
     color: var(--fs-tooltip-text);
     background-color: var(--fs-tooltip-bg);
+    box-shadow: var(--fs-tooltip-shadow);
     font-size: $font-size-xs;
-    text-align: center;
+    line-height: 1.4;
+    text-align: start;
   }
 
   .fs-tooltip-arrow {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    inline-size: var(--fs-tooltip-arrow-size);
+    block-size: var(--fs-tooltip-arrow-size);
     background-color: var(--fs-tooltip-bg);
     transform: rotate(45deg);
   }
 
   .fs-tooltip[data-placement="top"] .fs-tooltip-arrow {
-    bottom: -4px;
-    left: 50%;
-    margin-left: -4px;
+    inset-block-end: -4px;
+    inset-inline-start: var(--fs-tooltip-arrow-offset, 50%);
+    margin-inline-start: -4px;
   }
 
   .fs-tooltip[data-placement="bottom"] .fs-tooltip-arrow {
-    top: -4px;
-    left: 50%;
-    margin-left: -4px;
+    inset-block-start: -4px;
+    inset-inline-start: var(--fs-tooltip-arrow-offset, 50%);
+    margin-inline-start: -4px;
   }
 
   .fs-tooltip[data-placement="left"] .fs-tooltip-arrow {
-    top: 50%;
-    right: -4px;
-    margin-top: -4px;
+    inset-block-start: var(--fs-tooltip-arrow-offset, 50%);
+    inset-inline-end: -4px;
+    margin-block-start: -4px;
   }
 
   .fs-tooltip[data-placement="right"] .fs-tooltip-arrow {
-    top: 50%;
-    left: -4px;
-    margin-top: -4px;
+    inset-block-start: var(--fs-tooltip-arrow-offset, 50%);
+    inset-inline-start: -4px;
+    margin-block-start: -4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-tooltip {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .fs-tooltip-inner,
+    .fs-tooltip-arrow {
+      color: CanvasText;
+      background-color: Canvas;
+      border-color: CanvasText;
+      box-shadow: none;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .fs-tooltip-inner {
+      border-color: currentcolor;
+      box-shadow: none;
+    }
   }
 }

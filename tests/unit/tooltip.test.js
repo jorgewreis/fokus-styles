@@ -37,6 +37,32 @@ describe("Tooltip", () => {
     expect(el.getAttribute("aria-describedby")).toBe(tooltipEl.id);
   });
 
+  it("preserva outros IDs em aria-describedby e os restaura no dispose", () => {
+    const el = document.createElement("button");
+    el.setAttribute("title", "Texto do tooltip");
+    el.setAttribute("aria-describedby", "descricao existente");
+    document.body.appendChild(el);
+    const tooltip = new Tooltip(el);
+    expect(el.getAttribute("aria-describedby")).toContain("descricao existente");
+    tooltip.dispose();
+    expect(el.getAttribute("aria-describedby")).toBe("descricao existente");
+  });
+
+  it("usa title fornecido na instanciação manual", () => {
+    const el = document.createElement("button");
+    document.body.appendChild(el);
+    const tooltip = new Tooltip(el, { title: "Texto manual" });
+    expect(tooltip.tooltipEl.querySelector(".fs-tooltip-inner").textContent).toBe("Texto manual");
+    tooltip.dispose();
+  });
+
+  it("mantém o offset padrão e aplica a variável de alinhamento da seta", () => {
+    const { tooltip } = buildTooltip();
+    tooltip.show();
+    expect(tooltip.offset).toBe(8);
+    expect(tooltip.tooltipEl.style.getPropertyValue("--fs-tooltip-arrow-offset")).toBeTruthy();
+  });
+
   it("getInstance() retorna a instância criada", () => {
     const { el, tooltip } = buildTooltip();
     expect(Tooltip.getInstance(el)).toBe(tooltip);

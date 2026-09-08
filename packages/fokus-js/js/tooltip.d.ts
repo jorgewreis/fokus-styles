@@ -1,8 +1,15 @@
 import type { Placement } from "./core/positioning.js";
 
+export type TooltipAlign = "start" | "center" | "end";
+export type TooltipPlacement = Placement | `${Placement}-${Exclude<TooltipAlign, "center">}`;
+
 export interface TooltipOptions {
-  placement?: Placement;
+  placement?: TooltipPlacement;
+  align?: TooltipAlign;
+  offset?: number;
   title?: string;
+  showDelay?: number;
+  hideDelay?: number;
 }
 
 export class Tooltip {

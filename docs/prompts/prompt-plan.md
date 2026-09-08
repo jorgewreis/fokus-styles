@@ -5,12 +5,12 @@ Copie o texto abaixo e substitua os campos entre colchetes antes de usar.
 ```text
 Atue como responsável pelo planejamento técnico e de design do Fokus Styles.
 
-Quero criar um plano, sem implementar ainda, para o componente **[NOME DO COMPONENTE]**.
+Quero criar um plano, sem implementar ainda, para o componente abaixo:
 
-## Contexto do pedido
+## Contexto do pedido 8011827-28.2026
 
-- Objetivo: [REFINAMENTO VISUAL DO COMPONENTE CAROUSEL;
-Sugira correções, alterações e implementações de códigos, funcionalidades de mudanças de visual para algo com maior qualidade e usabilidade]
+- Objetivo: [REFINAMENTO VISUAL DO COMPONENTE TOOLTIP;
+Sugira correções, alterações e implementações de códigos, funcionalidades de mudanças de visual para algo com maior qualidade, responsividade, acessibilidade, criatividade e usabilidade]
 
 Antes de propor o plano, investigue o repositório e use a documentação como fonte de verdade. Não presuma que o componente está isolado: determine suas dependências, impactos visuais, comportamentais, públicos e de manutenção.
 

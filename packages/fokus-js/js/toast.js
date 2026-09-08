@@ -11,14 +11,33 @@ export class Toast {
     this.isOpen = false;
     this._hideTimer = null;
     this._paused = false;
+    this._remaining = this.delay;
+    this._startedAt = 0;
+    this._progressTimer = null;
 
     toastEl.setAttribute("role", "status");
     toastEl.setAttribute("aria-live", "polite");
     toastEl.style.display = "none";
 
     this._handleDismissClick = this._handleDismissClick.bind(this);
-    this._pause = () => { this._paused = true; clearTimeout(this._hideTimer); };
-    this._resume = () => { this._paused = false; if (this.isOpen && this.autohide) this._scheduleHide(); };
+    this._pause = () => {
+      if (!this.isOpen || this._paused) return;
+      this._paused = true;
+      clearTimeout(this._hideTimer);
+      if (this.autohide && this._startedAt) {
+        this._remaining = Math.max(0, this._remaining - (Date.now() - this._startedAt));
+      }
+      this._updateProgress();
+      clearInterval(this._progressTimer);
+      this.toastEl.classList.add("is-paused");
+    };
+    this._resume = () => {
+      if (!this.isOpen || !this._paused) return;
+      this._paused = false;
+      this.toastEl.classList.remove("is-paused");
+      this._startProgress();
+      if (this.autohide) this._scheduleHide();
+    };
     toastEl.addEventListener("click", this._handleDismissClick);
     toastEl.addEventListener("mouseenter", this._pause);
     toastEl.addEventListener("mouseleave", this._resume);
@@ -42,8 +61,19 @@ export class Toast {
     if (this.isOpen) return;
     this.toastEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
+    this._remaining = this.delay;
+    this._startedAt = Date.now();
+    this.toastEl.style.setProperty("--fs-toast-duration", `${this.delay}ms`);
 
-    expand(this.toastEl).then(() => {
+    const expansion = expand(this.toastEl);
+    this.toastEl.classList.remove("is-progressing");
+    void this.toastEl.offsetWidth;
+    if (this.toastEl.getAttribute("data-toast-progress") === "true" && this.autohide) {
+      this.toastEl.classList.add("is-progressing");
+      this._startProgress();
+    }
+
+    expansion.then(() => {
       this.toastEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
       this.toastEl.dispatchEvent(new CustomEvent("fs:toast:shown", { bubbles: true }));
     });
@@ -51,7 +81,31 @@ export class Toast {
     this._scheduleHide();
   }
 
-  _scheduleHide() { clearTimeout(this._hideTimer); if (this.autohide && !this._paused) this._hideTimer = setTimeout(() => this.hide(), this.delay); }
+  _scheduleHide() {
+    clearTimeout(this._hideTimer);
+    if (this.autohide && !this._paused) {
+      this._startedAt = Date.now();
+      this._hideTimer = setTimeout(() => this.hide(), this._remaining);
+    }
+  }
+
+  _updateProgress() {
+    if (this.toastEl.getAttribute("data-toast-progress") !== "true" || !this.autohide) return;
+    const percentage = Math.max(0, Math.min(100, (this._remaining / this.delay) * 100));
+    const progressEl = this.toastEl.querySelector(".fs-toast-progress");
+    if (progressEl) progressEl.style.inlineSize = `${percentage}%`;
+  }
+
+  _startProgress() {
+    if (this.toastEl.getAttribute("data-toast-progress") !== "true" || !this.autohide) return;
+    clearInterval(this._progressTimer);
+    this._updateProgress();
+    this._progressTimer = setInterval(() => {
+      if (!this.isOpen || this._paused) return;
+      this._remaining = Math.max(0, this.delay - (Date.now() - this._startedAt));
+      this._updateProgress();
+    }, 50);
+  }
 
   hide() {
     if (!this.isOpen) return;
@@ -60,6 +114,14 @@ export class Toast {
 
     clearTimeout(this._hideTimer);
     this._hideTimer = null;
+    clearInterval(this._progressTimer);
+    this._progressTimer = null;
+    this._startedAt = 0;
+    this._remaining = this.delay;
+    this.toastEl.classList.remove("is-paused");
+    this.toastEl.classList.remove("is-progressing");
+    const progressEl = this.toastEl.querySelector(".fs-toast-progress");
+    if (progressEl) progressEl.style.removeProperty("inline-size");
 
     collapse(this.toastEl).then(() => {
       this.toastEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
@@ -77,6 +139,7 @@ export class Toast {
 
   dispose() {
     clearTimeout(this._hideTimer);
+    clearInterval(this._progressTimer);
     this.toastEl.removeEventListener("click", this._handleDismissClick);
     this.toastEl.removeEventListener("mouseenter", this._pause);
     this.toastEl.removeEventListener("mouseleave", this._resume);

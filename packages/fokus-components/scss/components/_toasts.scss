@@ -2,47 +2,192 @@
 
 @layer components {
   .fs-toast-container {
+    --fs-toast-offset: 16px;
+    --fs-toast-gap: 8px;
+    --fs-toast-width: 360px;
+    --fs-toast-max-width: calc(100vw - 32px);
+
     position: fixed;
-    right: 16px;
-    bottom: 16px;
+    inset-inline-end: calc(var(--fs-toast-offset) + env(safe-area-inset-inline-end, 0px));
+    inset-block-end: calc(var(--fs-toast-offset) + env(safe-area-inset-bottom, 0px));
     z-index: var(--fs-z-toast);
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: min(360px, 100%);
-    max-width: calc(100vw - 2 * var(--fs-space-3));
+    gap: var(--fs-toast-gap);
+    inline-size: min(var(--fs-toast-width), 100%);
+    max-inline-size: var(--fs-toast-max-width);
   }
 
   .fs-toast {
+    --fs-toast-padding-block: 12px;
+    --fs-toast-padding-inline: 14px;
+    --fs-toast-gap: 10px;
+    --fs-toast-radius: var(--fs-radius-md, 6px);
+    --fs-toast-shadow: var(--fs-shadow-md);
+    --fs-toast-icon-size: 20px;
+    --fs-toast-title-gap: 4px;
+    --fs-toast-actions-gap: 8px;
+    --fs-toast-border-width: 1px;
+    --fs-toast-progress-height: 3px;
+
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    border: 1px solid var(--fs-color-border);
-    border-radius: var(--fs-radius-md);
+    min-inline-size: 0;
+    border: var(--fs-toast-border-width) solid var(--fs-color-border);
+    border-inline-start: 4px solid var(--fs-color-border);
+    border-radius: var(--fs-toast-radius);
     color: var(--fs-color-text);
     background-color: var(--fs-color-surface);
-    box-shadow: var(--fs-shadow-md);
+    box-shadow: var(--fs-toast-shadow);
+    overflow-wrap: anywhere;
   }
 
   .fs-toast-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 12px;
+    gap: var(--fs-toast-gap);
+    min-inline-size: 0;
+    padding-block: var(--fs-toast-padding-block);
+    padding-inline: var(--fs-toast-padding-inline);
     border-bottom: 1px solid var(--fs-color-border);
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
   }
 
+  .fs-toast-icon {
+    display: inline-flex;
+    flex: 0 0 var(--fs-toast-icon-size);
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--fs-toast-icon-size);
+    block-size: var(--fs-toast-icon-size);
+    color: currentcolor;
+  }
+
+  .fs-toast-icon .fs-icon,
+  .fs-toast-icon > svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .fs-toast-heading {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--fs-toast-title-gap);
+    min-inline-size: 0;
+  }
+
+  .fs-toast-title,
+  .fs-toast-meta {
+    min-inline-size: 0;
+  }
+
+  .fs-toast-meta {
+    color: var(--fs-color-muted);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+  }
+
+  .fs-toast-close {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+    color: inherit;
+  }
+
   .fs-toast-body {
-    padding: 12px;
+    min-inline-size: 0;
+    padding-block: var(--fs-toast-padding-block);
+    padding-inline: var(--fs-toast-padding-inline);
     font-size: $font-size-sm;
+    line-height: 1.5;
+  }
+
+  .fs-toast-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fs-toast-actions-gap);
+    align-items: center;
+    padding-block: 0 var(--fs-toast-padding-block);
+    padding-inline: var(--fs-toast-padding-inline);
+  }
+
+  .fs-toast-link {
+    color: inherit;
+    font-weight: $font-weight-medium;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .fs-toast-progress {
+    display: none;
+    align-self: stretch;
+    margin-inline-start: auto;
+    inline-size: 100%;
+    block-size: var(--fs-toast-progress-height);
+    background-color: currentcolor;
+    opacity: 0.5;
+  }
+
+  .fs-toast.is-progressing[data-toast-progress="true"]:not([data-autohide="false"]) .fs-toast-progress {
+    display: block;
+    inline-size: 100%;
+    transition: inline-size 50ms linear;
+  }
+
+  .fs-toast.is-paused .fs-toast-progress,
+  .fs-toast.is-progressing[data-toast-progress="true"]:not([data-autohide="false"]):hover .fs-toast-progress {
+    animation-play-state: paused;
   }
 
   @each $name, $color in $theme-colors {
     .fs-toast-#{$name} .fs-toast-header {
       color: var(--fs-alert-#{$name}-text);
       background-color: var(--fs-alert-#{$name}-bg);
+    }
+
+    .fs-toast-#{$name} {
+      border-inline-start-color: var(--fs-color-#{$name});
+    }
+  }
+
+  @media (width <= 480px) {
+    .fs-toast-container {
+      --fs-toast-offset: 12px;
+      --fs-toast-max-width: calc(100vw - 24px);
+    }
+
+    .fs-toast-actions {
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fs-toast.is-progressing[data-toast-progress="true"]:not([data-autohide="false"]) .fs-toast-progress {
+      animation: none;
+      inline-size: 100%;
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .fs-toast {
+      border-color: CanvasText;
+      border-inline-start-color: Highlight;
+      color: CanvasText;
+      background-color: Canvas;
+      box-shadow: none;
+    }
+
+    .fs-toast-header {
+      border-color: CanvasText;
+      background-color: Canvas;
+    }
+
+    .fs-toast-progress {
+      background-color: Highlight;
     }
   }
 }
