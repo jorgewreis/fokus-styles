@@ -12,6 +12,7 @@
     --fs-tooltip-transition-duration: 120ms;
 
     position: absolute;
+    inset: 0 auto auto 0;
     z-index: var(--fs-z-tooltip);
     display: block;
     visibility: hidden;
