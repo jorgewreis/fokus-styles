@@ -2,12 +2,7 @@
 
 ## Unreleased
 
-- refina Alert com raio, borda semântica lógica, tokens locais, slots opcionais para ícone, conteúdo, ações e fechamento visual responsivo;
-- adiciona grupos, variante inline, composição de loading com Spinner e fallback visual para forced colors;
-- refina Toast com posicionamento lógico, safe area, tokens locais, slots de ícone/ações e progresso opcional sincronizado ao auto-dismiss;
-- refina Popover com tokens locais, composição rica, seta responsiva, foco previsível e laboratório independente;
-- refina Tooltip com tokens locais, posicionamento lógico, fallback, delays opcionais, suporte a ponteiro/touch e laboratório independente;
-- documenta o uso manual de `role="status"`/`role="alert"` e mantém Alert CSS-only, sem mover foco ou fechar automaticamente.
+
 
 ## [2.6.0] - 2026-09-07
 
@@ -16,12 +11,18 @@
 - aprimora o Switch com trilho neutro, thumb elevado, halo de hover e feedback active;
 - documenta grupos com `fieldset/legend`, `aria-describedby`, RTL e tokens de componente.
 
-## [2.5.0] - 2026-09-07
+## [2.5.0] - 2026-09-08
 
 - expande a Utility API com display, flex, gap, tipografia, estados e variantes responsivas configuráveis;
 - padroniza APIs estáticas de Dropdown, Tabs e Carousel e eventos comuns `fs:shown`/`fs:hidden`;
 - adiciona pausa de Toast por foco/hover, layouts Stack/Cluster e regras responsivas para telas estreitas;
 - reforça composição RTL, forced colors, redução de movimento e layouts responsivos sem alterar a API `fs-*` existente.
+- refina Alert com raio, borda semântica lógica, tokens locais, slots opcionais para ícone, conteúdo, ações e fechamento visual responsivo;
+- adiciona grupos, variante inline, composição de loading com Spinner e fallback visual para forced colors;
+- refina Toast com posicionamento lógico, safe area, tokens locais, slots de ícone/ações e progresso opcional sincronizado ao auto-dismiss;
+- refina Popover com tokens locais, composição rica, seta responsiva, foco previsível e laboratório independente;
+- refina Tooltip com tokens locais, posicionamento lógico, fallback, delays opcionais, suporte a ponteiro/touch e laboratório independente;
+- documenta o uso manual de `role="status"`/`role="alert"` e mantém Alert CSS-only, sem mover foco ou fechar automaticamente.
 
 ## [2.4.0] - 2026-09-07
 
