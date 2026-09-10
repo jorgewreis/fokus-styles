@@ -1,5 +1,11 @@
 # Laboratórios de componentes
 
+Os laboratórios complementam a [documentação publicada do Fokus Styles](https://styles.fokuscloud.com.br/)
+e os guias versionados em [`docs/`](../docs/README.md), dentro do ecossistema
+[Fokus Cloud](https://www.fokuscloud.com.br/). O código-fonte e o histórico
+ficam no [GitHub](https://github.com/jorgewreis/fokus-styles); o pacote
+distribuído está no [npm](https://www.npmjs.com/package/fokus-styles).
+
 Os mockups são documentação viva: cada seção combina uma definição em
 português, contrato de acessibilidade, configurações suportadas, preview
 funcional e o HTML extraído do exemplo que está sendo executado. O markup não

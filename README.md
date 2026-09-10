@@ -12,7 +12,8 @@
 [Instalação](#instalação) ·
 [Por que Fokus Styles](#por-que-fokus-styles) ·
 [Componentes](#componentes) ·
-[Documentação](#documentação)
+[Documentação](#documentação) ·
+[Ecossistema Fokus Cloud](#ecossistema-fokus-cloud)
 
 </div>
 
@@ -24,7 +25,7 @@ profissionais, e é distribuído publicamente como produto para qualquer
 desenvolvedor que precise construir interfaces consistentes sem carregar
 React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 
-> **Status:** `2.1.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
+> **Status:** `2.6.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
 > e CLI em um único pacote npm. O foco atual é consolidar o núcleo CSS e os componentes
 > essenciais antes de ampliar o catálogo. O framework já possui componentes
 > avançados, mas eles são tratados como extensões e não definem o caminho
@@ -33,6 +34,23 @@ React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 
 Este README é a **visão geral** do projeto. Para aprender a usar cada recurso em
 detalhe, com exemplos completos, consulte a **[documentação completa](docs/README.md)**.
+
+## Ecossistema Fokus Cloud
+
+O Fokus Styles é o sistema visual que integra o ecossistema Fokus Cloud. Use
+cada fonte conforme o tipo de informação que procura:
+
+- [Fokus Cloud](https://www.fokuscloud.com.br/) — visão geral do ecossistema e
+  entrada para os produtos Fokus.
+- [Fokus Styles](https://styles.fokuscloud.com.br/) — documentação publicada,
+  fundamentos, instalação e guias visuais/interativos de uso.
+- [Repositório no GitHub](https://github.com/jorgewreis/fokus-styles) — código-fonte,
+  exemplos, decisões técnicas, issues e histórico de mudanças.
+- [Pacote no npm](https://www.npmjs.com/package/fokus-styles) — versões publicadas,
+  metadados, distribuição e instalação do pacote.
+
+As páginas em `docs/` são a referência versionada junto ao código; os sites
+complementam essa referência com conteúdo publicado e exemplos navegáveis.
 
 ## Por que Fokus Styles
 

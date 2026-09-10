@@ -1,5 +1,10 @@
 # Templates prontos
 
+Estes templates fazem parte dos exemplos do [Fokus Styles](https://styles.fokuscloud.com.br/),
+o sistema visual do [ecossistema Fokus Cloud](https://www.fokuscloud.com.br/).
+Consulte o [GitHub](https://github.com/jorgewreis/fokus-styles) para o código e
+o [npm](https://www.npmjs.com/package/fokus-styles) para a versão publicada.
+
 4 páginas completas, prontas para copiar como ponto de partida de um
 projeto real — diferente dos [laboratórios de `mockup/`](../README.md), que
 documentam componentes e suas configurações, cada arquivo aqui monta vários

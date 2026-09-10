@@ -1,5 +1,11 @@
 # Contribuindo
 
+O projeto integra o [ecossistema Fokus Cloud](https://www.fokuscloud.com.br/).
+Consulte também o [site do Fokus Styles](https://styles.fokuscloud.com.br/), o
+[GitHub](https://github.com/jorgewreis/fokus-styles) e o
+[npm](https://www.npmjs.com/package/fokus-styles) para, respectivamente, guias
+publicados, código-fonte e distribuição do pacote.
+
 O guia de contribuição vive na raiz do repositório —
 [`CONTRIBUTING.md`](../../CONTRIBUTING.md) — para o GitHub linkar
 automaticamente em issues/PRs. Cobre:

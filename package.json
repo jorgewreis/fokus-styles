@@ -1,6 +1,6 @@
 {
   "name": "fokus-styles",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Fokus Styles is a complete CSS framework with components, utilities, vanilla JavaScript, icons, React wrappers, and a CLI.",
   "keywords": [
     "css",
@@ -13,7 +13,8 @@
     "components",
     "fokus-cloud"
   ],
-  "homepage": "https://github.com/jorgewreis/fokus-styles#readme",
+  "homepage": "https://styles.fokuscloud.com.br/",
+  "documentation": "https://styles.fokuscloud.com.br/",
   "bugs": {
     "url": "https://github.com/jorgewreis/fokus-styles/issues"
   },

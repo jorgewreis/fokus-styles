@@ -1,5 +1,10 @@
 # Módulo interno React do Fokus Styles
 
+[Site e guias do Fokus Styles](https://styles.fokuscloud.com.br/) ·
+[Fokus Cloud](https://www.fokuscloud.com.br/) ·
+[GitHub](https://github.com/jorgewreis/fokus-styles) ·
+[npm](https://www.npmjs.com/package/fokus-styles)
+
 **Subpath opcional — não faz parte do núcleo recomendado.**
 
 Wrapper React fino para o [Fokus Styles](https://github.com/jorgewreis/fokus-styles)

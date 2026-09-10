@@ -3,6 +3,14 @@
 ## Unreleased
 
 
+## [2.6.1] - 2026-09-10
+
+- alinha a documentação do projeto ao ecossistema Fokus Cloud;
+- adiciona os sites do Fokus Cloud e do Fokus Styles como fontes oficiais de
+  documentação e guias de uso, junto ao GitHub e ao npm;
+- atualiza os metadados de documentação do pacote e o status do README.
+
+
 
 ## [2.6.0] - 2026-09-07
 

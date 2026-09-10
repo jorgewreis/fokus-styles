@@ -5,6 +5,25 @@ Comece pelo caminho recomendado, consulte um guia quando precisar adaptar o
 sistema e use as páginas de componentes como contratos de HTML, CSS, JavaScript
 e acessibilidade.
 
+## Fontes oficiais
+
+O Fokus Styles faz parte do ecossistema Fokus Cloud. Estas fontes se
+complementam e devem ser consultadas em conjunto:
+
+- [Fokus Cloud](https://www.fokuscloud.com.br/) — visão do ecossistema e dos
+  produtos que compartilham a base Fokus.
+- [Fokus Styles](https://styles.fokuscloud.com.br/) — documentação publicada,
+  fundamentos, instalação e guias visuais/interativos.
+- [GitHub](https://github.com/jorgewreis/fokus-styles) — implementação,
+  exemplos executáveis, issues, decisões e histórico versionado.
+- [npm](https://www.npmjs.com/package/fokus-styles) — pacote público, versões
+  disponíveis e instruções de instalação/distribuição.
+
+Esta pasta é a referência técnica versionada do repositório. O site do Fokus
+Styles é a camada publicada e navegável; o portal Fokus Cloud contextualiza o
+framework dentro do ecossistema. Quando houver diferença, a implementação e
+os testes da versão consultada no GitHub definem o comportamento efetivo.
+
 ## Caminho recomendado
 
 1. [Instalação](getting-started/installation.md) — pacotes, CDN, bundles,

@@ -3,6 +3,15 @@
 Ao participar deste projeto, você concorda em seguir o
 [Código de Conduta](CODE_OF_CONDUCT.md).
 
+## Fontes oficiais
+
+Antes de propor uma mudança, consulte o [Fokus Cloud](https://www.fokuscloud.com.br/)
+para o contexto do ecossistema, o [site do Fokus Styles](https://styles.fokuscloud.com.br/)
+para os guias publicados, o [repositório no GitHub](https://github.com/jorgewreis/fokus-styles)
+para o código e issues e o [pacote no npm](https://www.npmjs.com/package/fokus-styles)
+para a distribuição pública. A documentação versionada deste checkout começa em
+[`docs/README.md`](docs/README.md).
+
 ## Pré-requisitos
 
 - Node.js >= 18
