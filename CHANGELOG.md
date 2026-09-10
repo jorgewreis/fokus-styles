@@ -3,6 +3,13 @@
 ## Unreleased
 
 
+## [2.6.2] - 2026-09-10
+
+- amplia as palavras-chave do pacote para melhorar a descoberta no npm,
+  refletindo CSS, design system, componentes, Sass, JavaScript, React, ícones,
+  theming, acessibilidade e responsividade.
+
+
 ## [2.6.1] - 2026-09-10
 
 - alinha a documentação do projeto ao ecossistema Fokus Cloud;
