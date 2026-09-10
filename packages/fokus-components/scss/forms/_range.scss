@@ -25,6 +25,34 @@
     background: transparent;
     appearance: none;
     cursor: pointer;
+    accent-color: var(--fs-range-fill-color);
+  }
+
+  .fs-form-range-xs {
+    --fs-range-track-height: 4px;
+    --fs-range-thumb-size: 14px;
+  }
+
+  .fs-form-range-sm {
+    --fs-range-track-height: 5px;
+    --fs-range-thumb-size: 16px;
+  }
+
+  .fs-form-range-lg {
+    --fs-range-track-height: 8px;
+    --fs-range-thumb-size: 22px;
+  }
+
+  .fs-form-range-xl {
+    --fs-range-track-height: 10px;
+    --fs-range-thumb-size: 26px;
+  }
+
+  .fs-form-range-vertical {
+    width: var(--fs-range-thumb-size);
+    height: 160px;
+    writing-mode: vertical-lr;
+    direction: rtl;
   }
 
   .fs-form-range::-webkit-slider-runnable-track {
@@ -96,4 +124,5 @@
     font-weight: $font-weight-medium;
     text-align: center;
   }
+
 }

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fokus Styles - Utility Lab</title>
+  <link rel="stylesheet" href="../../dist/css/fonts.css">
+  <link rel="stylesheet" href="../../dist/css/fokus.css">
+  <link rel="stylesheet" href="../assets/example-theme.css">
+  <style>
+    .utility-lab { max-width: 72rem; margin: 0 auto; padding: 2rem; }
+    .utility-card { border: 1px solid var(--fs-color-border); border-radius: var(--fs-radius-md); background: var(--fs-color-surface); color: var(--fs-color-text); }
+    .utility-card:hover, .utility-card:focus-within { border-color: var(--fs-color-primary); }
+    .utility-grid { min-height: 14rem; }
+    .utility-grid > * { min-height: 4rem; border-radius: var(--fs-radius-sm); background: var(--fs-color-primary-bg); }
+    .utility-overflow { max-height: 8rem; overflow: auto; }
+    .utility-motion { transition: transform var(--fs-transition-normal) var(--fs-ease-standard), box-shadow var(--fs-transition-normal) var(--fs-ease-standard); }
+    .utility-motion:hover, .utility-motion:focus-visible { transform: translateY(-0.25rem) scale(1.02); box-shadow: var(--fs-shadow-md); }
+    .utility-swatch { min-height: 4rem; border: 1px solid var(--fs-color-border); border-radius: var(--fs-radius-sm); }
+    .utility-form { display: grid; gap: var(--fs-space-2); max-width: 28rem; }
+  </style>
+</head>
+<body>
+  <main class="utility-lab">
+    <a class="fs-skip-link" href="#utility-content">Ir para o conteúdo</a>
+    <header class="fs-u-mbe-4">
+      <p class="fs-u-text-uppercase fs-u-fs-sm fs-u-fw-bold fs-u-color-primary">Laboratório</p>
+      <h1 class="fs-u-fs-h1 fs-u-mb-2">Utilitários atômicos</h1>
+      <p class="fs-u-text-balance fs-u-max-w-full">Composição responsiva, estados de foco, overflow, Grid, Flexbox, tipografia, motion e interação.</p>
+    </header>
+    <div id="utility-content" class="fs-u-grid fs-u-grid-cols-1 fs-u-grid-cols-lg-2 fs-u-gap-4">
+      <section class="utility-card fs-u-p-4 utility-motion" tabindex="0" aria-labelledby="grid-title">
+        <h2 id="grid-title" class="fs-u-fs-lg fs-u-mb-3">Grid responsivo</h2>
+        <div class="utility-grid fs-u-grid fs-u-grid-cols-2 fs-u-grid-cols-md-3 fs-u-gap-2">
+          <div class="fs-u-col-span-2 fs-u-p-2">Destaque</div><div class="fs-u-p-2">Item</div><div class="fs-u-p-2">Item</div>
+        </div>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="overflow-title">
+        <h2 id="overflow-title" class="fs-u-fs-lg fs-u-mb-3">Overflow e tipografia</h2>
+        <div class="utility-overflow fs-u-p-3 fs-u-border-1 fs-u-border-solid fs-u-rounded-sm fs-u-text-break">
+          Conteúdo longo permanece rolável e quebrável sem criar overflow horizontal. O foco e a leitura continuam disponíveis em tamanhos estreitos.
+        </div>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="motion-title">
+        <h2 id="motion-title" class="fs-u-fs-lg fs-u-mb-3">Estados e motion</h2>
+        <button class="fs-btn fs-btn-primary fs-u-transition-colors fs-u-duration-fast fs-u-focus-ring" type="button">Foco visível</button>
+        <span class="fs-u-inline-block fs-u-p-2 fs-u-ml-2 fs-u-bg-success fs-u-rounded-full fs-u-animate-pulse" style="color: var(--fs-color-on-success)">Status</span>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="sizing-title">
+        <h2 id="sizing-title" class="fs-u-fs-lg fs-u-mb-3">Sizing e filters</h2>
+        <div class="fs-u-w-full fs-u-h-3 fs-u-rounded-full fs-u-bg-primary fs-u-opacity-75 fs-u-blur-sm" aria-hidden="true"></div>
+        <p class="fs-u-fs-sm fs-u-mt-3" style="color: var(--fs-color-muted)">Use tokens e Custom Properties para valores fora da escala.</p>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="semantic-title">
+        <h2 id="semantic-title" class="fs-u-fs-lg fs-u-mb-3">Cores semânticas</h2>
+        <div class="fs-u-grid fs-u-grid-cols-1 fs-u-grid-cols-sm-3 fs-u-gap-2">
+          <div class="utility-swatch fs-u-bg-primary-subtle fs-u-text-primary-emphasis fs-u-p-2">Primary subtle</div>
+          <div class="utility-swatch fs-u-bg-success-subtle fs-u-text-success-emphasis fs-u-p-2">Success subtle</div>
+          <div class="utility-swatch fs-u-bg-danger-subtle fs-u-text-danger-emphasis fs-u-p-2">Danger subtle</div>
+        </div>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="form-title">
+        <h2 id="form-title" class="fs-u-fs-lg fs-u-mb-3">Formulário acessível</h2>
+        <form class="utility-form" novalidate>
+          <label for="utility-email">E-mail</label>
+          <input id="utility-email" class="fs-form-control" type="email" aria-describedby="utility-email-help" aria-invalid="true" value="invalido">
+          <p id="utility-email-help" class="fs-form-text fs-u-fs-sm">Informe um endereço de e-mail válido.</p>
+          <button class="fs-btn fs-btn-primary fs-u-focus-ring" type="submit">Continuar</button>
+        </form>
+      </section>
+      <section class="utility-card fs-u-p-4" aria-labelledby="composition-title" data-theme="dark" dir="rtl">
+        <h2 id="composition-title" class="fs-u-fs-lg fs-u-mb-3">Dark, RTL e transforms</h2>
+        <div class="fs-u-bg-primary-subtle fs-u-text-primary-emphasis fs-u-p-3 fs-u-rounded-md fs-u-rotate-90 fs-u-scale-105">
+          Composição semântica
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

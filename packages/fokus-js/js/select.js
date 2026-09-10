@@ -37,6 +37,10 @@ export class Select {
     return instances.get(el);
   }
 
+  get isOpen() {
+    return this.dropdown?.isOpen ?? false;
+  }
+
   _buildMarkup() {
     const wrapper = document.createElement("div");
     wrapper.className = "fs-dropdown fs-form-select-dropdown";

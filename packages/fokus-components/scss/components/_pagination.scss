@@ -8,6 +8,21 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .fs-pagination-centered { justify-content: center; }
+  .fs-pagination-right { justify-content: flex-end; }
+
+  .fs-pagination-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .fs-pagination-scroll {
@@ -24,19 +39,21 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    height: 32px;
-    padding: 0 8px;
-    border: 1px solid var(--fs-color-border);
+    min-inline-size: 2rem;
+    min-block-size: 2rem;
+    padding-inline: 0.5rem;
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
     border-radius: var(--fs-radius-sm);
     color: var(--fs-color-text);
     background-color: var(--fs-color-surface);
     text-decoration: none;
-    transition: background-color 0.15s ease-in-out;
+    transition: color var(--fs-transition-fast) var(--fs-ease-standard), background-color var(--fs-transition-fast) var(--fs-ease-standard), border-color var(--fs-transition-fast) var(--fs-ease-standard), box-shadow var(--fs-transition-fast) var(--fs-ease-standard);
   }
 
   .fs-page-link:hover {
+    color: var(--fs-color-primary);
     background-color: var(--fs-color-subtle);
+    border-color: var(--fs-color-primary);
   }
 
   .fs-page-link:focus-visible {
@@ -55,6 +72,16 @@
     pointer-events: none;
   }
 
+  .fs-page-item[aria-disabled="true"] .fs-page-link,
+  .fs-page-link[aria-disabled="true"] {
+    color: var(--fs-color-muted);
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .fs-pagination-rounded .fs-page-link { border-radius: 999px; }
+
   // Bordered: itens colados (sem gap), borda contínua fundida (técnica do
   // Input Group — margin negativo + z-index no item ativo/hover), cantos
   // arredondados só nas pontas.
@@ -67,17 +94,17 @@
   }
 
   .fs-pagination-bordered .fs-page-item:not(:first-child) .fs-page-link {
-    margin-left: -1px;
+    margin-inline-start: -1px;
   }
 
   .fs-pagination-bordered .fs-page-item:first-child .fs-page-link {
-    border-top-left-radius: var(--fs-radius-sm);
-    border-bottom-left-radius: var(--fs-radius-sm);
+    border-start-start-radius: var(--fs-radius-sm);
+    border-end-start-radius: var(--fs-radius-sm);
   }
 
   .fs-pagination-bordered .fs-page-item:last-child .fs-page-link {
-    border-top-right-radius: var(--fs-radius-sm);
-    border-bottom-right-radius: var(--fs-radius-sm);
+    border-start-end-radius: var(--fs-radius-sm);
+    border-end-end-radius: var(--fs-radius-sm);
   }
 
   .fs-pagination-bordered .fs-page-link:hover,
@@ -88,16 +115,16 @@
 
   // Compacta / grande — mesma escala sm/lg dos outros componentes.
   .fs-pagination-sm .fs-page-link {
-    min-width: 26px;
-    height: 26px;
-    padding: 0 6px;
+    min-inline-size: 1.625rem;
+    min-block-size: 1.625rem;
+    padding-inline: 0.375rem;
     font-size: $font-size-xs;
   }
 
   .fs-pagination-lg .fs-page-link {
-    min-width: 40px;
-    height: 40px;
-    padding: 0 12px;
+    min-inline-size: 2.5rem;
+    min-block-size: 2.5rem;
+    padding-inline: 0.75rem;
     font-size: $font-size-md;
   }
 

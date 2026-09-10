@@ -1,0 +1,39 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(borders, borders) and fs-feature-enabled(rounded, true) {
+    @each $name, $value in $fs-utility-border-widths {
+      .fs-u-border-#{$name} { border-width: $value !important; }
+      .fs-u-border-t-#{$name} { border-block-start-width: $value !important; }
+      .fs-u-border-e-#{$name} { border-inline-end-width: $value !important; }
+      .fs-u-border-b-#{$name} { border-block-end-width: $value !important; }
+      .fs-u-border-s-#{$name} { border-inline-start-width: $value !important; }
+      .fs-u-outline-#{$name} { outline-width: $value !important; }
+    }
+
+    @each $name, $value in $fs-utility-radii {
+      .fs-u-rounded-#{$name} { border-radius: $value !important; }
+      .fs-u-rounded-t-#{$name} {
+        border-start-start-radius: $value !important;
+        border-start-end-radius: $value !important;
+      }
+      .fs-u-rounded-b-#{$name} {
+        border-end-start-radius: $value !important;
+        border-end-end-radius: $value !important;
+      }
+      .fs-u-rounded-s-#{$name} {
+        border-start-start-radius: $value !important;
+        border-end-start-radius: $value !important;
+      }
+      .fs-u-rounded-e-#{$name} {
+        border-start-end-radius: $value !important;
+        border-end-end-radius: $value !important;
+      }
+    }
+
+    @each $style in solid, dashed, dotted, double, none {
+      .fs-u-border-#{$style} { border-style: $style !important; }
+      .fs-u-outline-#{$style} { outline-style: $style !important; }
+    }
+  }
+}

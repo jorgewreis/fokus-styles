@@ -1,0 +1,51 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(motion, motion) {
+    @each $name, $value in $fs-utility-transition-durations {
+      .fs-u-duration-#{$name} { transition-duration: $value !important; }
+    }
+    
+    @each $name, $value in $fs-utility-easings {
+      .fs-u-ease-#{$name} { transition-timing-function: $value !important; }
+    }
+    .fs-u-transition-none { transition-property: none !important; }
+    .fs-u-transition-all { transition-property: all !important; }
+    .fs-u-transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important; }
+    .fs-u-transition-opacity { transition-property: opacity !important; }
+    .fs-u-transition-transform { transition-property: transform !important; }
+    .fs-u-animate-none { animation: none !important; }
+    .fs-u-animate-spin { animation: fs-u-spin 1s linear infinite !important; }
+    .fs-u-animate-pulse { animation: fs-u-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important; }
+    .fs-u-animate-bounce { animation: fs-u-bounce 1s infinite !important; }
+    .fs-u-animate-ping { animation: fs-u-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important; }
+
+    @keyframes fs-u-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fs-u-pulse {
+      50% { opacity: 0.5; }
+    }
+
+    @keyframes fs-u-bounce {
+      0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+
+      50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+
+    @keyframes fs-u-ping {
+      75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  }
+}

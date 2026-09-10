@@ -36,6 +36,16 @@ describe("Select", () => {
   it("o toggle mostra o texto da opção selecionada inicialmente", () => {
     const { instance } = buildSelect();
     expect(instance.toggleEl.textContent).toBe("São Paulo");
+    expect(instance.isOpen).toBe(false);
+  });
+
+  it("abre pelo teclado e expõe o estado isOpen", () => {
+    const { instance } = buildSelect();
+
+    instance.toggleEl.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
+
+    expect(instance.isOpen).toBe(true);
+    expect(instance.menuEl.classList.contains("is-open")).toBe(true);
   });
 
   it("usa role=listbox/option em vez do role=menu herdado do Dropdown", () => {

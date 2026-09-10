@@ -1,27 +1,31 @@
-@layer utilities {
-  @media print {
-    .fs-u-print-hide {
-      display: none !important;
-    }
-  }
+@use "../../../fokus-core/scss/settings" as *;
 
-  @media not print {
-    .fs-u-print-only {
-      display: none !important;
-    }
-  }
-
-  @media print {
-    .fs-u-print-block {
-      display: block !important;
+@if fs-feature-enabled(print, true) {
+  @layer utilities {
+    @media print {
+      .fs-u-print-hide {
+        display: none !important;
+      }
     }
 
-    .fs-u-print-inline {
-      display: inline !important;
+    @media not print {
+      .fs-u-print-only {
+        display: none !important;
+      }
     }
 
-    .fs-u-print-inline-block {
-      display: inline-block !important;
+    @media print {
+      .fs-u-print-block {
+        display: block !important;
+      }
+
+      .fs-u-print-inline {
+        display: inline !important;
+      }
+
+      .fs-u-print-inline-block {
+        display: inline-block !important;
+      }
     }
   }
 }

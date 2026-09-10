@@ -1,0 +1,25 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(grid, grid) {
+    .fs-u-grid { display: grid !important; }
+    .fs-u-inline-grid { display: inline-grid !important; }
+
+    @each $breakpoint, $min in $breakpoints {
+      $infix: breakpoint-infix($breakpoint);
+
+      @include media-breakpoint-up($breakpoint) {
+        @for $count from 1 through 12 {
+          .fs-u-grid-cols#{$infix}-#{$count} { grid-template-columns: repeat($count, minmax(0, 1fr)) !important; }
+          .fs-u-grid-rows#{$infix}-#{$count} { grid-template-rows: repeat($count, minmax(0, 1fr)) !important; }
+          .fs-u-col-span#{$infix}-#{$count} { grid-column: span $count / span $count !important; }
+          .fs-u-row-span#{$infix}-#{$count} { grid-row: span $count / span $count !important; }
+        }
+
+        .fs-u-grid-cols#{$infix}-none { grid-template-columns: none !important; }
+        .fs-u-grid-rows#{$infix}-none { grid-template-rows: none !important; }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(sizing, width) {
+    @each $name, $value in $fs-utility-sizes {
+      .fs-u-w-#{$name} { width: $value !important; }
+      .fs-u-h-#{$name} { height: $value !important; }
+      .fs-u-size-#{$name} {
+        width: $value !important;
+        height: $value !important;
+      }
+      .fs-u-min-w-#{$name} { min-width: $value !important; }
+      .fs-u-max-w-#{$name} { max-width: $value !important; }
+      .fs-u-min-h-#{$name} { min-height: $value !important; }
+      .fs-u-max-h-#{$name} { max-height: $value !important; }
+      .fs-u-inline-size-#{$name} { inline-size: $value !important; }
+      .fs-u-block-size-#{$name} { block-size: $value !important; }
+      .fs-u-min-inline-size-#{$name} { min-inline-size: $value !important; }
+      .fs-u-max-inline-size-#{$name} { max-inline-size: $value !important; }
+      .fs-u-min-block-size-#{$name} { min-block-size: $value !important; }
+      .fs-u-max-block-size-#{$name} { max-block-size: $value !important; }
+    }
+
+    @each $breakpoint, $min in $breakpoints {
+      $infix: breakpoint-infix($breakpoint);
+
+      @if $min != 0 {
+        @include media-breakpoint-up($breakpoint) {
+          @each $name, $value in $fs-utility-sizes {
+            .fs-u-w#{$infix}-#{$name} { width: $value !important; }
+            .fs-u-h#{$infix}-#{$name} { height: $value !important; }
+            .fs-u-size#{$infix}-#{$name} {
+              width: $value !important;
+              height: $value !important;
+            }
+            .fs-u-min-w#{$infix}-#{$name} { min-width: $value !important; }
+            .fs-u-max-w#{$infix}-#{$name} { max-width: $value !important; }
+            .fs-u-min-h#{$infix}-#{$name} { min-height: $value !important; }
+            .fs-u-max-h#{$infix}-#{$name} { max-height: $value !important; }
+          }
+        }
+      }
+    }
+  }
+}

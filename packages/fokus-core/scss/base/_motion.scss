@@ -1,7 +1,8 @@
 // Respeita a preferência do sistema sem remover a funcionalidade dos
 // componentes: apenas reduz transições e animações ao estado final.
 @layer base {
-  @media (prefers-reduced-motion: reduce) {
+  @if fs-feature-enabled(reduced-motion, true) {
+    @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
@@ -20,5 +21,6 @@
       animation-duration: 1.5s !important;
       animation-iteration-count: infinite !important;
     }
+  }
   }
 }

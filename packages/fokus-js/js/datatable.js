@@ -51,7 +51,10 @@ export class DataTable {
     this.tableEl = tableEl;
     this.theadEl = tableEl.querySelector("thead");
     this.tbodyEl = tbodyEl;
-    this.pageSize = Number(rootEl.getAttribute("data-fs-page-size")) || options.pageSize || 10;
+    const configuredPageSize = Number(rootEl.getAttribute("data-fs-page-size") ?? options.pageSize ?? 10);
+    this.pageSize = Number.isFinite(configuredPageSize) && configuredPageSize > 0
+      ? Math.floor(configuredPageSize)
+      : 10;
 
     this.filterInput = rootEl.querySelector("[data-fs-datatable-filter]");
     this.emptyEl = rootEl.querySelector("[data-fs-datatable-empty]");
@@ -191,7 +194,8 @@ export class DataTable {
 
   goToPage(page) {
     const pageCount = this.pageCount;
-    const next = Math.min(Math.max(1, page), pageCount);
+    const requested = Number(page);
+    const next = Number.isFinite(requested) ? Math.min(Math.max(1, Math.floor(requested)), pageCount) : 1;
     if (next === this.currentPage) return;
 
     this.currentPage = next;

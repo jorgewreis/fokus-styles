@@ -112,4 +112,16 @@ describe("Tabs", () => {
 
     expect(Tabs.getInstance(tablistEl)).toBeUndefined();
   });
+
+  it("aceita gatilhos declarados com role=tab", () => {
+    const root = document.createElement("div");
+    root.innerHTML = '<div data-fs="tabs"><button role="tab" data-fs-tab-target="#custom-pane">Custom</button></div><div id="custom-pane">Conteúdo</div>';
+    document.body.appendChild(root);
+    const tabs = new Tabs(root.querySelector('[data-fs="tabs"]'));
+
+    expect(tabs.tabs[0].getAttribute("aria-selected")).toBe("false");
+    tabs.tabs[0].click();
+    expect(tabs.tabs[0].getAttribute("aria-selected")).toBe("true");
+    expect(document.getElementById("custom-pane").hidden).toBe(false);
+  });
 });

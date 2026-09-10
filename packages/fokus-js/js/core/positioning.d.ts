@@ -6,12 +6,14 @@ export interface ComputePositionOptions {
   align?: Align;
   offset?: number;
   padding?: number;
+  fallbackPlacements?: Placement[];
 }
 
 export interface Position {
   top: number;
   left: number;
   placement: Placement;
+  arrowOffset?: string;
 }
 
 export function computePosition(

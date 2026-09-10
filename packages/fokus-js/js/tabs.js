@@ -6,7 +6,7 @@ let idCounter = 0;
 export class Tabs {
   constructor(tablistEl) {
     this.tablistEl = tablistEl;
-    this.tabs = Array.from(tablistEl.querySelectorAll(".fs-nav-link"));
+    this.tabs = Array.from(tablistEl.querySelectorAll(".fs-nav-link, [role=tab], [data-fs-tab-target]"));
     this.manualActivation = tablistEl.getAttribute("data-tabs-activation") === "manual";
 
     tablistEl.setAttribute("role", "tablist");
@@ -21,7 +21,7 @@ export class Tabs {
       tab.setAttribute("aria-selected", String(isActive));
       tab.setAttribute("tabindex", isActive ? "0" : "-1");
 
-      const paneSelector = tab.getAttribute("data-fs-target");
+      const paneSelector = tab.getAttribute("data-fs-target") || tab.getAttribute("data-fs-tab-target");
       const pane = paneSelector ? document.querySelector(paneSelector) : null;
 
       if (pane) {
@@ -50,7 +50,7 @@ export class Tabs {
   static dispose(el) { return this.getInstance(el)?.dispose(); }
 
   _handleClick(event) {
-    const tab = event.target.closest(".fs-nav-link:not(.is-disabled)");
+    const tab = event.target.closest(".fs-nav-link:not(.is-disabled), [role=tab]:not(.is-disabled), [data-fs-tab-target]:not(.is-disabled)");
     if (!tab || !this.tabs.includes(tab)) return;
     this.show(tab);
   }
@@ -84,7 +84,7 @@ export class Tabs {
       otherTab.setAttribute("aria-selected", String(isActive));
       otherTab.setAttribute("tabindex", isActive ? "0" : "-1");
 
-      const paneSelector = otherTab.getAttribute("data-fs-target");
+      const paneSelector = otherTab.getAttribute("data-fs-target") || otherTab.getAttribute("data-fs-tab-target");
       const pane = paneSelector ? document.querySelector(paneSelector) : null;
       pane?.classList.toggle("is-active", isActive);
       if (pane) pane.hidden = !isActive;

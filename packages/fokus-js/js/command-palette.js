@@ -1,5 +1,6 @@
 import { lockScroll, unlockScroll, onClickOutside } from "./core/overlay.js";
 import { createFocusTrap, onEscapeKey } from "./core/focus.js";
+import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -196,12 +197,7 @@ export class CommandPalette {
     if (this.isOpen) return;
     this.isOpen = true;
 
-    const theme = this.triggerEl.closest("[data-theme]")?.getAttribute("data-theme");
-    if (theme) {
-      this.paletteEl.setAttribute("data-theme", theme);
-    } else {
-      this.paletteEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.paletteEl, this.triggerEl);
 
     this.paletteEl.classList.add("is-open");
     lockScroll();

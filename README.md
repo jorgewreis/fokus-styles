@@ -149,6 +149,11 @@ disponíveis quando o projeto realmente precisa deles.
 - **Componentes avançados:** Combobox, Datepicker, DataTable, Tree View,
   Command Palette, Carousel e Upload avançado.
 
+Os utilitários também cobrem layout, columns, box-sizing, overflow, overscroll,
+Flexbox, CSS Grid, spacing, sizing, typography, borders, filters, motion,
+transforms, interatividade e acessibilidade. Consulte a [Utility API](docs/guides/utility-api.md)
+e a [matriz de cobertura](docs/reference/utility-matrix.md).
+
 Cada componente tem um exemplo funcional dedicado (claro + escuro) em
 [`mockup/`](mockup) — a forma mais rápida de ver o framework em ação sem
 escrever nenhum código. O passo a passo de uso de cada um está na

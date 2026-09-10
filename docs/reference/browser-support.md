@@ -44,6 +44,15 @@ usado no CSS/JS do framework.
 | Propriedades customizadas (`--fs-*`) | Tokens em todas as camadas (cor, espaçamento, raio, sombra, tipografia) | Suportado desde 2017 em todos os navegadores principais (abaixo do piso Safari 16.4) | Não relevante ao alvo atual — nenhum navegador do alvo (`.browserslistrc`) carece desse suporte. |
 | `:focus-visible` | Anel de foco acessível (mixin `focus-ring`, `packages/fokus-core/scss/tools/_mixins.scss`), usado em botões, inputs, itens de menu/tree, etc. | Safari 15.4, Chrome 86, Firefox 85, Edge 86 (abaixo do piso Safari 16.4) | Não relevante ao alvo atual pelo mesmo motivo — mas caso um navegador não suporte, o seletor inteiro é ignorado (sem erro), só o anel de foco customizado some; o `outline` nativo do navegador permanece como fallback funcional (não visual). |
 | `prefers-reduced-motion` | Desliga animações de skeleton/carousel/transições (`packages/fokus-js/js/core/transition.js`, `_skeleton.scss`) | Suportado desde 2019 em todos os navegadores principais (abaixo do piso Safari 16.4) | Não relevante ao alvo atual. Em navegadores sem suporte à media query, a regra é ignorada e as animações continuam ativas por padrão (comportamento seguro: anima por padrão, só desliga quando o recurso E a preferência do usuário existem). |
+| `backdrop-filter` | Utilitários opt-in `.fs-u-backdrop-blur-*` | Safari 9, Chrome 76, Firefox 103, Edge 79 | O filtro é ignorado; a superfície continua visível sem desfoque. |
+| `text-wrap: balance/pretty` | Utilitários tipográficos `.fs-u-text-balance`/`.fs-u-text-pretty` | Safari 17.5 / 18.5, Chrome 114 / 117, Firefox 121 / 136 | O navegador usa o comportamento normal de quebra de linha. |
+| `dvh`, `svh`, `lvh` | Utilitários de sizing `.fs-u-h-dvh`, `.fs-u-h-svh`, `.fs-u-h-lvh` | Safari 15.4, Chrome 108, Firefox 101, Edge 108 | Use `100vh` ou altura definida pela aplicação como fallback. |
+| `aspect-ratio` | Helpers `.fs-u-aspect-*` | Safari 15, Chrome 88, Firefox 89, Edge 88 | A proporção natural do conteúdo é usada. |
+| `color-scheme` | Helper `.fs-u-color-scheme-*` | Safari 13, Chrome 81, Firefox 96, Edge 81 | Controles nativos mantêm o esquema padrão. |
+| `content-visibility` | Interatividade `.fs-u-content-*` | Safari 18.4, Chrome 85, Firefox 125, Edge 85 | O elemento permanece renderizado normalmente. |
+| `scroll-snap` | Interatividade `.fs-u-snap-*` | Safari 11, Chrome 69, Firefox 68, Edge 79 | A rolagem continua funcional sem snap. |
+| `transition-behavior` | Motion configurável | Safari 17.4, Chrome 117, Firefox 129, Edge 117 | Usa o comportamento padrão da transição. |
+| `scrollbar-color` | Interatividade opcional | Firefox 64, Chrome 121, Safari 17.4 | A barra usa o estilo do sistema. |
 
 ### Recursos considerados, mas não usados hoje
 

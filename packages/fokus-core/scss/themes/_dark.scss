@@ -12,6 +12,7 @@
 // contraste com o branco); `info` não tem margem e fica sem alteração (100%).
 // Misturas em `$method: oklch` (ver tools/_mixins.scss) — recalibrado e
 // revalidado com `npm run contrast` após a migração para OKLCH.
+@if fs-feature-enabled(dark-mode, true) {
 @layer tokens {
   $dark-color-weights: (
     primary: 95%,
@@ -51,6 +52,13 @@
     --fs-color-focus: var(--fs-color-primary);
     --fs-color-action-primary: var(--fs-color-primary);
     --fs-color-action-danger: var(--fs-color-danger);
+    --fs-control-bg: var(--fs-color-surface);
+    --fs-control-border-color: var(--fs-color-border);
+    --fs-control-hover-bg: var(--fs-color-subtle);
+    --fs-control-placeholder-color: var(--fs-color-muted);
+    --fs-control-invalid-color: var(--fs-color-danger);
+    --fs-control-valid-color: var(--fs-color-success);
+    --fs-control-addon-bg: var(--fs-color-subtle);
     --fs-shadow-sm: 0 1px 3px rgb(0 0 0 / 50%), 0 1px 2px rgb(0 0 0 / 40%);
     --fs-shadow-md: 0 6px 12px rgb(0 0 0 / 55%), 0 3px 6px rgb(0 0 0 / 45%);
     --fs-shadow-lg: 0 15px 30px rgb(0 0 0 / 60%), 0 6px 12px rgb(0 0 0 / 50%);
@@ -128,4 +136,5 @@
       --fs-focus-color: Highlight;
     }
   }
+}
 }

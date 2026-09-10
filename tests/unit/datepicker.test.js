@@ -118,6 +118,13 @@ describe("Datepicker", () => {
     expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/fevereiro.*2026/i);
   });
 
+  it("marca o dia atual com aria-current=date", () => {
+    const { panel, datepicker } = buildDatepicker();
+    datepicker.show();
+
+    expect(panel.querySelector('[aria-current="date"]')).not.toBeNull();
+  });
+
   it("ArrowDown com foco no input (não num dia) abre o painel e move o foco pro dia tabável", () => {
     const { input, panel, datepicker } = buildDatepicker();
     datepicker.show();

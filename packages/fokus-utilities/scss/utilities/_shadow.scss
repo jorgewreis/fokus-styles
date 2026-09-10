@@ -1,13 +1,17 @@
+@use "../../../fokus-core/scss/settings" as *;
+
 @layer utilities {
+  @if fs-config-list-enabled(effects, shadow) and fs-feature-enabled(shadows, true) {
   .fs-u-shadow-sm {
-    box-shadow: var(--fs-shadow-sm);
+    box-shadow: var(--fs-shadow-sm) !important;
   }
 
   .fs-u-shadow {
-    box-shadow: var(--fs-shadow-md);
+    box-shadow: var(--fs-shadow-md) !important;
   }
 
   .fs-u-shadow-lg {
-    box-shadow: var(--fs-shadow-lg);
+    box-shadow: var(--fs-shadow-lg) !important;
+  }
   }
 }

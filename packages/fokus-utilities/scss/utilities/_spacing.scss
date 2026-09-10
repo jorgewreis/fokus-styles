@@ -7,123 +7,50 @@
 
     @include media-breakpoint-up($breakpoint) {
       @each $key, $value in $spacers {
-        .fs-u-m#{$infix}-#{$key} {
-          margin: $value;
-        }
-
-        .fs-u-mt#{$infix}-#{$key} {
-          margin-top: $value;
-        }
-
-        .fs-u-mr#{$infix}-#{$key} {
-          margin-right: $value;
-        }
-
-        .fs-u-mb#{$infix}-#{$key} {
-          margin-bottom: $value;
-        }
-
-        .fs-u-ml#{$infix}-#{$key} {
-          margin-left: $value;
-        }
-
-        .fs-u-mx#{$infix}-#{$key} {
-          margin-right: $value;
-          margin-left: $value;
-        }
-
-        .fs-u-my#{$infix}-#{$key} {
-          margin-top: $value;
-          margin-bottom: $value;
-        }
-
-        .fs-u-p#{$infix}-#{$key} {
-          padding: $value;
-        }
-
-        .fs-u-pt#{$infix}-#{$key} {
-          padding-top: $value;
-        }
-
-        .fs-u-pr#{$infix}-#{$key} {
-          padding-right: $value;
-        }
-
-        .fs-u-pb#{$infix}-#{$key} {
-          padding-bottom: $value;
-        }
-
-        .fs-u-pl#{$infix}-#{$key} {
-          padding-left: $value;
-        }
-
-        .fs-u-px#{$infix}-#{$key} {
-          padding-right: $value;
-          padding-left: $value;
-        }
-
-        .fs-u-py#{$infix}-#{$key} {
-          padding-top: $value;
-          padding-bottom: $value;
-        }
-
-        // Controla o gutter da grid (--fs-gutter-x/-y), consumido por .row/.row > *.
+        .fs-u-m#{$infix}-#{$key} { margin: $value !important; }
+        .fs-u-mt#{$infix}-#{$key} { margin-top: $value !important; }
+        .fs-u-mr#{$infix}-#{$key} { margin-right: $value !important; }
+        .fs-u-mb#{$infix}-#{$key} { margin-bottom: $value !important; }
+        .fs-u-ml#{$infix}-#{$key} { margin-left: $value !important; }
+        .fs-u-mx#{$infix}-#{$key} { margin-inline: $value !important; }
+        .fs-u-my#{$infix}-#{$key} { margin-block: $value !important; }
+        .fs-u-ms#{$infix}-#{$key} { margin-inline-start: $value !important; }
+        .fs-u-me#{$infix}-#{$key} { margin-inline-end: $value !important; }
+        .fs-u-mbs#{$infix}-#{$key} { margin-block-start: $value !important; }
+        .fs-u-mbe#{$infix}-#{$key} { margin-block-end: $value !important; }
+        .fs-u-p#{$infix}-#{$key} { padding: $value !important; }
+        .fs-u-pt#{$infix}-#{$key} { padding-top: $value !important; }
+        .fs-u-pr#{$infix}-#{$key} { padding-right: $value !important; }
+        .fs-u-pb#{$infix}-#{$key} { padding-bottom: $value !important; }
+        .fs-u-pl#{$infix}-#{$key} { padding-left: $value !important; }
+        .fs-u-px#{$infix}-#{$key} { padding-inline: $value !important; }
+        .fs-u-py#{$infix}-#{$key} { padding-block: $value !important; }
+        .fs-u-ps#{$infix}-#{$key} { padding-inline-start: $value !important; }
+        .fs-u-pe#{$infix}-#{$key} { padding-inline-end: $value !important; }
+        .fs-u-pbs#{$infix}-#{$key} { padding-block-start: $value !important; }
+        .fs-u-pbe#{$infix}-#{$key} { padding-block-end: $value !important; }
         .fs-u-g#{$infix}-#{$key} {
           --fs-gutter-x: #{$value};
           --fs-gutter-y: #{$value};
         }
-
-        .fs-u-gx#{$infix}-#{$key} {
-          --fs-gutter-x: #{$value};
-        }
-
-        .fs-u-gy#{$infix}-#{$key} {
-          --fs-gutter-y: #{$value};
-        }
-
-        // Gap literal (flex/grid), independente da grid de colunas.
-        .fs-u-gap#{$infix}-#{$key} {
-          gap: $value;
-        }
-
-        .fs-u-gap-x#{$infix}-#{$key} {
-          column-gap: $value;
-        }
-
-        .fs-u-gap-y#{$infix}-#{$key} {
-          row-gap: $value;
-        }
+        .fs-u-gx#{$infix}-#{$key} { --fs-gutter-x: #{$value}; }
+        .fs-u-gy#{$infix}-#{$key} { --fs-gutter-y: #{$value}; }
+        .fs-u-gap#{$infix}-#{$key} { gap: $value !important; }
+        .fs-u-gap-x#{$infix}-#{$key} { column-gap: $value !important; }
+        .fs-u-gap-y#{$infix}-#{$key} { row-gap: $value !important; }
+        .fs-u-row-gap#{$infix}-#{$key} { row-gap: $value !important; }
+        .fs-u-column-gap#{$infix}-#{$key} { column-gap: $value !important; }
       }
 
-      .fs-u-m#{$infix}-auto {
-        margin: auto;
-      }
-
-      .fs-u-mt#{$infix}-auto {
-        margin-top: auto;
-      }
-
-      .fs-u-mr#{$infix}-auto {
-        margin-right: auto;
-      }
-
-      .fs-u-mb#{$infix}-auto {
-        margin-bottom: auto;
-      }
-
-      .fs-u-ml#{$infix}-auto {
-        margin-left: auto;
-      }
-
-      .fs-u-mx#{$infix}-auto {
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .fs-u-my#{$infix}-auto {
-        margin-top: auto;
-        margin-bottom: auto;
-      }
+      .fs-u-m#{$infix}-auto { margin: auto !important; }
+      .fs-u-mt#{$infix}-auto { margin-top: auto !important; }
+      .fs-u-mr#{$infix}-auto { margin-right: auto !important; }
+      .fs-u-mb#{$infix}-auto { margin-bottom: auto !important; }
+      .fs-u-ml#{$infix}-auto { margin-left: auto !important; }
+      .fs-u-mx#{$infix}-auto { margin-inline: auto !important; }
+      .fs-u-my#{$infix}-auto { margin-block: auto !important; }
+      .fs-u-ms#{$infix}-auto { margin-inline-start: auto !important; }
+      .fs-u-me#{$infix}-auto { margin-inline-end: auto !important; }
     }
   }
 }

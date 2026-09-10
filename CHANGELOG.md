@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## [2.7.0] - 2026-09-10
+
+- consolida a Utility API Sass com novas categorias de layout, grid, tipografia,
+  sizing, efeitos, movimento, interatividade e impressão;
+- amplia Dropdown, Menu, Pagination, Tabs e Tags, incluindo conteúdo rico,
+  addons e estados responsivos com foco e teclado;
+- revisa controles de formulário, temas, RTL, reduced motion e contratos de
+  acessibilidade;
+- atualiza mockups, documentação, matriz de utilitários, testes visuais,
+  testes de acessibilidade e budgets de tamanho.
+
 
 ## [2.6.2] - 2026-09-10
 

@@ -41,6 +41,19 @@ describe("computePosition", () => {
     expect(position.placement).toBe("top");
   });
 
+  it("considera fallbacks adicionais quando as duas primeiras posições não cabem", () => {
+    mockRect(reference, { top: 300, left: 10, width: 40, height: 40 });
+    mockRect(floating, { width: 500, height: 500 });
+
+    const position = computePosition(reference, floating, {
+      placement: "bottom",
+      fallbackPlacements: ["bottom", "top", "right"],
+      offset: 8,
+    });
+
+    expect(position.placement).toBe("right");
+  });
+
   it("não faz flip quando nenhum dos dois lados cabe (mantém o solicitado)", () => {
     mockRect(reference, { top: 0, left: 100, width: 80, height: 40 });
     mockRect(floating, { width: 120, height: 1000 });

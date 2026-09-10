@@ -11,4 +11,16 @@
   .fs-button-group > .fs-btn + .fs-btn { margin-inline-start: -1px; }
   .fs-button-group-vertical { flex-direction: column; align-items: flex-start; }
   .fs-button-group-vertical > .fs-btn { width: 100%; }
+
+  .fs-button-group[role="group"] {
+    isolation: isolate;
+  }
+
+  .fs-button-group > .fs-btn:focus-visible { z-index: 2; }
+
+  .fs-button-group > .fs-btn[aria-pressed="true"] {
+    --fs-btn-bg: var(--fs-color-primary);
+    --fs-btn-color: var(--fs-color-on-primary);
+    --fs-btn-border-color: var(--fs-color-primary);
+  }
 }

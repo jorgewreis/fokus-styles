@@ -1,5 +1,6 @@
 import { computePosition, applyPosition, watchPosition } from "./core/positioning.js";
 import { onEscapeKey } from "./core/focus.js";
+import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -137,12 +138,7 @@ export class Tooltip {
     openInstance = this;
     this.isOpen = true;
 
-    const theme = this.referenceEl.closest("[data-theme]")?.getAttribute("data-theme");
-    if (theme) {
-      this.tooltipEl.setAttribute("data-theme", theme);
-    } else {
-      this.tooltipEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.tooltipEl, this.referenceEl);
 
     this.tooltipEl.classList.add("is-open");
 

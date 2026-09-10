@@ -162,6 +162,14 @@ describe("DataTable", () => {
     expect(visible).toHaveLength(1);
   });
 
+  it("normaliza page size e páginas inválidas para valores seguros", () => {
+    const { dataTable } = buildDataTable({ pageSize: -2 });
+
+    expect(dataTable.pageSize).toBe(10);
+    dataTable.goToPage("não é página");
+    expect(dataTable.currentPage).toBe(1);
+  });
+
   it("clicar num link de paginação navega e dispara fs:datatable:paged", () => {
     const { wrapper, dataTable } = buildDataTable({ pageSize: 2 });
     let detail = null;

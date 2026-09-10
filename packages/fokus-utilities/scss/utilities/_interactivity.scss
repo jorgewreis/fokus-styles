@@ -1,0 +1,51 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(interactivity, interactivity) {
+    @each $value in auto, default, pointer, grab, grabbing, move, text, wait, not-allowed, zoom-in, zoom-out {
+      .fs-u-cursor-#{$value} { cursor: $value !important; }
+    }
+
+    @each $value in auto, none, all {
+      .fs-u-pointer-events-#{$value} { pointer-events: $value !important; }
+    }
+
+    @each $value in auto, none, text, all {
+      .fs-u-select-#{$value} { user-select: $value !important; }
+    }
+
+    @each $value in none, auto, both, horizontal, vertical {
+      .fs-u-resize-#{$value} { resize: $value !important; }
+    }
+
+    .fs-u-appearance-none { appearance: none !important; }
+    .fs-u-appearance-auto { appearance: auto !important; }
+    .fs-u-scroll-auto { scroll-behavior: auto !important; }
+    .fs-u-scroll-smooth { scroll-behavior: smooth !important; }
+    .fs-u-scroll-m-0 { scroll-margin: 0 !important; }
+    .fs-u-scroll-p-0 { scroll-padding: 0 !important; }
+    .fs-u-accent-primary { accent-color: var(--fs-color-primary) !important; }
+    .fs-u-accent-auto { accent-color: auto !important; }
+    .fs-u-caret-primary { caret-color: var(--fs-color-primary) !important; }
+    .fs-u-caret-current { caret-color: currentcolor !important; }
+    .fs-u-content-visible { content-visibility: visible !important; }
+    .fs-u-content-auto { content-visibility: auto !important; }
+    .fs-u-content-hidden { content-visibility: hidden !important; }
+    .fs-u-will-change-auto { will-change: auto !important; }
+    .fs-u-will-change-transform { will-change: transform !important; }
+    .fs-u-will-change-scroll { will-change: scroll-position !important; }
+
+    @each $value in auto, none, pan-x, pan-y, manipulation {
+      .fs-u-touch-#{$value} { touch-action: $value !important; }
+    }
+
+    @each $value in auto, none, mandatory, proximity {
+      .fs-u-snap-x-#{$value} { scroll-snap-type: x $value !important; }
+      .fs-u-snap-y-#{$value} { scroll-snap-type: y $value !important; }
+    }
+
+    .fs-u-snap-start { scroll-snap-align: start !important; }
+    .fs-u-snap-center { scroll-snap-align: center !important; }
+    .fs-u-snap-end { scroll-snap-align: end !important; }
+  }
+}

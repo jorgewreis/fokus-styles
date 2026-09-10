@@ -17,7 +17,9 @@
     justify-content: center;
     gap: var(--fs-space-1);
     min-height: var(--fs-control-height);
-    padding: 0 var(--fs-control-padding-x);
+    min-block-size: var(--fs-control-height);
+    padding-block: 0;
+    padding-inline: var(--fs-control-padding-x);
     border: var(--fs-border-width) solid var(--fs-btn-border-color);
     border-radius: var(--fs-radius-sm);
     color: var(--fs-btn-color);
@@ -26,10 +28,8 @@
     font-weight: $font-weight-medium;
     text-decoration: none;
     cursor: pointer;
-    transition: color var(--fs-transition-fast) var(--fs-ease-standard),
-      background-color var(--fs-transition-fast) var(--fs-ease-standard),
-      border-color var(--fs-transition-fast) var(--fs-ease-standard),
-      box-shadow var(--fs-transition-fast) var(--fs-ease-standard);
+    transition: var(--fs-control-transition);
+    white-space: nowrap;
   }
 
   .fs-btn:hover {
@@ -45,9 +45,40 @@
   }
 
   .fs-btn:disabled,
-  .fs-btn.is-disabled {
+  .fs-btn.is-disabled,
+  .fs-btn[aria-disabled="true"] {
     opacity: var(--fs-disabled-opacity);
+    cursor: not-allowed;
+  }
+
+  .fs-btn[aria-disabled="true"] {
     pointer-events: none;
+  }
+
+  .fs-btn.is-loading,
+  .fs-btn[aria-busy="true"] {
+    cursor: wait;
+    pointer-events: none;
+  }
+
+  .fs-btn.is-loading::after,
+  .fs-btn[aria-busy="true"]::after {
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentcolor;
+    border-inline-end-color: transparent;
+    border-radius: 50%;
+    content: "";
+    animation: fokus-spin 650ms linear infinite;
+  }
+
+  .fs-btn-icon {
+    display: inline-grid;
+    width: var(--fs-control-touch-target);
+    min-width: var(--fs-control-touch-target);
+    min-height: var(--fs-control-touch-target);
+    padding: 0;
+    place-items: center;
   }
 
   @each $name, $color in $theme-colors {
@@ -74,12 +105,14 @@
 
   .fs-btn-sm {
     min-height: var(--fs-control-height-sm);
+    min-block-size: var(--fs-control-height-sm);
     padding: 0 var(--fs-control-padding-x-sm);
     font-size: $font-size-sm;
   }
 
   .fs-btn-lg {
     min-height: var(--fs-control-height-lg);
+    min-block-size: var(--fs-control-height-lg);
     padding: 0 var(--fs-control-padding-x-lg);
     font-size: $font-size-lg;
   }

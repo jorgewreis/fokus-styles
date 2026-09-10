@@ -1,21 +1,25 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
 @layer utilities {
-  .fs-u-d-none {
-    display: none;
-  }
+  $display-values: (
+    none,
+    block,
+    inline,
+    inline-block,
+    flex,
+    grid
+  );
 
-  .fs-u-d-block {
-    display: block;
-  }
+  @each $breakpoint, $min in $breakpoints {
+    $infix: breakpoint-infix($breakpoint);
 
-  .fs-u-d-inline {
-    display: inline;
-  }
-
-  .fs-u-d-inline-block {
-    display: inline-block;
-  }
-
-  .fs-u-d-flex {
-    display: flex;
+    @include media-breakpoint-up($breakpoint) {
+      @each $display in $display-values {
+        .fs-u-d#{$infix}-#{$display} {
+          display: $display !important;
+        }
+      }
+    }
   }
 }

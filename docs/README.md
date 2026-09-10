@@ -44,6 +44,11 @@ os testes da versão consultada no GitHub definem o comportamento efetivo.
 - [Ícones](guides/icons.md)
 - [Gráficos](guides/charts.md)
 - [Utilitários de impressão](guides/print.md)
+- [Utility API](guides/utility-api.md)
+- [Recipes de composição](guides/recipes.md)
+- [Forms & Controls](guides/forms-controls.md)
+- [Matriz de utilitários](reference/utility-matrix.md)
+- [Suporte a navegadores](reference/browser-support.md)
 - [Migração para v1](guides/migration-v1.md)
 - [Migração de outro framework](guides/migration-external.md)
 
@@ -86,10 +91,13 @@ limitações. Os exemplos funcionais ficam nos [laboratórios de
 - [Arquitetura SCSS](reference/scss-architecture.md)
 - [Suporte a navegadores](reference/browser-support.md)
 - [Matriz de acessibilidade](reference/accessibility-matrix.md)
+- [Auditoria de qualidade dos componentes](reference/component-quality-audit.md)
 - [Relatório de contraste](reference/contrast-report.md)
 - [Baseline de tamanho](reference/size-baseline.json)
 - [Definições do projeto](reference/definitions.md)
+- [Matriz de utilitários](reference/utility-matrix.md)
 - [Estabilidade e roadmap](reference/stability.md)
+- [Checklist de release](reference/release-checklist.md)
 
 ## Ecossistema, templates e contribuição
 

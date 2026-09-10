@@ -1,25 +1,27 @@
-# Showcase de produção
+# Showcase técnico
 
-> 🚧 **Em construção.** Esta página é um placeholder estrutural — ainda não
-> há casos de uso reais de terceiros usando o Fokus Styles em produção pra
-> citar aqui. Preencher com dados fictícios ou métricas inventadas seria
-> pior do que deixar isso em aberto.
+Esta página reúne demonstrações verificáveis do Fokus Styles. Ela não inventa métricas ou
+clientes: exemplos de produção só serão adicionados quando houver autorização explícita.
 
-## O que vai entrar aqui
+## O que explorar
 
-Quando houver projetos reais usando o FokusStyles, cada entrada segue este
-formato:
+- [Laboratório de utilitários](../mockup/examples/utilities.html): Grid, Flexbox, overflow,
+  tokens semânticos, formulário, dark mode, RTL e motion.
+- [Kitchen sink](../mockup/kitchen-sink.html): smoke test visual dos componentes.
+- [Recipes de composição](guides/recipes.md): padrões recomendados para aplicações reais.
+- [Matriz de acessibilidade](reference/accessibility-matrix.md): requisitos por componente.
+- [Matriz de utilitários](reference/utility-matrix.md): classes, tokens e limites.
 
-- **Nome do projeto/empresa** (com link, se público).
-- **Contexto**: que tipo de produto, desde quando usa o FokusStyles.
-- **Por que escolheram o FokusStyles**: motivação (bundle size, zero
-  dependências, dark mode nativo, etc.).
-- **Métricas**, quando o time autorizar compartilhar (tamanho de bundle
-  antes/depois de uma migração, tempo de desenvolvimento, etc.) — nunca
-  números estimados ou genéricos.
+## Como avaliar uma composição
 
-## Quer aparecer aqui?
+1. Confirme a semântica HTML antes das classes.
+2. Teste conteúdo longo, zoom e viewport estreita.
+3. Navegue somente pelo teclado.
+4. Ative dark mode, RTL, reduced motion e forced colors.
+5. Execute os gates do projeto antes de incorporar o padrão.
 
-Se você usa o Fokus Styles em produção e topa ser citado, abra uma
-[issue](https://github.com/jorgewreis/fokus-styles/issues) com o rótulo
-`showcase` — conte um pouco do seu caso de uso.
+## Showcase de terceiros
+
+Projetos públicos usando o Fokus Styles podem ser propostos por uma
+[issue com o rótulo `showcase`](https://github.com/jorgewreis/fokus-styles/issues). Entradas
+serão publicadas somente com contexto e autorização verificáveis.

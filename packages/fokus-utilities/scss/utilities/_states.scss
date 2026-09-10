@@ -1,15 +1,31 @@
 @layer utilities {
-  .fs-u-focus-ring:focus-visible {
-    outline: var(--fs-focus-width) solid var(--fs-focus-color);
-    outline-offset: var(--fs-focus-offset);
-    box-shadow: 0 0 0 var(--fs-focus-ring-size) var(--fs-focus-ring-color);
-  }
+  @if fs-config-list-enabled(states, states) {
+    .fs-u-focus-ring:focus-visible {
+      outline: var(--fs-focus-width) solid var(--fs-focus-color);
+      outline-offset: var(--fs-focus-offset);
+      box-shadow: 0 0 0 var(--fs-focus-ring-size) var(--fs-focus-ring-color);
+    }
 
-  .fs-u-disabled,
-  .fs-u-disabled[aria-disabled="true"] {
-    cursor: not-allowed;
-    opacity: var(--fs-disabled-opacity);
-    pointer-events: none;
+    .fs-u-disabled,
+    .fs-u-disabled[aria-disabled="true"] {
+      cursor: not-allowed;
+      opacity: var(--fs-disabled-opacity);
+      pointer-events: none;
+    }
+
+    @media (prefers-contrast: more) {
+      .fs-u-focus-ring:focus-visible {
+        outline-width: max(3px, var(--fs-focus-width));
+      }
+    }
+
+    @media (forced-colors: active) {
+      .fs-u-focus-ring:focus-visible {
+        outline: 3px solid Highlight;
+        outline-offset: 2px;
+        box-shadow: none;
+      }
+    }
   }
 
   @media print {

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup - Menu</title>
+  <link rel="stylesheet" href="../../dist/css/fonts.css">
+  <link rel="stylesheet" href="../../dist/css/components.css">
+  <link rel="stylesheet" href="../../dist/css/helpers.css">
+  <link rel="stylesheet" href="../assets/example-theme.css">
+  <script src="../assets/example-theme.js"></script>
+</head>
+<body>
+  <main class="theme-panel" style="padding: 24px;">
+    <section aria-labelledby="menu-title">
+      <h1 id="menu-title" class="fs-u-fs-xl fs-u-mb-1">Menu vertical</h1>
+      <p class="fs-u-fs-sm fs-u-mb-4">Navegação contextual agrupada, com níveis aninhados e destino atual.</p>
+      <div class="fs-u-d-grid fs-u-grid-cols-1 fs-u-grid-cols-md-3 fs-u-gap-4">
+        <nav class="fs-menu" aria-label="Área principal">
+          <p class="fs-menu-label">Geral</p>
+          <ul class="fs-menu-list">
+            <li><a href="#inicio" aria-current="page">Início</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+          </ul>
+          <p class="fs-menu-label">Administração</p>
+          <ul class="fs-menu-list">
+            <li><a href="#equipe" class="is-active">Equipe</a></li>
+            <li><a href="#configuracoes">Configurações</a>
+              <ul>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#seguranca">Segurança</a></li>
+                <li><a href="#integracoes" aria-disabled="true">Integrações indisponíveis</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <nav class="fs-menu fs-menu-bordered fs-menu-compact" aria-label="Filtros">
+          <p class="fs-menu-label">Status</p>
+          <ul class="fs-menu-list">
+            <li><a href="#todos" aria-current="page">Todos <span class="fs-badge fs-badge-soft-primary fs-u-ml-auto">24</span></a></li>
+            <li><a href="#ativos">Ativos <span class="fs-badge fs-badge-soft-success fs-u-ml-auto">18</span></a></li>
+            <li><a href="#arquivados" class="is-disabled" aria-disabled="true">Arquivados</a></li>
+          </ul>
+        </nav>
+        <aside class="fs-menu" aria-label="Ajuda">
+          <p class="fs-menu-label">Precisa de ajuda?</p>
+          <ul class="fs-menu-list">
+            <li><a href="#documentacao">Documentação</a></li>
+            <li><a href="#suporte">Falar com suporte</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

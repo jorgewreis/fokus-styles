@@ -20,6 +20,10 @@ for (const theme of ["light", "dark"]) {
     await expect(page.locator(".fs-tag-icon .fs-icon").first()).toBeVisible();
     await expect(page.locator('.fs-tag:has(> .fs-tag-icon:not(.fs-tag-icon-end))').first()).toHaveCSS("padding-left", "2px");
     await expect(page.locator(".fs-tag").first()).toHaveCSS("padding-right", "2px");
+    await expect(page.locator(".fs-tag-addons > .fs-tag").first()).toHaveCSS("padding-left", "8px");
+    await expect(page.locator(".fs-tag-addons > .fs-tag").last()).toHaveCSS("padding-right", "8px");
+    await expect(page.locator(".fs-tag-rounded").first()).toHaveCSS("padding-left", "8px");
+    await expect(page.locator(".fs-tag-rounded").first()).toHaveCSS("padding-right", "8px");
 
     const aligned = await page.locator('.fs-tag:has(> .fs-tag-icon:not(.fs-tag-icon-end))').first().evaluate((tag) => {
       const nodes = [tag.querySelector(".fs-tag-icon"), tag.querySelector(".fs-tag-label"), tag.querySelector(".fs-btn-close")];

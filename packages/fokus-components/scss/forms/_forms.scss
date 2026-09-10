@@ -90,37 +90,85 @@
     display: block;
   }
 
-  .fs-form-control {
+  .fs-form-control,
+  .fs-form-textarea,
+  .fs-form-date,
+  .fs-form-time {
     width: 100%;
     min-width: 0;
     height: var(--fs-control-height);
-    padding: 0 7px;
-    border: var(--fs-border-width) solid var(--fs-color-border-default);
-    border-radius: var(--fs-radius-sm);
+    min-block-size: var(--fs-control-height);
+    padding-block: 0;
+    padding-inline: var(--fs-control-padding-x);
+    border: var(--fs-border-width) solid var(--fs-control-border-color);
+    border-radius: var(--fs-control-radius);
     color: var(--fs-color-text);
-    background-color: var(--fs-color-surface);
+    background-color: var(--fs-control-bg);
     font-size: $font-size-md;
     font-weight: $font-weight-medium;
+    line-height: 1.35;
+    transition: var(--fs-control-transition);
+    color-scheme: light;
   }
 
-  .fs-form-control::placeholder {
-    color: var(--fs-color-muted);
+  [data-theme="dark"] .fs-form-control,
+  [data-theme="dark"] .fs-form-textarea,
+  [data-theme="dark"] .fs-form-date,
+  [data-theme="dark"] .fs-form-time,
+  [data-fs-theme="dark"] .fs-form-control,
+  [data-fs-theme="dark"] .fs-form-textarea,
+  [data-fs-theme="dark"] .fs-form-date,
+  [data-fs-theme="dark"] .fs-form-time {
+    color-scheme: dark;
   }
 
-  .fs-form-control:focus-visible {
+  .fs-form-textarea {
+    height: auto;
+    min-block-size: 96px;
+    padding-block: var(--fs-space-2);
+    resize: vertical;
+  }
+
+  .fs-form-control::placeholder,
+  .fs-form-textarea::placeholder {
+    color: var(--fs-control-placeholder-color);
+    opacity: 1;
+  }
+
+  .fs-form-control:focus-visible,
+  .fs-form-textarea:focus-visible,
+  .fs-form-date:focus-visible,
+  .fs-form-time:focus-visible {
     @include focus-ring;
   }
 
-  .fs-form-control:disabled {
+  .fs-form-control:disabled,
+  .fs-form-textarea:disabled,
+  .fs-form-date:disabled,
+  .fs-form-time:disabled {
     color: var(--fs-color-muted);
     background-color: var(--fs-color-subtle);
-    opacity: var(--fs-disabled-opacity);
+    opacity: var(--fs-control-disabled-opacity);
     pointer-events: none;
   }
 
-  .fs-form-control:read-only {
+  .fs-form-control:read-only,
+  .fs-form-textarea:read-only,
+  .fs-form-date:read-only,
+  .fs-form-time:read-only {
     background-color: var(--fs-color-subtle);
     cursor: default;
+  }
+
+  .fs-form-control[type="search"] {
+    appearance: auto;
+  }
+
+  .fs-form-control[type="date"],
+  .fs-form-control[type="time"],
+  .fs-form-date,
+  .fs-form-time {
+    accent-color: var(--fs-color-primary);
   }
 
   .fs-floating-label {
@@ -143,23 +191,47 @@
   }
 
   .fs-form-control[aria-invalid="true"],
+  .fs-form-textarea[aria-invalid="true"],
+  .fs-form-date[aria-invalid="true"],
+  .fs-form-time[aria-invalid="true"],
   .fs-was-validated .fs-form-control:invalid {
-    border-color: var(--fs-color-danger);
+    border-color: var(--fs-control-invalid-color);
   }
 
   .fs-form-control[aria-invalid="false"],
+  .fs-form-textarea[aria-invalid="false"],
+  .fs-form-date[aria-invalid="false"],
+  .fs-form-time[aria-invalid="false"],
   .fs-was-validated .fs-form-control:valid {
-    border-color: var(--fs-color-success);
+    border-color: var(--fs-control-valid-color);
   }
 
   .fs-form-control-sm {
     height: var(--fs-control-height-sm);
+    min-block-size: var(--fs-control-height-sm);
+    padding-inline: var(--fs-control-padding-x-sm);
     font-size: $font-size-xs;
   }
 
   .fs-form-control-lg {
     height: var(--fs-control-height-lg);
+    min-block-size: var(--fs-control-height-lg);
+    padding-inline: var(--fs-control-padding-x-lg);
     font-size: $font-size-md;
+  }
+
+  .fs-form-control-xs {
+    height: var(--fs-control-height-xs);
+    min-block-size: var(--fs-control-height-xs);
+    padding-inline: var(--fs-control-padding-x-xs);
+    font-size: $font-size-xs;
+  }
+
+  .fs-form-control-xl {
+    height: var(--fs-control-height-xl);
+    min-block-size: var(--fs-control-height-xl);
+    padding-inline: var(--fs-control-padding-x-xl);
+    font-size: $font-size-lg;
   }
 
   .fs-form-size-sm {
@@ -205,15 +277,24 @@
     justify-content: space-between;
     width: 100%;
     height: var(--fs-control-height);
-    padding: 0 7px;
-    border: var(--fs-border-width) solid var(--fs-color-border-default);
-    border-radius: var(--fs-radius-sm);
+    min-block-size: var(--fs-control-height);
+    padding-block: 0;
+    padding-inline: var(--fs-control-padding-x);
+    border: var(--fs-border-width) solid var(--fs-control-border-color);
+    border-radius: var(--fs-control-radius);
     color: var(--fs-color-text);
-    background-color: var(--fs-color-surface);
+    background-color: var(--fs-control-bg);
     font-size: $font-size-md;
     font-weight: $font-weight-medium;
     text-align: left;
     cursor: pointer;
+    transition: var(--fs-control-transition);
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] .fs-form-select,
+  [data-fs-theme="dark"] .fs-form-select {
+    color-scheme: dark;
   }
 
   .fs-form-select::after {
@@ -241,12 +322,30 @@
 
   .fs-form-select-sm {
     height: var(--fs-control-height-sm);
+    min-block-size: var(--fs-control-height-sm);
+    padding-inline: var(--fs-control-padding-x-sm);
     font-size: $font-size-xs;
   }
 
   .fs-form-select-lg {
     height: var(--fs-control-height-lg);
+    min-block-size: var(--fs-control-height-lg);
+    padding-inline: var(--fs-control-padding-x-lg);
     font-size: $font-size-md;
+  }
+
+  .fs-form-select-xs {
+    height: var(--fs-control-height-xs);
+    min-block-size: var(--fs-control-height-xs);
+    padding-inline: var(--fs-control-padding-x-xs);
+    font-size: $font-size-xs;
+  }
+
+  .fs-form-select-xl {
+    height: var(--fs-control-height-xl);
+    min-block-size: var(--fs-control-height-xl);
+    padding-inline: var(--fs-control-padding-x-xl);
+    font-size: $font-size-lg;
   }
 
   .fs-file-upload {
@@ -356,10 +455,11 @@
   .fs-input-group-text {
     display: flex;
     align-items: center;
-    padding: 0 12px;
-    border: 1px solid var(--fs-color-border);
+    min-block-size: var(--fs-control-height);
+    padding-inline: var(--fs-control-padding-x);
+    border: var(--fs-border-width) solid var(--fs-control-border-color);
     color: var(--fs-color-muted);
-    background-color: var(--fs-color-subtle);
+    background-color: var(--fs-control-addon-bg);
     font-size: $font-size-md;
     font-weight: $font-weight-medium;
     white-space: nowrap;
@@ -383,28 +483,55 @@
   }
 
   .fs-input-group > :first-child {
-    border-top-left-radius: var(--fs-radius-sm);
-    border-bottom-left-radius: var(--fs-radius-sm);
+    border-start-start-radius: var(--fs-control-radius);
+    border-end-start-radius: var(--fs-control-radius);
   }
 
   .fs-input-group > :last-child {
-    border-top-right-radius: var(--fs-radius-sm);
-    border-bottom-right-radius: var(--fs-radius-sm);
+    border-start-end-radius: var(--fs-control-radius);
+    border-end-end-radius: var(--fs-control-radius);
+  }
+
+  .fs-input-group:focus-within {
+    --fs-control-border-color: var(--fs-focus-color);
+  }
+
+  .fs-input-group.is-invalid,
+  .fs-input-group:has([aria-invalid="true"], .is-invalid) {
+    --fs-control-border-color: var(--fs-control-invalid-color);
+  }
+
+  .fs-input-group.is-valid,
+  .fs-input-group:has([aria-invalid="false"], .is-valid) {
+    --fs-control-border-color: var(--fs-control-valid-color);
+  }
+
+  .fs-input-group-stack-sm {
+    flex-wrap: wrap;
+  }
+
+  .fs-input-group-stack-sm > * {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-inline-start: 0;
+    border-radius: var(--fs-control-radius);
   }
 
   .fs-input-group-sm > .fs-form-control,
   .fs-input-group-sm > .fs-form-select,
   .fs-input-group-sm > .fs-input-group-text {
-    height: 30px;
-    padding: 0 8px;
+    height: var(--fs-control-height-sm);
+    min-block-size: var(--fs-control-height-sm);
+    padding-inline: var(--fs-control-padding-x-sm);
     font-size: $font-size-xs;
   }
 
   .fs-input-group-lg > .fs-form-control,
   .fs-input-group-lg > .fs-form-select,
   .fs-input-group-lg > .fs-input-group-text {
-    height: 46px;
-    padding: 0 16px;
+    height: var(--fs-control-height-lg);
+    min-block-size: var(--fs-control-height-lg);
+    padding-inline: var(--fs-control-padding-x-lg);
     font-size: $font-size-lg;
   }
 }

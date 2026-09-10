@@ -2,53 +2,68 @@
 @use "../../../fokus-core/scss/tools" as *;
 
 @layer utilities {
-  @each $breakpoint, $min in $breakpoints {
-    $infix: breakpoint-infix($breakpoint);
+  $directions: (row: row, column: column, row-reverse: row-reverse, column-reverse: column-reverse);
+  $wraps: (wrap: wrap, nowrap: nowrap, wrap-reverse: wrap-reverse);
+  $alignments: (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch);
+  $justifications: (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly);
 
-    @include media-breakpoint-up($breakpoint) {
-      .fs-u-align-items#{$infix}-start {
-        align-items: flex-start;
-      }
+  @if fs-config-list-enabled(flex, flex) {
+    @each $breakpoint, $min in $breakpoints {
+      $infix: breakpoint-infix($breakpoint);
 
-      .fs-u-align-items#{$infix}-center {
-        align-items: center;
-      }
+      @include media-breakpoint-up($breakpoint) {
+        @each $name, $value in $directions {
+          .fs-u-flex#{$infix}-#{$name} { flex-direction: $value !important; }
+          .fs-u-flex-direction#{$infix}-#{$name} { flex-direction: $value !important; }
+        }
 
-      .fs-u-align-items#{$infix}-end {
-        align-items: flex-end;
-      }
+        @each $name, $value in $wraps {
+          .fs-u-flex#{$infix}-#{$name} { flex-wrap: $value !important; }
+          .fs-u-flex-wrap#{$infix}-#{$name} { flex-wrap: $value !important; }
+        }
 
-      .fs-u-justify-content#{$infix}-start {
-        justify-content: flex-start;
-      }
+        @each $name, $value in $alignments {
+          .fs-u-align-items#{$infix}-#{$name} { align-items: $value !important; }
+          .fs-u-align-self#{$infix}-#{$name} { align-self: $value !important; }
+          .fs-u-align-content#{$infix}-#{$name} { align-content: $value !important; }
+        }
 
-      .fs-u-justify-content#{$infix}-center {
-        justify-content: center;
-      }
+        @each $name, $value in $justifications {
+          .fs-u-justify-content#{$infix}-#{$name} { justify-content: $value !important; }
+        }
 
-      .fs-u-justify-content#{$infix}-end {
-        justify-content: flex-end;
-      }
+        @each $name, $value in (start: start, end: end, center: center, stretch: stretch) {
+          .fs-u-justify-items#{$infix}-#{$name} { justify-items: $value !important; }
+        }
+        .fs-u-flex#{$infix}-1 { flex: 1 1 0% !important; }
+        .fs-u-flex#{$infix}-auto { flex: 1 1 auto !important; }
+        .fs-u-flex#{$infix}-initial { flex: 0 1 auto !important; }
+        .fs-u-flex#{$infix}-none { flex: none !important; }
+        .fs-u-grow#{$infix}-0 { flex-grow: 0 !important; }
+        .fs-u-grow#{$infix}-1 { flex-grow: 1 !important; }
+        .fs-u-shrink#{$infix}-0 { flex-shrink: 0 !important; }
+        .fs-u-shrink#{$infix}-1 { flex-shrink: 1 !important; }
 
-      .fs-u-justify-content#{$infix}-around {
-        justify-content: space-around;
+        @for $order from 0 through 12 {
+          .fs-u-order#{$infix}-#{$order} { order: $order !important; }
+        }
       }
+    }
 
-      .fs-u-justify-content#{$infix}-between {
-        justify-content: space-between;
-      }
+    // Aliases curtos são mantidos no breakpoint base para compatibilidade;
+    // as variantes responsivas usam a forma canônica e evitam CSS duplicado.
 
-      .fs-u-align-self#{$infix}-start {
-        align-self: flex-start;
-      }
 
-      .fs-u-align-self#{$infix}-center {
-        align-self: center;
-      }
+    @each $name, $value in $alignments {
+      .fs-u-align-#{$name} { align-items: $value !important; }
+    }
 
-      .fs-u-align-self#{$infix}-end {
-        align-self: flex-end;
-      }
+    @each $name, $value in $justifications {
+      .fs-u-justify-#{$name} { justify-content: $value !important; }
+    }
+
+    @each $name, $value in (start: start, end: end, center: center, stretch: stretch) {
+      .fs-u-justify-items-#{$name} { justify-items: $value !important; }
     }
   }
 }

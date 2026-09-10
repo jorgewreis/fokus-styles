@@ -1,6 +1,7 @@
 import { computePosition, applyPosition } from "./core/positioning.js";
 import { onClickOutside } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
+import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -175,12 +176,7 @@ export class Combobox {
     if (this.isOpen) return;
     this.isOpen = true;
 
-    const theme = this.inputEl.closest("[data-theme]")?.getAttribute("data-theme");
-    if (theme) {
-      this.listboxEl.setAttribute("data-theme", theme);
-    } else {
-      this.listboxEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.listboxEl, this.inputEl);
 
     this.listboxEl.classList.add("is-open");
     this.listboxEl.style.width = `${this.inputEl.offsetWidth}px`;

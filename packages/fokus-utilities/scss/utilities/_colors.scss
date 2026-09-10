@@ -1,0 +1,27 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(colors, color) {
+    @each $name, $value in $theme-colors {
+      .fs-u-color-#{$name} {
+        color: var(--fs-color-#{$name}, #{$value}) !important;
+      }
+
+      .fs-u-bg-#{$name} {
+        background-color: var(--fs-color-#{$name}, #{$value}) !important;
+      }
+
+      .fs-u-bg-#{$name}-subtle {
+        background-color: var(--fs-color-#{$name}-bg-subtle, #{$value}) !important;
+      }
+
+      .fs-u-border-#{$name}-subtle {
+        border-color: var(--fs-color-#{$name}-border-subtle, #{$value}) !important;
+      }
+
+      .fs-u-text-#{$name}-emphasis {
+        color: var(--fs-color-#{$name}-text-emphasis, #{$value}) !important;
+      }
+    }
+  }
+}

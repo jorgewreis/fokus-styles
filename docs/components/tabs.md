@@ -102,3 +102,8 @@ Usa `--fs-color-border`, `--fs-color-primary` (linha/pill ativos),
 ```
 
 Mockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tabs).
+
+Além do estilo de linha, estão disponíveis `.fs-tabs-boxed`,
+`.fs-tabs-toggle`, `.fs-tabs-vertical` e `.fs-tabs-scroll`. Use o modo vertical
+em navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo
+JS.

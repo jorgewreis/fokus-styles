@@ -43,7 +43,8 @@ para quem não precisa do framework inteiro:
 | `dist/css/layout.css` | Só grid/containers (+ tokens/reset/tema). |
 | `dist/css/forms.css` | Só formulários (+ tokens/reset/tema). |
 | `dist/css/components.css` | Só componentes prontos (+ tokens/reset/tema). |
-| `dist/css/helpers.css` | Só utilitários atômicos (+ tokens/reset/tema). |
+| `dist/css/helpers.css` | Bundle de compatibilidade com os utilitários atômicos históricos. |
+| `dist/css/fokus-helpers.css` | Helpers semânticos isolados, como aspect, object, safe-area e color-scheme. |
 | `dist/css/fonts.css` | Só os `@font-face` self-hosted (opcional, ver acima). |
 | `dist/js/fokus.js` | Todo o JavaScript dos componentes interativos, IIFE global `FokusStyles`. |
 

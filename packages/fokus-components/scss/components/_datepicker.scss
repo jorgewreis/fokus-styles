@@ -7,8 +7,30 @@
   // (chrome do SO, não estilizável via token), que fica invisível sobre
   // --fs-color-surface escuro sem essa correção.
   [data-theme="dark"] .fs-form-control[type="date"]::-webkit-calendar-picker-indicator,
-  [data-theme="dark"] .fs-form-control[type="time"]::-webkit-calendar-picker-indicator {
+  [data-theme="dark"] .fs-form-control[type="time"]::-webkit-calendar-picker-indicator,
+  [data-theme="dark"] .fs-form-date::-webkit-calendar-picker-indicator,
+  [data-theme="dark"] .fs-form-time::-webkit-calendar-picker-indicator {
     filter: invert(1);
+  }
+
+  .fs-form-date,
+  .fs-form-time {
+    appearance: auto;
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] .fs-form-date,
+  [data-theme="dark"] .fs-form-time,
+  [data-fs-theme="dark"] .fs-form-date,
+  [data-fs-theme="dark"] .fs-form-time,
+  [data-theme="dark"] .fs-datepicker-panel,
+  [data-fs-theme="dark"] .fs-datepicker-panel {
+    color-scheme: dark;
+  }
+
+  .fs-form-date::-webkit-calendar-picker-indicator,
+  .fs-form-time::-webkit-calendar-picker-indicator {
+    cursor: pointer;
   }
 
   .fs-datepicker {
@@ -27,6 +49,7 @@
     background-color: var(--fs-color-surface);
     box-shadow: var(--fs-shadow-md);
     z-index: var(--fs-z-dropdown);
+    color-scheme: light;
   }
 
   .fs-datepicker-panel.is-open {
@@ -133,5 +156,28 @@
     color: var(--fs-color-muted);
     pointer-events: none;
     opacity: 0.4;
+  }
+
+  .fs-datepicker-day[aria-current="date"] {
+    outline: var(--fs-border-width) solid var(--fs-color-primary);
+    outline-offset: -2px;
+  }
+
+  .fs-datepicker-title[aria-live="polite"] {
+    min-inline-size: 8rem;
+    text-align: center;
+  }
+
+  @media (forced-colors: active) {
+    .fs-datepicker-panel {
+      border: 1px solid CanvasText;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    .fs-datepicker-day.is-selected {
+      background: Highlight;
+      color: HighlightText;
+    }
   }
 }

@@ -143,3 +143,8 @@ Usa `--fs-color-border`, `--fs-color-surface`, `--fs-color-subtle`
 ```
 
 Mockup: [laboratório do componente](../../mockup/navigation-disclosure.html#pagination).
+
+Para variações inspiradas em diferentes contextos, use `.fs-pagination-centered`,
+`.fs-pagination-right`, `.fs-pagination-rounded` e `.fs-pagination-list`. Os
+modificadores `.fs-pagination-sm`, `.fs-pagination-lg` e
+`.fs-pagination-bordered` continuam combináveis.

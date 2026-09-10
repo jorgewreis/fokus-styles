@@ -1,0 +1,61 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(layout, box-sizing) {
+    .fs-u-box-border { box-sizing: border-box !important; }
+    .fs-u-box-content { box-sizing: content-box !important; }
+  }
+
+  @if fs-config-list-enabled(layout, overflow) {
+    @each $value in auto, hidden, clip, visible, scroll {
+      .fs-u-overflow-#{$value} { overflow: $value !important; }
+      .fs-u-overflow-x-#{$value} { overflow-x: $value !important; }
+      .fs-u-overflow-y-#{$value} { overflow-y: $value !important; }
+    }
+
+    .fs-u-overflow-wrap-normal { overflow-wrap: normal !important; }
+    .fs-u-overflow-wrap-anywhere { overflow-wrap: anywhere !important; }
+    .fs-u-overflow-wrap-break-word { overflow-wrap: break-word !important; }
+    .fs-u-text-ellipsis { text-overflow: ellipsis !important; }
+    .fs-u-text-clip { text-overflow: clip !important; }
+  }
+
+  @if fs-config-list-enabled(layout, overscroll) {
+    @each $value in auto, contain, none {
+      .fs-u-overscroll-#{$value} { overscroll-behavior: $value !important; }
+      .fs-u-overscroll-x-#{$value} { overscroll-behavior-x: $value !important; }
+      .fs-u-overscroll-y-#{$value} { overscroll-behavior-y: $value !important; }
+    }
+  }
+
+  @if fs-config-list-enabled(columns, columns) {
+    @for $count from 1 through 6 {
+      .fs-u-columns-#{$count} { columns: $count !important; }
+    }
+
+    .fs-u-columns-auto { columns: auto !important; }
+    .fs-u-column-fill-auto { column-fill: auto !important; }
+    .fs-u-column-fill-balance { column-fill: balance !important; }
+    .fs-u-column-span-all { column-span: all !important; }
+    .fs-u-column-span-none { column-span: none !important; }
+
+    @each $value in auto, avoid, avoid-page, avoid-column, page, left, right, recto, verso {
+      .fs-u-break-before-#{$value} { break-before: $value !important; }
+      .fs-u-break-after-#{$value} { break-after: $value !important; }
+      .fs-u-break-inside-#{$value} { break-inside: $value !important; }
+    }
+
+    @each $breakpoint, $min in $breakpoints {
+      $infix: breakpoint-infix($breakpoint);
+
+      @if $min != 0 {
+        @include media-breakpoint-up($breakpoint) {
+          @for $count from 1 through 6 {
+            .fs-u-columns#{$infix}-#{$count} { columns: $count !important; }
+          }
+        }
+      }
+    }
+  }
+}

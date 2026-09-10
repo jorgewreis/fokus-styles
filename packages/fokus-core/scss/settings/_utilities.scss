@@ -1,0 +1,86 @@
+// Mapas públicos que alimentam os utilitários atômicos. Todos usam !default
+// para que consumidores possam estender a escala antes do entry-point Sass.
+$fs-utility-sizes: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+  full: 100%,
+  screen: 100vw,
+  svh: 100svh,
+  dvh: 100dvh,
+  lvh: 100lvh
+) !default;
+
+$fs-utility-border-widths: (
+  0: 0,
+  1: 1px,
+  2: 2px,
+  4: 4px,
+  8: 8px
+) !default;
+
+$fs-utility-radii: (
+  none: 0,
+  sm: var(--fs-radius-sm),
+  md: var(--fs-radius-md),
+  lg: var(--fs-radius-lg),
+  full: 9999px
+) !default;
+
+$fs-utility-transition-durations: (
+  none: 0ms,
+  fast: var(--fs-transition-fast),
+  normal: var(--fs-transition-normal),
+  slow: 500ms
+) !default;
+
+$fs-utility-easings: (
+  standard: var(--fs-ease-standard),
+  entrance: cubic-bezier(0, 0, 0.2, 1),
+  exit: cubic-bezier(0.4, 0, 1, 1),
+  linear: linear
+) !default;
+
+// Registro declarativo para extensões simples. Os módulos de categoria
+// continuam sendo responsáveis pelas APIs históricas; este mapa é a nova
+// superfície de extensão para consumidores e para utilitários sem aliases.
+$fs-utility-object-values: (
+  contain: contain,
+  cover: cover,
+  fill: fill,
+  none: none,
+  "scale-down": scale-down
+) !default;
+
+$fs-utility-z-values: (
+  base: var(--fs-z-base, 0),
+  dropdown: var(--fs-z-dropdown, 1000),
+  sticky: var(--fs-z-sticky, 1020),
+  modal: var(--fs-z-modal, 1050),
+  offcanvas: var(--fs-z-offcanvas, 1060),
+  notification: var(--fs-z-notification, 1080),
+  toast: var(--fs-z-toast, 1090),
+  tooltip: var(--fs-z-tooltip, 1100)
+) !default;
+
+$fs-utilities: (
+  object-fit: (
+    property: object-fit,
+    class: object,
+    values: $fs-utility-object-values,
+    category: layout,
+    responsive: false,
+    important: true
+  ),
+  z-index: (
+    property: z-index,
+    class: z,
+    values: $fs-utility-z-values,
+    category: interactivity,
+    responsive: false,
+    important: true
+  )
+) !default;

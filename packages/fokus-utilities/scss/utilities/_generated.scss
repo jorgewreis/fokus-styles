@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../../../fokus-core/scss/settings" as *;
+@use "api" as api;
+
+// Entrada CSS da API declarativa. Fica separada do módulo de mixins para que
+// consumidores possam importar e estender a API sem emitir CSS acidentalmente.
+@layer utilities {
+  @if fs-feature-enabled(utilities, true) {
+    @each $name, $definition in $fs-utilities {
+      $category: utilities;
+
+      @if map.has-key($definition, category) {
+        $category: map.get($definition, category);
+      }
+
+      @if fs-config-list-enabled($category, $name) {
+        @include api.fs-generate-utility($name, $definition);
+      }
+    }
+  }
+}

@@ -7,15 +7,39 @@ $fs-config: (
   preset: full,
   components: all,
   utilities: all,
+  helpers: all,
   colors: all,
+  layout: all,
+  columns: all,
   spacing: all,
   sizing: all,
+  typography: all,
+  borders: all,
+  effects: all,
+  motion: all,
+  interactivity: all,
+  display: all,
+  flex: all,
+  grid: all,
   responsive: true,
   states: true,
   pseudo-variants: (responsive, focus-visible, disabled, checked, hover, print),
   fluid-type: true,
-  color-modes: true
+  color-modes: true,
+  print: true,
+  rtl: true,
+  dark-mode: true,
+  reduced-motion: true,
+  important-utilities: true
 ) !default;
+
+$fs-enable-dark-mode: true !default;
+$fs-enable-rounded: true !default;
+$fs-enable-shadows: true !default;
+$fs-enable-important-utilities: true !default;
+$fs-enable-helpers: true !default;
+$fs-enable-print-utilities: true !default;
+$fs-enable-rtl: true !default;
 
 @function fs-config-list-enabled($key, $item) {
 
@@ -38,6 +62,20 @@ $fs-config: (
 
 @function fs-feature-enabled($feature, $fallback: true) {
   $value: fs-config-get($feature, $fallback);
+
+  @if $feature == dark-mode and $fs-enable-dark-mode == false { @return false; }
+
+  @if $feature == helpers and $fs-enable-helpers == false { @return false; }
+
+  @if $feature == print and $fs-enable-print-utilities == false { @return false; }
+
+  @if $feature == rtl and $fs-enable-rtl == false { @return false; }
+
+  @if $feature == important-utilities and $fs-enable-important-utilities == false { @return false; }
+
+  @if $feature == rounded and $fs-enable-rounded == false { @return false; }
+
+  @if $feature == shadows and $fs-enable-shadows == false { @return false; }
 
   @return $value != false;
 }

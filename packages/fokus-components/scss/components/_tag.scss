@@ -22,6 +22,38 @@
     padding-inline-end: var(--fs-tag-padding-inline-end);
   }
 
+  .fs-tag-rounded {
+    --fs-badge-radius: 999px;
+    --fs-tag-padding-inline-start: 8px;
+    --fs-tag-padding-inline-end: 8px;
+  }
+
+  .fs-tag-addons {
+    --fs-tag-addon-padding-inline: 8px;
+
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .fs-tag-addons > .fs-tag {
+    --fs-tag-padding-inline-start: var(--fs-tag-addon-padding-inline);
+    --fs-tag-padding-inline-end: var(--fs-tag-addon-padding-inline);
+
+    min-inline-size: 0;
+    border-radius: 0;
+  }
+
+  .fs-tag-addons > .fs-tag:first-child {
+    border-start-start-radius: var(--fs-badge-radius);
+    border-end-start-radius: var(--fs-badge-radius);
+  }
+
+  .fs-tag-addons > .fs-tag:last-child {
+    border-start-end-radius: var(--fs-badge-radius);
+    border-end-end-radius: var(--fs-badge-radius);
+  }
+
   // O texto fica em um elemento próprio quando a tag puder ser truncada. A
   // string integral permanece no DOM, portanto continua disponível para AT.
   .fs-tag-label {

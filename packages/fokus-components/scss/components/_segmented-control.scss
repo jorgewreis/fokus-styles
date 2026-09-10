@@ -13,7 +13,10 @@
     border: 1px solid var(--fs-color-border);
     border-radius: var(--fs-radius-sm);
     overflow: hidden;
+    max-inline-size: 100%;
   }
+
+  .fs-segmented-control-vertical { flex-direction: column; }
 
   .fs-segmented-item {
     display: flex;
@@ -41,6 +44,7 @@
     align-items: center;
     justify-content: center;
     min-height: 38px;
+    min-block-size: var(--fs-control-touch-target);
     padding: 0 12px;
     color: var(--fs-color-text);
     background-color: var(--fs-color-surface);
@@ -50,7 +54,7 @@
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: var(--fs-control-transition);
   }
 
   .fs-segmented-label:hover {
@@ -72,6 +76,17 @@
   .fs-segmented-input:disabled + .fs-segmented-label {
     opacity: 0.4;
     pointer-events: none;
+  }
+
+  .fs-segmented-input[aria-invalid="true"] + .fs-segmented-label,
+  .fs-segmented-control.is-invalid {
+    outline: var(--fs-border-width) solid var(--fs-control-invalid-color);
+    outline-offset: var(--fs-focus-offset);
+  }
+
+  .fs-segmented-control-vertical .fs-segmented-item:not(:first-child) .fs-segmented-label {
+    border-block-start: 1px solid var(--fs-color-border);
+    border-inline-start: 0;
   }
 
   .fs-segmented-control-sm .fs-segmented-label {

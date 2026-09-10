@@ -101,3 +101,11 @@ Auto-init via `data-fs="dropdown"`. `Dropdown.getInstance(el)` (`el` é o
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#dropdown).
+
+### Refinamentos visuais
+
+Use `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,
+`.fs-dropdown-content` para conteúdo composto simples, `.fs-dropdown-rich` para
+painéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para
+ações destrutivas. O JS publica `data-placement` no menu após o flip automático,
+permitindo ajustes de origem no CSS.

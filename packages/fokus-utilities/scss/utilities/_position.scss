@@ -3,14 +3,14 @@
 // conteúdo normal e do dropdown, abaixo de qualquer overlay modal.
 @layer utilities {
   .fs-u-sticky-top {
-    position: sticky;
-    top: var(--fs-sticky-top, 0);
-    z-index: 1020;
+    position: sticky !important;
+    top: var(--fs-sticky-top, 0) !important;
+    z-index: 1020 !important;
   }
 
   .fs-u-sticky-bottom {
-    position: sticky;
-    bottom: var(--fs-sticky-bottom, 0);
-    z-index: 1020;
+    position: sticky !important;
+    bottom: var(--fs-sticky-bottom, 0) !important;
+    z-index: 1020 !important;
   }
 }

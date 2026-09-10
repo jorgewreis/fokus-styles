@@ -94,6 +94,19 @@ describe("Dropdown", () => {
     expect(document.activeElement).toBe(items[0]);
   });
 
+  it("abre e foca o primeiro ou último item por ArrowDown/ArrowUp no toggle", () => {
+    const { toggle, menu, dropdown } = buildDropdown();
+    const items = menu.querySelectorAll(".fs-dropdown-item:not(.is-disabled)");
+
+    toggle.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
+    expect(dropdown.isOpen).toBe(true);
+    expect(document.activeElement).toBe(items[0]);
+
+    dropdown.hide();
+    toggle.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowUp", bubbles: true }));
+    expect(document.activeElement).toBe(items[1]);
+  });
+
   it("Escape fecha o menu e devolve o foco ao toggle", () => {
     const { toggle, menu, dropdown } = buildDropdown();
     dropdown.show();
@@ -119,5 +132,14 @@ describe("Dropdown", () => {
     dropdown.dispose();
 
     expect(Dropdown.getInstance(toggle)).toBeUndefined();
+  });
+
+  it("reconhece aria-disabled e publica o posicionamento resolvido", () => {
+    const { toggle, menu, dropdown } = buildDropdown();
+    menu.querySelector(".fs-dropdown-item").setAttribute("aria-disabled", "true");
+    dropdown.show();
+
+    expect(menu.getAttribute("data-placement")).toBe("bottom");
+    expect(document.activeElement.textContent).toContain("Item 2");
   });
 });

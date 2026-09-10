@@ -2,6 +2,7 @@ import { Toast } from "./toast.js";
 import { computePosition, applyPosition } from "./core/positioning.js";
 import { onClickOutside } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
+import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -217,12 +218,7 @@ export class NotificationCenter {
     if (this.isOpen) return;
     this.isOpen = true;
 
-    const theme = this.triggerEl.closest("[data-theme]")?.getAttribute("data-theme");
-    if (theme) {
-      this.panelEl.setAttribute("data-theme", theme);
-    } else {
-      this.panelEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.panelEl, this.triggerEl);
 
     this.panelEl.classList.add("is-open");
 

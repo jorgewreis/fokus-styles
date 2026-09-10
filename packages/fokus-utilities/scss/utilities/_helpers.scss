@@ -1,0 +1,35 @@
+@use "sass:math";
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-feature-enabled(helpers, true) and fs-config-list-enabled(helpers, helpers) {
+    @each $name, $value in (square: 1, video: math.div(16, 9), auto: auto) {
+      .fs-u-aspect-#{$name} { aspect-ratio: $value !important; }
+    }
+
+    @each $name, $value in (center: center, top: top, right: right, bottom: bottom, left: left) {
+      .fs-u-object-#{$name} { object-position: $value !important; }
+    }
+
+    .fs-u-vertical-align-baseline { vertical-align: baseline !important; }
+    .fs-u-vertical-align-middle { vertical-align: middle !important; }
+    .fs-u-vertical-align-top { vertical-align: top !important; }
+    .fs-u-vertical-align-bottom { vertical-align: bottom !important; }
+
+    .fs-u-color-scheme-normal { color-scheme: normal !important; }
+    .fs-u-color-scheme-light { color-scheme: light !important; }
+    .fs-u-color-scheme-dark { color-scheme: dark !important; }
+    .fs-u-color-scheme-only-light { color-scheme: only light !important; }
+    .fs-u-color-scheme-only-dark { color-scheme: only dark !important; }
+
+    .fs-u-safe-area-inline {
+      padding-inline-start: var(--fs-safe-area-left) !important;
+      padding-inline-end: var(--fs-safe-area-right) !important;
+    }
+
+    .fs-u-safe-area-block {
+      padding-block-start: var(--fs-safe-area-top) !important;
+      padding-block-end: var(--fs-safe-area-bottom) !important;
+    }
+  }
+}

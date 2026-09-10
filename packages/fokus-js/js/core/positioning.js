@@ -41,8 +41,8 @@ export function computePosition(referenceEl, floatingEl, options = {}) {
 
   const candidates = [...new Set(fallbackPlacements ?? [placement, OPPOSITE_PLACEMENT[placement], "bottom", "top", "right", "left"])]
     .filter(Boolean);
-  const primaryCandidates = candidates.slice(0, 2);
-  const finalPlacement = primaryCandidates.find((candidate) => fitsPlacement(candidate, referenceRect, floatingRect, offset, viewportWidth, viewportHeight))
+  const placementCandidates = fallbackPlacements ? candidates : candidates.slice(0, 2);
+  const finalPlacement = placementCandidates.find((candidate) => fitsPlacement(candidate, referenceRect, floatingRect, offset, viewportWidth, viewportHeight))
     ?? placement;
 
   let top;

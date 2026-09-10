@@ -1,34 +1,42 @@
 {
-  "measuredAt": "2026-09-08T15:41:39.321Z",
+  "measuredAt": "2026-09-10T16:37:37.150Z",
   "unit": "bytes",
   "files": {
     "css/layout.min.css": {
-      "bytes": 28993,
-      "gzipBytes": 6049
+      "bytes": 31316,
+      "gzipBytes": 6351
     },
     "css/forms.min.css": {
-      "bytes": 40484,
-      "gzipBytes": 7974
+      "bytes": 46580,
+      "gzipBytes": 8860
     },
     "css/components.min.css": {
-      "bytes": 104877,
-      "gzipBytes": 18264
+      "bytes": 117893,
+      "gzipBytes": 20243
     },
     "css/helpers.min.css": {
-      "bytes": 63446,
-      "gzipBytes": 11044
+      "bytes": 188042,
+      "gzipBytes": 23323
+    },
+    "css/fokus-utilities.min.css": {
+      "bytes": 188050,
+      "gzipBytes": 23325
+    },
+    "css/fokus-helpers.min.css": {
+      "bytes": 21271,
+      "gzipBytes": 5020
     },
     "css/fonts.min.css": {
       "bytes": 1505,
       "gzipBytes": 409
     },
     "css/fokus.min.css": {
-      "bytes": 184593,
-      "gzipBytes": 28935
+      "bytes": 323655,
+      "gzipBytes": 43375
     },
     "js/fokus.min.js": {
-      "bytes": 115015,
-      "gzipBytes": 24623
+      "bytes": 116350,
+      "gzipBytes": 25070
     }
   }
 }

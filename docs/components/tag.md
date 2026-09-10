@@ -142,3 +142,7 @@ Usa os tokens de [Badge](badge.md) e expõe tokens locais para composição:
 ```
 
 Mockup: [laboratório do componente](../../mockup/feedback-actions.html#tag).
+
+`.fs-tag-rounded` cria um raio total e `.fs-tag-addons` agrupa duas ou mais
+tags como uma unidade visual. Esses refinamentos são visuais; a remoção
+continua sendo responsabilidade exclusiva de um botão nomeado.

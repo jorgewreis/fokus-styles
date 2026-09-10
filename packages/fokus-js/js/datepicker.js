@@ -43,6 +43,12 @@ function isSameDay(a, b) {
   return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 }
 
+function addMonthsClamped(date, months) {
+  const target = new Date(date.getFullYear(), date.getMonth() + months, 1);
+  const lastDay = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+  return new Date(target.getFullYear(), target.getMonth(), Math.min(date.getDate(), lastDay));
+}
+
 function buildMonthCells(viewDate) {
   const year = viewDate.getFullYear();
   const month = viewDate.getMonth();
@@ -246,13 +252,13 @@ export class Datepicker {
         break;
       case "PageUp":
         nextDate = event.shiftKey
-          ? new Date(currentDate.getFullYear() - 1, currentDate.getMonth(), currentDate.getDate())
-          : new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
+          ? addMonthsClamped(currentDate, -12)
+          : addMonthsClamped(currentDate, -1);
         break;
       case "PageDown":
         nextDate = event.shiftKey
-          ? new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate())
-          : new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
+          ? addMonthsClamped(currentDate, 12)
+          : addMonthsClamped(currentDate, 1);
         break;
       case "Enter":
       case " ":
@@ -328,6 +334,7 @@ export class Datepicker {
             return (
               `<button type="button" class="${classes.join(" ")}" role="gridcell" ` +
               `tabindex="${isTabbable ? "0" : "-1"}" aria-selected="${isSelected}" ` +
+              `${isToday ? 'aria-current="date" ' : ""}` +
               `data-year="${cell.year}" data-month="${cell.month}" data-day="${cell.day}">${cell.day}</button>`
             );
           })
@@ -344,7 +351,8 @@ export class Datepicker {
     if (this.isOpen) return;
     this.isOpen = true;
 
-    const theme = this.inputEl.closest("[data-theme]")?.getAttribute("data-theme");
+    const themeRoot = this.inputEl.closest("[data-theme], [data-fs-theme]");
+    const theme = themeRoot?.getAttribute("data-theme") ?? themeRoot?.getAttribute("data-fs-theme");
     if (theme) {
       this.panelEl.setAttribute("data-theme", theme);
     } else {

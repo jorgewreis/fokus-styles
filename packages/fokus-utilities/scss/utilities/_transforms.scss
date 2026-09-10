@@ -1,0 +1,67 @@
+@use "sass:string";
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(effects, transform) {
+    @each $name, $value in (none: none, center: center, top: top, top-right: top right, right: right, bottom-right: bottom right, bottom: bottom, bottom-left: bottom left, left: left, top-left: top left) {
+      .fs-u-origin-#{$name} { transform-origin: $value !important; }
+    }
+    
+    @each $name, $value in (0: 0deg, 45: 45deg, 90: 90deg, 180: 180deg, -45: -45deg, -90: -90deg) {
+      .fs-u-rotate-#{$name} {
+        --fs-u-rotate: #{$value};
+
+        transform: translate(var(--fs-u-translate-x, 0), var(--fs-u-translate-y, 0)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) skew(var(--fs-u-skew-x, 0deg), var(--fs-u-skew-y, 0deg)) !important;
+      }
+    }
+    
+    @each $name, $value in (0: 0, 50: 0.5, 75: 0.75, 90: 0.9, 95: 0.95, 100: 1, 105: 1.05, 110: 1.1, 125: 1.25, 150: 1.5) {
+      .fs-u-scale-#{$name} {
+        --fs-u-scale-x: #{$value};
+        --fs-u-scale-y: #{$value};
+
+        transform: translate(var(--fs-u-translate-x, 0), var(--fs-u-translate-y, 0)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) skew(var(--fs-u-skew-x, 0deg), var(--fs-u-skew-y, 0deg)) !important;
+      }
+    }
+    .fs-u-transform-none { transform: none !important; }
+
+    .fs-u-translate-none {
+      --fs-u-translate-x: 0;
+      --fs-u-translate-y: 0;
+
+      transform: translate(0, 0) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) !important;
+    }
+
+    .fs-u-translate-x-full {
+      --fs-u-translate-x: 100%;
+
+      transform: translate(var(--fs-u-translate-x), var(--fs-u-translate-y, 0)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) !important;
+    }
+
+    .fs-u-translate-x-half {
+      --fs-u-translate-x: 50%;
+
+      transform: translate(var(--fs-u-translate-x), var(--fs-u-translate-y, 0)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) !important;
+    }
+
+    .fs-u-translate-y-full {
+      --fs-u-translate-y: 100%;
+
+      transform: translate(var(--fs-u-translate-x, 0), var(--fs-u-translate-y)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) !important;
+    }
+
+    .fs-u-translate-y-half {
+      --fs-u-translate-y: 50%;
+
+      transform: translate(var(--fs-u-translate-x, 0), var(--fs-u-translate-y)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) !important;
+    }
+
+    @each $axis, $value in (x-3: 3deg, x-6: 6deg, y-3: 3deg, y-6: 6deg) {
+      .fs-u-skew-#{$axis} {
+        --fs-u-skew-#{string.slice($axis, 1, 1)}: #{$value};
+
+        transform: translate(var(--fs-u-translate-x, 0), var(--fs-u-translate-y, 0)) rotate(var(--fs-u-rotate, 0deg)) scale(var(--fs-u-scale-x, 1), var(--fs-u-scale-y, 1)) skew(var(--fs-u-skew-x, 0deg), var(--fs-u-skew-y, 0deg)) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
+
+@layer components {
+  .fs-menu {
+    --fs-menu-item-padding-block: 0.5rem;
+    --fs-menu-item-padding-inline: 0.75rem;
+    --fs-menu-item-radius: var(--fs-radius-sm);
+    --fs-menu-label-color: var(--fs-color-muted);
+    --fs-menu-nested-indent: 0.875rem;
+
+    min-inline-size: 12rem;
+  }
+
+  .fs-menu-label {
+    margin-block: 1rem 0.375rem;
+    padding-inline: var(--fs-menu-item-padding-inline);
+    color: var(--fs-menu-label-color);
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .fs-menu-label:first-child { margin-block-start: 0; }
+
+  .fs-menu-list,
+  .fs-menu-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fs-menu-list ul {
+    margin-block-start: 0.25rem;
+    padding-inline-start: var(--fs-menu-nested-indent);
+    border-inline-start: var(--fs-border-width) solid var(--fs-color-border-default);
+  }
+
+  .fs-menu-list a,
+  .fs-menu-list button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    inline-size: 100%;
+    min-block-size: 2.5rem;
+    padding-block: var(--fs-menu-item-padding-block);
+    padding-inline: var(--fs-menu-item-padding-inline);
+    border: 0;
+    border-radius: var(--fs-menu-item-radius);
+    color: var(--fs-color-text);
+    background: transparent;
+    font: inherit;
+    text-align: start;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .fs-menu-list a:hover,
+  .fs-menu-list a:focus-visible,
+  .fs-menu-list button:hover,
+  .fs-menu-list button:focus-visible {
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-subtle);
+    outline: none;
+  }
+
+  .fs-menu-list .is-active,
+  .fs-menu-list [aria-current="page"] {
+    color: var(--fs-alert-primary-text);
+    background-color: var(--fs-color-primary-bg-subtle);
+    font-weight: $font-weight-medium;
+  }
+
+  .fs-menu-list .is-disabled,
+  .fs-menu-list [aria-disabled="true"],
+  .fs-menu-list :disabled {
+    color: var(--fs-color-muted);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .fs-menu-compact {
+    --fs-menu-item-padding-block: 0.375rem;
+    --fs-menu-item-padding-inline: 0.625rem;
+  }
+
+  .fs-menu-bordered {
+    padding: 0.375rem;
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-md);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-sm);
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../../fokus-core/scss/settings" as *;
+
+@layer utilities {
+  @if fs-config-list-enabled(effects, effects) {
+    @each $name, $value in $theme-colors {
+      .fs-u-border-color-#{$name} { border-color: var(--fs-color-#{$name}, #{$value}) !important; }
+      .fs-u-outline-color-#{$name} { outline-color: var(--fs-color-#{$name}, #{$value}) !important; }
+    }
+
+    @each $value in 0, 25, 50, 75, 100 {
+      .fs-u-opacity-#{$value} { opacity: $value * 0.01 !important; }
+    }
+
+    .fs-u-filter-none { filter: none !important; }
+    .fs-u-backdrop-filter-none { backdrop-filter: none !important; }
+
+    @each $name, $value in (sm: 4px, md: 8px, lg: 16px, xl: 24px) {
+      .fs-u-blur-#{$name} {
+        --fs-u-blur: blur(#{$value});
+
+        filter: var(--fs-u-blur, ) var(--fs-u-brightness, ) var(--fs-u-contrast, ) var(--fs-u-grayscale, ) var(--fs-u-invert, ) var(--fs-u-saturate, ) !important;
+      }
+      .fs-u-backdrop-blur-#{$name} {
+        backdrop-filter: blur(#{$value}) !important;
+      }
+    }
+
+    @each $name, $value in (low: 0.75, normal: 1, high: 1.25) {
+      .fs-u-brightness-#{$name} {
+        --fs-u-brightness: brightness(#{$value});
+
+        filter: var(--fs-u-blur, ) var(--fs-u-brightness, ) var(--fs-u-contrast, ) var(--fs-u-grayscale, ) var(--fs-u-invert, ) var(--fs-u-saturate, ) !important;
+      }
+      .fs-u-contrast-#{$name} {
+        --fs-u-contrast: contrast(#{$value});
+
+        filter: var(--fs-u-blur, ) var(--fs-u-brightness, ) var(--fs-u-contrast, ) var(--fs-u-grayscale, ) var(--fs-u-invert, ) var(--fs-u-saturate, ) !important;
+      }
+    }
+
+    .fs-u-grayscale {
+      --fs-u-grayscale: grayscale(100%);
+
+      filter: var(--fs-u-blur, ) var(--fs-u-brightness, ) var(--fs-u-contrast, ) var(--fs-u-grayscale, ) var(--fs-u-invert, ) var(--fs-u-saturate, ) !important;
+    }
+
+    .fs-u-invert {
+      --fs-u-invert: invert(100%);
+
+      filter: var(--fs-u-blur, ) var(--fs-u-brightness, ) var(--fs-u-contrast, ) var(--fs-u-grayscale, ) var(--fs-u-invert, ) var(--fs-u-saturate, ) !important;
+    }
+  }
+}

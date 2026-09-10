@@ -3,6 +3,80 @@ const catalog = rawCatalog.map((item) => ({ ...item, ...(window.showcaseContract
 const sections = document.querySelector("[data-showcase-sections]");
 const navigation = document.querySelector("[data-showcase-navigation]");
 const themeButton = document.querySelector("[data-showcase-theme]");
+const showcaseToolbar = document.querySelector(".showcase-toolbar");
+
+const previewState = { rtl: false, reducedMotion: false, forcedColors: false };
+
+function createStateControl(label, key) {
+  if (!showcaseToolbar) return null;
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "fs-btn fs-btn-outline-secondary showcase-state-control";
+  button.dataset.showcaseState = key;
+  button.setAttribute("aria-pressed", "false");
+  button.textContent = label;
+  showcaseToolbar.append(button);
+  return button;
+}
+
+const stateControls = {
+  rtl: createStateControl("Testar RTL", "rtl"),
+  reducedMotion: createStateControl("Reduzir movimento", "reducedMotion"),
+  forcedColors: createStateControl("Simular alto contraste", "forcedColors"),
+};
+
+function applyPreviewState(frame) {
+  try {
+    const frameDocument = frame.contentDocument;
+    if (!frameDocument) {
+      frame.contentWindow?.postMessage({
+        type: "fokus-showcase-state",
+        rtl: previewState.rtl,
+        reducedMotion: previewState.reducedMotion,
+        forcedColors: previewState.forcedColors,
+      }, "*");
+      return;
+    }
+    const root = frameDocument.documentElement;
+    root.dir = previewState.rtl ? "rtl" : "ltr";
+    root.toggleAttribute("data-showcase-forced-colors", previewState.forcedColors);
+
+    let style = frameDocument.getElementById("showcase-preview-state-style");
+    if (!style) {
+      style = frameDocument.createElement("style");
+      style.id = "showcase-preview-state-style";
+      frameDocument.head.append(style);
+    }
+    style.textContent = previewState.reducedMotion
+      ? "*, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }"
+      : "";
+  } catch {
+    // O navegador pode isolar iframes locais; o arquivo de origem continua disponível.
+  }
+}
+
+function refreshPreviewState() {
+  Object.entries(stateControls).forEach(([key, button]) => {
+    if (!button) return;
+    button.setAttribute("aria-pressed", String(previewState[key]));
+    button.classList.toggle("fs-btn-secondary", previewState[key]);
+    button.classList.toggle("fs-btn-outline-secondary", !previewState[key]);
+  });
+  document.querySelectorAll("iframe[data-showcase-source]").forEach(applyPreviewState);
+}
+
+function buildPreviewSource(source, theme, selector) {
+  const params = new URLSearchParams({ theme });
+  if (selector) params.set("showcase-only", selector);
+  return `${source}${source.includes("?") ? "&" : "?"}${params.toString()}`;
+}
+
+Object.entries(stateControls).forEach(([key, button]) => {
+  button?.addEventListener("click", () => {
+    previewState[key] = !previewState[key];
+    refreshPreviewState();
+  });
+});
 
 const guideComponents = new Set(["layout", "theming", "icons", "charts", "js-foundation"]);
 const relatedDocs = {
@@ -649,7 +723,8 @@ function createSection(item) {
   frame.className = "showcase-preview";
   const theme = document.documentElement.getAttribute("data-theme") || "light";
   frame.dataset.showcaseSource = item.source;
-  frame.src = `${item.source}?theme=${theme}`;
+  frame.dataset.showcaseSelector = item.selector || "";
+  frame.src = buildPreviewSource(item.source, theme, item.selector);
   frame.title = `Demonstração funcional: ${item.title}`;
   frame.style.minHeight = "360px";
   section.append(frame);
@@ -687,9 +762,13 @@ function createSection(item) {
   copy.addEventListener("click", () => copyCode(copy, code, status));
   minimalCopy.addEventListener("click", () => copyCode(minimalCopy, minimalCode, status));
   frame.addEventListener("load", () => {
+    applyPreviewState(frame);
     try {
-      code.textContent = frame.contentDocument.documentElement.outerHTML.trim();
-      const root = frame.contentDocument.body.firstElementChild;
+      const selected = item.selector ? frame.contentDocument.querySelector(item.selector) : null;
+      code.textContent = selected
+        ? selected.outerHTML.trim()
+        : frame.contentDocument.documentElement.outerHTML.trim();
+      const root = selected || frame.contentDocument.body.firstElementChild;
       minimalCode.textContent = root ? root.outerHTML.trim() : `Abra ${item.source} para consultar a estrutura essencial.`;
       frame.style.height = `${Math.max(360, frame.contentDocument.body.scrollHeight + 2)}px`;
       renderExampleApi(section, frame.contentDocument, item.source);
@@ -719,6 +798,8 @@ themeButton?.addEventListener("click", () => {
   if (dark) document.documentElement.setAttribute("data-theme", "dark");
   themeButton.textContent = dark ? "Usar tema claro" : "Usar tema escuro";
   document.querySelectorAll("iframe[data-showcase-source]").forEach((frame) => {
-    frame.src = `${frame.dataset.showcaseSource}?theme=${dark ? "dark" : "light"}`;
+    frame.src = buildPreviewSource(frame.dataset.showcaseSource, dark ? "dark" : "light", frame.dataset.showcaseSelector);
   });
 });
+
+refreshPreviewState();

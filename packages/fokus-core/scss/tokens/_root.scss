@@ -50,9 +50,26 @@
     --fs-control-height: 38px;
     --fs-control-height-sm: 30px;
     --fs-control-height-lg: 46px;
+    --fs-control-height-xs: 26px;
+    --fs-control-height-xl: 52px;
     --fs-control-padding-x: 12px;
     --fs-control-padding-x-sm: 8px;
     --fs-control-padding-x-lg: 16px;
+    --fs-control-padding-x-xs: 6px;
+    --fs-control-padding-x-xl: 20px;
+    --fs-control-border-color: var(--fs-color-border);
+    --fs-control-bg: var(--fs-color-surface);
+    --fs-control-hover-bg: var(--fs-color-subtle);
+    --fs-control-placeholder-color: var(--fs-color-muted);
+    --fs-control-focus-color: var(--fs-focus-color);
+    --fs-control-invalid-color: var(--fs-color-danger);
+    --fs-control-valid-color: var(--fs-color-success);
+    --fs-control-disabled-opacity: var(--fs-disabled-opacity);
+    --fs-control-radius: var(--fs-radius-sm);
+    --fs-control-touch-target: 44px;
+    --fs-control-transition: color var(--fs-transition-fast) var(--fs-ease-standard), background-color var(--fs-transition-fast) var(--fs-ease-standard), border-color var(--fs-transition-fast) var(--fs-ease-standard), box-shadow var(--fs-transition-fast) var(--fs-ease-standard);
+    --fs-control-option-gap: var(--fs-space-2);
+    --fs-control-addon-bg: var(--fs-color-subtle);
     --fs-focus-width: 2px;
     --fs-focus-offset: 2px;
     --fs-focus-color: var(--fs-color-primary);
@@ -102,6 +119,12 @@
 
     @each $name, $bg in $theme-bg-colors {
       --fs-feedback-#{$name}-bg: #{rgb-fallback($bg)};
+    }
+
+    @each $name, $color in $theme-colors {
+      --fs-color-#{$name}-bg-subtle: var(--fs-feedback-#{$name}-bg);
+      --fs-color-#{$name}-border-subtle: var(--fs-color-#{$name});
+      --fs-color-#{$name}-text-emphasis: var(--fs-alert-#{$name}-text);
     }
   }
 

@@ -9,7 +9,45 @@
 @layer components {
   .fs-tabs {
     display: flex;
+    max-inline-size: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
     border-bottom: var(--fs-border-width) solid var(--fs-color-border-default);
+  }
+
+  .fs-tabs .fs-nav-link { flex: 0 0 auto; }
+
+  .fs-tabs-boxed {
+    border: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-radius: var(--fs-radius-md);
+    padding: 0.25rem;
+  }
+
+  .fs-tabs-boxed .fs-nav-link,
+  .fs-tabs-toggle .fs-nav-link {
+    margin-block-end: 0;
+    border: 0;
+    border-radius: var(--fs-radius-sm);
+  }
+
+  .fs-tabs-boxed .fs-nav-link.is-active,
+  .fs-tabs-toggle .fs-nav-link.is-active {
+    color: var(--fs-color-text);
+    background-color: var(--fs-color-surface);
+    box-shadow: var(--fs-shadow-sm);
+  }
+
+  .fs-tabs-toggle {
+    gap: 0;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: var(--fs-radius-md);
+    background-color: var(--fs-color-subtle);
+  }
+
+  .fs-tabs-toggle .fs-nav-link {
+    flex: 1 1 0;
+    justify-content: center;
   }
 
   .fs-tabs .fs-nav-link {
@@ -75,6 +113,26 @@
     flex: 1;
     justify-content: center;
     text-align: center;
+  }
+
+  .fs-tabs-vertical {
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+    border-inline-start: var(--fs-border-width) solid var(--fs-color-border-default);
+    border-block-end: 0;
+  }
+
+  .fs-tabs-vertical .fs-nav-link {
+    justify-content: flex-start;
+    margin-block-end: 0;
+    margin-inline-start: -1px;
+    border-block-end: 0;
+    border-inline-start: 2px solid transparent;
+  }
+
+  .fs-tabs-vertical .fs-nav-link.is-active {
+    border-inline-start-color: var(--fs-color-primary);
   }
 
   // Tamanhos — mesma escala sm/lg dos outros componentes.

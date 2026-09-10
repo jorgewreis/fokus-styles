@@ -30,7 +30,7 @@
 <body>
 
     <div class="theme-panel">
-<section>
+        <section id="accordion-demo" data-showcase-demo>
             <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mt-3 fs-u-mb-2">Accordion — auto-init via data-fs, só um painel aberto por vez (data-multiple="true" permite vários)</p>
             <div class="fs-accordion" data-fs="accordion" id="accordion-claro">
                 <div class="fs-accordion-item">
@@ -102,6 +102,7 @@
             </div>
         </section>
 
+        <div id="tabs-demo" data-showcase-demo>
         <section>
             <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — linha, alinhado à direita, tamanho sm</p>
             <div class="fs-tabs fs-tabs-right fs-tabs-sm" data-fs="tabs" id="tabs-right-claro">
@@ -117,6 +118,32 @@
         </section>
 
         <section>
+            <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Tabs — boxed, toggle e vertical</p>
+            <div class="fs-tabs fs-tabs-boxed fs-u-mb-2" data-fs="tabs" id="tabs-boxed-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-boxed-a-claro">Resumo</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-boxed-b-claro">Atividade</a>
+            </div>
+            <div class="fs-tabs fs-tabs-toggle fs-u-mb-2" data-fs="tabs" id="tabs-toggle-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-toggle-a-claro">Lista</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-toggle-b-claro">Grade</a>
+            </div>
+            <div class="fs-tabs fs-tabs-vertical fs-u-mb-2" data-fs="tabs" id="tabs-vertical-claro">
+                <a href="#" class="fs-nav-link is-active" data-fs-target="#tab-vertical-a-claro">Geral</a>
+                <a href="#" class="fs-nav-link" data-fs-target="#tab-vertical-b-claro">Permissões</a>
+            </div>
+            <div class="fs-tab-content fs-u-p-3">
+                <div class="fs-tab-pane is-active" id="tab-boxed-a-claro">Resumo do registro.</div>
+                <div class="fs-tab-pane" id="tab-boxed-b-claro">Atividade recente.</div>
+                <div class="fs-tab-pane is-active" id="tab-toggle-a-claro">Visualização em lista.</div>
+                <div class="fs-tab-pane" id="tab-toggle-b-claro">Visualização em grade.</div>
+                <div class="fs-tab-pane is-active" id="tab-vertical-a-claro">Configurações gerais.</div>
+                <div class="fs-tab-pane" id="tab-vertical-b-claro">Permissões do grupo.</div>
+            </div>
+        </section>
+        </div>
+
+        <div id="toast-demo" data-showcase-demo>
+        <section>
             <p class="fs-u-fs-sm fs-u-fw-medium fs-u-mb-2">Toast — auto-init via data-fs, mostrado sob demanda com FokusStyles.Toast.getInstance().show(), auto-dismiss</p>
             <button type="button" class="fs-btn fs-btn-primary" id="toast-trigger-claro">Mostrar toast</button>
         </section>
@@ -129,6 +156,7 @@
                 </div>
                 <div class="fs-toast-body">Operação concluída com sucesso.</div>
             </div>
+        </div>
         </div>
     </div>
 

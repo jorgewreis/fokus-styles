@@ -1,96 +1,89 @@
-/* stylelint-disable declaration-block-single-line-max-declarations */
+@forward "../../../fokus-core/scss/settings/utilities";
 @use "sass:map";
-@use "../../fokus-core/scss/settings" as *;
-@use "../../fokus-core/scss/tools" as tools;
+@use "../../../fokus-core/scss/settings" as *;
+@use "../../../fokus-core/scss/tools" as *;
 
-// Utility API do Fokus Styles: os mapas são públicos e podem ser estendidos
-// antes do @use do entry-point pelo consumidor.
-$fs-utility-colors: $theme-colors !default;
-$fs-utility-spacers: $spacers !default;
-$fs-utility-sizes: (25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto) !default;
-$fs-utility-displays: (block, inline, inline-block, flex, grid, none) !default;
-$fs-utility-flex-directions: (row, column, row-reverse, column-reverse) !default;
+// API declarativa inspirada na Utility API do Bootstrap. A API aceita um
+// subconjunto estático e previsível: valores oficiais, sem JIT e sem classes
+// arbitrárias. Categorias históricas permanecem em seus módulos próprios para
+// preservar aliases e a ordem do CSS público.
+@mixin fs-generate-utility($name, $definition) {
+  $property: map.get($definition, property);
+  $class: map.get($definition, class);
+  $values: map.get($definition, values);
+  $category: map.get($definition, category);
+  $important: map.get($definition, important);
+  $responsive: false;
+  $print: false;
+  $states: ();
+  $declaration-property: $property;
 
-@layer utilities {
-  @if fs-config-list-enabled(colors, color) {
-    @each $name, $value in $fs-utility-colors {
-      .fs-u-color-#{$name} { color: var(--fs-color-#{$name}, #{$value}) !important; }
-      .fs-u-bg-#{$name} { background-color: var(--fs-color-#{$name}, #{$value}) !important; }
+  @if map.has-key($definition, responsive) { $responsive: map.get($definition, responsive); }
+
+  @if map.has-key($definition, print) { $print: map.get($definition, print); }
+
+  @if map.has-key($definition, states) { $states: map.get($definition, states); }
+
+  @if map.has-key($definition, css-var) and map.get($definition, css-var) {
+    $declaration-property: --#{map.get($definition, css-variable-name)};
+  }
+  $suffix: "";
+
+  @if $important and fs-feature-enabled(important-utilities, true) {
+    $suffix: " !important";
+  }
+
+  @each $key, $value in $values {
+    .fs-u-#{$class}-#{$key} {
+      #{$declaration-property}: #{$value}#{$suffix};
     }
   }
 
-  @if fs-config-list-enabled(spacing, margin) and fs-config-list-enabled(spacing, padding) {
-    @each $name, $value in $fs-utility-spacers {
-      .fs-u-m-#{$name} { margin: $value !important; }
-      .fs-u-mx-#{$name} { margin-inline: $value !important; }
-      .fs-u-my-#{$name} { margin-block: $value !important; }
-      .fs-u-p-#{$name} { padding: $value !important; }
-      .fs-u-px-#{$name} { padding-inline: $value !important; }
-      .fs-u-py-#{$name} { padding-block: $value !important; }
-    }
-  }
-
-  @if fs-config-list-enabled(sizing, width) {
-    @each $name, $value in $fs-utility-sizes {
-      .fs-u-w-#{$name} { width: $value !important; }
-      .fs-u-h-#{$name} { height: $value !important; }
-    }
-  }
-
-  @if fs-config-get(responsive, true) {
+  @if $responsive and fs-feature-enabled(responsive, true) {
     @each $breakpoint, $min in $breakpoints {
+      $infix: breakpoint-infix($breakpoint);
+
       @if $min != 0 {
-        @media (min-width: $min) {
-          .fs-u-d-#{$breakpoint}-flex { display: flex !important; }
-          .fs-u-d-#{$breakpoint}-none { display: none !important; }
-          .fs-u-text-#{$breakpoint}-start { text-align: start !important; }
+        @include media-breakpoint-up($breakpoint) {
+          @each $key, $value in $values {
+            .fs-u-#{$class}#{$infix}-#{$key} {
+              #{$declaration-property}: #{$value}#{$suffix};
+            }
+          }
         }
       }
     }
   }
 
-  @if fs-config-list-enabled(display, display) {
-    @each $display in $fs-utility-displays {
-      .fs-u-d-#{$display} { display: $display !important; }
+  @each $state, $pseudo in $states {
+    @each $key, $value in $values {
+      .fs-u-#{$class}-#{$key}-#{$state}:#{$pseudo} {
+        #{$declaration-property}: #{$value}#{$suffix};
+      }
     }
   }
 
-  @if fs-config-list-enabled(flex, flex) {
-    @each $direction in $fs-utility-flex-directions {
-      .fs-u-flex-#{$direction} { flex-direction: $direction !important; }
-    }
-    .fs-u-flex-wrap { flex-wrap: wrap !important; }
-    .fs-u-flex-nowrap { flex-wrap: nowrap !important; }
-    .fs-u-justify-start { justify-content: flex-start !important; }
-    .fs-u-justify-center { justify-content: center !important; }
-    .fs-u-justify-end { justify-content: flex-end !important; }
-    .fs-u-justify-between { justify-content: space-between !important; }
-    .fs-u-align-start { align-items: flex-start !important; }
-    .fs-u-align-center { align-items: center !important; }
-    .fs-u-align-end { align-items: flex-end !important; }
-  }
-
-  @if fs-config-list-enabled(gap, gap) {
-    @each $name, $value in $fs-utility-spacers {
-      .fs-u-gap-#{$name} { gap: $value !important; }
-      .fs-u-row-gap-#{$name} { row-gap: $value !important; }
-      .fs-u-column-gap-#{$name} { column-gap: $value !important; }
+  @if $print and fs-feature-enabled(print, true) {
+    @media print {
+      @each $key, $value in $values {
+        .fs-u-#{$class}-#{$key}-print {
+          #{$declaration-property}: #{$value}#{$suffix};
+        }
+      }
     }
   }
+}
 
-  @if fs-config-list-enabled(typography, typography) {
-    .fs-u-text-start { text-align: start !important; }
-    .fs-u-text-center { text-align: center !important; }
-    .fs-u-text-end { text-align: end !important; }
-    .fs-u-text-wrap { white-space: normal !important; }
-    .fs-u-text-nowrap { white-space: nowrap !important; }
-    .fs-u-fw-normal { font-weight: 400 !important; }
-    .fs-u-fw-semibold { font-weight: 600 !important; }
-    .fs-u-fw-bold { font-weight: 700 !important; }
-  }
+@mixin fs-generate-utilities($utilities: $fs-utilities) {
+  @each $name, $definition in $utilities {
+    $category: utilities;
 
-  @if fs-config-list-enabled(states, states) {
-    .fs-u-focus-ring:focus-visible { outline: var(--fs-focus-width) solid var(--fs-focus-color); outline-offset: var(--fs-focus-offset); }
-    .fs-u-disabled:disabled, .fs-u-disabled[aria-disabled="true"] { pointer-events: none; opacity: var(--fs-disabled-opacity); }
+    @if map.has-key($definition, category) {
+      $category: map.get($definition, category);
+    }
+
+    @if fs-config-list-enabled($category, $name) {
+      @include fs-generate-utility($name, $definition);
+    }
   }
 }

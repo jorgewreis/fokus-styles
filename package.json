@@ -1,6 +1,6 @@
 {
   "name": "fokus-styles",
-  "version": "2.6.2",
+  "version": "2.7.0",
   "description": "Fokus Styles is a complete CSS framework with components, utilities, vanilla JavaScript, icons, React wrappers, and a CLI.",
   "keywords": [
     "css",
@@ -65,6 +65,7 @@
     "./forms.css": "./dist/css/forms.css",
     "./components.css": "./dist/css/components.css",
     "./helpers.css": "./dist/css/helpers.css",
+    "./helpers-only.css": "./dist/css/fokus-helpers.css",
     "./core": "./dist/css/fokus-core.css",
     "./components": "./dist/css/fokus-components.css",
     "./utilities": "./dist/css/fokus-utilities.css",

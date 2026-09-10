@@ -39,12 +39,27 @@ test.describe("Dropdown", () => {
 
     await expect(page.locator("#menu-claro")).not.toHaveClass(/is-open/);
   });
+
+  test("renderiza conteúdo rico com ações descritas e navegação por teclado", async ({ page }) => {
+    await page.goto(mockupUrl("examples/dropdown-tooltip.html"));
+
+    const toggle = page.getByRole("button", { name: "Conteúdo rico" });
+    await toggle.click();
+
+    const menu = page.locator("#menu-content");
+    await expect(menu).toBeVisible();
+    await expect(menu.locator(".fs-dropdown-rich-header")).toContainText("Plano profissional");
+    await expect(menu.locator(".fs-dropdown-rich-list > .fs-dropdown-item")).toHaveCount(3);
+    await expect(menu.locator(".fs-dropdown-rich-footer a")).toHaveAttribute("role", "menuitem");
+    await expect(menu.locator(".fs-dropdown-rich-footer a")).toHaveText("Sair");
+    await expect(menu.locator(".fs-dropdown-rich-list > .fs-dropdown-item").first()).toBeFocused();
+  });
 });
 
 test.describe("Tooltip", () => {
   test("aparece no hover e some no mouseleave", async ({ page }) => {
     await page.goto(mockupUrl("examples/dropdown-tooltip.html"));
-    const trigger = page.locator('button[data-placement="top"]').first();
+    const trigger = page.locator('button[data-fs="tooltip"][data-placement="top"]').first();
 
     await trigger.hover();
     await expect(page.locator(".fs-tooltip.is-open")).toBeVisible();

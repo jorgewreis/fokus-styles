@@ -4,8 +4,11 @@
 @use "../../packages/fokus-core/scss/layout";
 @use "../../packages/fokus-components/scss/components";
 @use "../../packages/fokus-utilities/scss/utilities";
+@use "../../packages/fokus-core/scss/settings" as *;
 
-[dir="rtl"] {
-  direction: rtl;
-  text-align: start;
+@if fs-feature-enabled(rtl, true) {
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: start;
+  }
 }
