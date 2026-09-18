@@ -59,6 +59,10 @@
     overflow-x: auto;
   }
 
+  .fs-table-responsive.fs-datatable {
+    width: 100%;
+  }
+
   .fs-table-caption {
     caption-side: top;
     padding: var(--fs-space-2) 0;
