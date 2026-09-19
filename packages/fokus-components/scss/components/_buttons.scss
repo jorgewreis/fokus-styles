@@ -40,6 +40,14 @@
     --fs-btn-bg: var(--fs-btn-active-bg, var(--fs-color-border));
   }
 
+  .fs-btn-primary:hover {
+    filter: brightness(1.2);
+  }
+
+  .fs-btn-primary:active {
+    filter: brightness(1.4);
+  }
+
   .fs-btn:focus-visible {
     @include focus-ring;
   }
