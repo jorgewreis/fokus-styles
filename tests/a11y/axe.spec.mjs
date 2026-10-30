@@ -16,12 +16,12 @@ for (const file of [...mockups, ...examples.map((file) => `examples/${file}`)]) 
     await page.goto(`file://${path.join(mockupDir, file)}?theme=${theme}`);
     // Theme initialization can start finite CSS color transitions. Audit the
     // settled UI, not an arbitrary 200ms sample of interpolated light/dark.
-    // Continuous animations are deliberately NOT disabled or awaited.
+    // Only running CSS transitions settle: animations and paused effects
+    // (e.g. a demo carousel) must not block the audit indefinitely.
     for (const frame of page.frames()) {
       await frame.evaluate(async () => {
-        await document.fonts.ready;
         const finite = document.getAnimations().filter((animation) =>
-          animation.effect?.getComputedTiming().endTime !== Infinity);
+          animation instanceof CSSTransition && animation.playState === "running");
         await Promise.all(finite.map((animation) => animation.finished.catch(() => {})));
       });
     }
