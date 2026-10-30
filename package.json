@@ -143,10 +143,11 @@
     "contrast:check": "node scripts/contrast.mjs --strict",
     "docs:check": "node scripts/check-docs.mjs",
     "types:check": "tsc --noEmit -p tsconfig.types.json",
-    "prepublishOnly": "npm run build && npm test",
+    "prepublishOnly": "npm run lint && npm run build && npm test && npm run types:check && npm run docs:check && npm run package:check && npm run test:consumers && npm run contrast:check && npm run size:check",
     "package:check": "node scripts/check-consumer-package.mjs",
     "test:browsers": "playwright test --config=playwright.browser.config.mjs",
-    "test:consumers": "node scripts/check-react-consumers.mjs"
+    "test:consumers": "node scripts/check-react-consumers.mjs",
+    "package:prepare": "node scripts/prepare-package.mjs"
   },
   "publishConfig": {
     "access": "public"

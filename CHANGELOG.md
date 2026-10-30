@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Gates e acessibilidade de Icon Link
+
+- release reutiliza CI completa e publica somente o tarball validado, com hash e manifesto conferidos; reruns substituem o artefato do único produtor.
+- Icon Link respeita movimento reduzido e direção RTL herdada/local. CSS completo gzip 43.420 bytes (+28); componentes 20.300 (+27); JS permanece 26.330. Limites e snapshots não alterados.
+
 ### Correções de comportamento para beta
 
 - mantém popups no diálogo proprietário, respeita tema, posicionamento local,

@@ -50,10 +50,12 @@ npm ci --engine-strict
   das páginas e os links relativos da documentação.
 
 - `npm run package:check` — após build, confere exemplos de `USAGE.md` no CSS
-  compilado, versão do README e inclusão do guia no pacote real (`npm pack --dry-run`).
+  compilado, versão do README e inclusão do guia no pacote real. Aceita `-- caminho/pacote.tgz`
+  para validar o conteúdo do artefato, sem consultar arquivos do checkout.
 
 - `npm run test:consumers` — após build, empacota e instala o tarball em projetos
   temporários React 18 e 19; valida TypeScript estrito e SSR. Requer acesso ao npm.
+  Aceita `-- caminho/pacote.tgz` para instalar exatamente o pacote informado, sem reempacotar.
 
 ## Convenções de SCSS
 
@@ -145,3 +147,24 @@ Só quem mantém o projeto corta releases. Passo a passo, na ordem:
 
 Use os templates de issue (`.github/ISSUE_TEMPLATE/`) ao abrir uma issue —
 eles pedem o mínimo de contexto para triagem rápida.
+
+## Gates de release e identidade do artefato
+
+O workflow Release reutiliza a CI inteira (`workflow_call`), incluindo a matriz
+Node (aceitos e rejeitados), os três browsers, contrato do pacote e consumers
+React 18/19. O job de publicação depende da conclusão de **todos** esses gates.
+
+Após build, `npm run package:prepare` gera `release-package/package.tgz` uma única
+vez e seu SHA-256 em `SHA256SUMS`. A CI valida esse tarball com `package:check` e
+`test:consumers`, e só então envia o artefato. O job de publicação baixa o artefato
+do mesmo run, verifica SHA-256 e nome/versão do manifesto contra a tag e publica
+**esse arquivo**, usando o canal npm `beta` para versões prerelease e `latest`
+para versões estáveis, com scripts de lifecycle desativados (sem recompilar/reempacotar).
+`prepublishOnly` reforça os gates locais para publicação manual de diretório,
+mas não substitui a matriz completa da CI; o caminho de release é o workflow.
+
+Para ensaiar sem publicar: rode build, `package:prepare`,
+`package:check -- release-package/package.tgz` e
+`test:consumers -- release-package/package.tgz`. Não execute `npm publish`, nem
+crie/push tags, sem autorização de release. Mudanças de versão são uma decisão
+separada: preparar um candidato não promove alpha/beta nem publica no npm.

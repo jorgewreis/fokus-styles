@@ -11,3 +11,6 @@ blob-report/
 pnpm-lock.yaml
 pnpm-workspace.yaml
 prompts/
+
+# Validated npm release artifact
+release-package/

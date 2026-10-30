@@ -5,89 +5,69 @@ on:
     tags:
       - "v*.*.*"
 
+concurrency:
+  group: release-fokus-styles
+  cancel-in-progress: false
+
 permissions:
   contents: read
-  id-token: write
 
 jobs:
+  # One source of truth: unit/types/docs/size/contrast, packed consumers,
+  # Chromium/Firefox/WebKit and all accepted/rejected Node engine versions.
+  validate:
+    uses: ./.github/workflows/ci.yml
+
   publish:
+    needs: validate
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           registry-url: "https://registry.npmjs.org"
-          cache: npm
 
-      - name: Verify tag matches package.json version
+      - name: Download validated package from this run
+        uses: actions/download-artifact@v7
+        with:
+          name: validated-package
+          path: release-package
+
+      - name: Verify integrity and tag against the packed manifest
+        working-directory: release-package
         run: |
+          sha256sum --check SHA256SUMS
+          tar -xOf package.tgz package/package.json > manifest.json
           TAG_VERSION="${GITHUB_REF_NAME#v}"
-          PKG_VERSION=$(node -p "require('./package.json').version")
-          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
-            echo "Tag $GITHUB_REF_NAME (versao $TAG_VERSION) nao bate com package.json (versao $PKG_VERSION)."
-            exit 1
-          fi
+          PKG_VERSION=$(node -p "require('./manifest.json').version")
+          test "$TAG_VERSION" = "$PKG_VERSION"
+          test "$(node -p "require('./manifest.json').name")" = "fokus-styles"
 
-      - name: Install dependencies
-        run: npm ci --engine-strict
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
-
-      - name: Test
-        run: npm test
-
-      - name: Types check
-        run: npm run types:check
-
-      - name: Documentation check
-        run: npm run docs:check
-
-      - name: Contrast check (WCAG AA)
-        run: npm run contrast:check
-
-      - name: Size budgets
-        run: npm run size:check
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium firefox webkit
-
-      - name: Visual tests
-        run: npm run test:visual
-
-      - name: A11y tests (axe)
-        run: npm run test:a11y
-
-      - name: Browser compatibility matrix
-        run: npm run test:browsers
-
-      # O repositório publica exclusivamente o pacote agregado fokus-styles.
-      # Cada publish é idempotente, para permitir reruns seguros do workflow.
-      - name: Publish fokus-styles
+      # No checkout/install/build/repack in this job. Publish the exact bytes
+      # tested by CI; lifecycle scripts must not rebuild or alter the candidate.
+      - name: Publish validated fokus-styles tarball
+        working-directory: release-package
         run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "$NAME@$VERSION ja publicado -- pulando."
+          sha256sum --check SHA256SUMS
+          VERSION=$(node -p "require('./manifest.json').version")
+          # Prereleases must never move the stable latest channel.
+          DIST_TAG=$(node -e "const v=require('./manifest.json').version; console.log(v.split('+')[0].includes('-') ? 'beta' : 'latest')")
+          LOOKUP=$(mktemp)
+          if npm view "fokus-styles@$VERSION" version --json >"$LOOKUP"; then
+            REMOTE_INTEGRITY=$(npm view "fokus-styles@$VERSION" dist.integrity)
+            LOCAL_INTEGRITY=$(node -e "const fs=require('node:fs'),crypto=require('node:crypto'); console.log('sha512-'+crypto.createHash('sha512').update(fs.readFileSync('package.tgz')).digest('base64'))")
+            test "$REMOTE_INTEGRITY" = "$LOCAL_INTEGRITY"
+            echo "fokus-styles@$VERSION already published with identical bytes -- skipping."
           else
-            npm publish --provenance --access public
+            # Only an explicit registry E404 means the version is absent.
+            # Auth/network failures must stop rather than attempt publication.
+            node -e "const fs=require('node:fs'); let r; try { r=JSON.parse(fs.readFileSync(process.argv[1],'utf8')); } catch { process.exit(1); } if(r.error?.code!=='E404') process.exit(1)" "$LOOKUP"
+            npm publish ./package.tgz --ignore-scripts --provenance --access public --tag "$DIST_TAG"
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Deprecate legacy Clarus packages
-        if: github.ref_name == 'v2.0.0'
-        run: |
-          for PACKAGE in clarus-css clarus-icons clarus-cli clarus-react; do
-            npm deprecate "$PACKAGE" "Este pacote foi descontinuado. Migre para fokus-styles: https://www.npmjs.com/package/fokus-styles"
-          done
+          rm -f "$LOOKUP"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

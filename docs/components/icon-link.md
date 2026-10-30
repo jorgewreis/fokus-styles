@@ -22,10 +22,13 @@ href por uma rota existente. O componente dimensiona SVGs em 1em × 1em;
 
 ## Estados
 
-No hover o SVG recebe `transform: translateX(.15em)`. Não há transição definida
-no componente. A media query de movimento reduzido desativa `transition`, mas
-**não remove esse deslocamento**. Não considere a animação inteiramente
-neutralizada só por usar essa classe.
+No hover o SVG se desloca .15em na direção do texto: à direita em LTR e
+à esquerda em RTL. `:dir(rtl)` respeita a direção herdada e um `dir="ltr"`
+local dentro de uma seção RTL. O componente não espelha o desenho do SVG;
+escolha um ícone apropriado à direção e ao significado do link.
+
+Não há transição definida no componente. Com `prefers-reduced-motion: reduce`,
+o deslocamento não é aplicado e `transition` é desativada.
 
 ## A11y
 
@@ -36,10 +39,10 @@ Não use um ícone sozinho sem fornecer nome acessível.
 ## Tokens e limites
 
 Não há tokens próprios: tamanho e espaço são relativos à fonte. Cor e foco
-vêm dos estilos de link/contexto. O deslocamento usa X físico, não direção
-lógica: em RTL continua indo à direita. Não há variantes ou API JS próprias.
+vêm dos estilos de link/contexto. Não há variantes ou API JS próprias.
 
 ## Verificação
 
 `component-docs-contract.test.js` confere classes, texto e SVG decorativo.
-Confira hover, foco, RTL e preferência de movimento reduzido no navegador.
+`icon-link.test.js` valida as regras compiladas. `icon-link.spec.mjs` verifica
+hover, direção herdada/local e troca de preferência de movimento no navegador.

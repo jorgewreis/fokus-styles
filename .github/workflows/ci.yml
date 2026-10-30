@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   build:
@@ -39,11 +40,14 @@ jobs:
       - name: Documentation consistency
         run: npm run docs:check
 
+      - name: Pack release candidate once
+        run: npm run package:prepare
+
       - name: Consumer package contract
-        run: npm run package:check
+        run: npm run package:check -- release-package/package.tgz
 
       - name: Installed React 18 and 19 consumers
-        run: npm run test:consumers
+        run: npm run test:consumers -- release-package/package.tgz
 
       - name: Contrast check (WCAG AA)
         run: npm run contrast:check
@@ -62,6 +66,19 @@ jobs:
 
       - name: Browser interaction regressions (Chromium)
         run: npm run test:browsers -- --project=chromium tests/browser
+
+      - name: Recheck candidate integrity
+        working-directory: release-package
+        run: sha256sum --check SHA256SUMS
+
+      - name: Upload validated package
+        uses: actions/upload-artifact@v6
+        with:
+          name: validated-package
+          overwrite: true
+          path: release-package/
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Upload visual test report
         if: failure()
