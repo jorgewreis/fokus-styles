@@ -25,7 +25,9 @@ for (const [ancestor, local, direction] of [
     // Toggle while hovered: reduced motion must remove displacement, not just animation.
     await page.emulateMedia({ reducedMotion: "reduce" });
     await expect(icon).toHaveCSS("transform", "none");
-    await expect(icon).toHaveCSS("transition-duration", "0s");
+    // Global reduced-motion reset intentionally retains a tiny duration
+    // for transitionend consumers; no transition property means no icon motion.
+    await expect(icon).toHaveCSS("transition-property", "none");
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await expect.poll(offset).toBeCloseTo(direction * fontSize * .15, 3);
     await page.mouse.move(0, 0);
