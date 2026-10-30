@@ -30,7 +30,8 @@ for (const [ancestor, local, direction] of [
     await expect(icon).toHaveCSS("transition-property", "none");
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await expect.poll(offset).toBeCloseTo(direction * fontSize * .15, 3);
-    await page.mouse.move(0, 0);
+    // Reset removes body margins: (0,0) can still be inside the link.
+    await page.mouse.move(0, page.viewportSize().height - 1);
     await expect(icon).toHaveCSS("transform", "none");
   });
 }
