@@ -74,9 +74,19 @@ describe("native form state", () => {
     component.menuEl.children[1].click();
     if (cancel) $("form").addEventListener("reset", (event) => event.preventDefault());
     $("form").reset();
-    await Promise.resolve();
+    await new Promise((resolve) => setTimeout(resolve, 0));
     expect(component.toggleEl.textContent).toBe(cancel ? "B" : "A");
     expect(component.menuEl.children[cancel ? 1 : 0].getAttribute("aria-selected")).toBe("true");
+  });
+  it("Select disposal cancels pending reset synchronization", () => {
+    vi.useFakeTimers();
+    document.body.innerHTML = '<form><select><option>A</option><option>B</option></select></form>';
+    const component = new Select($("select"));
+    const sync = vi.spyOn(component, "_syncFromNativeSelect");
+    $("form").reset();
+    component.dispose();
+    vi.runAllTimers();
+    expect(sync).not.toHaveBeenCalled();
   });
   it("clearing Datepicker removes its old selected value", () => {
     document.body.innerHTML = '<input value="30/10/2026" data-fs-target="#dp"><div id="dp"></div>';

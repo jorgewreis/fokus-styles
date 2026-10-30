@@ -11,9 +11,9 @@
   Toast; sincroniza reset de Select e limpeza de Datepicker; corrige ordenação
   decimal/reinicialização de DataTable, ARIA de Spinner, navegação e validação.
 - alinha tipos das transições a `Promise<boolean>` (false quando canceladas).
-- bundle JS: 26.328 bytes gzip, +618 (2,40%) frente à integração anterior
-  de 25.710 e +1.258 (5,02%) frente ao original de 25.070. Teto revisado
-  explicitamente para 25,875 KiB (26.496 bytes), margem de 168 bytes; não
+- bundle JS: 26.340 bytes gzip, +630 (2,45%) frente à integração anterior
+  de 25.710 e +1.270 (5,07%) frente ao original de 25.070. Teto revisado
+  explicitamente para 25,875 KiB (26.496 bytes), margem de 156 bytes; não
   remove validações de segurança, testes nem altera limites CSS. Baseline
   medido novamente e controle negativo confirma falha acima do teto.
 
@@ -129,9 +129,9 @@
   Toast; sincroniza reset de Select e limpeza de Datepicker; corrige ordenação
   decimal/reinicialização de DataTable, ARIA de Spinner, navegação e validação.
 - alinha tipos das transições a `Promise<boolean>` (false quando canceladas).
-- bundle JS: 26.328 bytes gzip, +618 (2,40%) frente à integração anterior
-  de 25.710 e +1.258 (5,02%) frente ao original de 25.070. Teto revisado
-  explicitamente para 25,875 KiB (26.496 bytes), margem de 168 bytes; não
+- bundle JS: 26.340 bytes gzip, +630 (2,45%) frente à integração anterior
+  de 25.710 e +1.270 (5,07%) frente ao original de 25.070. Teto revisado
+  explicitamente para 25,875 KiB (26.496 bytes), margem de 156 bytes; não
   remove validações de segurança, testes nem altera limites CSS. Baseline
   medido novamente e controle negativo confirma falha acima do teto.
 
