@@ -45,9 +45,9 @@ const budgets = {
   // os refinamentos de navegação; o limite continua sendo um gate, não um
   // baseline aberto.
   "css/fokus.min.css": 43 * 1024,
-  // Lifecycle/state/portal corrections measure 26,340 bytes gzip:
-  // +630 (2.45%) vs reviewed integration 25,710; +1,270 vs original 25,070.
-  // Explicit reviewed gate: 25.875 KiB (26,496 bytes), 156 bytes headroom.
+  // Lifecycle/state/portal corrections measure 26,330 bytes gzip:
+  // +620 (2.41%) vs reviewed integration 25,710; +1,260 vs original 25,070.
+  // Explicit reviewed gate: 25.875 KiB (26,496 bytes), 166 bytes headroom.
   // CSS budgets unchanged; keep the gate and negative-control verification.
   "js/fokus.min.js": 25.875 * 1024,
 };

@@ -78,6 +78,17 @@ describe("native form state", () => {
     expect(component.toggleEl.textContent).toBe(cancel ? "B" : "A");
     expect(component.menuEl.children[cancel ? 1 : 0].getAttribute("aria-selected")).toBe("true");
   });
+  it("Select synchronizes a completed reset before a subsequent canceled reset", async () => {
+    document.body.innerHTML = '<form><select><option>A</option><option>B</option></select></form>';
+    const component = track(new Select($("select")));
+    component.menuEl.children[1].click();
+    $("form").reset();
+    $("form").addEventListener("reset", (event) => event.preventDefault());
+    $("form").reset();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(component.selectEl.selectedIndex).toBe(0);
+    expect(component.toggleEl.textContent).toBe("A");
+  });
   it("Select disposal cancels pending reset synchronization", () => {
     vi.useFakeTimers();
     document.body.innerHTML = '<form><select><option>A</option><option>B</option></select></form>';

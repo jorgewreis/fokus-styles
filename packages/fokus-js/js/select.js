@@ -31,11 +31,11 @@ export class Select {
     this.selectEl.addEventListener("change", this._handleNativeChange);
 
     this._form = selectEl.form;
-    this._handleReset = (event) => {
+    this._handleReset = () => {
       clearTimeout(this._resetTimer);
       // Native reset-button default action runs after event microtasks.
       this._resetTimer = setTimeout(() => {
-        if (!event.defaultPrevented && instances.get(selectEl) === this) this._syncFromNativeSelect();
+        if (instances.get(selectEl) === this) this._syncFromNativeSelect();
       });
     };
     this._form?.addEventListener("reset", this._handleReset);

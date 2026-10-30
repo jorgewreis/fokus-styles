@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-30T21:39:54.317Z",
+  "measuredAt": "2026-10-30T21:42:29.335Z",
   "unit": "bytes",
   "files": {
     "css/layout.min.css": {
@@ -35,8 +35,8 @@
       "gzipBytes": 43392
     },
     "js/fokus.min.js": {
-      "bytes": 119573,
-      "gzipBytes": 26340
+      "bytes": 119553,
+      "gzipBytes": 26330
     }
   }
 }
