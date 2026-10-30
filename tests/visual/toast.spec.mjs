@@ -22,6 +22,11 @@ for (const theme of ["light", "dark"]) {
     });
     await expect(page.locator("#toast-progress .fs-toast-meta")).toHaveText("6 segundos");
     await page.clock.runFor(1100);
+    // Clock advances JS timers; WebKit may paint the CSS transition later.
+    // Wait for the same visible shrink condition before capturing geometry.
+    await expect.poll(() => page.locator("#toast-progress .fs-toast-progress").evaluate(
+      (element) => element.getBoundingClientRect().width,
+    )).toBeLessThan(initialProgress.width);
     const reducedProgress = await page.locator("#toast-progress .fs-toast-progress").evaluate((element) => {
       const rect = element.getBoundingClientRect();
       return { width: rect.width, right: rect.right };
