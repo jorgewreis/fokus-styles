@@ -8,6 +8,10 @@ test.describe("Showcase state laboratory", () => {
   test("applies RTL, reduced motion and forced-colors to all previews", async ({ page }) => {
     await page.goto(`file://${path.join(rootDir, "mockup", "forms.html")}?theme=dark`);
     await expect(page.locator("iframe.showcase-preview").first()).toBeVisible();
+    const code = page.locator("pre.showcase-code").first();
+    await expect(code).toHaveAttribute("tabindex", "0");
+    await code.focus();
+    await expect(code).toBeFocused();
     const frame = page.locator("iframe.showcase-preview").first().contentFrame();
     await expect(frame.locator("body")).toBeVisible();
 

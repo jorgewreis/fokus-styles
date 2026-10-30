@@ -7,9 +7,12 @@ const exampleUrl = `file://${path.join(rootDir, "mockup", "examples", "toast.htm
 
 for (const theme of ["light", "dark"]) {
   test(`toasts demonstram composição, pausa e responsividade (${theme})`, async ({ page }) => {
+    await page.clock.install({ time: new Date("2026-01-01T12:00:00Z") });
     await page.goto(`${exampleUrl}?theme=${theme}`);
     await expect(page.locator(".demo-page")).toBeVisible();
+    await page.clock.pauseAt(new Date("2026-01-01T12:01:00Z"));
     await page.click('[data-show-toast="progress"]');
+    await page.clock.runFor(300);
     await expect(page.locator("#toast-progress")).toBeVisible();
     await expect(page.locator("#toast-progress .fs-toast-progress")).toBeVisible();
     await expect(page.locator("#toast-progress .fs-toast-progress")).toHaveCSS("opacity", "0.5");
@@ -18,7 +21,7 @@ for (const theme of ["light", "dark"]) {
       return { width: rect.width, right: rect.right };
     });
     await expect(page.locator("#toast-progress .fs-toast-meta")).toHaveText("6 segundos");
-    await page.waitForTimeout(1100);
+    await page.clock.runFor(1100);
     const reducedProgress = await page.locator("#toast-progress .fs-toast-progress").evaluate((element) => {
       const rect = element.getBoundingClientRect();
       return { width: rect.width, right: rect.right };

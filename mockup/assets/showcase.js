@@ -740,6 +740,7 @@ function createSection(item) {
   const minimalCode = document.createElement("code");
   const minimalPre = document.createElement("pre");
   minimalPre.className = "showcase-code showcase-minimal-code";
+  minimalPre.tabIndex = 0;
   minimalPre.append(minimalCode);
   section.append(minimalHeader, minimalPre);
 
@@ -754,6 +755,7 @@ function createSection(item) {
   const code = document.createElement("code");
   const pre = document.createElement("pre");
   pre.className = "showcase-code";
+  pre.tabIndex = 0;
   pre.append(code);
   const status = document.createElement("p");
   status.className = "showcase-status";
