@@ -25,7 +25,7 @@ profissionais, e é distribuído publicamente como produto para qualquer
 desenvolvedor que precise construir interfaces consistentes sem carregar
 React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 
-> **Status:** `2.6.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
+> **Status:** `2.7.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
 > e CLI em um único pacote npm. O foco atual é consolidar o núcleo CSS e os componentes
 > essenciais antes de ampliar o catálogo. O framework já possui componentes
 > avançados, mas eles são tratados como extensões e não definem o caminho
@@ -100,6 +100,12 @@ a tipografia cai no `sans-serif`/`monospace` do sistema:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fonts.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fokus.css">
 ```
+
+## Uso por IA e aplicativos consumidores
+
+Leia o [contrato de consumo](USAGE.md), também distribuído em
+`node_modules/fokus-styles/USAGE.md`. Ele orienta a reutilização de componentes
+e tokens antes de criar CSS específico. A versão instalada define a API disponível.
 
 ## Início rápido
 

@@ -39,6 +39,9 @@ jobs:
       - name: Documentation consistency
         run: npm run docs:check
 
+      - name: Consumer package contract
+        run: npm run package:check
+
       - name: Contrast check (WCAG AA)
         run: npm run contrast:check
 

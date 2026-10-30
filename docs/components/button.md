@@ -1,7 +1,7 @@
 # Button
 
-Botão de ação, base visual (cor de contraste automática, tamanhos) para
-badges, alertas, tags e tabelas.
+Botão de ação com variantes de cor, tamanho, ícone e carregamento.
+As cores usam tokens de tema; customizações exigem validação de contraste.
 
 ## Visão geral
 
@@ -11,8 +11,8 @@ badges, alertas, tags e tabelas.
 <button type="button" class="fs-btn fs-btn-outline-primary">Outline</button>
 ```
 
-Funciona em `<button>`, `<a>` ou qualquer elemento — a classe é puramente
-visual, sem exigir uma tag específica.
+Use `<button>` para ações e `<a href>` para navegação. A classe é visual;
+aplicá-la a um elemento genérico não fornece semântica ou interação por teclado.
 
 ## Anatomia
 
@@ -27,12 +27,15 @@ variante separada, sem texto, desenhada só com `::before`/`::after`:
 ## Variações
 
 - **Cor sólida**: `.fs-btn-primary`, `-secondary`, `-success`, `-warning`,
-  `-danger`, `-info` — fundo colorido, texto com contraste calculado
-  automaticamente (`color-contrast()`, garante AA).
+  `-danger`, `-info` — fundo e texto definidos pelos pares de tokens
+  `--fs-color-{cor}` / `--fs-color-on-{cor}`. Overrides de tema precisam
+  preservar contraste; não há garantia automática para cores arbitrárias.
 - **Cor outline**: `.fs-btn-outline-{cor}` — borda e texto coloridos, fundo
   transparente; hover/active preenchem com a cor sólida.
-- **Tamanho**: `.fs-btn-sm` (30px), `.fs-btn-lg` (46px); sem sufixo = 38px
-  (padrão).
+- **Tamanho**: `.fs-btn-sm`, `.fs-btn-lg`; alturas mínimas e paddings vêm
+  de `--fs-control-height{-sm|-lg}` e `--fs-control-padding-x{-sm|-lg}`.
+- **Só ícone**: `.fs-btn.fs-btn-icon`, com alvo definido por
+  `--fs-control-touch-target` e nome acessível obrigatório.
 
 ```html
 <button type="button" class="fs-btn fs-btn-danger fs-btn-sm">Excluir</button>
@@ -41,15 +44,22 @@ variante separada, sem texto, desenhada só com `::before`/`::after`:
 
 ## Estados
 
-- **Hover/active**: `filter: brightness()` (escurece), sem redeclarar cor.
-- **Foco**: anel via `:focus` (mixin `focus-ring`).
+- **Hover/active**: o botão base usa `--fs-btn-hover-bg` / `--fs-btn-active-bg`;
+  a variante primary aplica `brightness(1.2)` / `brightness(1.4)` (clareia).
+  Outlines preenchem o fundo e trocam a cor do texto.
+- **Foco**: anel via `:focus-visible` (mixin `focus-ring`).
 - **Desabilitado**: atributo `disabled` (em `<button>`) ou classe
-  `.is-disabled` (funciona em qualquer elemento, inclusive `<a>`, que não
-  aceita `disabled` nativamente).
+  `.is-disabled` / `aria-disabled="true"` para aparência. Em links, isso não
+  substitui prevenção de ativação por teclado/JS: prefira não renderizar um
+  link ativo quando indisponível.
+- **Carregando**: `.is-loading` ou `aria-busy="true"` desenha spinner e bloqueia
+  eventos de ponteiro. Use também `disabled` no botão e proteja a ação contra
+  reenvio; remova esses estados após sucesso/erro.
 
 ```html
 <button type="button" class="fs-btn fs-btn-primary" disabled>Desabilitado</button>
-<a href="#" class="fs-btn is-disabled">Link desabilitado</a>
+<button type="button" class="fs-btn fs-btn-primary" aria-busy="true" disabled>Salvando…</button>
+<button type="button" class="fs-btn fs-btn-icon" aria-label="Adicionar">+</button>
 ```
 
 ## A11y

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- adiciona guia de consumo distribuído no npm, entrada AGENTS para manutenção
+  e verificação dos exemplos e conteúdo empacotado;
+- alinha documentação de Button e versão do README à implementação existente,
+  sem alterar CSS ou comportamento público.
+
 ## [2.7.0] - 2026-09-10
 
 - consolida a Utility API Sass com novas categorias de layout, grid, tipografia,

@@ -45,6 +45,9 @@ npm install
 - `npm run docs:check` — valida o catálogo de componentes, as seções mínimas
   das páginas e os links relativos da documentação.
 
+- `npm run package:check` — após build, confere exemplos de `USAGE.md` no CSS
+  compilado, versão do README e inclusão do guia no pacote real (`npm pack --dry-run`).
+
 ## Convenções de SCSS
 
 Antes de criar ou alterar módulos SCSS, leia

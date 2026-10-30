@@ -24,6 +24,11 @@ Styles é a camada publicada e navegável; o portal Fokus Cloud contextualiza o
 framework dentro do ecossistema. Quando houver diferença, a implementação e
 os testes da versão consultada no GitHub definem o comportamento efetivo.
 
+## Consumo com IA
+
+O [contrato de consumo](../USAGE.md) acompanha o pacote npm e reúne exemplos
+e critérios para reutilizar a API antes de criar novas classes.
+
 ## Caminho recomendado
 
 1. [Instalação](getting-started/installation.md) — pacotes, CDN, bundles,
