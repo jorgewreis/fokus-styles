@@ -14,17 +14,15 @@ for (const file of [...mockups, ...examples.map((file) => `examples/${file}`)]) 
   for (const theme of file.startsWith("examples/") || file === "kitchen-sink.html" ? ["light"] : ["light", "dark"]) {
   test(`${file} (${theme}) não tem violações de A11y (axe, WCAG 2.1 AA)`, async ({ page }) => {
     await page.goto(`file://${path.join(mockupDir, file)}?theme=${theme}`);
-    // Theme initialization can start finite CSS color transitions. Audit the
-    // settled UI, not an arbitrary 200ms sample of interpolated light/dark.
-    // Only running CSS transitions settle: animations and paused effects
-    // (e.g. a demo carousel) must not block the audit indefinitely.
-    for (const frame of page.frames()) {
-      await frame.evaluate(async () => {
-        const finite = document.getAnimations().filter((animation) =>
-          animation instanceof CSSTransition && animation.playState === "running");
-        await Promise.all(finite.map((animation) => animation.finished.catch(() => {})));
-      });
-    }
+    // The main document applies the requested theme during startup. Wait for
+    // its running color transitions; offscreen iframe animations may be
+    // rendering-throttled and must not block this synchronization. Axe still
+    // audits the complete page, including its frames and animated examples.
+    await page.evaluate(async () => {
+      const transitions = document.getAnimations().filter((animation) =>
+        animation instanceof CSSTransition && animation.playState === "running");
+      await Promise.all(transitions.map((animation) => animation.finished.catch(() => {})));
+    });
 
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
