@@ -42,6 +42,9 @@ jobs:
       - name: Consumer package contract
         run: npm run package:check
 
+      - name: Installed React 18 and 19 consumers
+        run: npm run test:consumers
+
       - name: Contrast check (WCAG AA)
         run: npm run contrast:check
 

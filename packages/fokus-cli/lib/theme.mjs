@@ -1,3 +1,5 @@
+import { SassColor } from "sass";
+
 // Gera um preset de marca (data-fs-brand) em CSS puro (color-mix(), sem Sass),
 // utilizável por qualquer consumidor independente da toolchain de build —
 // mesma fórmula de mistura (pesos) usada internamente em
@@ -35,6 +37,34 @@ function pickTextColor(backgroundHex, minContrast = 4.5) {
   return contrastWithWhite >= minContrast ? "#ffffff" : "#000000";
 }
 
+// Sass is already a CLI dependency. Use its color conversion rather than a
+// second approximate OKLCH implementation. The emitted CSS stays standalone.
+function darkPrimary(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  const color = new SassColor({ red: r, green: g, blue: b }).toSpace("oklch");
+  const mixed = new SassColor({
+    lightness: color.channel("lightness") * 0.95 + 0.05,
+    chroma: color.channel("chroma") * 0.95,
+    hue: color.channel("hue"),
+    space: "oklch",
+  }).toSpace("rgb").toGamut({ method: "local-minde" });
+  return "#" + ["red", "green", "blue"].map(channel =>
+    Math.round(mixed.channel(channel)).toString(16).padStart(2, "0")
+  ).join("");
+}
+
+function stateTokens(primary) {
+  return [0.98, 0.95].map((factor, i) => {
+    const rgb = hexToRgb(primary);
+    const bg = "#" + Object.values(rgb).map(c =>
+      Math.round(c * factor).toString(16).padStart(2, "0")
+    ).join("");
+    const state = i ? "active" : "hover";
+    return `  --fs-brand-primary-${state}: ${bg};
+  --fs-brand-on-primary-${state}: ${pickTextColor(bg)};`;
+  }).join("\n");
+}
+
 export function generateThemeCss({ name, primary }) {
   if (typeof name !== "string" || !/^[a-z0-9-]+$/i.test(name)) {
     throw new Error(`Nome de marca inválido: "${name}" (use apenas letras, números e hífen).`);
@@ -44,6 +74,8 @@ export function generateThemeCss({ name, primary }) {
   }
 
   const btnText = pickTextColor(primary);
+  const dark = darkPrimary(primary);
+  const darkText = pickTextColor(dark);
 
   return `/* Preset de marca "${name}" gerado por \`fokus theme ${name} --primary ${primary}\`.
  * CSS puro (color-mix()) — mesma fórmula de packages/fokus-core/scss/themes/_brands.scss,
@@ -52,6 +84,8 @@ export function generateThemeCss({ name, primary }) {
  */
 [data-fs-brand="${name}"] {
   --fs-color-primary: ${primary};
+  --fs-color-on-primary: ${btnText};
+${stateTokens(primary)}
   --fs-alert-primary-bg: color-mix(in oklch, ${primary} 15%, white);
   --fs-alert-primary-text: color-mix(in oklch, ${primary} 50%, black);
   --fs-feedback-primary-bg: color-mix(in oklch, ${primary} 15%, white);
@@ -59,13 +93,35 @@ export function generateThemeCss({ name, primary }) {
   --fs-badge-color: ${btnText};
 }
 
-[data-fs-brand="${name}"][data-theme="dark"] {
-  --fs-color-primary: color-mix(in oklch, ${primary} 95%, white);
+[data-fs-brand="${name}"][data-theme="dark"],
+[data-theme="dark"] [data-fs-brand="${name}"] {
+  --fs-color-primary: ${dark};
+  --fs-color-on-primary: ${darkText};
+${stateTokens(dark)}
   --fs-alert-primary-bg: color-mix(in oklch, ${primary} 15%, #1e293b);
   --fs-alert-primary-text: color-mix(in oklch, ${primary} 55%, white);
   --fs-feedback-primary-bg: color-mix(in oklch, ${primary} 15%, #1e293b);
-  --fs-btn-color: ${btnText};
-  --fs-badge-color: ${btnText};
+  --fs-btn-color: ${darkText};
+  --fs-badge-color: ${darkText};
+}
+
+[data-fs-brand="${name}"] .fs-btn-primary:hover,
+[data-fs-brand="${name}"].fs-btn-primary:hover {
+  --fs-btn-bg: var(--fs-brand-primary-hover);
+  --fs-btn-color: var(--fs-brand-on-primary-hover);
+  filter: none;
+}
+
+[data-fs-brand="${name}"] .fs-btn-primary:active,
+[data-fs-brand="${name}"].fs-btn-primary:active {
+  --fs-btn-bg: var(--fs-brand-primary-active);
+  --fs-btn-color: var(--fs-brand-on-primary-active);
+  filter: none;
+}
+
+[data-fs-brand="${name}"] .fs-badge-primary,
+[data-fs-brand="${name}"].fs-badge-primary {
+  --fs-badge-color: var(--fs-color-on-primary);
 }
 `;
 }

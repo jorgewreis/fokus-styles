@@ -145,3 +145,14 @@ em `scripts/contrast-report.scss`, não todas as cores de aplicativos consumidor
 formato `#RGB` ou `#RRGGBB` (maiúsculas ou minúsculas). Formatos de 5/7
 dígitos são inválidos; 4/8 dígitos com alpha não são suportados pelo cálculo
 de luminância e são rejeitados, em vez de gerar uma cor de texto incorreta.
+
+O gerador define `--fs-color-on-primary` e aplica esse token também ao badge
+primário no próprio elemento (os tokens locais do componente têm precedência
+sobre valores herdados). O modo escuro funciona tanto no elemento de marca
+quanto em um ancestral. Sua cor primária é a mistura OKLCH de 95% da marca
+com branco, convertida para sRGB; o texto é recalculado para essa cor, não
+reutilizado do tema claro. O CSS gerado não precisa de Sass no navegador.
+Valide também estados hover/active para as cores específicas do aplicativo.
+O gerador também calcula pares de fundo/texto para hover e active de botões
+primários. Nesses estados substitui o filtro de brilho genérico por cores
+sRGB explícitas, preservando o escurecimento sem reduzir o contraste do texto.

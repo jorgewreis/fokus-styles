@@ -37,6 +37,30 @@ describe("fokus-cli: theme", () => {
 
     expect(dark).toContain("--fs-btn-color: #ffffff;");
     expect(light).toContain("--fs-btn-color: #000000;");
+    expect(light).toContain("--fs-color-on-primary: #000000;");
+    expect(light).toContain('[data-theme="dark"] [data-fs-brand="light-brand"]');
+    expect(light).toContain("--fs-badge-color: var(--fs-color-on-primary);");
+  });
+
+  it.each(["#fff", "#000", "#777777", "#747474", "#6d28d9", "#fde047"])("mantém pares gerados AA em claro, escuro e estados: %s", primary => {
+    const css = generateThemeCss({ name: "acme", primary });
+    const luminance = hex => {
+      const normalized = hex.length === 4 ? "#" + [...hex.slice(1)].map(c => c+c).join("") : hex;
+      return [1,3,5].map(i => parseInt(normalized.slice(i,i+2),16)/255)
+        .map(c => c <= .04045 ? c/12.92 : ((c+.055)/1.055)**2.4)
+        .reduce((sum,c,i) => sum+c*[.2126,.7152,.0722][i],0);
+    };
+    for (const block of css.split("}").slice(0, 2)) {
+      for (const [background, foreground] of [
+        ["color-primary", "color-on-primary"],
+        ["brand-primary-hover", "brand-on-primary-hover"],
+        ["brand-primary-active", "brand-on-primary-active"],
+      ]) {
+        const token = name => block.match(new RegExp("--fs-" + name + ": (#[a-fA-F0-9]+);"))[1];
+        const a = luminance(token(background)), b = luminance(token(foreground));
+        expect((Math.max(a,b)+.05)/(Math.min(a,b)+.05)).toBeGreaterThanOrEqual(4.5);
+      }
+    }
   });
 
   it("rejeita nome de marca ou cor inválidos", () => {

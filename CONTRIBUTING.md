@@ -52,6 +52,9 @@ npm ci --engine-strict
 - `npm run package:check` — após build, confere exemplos de `USAGE.md` no CSS
   compilado, versão do README e inclusão do guia no pacote real (`npm pack --dry-run`).
 
+- `npm run test:consumers` — após build, empacota e instala o tarball em projetos
+  temporários React 18 e 19; valida TypeScript estrito e SSR. Requer acesso ao npm.
+
 ## Convenções de SCSS
 
 Antes de criar ou alterar módulos SCSS, leia

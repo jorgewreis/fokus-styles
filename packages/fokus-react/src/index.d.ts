@@ -1,4 +1,4 @@
-import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";
+import type { ForwardRefExoticComponent, ReactElement, ReactNode, RefAttributes } from "react";
 
 export interface ModalHandle {
   show(): void;
@@ -23,7 +23,7 @@ export interface ModalPanelProps {
   [key: string]: unknown;
 }
 
-export function ModalPanel(props: ModalPanelProps): JSX.Element;
+export function ModalPanel(props: ModalPanelProps): ReactElement;
 
 export interface DropdownHandle {
   show(): void;
@@ -49,7 +49,7 @@ export interface DropdownMenuProps {
   [key: string]: unknown;
 }
 
-export function DropdownMenu(props: DropdownMenuProps): JSX.Element;
+export function DropdownMenu(props: DropdownMenuProps): ReactElement;
 
 export interface TabListHandle {
   show(tabEl: HTMLElement): void;
