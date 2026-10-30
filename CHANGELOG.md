@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Breaking — próxima versão major
+
+- adota Node.js `>=24.11.0 <25` para instalação npm, CLI e manutenção,
+  encerrando a declaração anterior `>=18`; atualizar Node nos consumidores e CI
+  antes de migrar. CDN e execução de CSS/JS no navegador não exigem Node.
+- não publicar estas mudanças sob 2.7.0; preparar uma major/pré-release separada.
+
+
 - atribui labels acessíveis de upload avançado pela API DOM, evitando injeção
   de atributos por nomes de arquivo e reutilizando o helper de escape textual.
 

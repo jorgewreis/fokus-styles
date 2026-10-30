@@ -14,12 +14,13 @@ para a distribuição pública. A documentação versionada deste checkout come�
 
 ## Pré-requisitos
 
-- Node.js >= 18
+- Node.js 24 LTS, versão 24.11.0 ou superior dentro da linha 24.x.
+- Node 18/20/22 e 25/26 não fazem parte do contrato de suporte deste checkout.
 
 ## Setup
 
 ```bash
-npm install
+npm ci --engine-strict
 ```
 
 ## Scripts
@@ -31,6 +32,9 @@ npm install
 - `npm run lint` — roda o stylelint sobre `scss/**/*.scss` e `packages/*/scss/**/*.scss`.
 - `npm test` — roda os testes unitários (Vitest).
 - `npm run test:visual` — roda a regressão visual (Playwright).
+- `npm run test:browsers` — testes funcionais e axe em Chromium, Firefox e
+  WebKit. Instale os engines com `npx playwright install --with-deps chromium firefox webkit`.
+  Use `-- --project=firefox` para um engine. Não gera nem atualiza baselines visuais.
 - `npm run test:a11y` — audita os mockups com axe-core (Playwright, regras
   WCAG 2.1 A/AA); ver [matriz de acessibilidade](docs/reference/accessibility-matrix.md).
 - `npm run contrast` / `npm run contrast:check` — audita contraste WCAG dos
@@ -117,7 +121,7 @@ Depreciações passam por **duas versões minor** antes de remoção:
 Só quem mantém o projeto corta releases. Passo a passo, na ordem:
 
 1. Garantir que `main` está com `npm run build && npm run lint && npm test`,
-   `npm run test:visual`, `npm run test:a11y`, `npm run contrast:check` e
+   `npm run test:visual`, `npm run test:a11y`, `npm run test:browsers`, `npm run contrast:check` e
    `npm run size:check` verdes.
 2. Atualizar a versão em `package.json` (raiz) seguindo
    [semver](#semver-e-depreciação).

@@ -74,8 +74,19 @@ funcional fora do alvo; o Autoprefixer não implementa esse seletor por polyfill
 
 ## Testes
 
-A regressão visual (`npm run test:visual`, Playwright + Chromium) cobre o
-navegador mais permissivo do alvo. Não há cobertura automatizada de
-Safari/Firefox no momento — mudanças que dependem de recursos recentes
-(a tabela acima) devem ser verificadas manualmente nesses engines antes
-do release.
+- `npm run test:visual`: baselines de screenshots em Chromium, sem mudança
+  de nomes ou atualização automática de imagens.
+- `npm run test:browsers`: configuração separada com Chromium, Firefox e
+  WebKit do Playwright; reutiliza testes funcionais dos exemplos e auditorias
+  axe WCAG 2.1 A/AA, além de regressões de Tab/Shift+Tab, modais empilhados,
+  restauração de foco/inert e dropdown dentro de modal, em temas claro/escuro.
+- O CI executa Firefox e WebKit em jobs separados; a release exige a matriz
+  antes da publicação. Falhas guardam trace/screenshot e relatório por 7 dias.
+  Não aprove baselines novos apenas para deixar o CI verde.
+
+A existência da configuração não prova que um engine passou. Consulte o
+resultado do CI **do commit exato**. Testes automatizados não substituem
+navegação manual com leitor de tela nem testes em dispositivos reais.
+WebKit do Playwright em Linux não é Safari macOS/iOS, nem comprova o piso
+Safari 16.4 ou todas as versões de `.browserslistrc`. Firefox é a versão
+distribuída pelo Playwright, não certificação automática de Firefox ESR.

@@ -18,11 +18,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --engine-strict
 
       - name: Lint
         run: npm run lint
@@ -57,10 +57,73 @@ jobs:
       - name: A11y tests (axe)
         run: npm run test:a11y
 
+      - name: Browser interaction regressions (Chromium)
+        run: npm run test:browsers -- --project=chromium tests/browser
+
       - name: Upload visual test report
         if: failure()
         uses: actions/upload-artifact@v6
         with:
           name: playwright-report
-          path: playwright-report/
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 7
+
+  browser-compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [firefox, webkit]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --engine-strict
+      - run: npm run build
+      - name: Install browser
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Functional and axe matrix (no screenshot baseline updates)
+        run: npm run test:browsers -- --project=${{ matrix.browser }}
+      - name: Upload browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: browser-report-${{ matrix.browser }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  node-support:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {node: '18', expected: reject}
+          - {node: '20', expected: reject}
+          - {node: '22', expected: reject}
+          - {node: '24.10.0', expected: reject}
+          - {node: '24.11.0', expected: accept}
+          - {node: '24', expected: accept}
+          - {node: '25', expected: reject}
+          - {node: '26', expected: reject}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Verify actual npm engine contract
+        run: node scripts/check-engine-install.mjs ${{ matrix.expected }}
+      - name: Clean install and consumer checks on supported Node
+        if: matrix.expected == 'accept'
+        run: |
+          npm ci --engine-strict
+          npm run build
+          npm run package:check
+          npm test

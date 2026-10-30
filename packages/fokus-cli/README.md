@@ -1,5 +1,7 @@
 # Módulo interno CLI do Fokus Styles
 
+Requer Node.js 24 LTS (`>=24.11.0 <25`). Node 18/20/22 e 25/26 não são suportados.
+
 [Site e guias do Fokus Styles](https://styles.fokuscloud.com.br/) ·
 [Fokus Cloud](https://www.fokuscloud.com.br/) ·
 [GitHub](https://github.com/jorgewreis/fokus-styles) ·

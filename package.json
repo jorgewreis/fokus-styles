@@ -124,7 +124,7 @@
     "USAGE.md"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=24.11.0 <25"
   },
   "scripts": {
     "clean": "rimraf dist",
@@ -144,7 +144,8 @@
     "docs:check": "node scripts/check-docs.mjs",
     "types:check": "tsc --noEmit -p tsconfig.types.json",
     "prepublishOnly": "npm run build && npm test",
-    "package:check": "node scripts/check-consumer-package.mjs"
+    "package:check": "node scripts/check-consumer-package.mjs",
+    "test:browsers": "playwright test --config=playwright.browser.config.mjs"
   },
   "publishConfig": {
     "access": "public"

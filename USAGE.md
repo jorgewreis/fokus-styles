@@ -1,5 +1,23 @@
 # Fokus Styles — contrato de consumo para pessoas e IA
 
+## Requisito Node.js — mudança incompatível em preparação
+
+Este checkout adota **Node.js 24 LTS: `>=24.11.0 <25`** para npm, CLI e
+manutenção. Use o patch de segurança mais recente da linha 24. Node 18/20/22,
+24 anterior a 24.11 e 25/26 não são suportados; novas linhas exigirão validação.
+A mudança substitui a antiga declaração `>=18` e deve integrar uma próxima
+versão major (por exemplo, `3.0.0-beta.1`), não uma atualização silenciosa da
+2.7.0 já publicada. A versão deste checkout ainda não foi publicada.
+
+Antes de atualizar o pacote, atualize Node no desenvolvimento, CI e etapas de
+build da hospedagem. Use `npm ci --engine-strict` em projetos com lockfile para
+validar o requisito; o npm sem essa opção pode emitir apenas um aviso.
+Não use `--force` para contornar incompatibilidades.
+
+**CDN e CSS/JS prontos no navegador continuam sem precisar de Node.js.**
+Não é necessário instalar Node em um servidor que apenas entrega arquivos estáticos.
+
+
 Este guia acompanha o pacote npm. Consulte a versão em `package.json`; exemplos
 usam a API desta distribuição, não necessariamente a versão mais recente do site.
 Não copie este guia para criar uma política concorrente: no aplicativo, aponte
