@@ -1,0 +1,4 @@
+// Internal shared values: contrast report and rendered primary-button states.
+// Darken subtly instead of brightening white-on-primary below WCAG AA.
+$primary-hover-brightness: 0.98;
+$primary-active-brightness: 0.95;

@@ -1,5 +1,5 @@
-import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay } from "./core/overlay.js";
-import { createFocusTrap, onEscapeKey } from "./core/focus.js";
+import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
+import { createFocusTrap, onEscapeKey, updateFocusIsolation } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -37,8 +37,8 @@ export class Offcanvas {
     triggerEl.addEventListener("click", this._handleTriggerClick);
     offcanvasEl.addEventListener("click", this._handleDismissClick);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen && !this.staticBackdrop) this.hide();
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event) && !this.staticBackdrop) this.hide();
     });
 
     instances.set(triggerEl, this);
@@ -62,7 +62,7 @@ export class Offcanvas {
   }
 
   _handleDismissClick(event) {
-    if (event.target.closest('[data-fs-dismiss="offcanvas"]')) {
+    if (isTopOverlay(this, event) && event.target.closest('[data-fs-dismiss="offcanvas"]')) {
       this.hide();
     }
   }
@@ -84,7 +84,7 @@ export class Offcanvas {
     }
 
     this.offcanvasEl.classList.add("is-open");
-    this.offcanvasEl.setAttribute("aria-hidden", "false");
+    updateFocusIsolation(() => this.offcanvasEl.setAttribute("aria-hidden", "false"));
     lockScroll();
 
     this._focusTrap = createFocusTrap(this.offcanvasEl);
@@ -101,7 +101,7 @@ export class Offcanvas {
 
     if (!this.staticBackdrop) {
       this._outsideClickCleanup = onClickOutside(this.offcanvasEl, (event) => {
-        if (this.triggerEl.contains(event.target)) return;
+        if (!isTopOverlay(this, event) || this.triggerEl.contains(event.target)) return;
         this.hide();
       });
     }
@@ -113,23 +113,25 @@ export class Offcanvas {
   hide() {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
+    const wasTop = isTopOverlay(this);
     this.isOpen = false;
     unregisterOverlay(this);
 
+    this._focusTrap?.deactivate();
+    this._focusTrap = null;
+    if (wasTop && this.triggerEl.isConnected && !this.triggerEl.closest("[inert]")) this.triggerEl.focus();
+
     this.offcanvasEl.classList.remove("is-open");
-    this.offcanvasEl.setAttribute("aria-hidden", "true");
+    updateFocusIsolation(() => this.offcanvasEl.setAttribute("aria-hidden", "true"));
     unlockScroll();
 
     this._backdropEl?.remove();
     this._backdropEl = null;
 
-    this._focusTrap?.deactivate();
-    this._focusTrap = null;
 
     this._outsideClickCleanup?.();
     this._outsideClickCleanup = null;
 
-    this.triggerEl.focus();
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:offcanvas:hidden", { bubbles: true }));

@@ -75,14 +75,17 @@ Para quem compila o próprio bundle (em vez de sobrescrever CSS em runtime),
 os valores primitivos aceitam override na hora do `@use`:
 
 ```scss
-@use "fokus-styles/scss/fokus" with (
+@use "fokus-styles/packages/fokus-core/scss/settings" with (
   $radius-md: 10px,
-  $font-family-sans: "Inter", sans-serif
+  $font-family-sans: ("Inter", sans-serif)
 );
+@use "fokus-styles/scss/fokus";
 ```
 
 Qualquer variável marcada `!default` nos arquivos de
-`packages/fokus-core/scss/settings/` pode ser sobrescrita dessa forma.
+`packages/fokus-core/scss/settings/` pode ser sobrescrita no módulo de settings, **antes** de carregar qualquer
+entrada do framework. Compile com `sass --load-path=node_modules tema.scss tema.css`.
+O entry-point `scss/fokus` emite CSS, mas não reexporta essas variáveis para `with`.
 
 ## Escala de espaçamento e breakpoints
 
@@ -125,16 +128,20 @@ combinação com `[data-theme="dark"]`) redefinindo `--fs-color-primary`,
 `--fs-alert-primary-bg`, `--fs-alert-primary-text` e
 `--fs-feedback-primary-bg`.
 
-**Limitação conhecida:** `.fs-btn-primary`/`.fs-badge-primary` (preenchimento
-sólido) calculam a cor do texto em tempo de build via `color-contrast()` a
-partir do primary **padrão** (azul) — não recalculam por marca. Escolha um
-primitivo de marca escuro o bastante pro texto branco continuar legível
-(como no exemplo `violet`), ou sobrescreva `--fs-btn-color`/`--fs-badge-color`
-manualmente se o primitivo da sua marca for muito claro. Rode
-`npm run contrast` depois de adicionar uma marca — o relatório já audita os
-pares `brand violet`/`brand corporate`/`brand vibrant` como referência
-(`scripts/contrast-report.scss`).
+**Contraste de marca:** botões sólidos usam `--fs-color-on-primary` (ou o token `on-*` da variante).
+Badges sólidos ainda calculam `--fs-badge-color` no build com `color-contrast()`
+sobre a cor padrão. Nenhum recalcula contraste em runtime. Ao mudar o fundo,
+ajuste o token `on-*` dos botões e `--fs-badge-color` dos badges e
+valide o par em claro e escuro. `npm run contrast` verifica os pares definidos
+em `scripts/contrast-report.scss`, não todas as cores de aplicativos consumidores.
 
 ## Próximo passo
 
 [Dark mode](dark-mode.md) — como o tema escuro usa a mesma camada de tokens.
+
+### Cores no gerador CLI
+
+`fokus theme <nome> --primary "#hex"` aceita apenas cores RGB opacas no
+formato `#RGB` ou `#RRGGBB` (maiúsculas ou minúsculas). Formatos de 5/7
+dígitos são inválidos; 4/8 dígitos com alpha não são suportados pelo cálculo
+de luminância e são rejeitados, em vez de gerar uma cor de texto incorreta.

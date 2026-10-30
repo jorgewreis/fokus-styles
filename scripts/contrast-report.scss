@@ -8,12 +8,14 @@
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
+@use "sass:string";
+@use "settings/button-states" as states;
 @use "settings" as *;
 @use "tools" as *;
 
 $dark-color-weights: (
   primary: 95%,
-  secondary: 90%,
+  secondary: 98%,
   success: 65%,
   warning: 65%,
   danger: 95%,
@@ -24,12 +26,12 @@ $dark-color-weights: (
   @return math.div(math.round($ratio * 100), 100);
 }
 
-@mixin check($id, $fg, $bg, $min: 4.5) {
+@mixin pair($id, $fg, $bg) {
   $ratio: contrast-ratio($fg, $bg);
   $aa: "FAIL";
   $aaa: "-";
 
-  @if $ratio >= $min {
+  @if $ratio >= 4.5 {
     $aa: "AA";
   }
 
@@ -38,6 +40,25 @@ $dark-color-weights: (
   }
 
   @debug "#{$id}|#{fmt($ratio)}|#{$aa}|#{$aaa}";
+}
+
+// CSS brightness() multiplies sRGB channels for BOTH background and text.
+@function brightness($value, $factor) {
+  $rgb: rgb-fallback($value);
+  @return rgb(
+    math.min(255, color.channel($rgb, "red") * $factor),
+    math.min(255, color.channel($rgb, "green") * $factor),
+    math.min(255, color.channel($rgb, "blue") * $factor)
+  );
+}
+
+@mixin check($id, $fg, $bg) {
+  @include pair($id, $fg, $bg);
+  @if string.index($id, "btn-primary") {
+    @each $state, $factor in (hover: states.$primary-hover-brightness, active: states.$primary-active-brightness) {
+      @include pair("#{$id} #{$state}", brightness($fg, $factor), brightness($bg, $factor));
+    }
+  }
 }
 
 // Texto base (claro)
@@ -50,8 +71,7 @@ $dark-color-weights: (
   @include check(
     "light: btn-#{$name} text/bg",
     color-contrast($color),
-    $color,
-    3
+    $color
   );
 }
 
@@ -73,7 +93,7 @@ $dark-surface: color.to-space(#202124, oklch);
 @include check("dark: muted/surface", $dark-muted, $dark-surface);
 
 // Botões sólidos (escuro) — o texto continua o branco/preto escolhido no
-// claro (é um valor estático gravado em `.fs-btn-{name}`, não recalculado
+// claro (é um token herdado `--fs-color-on-{name}`, não recalculado
 // por tema); o fundo é o `--fs-color-{name}` redefinido pelo tema escuro
 // (mistura em direção ao branco). Ratio baixo aqui é uma regressão real:
 // sinaliza que o texto do botão ficou ilegível no escuro.
@@ -88,8 +108,7 @@ $dark-surface: color.to-space(#202124, oklch);
   @include check(
     "dark: btn-#{$name} text(light)/bg(dark)",
     color-contrast($color),
-    $dark-bg,
-    3
+    $dark-bg
   );
 }
 
@@ -109,8 +128,7 @@ $brand-violet-primary: color.to-space(#6d28d9, oklch);
 @include check(
   "brand violet: btn-primary text/bg (claro)",
   color-contrast($brand-violet-primary),
-  $brand-violet-primary,
-  3
+  $brand-violet-primary
 );
 
 @include check(
@@ -122,8 +140,7 @@ $brand-violet-primary: color.to-space(#6d28d9, oklch);
 @include check(
   "brand violet: btn-primary text(light)/bg (escuro)",
   color-contrast($brand-violet-primary),
-  color.mix($brand-violet-primary, $color-white, 95%, $method: oklch),
-  3
+  color.mix($brand-violet-primary, $color-white, 95%, $method: oklch)
 );
 
 @include check(
@@ -139,8 +156,7 @@ $brand-vibrant-primary: color.to-space(#f2542d, oklch);
 @include check(
   "brand corporate: btn-primary text/bg (claro)",
   color-contrast($brand-corporate-primary),
-  $brand-corporate-primary,
-  3
+  $brand-corporate-primary
 );
 
 @include check(
@@ -152,8 +168,7 @@ $brand-vibrant-primary: color.to-space(#f2542d, oklch);
 @include check(
   "brand corporate: btn-primary text(light)/bg (escuro)",
   color-contrast($brand-corporate-primary),
-  color.mix($brand-corporate-primary, $color-white, 95%, $method: oklch),
-  3
+  color.mix($brand-corporate-primary, $color-white, 95%, $method: oklch)
 );
 
 @include check(
@@ -165,8 +180,7 @@ $brand-vibrant-primary: color.to-space(#f2542d, oklch);
 @include check(
   "brand vibrant: btn-primary text/bg (claro)",
   color-contrast($brand-vibrant-primary),
-  $brand-vibrant-primary,
-  3
+  $brand-vibrant-primary
 );
 
 @include check(
@@ -178,8 +192,7 @@ $brand-vibrant-primary: color.to-space(#f2542d, oklch);
 @include check(
   "brand vibrant: btn-primary text(light)/bg (escuro)",
   color-contrast($brand-vibrant-primary),
-  color.mix($brand-vibrant-primary, $color-white, 95%, $method: oklch),
-  3
+  color.mix($brand-vibrant-primary, $color-white, 95%, $method: oklch)
 );
 
 @include check(

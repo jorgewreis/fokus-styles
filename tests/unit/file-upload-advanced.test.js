@@ -142,4 +142,26 @@ describe("FileUploadAdvanced", () => {
 
     expect(rootEl.querySelectorAll(".fs-file-upload-item")).toHaveLength(0);
   });
+  it.each(['report" onmouseover="alert(1)" data-injected="yes', '<img src=x onerror="alert(1)">.txt', 'A & B "quoted".txt'])("treats filename as text in accessible labels: %s", (name) => {
+    const { rootEl, input, upload } = buildUpload();
+    let id;
+    rootEl.addEventListener("fs:file-upload:added", (e) => { id = e.detail.items[0].id; });
+    input.files = [makeFile(name, 10)];
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+    const verify = () => {
+      expect(rootEl.querySelector("[onmouseover], [onerror], [data-injected], img")).toBeNull();
+      expect(rootEl.querySelector(".fs-file-upload-name").textContent).toBe(name);
+      expect(rootEl.querySelector('[role="progressbar"]').getAttribute("aria-label")).toBe(`Progresso de ${name}`);
+      expect(rootEl.querySelector("[data-file-upload-remove]").getAttribute("aria-label")).toBe(`Remover ${name}`);
+    };
+    verify();
+    upload.setProgress(id, 42);
+    verify();
+    upload.setError(id, '<img src=x onerror="alert(1)">');
+    verify();
+    rootEl.querySelector("[data-file-upload-remove]").click();
+    expect(upload.getFiles()).toEqual([]);
+    upload.dispose();
+  });
+
 });

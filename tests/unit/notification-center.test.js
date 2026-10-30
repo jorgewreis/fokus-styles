@@ -133,4 +133,59 @@ describe("NotificationCenter", () => {
     center.dispose();
     expect(NotificationCenter.getInstance(trigger)).toBeUndefined();
   });
+  it.each(["primary", "secondary", "success", "warning", "danger", "info"])("preserva variante %s no toast e histórico", (variant) => {
+    const { center } = build();
+    center.push({ variant, autohide: false });
+    expect(document.querySelector(`.fs-toast-${variant}`)).not.toBeNull();
+    expect(document.querySelector(`.fs-notification-item-${variant}`)).not.toBeNull();
+    center.dispose();
+  });
+
+  it.each(['x" data-injected="yes', 'x"><img src=x onerror="alert(1)">', "custom", null, {}])("normaliza variante inválida em push: %s", (variant) => {
+    const { center } = build();
+    center.push({ variant, autohide: false });
+    expect(center.getAll()[0].variant).toBe("primary");
+    expect(document.querySelector(".fs-notification-item-primary")).not.toBeNull();
+    expect(document.querySelector('[data-injected], img, [onerror]')).toBeNull();
+    center.dispose();
+  });
+
+  it.each([{}, "invalid", 42, null, [null, 42, {}, { id: 2 }]])("ignora armazenamento com formato inválido: %s", (stored) => {
+    localStorage.setItem("fokus-notifications", JSON.stringify(stored));
+    const { center } = build({ storage: "local" });
+    expect(center.getAll()).toEqual([]);
+    center.dispose();
+  });
+
+  it("ignora JSON corrompido sem impedir inicialização", () => {
+    localStorage.setItem("fokus-notifications", "{");
+    const { center } = build({ storage: "local" });
+    expect(center.getAll()).toEqual([]);
+    center.dispose();
+  });
+
+  it("trata IDs e variantes do storage como dados, não HTML, e mantém remoção", () => {
+    const id = 'n-1" data-injected="yes"><img src=x onerror="alert(1)">';
+    localStorage.setItem("fokus-notifications", JSON.stringify([
+      { id, variant: 'x" data-injected="yes', title: "Legado", body: "<img src=x>", time: "inválido", read: "false" },
+    ]));
+    const { center } = build({ storage: "local" });
+    expect(center.getAll()[0]).toMatchObject({ id, variant: "primary", time: 0, read: false });
+    expect(document.querySelector(".fs-notification-item").dataset.id).toBe(id);
+    expect(document.querySelector('[data-injected], img, [onerror]')).toBeNull();
+    document.querySelector('[data-notification-dismiss]').click();
+    expect(center.getAll()).toEqual([]);
+    center.dispose();
+  });
+
+  it("não reutiliza ID existente no histórico persistido", () => {
+    const { center } = build();
+    const previous = center.push({ autohide: false });
+    const next = `n-${Number(previous.slice(2)) + 1}`;
+    center.history.push({ id: next, title: "Anterior", body: "", variant: "info", time: 0, read: false });
+    expect(center.push({ autohide: false })).not.toBe(next);
+    expect(new Set(center.getAll().map(r => r.id)).size).toBe(3);
+    center.dispose();
+  });
+
 });

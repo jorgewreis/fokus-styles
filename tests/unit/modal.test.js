@@ -1,6 +1,8 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
 import { Modal } from "../../packages/fokus-js/js/modal.js";
 
+const created = [];
+
 function buildModal({ backdropStatic = false } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
@@ -24,11 +26,14 @@ function buildModal({ backdropStatic = false } = {}) {
   const trigger = wrapper.querySelector("#trigger");
   const modalEl = wrapper.querySelector("#myModal");
 
-  return { trigger, modalEl, modal: new Modal(trigger) };
+  const modal = new Modal(trigger);
+  created.push(modal);
+  return { trigger, modalEl, modal };
 }
 
 describe("Modal", () => {
   afterEach(() => {
+    created.splice(0).reverse().forEach((instance) => instance.dispose());
     document.body.innerHTML = "";
     document.body.style.overflow = "";
   });

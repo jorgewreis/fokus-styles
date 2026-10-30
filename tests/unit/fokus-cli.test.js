@@ -7,6 +7,21 @@ import { buildCss } from "../../packages/fokus-cli/lib/build.mjs";
 import { analyzeFiles, formatReport } from "../../packages/fokus-cli/lib/analyze.mjs";
 
 describe("fokus-cli: theme", () => {
+  it.each(["#12345", "#1234567", "#fff8", "#ffffffff", "#ggg", "#12", null, 123, {}])("rejeita cor sem RGB opaco válido: %s", (primary) => {
+    expect(() => generateThemeCss({ name: "acme", primary })).toThrow(/#RGB ou #RRGGBB/);
+  });
+
+  it.each(["#000", "#fff", "#ABC", "#000000", "#FFFFFF", "#aBcDeF"])("aceita hex RGB: %s", (primary) => {
+    expect(generateThemeCss({ name: "acme", primary })).toContain(`--fs-color-primary: ${primary};`);
+  });
+
+  it("calcula a mesma cor de texto para RGB curto e expandido", () => {
+    for (const [short, full] of [["#fff", "#ffffff"], ["#000", "#000000"], ["#abc", "#aabbcc"]]) {
+      const text = css => css.match(/--fs-btn-color: (#[a-f0-9]+);/)[1];
+      expect(text(generateThemeCss({ name: "acme", primary: short }))).toBe(text(generateThemeCss({ name: "acme", primary: full })));
+    }
+  });
+
   it("gera os dois blocos data-fs-brand (claro/escuro) com a cor primary informada", () => {
     const css = generateThemeCss({ name: "acme", primary: "#2563eb" });
 

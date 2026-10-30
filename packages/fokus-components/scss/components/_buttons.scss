@@ -1,5 +1,6 @@
 @use "../../../fokus-core/scss/settings" as *;
 @use "../../../fokus-core/scss/tools" as *;
+@use "../../../fokus-core/scss/settings/button-states" as states;
 
 @layer components {
   // Tokens de componente: cada `.fs-btn-*` abaixo só sobrescreve estas três
@@ -41,11 +42,11 @@
   }
 
   .fs-btn-primary:hover {
-    filter: brightness(1.2);
+    filter: brightness(states.$primary-hover-brightness);
   }
 
   .fs-btn-primary:active {
-    filter: brightness(1.4);
+    filter: brightness(states.$primary-active-brightness);
   }
 
   .fs-btn:focus-visible {

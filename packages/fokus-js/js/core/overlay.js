@@ -4,6 +4,16 @@ let previousOverflow = "";
 let previousPaddingRight = "";
 const activeOverlays = [];
 
+const eventOverlays = new WeakMap();
+
+// Freeze the top for each event: closing it must not let later listeners
+// close the next overlay during the same Escape/backdrop click.
+export function isTopOverlay(instance, event) {
+  if (!event) return activeOverlays.at(-1) === instance;
+  if (!eventOverlays.has(event)) eventOverlays.set(event, activeOverlays.at(-1));
+  return eventOverlays.get(event) === instance;
+}
+
 export function registerOverlay(instance) {
   if (!activeOverlays.includes(instance)) activeOverlays.push(instance);
 }

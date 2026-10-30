@@ -42,7 +42,11 @@ com `data-toast-container="#seletor"`).
 
 Cor por item de notificação: `.fs-notification-item-{nome}` (borda
 esquerda colorida) — aplicada automaticamente a partir do `variant`
-passado em `push()`.
+passado em `push()`. As variantes aceitas são `primary`, `secondary`,
+`success`, `warning`, `danger` e `info`; valores desconhecidos usam `primary`.
+Histórico local é tratado como entrada não confiável: valores que não sejam
+arrays e registros sem ID textual são ignorados; campos inválidos são
+normalizados. IDs são atribuídos via DOM, nunca interpretados como HTML.
 
 ## Estados
 

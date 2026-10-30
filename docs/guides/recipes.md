@@ -25,7 +25,7 @@ Não use `tabindex` no card inteiro nem aninhe links. O alvo focável deve conti
 ## Formulário com feedback
 
 ```html
-<div class="fs-form-group">
+<div class="fs-u-mb-3">
   <label for="nome">Nome completo</label>
   <input id="nome" class="fs-form-control is-invalid" aria-invalid="true" aria-describedby="nome-erro">
   <p id="nome-erro" class="fs-invalid-feedback">Informe seu nome completo.</p>

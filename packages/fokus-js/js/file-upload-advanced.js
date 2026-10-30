@@ -1,14 +1,9 @@
+import { escapeHtml } from "./core/html.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
 
 let idCounter = 0;
-
-function escapeHtml(value) {
-  const div = document.createElement("div");
-  div.textContent = value;
-  return div.innerHTML;
-}
 
 function formatBytes(bytes) {
   if (bytes < 1024) return `${bytes} B`;
@@ -155,12 +150,15 @@ export class FileUploadAdvanced {
       <div class="fs-file-upload-info">
         <p class="fs-file-upload-name">${escapeHtml(file.name)}</p>
         <p class="fs-file-upload-size">${error ? escapeHtml(error) : formatBytes(file.size)}</p>
-        <div class="fs-progress fs-progress-sm" role="progressbar" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso de ${escapeHtml(file.name)}">
+        <div class="fs-progress fs-progress-sm" role="progressbar" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="100">
           <div class="fs-progress-bar${error ? " fs-progress-bar-danger" : ""}" style="--fs-progress-value: ${progress};"></div>
         </div>
       </div>
-      <button type="button" class="fs-btn-close fs-file-upload-remove" data-file-upload-remove aria-label="Remover ${escapeHtml(file.name)}"></button>
+      <button type="button" class="fs-btn-close fs-file-upload-remove" data-file-upload-remove></button>
     `;
+    // Filenames are untrusted text: do not interpolate them into attributes.
+    li.querySelector('[role="progressbar"]').setAttribute("aria-label", `Progresso de ${file.name}`);
+    li.querySelector("[data-file-upload-remove]").setAttribute("aria-label", `Remover ${file.name}`);
   }
 
   dispose() {

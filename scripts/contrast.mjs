@@ -46,7 +46,7 @@ for (const row of rows) {
 }
 
 console.log(
-  `\n${rows.length} pares checados, ${failures} abaixo do mínimo AA (4.5:1 texto / 3:1 UI/texto grande).`,
+  `\n${rows.length} pares checados, ${failures} abaixo do mínimo AA (4.5:1 para todos os pares de texto).`,
 );
 
 if (failures > 0 && strict) {

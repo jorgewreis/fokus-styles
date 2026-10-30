@@ -1,7 +1,7 @@
 # Utility API e configuração Sass
 
 O Fokus Styles oferece presets públicos em `fokus-styles/core`, `fokus-styles/components`,
-`fokus-styles/utilities` e `fokus-styles/themes`. O arquivo `fokus-styles/config` expõe o
+`fokus-styles/utilities` e `fokus-styles/themes`. O módulo Sass `fokus-styles/packages/fokus-core/scss/settings/config` expõe o
 mapa `$fs-config` para entradas Sass customizadas.
 
 O mixin `fs-fluid-type()` usa `clamp()` para escalar valores entre dois limites sem exigir
@@ -65,10 +65,12 @@ de forma que prejudique leitura e teclado.
 ## Configuração Sass
 
 As escalas públicas ficam em `packages/fokus-core/scss/settings/_utilities.scss` e usam
-`!default`. Um projeto pode estender ou substituir os mapas antes de importar o entry-point:
+`!default`. O mapa de configuração fica em `settings/_config.scss`.
+Compile os exemplos com `npx sass --load-path=node_modules tema.scss tema.css`.
+Cada exemplo é uma entrada independente: configure antes de importar o entry-point:
 
 ```scss
-@use "fokus-styles/scss/settings/utilities" with (
+@use "fokus-styles/packages/fokus-core/scss/settings/config" with (
   $fs-config: (
     preset: full,
     utilities: all,
@@ -76,7 +78,7 @@ As escalas públicas ficam em `packages/fokus-core/scss/settings/_utilities.scss
     responsive: true
   )
 );
-@use "fokus-styles";
+@use "fokus-styles/scss/fokus";
 ```
 
 O framework não interpreta classes arbitrárias nem gera CSS em runtime. Para um valor que não
@@ -101,7 +103,7 @@ mesma ideia de geração por mapas da [Utility API do Bootstrap](https://getboot
 mas mantém o namespace `fs-u-*` e os limites de tamanho do Fokus Styles:
 
 ```scss
-@use "fokus-styles/config" with (
+@use "fokus-styles/packages/fokus-core/scss/settings/utilities" with (
   $fs-utilities: (
     "object-fit": (
       property: object-fit,
@@ -112,6 +114,7 @@ mas mantém o namespace `fs-u-*` e os limites de tamanho do Fokus Styles:
     )
   )
 );
+@use "fokus-styles/scss/fokus";
 ```
 
 As definições aceitam `property`, `class`, `values`, `category`, `responsive` e `important`.
@@ -140,7 +143,7 @@ clicáveis, prefira um link real com `fs-stretched-link`; para foco, utilize
 As categorias podem ser reduzidas pelo mapa `$fs-config`:
 
 ```scss
-@use "fokus-styles/config" with (
+@use "fokus-styles/packages/fokus-core/scss/settings/config" with (
   $fs-config: (
     preset: full,
     utilities: all,
@@ -155,6 +158,7 @@ As categorias podem ser reduzidas pelo mapa `$fs-config`:
     important-utilities: true
   )
 );
+@use "fokus-styles/scss/fokus";
 ```
 
 `!important` é padrão nos utilitários atômicos para manter previsibilidade de composição.

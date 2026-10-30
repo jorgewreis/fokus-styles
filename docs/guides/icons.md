@@ -50,10 +50,10 @@ Ou pelo barrel, com nomes em camelCase (`arrow-right` → `arrowRight`):
 import { arrowRight, check } from "fokus-styles/icons";
 ```
 
-O pacote é publicado com `"sideEffects": false`, então bundlers modernos
-eliminam os ícones não usados mesmo importando do barrel — mas prefira o
-caminho direto (`fokus-styles/icons/check.js`) se seu bundler não fizer
-tree-shaking de barrels corretamente.
+O pacote declara uma lista de `sideEffects`, incluindo os módulos de ícones.
+Não há garantia de eliminação dos ícones não usados ao importar o barrel.
+Prefira o caminho direto (`fokus-styles/icons/check.js`) para limitar o grafo
+importado e confira o bundle produzido pela sua ferramenta.
 
 ## Dimensionamento e cor — `.fs-icon`
 

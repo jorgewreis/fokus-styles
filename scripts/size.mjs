@@ -29,7 +29,7 @@ const targets = [
 // tokens). `forms`/`helpers`/`fonts` não têm teto próprio; ficam de fora do
 // gate (só informativos abaixo).
 //
-  // `js/fokus.min.js`: 24.5 KB — cobre o bundle JS completo (Combobox,
+// `js/fokus.min.js`: 25,25 KiB — cobre o bundle JS completo (Combobox,
 // Datepicker, DataTable, Command Palette, Tree View e o restante dos
 // componentes interativos).
 const budgets = {
@@ -45,7 +45,10 @@ const budgets = {
   // os refinamentos de navegação; o limite continua sendo um gate, não um
   // baseline aberto.
   "css/fokus.min.css": 43 * 1024,
-  "js/fokus.min.js": 24.5 * 1024,
+  // Combined security and focus/overlay fixes measure 25,710 bytes gzip:
+  // +640 vs original baseline, +110 over the previous 25 KiB gate.
+  // Explicit integration budget: 25.25 KiB; CSS budgets remain unchanged.
+  "js/fokus.min.js": 25.25 * 1024,
 };
 
 const check = process.argv.includes("--check");

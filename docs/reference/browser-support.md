@@ -1,7 +1,7 @@
 # Suporte a navegadores
 
 O Fokus Styles mira um alvo **moderno com fallback progressivo**: as duas
-últimas versões dos navegadores principais, com piso mínimo garantido em
+últimas versões dos navegadores principais, com piso de compatibilidade pretendido em
 **Safari/iOS Safari 16.4**. Não há suporte a Internet Explorer.
 
 ## Alvo (`.browserslistrc`)
@@ -25,12 +25,12 @@ prefixos são adicionados automaticamente apenas onde o alvo ainda exige.
 ## Por que Safari 16.4 é o piso
 
 É a versão mínima com suporte estável a todos os recursos usados pela base
-do framework — `@layer` (Safari 16.4) e `color-mix()`/OKLCH (Safari 16.4)
+do framework — `@layer` e `color-mix()`/OKLCH (Safari 16.4)
 são os dois recursos que fixam esse piso; sem eles, o piso seria mais baixo.
 
 ## Matriz de compatibilidade por feature
 
-Diferente do alvo geral acima (que é sobre *quais navegadores testamos*),
+Diferente do alvo geral acima (que é sobre *quais navegadores pretendemos suportar*),
 esta tabela é sobre *o que acontece em navegadores fora do alvo* —
 navegador mínimo com suporte nativo e o comportamento de fallback
 documentado (não "quebra silenciosamente") para cada recurso moderno
@@ -38,7 +38,7 @@ usado no CSS/JS do framework.
 
 | Feature | Uso no FokusStyles | Suporte nativo mínimo | Comportamento sem suporte |
 |---|---|---|---|
-| `@layer` (cascade layers) | Organiza `reset/tokens/base/layout/components/utilities/overrides` (`packages/fokus-core/scss/tokens/_root.scss:8`; ver [scss-architecture.md](scss-architecture.md)) | Safari 16.4, Chrome 99, Firefox 97, Edge 99 | Todas as regras caem para a cascata padrão (ordem de origem + especificidade). Como o SCSS já é organizado na mesma ordem lógica das camadas, a degradação visual é mínima — sem garantia formal de paridade pixel-a-pixel, mas sem quebra funcional. |
+| `@layer` (cascade layers) | Organiza `reset/tokens/base/layout/components/utilities/overrides` (`packages/fokus-core/scss/tokens/_root.scss:8`; ver [scss-architecture.md](scss-architecture.md)) | Safari 16.4, Chrome 99, Firefox 97, Edge 99 | O navegador ignora o bloco `@layer` e suas regras. Não há fallback automático para cascata sem camadas; engines sem suporte estão fora do alvo. |
 | `color-mix()` / `oklch()` | Tokens de cor gerados em OKLCH, dentro de um bloco `@supports (color: oklch(0% 0 0))` (`packages/fokus-core/scss/tokens/_root.scss:73`); usado também nos temas `data-theme="dark"` e `data-fs-brand="*"` | Safari 16.4, Chrome 111, Firefox 113, Edge 111 | `@supports` faz a detecção — navegadores sem suporte simplesmente ignoram o bloco OKLCH inteiro e usam os valores hex sRGB declarados antes dele (mesmas cores, aproximação visual, não pixel-perfect). Não é uma feature isolada: é o mecanismo de fallback de **todos** os tokens de cor do framework. |
 | `@container` (container queries) | Utilitários opt-in `.fs-u-cq`/`.fs-u-cq-{sm,md,lg}-d-*` (`packages/fokus-utilities/scss/utilities/_container-queries.scss`); ver [layout-advanced.md](../guides/layout-advanced.md) | Safari 16.0, Chrome 105, Firefox 110, Edge 105 | Sem suporte, o `@container` inteiro é ignorado pelo navegador — os elementos permanecem no `display` padrão do HTML (ex.: `<div>` como `block`), sem a responsividade condicionada à largura do container. Como é opt-in (só afeta quem usa `.fs-u-cq-*`), não há regressão em quem não usa esses utilitários. |
 | Propriedades customizadas (`--fs-*`) | Tokens em todas as camadas (cor, espaçamento, raio, sombra, tipografia) | Suportado desde 2017 em todos os navegadores principais (abaixo do piso Safari 16.4) | Não relevante ao alvo atual — nenhum navegador do alvo (`.browserslistrc`) carece desse suporte. |
@@ -54,21 +54,18 @@ usado no CSS/JS do framework.
 | `transition-behavior` | Motion configurável | Safari 17.4, Chrome 117, Firefox 129, Edge 117 | Usa o comportamento padrão da transição. |
 | `scrollbar-color` | Interatividade opcional | Firefox 64, Chrome 121, Safari 17.4 | A barra usa o estilo do sistema. |
 
-### Recursos considerados, mas não usados hoje
+### Seletores relacionais
 
-Para não deixar dúvida sobre lacunas silenciosas: `:has()` e
-`@custom-media` (as duas features citadas com mais frequência ao lado de
-`@container`/`color-mix()` em discussões sobre CSS moderno) **não são
-usadas em nenhuma linha do framework atualmente** — não há necessidade
-técnica identificada até a v1.0.0. Se/quando entrarem, esta tabela ganha
-uma linha nova no mesmo formato antes do merge.
+`:has()` é usado em formulários, tags e carousel. Em engines sem suporte,
+as regras que dependem dele não se aplicam. Não presuma paridade visual ou
+funcional fora do alvo; o Autoprefixer não implementa esse seletor por polyfill.
 
 ## Fallback progressivo (resumo)
 
 - **Cores**: OKLCH com fallback em hex sRGB via `@supports` (ver tabela
   acima) — nunca "quebra", só perde precisão de mistura de cor.
-- **`@layer`**: degrada para cascata padrão, sem garantia formal de
-  paridade visual mas sem quebra funcional.
+- **`@layer`**: sem suporte, os blocos e suas regras são ignorados; não há
+  fallback automático para cascata padrão.
 - **`@container`**: opt-in; sem suporte, os elementos ficam no `display`
   HTML padrão.
 - Sem polyfills: o projeto não inclui polyfills de CSS; navegadores fora

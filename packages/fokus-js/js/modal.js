@@ -1,5 +1,5 @@
-import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay } from "./core/overlay.js";
-import { createFocusTrap, onEscapeKey } from "./core/focus.js";
+import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
+import { createFocusTrap, onEscapeKey, updateFocusIsolation } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -36,8 +36,8 @@ export class Modal {
     triggerEl.addEventListener("click", this._handleTriggerClick);
     modalEl.addEventListener("click", this._handleDismissClick);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen && !this.staticBackdrop) this.hide();
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event) && !this.staticBackdrop) this.hide();
     });
 
     instances.set(triggerEl, this);
@@ -61,7 +61,7 @@ export class Modal {
   }
 
   _handleDismissClick(event) {
-    if (event.target.closest('[data-fs-dismiss="modal"]')) {
+    if (isTopOverlay(this, event) && event.target.closest('[data-fs-dismiss="modal"]')) {
       this.hide();
     }
   }
@@ -73,14 +73,16 @@ export class Modal {
     registerOverlay(this);
 
     this.modalEl.classList.add("is-open");
-    this.modalEl.setAttribute("aria-hidden", "false");
+    updateFocusIsolation(() => this.modalEl.setAttribute("aria-hidden", "false"));
     lockScroll();
 
     this._focusTrap = createFocusTrap(this.dialogEl);
     this._focusTrap.activate();
 
     if (!this.staticBackdrop) {
-      this._outsideClickCleanup = onClickOutside(this.dialogEl, () => this.hide());
+      this._outsideClickCleanup = onClickOutside(this.dialogEl, (event) => {
+        if (isTopOverlay(this, event)) this.hide();
+      });
     }
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
@@ -90,20 +92,22 @@ export class Modal {
   hide() {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
+    const wasTop = isTopOverlay(this);
     this.isOpen = false;
     unregisterOverlay(this);
 
-    this.modalEl.classList.remove("is-open");
-    this.modalEl.setAttribute("aria-hidden", "true");
-    unlockScroll();
-
     this._focusTrap?.deactivate();
     this._focusTrap = null;
+    if (wasTop && this.triggerEl.isConnected && !this.triggerEl.closest("[inert]")) this.triggerEl.focus();
+
+    this.modalEl.classList.remove("is-open");
+    updateFocusIsolation(() => this.modalEl.setAttribute("aria-hidden", "true"));
+    unlockScroll();
+
 
     this._outsideClickCleanup?.();
     this._outsideClickCleanup = null;
 
-    this.triggerEl.focus();
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
     this.triggerEl.dispatchEvent(new CustomEvent("fs:modal:hidden", { bubbles: true }));

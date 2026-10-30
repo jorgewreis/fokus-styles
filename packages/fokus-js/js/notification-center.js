@@ -1,4 +1,6 @@
+import { escapeHtml } from "./core/html.js";
 import { Toast } from "./toast.js";
+import { normalizeVariant } from "./core/variant.js";
 import { computePosition, applyPosition } from "./core/positioning.js";
 import { onClickOutside } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
@@ -8,12 +10,6 @@ import { autoInit, createInstanceRegistry } from "./core/register.js";
 const instances = createInstanceRegistry();
 
 let idCounter = 0;
-
-function escapeHtml(value) {
-  const div = document.createElement("div");
-  div.textContent = value == null ? "" : String(value);
-  return div.innerHTML;
-}
 
 function formatTime(time) {
   const date = new Date(time);
@@ -95,7 +91,18 @@ export class NotificationCenter {
   _load() {
     if (this.storage !== "local") return [];
     try {
-      return JSON.parse(localStorage.getItem(this.storageKey)) || [];
+      const stored = JSON.parse(localStorage.getItem(this.storageKey));
+      if (!Array.isArray(stored)) return [];
+      return stored.filter((record) => record && typeof record === "object"
+        && typeof record.id === "string" && record.id.length > 0)
+        .map((record) => ({
+          id: record.id,
+          title: typeof record.title === "string" ? record.title : "",
+          body: typeof record.body === "string" ? record.body : "",
+          variant: normalizeVariant(record.variant),
+          time: Number.isFinite(record.time) && !Number.isNaN(new Date(record.time).getTime()) ? record.time : 0,
+          read: record.read === true,
+        }));
     } catch {
       return [];
     }
@@ -118,13 +125,14 @@ export class NotificationCenter {
   push(options = {}) {
     const { title = "", body = "", variant = "primary", autohide = true, delay } = options;
 
-    idCounter += 1;
-    const record = { id: `n-${idCounter}`, title, body, variant, time: Date.now(), read: this.isOpen };
+    do { idCounter += 1; } while (this.history.some((record) => record.id === `n-${idCounter}`));
+    const safeVariant = normalizeVariant(variant);
+    const record = { id: `n-${idCounter}`, title, body, variant: safeVariant, time: Date.now(), read: this.isOpen };
     this.history.unshift(record);
     this._persist();
     this._render();
 
-    this._showToast({ title, body, variant, autohide, delay });
+    this._showToast({ title, body, variant: safeVariant, autohide, delay });
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:notification:pushed", { bubbles: true, detail: { record } }));
     return record.id;
@@ -132,7 +140,7 @@ export class NotificationCenter {
 
   _showToast({ title, body, variant, autohide, delay }) {
     const toastEl = document.createElement("div");
-    toastEl.className = `fs-toast fs-toast-${variant}`;
+    toastEl.className = `fs-toast fs-toast-${normalizeVariant(variant)}`;
     if (delay != null) toastEl.setAttribute("data-delay", String(delay));
     if (!autohide) toastEl.setAttribute("data-autohide", "false");
     toastEl.innerHTML = `
@@ -178,19 +186,21 @@ export class NotificationCenter {
 
   _render() {
     if (this.listEl) {
-      this.listEl.innerHTML = this.history
-        .map(
-          (record) => `
-        <li class="fs-notification-item fs-notification-item-${record.variant}${record.read ? "" : " fs-notification-item-unread"}" data-id="${record.id}">
+      const items = this.history.map((record) => {
+        const item = document.createElement("li");
+        item.className = `fs-notification-item fs-notification-item-${normalizeVariant(record.variant)}${record.read ? "" : " fs-notification-item-unread"}`;
+        // IDs can come from persisted data; never interpolate them into HTML.
+        item.dataset.id = record.id;
+        item.innerHTML = `
           <div class="fs-notification-item-content">
             <p class="fs-notification-item-title">${escapeHtml(record.title)}</p>
             ${record.body ? `<p class="fs-notification-item-text">${escapeHtml(record.body)}</p>` : ""}
             <span class="fs-notification-item-time">${formatTime(record.time)}</span>
           </div>
-          <button type="button" class="fs-btn-close" data-notification-dismiss aria-label="Remover notificação"></button>
-        </li>`,
-        )
-        .join("");
+          <button type="button" class="fs-btn-close" data-notification-dismiss aria-label="Remover notificação"></button>`;
+        return item;
+      });
+      this.listEl.replaceChildren(...items);
     }
     this.emptyEl?.toggleAttribute("hidden", this.history.length > 0);
     this._updateBadge();

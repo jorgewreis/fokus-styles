@@ -97,3 +97,9 @@ Os mesmos do [Modal](modal.md) — sem tokens próprios além de
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#alert-dialog).
+
+### Validação de variantes
+
+`variant` aceita `primary`, `secondary`, `success`, `warning`, `danger` e
+`info`. Valores desconhecidos usam `danger`; a entrada não é interpretada
+como HTML nem como classe CSS arbitrária.

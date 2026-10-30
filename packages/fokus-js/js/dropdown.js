@@ -24,7 +24,9 @@ export class Dropdown {
     this._originalParent = this.menuEl.parentNode;
     this._originalNextSibling = this.menuEl.nextSibling;
 
-    document.body.appendChild(this.menuEl);
+    // Keep modal-owned menus inside the active focus/isolation boundary.
+    const portalRoot = this.toggleEl.closest('.fs-modal-dialog, .fs-offcanvas, [role="dialog"]') ?? document.body;
+    portalRoot.appendChild(this.menuEl);
 
     if (!this.toggleEl.id) this.toggleEl.id = `fs-dropdown-toggle-${Math.random().toString(36).slice(2)}`;
     this.toggleEl.setAttribute("aria-haspopup", "menu");
@@ -110,6 +112,7 @@ export class Dropdown {
       items[items.length - 1]?.focus();
     } else if (event.key === "Escape") {
       event.preventDefault();
+      event.stopPropagation();
       this.hide();
       this.toggleEl.focus();
     }

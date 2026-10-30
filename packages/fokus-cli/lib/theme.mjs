@@ -36,11 +36,11 @@ function pickTextColor(backgroundHex, minContrast = 4.5) {
 }
 
 export function generateThemeCss({ name, primary }) {
-  if (!/^[a-z0-9-]+$/i.test(name)) {
+  if (typeof name !== "string" || !/^[a-z0-9-]+$/i.test(name)) {
     throw new Error(`Nome de marca inválido: "${name}" (use apenas letras, números e hífen).`);
   }
-  if (!/^#[0-9a-f]{3,8}$/i.test(primary)) {
-    throw new Error(`Cor primary inválida: "${primary}" (use um hex, ex.: #6d28d9).`);
+  if (typeof primary !== "string" || !/^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(primary)) {
+    throw new Error(`Cor primary inválida: "${primary}" (use #RGB ou #RRGGBB sem transparência, ex.: #6d28d9).`);
   }
 
   const btnText = pickTextColor(primary);

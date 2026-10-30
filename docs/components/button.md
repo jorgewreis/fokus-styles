@@ -45,7 +45,8 @@ variante separada, sem texto, desenhada só com `::before`/`::after`:
 ## Estados
 
 - **Hover/active**: o botão base usa `--fs-btn-hover-bg` / `--fs-btn-active-bg`;
-  a variante primary aplica `brightness(1.2)` / `brightness(1.4)` (clareia).
+  a variante primary aplica `brightness(0.98)` / `brightness(0.95)` (escurece discretamente,
+  preservando contraste AA do texto nos temas e marcas padrão).
   Outlines preenchem o fundo e trocam a cor do texto.
 - **Foco**: anel via `:focus-visible` (mixin `focus-ring`).
 - **Desabilitado**: atributo `disabled` (em `<button>`) ou classe

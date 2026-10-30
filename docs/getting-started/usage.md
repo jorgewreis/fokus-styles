@@ -10,7 +10,7 @@
 | `--fs-*` | Token CSS (Custom Property) | `--fs-color-primary`, `--fs-radius-md` |
 | `data-fs` | Auto-init de componente interativo | `data-fs="modal"` |
 | `data-fs-target`/`data-fs-dismiss` | Alvo/dispensa de componente interativo | `data-fs-target="#meuModal"` |
-| `fs:*` | Evento DOM customizado disparado por um componente | `fs:modal:shown` |
+| `fs:*` | Evento DOM customizado disparado por um componente | `fs:shown` |
 
 Essa separação existe para o framework nunca colidir com classes de outras
 bibliotecas/CSS na mesma página — ver
@@ -20,16 +20,18 @@ para como isso se reflete em cascade layers.
 ## Auto-init de componentes interativos
 
 Todo componente que precisa de JavaScript se inicializa sozinho ao carregar
-a página, a partir do atributo `data-fs="<nome>"` no elemento raiz — não é
+a página, a partir do atributo `data-fs="<nome>"`. O elemento depende do
+componente: no Modal é o botão de abertura; na Navbar é o `<nav>`. Não é
 preciso chamar `new FokusStyles.Algo(...)` manualmente:
 
 ```html
-<button type="button" class="fs-btn" data-fs-target="#meuModal">Abrir</button>
+<button type="button" id="abrirModal" class="fs-btn" data-fs="modal" data-fs-target="#meuModal">Abrir</button>
 
-<div class="fs-modal" data-fs="modal" id="meuModal">
+<div class="fs-modal" id="meuModal" aria-label="Exemplo de modal">
   <div class="fs-modal-dialog">
     <div class="fs-modal-content">
       <div class="fs-modal-body">Conteúdo.</div>
+      <button type="button" class="fs-btn" data-fs-dismiss="modal">Fechar</button>
     </div>
   </div>
 </div>
@@ -46,7 +48,7 @@ cria uma segunda instância no mesmo elemento.
 A maioria segue a mesma forma, acessível via `getInstance()`:
 
 ```js
-const modal = FokusStyles.Modal.getInstance(document.getElementById("meuModal"));
+const modal = FokusStyles.Modal.getInstance(document.getElementById("abrirModal"));
 modal.show();
 modal.hide();
 modal.toggle();
@@ -71,12 +73,12 @@ retorna uma Promise. Ver
 
 ## Eventos
 
-Componentes disparam eventos DOM customizados, no padrão
-`fs:<componente>:<ação>` (particípio: `shown`/`hidden`/`changed`...),
-sempre com `bubbles: true` — escute no documento ou em qualquer ancestral:
+Os nomes de eventos variam por componente: Modal e Navbar usam `fs:shown` e
+`fs:hidden`; Scrollspy usa `fs:scrollspy:activate`. Consulte a API específica.
+O evento de Modal abaixo propaga com `bubbles: true` a partir do gatilho:
 
 ```js
-document.addEventListener("fs:modal:shown", (event) => {
+document.addEventListener("fs:shown", (event) => {
   console.log("modal aberto:", event.target);
 });
 ```

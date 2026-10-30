@@ -42,7 +42,7 @@ opcional.
 ## Variações
 
 - **Fade**: `.fs-carousel-fade` troca os slides por opacidade.
-- **Controles no hover**: `.fs-carousel-hover-controls` revela setas e toggle
+- **Controles no hover**: o comportamento padrão revela setas e toggle
   ao passar o mouse ou ao focar um controle.
 - **Legenda lateral**: `.fs-carousel-caption-side` posiciona a legenda à
   direita em telas largas e volta ao overlay padrão em telas pequenas. Adicione
@@ -58,7 +58,7 @@ opcional.
   `[data-fs-carousel-toggle]` para oferecer pausa e reprodução explícitas.
 
 ```html
-<div class="fs-carousel fs-carousel-fade fs-carousel-hover-controls"
+<div class="fs-carousel fs-carousel-fade"
      data-fs="carousel" data-autoplay="true" data-interval="4000"
      aria-label="Atualizações automáticas">
   <!-- .fs-carousel-inner e itens -->

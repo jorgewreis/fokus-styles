@@ -57,10 +57,14 @@ Para compilar com suas próprias variáveis Sass (sobrescrever antes de
 compilar, em vez de sobrescrever CSS Custom Properties depois):
 
 ```scss
-@use "fokus-styles/scss/fokus" with (
+@use "fokus-styles/packages/fokus-core/scss/settings" with (
   $radius-md: 10px
 );
+@use "fokus-styles/scss/fokus";
 ```
+
+Compile com `npx sass --load-path=node_modules tema.scss tema.css`.
+Configure settings antes do entry-point; `scss/fokus` não reexporta variáveis.
 
 Ver [`docs/reference/scss-architecture.md`](../reference/scss-architecture.md)
 para a lista completa de variáveis e a organização dos módulos.

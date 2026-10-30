@@ -2,10 +2,31 @@
 
 ## Unreleased
 
+- atribui labels acessíveis de upload avançado pela API DOM, evitando injeção
+  de atributos por nomes de arquivo e reutilizando o helper de escape textual.
+
+- integra correções de adoção, documentação, segurança e foco/overlays;
+  bundle JS integrado: 25.710 bytes gzip (+640 frente ao baseline original
+  de 25.070, +110 além do teto intermediário de 25 KiB). Ajusta explicitamente
+  apenas esse teto para 25,25 KiB (25.856 bytes), preservando os limites CSS
+  e a verificação negativa do gate;
+- testa Confirm com variantes maliciosas dentro de Modal, em confirmação,
+  cancelamento e Escape, preservando isolamento, foco e scroll do diálogo pai.
+
 - adiciona guia de consumo distribuído no npm, entrada AGENTS para manutenção
   e verificação dos exemplos e conteúdo empacotado;
 - alinha documentação de Button e versão do README à implementação existente,
   sem alterar CSS ou comportamento público.
+- ajusta explicitamente o teto gzip JS de 24,5 para 25 KiB para comportar
+  validação de segurança: medição de 25.299 bytes (+229 frente ao baseline
+  de 25.070); mantém todos os limites CSS e o gate de tamanho ativos.
+
+- valida variantes de Confirm e NotificationCenter antes de compor classes;
+- trata IDs persistidos via DOM, valida o histórico de notificações e evita
+  colisões de ID após carregar registros;
+- rejeita cores CLI inválidas ou com alpha não suportado, aceitando apenas
+  `#RGB`/`#RRGGBB`, com testes de regressão para payloads e entradas malformadas.
+
 
 ## [2.7.0] - 2026-09-10
 
@@ -111,6 +132,16 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
+
+### Fixed — contraste de texto
+
+- Gate AA exige 4.5:1 também em rótulos de botões (antes aceitava 3:1).
+- Secondary escuro levemente mais escuro (mistura 98%, antes 90%): 4.59:1.
+- Primary hover/active escurece discretamente em vez de clarear; 16 pares
+  adicionais validam esses estados nos temas e marcas. Sem mudança de API.
+- Gzip após build: CSS completo 43.392 bytes (−1), componentes 20.273 (+2),
+  JavaScript 25.710 (inalterado); budgets existentes preservados.
+
 
 ## [1.0.0] - 2026-07-08
 
