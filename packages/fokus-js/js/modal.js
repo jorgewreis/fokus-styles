@@ -70,7 +70,7 @@ export class Modal {
     if (this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
-    registerOverlay(this);
+    registerOverlay(this, this.dialogEl);
 
     this.modalEl.classList.add("is-open");
     updateFocusIsolation(() => this.modalEl.setAttribute("aria-hidden", "false"));
@@ -92,9 +92,8 @@ export class Modal {
   hide() {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
-    const wasTop = isTopOverlay(this);
     this.isOpen = false;
-    unregisterOverlay(this);
+    const wasTop = unregisterOverlay(this);
 
     this._focusTrap?.deactivate();
     this._focusTrap = null;

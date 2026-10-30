@@ -1,5 +1,7 @@
+import { applyThemeContext } from "./core/theme.js";
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition, watchPosition } from "./core/positioning.js";
-import { onClickOutside } from "./core/overlay.js";
+import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
@@ -21,12 +23,9 @@ export class Dropdown {
     this.isOpen = false;
     this._outsideClickCleanup = null;
     this._positionCleanup = null;
-    this._originalParent = this.menuEl.parentNode;
-    this._originalNextSibling = this.menuEl.nextSibling;
 
-    // Keep modal-owned menus inside the active focus/isolation boundary.
-    const portalRoot = this.toggleEl.closest('.fs-modal-dialog, .fs-offcanvas, [role="dialog"]') ?? document.body;
-    portalRoot.appendChild(this.menuEl);
+    this._portal = createPortal(this.menuEl, this.toggleEl);
+    this._portal.mount();
 
     if (!this.toggleEl.id) this.toggleEl.id = `fs-dropdown-toggle-${Math.random().toString(36).slice(2)}`;
     this.toggleEl.setAttribute("aria-haspopup", "menu");
@@ -53,8 +52,8 @@ export class Dropdown {
     this.menuEl.addEventListener("keydown", this._handleMenuKeydown);
     this.menuEl.addEventListener("click", this._handleMenuClick);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) {
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) {
         this.hide();
         this.toggleEl.focus();
       }
@@ -121,14 +120,10 @@ export class Dropdown {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.menuEl);
 
-    const themeRoot = this.toggleEl.closest("[data-theme], [data-fs-theme]");
-    const theme = themeRoot?.getAttribute("data-theme") ?? themeRoot?.getAttribute("data-fs-theme");
-    if (theme) {
-      this.menuEl.setAttribute("data-theme", theme);
-    } else {
-      this.menuEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.menuEl, this.toggleEl);
 
     this.menuEl.classList.add("is-open");
 
@@ -152,7 +147,7 @@ export class Dropdown {
     firstItem?.focus();
 
     this._outsideClickCleanup = onClickOutside(this.menuEl, (event) => {
-      if (this.toggleEl.contains(event.target)) return;
+      if (!isTopOverlay(this, event) || this.toggleEl.contains(event.target)) return;
       this.hide();
     });
 
@@ -163,6 +158,7 @@ export class Dropdown {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this.menuEl.classList.remove("is-open");
     this.menuEl.style.removeProperty("position");
@@ -204,9 +200,7 @@ export class Dropdown {
     this.toggleEl.removeEventListener("keydown", this._handleToggleKeydown);
     this.menuEl.removeEventListener("keydown", this._handleMenuKeydown);
     this.menuEl.removeEventListener("click", this._handleMenuClick);
-    if (this._originalParent) {
-      this._originalParent.insertBefore(this.menuEl, this._originalNextSibling);
-    }
+    this._portal.restore();
     instances.delete(this.toggleEl);
   }
 }

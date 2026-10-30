@@ -1,4 +1,4 @@
-import { collapse, expand } from "./core/transition.js";
+import { cancelHeightTransition, collapse, expand } from "./core/transition.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -73,7 +73,8 @@ export class Toast {
       this._startProgress();
     }
 
-    expansion.then(() => {
+    expansion.then((completed) => {
+      if (!completed) return;
       this.toastEl.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
       this.toastEl.dispatchEvent(new CustomEvent("fs:toast:shown", { bubbles: true }));
     });
@@ -117,13 +118,15 @@ export class Toast {
     clearInterval(this._progressTimer);
     this._progressTimer = null;
     this._startedAt = 0;
+    this._paused = false;
     this._remaining = this.delay;
     this.toastEl.classList.remove("is-paused");
     this.toastEl.classList.remove("is-progressing");
     const progressEl = this.toastEl.querySelector(".fs-toast-progress");
     if (progressEl) progressEl.style.removeProperty("inline-size");
 
-    collapse(this.toastEl).then(() => {
+    collapse(this.toastEl).then((completed) => {
+      if (!completed) return;
       this.toastEl.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
       this.toastEl.dispatchEvent(new CustomEvent("fs:toast:hidden", { bubbles: true }));
     });
@@ -138,6 +141,7 @@ export class Toast {
   }
 
   dispose() {
+    cancelHeightTransition(this.toastEl);
     clearTimeout(this._hideTimer);
     clearInterval(this._progressTimer);
     this.toastEl.removeEventListener("click", this._handleDismissClick);

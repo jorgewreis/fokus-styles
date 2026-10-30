@@ -1,5 +1,6 @@
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition } from "./core/positioning.js";
-import { onClickOutside } from "./core/overlay.js";
+import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
@@ -32,7 +33,8 @@ export class Combobox {
 
     if (!this.listboxEl.id) this.listboxEl.id = uniqueId("fs-combobox-listbox");
 
-    document.body.appendChild(this.listboxEl);
+    this._portal = createPortal(this.listboxEl, this.inputEl);
+    this._portal.mount();
 
     this.inputEl.setAttribute("role", "combobox");
     this.inputEl.setAttribute("aria-expanded", "false");
@@ -57,8 +59,8 @@ export class Combobox {
     this.listboxEl.addEventListener("mousedown", this._handleOptionMousedown);
     this.listboxEl.addEventListener("click", this._handleOptionClick);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) this.hide();
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) this.hide();
     });
 
     instances.set(inputEl, this);
@@ -175,6 +177,8 @@ export class Combobox {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.listboxEl);
 
     applyThemeContext(this.listboxEl, this.inputEl);
 
@@ -191,7 +195,7 @@ export class Combobox {
     this.inputEl.setAttribute("aria-expanded", "true");
 
     this._outsideClickCleanup = onClickOutside(this.listboxEl, (event) => {
-      if (this.inputEl.contains(event.target)) return;
+      if (!isTopOverlay(this, event) || this.inputEl.contains(event.target)) return;
       this.hide();
     });
 
@@ -201,6 +205,7 @@ export class Combobox {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this._getSelectableOptions()[this.activeIndex]?.classList.remove("is-active");
     this.activeIndex = -1;
@@ -234,6 +239,7 @@ export class Combobox {
     this.inputEl.removeEventListener("keydown", this._handleKeydown);
     this.listboxEl.removeEventListener("mousedown", this._handleOptionMousedown);
     this.listboxEl.removeEventListener("click", this._handleOptionClick);
+    this._portal.restore();
     instances.delete(this.inputEl);
   }
 }

@@ -3,6 +3,7 @@ let paddingCompensated = false;
 let previousOverflow = "";
 let previousPaddingRight = "";
 const activeOverlays = [];
+const overlayElements = new WeakMap();
 
 const eventOverlays = new WeakMap();
 
@@ -14,13 +15,22 @@ export function isTopOverlay(instance, event) {
   return eventOverlays.get(event) === instance;
 }
 
-export function registerOverlay(instance) {
+export function registerOverlay(instance, element) {
+  if (element) overlayElements.set(instance, element);
   if (!activeOverlays.includes(instance)) activeOverlays.push(instance);
 }
 
 export function unregisterOverlay(instance) {
+  const element = overlayElements.get(instance);
+  // Programmatic parent dismissal must also dismiss its portalled children.
+  for (const child of [...activeOverlays].reverse()) {
+    if (child !== instance && element?.contains(overlayElements.get(child))) child.hide?.();
+  }
+  const wasTop = activeOverlays.at(-1) === instance;
   const index = activeOverlays.lastIndexOf(instance);
   if (index >= 0) activeOverlays.splice(index, 1);
+  overlayElements.delete(instance);
+  return wasTop;
 }
 
 export function lockScroll() {

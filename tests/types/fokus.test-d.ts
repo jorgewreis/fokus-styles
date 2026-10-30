@@ -8,6 +8,10 @@ const triggerEl = document.querySelector<HTMLElement>("[data-fs-target]")!;
 const modal = new Modal(triggerEl, { backdrop: "static" });
 modal.show();
 modal.hide();
+Modal.getOrCreateInstance(triggerEl, { backdrop: "static" });
+Modal.show(triggerEl);
+Modal.hide(triggerEl);
+Modal.toggle(triggerEl);
 const sameModal: Modal | undefined = Modal.getInstance(triggerEl);
 
 const dropdown = new Dropdown(triggerEl, { placement: "bottom", align: "start" });
@@ -24,3 +28,10 @@ const position = core.computePosition(triggerEl, document.createElement("div"), 
 core.applyPosition(document.createElement("div"), position);
 
 export { modal, dropdown, table, sameModal };
+
+// Height transitions report whether they completed rather than being cancelled.
+import { collapse, expand, cancelHeightTransition } from "../../packages/fokus-js/js/core/transition.js";
+const completed: Promise<boolean> = collapse(triggerEl);
+const expanded: Promise<boolean> = expand(triggerEl);
+cancelHeightTransition(triggerEl);
+export { completed, expanded };

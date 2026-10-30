@@ -51,7 +51,10 @@ toolbar/tabela/estados — não no `<table>` diretamente. O JS lê as linhas de
   conteúdo existente num `<button class="fs-datatable-sort-btn">`
   automaticamente (não escreva o botão você mesmo).
 - `data-fs-sort-type="number"`, `"currency"` ou `"date"` no `<th>` ativa
-  comparação tipada; sem o atributo, a ordenação usa texto. Combine com
+  comparação tipada; números aceitam ponto decimal (como `1.5`) e valores
+  brasileiros com vírgula decimal (como `R$ 1.234,50`). Use um valor
+  numérico canônico em `data-fs-sort-value` para formatos ambíguos.
+  Sem o atributo, a ordenação usa texto. Combine com
   `data-fs-sort-value` quando o valor exibido for formatado.
 - `data-fs-sort-value` numa `<td>` define o valor usado pra ordenar aquela
   célula, se for diferente do texto exibido (ex.: data ISO por trás de um

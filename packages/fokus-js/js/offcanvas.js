@@ -71,7 +71,7 @@ export class Offcanvas {
     if (this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     this.isOpen = true;
-    registerOverlay(this);
+    registerOverlay(this, this.offcanvasEl);
 
     if (this.hasBackdrop) {
       this._backdropEl = document.createElement("div");
@@ -113,9 +113,8 @@ export class Offcanvas {
   hide() {
     if (!this.isOpen) return;
     this.triggerEl.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
-    const wasTop = isTopOverlay(this);
     this.isOpen = false;
-    unregisterOverlay(this);
+    const wasTop = unregisterOverlay(this);
 
     this._focusTrap?.deactivate();
     this._focusTrap = null;

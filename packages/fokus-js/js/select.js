@@ -30,6 +30,14 @@ export class Select {
     this.menuEl.addEventListener("click", this._handleItemClick);
     this.selectEl.addEventListener("change", this._handleNativeChange);
 
+    this._form = selectEl.form;
+    this._handleReset = (event) => {
+      queueMicrotask(() => {
+        if (!event.defaultPrevented && instances.get(selectEl) === this) this._syncFromNativeSelect();
+      });
+    };
+    this._form?.addEventListener("reset", this._handleReset);
+
     instances.set(selectEl, this);
   }
 
@@ -118,6 +126,7 @@ export class Select {
   }
 
   dispose() {
+    this._form?.removeEventListener("reset", this._handleReset);
     this.dropdown.dispose();
     this.menuEl.removeEventListener("click", this._handleItemClick);
     this.selectEl.removeEventListener("change", this._handleNativeChange);

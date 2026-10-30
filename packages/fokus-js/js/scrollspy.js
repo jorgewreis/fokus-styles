@@ -6,7 +6,7 @@ export class Scrollspy {
   constructor(navEl) {
     this.navEl = navEl;
     this.links = [...navEl.querySelectorAll('a[href^="#"]')];
-    this.sections = this.links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+    this.sections = this.links.map((link) => document.getElementById(link.getAttribute("href").slice(1))).filter(Boolean);
     this.observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && this.activate(entry.target)), { rootMargin: "-20% 0px -65%" });
     this.sections.forEach((section) => this.observer?.observe(section));
     this._onScroll = () => {

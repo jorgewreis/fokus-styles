@@ -60,9 +60,10 @@ export class Tabs {
     const currentIndex = enabledTabs.indexOf(document.activeElement);
     if (currentIndex === -1) return;
 
+    const vertical = this.tablistEl.getAttribute("aria-orientation") === "vertical" || this.tablistEl.classList.contains("fs-tabs-vertical");
     let nextIndex = null;
-    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % enabledTabs.length;
-    else if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + enabledTabs.length) % enabledTabs.length;
+    if (event.key === (vertical ? "ArrowDown" : "ArrowRight")) nextIndex = (currentIndex + 1) % enabledTabs.length;
+    else if (event.key === (vertical ? "ArrowUp" : "ArrowLeft")) nextIndex = (currentIndex - 1 + enabledTabs.length) % enabledTabs.length;
     else if (event.key === "Home") nextIndex = 0;
     else if (event.key === "End") nextIndex = enabledTabs.length - 1;
 

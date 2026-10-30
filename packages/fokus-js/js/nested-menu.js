@@ -1,5 +1,6 @@
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition } from "./core/positioning.js";
-import { onClickOutside } from "./core/overlay.js";
+import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
@@ -49,7 +50,8 @@ export class NestedMenu {
     this.isOpen = false;
     this._outsideClickCleanup = null;
 
-    document.body.appendChild(this.rootMenu);
+    this._portal = createPortal(this.rootMenu, this.toggleEl);
+    this._portal.mount();
 
     this.toggleEl.setAttribute("aria-haspopup", "menu");
     this.toggleEl.setAttribute("aria-expanded", "false");
@@ -70,8 +72,8 @@ export class NestedMenu {
     this.rootMenu.addEventListener("keydown", this._handleMenuKeydown);
     this.rootMenu.addEventListener("mouseover", this._handleMenuMouseover);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) {
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) {
         this.hide();
         this.toggleEl.focus();
       }
@@ -223,6 +225,7 @@ export class NestedMenu {
         }
         break;
       case "Escape":
+        event.stopPropagation();
         if (inSubmenu) {
           event.preventDefault();
           event.stopPropagation();
@@ -243,6 +246,8 @@ export class NestedMenu {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.rootMenu);
 
     applyThemeContext(this.rootMenu, this.toggleEl);
 
@@ -259,7 +264,7 @@ export class NestedMenu {
     levelItems(this.rootMenu)[0]?.focus();
 
     this._outsideClickCleanup = onClickOutside(this.rootMenu, (event) => {
-      if (this.toggleEl.contains(event.target)) return;
+      if (!isTopOverlay(this, event) || this.toggleEl.contains(event.target)) return;
       this.hide();
     });
 
@@ -269,6 +274,7 @@ export class NestedMenu {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this._closeAllSubmenus();
     this.rootMenu.classList.remove("is-open");
@@ -298,6 +304,7 @@ export class NestedMenu {
     this.rootMenu.removeEventListener("click", this._handleMenuClick);
     this.rootMenu.removeEventListener("keydown", this._handleMenuKeydown);
     this.rootMenu.removeEventListener("mouseover", this._handleMenuMouseover);
+    this._portal.restore();
     instances.delete(this.toggleEl);
   }
 }

@@ -118,3 +118,14 @@ Auto-init via `data-fs="modal"` **no gatilho**. `Modal.getInstance(triggerEl)`.
 
 Para o mesmo padrão sem escrever HTML, ver [Alert Dialog](alert-dialog.md)
 (`FokusStyles.confirm()`). Mockup: [laboratório do componente](../../mockup/overlays-commands.html#modal).
+
+## Popups dentro do diálogo
+
+Dropdown, NestedMenu, Combobox, Datepicker, Popover e Tooltip mantêm seus
+painéis dentro do diálogo proprietário, em vez de movê-los para a página
+inativa atrás do modal. Isso também se aplica a Offcanvas e CommandPalette.
+O tema do ancestral mais próximo (`data-fs-theme` ou `data-theme`) acompanha
+o painel. `Escape` fecha primeiro o popup ativo; outro `Escape` fecha o modal.
+Fechar o diálogo programaticamente também fecha seus popups internos.
+Ao chamar `dispose()`, painéis fornecidos pelo aplicativo voltam ao seu
+pai original; tooltips gerados pelo framework são removidos.

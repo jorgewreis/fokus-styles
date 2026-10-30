@@ -9,7 +9,7 @@ export class FormValidation {
   validate(event) {
     const valid = this.form.checkValidity();
     this.form.classList.add("fs-was-validated");
-    this.form.querySelectorAll('[required], [aria-required="true"]').forEach((field) => field.setAttribute("aria-invalid", String(!field.checkValidity())));
+    Array.from(this.form.elements).filter((field) => field.willValidate).forEach((field) => field.setAttribute("aria-invalid", String(!field.checkValidity())));
     if (!valid) { event.preventDefault(); event.stopPropagation(); }
     this.form.dispatchEvent(new CustomEvent("fs:form:validated", { bubbles: true, detail: { valid } }));
     return valid;

@@ -112,8 +112,13 @@ export function watchPosition(referenceEl, floatingEl, options = {}) {
 
 export function applyPosition(floatingEl, position) {
   floatingEl.style.position = "absolute";
-  floatingEl.style.top = `${position.top}px`;
-  floatingEl.style.left = `${position.left}px`;
+  // computePosition returns document coordinates; dialog-owned portals can
+  // have a positioned ancestor rather than the document as containing block.
+  const parent = floatingEl.offsetParent;
+  const local = parent && parent !== document.body && parent !== document.documentElement;
+  const rect = local ? parent.getBoundingClientRect() : { top: 0, left: 0 };
+  floatingEl.style.top = `${position.top - (local ? rect.top + window.scrollY + parent.clientTop - parent.scrollTop : 0)}px`;
+  floatingEl.style.left = `${position.left - (local ? rect.left + window.scrollX + parent.clientLeft - parent.scrollLeft : 0)}px`;
   if (position.arrowOffset) {
     floatingEl.style.setProperty("--fs-popover-arrow-offset", position.arrowOffset);
     floatingEl.style.setProperty("--fs-tooltip-arrow-offset", position.arrowOffset);

@@ -1,4 +1,4 @@
-import { collapse, expand } from "./core/transition.js";
+import { cancelHeightTransition, collapse, expand } from "./core/transition.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -41,7 +41,8 @@ export class Collapse {
     this.isOpen = true;
 
     this.triggerEl.setAttribute("aria-expanded", "true");
-    expand(this.collapseEl).then(() => {
+    expand(this.collapseEl).then((completed) => {
+      if (!completed) return;
       this.triggerEl.dispatchEvent(new CustomEvent("fs:collapse:shown", { bubbles: true }));
     });
   }
@@ -51,7 +52,8 @@ export class Collapse {
     this.isOpen = false;
 
     this.triggerEl.setAttribute("aria-expanded", "false");
-    collapse(this.collapseEl).then(() => {
+    collapse(this.collapseEl).then((completed) => {
+      if (!completed) return;
       this.triggerEl.dispatchEvent(new CustomEvent("fs:collapse:hidden", { bubbles: true }));
     });
   }
@@ -65,6 +67,7 @@ export class Collapse {
   }
 
   dispose() {
+    cancelHeightTransition(this.collapseEl);
     this.triggerEl.removeEventListener("click", this._handleClick);
     instances.delete(this.triggerEl);
   }

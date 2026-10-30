@@ -77,9 +77,11 @@ describe("Toast", () => {
 
     toast.show();
     await Promise.resolve();
+    await Promise.resolve();
     expect(shownHandler).toHaveBeenCalledTimes(1);
 
     toast.hide();
+    await Promise.resolve();
     await Promise.resolve();
     expect(hiddenHandler).toHaveBeenCalledTimes(1);
   });

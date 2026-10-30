@@ -29,7 +29,11 @@ function compareTypedValues(a, b, type) {
     return new Date(a).getTime() - new Date(b).getTime();
   }
   if (type === "number" || type === "currency") {
-    const normalize = (value) => Number(String(value).replace(/[^\d,-]/g, "").replace(/\./g, "").replace(",", "."));
+    const normalize = (value) => {
+      const text = String(value).replace(/[^\d.,+-]/g, "");
+      // Numeric sort values use a decimal dot; Brazilian display values use a comma.
+      return Number(text.includes(",") ? text.replace(/\./g, "").replace(",", ".") : text);
+    };
     return normalize(a) - normalize(b);
   }
   return compareValues(a, b);
@@ -123,7 +127,7 @@ export class DataTable {
       while (th.firstChild) btn.appendChild(th.firstChild);
       th.appendChild(btn);
       th.setAttribute("aria-sort", "none");
-      return { th, key };
+      return { th, key, btn };
     });
   }
 
@@ -385,6 +389,15 @@ export class DataTable {
     this.paginationEl.removeEventListener("click", this._handlePaginationClick);
     this.tbodyEl.removeEventListener("keydown", this._handleCellKeydown);
     this.tbodyEl.removeEventListener("focusin", this._handleCellFocusIn);
+    this._sortButtons.forEach(({ th, btn }) => {
+      while (btn.firstChild) th.insertBefore(btn.firstChild, btn);
+      btn.remove();
+      th.removeAttribute("aria-sort");
+    });
+    this._rows.forEach(({ el }) => {
+      el.hidden = false;
+      this.tbodyEl.appendChild(el);
+    });
     instances.delete(this.rootEl);
   }
 }

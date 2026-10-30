@@ -1,5 +1,6 @@
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition, watchPosition } from "./core/positioning.js";
-import { onClickOutside } from "./core/overlay.js";
+import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
@@ -29,10 +30,9 @@ export class Popover {
     this._hideTimer = null;
     this._suppressNextFocus = false;
     this._positionCleanup = null;
-    this._originalParent = popoverEl.parentNode;
-    this._originalNextSibling = popoverEl.nextSibling;
 
-    document.body.appendChild(popoverEl);
+    this._portal = createPortal(this.popoverEl, this.triggerEl);
+    this._portal.mount();
 
     popoverEl.setAttribute("role", "dialog");
     popoverEl.setAttribute("aria-modal", "false");
@@ -110,8 +110,8 @@ export class Popover {
     }
 
     if (this.trigger !== "manual") {
-      this._removeEscapeListener = onEscapeKey(() => {
-        if (!this.isOpen) return;
+      this._removeEscapeListener = onEscapeKey((event) => {
+        if (!this.isOpen || !isTopOverlay(this, event)) return;
         this.hide();
         this.triggerEl.focus();
       });
@@ -132,6 +132,8 @@ export class Popover {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.popoverEl);
 
     applyThemeContext(this.popoverEl, this.triggerEl);
 
@@ -159,7 +161,7 @@ export class Popover {
 
     if (this.trigger === "click") {
       this._outsideClickCleanup = onClickOutside(this.popoverEl, (event) => {
-        if (this.triggerEl.contains(event.target)) return;
+        if (!isTopOverlay(this, event) || this.triggerEl.contains(event.target)) return;
         this.hide();
       });
     }
@@ -170,6 +172,7 @@ export class Popover {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
     openPopovers.delete(this);
 
     this.popoverEl.classList.remove("is-open");
@@ -204,9 +207,7 @@ export class Popover {
     this.triggerEl.removeEventListener("focus", this._handleTriggerFocus);
     this.triggerEl.removeEventListener("focusout", this._handleTriggerFocusOut);
     this.popoverEl.removeEventListener("focusout", this._handlePopoverFocusOut);
-    if (this._originalParent) {
-      this._originalParent.insertBefore(this.popoverEl, this._originalNextSibling);
-    }
+    this._portal.restore();
     instances.delete(this.triggerEl);
   }
 }

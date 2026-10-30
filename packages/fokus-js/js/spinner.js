@@ -9,7 +9,7 @@ export class Spinner {
   }
   static getInstance(el) { return instances.get(el); }
   static getOrCreateInstance(el) { return this.getInstance(el) ?? new Spinner(el); }
-  _setLoading(value) { this.loading = value; this.element.toggleAttribute("aria-busy", value); this.element.toggleAttribute("data-fs-loading", value); }
+  _setLoading(value) { this.loading = value; this.element.setAttribute("aria-busy", String(value)); this.element.toggleAttribute("data-fs-loading", value); }
   start() { this._setLoading(true); this.element.dispatchEvent(new CustomEvent("fs:loading:start", { bubbles: true })); }
   stop() { this._setLoading(false); this.element.dispatchEvent(new CustomEvent("fs:loading:stop", { bubbles: true })); }
   toggle() { this.loading ? this.stop() : this.start(); }

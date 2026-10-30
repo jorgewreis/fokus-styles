@@ -1,4 +1,4 @@
-import { lockScroll, unlockScroll, onClickOutside } from "./core/overlay.js";
+import { lockScroll, unlockScroll, onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { createFocusTrap, onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
@@ -91,8 +91,8 @@ export class CommandPalette {
     this._shortcut = shortcut ? parseShortcut(shortcut) : null;
     if (this._shortcut) document.addEventListener("keydown", this._handleGlobalShortcut);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) this.hide();
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) this.hide();
     });
 
     instances.set(triggerEl, this);
@@ -196,6 +196,7 @@ export class CommandPalette {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    registerOverlay(this, this.dialogEl);
 
     applyThemeContext(this.paletteEl, this.triggerEl);
 
@@ -210,7 +211,9 @@ export class CommandPalette {
     this._focusTrap = createFocusTrap(this.dialogEl);
     this._focusTrap.activate();
 
-    this._outsideClickCleanup = onClickOutside(this.dialogEl, () => this.hide());
+    this._outsideClickCleanup = onClickOutside(this.dialogEl, (event) => {
+      if (isTopOverlay(this, event)) this.hide();
+    });
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:command-palette:shown", { bubbles: true }));
   }
@@ -218,6 +221,7 @@ export class CommandPalette {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    const wasTop = unregisterOverlay(this);
 
     this.paletteEl.classList.remove("is-open");
     unlockScroll();
@@ -229,7 +233,7 @@ export class CommandPalette {
     this._outsideClickCleanup?.();
     this._outsideClickCleanup = null;
 
-    this.triggerEl.focus();
+    if (wasTop && this.triggerEl.isConnected && !this.triggerEl.closest("[inert]")) this.triggerEl.focus();
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:command-palette:hidden", { bubbles: true }));
   }

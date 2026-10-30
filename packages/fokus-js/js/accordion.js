@@ -1,4 +1,4 @@
-import { collapse, expand } from "./core/transition.js";
+import { cancelHeightTransition, collapse, expand } from "./core/transition.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -65,7 +65,8 @@ export class Accordion {
     entry.button.dispatchEvent(new CustomEvent("fs:show", { bubbles: true }));
     entry.button.setAttribute("aria-expanded", "true");
     entry.panel.hidden = false;
-    expand(entry.panel).then(() => {
+    expand(entry.panel).then((completed) => {
+      if (!completed) return;
       entry.button.dispatchEvent(new CustomEvent("fs:shown", { bubbles: true }));
       entry.button.dispatchEvent(new CustomEvent("fs:accordion:shown", { bubbles: true }));
     });
@@ -74,7 +75,8 @@ export class Accordion {
   _close(entry) {
     entry.button.dispatchEvent(new CustomEvent("fs:hide", { bubbles: true }));
     entry.button.setAttribute("aria-expanded", "false");
-    collapse(entry.panel).then(() => {
+    collapse(entry.panel).then((completed) => {
+      if (!completed) return;
       entry.panel.hidden = true;
       entry.button.dispatchEvent(new CustomEvent("fs:hidden", { bubbles: true }));
       entry.button.dispatchEvent(new CustomEvent("fs:accordion:hidden", { bubbles: true }));
@@ -82,7 +84,10 @@ export class Accordion {
   }
 
   dispose() {
-    this.items.forEach((entry) => entry.button.removeEventListener("click", entry.handleClick));
+    this.items.forEach((entry) => {
+      cancelHeightTransition(entry.panel);
+      entry.button.removeEventListener("click", entry.handleClick);
+    });
     instances.delete(this.accordionEl);
   }
 }

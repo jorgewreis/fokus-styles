@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### Correções de comportamento para beta
+
+- mantém popups no diálogo proprietário, respeita tema, posicionamento local,
+  Escape, isolamento e fechamento programático do pai; CommandPalette participa
+  da pilha de overlays.
+- cancela transições interrompidas sem eventos tardios em Collapse, Accordion e
+  Toast; sincroniza reset de Select e limpeza de Datepicker; corrige ordenação
+  decimal/reinicialização de DataTable, ARIA de Spinner, navegação e validação.
+- alinha tipos das transições a `Promise<boolean>` (false quando canceladas).
+- bundle JS: 26.328 bytes gzip, +618 (2,40%) frente à integração anterior
+  de 25.710 e +1.258 (5,02%) frente ao original de 25.070. Teto revisado
+  explicitamente para 25,875 KiB (26.496 bytes), margem de 168 bytes; não
+  remove validações de segurança, testes nem altera limites CSS. Baseline
+  medido novamente e controle negativo confirma falha acima do teto.
+
 ### Breaking — próxima versão major
 
 - adota Node.js `>=24.11.0 <25` para instalação npm, CLI e manutenção,
@@ -104,6 +119,21 @@
 - adiciona suporte a `inert`/`aria-hidden` no focus trap e estilos do spinner com redução de movimento.
 
 ## Unreleased
+
+### Correções de comportamento para beta
+
+- mantém popups no diálogo proprietário, respeita tema, posicionamento local,
+  Escape, isolamento e fechamento programático do pai; CommandPalette participa
+  da pilha de overlays.
+- cancela transições interrompidas sem eventos tardios em Collapse, Accordion e
+  Toast; sincroniza reset de Select e limpeza de Datepicker; corrige ordenação
+  decimal/reinicialização de DataTable, ARIA de Spinner, navegação e validação.
+- alinha tipos das transições a `Promise<boolean>` (false quando canceladas).
+- bundle JS: 26.328 bytes gzip, +618 (2,40%) frente à integração anterior
+  de 25.710 e +1.258 (5,02%) frente ao original de 25.070. Teto revisado
+  explicitamente para 25,875 KiB (26.496 bytes), margem de 168 bytes; não
+  remove validações de segurança, testes nem altera limites CSS. Baseline
+  medido novamente e controle negativo confirma falha acima do teto.
 
 - arredonda badges e badges split com `--fs-radius-sm`, preservando os tokens
   locais de personalização;
