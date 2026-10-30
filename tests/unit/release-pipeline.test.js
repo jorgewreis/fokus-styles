@@ -60,9 +60,25 @@ describe('package validation reads the supplied archive, not the checkout', () =
     mkdirSync(path.join(pkg, 'dist/js'), {recursive:true});
     writeFileSync(path.join(pkg, 'package.json'), JSON.stringify({name:'fokus-styles', version:'0.0.0-fixture'}));
     writeFileSync(path.join(pkg, 'README.md'), '**Status:** `0.0.0-fixture`');
-    writeFileSync(path.join(pkg, 'USAGE.md'), '```html\n<div class="archive-only">Hello</div>\n```');
+    mkdirSync(path.join(pkg, 'docs/reference'), {recursive:true});
+    const stability = read('docs/reference/stability.md');
+    writeFileSync(path.join(pkg, 'docs/reference/stability.md'), stability);
+    const summary = stability.match(/<!-- maturity-summary:start -->[\s\S]*?<!-- maturity-summary:end -->/)[0];
+    writeFileSync(path.join(pkg, 'USAGE.md'), `${summary}
+[policy](docs/reference/stability.md)
+não significa instalação npm sem dependências
+\`\`\`html
+<div class="archive-only">Hello</div>
+<button data-fs="modal" data-fs-target="#fixture-modal">Open</button>
+<div id="fixture-modal"><button data-fs-dismiss="modal">Close</button></div>
+\`\`\``);
     writeFileSync(path.join(pkg, 'dist/css/fokus.css'), css);
-    writeFileSync(path.join(pkg, 'dist/js/fokus.js'), '// fixture');
+    // Minimal archived fixture, deliberately independent of checkout runtime bytes.
+    writeFileSync(path.join(pkg, 'dist/js/fokus.js'), `
+      const target = document.querySelector('#fixture-modal');
+      document.querySelector('[data-fs="modal"]').onclick = () => target.setAttribute('aria-hidden', 'false');
+      document.querySelector('[data-fs-dismiss="modal"]').onclick = () => target.setAttribute('aria-hidden', 'true');
+    `);
     const tarball = path.join(dir, 'fixture.tgz');
     execFileSync('tar', ['-czf', tarball, '-C', dir, 'package']);
     return {dir, tarball};

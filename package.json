@@ -121,7 +121,8 @@
     "packages/fokus-cli/lib/**/*.mjs",
     "LICENSE",
     "README.md",
-    "USAGE.md"
+    "USAGE.md",
+    "docs/reference/stability.md"
   ],
   "engines": {
     "node": ">=24.11.0 <25"

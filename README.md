@@ -32,6 +32,10 @@ React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 > recomendado para quem está começando. Veja a [política de estabilidade e
 > roadmap](docs/reference/stability.md).
 
+A ausência de dependências se refere ao núcleo no navegador. A instalação npm
+inclui `sass`, `postcss`, `cssnano` e `autoprefixer` para a CLI; React é peer
+opcional para os wrappers. Consulte [dependências e maturidade no guia npm](USAGE.md).
+
 Este README é a **visão geral** do projeto. Para aprender a usar cada recurso em
 detalhe, com exemplos completos, consulte a **[documentação completa](docs/README.md)**.
 

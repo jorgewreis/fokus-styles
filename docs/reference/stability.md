@@ -15,6 +15,23 @@ O objetivo não é competir pela maior quantidade de componentes, mas oferecer
 uma base confiável para páginas institucionais, sistemas administrativos e
 aplicações web construídas com HTML, CSS e JavaScript nativo.
 
+## Resumo para consumidores
+
+<!-- maturity-summary:start -->
+| Faixa | Recursos | Contrato de adoção |
+| --- | --- | --- |
+| Núcleo essencial | Tokens, temas, grid, utilitários básicos, tipografia; botões, cards, alertas, badges, tabelas; campos nativos; navbar, dropdown, tabs, accordion, modal, toast, paginação e breadcrumbs | Caminho recomendado e prioridade de manutenção; mudanças exigem revisão de compatibilidade e testes. |
+| Extensões de interface | Layouts Stack/Cluster/Sidebar; Collapse, Offcanvas, Tooltip, Popover, Alert Dialog; Stepper, Input Group, Empty State, Skeleton, Spinner, Progress, Tag, Rating, Segmented Control, Timeline e upload básico | Complementos úteis, opcionais ao núcleo; validar os fluxos usados no aplicativo. |
+| Avançados / experimentais sob observação | Combobox, Datepicker, DataTable, Tree View, Command Palette, Carousel, upload avançado e gráficos | Avaliar em piloto antes de depender deles; não equivalem à maturidade do núcleo. |
+| Ecossistema opcional | Ícones, CLI e wrappers React | Importação/uso opcionais; requisitos próprios, incluindo React para wrappers e Node para CLI. |
+
+“Estável” aqui descreve a prioridade de compatibilidade do núcleo, não uma
+certificação de produção de todos os componentes. “Experimental” indica os
+avançados sob observação, não uma promoção ou reclassificação de sua API.
+Teste os fluxos do seu aplicativo; CI automatizado não substitui validação
+manual de teclado, leitor de tela e dispositivos reais.
+<!-- maturity-summary:end -->
+
 ## Níveis de estabilidade
 
 ### Núcleo essencial
@@ -56,9 +73,13 @@ núcleo sem evidência de necessidade recorrente.
 ### Ecossistema opcional
 
 `fokus-styles/icons`, `fokus-styles/cli` e `fokus-styles/react` são subpaths
-opcionais do mesmo pacote. Eles devem
-seguir documentação, versionamento e testes próprios, sem tornar o pacote
-principal dependente de React, Sass, CLI ou bibliotecas de ícones.
+opcionais do mesmo pacote **para uso/importação**, não pacotes npm separados.
+O CSS e o JavaScript nativo prontos não exigem dependências externas no navegador.
+Já `npm install fokus-styles` instala `sass`, `postcss`, `cssnano` e
+`autoprefixer` como dependências obrigatórias da ferramenta CLI, mesmo se o
+consumidor usar apenas CSS. React é um peer opcional, necessário somente para
+`fokus-styles/react`; o núcleo não o exige. Separar a ferramenta em outro pacote
+é uma possibilidade futura, não o comportamento atual.
 
 ## Roadmap de consolidação
 

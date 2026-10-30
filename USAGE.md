@@ -23,6 +23,37 @@ usam a API desta distribuição, não necessariamente a versão mais recente do 
 Não copie este guia para criar uma política concorrente: no aplicativo, aponte
 seu `AGENTS.md` para `node_modules/fokus-styles/USAGE.md` e preserve sua governança.
 
+## Maturidade: núcleo recomendado e recursos sob observação
+
+<!-- maturity-summary:start -->
+| Faixa | Recursos | Contrato de adoção |
+| --- | --- | --- |
+| Núcleo essencial | Tokens, temas, grid, utilitários básicos, tipografia; botões, cards, alertas, badges, tabelas; campos nativos; navbar, dropdown, tabs, accordion, modal, toast, paginação e breadcrumbs | Caminho recomendado e prioridade de manutenção; mudanças exigem revisão de compatibilidade e testes. |
+| Extensões de interface | Layouts Stack/Cluster/Sidebar; Collapse, Offcanvas, Tooltip, Popover, Alert Dialog; Stepper, Input Group, Empty State, Skeleton, Spinner, Progress, Tag, Rating, Segmented Control, Timeline e upload básico | Complementos úteis, opcionais ao núcleo; validar os fluxos usados no aplicativo. |
+| Avançados / experimentais sob observação | Combobox, Datepicker, DataTable, Tree View, Command Palette, Carousel, upload avançado e gráficos | Avaliar em piloto antes de depender deles; não equivalem à maturidade do núcleo. |
+| Ecossistema opcional | Ícones, CLI e wrappers React | Importação/uso opcionais; requisitos próprios, incluindo React para wrappers e Node para CLI. |
+
+“Estável” aqui descreve a prioridade de compatibilidade do núcleo, não uma
+certificação de produção de todos os componentes. “Experimental” indica os
+avançados sob observação, não uma promoção ou reclassificação de sua API.
+Teste os fluxos do seu aplicativo; CI automatizado não substitui validação
+manual de teclado, leitor de tela e dispositivos reais.
+<!-- maturity-summary:end -->
+
+A [política completa](docs/reference/stability.md) acompanha esta distribuição
+npm, com listas e critérios de promoção. Leia a cópia instalada para evitar
+confundir a documentação do site com a versão que seu aplicativo utiliza.
+
+## Dependências: navegador não é instalação npm
+
+O CSS e o JavaScript nativo prontos têm **zero dependências externas no navegador**.
+Isso **não significa instalação npm sem dependências**: `npm install fokus-styles`
+instala `sass`, `postcss`, `cssnano` e `autoprefixer` obrigatoriamente para a CLI,
+mesmo para consumidores que só usam CSS. Não envie essas ferramentas ao navegador.
+`react` é um peer opcional e só é exigido ao usar `fokus-styles/react`.
+Os subpaths de ícones, CLI e React são opcionais para importar/usar, não pacotes
+separados nem uma promessa de instalação seletiva de dependências.
+
 ## Antes de gerar uma tela
 
 1. Verifique como o aplicativo já importa o CSS/JS; não carregue duas versões.
