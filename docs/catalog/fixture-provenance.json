@@ -279,7 +279,7 @@
       },
       {
         "path": "packages/fokus-js/js/dropdown.js",
-        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+        "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
       }
     ]
   },
@@ -1127,7 +1127,7 @@
     "implementation": [
       {
         "path": "packages/fokus-js/js/dropdown.js",
-        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+        "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
       }
     ],
     "sourceCode": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
@@ -1148,7 +1148,7 @@
     "implementation": [
       {
         "path": "packages/fokus-js/js/dropdown.js",
-        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+        "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
       }
     ],
     "sourceCode": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
@@ -2026,11 +2026,11 @@
     "implementation": [
       {
         "path": "docs/components/breadcrumb.md",
-        "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
+        "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
       },
       {
         "path": "packages/fokus-js/js/breadcrumb.js",
-        "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+        "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
       }
     ],
     "sha256": "59422a3ca343108e27bea33a6fcf10214670e70f7d17a32b4caedc196d498353",

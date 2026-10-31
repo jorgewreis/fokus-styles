@@ -1,0 +1,56 @@
+{
+  "baseCommit": "693fda081781f1820705fcd8317a1df283b7315b",
+  "runtimeCommit": "8a0b70138b2023199a8f1dcf17cd4bb2b633772b",
+  "reason": "Authorized disabled activation and owned-resource cleanup fixes; only current references refreshed; original fixture markup and auditRows retained.",
+  "changes": [
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/0",
+      "path": "docs/components/breadcrumb.md",
+      "previousSha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38",
+      "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/1",
+      "path": "packages/fokus-js/js/breadcrumb.js",
+      "previousSha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395",
+      "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/dropdown/implementation/1",
+      "path": "packages/fokus-js/js/dropdown.js",
+      "previousSha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209",
+      "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/dropdown/top-end-disabled/implementation/0",
+      "path": "packages/fokus-js/js/dropdown.js",
+      "previousSha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209",
+      "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/dropdown/options-precedence/implementation/0",
+      "path": "packages/fokus-js/js/dropdown.js",
+      "previousSha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209",
+      "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/breadcrumb/responsive-collapse/implementation/0",
+      "path": "docs/components/breadcrumb.md",
+      "previousSha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38",
+      "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/breadcrumb/responsive-collapse/implementation/1",
+      "path": "packages/fokus-js/js/breadcrumb.js",
+      "previousSha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395",
+      "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
+    }
+  ]
+}

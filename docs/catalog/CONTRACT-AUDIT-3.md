@@ -3,6 +3,11 @@
 Base `2132738`. Catálogo 154/56 preservado; esta rodada não altera exemplos,
 runtime, SCSS, tipos, API, PR ou qualquer operação externa bloqueada.
 
+> Registro histórico da base acima. O lote posterior de runtime corrige a
+> ativação disabled do Dropdown e o descarte de recursos próprios do Breadcrumb.
+> Consulte as páginas atuais dos componentes e `RUNTIME-HARDENING.md`; as
+> demais observações abaixo continuam delimitadas pela auditoria original.
+
 ## Contratos documentais corrigidos
 
 - Tabs: orientação vertical; Enter/Espaço depende da ativação nativa do elemento;

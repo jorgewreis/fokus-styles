@@ -29,7 +29,7 @@ const targets = [
 // tokens). `forms`/`helpers`/`fonts` não têm teto próprio; ficam de fora do
 // gate (só informativos abaixo).
 //
-// `js/fokus.min.js`: 25,875 KiB — cobre o bundle JS completo (Combobox,
+// `js/fokus.min.js`: 25,9375 KiB — cobre o bundle JS completo (Combobox,
 // Datepicker, DataTable, Command Palette, Tree View e o restante dos
 // componentes interativos).
 const budgets = {
@@ -45,11 +45,10 @@ const budgets = {
   // os refinamentos de navegação; o limite continua sendo um gate, não um
   // baseline aberto.
   "css/fokus.min.css": 43 * 1024,
-  // Lifecycle/state/portal corrections measure 26,330 bytes gzip:
-  // +620 (2.41%) vs reviewed integration 25,710; +1,260 vs original 25,070.
-  // Explicit reviewed gate: 25.875 KiB (26,496 bytes), 166 bytes headroom.
-  // CSS budgets unchanged; keep the gate and negative-control verification.
-  "js/fokus.min.js": 25.875 * 1024,
+  // Disabled activation + owned Breadcrumb cleanup: 26,549 gzip bytes (+219).
+  // Reviewed increase from 26,496 to 26,560 (+64); measured overflow was 53.
+  // Keeps all guards and CSS budgets; 11 bytes headroom, negative gate retained.
+  "js/fokus.min.js": 26560,
 };
 
 const check = process.argv.includes("--check");

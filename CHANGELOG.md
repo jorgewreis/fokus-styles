@@ -2,13 +2,16 @@
 
 ## Unreleased
 
-### Breadcrumb: descarte seguro
+### Dropdown e Breadcrumb: ativação e descarte seguros
 
+- Dropdown bloqueia click/auxclick e Enter/Espaço em itens disabled antes dos
+  handlers dos itens; preserva a ordem dos handlers e navegação habilitados.
 - cancela medição RAF pendente e impede que fonts.ready crie recursos após
   dispose; Tooltips próprios são descartados, sem assumir Tooltips de outro dono.
 - descarte idempotente e reinicialização cobertos por testes; API pública mantida.
-- medição isolada: JS gzip 26.616 bytes, acima do teto atual de 26.496; gate
-  de tamanho permanece bloqueado até decisão explícita, sem elevar o limite.
+- medição integrada: JS gzip 26.549 bytes (+219), 53 acima do teto anterior.
+  Revisão explicitamente autorizada para 26.560 bytes (+64), com 11 de margem;
+  mantém salvaguardas, limites CSS e controle negativo de tamanho.
 
 ### Gates e acessibilidade de Icon Link
 

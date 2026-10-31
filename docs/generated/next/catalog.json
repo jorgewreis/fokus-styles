@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "e0d4fbf8e96b07276b7e9250fd74a080c7e6a2ec7a2007b98be68d55f9a81443",
+    "digest": "c11d03d6855de5286c49506c296c5e8924367126d798177bf23efb4cd8516362",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "a7717557f8ff99def6b73a3709c787dcbd62fa459eb9f0519a0cea536712ec5f"
+        "sha256": "cae92ab3d0b139466c6ad7600b3d1b05d4e1babac7175265af99cb1a45259dc1"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -1045,7 +1045,11 @@
       },
       {
         "path": "docs/catalog/navigation-provenance.json",
-        "sha256": "27577cd03ba73eb7a46159b8b787e37e3ef1772223a76c4b4dd16d5d01df57b3"
+        "sha256": "924dfb2ff4fbd5ddb377e5d2889ca8824ad7a7e11705d95df333a3006692dfe3"
+      },
+      {
+        "path": "docs/catalog/runtime-revalidation.json",
+        "sha256": "09d6733cd33278ed67bf0eb76c936b2f359a205d2c32a1db62b7a903d40fce94"
       },
       {
         "path": "docs/components/accordion.md",
@@ -1069,7 +1073,7 @@
       },
       {
         "path": "docs/components/breadcrumb.md",
-        "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
+        "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
       },
       {
         "path": "docs/components/button-group.md",
@@ -1125,7 +1129,7 @@
       },
       {
         "path": "docs/components/dropdown.md",
-        "sha256": "236f791bafc9da398868692304e5b30e47ec311ae4924353438e8922165bdd54"
+        "sha256": "bd1103aaf00b86501a86177f1cd5e992150d8ff9a89c4106bfc5ba8947e35df9"
       },
       {
         "path": "docs/components/empty-state.md",
@@ -1633,7 +1637,7 @@
       },
       {
         "path": "packages/fokus-js/js/breadcrumb.js",
-        "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+        "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
       },
       {
         "path": "packages/fokus-js/js/carousel.d.ts",
@@ -1761,7 +1765,7 @@
       },
       {
         "path": "packages/fokus-js/js/dropdown.js",
-        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+        "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
       },
       {
         "path": "packages/fokus-js/js/file-drop.d.ts",
@@ -7195,7 +7199,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/breadcrumb.md",
-        "markdown": "# Breadcrumb\n\nTrilha de navegação hierárquica (\"você está aqui\"). O uso básico é 100%\nCSS; auto-init opcional (`data-fs=\"breadcrumb\"`) adiciona truncamento com\ntooltip e colapso em telas pequenas.\n\n## Visão geral\n\n```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Página atual</li>\n  </ol>\n</nav>\n```\n\n## Anatomia\n\n`<ol class=\"fs-breadcrumb\">` > `<li class=\"fs-breadcrumb-item\">` (com\n`<a>` interno, exceto o último). O separador `/` entre itens é desenhado\nvia `::before` — não insira manualmente.\n\n## Variações\n\nNenhuma variação visual (cor/tamanho); a variação é comportamental (ver\nAvançado abaixo).\n\n## Estados\n\n`.fs-breadcrumb-item.is-active` — marca o item atual, sem link, cor de\ntexto normal (os demais usam `--fs-color-muted`).\n\n## Avançado: truncamento + colapso (JS opcional)\n\nCom `data-fs=\"breadcrumb\"`, cada label longo trunca com reticências (CSS)\ne ganha um tooltip com o texto completo **só se realmente transbordar**\n(medido após as fontes carregarem, pra não errar o corte com a métrica do\nfallback). Abaixo de 640px de largura de viewport, os níveis\nintermediários (mantendo sempre o primeiro e o último visíveis) colapsam\nnum único item \"…\" que abre um dropdown com os links ocultos.\n\n```html\n<ol class=\"fs-breadcrumb\" data-fs=\"breadcrumb\" data-max-items=\"3\">\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria de produtos muito específica</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Subcategoria</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Marca</a></li>\n  <li class=\"fs-breadcrumb-item is-active\">Produto atual com nome bem longo</li>\n</ol>\n```\n\n`data-max-items` (padrão `4`) define quantos itens cabem antes do colapso\nentrar em ação (só é avaliado abaixo do breakpoint `sm`, 640px).\n\n## A11y\n\n- Envolva a lista num `<nav aria-label=\"breadcrumb\">` (ou \"trilha de\n  navegação\") — não gerado automaticamente.\n- O item \"…\" do colapso tem `aria-label=\"Mostrar níveis ocultos\"` e abre um\n  [Dropdown](dropdown.md) padrão, com toda a navegação por teclado dele.\n\n## API JS\n\nAuto-init via `data-fs=\"breadcrumb\"` (só necessário para truncamento/\ncolapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Remove o listener de media query, restaura os itens colapsados e desregistra a instância. |\n\nSem eventos customizados.\n\n## Tokens\n\n`--fs-color-muted`, `--fs-color-primary` (links), `--fs-color-text`\n(item ativo). O dropdown do colapso usa os tokens de\n[Dropdown](dropdown.md).\n\n## Exemplo\n\n```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Produto atual</li>\n  </ol>\n</nav>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#breadcrumb).\n\n### Limites atuais do truncamento e descarte\n\nA medição de overflow acontece uma vez, após `document.fonts.ready` (ou um\nrequestAnimationFrame). A media query atualiza o colapso, não recalcula todos\nos tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com\n`Number`, sem validação de faixa; forneça um inteiro positivo coerente. Ele é\no limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam\nprimeiro, reticências e último.\n\n**Limitação de lifecycle:** `dispose()` limpa o dropdown de reticências,\no listener da media query e o registro, mas não descarta Tooltips criados\npelo truncamento, nem remove classes/data-title adicionados. Também não cancela\na medição pendente: um Tooltip pode surgir após o descarte. Não suponha cleanup\ncompleto ao montar/desmontar a versão avançada repetidamente. Esse comportamento\nexige correção de runtime em uma alteração separada; não é API recomendada.\n\nA versão básica sem data-fs não inicia essa medição. Na composição avançada,\nplaneje o descarte dos recursos auxiliares da aplicação e valide desmontagem\nassíncrona; remover apenas o HTML não cancela os callbacks internos pendentes.\n",
+        "markdown": "# Breadcrumb\n\nTrilha de navegação hierárquica (\"você está aqui\"). O uso básico é 100%\nCSS; auto-init opcional (`data-fs=\"breadcrumb\"`) adiciona truncamento com\ntooltip e colapso em telas pequenas.\n\n## Visão geral\n\n```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Página atual</li>\n  </ol>\n</nav>\n```\n\n## Anatomia\n\n`<ol class=\"fs-breadcrumb\">` > `<li class=\"fs-breadcrumb-item\">` (com\n`<a>` interno, exceto o último). O separador `/` entre itens é desenhado\nvia `::before` — não insira manualmente.\n\n## Variações\n\nNenhuma variação visual (cor/tamanho); a variação é comportamental (ver\nAvançado abaixo).\n\n## Estados\n\n`.fs-breadcrumb-item.is-active` — marca o item atual, sem link, cor de\ntexto normal (os demais usam `--fs-color-muted`).\n\n## Avançado: truncamento + colapso (JS opcional)\n\nCom `data-fs=\"breadcrumb\"`, cada label longo trunca com reticências (CSS)\ne ganha um tooltip com o texto completo **só se realmente transbordar**\n(medido após as fontes carregarem, pra não errar o corte com a métrica do\nfallback). Abaixo de 640px de largura de viewport, os níveis\nintermediários (mantendo sempre o primeiro e o último visíveis) colapsam\nnum único item \"…\" que abre um dropdown com os links ocultos.\n\n```html\n<ol class=\"fs-breadcrumb\" data-fs=\"breadcrumb\" data-max-items=\"3\">\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria de produtos muito específica</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Subcategoria</a></li>\n  <li class=\"fs-breadcrumb-item\"><a href=\"#\">Marca</a></li>\n  <li class=\"fs-breadcrumb-item is-active\">Produto atual com nome bem longo</li>\n</ol>\n```\n\n`data-max-items` (padrão `4`) define quantos itens cabem antes do colapso\nentrar em ação (só é avaliado abaixo do breakpoint `sm`, 640px).\n\n## A11y\n\n- Envolva a lista num `<nav aria-label=\"breadcrumb\">` (ou \"trilha de\n  navegação\") — não gerado automaticamente.\n- O item \"…\" do colapso tem `aria-label=\"Mostrar níveis ocultos\"` e abre um\n  [Dropdown](dropdown.md) padrão, com toda a navegação por teclado dele.\n\n## API JS\n\nAuto-init via `data-fs=\"breadcrumb\"` (só necessário para truncamento/\ncolapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Cancela medição pendente, descarta Tooltips próprios e dropdown, remove listener, restaura itens colapsados e desregistra a instância; é idempotente. |\n\nSem eventos customizados.\n\n## Tokens\n\n`--fs-color-muted`, `--fs-color-primary` (links), `--fs-color-text`\n(item ativo). O dropdown do colapso usa os tokens de\n[Dropdown](dropdown.md).\n\n## Exemplo\n\n```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Produto atual</li>\n  </ol>\n</nav>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#breadcrumb).\n\n### Limites atuais do truncamento e descarte\n\nA medição de overflow acontece uma vez, após `document.fonts.ready` (ou um\nrequestAnimationFrame). A media query atualiza o colapso, não recalcula todos\nos tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com\n`Number`, sem validação de faixa; forneça um inteiro positivo coerente. Ele é\no limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam\nprimeiro, reticências e último.\n\n**Descarte:** `dispose()` cancela o requestAnimationFrame pendente e torna\ninofensivo o callback de `document.fonts.ready`, que não pode ser cancelado.\nRemove os Tooltips criados pela própria instância, o dropdown de reticências,\no listener da media query e o registro. Tooltips que já existiam nos alvos\nsão reutilizados sem mudança de dono e não são descartados pelo Breadcrumb.\nChamadas repetidas de dispose não afetam uma nova instância no mesmo elemento.\n\nAs classes de truncamento e o `data-title` adicionados permanecem no DOM;\no descarte não restaura todo o HTML original. Recriar a instância mede o texto\nnovamente e cria no máximo um Tooltip por alvo sem instância existente.\nA versão básica sem data-fs não inicia medição; ao desmontar a versão avançada,\nchame dispose antes de remover o HTML e descarte recursos próprios da aplicação.\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -7223,7 +7227,7 @@
           },
           {
             "title": "API JS",
-            "markdown": "Auto-init via `data-fs=\"breadcrumb\"` (só necessário para truncamento/\ncolapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Remove o listener de media query, restaura os itens colapsados e desregistra a instância. |\n\nSem eventos customizados."
+            "markdown": "Auto-init via `data-fs=\"breadcrumb\"` (só necessário para truncamento/\ncolapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Cancela medição pendente, descarta Tooltips próprios e dropdown, remove listener, restaura itens colapsados e desregistra a instância; é idempotente. |\n\nSem eventos customizados."
           },
           {
             "title": "Tokens",
@@ -7231,14 +7235,14 @@
           },
           {
             "title": "Exemplo",
-            "markdown": "```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Produto atual</li>\n  </ol>\n</nav>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#breadcrumb).\n\n### Limites atuais do truncamento e descarte\n\nA medição de overflow acontece uma vez, após `document.fonts.ready` (ou um\nrequestAnimationFrame). A media query atualiza o colapso, não recalcula todos\nos tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com\n`Number`, sem validação de faixa; forneça um inteiro positivo coerente. Ele é\no limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam\nprimeiro, reticências e último.\n\n**Limitação de lifecycle:** `dispose()` limpa o dropdown de reticências,\no listener da media query e o registro, mas não descarta Tooltips criados\npelo truncamento, nem remove classes/data-title adicionados. Também não cancela\na medição pendente: um Tooltip pode surgir após o descarte. Não suponha cleanup\ncompleto ao montar/desmontar a versão avançada repetidamente. Esse comportamento\nexige correção de runtime em uma alteração separada; não é API recomendada.\n\nA versão básica sem data-fs não inicia essa medição. Na composição avançada,\nplaneje o descarte dos recursos auxiliares da aplicação e valide desmontagem\nassíncrona; remover apenas o HTML não cancela os callbacks internos pendentes."
+            "markdown": "```html\n<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Produto atual</li>\n  </ol>\n</nav>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#breadcrumb).\n\n### Limites atuais do truncamento e descarte\n\nA medição de overflow acontece uma vez, após `document.fonts.ready` (ou um\nrequestAnimationFrame). A media query atualiza o colapso, não recalcula todos\nos tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com\n`Number`, sem validação de faixa; forneça um inteiro positivo coerente. Ele é\no limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam\nprimeiro, reticências e último.\n\n**Descarte:** `dispose()` cancela o requestAnimationFrame pendente e torna\ninofensivo o callback de `document.fonts.ready`, que não pode ser cancelado.\nRemove os Tooltips criados pela própria instância, o dropdown de reticências,\no listener da media query e o registro. Tooltips que já existiam nos alvos\nsão reutilizados sem mudança de dono e não são descartados pelo Breadcrumb.\nChamadas repetidas de dispose não afetam uma nova instância no mesmo elemento.\n\nAs classes de truncamento e o `data-title` adicionados permanecem no DOM;\no descarte não restaura todo o HTML original. Recriar a instância mede o texto\nnovamente e cria no máximo um Tooltip por alvo sem instância existente.\nA versão básica sem data-fs não inicia medição; ao desmontar a versão avançada,\nchame dispose antes de remover o HTML e descarte recursos próprios da aplicação."
           }
         ]
       },
       "sources": [
         {
           "path": "docs/components/breadcrumb.md",
-          "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
+          "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
         },
         {
           "path": "packages/fokus-components/scss/components/_breadcrumbs.scss",
@@ -7250,7 +7254,7 @@
         },
         {
           "path": "packages/fokus-js/js/breadcrumb.js",
-          "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+          "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
         }
       ],
       "imports": [
@@ -7271,17 +7275,17 @@
             },
             {
               "name": "data-title",
-              "line": 47,
+              "line": 50,
               "code": "target.setAttribute(\"data-title\", target.textContent.trim());"
             },
             {
               "name": "aria-label",
-              "line": 88,
+              "line": 92,
               "code": "toggle.setAttribute(\"aria-label\", \"Mostrar níveis ocultos\");"
             },
             {
               "name": "href",
-              "line": 100,
+              "line": 104,
               "code": "if (isLink) link.href = source.getAttribute(\"href\");"
             }
           ],
@@ -19629,7 +19633,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/dropdown.md",
-        "markdown": "# Dropdown\n\nMenu suspenso posicionado relativo a um gatilho — reposicionamento\nautomático (flip perto das bordas), navegação por teclado, fecha ao\nclicar fora ou `Escape`.\n\n## Visão geral\n\n```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n```\n\nSem `data-fs-target`, o menu é o próximo irmão do gatilho no HTML — usar\n`data-fs-target` é mais explícito e não exige ordem específica no DOM (o\nJS move o menu para o diálogo proprietário, quando houver, ou `<body>`;\nao descartar a instância, restaura seu pai e posição originais).\n\n## Anatomia\n\n`.fs-dropdown` (posicionamento relativo, opcional — só necessário se você\nnão usa `data-fs-target`) > gatilho (`.fs-dropdown-toggle`, qualquer\nelemento clicável) + `.fs-dropdown-menu` > `.fs-dropdown-item` (link ou\nbotão), `.fs-dropdown-divider` (separador), `.fs-dropdown-header` (rótulo\nde grupo, sem interação).\n\n## Variações\n\n- **Posicionamento**: `data-placement` (`top`/`bottom`/`left`/`right`,\n  padrão `bottom`) e `data-align` (`start`/`end`, padrão `start`) no\n  gatilho — reposiciona automaticamente (flip) se não couber na direção\n  pedida.\n\n```html\n<button class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#menu2\" data-placement=\"top\" data-align=\"end\">\n  Opções\n</button>\n```\n\n## Estados\n\n`.fs-dropdown-item.is-active` (fundo primário), `.fs-dropdown-item.is-disabled`\n(opacidade reduzida, ponteiro bloqueado e fora da navegação por seta).\n\n## A11y\n\nO JS aplica automaticamente: `aria-haspopup=\"menu\"` + `aria-expanded` no\ngatilho, `role=\"menu\"` no menu. Dentro do menu aberto: `ArrowDown`/\n`ArrowUp` navegam entre itens (pulando desabilitados); o primeiro item\nrecebe foco ao abrir. `Escape` fecha e devolve o foco ao gatilho; clicar\nnum item fecha e devolve o foco ao gatilho também.\n\n## API JS\n\nAuto-init via `data-fs=\"dropdown\"`. `Dropdown.getInstance(el)` (`el` é o\n**gatilho**, não o menu).\n\n| Método | Descrição |\n|---|---|\n| `show()` | Abre o menu, posiciona, foca o primeiro item, ativa fechamento por clique fora. |\n| `hide()` | Fecha o menu. |\n| `toggle()` | Alterna entre `show()`/`hide()`. |\n| `dispose()` | Fecha se aberto, remove todos os listeners e desregistra a instância. |\n\n| Evento (no gatilho) | Cancelável | Quando |\n|---|---|---|\n| `fs:dropdown:shown` | Não | Depois de abrir. |\n| `fs:dropdown:hidden` | Não | Depois de fechar. |\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-surface`, `--fs-color-text`,\n`--fs-color-subtle` (hover), `--fs-color-primary` (item ativo),\n`--fs-color-muted` (header/desabilitado), `--fs-radius-md`,\n`--fs-shadow-md`.\n\n## Exemplo\n\n```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-secondary fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#acoes\">\n    Ações\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"acoes\">\n    <div class=\"fs-dropdown-header\">Conta</div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Perfil</a>\n    <a href=\"#\" class=\"fs-dropdown-item is-disabled\">Configurações (em breve)</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Sair</a>\n  </div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/overlays-commands.html#dropdown).\n\n### Refinamentos visuais\n\nUse `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,\n`.fs-dropdown-content` para conteúdo composto simples, `.fs-dropdown-rich` para\npainéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para\nações destrutivas. O JS publica `data-placement` no menu após o flip automático,\npermitindo ajustes de origem no CSS.\n\n### Limite conhecido: itens indisponíveis\n\nA filtragem de setas reconhece `.is-disabled`, `disabled` nativo e\n`aria-disabled=\"true\"`. Porém o handler de clique não verifica esses estados\nnem cancela a ação padrão do link: `.is-disabled`/ARIA não garantem bloqueio\npor teclado ou clique programático. Não use esse estado visual como controle\nde autorização. Prefira `<button type=\"button\" disabled>` para ações\nindisponíveis; para links, remova o destino ou implemente bloqueio explícito\nna aplicação, além da indicação acessível. É um limite atual, não um contrato\nde interação desejável.\n\nSomente `placement` e `align` são opções lidas. Opções JS precedem os atributos;\no offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de\nitem fazem isso nos respectivos handlers. `dispose()` preserva o painel DOM\nfornecido pela aplicação e o retorna ao pai original.\n",
+        "markdown": "# Dropdown\n\nMenu suspenso posicionado relativo a um gatilho — reposicionamento\nautomático (flip perto das bordas), navegação por teclado, fecha ao\nclicar fora ou `Escape`.\n\n## Visão geral\n\n```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n```\n\nSem `data-fs-target`, o menu é o próximo irmão do gatilho no HTML — usar\n`data-fs-target` é mais explícito e não exige ordem específica no DOM (o\nJS move o menu para o diálogo proprietário, quando houver, ou `<body>`;\nao descartar a instância, restaura seu pai e posição originais).\n\n## Anatomia\n\n`.fs-dropdown` (posicionamento relativo, opcional — só necessário se você\nnão usa `data-fs-target`) > gatilho (`.fs-dropdown-toggle`, qualquer\nelemento clicável) + `.fs-dropdown-menu` > `.fs-dropdown-item` (link ou\nbotão), `.fs-dropdown-divider` (separador), `.fs-dropdown-header` (rótulo\nde grupo, sem interação).\n\n## Variações\n\n- **Posicionamento**: `data-placement` (`top`/`bottom`/`left`/`right`,\n  padrão `bottom`) e `data-align` (`start`/`end`, padrão `start`) no\n  gatilho — reposiciona automaticamente (flip) se não couber na direção\n  pedida.\n\n```html\n<button class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#menu2\" data-placement=\"top\" data-align=\"end\">\n  Opções\n</button>\n```\n\n## Estados\n\n`.fs-dropdown-item.is-active` (fundo primário), `.fs-dropdown-item.is-disabled`\n(opacidade reduzida, ponteiro bloqueado e fora da navegação por seta).\n\n## A11y\n\nO JS aplica automaticamente: `aria-haspopup=\"menu\"` + `aria-expanded` no\ngatilho, `role=\"menu\"` no menu. Dentro do menu aberto: `ArrowDown`/\n`ArrowUp` navegam entre itens (pulando desabilitados); o primeiro item\nrecebe foco ao abrir. `Escape` fecha e devolve o foco ao gatilho; clicar\nnum item fecha e devolve o foco ao gatilho também.\n\n## API JS\n\nAuto-init via `data-fs=\"dropdown\"`. `Dropdown.getInstance(el)` (`el` é o\n**gatilho**, não o menu).\n\n| Método | Descrição |\n|---|---|\n| `show()` | Abre o menu, posiciona, foca o primeiro item, ativa fechamento por clique fora. |\n| `hide()` | Fecha o menu. |\n| `toggle()` | Alterna entre `show()`/`hide()`. |\n| `dispose()` | Fecha se aberto, remove todos os listeners e desregistra a instância. |\n\n| Evento (no gatilho) | Cancelável | Quando |\n|---|---|---|\n| `fs:dropdown:shown` | Não | Depois de abrir. |\n| `fs:dropdown:hidden` | Não | Depois de fechar. |\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-surface`, `--fs-color-text`,\n`--fs-color-subtle` (hover), `--fs-color-primary` (item ativo),\n`--fs-color-muted` (header/desabilitado), `--fs-radius-md`,\n`--fs-shadow-md`.\n\n## Exemplo\n\n```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-secondary fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#acoes\">\n    Ações\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"acoes\">\n    <div class=\"fs-dropdown-header\">Conta</div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Perfil</a>\n    <a href=\"#\" class=\"fs-dropdown-item is-disabled\">Configurações (em breve)</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Sair</a>\n  </div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/overlays-commands.html#dropdown).\n\n### Refinamentos visuais\n\nUse `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,\n`.fs-dropdown-content` para conteúdo composto simples, `.fs-dropdown-rich` para\npainéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para\nações destrutivas. O JS publica `data-placement` no menu após o flip automático,\npermitindo ajustes de origem no CSS.\n\n### Itens indisponíveis\n\n`.is-disabled`, `disabled` nativo e `aria-disabled=\"true\"` excluem o item da\nnavegação por setas e bloqueiam ativação dentro do menu. O componente cancela\nclick/auxclick e Enter/Espaço em fase de captura, antes dos handlers do item:\nnão segue o link, não fecha o menu e não transfere foco ao gatilho. Itens\nhabilitados preservam a ativação nativa e a ordem normal dos seus handlers.\n\nPrefira `<button type=\"button\" disabled>` para ações quando possível. Esses\nestados são controles de interface, não um contrato de autorização de negócio;\nchamadas diretas à lógica da aplicação e listeners de captura externos/anteriores\nnão são interceptados pelo componente. Valide permissões na camada apropriada.\n\nSomente `placement` e `align` são opções lidas. Opções JS precedem os atributos;\no offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de\nitem fazem isso nos respectivos handlers. `dispose()` preserva o painel DOM\nfornecido pela aplicação e o retorna ao pai original.\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -19661,14 +19665,14 @@
           },
           {
             "title": "Exemplo",
-            "markdown": "```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-secondary fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#acoes\">\n    Ações\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"acoes\">\n    <div class=\"fs-dropdown-header\">Conta</div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Perfil</a>\n    <a href=\"#\" class=\"fs-dropdown-item is-disabled\">Configurações (em breve)</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Sair</a>\n  </div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/overlays-commands.html#dropdown).\n\n### Refinamentos visuais\n\nUse `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,\n`.fs-dropdown-content` para conteúdo composto simples, `.fs-dropdown-rich` para\npainéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para\nações destrutivas. O JS publica `data-placement` no menu após o flip automático,\npermitindo ajustes de origem no CSS.\n\n### Limite conhecido: itens indisponíveis\n\nA filtragem de setas reconhece `.is-disabled`, `disabled` nativo e\n`aria-disabled=\"true\"`. Porém o handler de clique não verifica esses estados\nnem cancela a ação padrão do link: `.is-disabled`/ARIA não garantem bloqueio\npor teclado ou clique programático. Não use esse estado visual como controle\nde autorização. Prefira `<button type=\"button\" disabled>` para ações\nindisponíveis; para links, remova o destino ou implemente bloqueio explícito\nna aplicação, além da indicação acessível. É um limite atual, não um contrato\nde interação desejável.\n\nSomente `placement` e `align` são opções lidas. Opções JS precedem os atributos;\no offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de\nitem fazem isso nos respectivos handlers. `dispose()` preserva o painel DOM\nfornecido pela aplicação e o retorna ao pai original."
+            "markdown": "```html\n<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-secondary fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#acoes\">\n    Ações\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"acoes\">\n    <div class=\"fs-dropdown-header\">Conta</div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Perfil</a>\n    <a href=\"#\" class=\"fs-dropdown-item is-disabled\">Configurações (em breve)</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Sair</a>\n  </div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/overlays-commands.html#dropdown).\n\n### Refinamentos visuais\n\nUse `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,\n`.fs-dropdown-content` para conteúdo composto simples, `.fs-dropdown-rich` para\npainéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para\nações destrutivas. O JS publica `data-placement` no menu após o flip automático,\npermitindo ajustes de origem no CSS.\n\n### Itens indisponíveis\n\n`.is-disabled`, `disabled` nativo e `aria-disabled=\"true\"` excluem o item da\nnavegação por setas e bloqueiam ativação dentro do menu. O componente cancela\nclick/auxclick e Enter/Espaço em fase de captura, antes dos handlers do item:\nnão segue o link, não fecha o menu e não transfere foco ao gatilho. Itens\nhabilitados preservam a ativação nativa e a ordem normal dos seus handlers.\n\nPrefira `<button type=\"button\" disabled>` para ações quando possível. Esses\nestados são controles de interface, não um contrato de autorização de negócio;\nchamadas diretas à lógica da aplicação e listeners de captura externos/anteriores\nnão são interceptados pelo componente. Valide permissões na camada apropriada.\n\nSomente `placement` e `align` são opções lidas. Opções JS precedem os atributos;\no offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de\nitem fazem isso nos respectivos handlers. `dispose()` preserva o painel DOM\nfornecido pela aplicação e o retorna ao pai original."
           }
         ]
       },
       "sources": [
         {
           "path": "docs/components/dropdown.md",
-          "sha256": "236f791bafc9da398868692304e5b30e47ec311ae4924353438e8922165bdd54"
+          "sha256": "bd1103aaf00b86501a86177f1cd5e992150d8ff9a89c4106bfc5ba8947e35df9"
         },
         {
           "path": "packages/fokus-components/scss/components/_dropdown.scss",
@@ -19680,7 +19684,7 @@
         },
         {
           "path": "packages/fokus-js/js/dropdown.js",
-          "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+          "sha256": "421e7127954f1d9c2324bfeb325925c9bb9ab30da89de2813c3bc407b2703443"
         }
       ],
       "imports": [
@@ -19781,17 +19785,17 @@
             },
             {
               "name": "aria-expanded",
-              "line": 144,
+              "line": 157,
               "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"true\");"
             },
             {
               "name": "aria-expanded",
-              "line": 169,
+              "line": 182,
               "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-disabled",
-              "line": 189,
+              "line": 202,
               "code": "return item.classList.contains(\"is-disabled\") || item.disabled || item.getAttribute(\"aria-disabled\") === \"true\";"
             }
           ],

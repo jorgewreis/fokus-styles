@@ -1435,11 +1435,11 @@
   "sources": [
     {
       "path": "docs/components/breadcrumb.md",
-      "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
+      "sha256": "0bac6cf6dc210b2f8cb49babb469f454e66828add5595e19b6de9f26416a5986"
     },
     {
       "path": "packages/fokus-js/js/breadcrumb.js",
-      "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+      "sha256": "579fadfd50bf15b95cd3b36e6a17dec23503206c51b4151dc7e3be32b8663394"
     },
     {
       "path": "docs/components/command-palette.md",
