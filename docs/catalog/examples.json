@@ -573,6 +573,19 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botões demonstrativos sem comportamento de aplicativo."
       ]
+    },
+    {
+      "id": "vertical-toggles",
+      "title": "Button Group — alternância vertical com estado explícito",
+      "html": "docs/catalog/fixtures/button-group/vertical-toggles.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+      ],
+      "js": "docs/catalog/fixtures/button-group/vertical-toggles.js"
     }
   ],
   "divider": [
@@ -654,6 +667,18 @@
       ],
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "inclusive-sizes",
+      "title": "Segmented Control — filtros inclusivos e tamanhos",
+      "html": "docs/catalog/fixtures/segmented-control/inclusive-sizes.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
       ]
     }
   ],
@@ -843,6 +868,19 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botão apenas estilizado; fechar o aviso exige um handler do aplicativo, não incluído."
       ]
+    },
+    {
+      "id": "restore-focus",
+      "title": "Close Button — fechar e reabrir com retorno de foco",
+      "html": "docs/catalog/fixtures/close-button/restore-focus.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+      ],
+      "js": "docs/catalog/fixtures/close-button/restore-focus.js"
     }
   ],
   "code": [
@@ -1243,6 +1281,18 @@
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Iniciais apenas; não demonstra carregamento, recorte nem fallback automático de imagens."
       ]
+    },
+    {
+      "id": "initials-shapes",
+      "title": "Avatar — iniciais pequenas e grandes, circular e quadrado",
+      "html": "docs/catalog/fixtures/avatar/initials-shapes.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+      ]
     }
   ],
   "icon-link": [
@@ -1257,6 +1307,18 @@
       "limitations": [
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Navegação por âncora local; não representa rota real de aplicativo."
+      ]
+    },
+    {
+      "id": "direction-context",
+      "title": "Icon Link — direção herdada e sobrescrita local",
+      "html": "docs/catalog/fixtures/icon-link/direction-context.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
       ]
     }
   ],
@@ -1402,6 +1464,18 @@
       "limitations": [
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Grupo completo de cinco radios nativos, sem persistência; ordem visual reversa requer validação de teclado real."
+      ]
+    },
+    {
+      "id": "sizes-disabled",
+      "title": "Rating — nota inicial, tamanhos e grupo indisponível",
+      "html": "docs/catalog/fixtures/rating/sizes-disabled.html",
+      "coverage": [
+        "variantes-conferidas-no-scss",
+        "semantica-e-estados-explicitos"
+      ],
+      "limitations": [
+        "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
       ]
     }
   ],

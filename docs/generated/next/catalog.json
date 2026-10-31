@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "97a63e72f6be58d4a39fd241edd02a39cd9b33987e5906d2f15c81d17a6fdc29",
+    "digest": "00ef54d4de5eb4f073054c030a0fc9dcee0889f6f134017004993ffe78d66c63",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "28cbd49b6ad7a6952c52823b0a5701c44bef3a66044576d3e9a6d384ec55e2a8"
+        "sha256": "e51a6dbfac54322500b47548df602529d64c91a6420d8a066ee547ecc7cbfe72"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "10319d56a453232fb5d27b3dbb8f778c12f40cc782e516bed954a07d606fe41c"
+        "sha256": "baa6983135e5dd692cb82fa7ce5578796c7f6353b1c55344e84d88a4aa5a0e5b"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -84,6 +84,10 @@
         "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7"
       },
       {
+        "path": "docs/catalog/fixtures/avatar/initials-shapes.html",
+        "sha256": "2fb59068cac48d6700d129df64d314932793386ac65ada00b0a403cd29d4ac20"
+      },
+      {
         "path": "docs/catalog/fixtures/badge/basic.html",
         "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f"
       },
@@ -126,6 +130,14 @@
       {
         "path": "docs/catalog/fixtures/button-group/basic.html",
         "sha256": "56af881d9a34842277aab0015c8c61174723e9dbb32b2486892add4e366489af"
+      },
+      {
+        "path": "docs/catalog/fixtures/button-group/vertical-toggles.html",
+        "sha256": "c105d1f75cbede9fb1f6e0582079feef5e04153eed24d341fa44b56566a5b60a"
+      },
+      {
+        "path": "docs/catalog/fixtures/button-group/vertical-toggles.js",
+        "sha256": "86a144a6b975d84dbdcaad2886fdf2754257ddf0639d1a3ca430806b5981f4ce"
       },
       {
         "path": "docs/catalog/fixtures/button/basic.html",
@@ -206,6 +218,14 @@
       {
         "path": "docs/catalog/fixtures/close-button/basic.html",
         "sha256": "15861a77f34aa27fb582f8e3ec1df507484ab985d887bda0e0b4a44310489f38"
+      },
+      {
+        "path": "docs/catalog/fixtures/close-button/restore-focus.html",
+        "sha256": "c954646af1f6aab406a17302072ea2552fbc4c1eadac9f9441c15f72bc8e1ae7"
+      },
+      {
+        "path": "docs/catalog/fixtures/close-button/restore-focus.js",
+        "sha256": "41b99bc7750d2b97accee9cefbc43507616bdd89b26f5b4165815141d6013bd1"
       },
       {
         "path": "docs/catalog/fixtures/code/basic.html",
@@ -410,6 +430,10 @@
       {
         "path": "docs/catalog/fixtures/icon-link/basic.html",
         "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284"
+      },
+      {
+        "path": "docs/catalog/fixtures/icon-link/direction-context.html",
+        "sha256": "d555b421ea2a575eda0e60cd2c13a73332921a4e96e7d8d93b6b14a65f05cdb0"
       },
       {
         "path": "docs/catalog/fixtures/input-group/basic.html",
@@ -632,6 +656,10 @@
         "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519"
       },
       {
+        "path": "docs/catalog/fixtures/rating/sizes-disabled.html",
+        "sha256": "d62edaeb58e510efedaddbd386e94a19a4fb9c1466461466ee7c9b484ccd90be"
+      },
+      {
         "path": "docs/catalog/fixtures/ratio/basic.html",
         "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd"
       },
@@ -694,6 +722,10 @@
       {
         "path": "docs/catalog/fixtures/segmented-control/basic.html",
         "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d"
+      },
+      {
+        "path": "docs/catalog/fixtures/segmented-control/inclusive-sizes.html",
+        "sha256": "fb4b363e2ef61cbaf7d77c1ae4360b962c46225d44a921075d5880c684da3b1b"
       },
       {
         "path": "docs/catalog/fixtures/select/basic.html",
@@ -2000,7 +2032,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 137,
+    "examples": 143,
     "complete": false
   },
   "contracts": [
@@ -5918,6 +5950,26 @@
             {
               "path": "docs/catalog/fixtures/avatar/basic.html",
               "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7"
+            }
+          ]
+        },
+        {
+          "id": "initials-shapes",
+          "title": "Avatar — iniciais pequenas e grandes, circular e quadrado",
+          "htmlCode": "<div><span class=\"fs-avatar fs-avatar-sm\" role=\"img\" aria-label=\"Ana Lima\">AL</span><span class=\"fs-avatar fs-avatar-lg\" role=\"img\" aria-label=\"Bruno Reis\">BR</span><span class=\"fs-avatar fs-avatar-square\" role=\"img\" aria-label=\"Equipe de suporte\">ES</span></div><p>Iniciais fornecidas pela aplicação; não há presença, upload ou fallback automático.</p>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/avatar/initials-shapes.html",
+              "sha256": "2fb59068cac48d6700d129df64d314932793386ac65ada00b0a403cd29d4ac20"
             }
           ]
         }
@@ -10247,6 +10299,30 @@
             {
               "path": "docs/catalog/fixtures/button-group/basic.html",
               "sha256": "56af881d9a34842277aab0015c8c61174723e9dbb32b2486892add4e366489af"
+            }
+          ]
+        },
+        {
+          "id": "vertical-toggles",
+          "title": "Button Group — alternância vertical com estado explícito",
+          "htmlCode": "<div class=\"fs-button-group fs-button-group-vertical\" role=\"group\" aria-label=\"Preferências de exibição\" id=\"vertical-toggles\"><button type=\"button\" class=\"fs-btn\" aria-pressed=\"true\">Mostrar concluídas</button><button type=\"button\" class=\"fs-btn\" aria-pressed=\"false\">Mostrar arquivadas</button><button type=\"button\" class=\"fs-btn\" aria-pressed=\"false\" disabled>Opção indisponível</button></div><p>Alternâncias independentes; Tab entre botões, sem navegação customizada por setas.</p>\n",
+          "jsCode": "const controller = new AbortController();\nfor (const button of document.querySelectorAll('#vertical-toggles button')) button.addEventListener('click', () => button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true')), { signal: controller.signal });\nwindow.addEventListener('pagehide', () => controller.abort(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button-group/vertical-toggles.html",
+              "sha256": "c105d1f75cbede9fb1f6e0582079feef5e04153eed24d341fa44b56566a5b60a"
+            },
+            {
+              "path": "docs/catalog/fixtures/button-group/vertical-toggles.js",
+              "sha256": "86a144a6b975d84dbdcaad2886fdf2754257ddf0639d1a3ca430806b5981f4ce"
             }
           ]
         }
@@ -14790,6 +14866,30 @@
             {
               "path": "docs/catalog/fixtures/close-button/basic.html",
               "sha256": "15861a77f34aa27fb582f8e3ec1df507484ab985d887bda0e0b4a44310489f38"
+            }
+          ]
+        },
+        {
+          "id": "restore-focus",
+          "title": "Close Button — fechar e reabrir com retorno de foco",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"open-local-panel\" aria-controls=\"local-panel\" aria-expanded=\"false\">Abrir aviso local</button><section id=\"local-panel\" aria-label=\"Aviso local\" hidden><p>Este painel é controlado pela aplicação, não por uma API de Close Button.</p><button type=\"button\" class=\"fs-close\" id=\"close-local-panel\" aria-label=\"Fechar aviso local\" aria-controls=\"local-panel\"></button></section>\n",
+          "jsCode": "const controller = new AbortController();\nconst open = document.getElementById('open-local-panel'); const close = document.getElementById('close-local-panel'); const panel = document.getElementById('local-panel');\nopen.addEventListener('click', () => { panel.hidden = false; open.setAttribute('aria-expanded', 'true'); close.focus(); }, { signal: controller.signal });\nclose.addEventListener('click', () => { panel.hidden = true; open.setAttribute('aria-expanded', 'false'); open.focus(); }, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => controller.abort(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/close-button/restore-focus.html",
+              "sha256": "c954646af1f6aab406a17302072ea2552fbc4c1eadac9f9441c15f72bc8e1ae7"
+            },
+            {
+              "path": "docs/catalog/fixtures/close-button/restore-focus.js",
+              "sha256": "41b99bc7750d2b97accee9cefbc43507616bdd89b26f5b4165815141d6013bd1"
             }
           ]
         }
@@ -24221,6 +24321,26 @@
             {
               "path": "docs/catalog/fixtures/icon-link/basic.html",
               "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284"
+            }
+          ]
+        },
+        {
+          "id": "direction-context",
+          "title": "Icon Link — direção herdada e sobrescrita local",
+          "htmlCode": "<section dir=\"rtl\" aria-label=\"Contexto RTL\"><a class=\"fs-icon-link\" href=\"#destination-rtl\">Destino em contexto RTL<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M19 12H5m6-6-6 6 6 6\" /></svg></a><div dir=\"ltr\"><a class=\"fs-icon-link\" href=\"#destination-ltr\">Destino LTR local<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14m-6-6 6 6-6 6\" /></svg></a></div></section><section id=\"destination-rtl\" tabindex=\"-1\"><h2>Destino RTL</h2><p>Ícone escolhido explicitamente; o framework não espelha seu desenho.</p></section><section id=\"destination-ltr\" tabindex=\"-1\"><h2>Destino LTR</h2><p>Direção local preservada.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/icon-link/direction-context.html",
+              "sha256": "d555b421ea2a575eda0e60cd2c13a73332921a4e96e7d8d93b6b14a65f05cdb0"
             }
           ]
         }
@@ -36763,6 +36883,26 @@
               "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519"
             }
           ]
+        },
+        {
+          "id": "sizes-disabled",
+          "title": "Rating — nota inicial, tamanhos e grupo indisponível",
+          "htmlCode": "<fieldset><legend>Avaliação sm editável</legend><div class=\"fs-rating fs-rating-sm\"><input type=\"radio\" name=\"rating-sm\" value=\"5\" class=\"fs-rating-input\" id=\"rating-sm-5\" aria-label=\"5 estrelas\"><label for=\"rating-sm-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-sm\" value=\"4\" class=\"fs-rating-input\" id=\"rating-sm-4\" aria-label=\"4 estrelas\"><label for=\"rating-sm-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-sm\" value=\"3\" class=\"fs-rating-input\" id=\"rating-sm-3\" aria-label=\"3 estrelas\" checked><label for=\"rating-sm-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-sm\" value=\"2\" class=\"fs-rating-input\" id=\"rating-sm-2\" aria-label=\"2 estrelas\"><label for=\"rating-sm-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-sm\" value=\"1\" class=\"fs-rating-input\" id=\"rating-sm-1\" aria-label=\"1 estrelas\"><label for=\"rating-sm-1\" class=\"fs-rating-star\" aria-label=\"1 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label></div></fieldset>\n<fieldset><legend>Avaliação lg indisponível</legend><div class=\"fs-rating fs-rating-lg\"><input type=\"radio\" name=\"rating-lg\" value=\"5\" class=\"fs-rating-input\" id=\"rating-lg-5\" aria-label=\"5 estrelas\" disabled><label for=\"rating-lg-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-lg\" value=\"4\" class=\"fs-rating-input\" id=\"rating-lg-4\" aria-label=\"4 estrelas\" disabled><label for=\"rating-lg-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-lg\" value=\"3\" class=\"fs-rating-input\" id=\"rating-lg-3\" aria-label=\"3 estrelas\" checked disabled><label for=\"rating-lg-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-lg\" value=\"2\" class=\"fs-rating-input\" id=\"rating-lg-2\" aria-label=\"2 estrelas\" disabled><label for=\"rating-lg-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label><input type=\"radio\" name=\"rating-lg\" value=\"1\" class=\"fs-rating-input\" id=\"rating-lg-1\" aria-label=\"1 estrelas\" disabled><label for=\"rating-lg-1\" class=\"fs-rating-star\" aria-label=\"1 estrelas\"><svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg></label></div></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/rating/sizes-disabled.html",
+              "sha256": "d62edaeb58e510efedaddbd386e94a19a4fb9c1466461466ee7c9b484ccd90be"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -41392,6 +41532,26 @@
             {
               "path": "docs/catalog/fixtures/segmented-control/basic.html",
               "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d"
+            }
+          ]
+        },
+        {
+          "id": "inclusive-sizes",
+          "title": "Segmented Control — filtros inclusivos e tamanhos",
+          "htmlCode": "<fieldset><legend>Filtros independentes — sm</legend><div class=\"fs-segmented-control fs-segmented-control-sm\"><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-sm-0\" checked><label for=\"segment-sm-0\" class=\"fs-segmented-label\">Ativos</label></div><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-sm-1\" ><label for=\"segment-sm-1\" class=\"fs-segmented-label\">Arquivados</label></div><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-sm-2\" disabled><label for=\"segment-sm-2\" class=\"fs-segmented-label\">Indisponíveis</label></div></div></fieldset>\n<fieldset><legend>Filtros independentes — lg</legend><div class=\"fs-segmented-control fs-segmented-control-lg\"><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-lg-0\" checked><label for=\"segment-lg-0\" class=\"fs-segmented-label\">Ativos</label></div><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-lg-1\" ><label for=\"segment-lg-1\" class=\"fs-segmented-label\">Arquivados</label></div><div class=\"fs-segmented-item\"><input type=\"checkbox\" class=\"fs-segmented-input\" id=\"segment-lg-2\" disabled><label for=\"segment-lg-2\" class=\"fs-segmented-label\">Indisponíveis</label></div></div></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "variantes-conferidas-no-scss",
+            "semantica-e-estados-explicitos"
+          ],
+          "limitations": [
+            "Composição autoral; não certifica contraste, teclado real ou todos os temas/motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/segmented-control/inclusive-sizes.html",
+              "sha256": "fb4b363e2ef61cbaf7d77c1ae4360b962c46225d44a921075d5880c684da3b1b"
             }
           ]
         }

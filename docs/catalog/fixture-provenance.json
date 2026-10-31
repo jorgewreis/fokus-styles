@@ -2269,5 +2269,79 @@
       }
     ],
     "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "button-group/vertical-toggles": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "c105d1f75cbede9fb1f6e0582079feef5e04153eed24d341fa44b56566a5b60a",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_button-group.scss",
+        "sha256": "5a0301738cca79de57823f0dd73d5faee5c7f012259559393ec9179bae7d5aa4"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework.",
+    "scriptKind": "demo-dom"
+  },
+  "close-button/restore-focus": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "c954646af1f6aab406a17302072ea2552fbc4c1eadac9f9441c15f72bc8e1ae7",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_close-button.scss",
+        "sha256": "5234d336ee83e08d27fa0e60c290665dcebf33695bbeeccbd10f4b7d8e7cb338"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework.",
+    "scriptKind": "demo-dom"
+  },
+  "segmented-control/inclusive-sizes": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "fb4b363e2ef61cbaf7d77c1ae4360b962c46225d44a921075d5880c684da3b1b",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_segmented-control.scss",
+        "sha256": "7eebc17f837eb8eb227f160a10bc0ac7d5229ada01e905dd7b29efcff8703084"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework."
+  },
+  "avatar/initials-shapes": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "2fb59068cac48d6700d129df64d314932793386ac65ada00b0a403cd29d4ac20",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_avatar.scss",
+        "sha256": "2544664701872d7e8eb5d2feea930d732609f1af21ad7aed2fb96c1bc78b2595"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework."
+  },
+  "icon-link/direction-context": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "d555b421ea2a575eda0e60cd2c13a73332921a4e96e7d8d93b6b14a65f05cdb0",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_icon-link.scss",
+        "sha256": "81b2b2b095461a7ce58349bf7674ff602adb409875cba6d2e8c10556007f5fc8"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework."
+  },
+  "rating/sizes-disabled": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "d62edaeb58e510efedaddbd386e94a19a4fb9c1466461466ee7c9b484ccd90be",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_rating.scss",
+        "sha256": "0dad6ed44db5903d5587e6ee3e6a68f9961e2fe928a831374607854d3739fd9b"
+      }
+    ],
+    "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework."
   }
 }
