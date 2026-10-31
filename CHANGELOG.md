@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Carousel: índices inválidos sem corromper o slide ativo
+
+- `goTo(index)` ignora valores que não são números inteiros finitos, sem
+  coerção, eventos ou alteração de estado; mantém o wrap circular dos inteiros.
+- 43 testes focais passam, incluindo preservação de ARIA, inert, indicadores
+  e contador. Build, tipos, docs e size:check passam nesta alteração isolada.
+- JS gzip 26.560 bytes (+11 sobre a base), dentro do teto existente de 26.560;
+  nenhum orçamento alterado. A integração com outras correções requer nova medição.
+- cenário browser/axe adicionado; execução Chromium bloqueada antes do teste
+  pela ausência do executável Playwright neste ambiente.
+
 ### Dropdown e Breadcrumb: ativação e descarte seguros
 
 - Dropdown bloqueia click/auxclick e Enter/Espaço em itens disabled antes dos

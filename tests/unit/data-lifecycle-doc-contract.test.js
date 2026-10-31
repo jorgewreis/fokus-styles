@@ -30,8 +30,8 @@ it('Toast fallback and visibility use isOpen, and mouseleave preserves pause dur
 it('Tag loading synchronization resets disabled, protected styling does not veto API dismissal',()=>{
  document.body.innerHTML='<span class="fs-tag fs-tag-protected"><button data-fs-dismiss="tag" disabled>Remove</button></span>';const t=new Tag(document.querySelector('span'));instances.push(t);expect(t.tagEl.querySelector('button').disabled).toBe(false);expect(t.dismiss()).toBe(true);expect(doc('tag')).toContain('não uma trava na API');
 });
-it('Carousel modulo wraps negative index but does not validate NaN',()=>{
- document.body.innerHTML='<div><div class="fs-carousel-inner"><div class="fs-carousel-item is-active">A</div><div class="fs-carousel-item">B</div></div></div>';const c=new Carousel(document.querySelector('div'));instances.push(c);c.goTo(-1);expect(document.querySelector('.is-active').textContent).toBe('B');c.goTo(NaN);expect(document.querySelectorAll('.is-active')).toHaveLength(0);expect(doc('carousel')).toContain('inteiro finito');
+it('Carousel modulo wraps negative index and ignores NaN',()=>{
+ document.body.innerHTML='<div><div class="fs-carousel-inner"><div class="fs-carousel-item is-active">A</div><div class="fs-carousel-item">B</div></div></div>';const c=new Carousel(document.querySelector('div'));instances.push(c);c.goTo(-1);expect(document.querySelector('.is-active').textContent).toBe('B');c.goTo(NaN);expect(document.querySelectorAll('.is-active')).toHaveLength(1);expect(document.querySelector('.is-active').textContent).toBe('B');expect(doc('carousel')).toContain('inteiro finito');
 });
 it('NestedMenu disabled contract uses class, not aria-disabled alone',()=>{
  document.body.innerHTML='<button id="toggle" data-fs-target="#menu">Menu</button><div id="menu" class="fs-dropdown-menu"><button class="fs-dropdown-item" aria-disabled="true">First</button><button class="fs-dropdown-item is-disabled">Second</button></div>';

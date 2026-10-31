@@ -129,8 +129,10 @@ instância criada.
 Não há objeto de opções JS: autoplay, interval e drag são lidos dos atributos na
 construção. `goTo(index)` espera um inteiro finito e normaliza índices por módulo
 circular: -1 vai ao último, e um índice igual à quantidade retorna ao primeiro.
-Valores fracionários ou NaN não são validados e podem deixar nenhum slide ativo;
-valide o índice antes de chamar. O componente não sanitiza o markup dos slides.
+Valores fracionários, NaN e infinitos são ignorados, sem mudar o estado ou emitir
+eventos. Não há coerção: strings (inclusive vazias), null e argumentos omitidos
+também são ignorados; converta e valide entradas de formulário na aplicação.
+Com zero ou um slide, a navegação permanece sem efeito. O componente não sanitiza o markup dos slides.
 
 ## Tokens
 

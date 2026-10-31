@@ -162,7 +162,7 @@ export class Carousel {
 
   _goToIndex(nextIndex) {
     const count = this.items.length;
-    if (count < 2) return;
+    if (count < 2 || !Number.isInteger(nextIndex)) return;
 
     const from = this.index;
     const to = ((nextIndex % count) + count) % count;
