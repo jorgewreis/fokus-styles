@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "efff43cf11f7304ef80c6efea1d30adb0225fcdf675db3326f86d018e7b3269e",
+    "digest": "db348b96c3f6ab3185fb9fb858053169d9c45d63649a7a493a3e16c92a375e3b",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "d17c8b7e6fdbc5e23e52ab16efe4afa443891d420d8ce40a367e1a10006d7931"
+        "sha256": "be2cfcd9dfe61aa39f24a97e9341150c88cdc3a26f15034231daddf9a17b191f"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "5cd61e5872c2c64fcfe87db00eb4cfd728682c77c549f31527b91c74b20de9b0"
+        "sha256": "5ee8cd0f71313f846901eaec31d7d46f423d309f346d263ef684510ae83279dd"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -208,6 +208,22 @@
         "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
       },
       {
+        "path": "docs/catalog/fixtures/carousel/manual-fade.html",
+        "sha256": "f9461f2571692788ed5adf55e62166d18fa075aa1b7ad127bc2a93a14fda2262"
+      },
+      {
+        "path": "docs/catalog/fixtures/carousel/manual-fade.js",
+        "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+      },
+      {
+        "path": "docs/catalog/fixtures/carousel/single-static.html",
+        "sha256": "7314f6ae35ac482433c867227bfd35ff63f2ba000ea488ad928ede3149d2b8b3"
+      },
+      {
+        "path": "docs/catalog/fixtures/carousel/single-static.js",
+        "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+      },
+      {
         "path": "docs/catalog/fixtures/checkbox/basic.html",
         "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
       },
@@ -261,6 +277,14 @@
       },
       {
         "path": "docs/catalog/fixtures/collapse/basic.js",
+        "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
+      },
+      {
+        "path": "docs/catalog/fixtures/collapse/initial-open.html",
+        "sha256": "eeb07732210b0e2d198a1b189bbe01d9c93edc9e148f2a08423fefdc34fe2aca"
+      },
+      {
+        "path": "docs/catalog/fixtures/collapse/initial-open.js",
         "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
       },
       {
@@ -885,6 +909,26 @@
       },
       {
         "path": "docs/catalog/fixtures/tag/basic.js",
+        "sha256": "67a33df91cecac291e9862d62b657ede3a950a2c36a3cdc9f4ec76ddb3deac08"
+      },
+      {
+        "path": "docs/catalog/fixtures/tag/loading-recovery.html",
+        "sha256": "c25a1a214128b512c854283ed829cf8d4f8db9b5ba3a4e26407e6a68721bc81c"
+      },
+      {
+        "path": "docs/catalog/fixtures/tag/loading-recovery.js",
+        "sha256": "9409368f23f9601406c8625a2cda07a9eb5f084b012e2d70051723096b6bbbc2"
+      },
+      {
+        "path": "docs/catalog/fixtures/tag/truncated-group.css",
+        "sha256": "1e372d1f27d4c2c3bd1e4dba3a669285efe02ddf969118390394164a25770f19"
+      },
+      {
+        "path": "docs/catalog/fixtures/tag/truncated-group.html",
+        "sha256": "47324bf44a09211394e18bc65c46b56c7c706121b13a94800aacb2bf9dc731df"
+      },
+      {
+        "path": "docs/catalog/fixtures/tag/truncated-group.js",
         "sha256": "67a33df91cecac291e9862d62b657ede3a950a2c36a3cdc9f4ec76ddb3deac08"
       },
       {
@@ -2064,7 +2108,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 147,
+    "examples": 152,
     "complete": false
   },
   "contracts": [
@@ -13813,6 +13857,56 @@
               "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
             }
           ]
+        },
+        {
+          "id": "manual-fade",
+          "title": "Carousel — fade manual, contador e arraste desligado",
+          "htmlCode": "<div class=\"fs-carousel fs-carousel-fade fs-carousel-no-media\" data-fs=\"carousel\" data-drag=\"false\" aria-label=\"Etapas de revisão\"><div class=\"fs-carousel-inner\"><div class=\"fs-carousel-item is-active\"><h2>Preparar</h2><p>Revise o conteúdo antes de seguir.</p></div><div class=\"fs-carousel-item\"><h2>Conferir</h2><p>Confira os rótulos e o teclado.</p></div><div class=\"fs-carousel-item\"><h2>Concluir</h2><p>Esta demonstração não publica alterações.</p></div></div><button type=\"button\" class=\"fs-carousel-control-prev\" aria-label=\"Etapa anterior\"></button><button type=\"button\" class=\"fs-carousel-control-next\" aria-label=\"Próxima etapa\"></button><p data-fs-carousel-counter aria-label=\"Etapa atual\"></p><ul class=\"fs-carousel-indicators\"><li><button type=\"button\" aria-label=\"Ir para Preparar\"></button></li><li><button type=\"button\" aria-label=\"Ir para Conferir\"></button></li><li><button type=\"button\" aria-label=\"Ir para Concluir\"></button></li></ul></div>\n",
+          "jsCode": "import { Carousel } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"carousel\"]')]\n  .map(element => Carousel.getInstance(element) ?? new Carousel(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "api-publica",
+            "estado-e-teardown"
+          ],
+          "limitations": [
+            "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/carousel/manual-fade.html",
+              "sha256": "f9461f2571692788ed5adf55e62166d18fa075aa1b7ad127bc2a93a14fda2262"
+            },
+            {
+              "path": "docs/catalog/fixtures/carousel/manual-fade.js",
+              "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+            }
+          ]
+        },
+        {
+          "id": "single-static",
+          "title": "Carousel — um único painel sem rotação",
+          "htmlCode": "<div class=\"fs-carousel fs-carousel-no-media\" data-fs=\"carousel\" aria-label=\"Aviso único\"><div class=\"fs-carousel-inner\"><div class=\"fs-carousel-item is-active\"><h2>Informação disponível</h2><p>Com um único item não há navegação ou autoplay.</p></div></div><button type=\"button\" class=\"fs-carousel-control-prev\" aria-label=\"Aviso anterior\"></button><button type=\"button\" class=\"fs-carousel-control-next\" aria-label=\"Próximo aviso\"></button></div>\n",
+          "jsCode": "import { Carousel } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"carousel\"]')]\n  .map(element => Carousel.getInstance(element) ?? new Carousel(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "api-publica",
+            "estado-e-teardown"
+          ],
+          "limitations": [
+            "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/carousel/single-static.html",
+              "sha256": "7314f6ae35ac482433c867227bfd35ff63f2ba000ea488ad928ede3149d2b8b3"
+            },
+            {
+              "path": "docs/catalog/fixtures/carousel/single-static.js",
+              "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -15355,6 +15449,31 @@
             },
             {
               "path": "docs/catalog/fixtures/collapse/basic.js",
+              "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
+            }
+          ]
+        },
+        {
+          "id": "initial-open",
+          "title": "Collapse — painel inicialmente aberto",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-outline-secondary\" data-fs=\"collapse\" data-fs-target=\"#open-details\" aria-expanded=\"true\" aria-controls=\"open-details\">Alternar detalhes de entrega</button><div id=\"open-details\" class=\"fs-collapse\"><p>Este painel começa aberto pelo atributo aria-expanded no gatilho.</p><a href=\"#delivery-note\">Consultar nota de entrega</a></div><p id=\"delivery-note\">Entrega demonstrativa, sem operação externa.</p>\n",
+          "jsCode": "import { Collapse } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"collapse\"]')]\n  .map((element) => Collapse.getInstance(element) ?? new Collapse(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "api-publica",
+            "estado-e-teardown"
+          ],
+          "limitations": [
+            "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/collapse/initial-open.html",
+              "sha256": "eeb07732210b0e2d198a1b189bbe01d9c93edc9e148f2a08423fefdc34fe2aca"
+            },
+            {
+              "path": "docs/catalog/fixtures/collapse/initial-open.js",
               "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
             }
           ]
@@ -50008,6 +50127,60 @@
             {
               "path": "docs/catalog/fixtures/tag/basic.js",
               "sha256": "67a33df91cecac291e9862d62b657ede3a950a2c36a3cdc9f4ec76ddb3deac08"
+            }
+          ]
+        },
+        {
+          "id": "loading-recovery",
+          "title": "Tag — bloqueio durante operação local e recuperação",
+          "htmlCode": "<div class=\"fs-tag-group\"><span id=\"pending-tag\" class=\"fs-badge fs-tag is-loading\" data-fs=\"tag\" aria-busy=\"true\"><span class=\"fs-tag-label\">Revisão pendente</span><span class=\"fs-spinner\" aria-hidden=\"true\"></span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"tag\" aria-label=\"Remover tag Revisão pendente\" disabled></button></span></div><button type=\"button\" class=\"fs-btn\" id=\"complete-tag\">Concluir simulação</button><p>Simulação local; não envia dados. Concluir libera o botão de remoção.</p>\n",
+          "jsCode": "import { Tag } from \"fokus-styles/js\";\nconst element = document.getElementById(\"pending-tag\");\nconst instance = Tag.getInstance(element) ?? new Tag(element);\nconst controller = new AbortController();\ndocument.getElementById(\"complete-tag\").addEventListener(\"click\", () => instance.setLoading(false), { signal: controller.signal });\nwindow.addEventListener(\"pagehide\", () => { controller.abort(); instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "api-publica",
+            "estado-e-teardown"
+          ],
+          "limitations": [
+            "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tag/loading-recovery.html",
+              "sha256": "c25a1a214128b512c854283ed829cf8d4f8db9b5ba3a4e26407e6a68721bc81c"
+            },
+            {
+              "path": "docs/catalog/fixtures/tag/loading-recovery.js",
+              "sha256": "9409368f23f9601406c8625a2cda07a9eb5f084b012e2d70051723096b6bbbc2"
+            }
+          ]
+        },
+        {
+          "id": "truncated-group",
+          "title": "Tag — grupo truncado com texto integral e foco",
+          "htmlCode": "<div class=\"fs-tag-group\"><span class=\"fs-badge fs-badge-primary fs-tag fs-tag-truncate local-long-tag\" data-fs=\"tag\"><span class=\"fs-tag-label\" title=\"Revisão de acessibilidade entre navegadores\">Revisão de acessibilidade entre navegadores</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"tag\" aria-label=\"Remover tag Revisão de acessibilidade entre navegadores\"></button></span><span class=\"fs-badge fs-badge-secondary fs-tag\" data-fs=\"tag\"><span class=\"fs-tag-label\">Documentação</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"tag\" aria-label=\"Remover tag Documentação\"></button></span></div>\n",
+          "jsCode": "import { Tag } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tag\"]')]\n  .map((element) => Tag.getInstance(element) ?? new Tag(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": ".local-long-tag { --fs-tag-max-inline-size: 15rem; }\n",
+          "coverage": [
+            "classes-css-compiladas",
+            "api-publica",
+            "estado-e-teardown"
+          ],
+          "limitations": [
+            "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tag/truncated-group.html",
+              "sha256": "47324bf44a09211394e18bc65c46b56c7c706121b13a94800aacb2bf9dc731df"
+            },
+            {
+              "path": "docs/catalog/fixtures/tag/truncated-group.js",
+              "sha256": "67a33df91cecac291e9862d62b657ede3a950a2c36a3cdc9f4ec76ddb3deac08"
+            },
+            {
+              "path": "docs/catalog/fixtures/tag/truncated-group.css",
+              "sha256": "1e372d1f27d4c2c3bd1e4dba3a669285efe02ddf969118390394164a25770f19"
             }
           ]
         }

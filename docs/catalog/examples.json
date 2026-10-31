@@ -481,6 +481,20 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ],
       "js": "docs/catalog/fixtures/collapse/basic.js"
+    },
+    {
+      "id": "initial-open",
+      "title": "Collapse — painel inicialmente aberto",
+      "html": "docs/catalog/fixtures/collapse/initial-open.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "api-publica",
+        "estado-e-teardown"
+      ],
+      "limitations": [
+        "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+      ],
+      "js": "docs/catalog/fixtures/collapse/initial-open.js"
     }
   ],
   "modal": [
@@ -1217,6 +1231,35 @@
         "Remove somente o elemento local; não persiste dados nem demonstra retorno de foco em grupo."
       ],
       "js": "docs/catalog/fixtures/tag/basic.js"
+    },
+    {
+      "id": "loading-recovery",
+      "title": "Tag — bloqueio durante operação local e recuperação",
+      "html": "docs/catalog/fixtures/tag/loading-recovery.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "api-publica",
+        "estado-e-teardown"
+      ],
+      "limitations": [
+        "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+      ],
+      "js": "docs/catalog/fixtures/tag/loading-recovery.js"
+    },
+    {
+      "id": "truncated-group",
+      "title": "Tag — grupo truncado com texto integral e foco",
+      "html": "docs/catalog/fixtures/tag/truncated-group.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "api-publica",
+        "estado-e-teardown"
+      ],
+      "limitations": [
+        "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+      ],
+      "js": "docs/catalog/fixtures/tag/truncated-group.js",
+      "css": "docs/catalog/fixtures/tag/truncated-group.css"
     }
   ],
   "stepper": [
@@ -2082,6 +2125,34 @@
         "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
         "Ilustrações geométricas de demonstração, sem fotografia; autoplay, swipe e variantes não são demonstrados."
       ]
+    },
+    {
+      "id": "manual-fade",
+      "title": "Carousel — fade manual, contador e arraste desligado",
+      "html": "docs/catalog/fixtures/carousel/manual-fade.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "api-publica",
+        "estado-e-teardown"
+      ],
+      "limitations": [
+        "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+      ],
+      "js": "docs/catalog/fixtures/carousel/manual-fade.js"
+    },
+    {
+      "id": "single-static",
+      "title": "Carousel — um único painel sem rotação",
+      "html": "docs/catalog/fixtures/carousel/single-static.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "api-publica",
+        "estado-e-teardown"
+      ],
+      "limitations": [
+        "Exemplo autoral local; não certifica comportamento visual, movimento ou acessibilidade manual entre motores."
+      ],
+      "js": "docs/catalog/fixtures/carousel/single-static.js"
     }
   ],
   "file-upload-advanced": [

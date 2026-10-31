@@ -2407,5 +2407,105 @@
       }
     ],
     "extraction": "Composição autoral baseada no runtime e tipos públicos; não é extração literal histórica."
+  },
+  "collapse/initial-open": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "eeb07732210b0e2d198a1b189bbe01d9c93edc9e148f2a08423fefdc34fe2aca",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/collapse.js",
+        "sha256": "695e4de074854dc0ae40910dcb356628c4dc23361f228dd642d9b3ff48d8bf13"
+      },
+      {
+        "path": "packages/fokus-js/js/collapse.d.ts",
+        "sha256": "fef4e9ad1103917125b7c39d2fb9718ba44dba6f7c423c467875c42f024e2021"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_collapse.scss",
+        "sha256": "c468dbdfcbdf3f1564b304725ebb813960d5291dcb4e112f011882d8043b3e1b"
+      }
+    ],
+    "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
+  },
+  "tag/loading-recovery": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "c25a1a214128b512c854283ed829cf8d4f8db9b5ba3a4e26407e6a68721bc81c",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tag.js",
+        "sha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22"
+      },
+      {
+        "path": "packages/fokus-js/js/tag.d.ts",
+        "sha256": "44507ca10eb461747514a71b2c38c176c9c553d3fe530bf02f3626ad457d0309"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_tag.scss",
+        "sha256": "a96d0b889b37d05512f25d4d85d948876fa45476987c1cd816c0584f9eaff001"
+      }
+    ],
+    "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
+  },
+  "tag/truncated-group": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "47324bf44a09211394e18bc65c46b56c7c706121b13a94800aacb2bf9dc731df",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tag.js",
+        "sha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22"
+      },
+      {
+        "path": "packages/fokus-js/js/tag.d.ts",
+        "sha256": "44507ca10eb461747514a71b2c38c176c9c553d3fe530bf02f3626ad457d0309"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_tag.scss",
+        "sha256": "a96d0b889b37d05512f25d4d85d948876fa45476987c1cd816c0584f9eaff001"
+      }
+    ],
+    "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
+  },
+  "carousel/manual-fade": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "f9461f2571692788ed5adf55e62166d18fa075aa1b7ad127bc2a93a14fda2262",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/carousel.js",
+        "sha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40"
+      },
+      {
+        "path": "packages/fokus-js/js/carousel.d.ts",
+        "sha256": "30a49eaaec6dbf200a523653b007629d310725b6b3569705e941bf66dcdd8fb3"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_carousel.scss",
+        "sha256": "c510591fff32aa8ef763b54f7321020a91c2e0da72bcbe53edaea30d9426e737"
+      }
+    ],
+    "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
+  },
+  "carousel/single-static": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "7314f6ae35ac482433c867227bfd35ff63f2ba000ea488ad928ede3149d2b8b3",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/carousel.js",
+        "sha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40"
+      },
+      {
+        "path": "packages/fokus-js/js/carousel.d.ts",
+        "sha256": "30a49eaaec6dbf200a523653b007629d310725b6b3569705e941bf66dcdd8fb3"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_carousel.scss",
+        "sha256": "c510591fff32aa8ef763b54f7321020a91c2e0da72bcbe53edaea30d9426e737"
+      }
+    ],
+    "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
   }
 }
