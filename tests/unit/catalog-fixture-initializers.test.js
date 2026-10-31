@@ -24,11 +24,11 @@ for (const [id, entries] of Object.entries(examples)) {
       try {
         for (let iteration = 0; iteration < 2; iteration++) {
           window.eval(js);
-          if (id === "select") {
+          if (id === "select" && entry.id === "basic") {
             const button = window.document.querySelector("button.fs-form-select");
             expect(button.getAttribute("aria-labelledby")).toContain("catalog-country-label");
           }
-          if (id === "datepicker") expect(window.document.querySelector('[role="grid"]').getAttribute("aria-label")).toBe("Data de entrega");
+          if (id === "datepicker" && entry.id === "basic") expect(window.document.querySelector('[role="grid"]').getAttribute("aria-label")).toBe("Data de entrega");
           window.dispatchEvent(new window.Event("pagehide"));
         }
         expect(errors).toEqual([]);

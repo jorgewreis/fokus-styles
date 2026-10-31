@@ -952,5 +952,85 @@
         "sha256": "14f6f8fe57f93cadc527361385fc35806ae2b4d7ed5a9d38df6dd811e899e0c9"
       }
     ]
+  },
+  "combobox/states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "sha256": "8c28d799717607d7607c3ef1055b8393bf1d108b455129ee060af63133e78ec9",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/combobox.js",
+        "sha256": "9cafa6d72f5418fd49569c9698b40258a18c5a333cddf4e0436173e10bfb83f1"
+      },
+      {
+        "path": "packages/fokus-js/js/combobox.d.ts",
+        "sha256": "ac95357976b59a30ec73a915e719c674ed091fcbfd7a74f13d234e54b7d99dc9"
+      }
+    ],
+    "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
+  },
+  "datepicker/states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "sha256": "42c810b5293c15dd202fe56d5224d1362ed2477f94633c18382b0cd5aa4f18d9",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/datepicker.js",
+        "sha256": "59ff44cd601f042e7c262a2fe149eda16ed7667934fd6353329fecd4e616254a"
+      },
+      {
+        "path": "packages/fokus-js/js/datepicker.d.ts",
+        "sha256": "9a8d702e7067308d7689be8877de888a8bd52bdc5de4ba54634a0002920ef4c3"
+      }
+    ],
+    "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
+  },
+  "select/states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "sha256": "55bccb136f4bdf770070ddc863aa269a6ee577f8a14ec5e9e4799fc4f39fde61",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/select.js",
+        "sha256": "ba6a3292be4d44eb361dcf525668f923799a8ee5da73e681f96641feb0530f7e"
+      },
+      {
+        "path": "packages/fokus-js/js/select.d.ts",
+        "sha256": "dd6d838d0808165eaff8f456e6f955ec7a7611291749abfdfe59afdefc121538"
+      }
+    ],
+    "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
+  },
+  "file-upload-advanced/states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "sha256": "32e8b46b486276012d2a8c5274cf0d6fbf31d9ae5f1ff8c541a7431e6e8e76eb",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/file-upload-advanced.js",
+        "sha256": "b47f5de89754252cb41e7e44485a8efcb06fed4d867b565ca292583069c03789"
+      },
+      {
+        "path": "packages/fokus-js/js/file-upload-advanced.d.ts",
+        "sha256": "cffefe2d342e3b32271c50b97b42a36c411e3fa0254831bde517d09889cb145d"
+      }
+    ],
+    "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
+  },
+  "range/states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "sha256": "0b20c4f6082cfd6fdce35acbb585207b24eaed6890778bcb6d0def540ce68f07",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/range.js",
+        "sha256": "bb378199d022e1f816c4192d5c046a47bbd5ced333b76e7c0fd2334db9b4ccf9"
+      },
+      {
+        "path": "packages/fokus-js/js/range.d.ts",
+        "sha256": "f5e9ed3c2074e3f97a4ee70feb2888ead15f471c5747873b330dfafc9f71d3a9"
+      }
+    ],
+    "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
   }
 }

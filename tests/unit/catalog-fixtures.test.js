@@ -10,20 +10,25 @@ describe("curated catalog fixtures", () => {
     for (const entry of entries) {
       it(`${component}/${entry.id} preserves complete documented markup and CSS classes`, () => {
         const html = read(entry.html);
-        const source = provenance[component];
+        const source = provenance[`${component}/${entry.id}`] ?? provenance[component];
         const original = source.sourceCode ?? html;
-        expect(read(source.source)).toContain(original.trimEnd());
-        expect(read(source.source).split("\n").slice(source.startLine - 1).join("\n").startsWith(original)).toBe(true);
-        if (source.sourceCode) {
-          expect(createHash("sha256").update(original).digest("hex")).toBe(source.sourceSha256);
-          if (original !== html) expect(source.transformations.length).toBeGreaterThan(0);
-          if (source.transformations.every(t => typeof t === "object" && "from" in t && "to" in t)) {
-            let transformed = original;
-            for (const transformation of source.transformations) {
-              expect(transformed).toContain(transformation.from);
-              transformed = transformed.replaceAll(transformation.from, transformation.to);
+        if (source.mode === "authored-runtime") {
+          expect(source.implementation.length).toBeGreaterThan(0);
+          expect(source.sourceCommit).toMatch(/^[a-f0-9]{40}$/);
+        } else {
+          expect(read(source.source)).toContain(original.trimEnd());
+          expect(read(source.source).split("\n").slice(source.startLine - 1).join("\n").startsWith(original)).toBe(true);
+          if (source.sourceCode) {
+            expect(createHash("sha256").update(original).digest("hex")).toBe(source.sourceSha256);
+            if (original !== html) expect(source.transformations.length).toBeGreaterThan(0);
+            if (source.transformations.every(t => typeof t === "object" && "from" in t && "to" in t)) {
+              let transformed = original;
+              for (const transformation of source.transformations) {
+                expect(transformed).toContain(transformation.from);
+                transformed = transformed.replaceAll(transformation.from, transformation.to);
+              }
+              expect(transformed).toBe(html);
             }
-            expect(transformed).toBe(html);
           }
         }
         for (const implementation of source.implementation ?? []) {

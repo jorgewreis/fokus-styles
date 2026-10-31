@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "42ec16275c97e937c2363125a1694c8cafb9b247a74d4dd6559e50d78646950f",
+    "digest": "846dc8a55455e704795c8c8bd40d75bf02917f627d93ac6d264bcc53627c8fa8",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,11 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "517e0048eb154be4f2b14e079590ac7b8c6eafbabf31483cd79112bb2a1538ed"
+        "sha256": "068cf6b785d46ede3491a856738b14d8077b03cb9f16ddc028ef0fe7ffc7ae93"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "341bc3f5dfc03a45fe3a22bedbd936777405327080c320442acb7f59f6bd76c7"
+        "sha256": "4a0d2ca71b3ac28e805d4772d1518786b4e123c872c56dd117fed633534e6e31"
       },
       {
         "path": "docs/catalog/fixtures/accordion/basic.html",
@@ -100,6 +100,14 @@
         "sha256": "24b6dd74075de12dbe51a4a1149a6a094749f3dc81f40605ed91b4d31b8ed544"
       },
       {
+        "path": "docs/catalog/fixtures/combobox/states.html",
+        "sha256": "8c28d799717607d7607c3ef1055b8393bf1d108b455129ee060af63133e78ec9"
+      },
+      {
+        "path": "docs/catalog/fixtures/combobox/states.js",
+        "sha256": "d913d5cffbf65074466231a273ccab32bdc92384453682e3ae634ce36c1d877f"
+      },
+      {
         "path": "docs/catalog/fixtures/command-palette/basic.html",
         "sha256": "b703767171b758b1d5c57ff8e09f0e8102266b1a31acc0f9ee13a39950f187ab"
       },
@@ -124,6 +132,14 @@
         "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
       },
       {
+        "path": "docs/catalog/fixtures/datepicker/states.html",
+        "sha256": "42c810b5293c15dd202fe56d5224d1362ed2477f94633c18382b0cd5aa4f18d9"
+      },
+      {
+        "path": "docs/catalog/fixtures/datepicker/states.js",
+        "sha256": "645d501da7f3fec876df200b8369368a64ff10c5faaab73d059047741d89ec38"
+      },
+      {
         "path": "docs/catalog/fixtures/divider/basic.html",
         "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
       },
@@ -146,6 +162,14 @@
       {
         "path": "docs/catalog/fixtures/file-upload-advanced/basic.js",
         "sha256": "fd96d743236b65bdd171e40b7fd4089aedb943416fa9b61c777a7eaa0bc26858"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload-advanced/states.html",
+        "sha256": "32e8b46b486276012d2a8c5274cf0d6fbf31d9ae5f1ff8c541a7431e6e8e76eb"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload-advanced/states.js",
+        "sha256": "44e20b82bce51763f2bca701c9b88e25cc5e3b31c1a58caae76c06c0651b2751"
       },
       {
         "path": "docs/catalog/fixtures/file-upload/basic.html",
@@ -240,6 +264,14 @@
         "sha256": "81062ab98d7b020ff6746d7ec41499497b4593c41803ae9177c824d4026cd6ef"
       },
       {
+        "path": "docs/catalog/fixtures/range/states.html",
+        "sha256": "0b20c4f6082cfd6fdce35acbb585207b24eaed6890778bcb6d0def540ce68f07"
+      },
+      {
+        "path": "docs/catalog/fixtures/range/states.js",
+        "sha256": "4e0eb8200356d961fb402fbb08d6a9a15c3f49766aea279859f7dffe64c82045"
+      },
+      {
         "path": "docs/catalog/fixtures/rating/basic.html",
         "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519"
       },
@@ -270,6 +302,14 @@
       {
         "path": "docs/catalog/fixtures/select/basic.js",
         "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+      },
+      {
+        "path": "docs/catalog/fixtures/select/states.html",
+        "sha256": "55bccb136f4bdf770070ddc863aa269a6ee577f8a14ec5e9e4799fc4f39fde61"
+      },
+      {
+        "path": "docs/catalog/fixtures/select/states.js",
+        "sha256": "103c0a0fc311ced6582395bac1ae631101e8bd020ea3ab89906eb112b6f20122"
       },
       {
         "path": "docs/catalog/fixtures/skeleton/basic.html",
@@ -1412,7 +1452,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 56,
+    "examples": 61,
     "complete": false
   },
   "contracts": [
@@ -14722,6 +14762,35 @@
               "sha256": "24b6dd74075de12dbe51a4a1149a6a094749f3dc81f40605ed91b4d31b8ed544"
             }
           ]
+        },
+        {
+          "id": "states",
+          "title": "Combobox — posição, indisponível e vazio",
+          "htmlCode": "<p>Busque uma cidade; opções indisponíveis não são selecionáveis.</p>\n<label for=\"city\">Cidade</label><div class=\"fs-combobox\"><input id=\"city\" class=\"fs-form-control\" data-fs-target=\"#cities\" data-placement=\"top\" aria-describedby=\"city-help\"></div>\n<p id=\"city-help\">Home/End percorrem resultados; Escape fecha. “zzz” demonstra lista vazia.</p>\n<ul id=\"cities\" class=\"fs-dropdown-menu fs-dropdown-menu-sm fs-combobox-listbox\" aria-label=\"Cidades disponíveis\">\n<li class=\"fs-dropdown-item\" data-value=\"ssa\">Salvador</li><li class=\"fs-dropdown-item is-disabled\" aria-disabled=\"true\" data-value=\"rec\">Recife (indisponível)</li><li class=\"fs-dropdown-item\" data-value=\"sp\">São Paulo</li><li class=\"fs-dropdown-item is-disabled\" aria-disabled=\"true\" data-fs-empty hidden>Nenhuma cidade encontrada</li></ul>\n<p id=\"city-result\" role=\"status\">Nenhuma seleção confirmada.</p>",
+          "jsCode": "import { Combobox } from \"fokus-styles/js\";\nconst input = document.querySelector(\"#city\");\n// Opção explícita tem precedência sobre data-placement.\nconst instance = new Combobox(input, { placement: \"bottom\" });\nconst onChange = (event) => { document.querySelector(\"#city-result\").textContent = `Selecionado: ${event.detail.label} (${event.detail.value})`; };\ninput.addEventListener(\"fs:combobox:changed\", onChange);\nwindow.addEventListener(\"pagehide\", () => { input.removeEventListener(\"fs:combobox:changed\", onChange); instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "placement-tipado",
+            "data-placement",
+            "menu-sm",
+            "opcao-indisponivel",
+            "resultado-vazio",
+            "evento-selecao"
+          ],
+          "limitations": [
+            "Placement pode inverter perto da borda; sem garantia de coordenada fixa.",
+            "Não há API de busca remota ou multisseleção; texto digitado não equivale a seleção confirmada."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/combobox/states.html",
+              "sha256": "8c28d799717607d7607c3ef1055b8393bf1d108b455129ee060af63133e78ec9"
+            },
+            {
+              "path": "docs/catalog/fixtures/combobox/states.js",
+              "sha256": "d913d5cffbf65074466231a273ccab32bdc92384453682e3ae634ce36c1d877f"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -17834,6 +17903,36 @@
             {
               "path": "docs/catalog/fixtures/datepicker/basic.js",
               "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Datepicker — virada de mês e controles nativos",
+          "htmlCode": "<label for=\"month-end\">Data de referência</label><div class=\"fs-datepicker\"><input id=\"month-end\" class=\"fs-form-control fs-form-control-lg\" value=\"31/01/2026\" data-fs-target=\"#month-panel\" data-placement=\"top\" aria-describedby=\"date-help\"></div><div id=\"month-panel\"></div>\n<p id=\"date-help\">Seta para baixo abre o calendário; PageDown avança um mês preservando um dia válido. Formato dd/mm/aaaa.</p>\n<p id=\"date-result\" role=\"status\">Nenhuma nova data selecionada.</p>\n<label for=\"native-day\">Data nativa</label><input id=\"native-day\" type=\"date\" class=\"fs-form-control fs-form-date fs-form-control-sm\" value=\"2026-01-31\">\n<label for=\"native-time\">Horário nativo</label><input id=\"native-time\" type=\"time\" class=\"fs-form-control fs-form-time\" value=\"09:30\">",
+          "jsCode": "import { Datepicker } from \"fokus-styles/js\";\nconst input = document.querySelector(\"#month-end\");\nconst instance = new Datepicker(input, { placement: \"bottom\" });\n// Nome no DOM gerado: não depende de gridEl, ausente no contrato tipado.\ninstance.panelEl.querySelector('[role=\"grid\"]').setAttribute(\"aria-label\", \"Data de referência\");\nconst onChange = (event) => { document.querySelector(\"#date-result\").textContent = `Data ISO: ${event.detail.value}`; };\ninput.addEventListener(\"fs:datepicker:changed\", onChange);\nwindow.addEventListener(\"pagehide\", () => { input.removeEventListener(\"fs:datepicker:changed\", onChange); instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "placement-tipado",
+            "data-placement",
+            "tamanho-lg",
+            "nativo-date-time",
+            "page-down-mes-curto",
+            "evento-iso"
+          ],
+          "limitations": [
+            "Os inputs date/time são nativos: não recebem Datepicker.",
+            "Sem opções min/max, locale ou validação de formulário; entrada inválida pode permanecer visível com value interno null.",
+            "Nome do grid é adaptação local; não representa correção do runtime."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datepicker/states.html",
+              "sha256": "42c810b5293c15dd202fe56d5224d1362ed2477f94633c18382b0cd5aa4f18d9"
+            },
+            {
+              "path": "docs/catalog/fixtures/datepicker/states.js",
+              "sha256": "645d501da7f3fec876df200b8369368a64ff10c5faaab73d059047741d89ec38"
             }
           ]
         }
@@ -22640,6 +22739,36 @@
             {
               "path": "docs/catalog/fixtures/file-upload-advanced/basic.js",
               "sha256": "fd96d743236b65bdd171e40b7fd4089aedb943416fa9b61c777a7eaa0bc26858"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "FileUploadAdvanced — progresso, falha e remoção locais",
+          "htmlCode": "<p>Simulação local, sem envio. Escolha arquivos e aplique um estado a todos.</p><div id=\"uploads\" class=\"fs-file-upload\"><input id=\"local-files\" class=\"fs-file-input\" type=\"file\" multiple><label for=\"local-files\" class=\"fs-file-label fs-file-label-sm\">Escolher arquivos para simulação</label></div>\n<button type=\"button\" class=\"fs-btn fs-btn-primary\" id=\"half\">Simular 50%</button><button type=\"button\" class=\"fs-btn fs-btn-secondary\" id=\"fail\">Simular falha</button><button type=\"button\" class=\"fs-btn fs-btn-secondary\" id=\"done\">Simular conclusão</button><p id=\"upload-state\" role=\"status\">Nenhum arquivo escolhido.</p>",
+          "jsCode": "import { FileUploadAdvanced } from \"fokus-styles/js\";\nconst root = document.querySelector(\"#uploads\");\nconst instance = new FileUploadAdvanced(root);\nconst handles = new Map();\nconst status = document.querySelector(\"#upload-state\");\nconst added = (event) => { event.detail.items.forEach((item) => handles.set(item.id, item.file)); status.textContent = `${instance.getFiles().length} arquivo(s) na simulação.`; };\nconst removed = (event) => { handles.delete(event.detail.id); status.textContent = `${instance.getFiles().length} arquivo(s) restante(s).`; };\nroot.addEventListener(\"fs:file-upload:added\", added);\nroot.addEventListener(\"fs:file-upload:removed\", removed);\nconst actions = [[\"half\", () => { handles.forEach((file, id) => instance.setProgress(id, 50)); status.textContent = \"Progresso simulado: 50%.\"; }], [\"fail\", () => { handles.forEach((file, id) => instance.setError(id, \"Falha simulada; nenhum envio realizado\")); status.textContent = \"Falha simulada.\"; }], [\"done\", () => { handles.forEach((file, id) => instance.setProgress(id, 100)); status.textContent = \"Conclusão simulada: 100%.\"; }]];\nactions.forEach(([id, handler]) => document.getElementById(id).addEventListener(\"click\", handler));\nwindow.addEventListener(\"pagehide\", () => {\n  actions.forEach(([id, handler]) => document.getElementById(id).removeEventListener(\"click\", handler));\n  root.removeEventListener(\"fs:file-upload:added\", added); root.removeEventListener(\"fs:file-upload:removed\", removed);\n  instance.dispose(); handles.clear(); instance.listEl.replaceChildren(); instance.inputEl.value = \"\";\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "eventos-added-removed",
+            "setProgress-50-100",
+            "setError",
+            "recuperacao-de-erro",
+            "getFiles",
+            "cleanup-lista"
+          ],
+          "limitations": [
+            "Nenhuma conexão ou upload real; não compõe FileDrop.",
+            "Remoção atualiza getFiles(), não o FileList nativo; consumidor deve usar a lista do componente.",
+            "dispose revoga URLs mas não remove markup: limpeza demonstrada é responsabilidade da fixture."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/file-upload-advanced/states.html",
+              "sha256": "32e8b46b486276012d2a8c5274cf0d6fbf31d9ae5f1ff8c541a7431e6e8e76eb"
+            },
+            {
+              "path": "docs/catalog/fixtures/file-upload-advanced/states.js",
+              "sha256": "44e20b82bce51763f2bca701c9b88e25cc5e3b31c1a58caae76c06c0651b2751"
             }
           ]
         }
@@ -34234,6 +34363,36 @@
               "sha256": "81062ab98d7b020ff6746d7ec41499497b4593c41803ae9177c824d4026cd6ef"
             }
           ]
+        },
+        {
+          "id": "states",
+          "title": "Range — passos, output, tamanhos e desabilitado",
+          "htmlCode": "<label for=\"stepped\">Intensidade em passos de 25</label><input id=\"stepped\" type=\"range\" class=\"fs-form-range fs-form-range-lg\" min=\"0\" max=\"100\" step=\"25\" value=\"50\" data-fs=\"range\" data-fs-target=\"#stepped-output\"><output id=\"stepped-output\" for=\"stepped\" class=\"fs-range-output\">50</output>\n<label for=\"negative\">Ajuste de -10 a 10</label><input id=\"negative\" type=\"range\" class=\"fs-form-range fs-form-range-sm\" min=\"-10\" max=\"10\" step=\"5\" value=\"0\" data-fs=\"range\" data-fs-target=\"#negative-output\"><output id=\"negative-output\" for=\"negative\" class=\"fs-range-output\">0</output>\n<label for=\"fixed\">Intensidade indisponível</label><input id=\"fixed\" type=\"range\" class=\"fs-form-range fs-form-range-xl\" value=\"75\" disabled data-fs=\"range\">",
+          "jsCode": "import { RangeSlider } from \"fokus-styles/js\";\nconst instances = [...document.querySelectorAll('[data-fs=\"range\"]')].map((input) => RangeSlider.getInstance(input) ?? new RangeSlider(input));\nwindow.addEventListener(\"pagehide\", () => { instances.forEach((instance) => instance.dispose()); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "RangeSlider",
+            "data-fs-target-output",
+            "min-max-negativo",
+            "step-25",
+            "tamanhos-sm-lg-xl",
+            "disabled"
+          ],
+          "limitations": [
+            "Teclado é nativo, não implementado pelo RangeSlider.",
+            "Não cobre orientação vertical ou pixel-equivalência entre motores.",
+            "Mudança programática de value requer evento input para sincronizar output."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/range/states.html",
+              "sha256": "0b20c4f6082cfd6fdce35acbb585207b24eaed6890778bcb6d0def540ce68f07"
+            },
+            {
+              "path": "docs/catalog/fixtures/range/states.js",
+              "sha256": "4e0eb8200356d961fb402fbb08d6a9a15c3f49766aea279859f7dffe64c82045"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -40936,6 +41095,34 @@
             {
               "path": "docs/catalog/fixtures/select/basic.js",
               "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Select — tamanhos, desabilitado e reset",
+          "htmlCode": "<form id=\"select-demo\"><span id=\"plan-label\">Plano</span><select id=\"plan\" aria-labelledby=\"plan-label\" class=\"fs-form-select\" data-size=\"sm\"><option value=\"basic\" selected>Básico</option><option value=\"pro\">Profissional</option><option value=\"future\" disabled>Futuro (indisponível)</option></select>\n<span id=\"locked-label\">Plano indisponível</span><select id=\"locked\" aria-labelledby=\"locked-label\" class=\"fs-form-select\" data-size=\"lg\" disabled><option>Sem vagas</option></select>\n<button type=\"reset\" class=\"fs-btn fs-btn-secondary\">Restaurar plano</button></form>",
+          "jsCode": "import { Select } from \"fokus-styles/js\";\nconst instances = [\"plan\", \"locked\"].map((id) => {\n  const native = document.getElementById(id);\n  const instance = new Select(native);\n  const toggle = native.nextElementSibling.querySelector(\"button\");\n  toggle.setAttribute(\"aria-labelledby\", `${native.getAttribute(\"aria-labelledby\")} ${toggle.id}`);\n  document.getElementById(toggle.getAttribute(\"aria-controls\")).querySelectorAll('[role=\"option\"]').forEach((item, index) => {\n    if (native.options[index].disabled) item.setAttribute(\"aria-disabled\", \"true\");\n  });\n  return instance;\n});\nwindow.addEventListener(\"pagehide\", () => { instances.forEach((instance) => instance.dispose()); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "data-size-sm-lg",
+            "disabled-nativo",
+            "opcao-disabled",
+            "reset-formulario",
+            "nome-acessivel-local"
+          ],
+          "limitations": [
+            "Runtime não transfere nome acessível nem aria-disabled das opções: adaptação local explícita.",
+            "Não demonstra multiple, optgroup ou troca dinâmica de disabled; não há contrato para essas variantes."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/select/states.html",
+              "sha256": "55bccb136f4bdf770070ddc863aa269a6ee577f8a14ec5e9e4799fc4f39fde61"
+            },
+            {
+              "path": "docs/catalog/fixtures/select/states.js",
+              "sha256": "103c0a0fc311ced6582395bac1ae631101e8bd020ea3ab89906eb112b6f20122"
             }
           ]
         }

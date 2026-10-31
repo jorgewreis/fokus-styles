@@ -396,6 +396,25 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Controle nativo sem Range JS; preenchimento da trilha WebKit não acompanha o valor sem --fs-range-percent."
       ]
+    },
+    {
+      "id": "states",
+      "title": "Range — passos, output, tamanhos e desabilitado",
+      "html": "docs/catalog/fixtures/range/states.html",
+      "js": "docs/catalog/fixtures/range/states.js",
+      "coverage": [
+        "RangeSlider",
+        "data-fs-target-output",
+        "min-max-negativo",
+        "step-25",
+        "tamanhos-sm-lg-xl",
+        "disabled"
+      ],
+      "limitations": [
+        "Teclado é nativo, não implementado pelo RangeSlider.",
+        "Não cobre orientação vertical ou pixel-equivalência entre motores.",
+        "Mudança programática de value requer evento input para sincronizar output."
+      ]
     }
   ],
   "responsive": [
@@ -701,6 +720,24 @@
         "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
         "Filtro local de duas opções; texto livre não representa seleção validada."
       ]
+    },
+    {
+      "id": "states",
+      "title": "Combobox — posição, indisponível e vazio",
+      "html": "docs/catalog/fixtures/combobox/states.html",
+      "js": "docs/catalog/fixtures/combobox/states.js",
+      "coverage": [
+        "placement-tipado",
+        "data-placement",
+        "menu-sm",
+        "opcao-indisponivel",
+        "resultado-vazio",
+        "evento-selecao"
+      ],
+      "limitations": [
+        "Placement pode inverter perto da borda; sem garantia de coordenada fixa.",
+        "Não há API de busca remota ou multisseleção; texto digitado não equivale a seleção confirmada."
+      ]
     }
   ],
   "command-palette": [
@@ -758,6 +795,25 @@
         "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
         "Data inicial fixa para reprodução; não há validação min/max nesta API."
       ]
+    },
+    {
+      "id": "states",
+      "title": "Datepicker — virada de mês e controles nativos",
+      "html": "docs/catalog/fixtures/datepicker/states.html",
+      "js": "docs/catalog/fixtures/datepicker/states.js",
+      "coverage": [
+        "placement-tipado",
+        "data-placement",
+        "tamanho-lg",
+        "nativo-date-time",
+        "page-down-mes-curto",
+        "evento-iso"
+      ],
+      "limitations": [
+        "Os inputs date/time são nativos: não recebem Datepicker.",
+        "Sem opções min/max, locale ou validação de formulário; entrada inválida pode permanecer visível com value interno null.",
+        "Nome do grid é adaptação local; não representa correção do runtime."
+      ]
     }
   ],
   "select": [
@@ -775,6 +831,23 @@
       "limitations": [
         "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
         "Seleção local; não envia formulário nem persiste dados."
+      ]
+    },
+    {
+      "id": "states",
+      "title": "Select — tamanhos, desabilitado e reset",
+      "html": "docs/catalog/fixtures/select/states.html",
+      "js": "docs/catalog/fixtures/select/states.js",
+      "coverage": [
+        "data-size-sm-lg",
+        "disabled-nativo",
+        "opcao-disabled",
+        "reset-formulario",
+        "nome-acessivel-local"
+      ],
+      "limitations": [
+        "Runtime não transfere nome acessível nem aria-disabled das opções: adaptação local explícita.",
+        "Não demonstra multiple, optgroup ou troca dinâmica de disabled; não há contrato para essas variantes."
       ]
     }
   ],
@@ -846,6 +919,25 @@
         "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
         "Não envia, não limita tamanho e não faz drag-and-drop. Progresso permanece em zero sem integração do aplicativo. O teardown do exemplo limpa a lista pertencente à fixture.",
         "A CSP da prévia deste checkpoint não permite imagens blob:; miniaturas locais podem ser bloqueadas, embora a lista de arquivos funcione. Validar a integração CSP antes de uso."
+      ]
+    },
+    {
+      "id": "states",
+      "title": "FileUploadAdvanced — progresso, falha e remoção locais",
+      "html": "docs/catalog/fixtures/file-upload-advanced/states.html",
+      "js": "docs/catalog/fixtures/file-upload-advanced/states.js",
+      "coverage": [
+        "eventos-added-removed",
+        "setProgress-50-100",
+        "setError",
+        "recuperacao-de-erro",
+        "getFiles",
+        "cleanup-lista"
+      ],
+      "limitations": [
+        "Nenhuma conexão ou upload real; não compõe FileDrop.",
+        "Remoção atualiza getFiles(), não o FileList nativo; consumidor deve usar a lista do componente.",
+        "dispose revoga URLs mas não remove markup: limpeza demonstrada é responsabilidade da fixture."
       ]
     }
   ],
