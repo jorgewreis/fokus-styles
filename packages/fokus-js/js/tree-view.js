@@ -1,5 +1,7 @@
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
+import { isDisabled, guardDisabledActivation } from "./core/disabled.js";
+
 const instances = createInstanceRegistry();
 
 // Tree View: padrão WAI-ARIA Tree View
@@ -14,6 +16,7 @@ export class TreeView {
     rootEl.setAttribute("role", "tree");
 
     this._setupItems();
+    this._removeDisabledGuard = guardDisabledActivation(rootEl, '[role="treeitem"]');
 
     this._handleClick = this._handleClick.bind(this);
     this._handleKeydown = this._handleKeydown.bind(this);
@@ -80,7 +83,12 @@ export class TreeView {
     items.forEach((item) => item.setAttribute("tabindex", item === current ? "0" : "-1"));
   }
 
+  _canActivate(item) {
+    return !!item && this.rootEl.contains(item) && item.matches('[role="treeitem"]') && !isDisabled(item);
+  }
+
   expand(item) {
+    if (!this._canActivate(item)) return;
     const group = this._group(item);
     if (!group || this._isExpanded(item)) return;
 
@@ -91,6 +99,7 @@ export class TreeView {
   }
 
   collapse(item) {
+    if (!this._canActivate(item)) return;
     const group = this._group(item);
     if (!group || !this._isExpanded(item)) return;
 
@@ -101,6 +110,7 @@ export class TreeView {
   }
 
   toggle(item) {
+    if (!this._canActivate(item)) return;
     if (this._isExpanded(item)) {
       this.collapse(item);
     } else {
@@ -109,6 +119,7 @@ export class TreeView {
   }
 
   select(item) {
+    if (!this._canActivate(item)) return;
     this.rootEl.querySelectorAll('[aria-selected="true"]').forEach((el) => el.setAttribute("aria-selected", "false"));
     item.setAttribute("aria-selected", "true");
 
@@ -185,6 +196,7 @@ export class TreeView {
   }
 
   dispose() {
+    this._removeDisabledGuard();
     this.rootEl.removeEventListener("click", this._handleClick);
     this.rootEl.removeEventListener("keydown", this._handleKeydown);
     this.rootEl.removeEventListener("focusin", this._handleFocusIn);

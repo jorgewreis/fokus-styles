@@ -95,8 +95,19 @@ Auto-init via `data-fs="tree-view"` na raiz (`<ul>`/`<ol>`).
 
 Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent
 integral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente
-a label do pai. `aria-disabled` e `.is-disabled` não bloqueiam seleção, expansão
-ou navegação neste componente. Não use esses atributos como proteção de acesso.
+a label do pai.
+
+`aria-disabled="true"` e `.is-disabled` no próprio nó impedem seleção,
+expansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,
+`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.
+Cliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,
+antes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.
+
+Nós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.
+A indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.
+Se um ramo indisponível já estiver aberto, seus descendentes habilitados
+continuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre
+um ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.
 
 A estrutura é preparada na construção; não existe API refresh ou carregamento
 remoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos

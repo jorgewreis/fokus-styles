@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "424f8e33b4919ac3b1757a82fc68720efb5cd821bfe73d4391fc98f4cc6226a4",
+    "digest": "131064407a083fa7a4b0e1a215bff8d603de17e6c33886858de3ee68fc81ef2a",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -1281,7 +1281,7 @@
       },
       {
         "path": "docs/components/tree-view.md",
-        "sha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b"
+        "sha256": "66ef29744bb72703b4107594ee811c1c078acae49a408150815a03f8b843a67e"
       },
       {
         "path": "package-lock.json",
@@ -1688,6 +1688,10 @@
         "sha256": "f5f57eac2bd95bfb84c6d496e977b434e053fad4b3609db3fe69abca6350758a"
       },
       {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+      },
+      {
         "path": "packages/fokus-js/js/core/focus.d.ts",
         "sha256": "7854e916da8fd50674cd8b0dbfafdf7268073cf41b0fdc54fc1e0d1b726d59a7"
       },
@@ -1961,7 +1965,7 @@
       },
       {
         "path": "packages/fokus-js/js/tree-view.js",
-        "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+        "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
       },
       {
         "path": "packages/fokus-react/src/Dropdown.js",
@@ -55027,7 +55031,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/tree-view.md",
-        "markdown": "# Tree View\n\nLista hierárquica navegável (arquivos, categorias, organogramas), seguindo\no padrão [WAI-ARIA Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).\nMarcação nativa `<ul>`/`<li>` aninhada — o JS só adiciona os papéis ARIA,\no botão de expandir/colapsar e a navegação por teclado.\n\n## Visão geral\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n```\n\nCada `<li>` precisa de um `<span class=\"fs-tree-label\">` como filho direto\n(o texto do nó) — nós com filhos somam um `<ul>`/`<ol>` aninhado logo\ndepois do label. O JS injeta automaticamente o `.fs-tree-toggle` (a seta)\ndentro do label de cada nó que tiver filhos; nós-folha não recebem seta.\n\n## Anatomia\n\n`ul.fs-tree[role=\"tree\"]` > `li[role=\"treeitem\"]` (recursivo) >\n`span.fs-tree-label` (com `.fs-tree-toggle` auto-injetado se houver\nfilhos) + opcionalmente `ul[role=\"group\"]` (o próximo nível).\n\n## Variações\n\n- `data-value` num `<li>` define o valor \"de verdade\" reportado em\n  `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto\n  integral do nó, incluindo seus descendentes.\n- `aria-expanded=\"true\"` pré-existente num `<li>` com filhos abre esse\n  ramo já expandido na renderização inicial (por padrão, todo ramo nasce\n  colapsado).\n\n## Estados\n\n- Colapsado (padrão) / expandido (`aria-expanded=\"true\"` no `<li>`,\n  `hidden` removido do `<ul>` filho) — alternado por clique na\n  label/seta ou por teclado.\n- Selecionado: `aria-selected=\"true\"` (só no nó mais recente; os demais\n  voltam a `\"false\"`) — clicar num nó com filhos expande/colapsa **e**\n  seleciona ao mesmo tempo (como um explorador de arquivos).\n\n## A11y\n\n`role=\"tree\"` na raiz, `role=\"treeitem\"` em cada `<li>`, `role=\"group\"` no\n`<ul>`/`<ol>` aninhado, `aria-expanded` nos nós com filhos. Roving\n`tabindex`: só o nó tabulável atual tem `tabindex=\"0\"`; os demais (visíveis)\nficam em `\"-1\"` — nós dentro de um ramo colapsado não são alcançáveis por\nTab. `aria-selected` reflete a seleção atual.\n\nTeclado (com foco num nó da árvore):\n- `ArrowDown`/`ArrowUp`: move o foco pro próximo/anterior nó **visível**\n  (não desce em ramos colapsados).\n- `ArrowRight`: nó fechado → expande (foco não se move); nó já aberto →\n  move o foco pro primeiro filho; folha → sem efeito.\n- `ArrowLeft`: nó aberto → colapsa; nó fechado ou folha → move o foco pro\n  nó pai.\n- `Home`/`End`: primeiro/último nó visível da árvore inteira.\n- `Enter`/`Espaço`: alterna expansão (se houver filhos) e seleciona o nó.\n\n## API JS\n\nAuto-init via `data-fs=\"tree-view\"` na raiz (`<ul>`/`<ol>`).\n`TreeView.getInstance(rootEl)`.\n\n| Método | Descrição |\n|---|---|\n| `expand(item)` | Expande o `<li>` informado (sem efeito se já expandido ou sem filhos). |\n| `collapse(item)` | Colapsa o `<li>` informado. |\n| `toggle(item)` | Alterna expandido/colapsado. |\n| `select(item)` | Marca `aria-selected=\"true\"` no `<li>` informado (e `\"false\"` nos demais), dispara `fs:tree:selected`. |\n| `dispose()` | Remove listeners e desregistra a instância. |\n\n| Evento (na raiz) | Cancelável | Quando |\n|---|---|---|\n| `fs:tree:expanded` | Não | Após expandir um nó, com `event.detail.item`. |\n| `fs:tree:collapsed` | Não | Após colapsar um nó, com `event.detail.item`. |\n| `fs:tree:selected` | Não | Após selecionar um nó, com `event.detail.value`/`event.detail.item`. |\n\n## Valores, indisponibilidade e ciclo de vida\n\nForneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai. `aria-disabled` e `.is-disabled` não bloqueiam seleção, expansão\nou navegação neste componente. Não use esses atributos como proteção de acesso.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA.\n\n## Tokens\n\n`--fs-color-text`, `--fs-color-subtle` (hover da label),\n`--fs-color-primary` (nó selecionado, com `color-contrast()` pro texto),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos do projeto\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n    </ul>\n  </li>\n</ul>\n<script>\n  document.querySelector(\".fs-tree\").addEventListener(\"fs:tree:selected\", (e) => {\n    console.log(\"selecionado:\", e.detail.value);\n  });\n</script>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tree-view).\n",
+        "markdown": "# Tree View\n\nLista hierárquica navegável (arquivos, categorias, organogramas), seguindo\no padrão [WAI-ARIA Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).\nMarcação nativa `<ul>`/`<li>` aninhada — o JS só adiciona os papéis ARIA,\no botão de expandir/colapsar e a navegação por teclado.\n\n## Visão geral\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n```\n\nCada `<li>` precisa de um `<span class=\"fs-tree-label\">` como filho direto\n(o texto do nó) — nós com filhos somam um `<ul>`/`<ol>` aninhado logo\ndepois do label. O JS injeta automaticamente o `.fs-tree-toggle` (a seta)\ndentro do label de cada nó que tiver filhos; nós-folha não recebem seta.\n\n## Anatomia\n\n`ul.fs-tree[role=\"tree\"]` > `li[role=\"treeitem\"]` (recursivo) >\n`span.fs-tree-label` (com `.fs-tree-toggle` auto-injetado se houver\nfilhos) + opcionalmente `ul[role=\"group\"]` (o próximo nível).\n\n## Variações\n\n- `data-value` num `<li>` define o valor \"de verdade\" reportado em\n  `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto\n  integral do nó, incluindo seus descendentes.\n- `aria-expanded=\"true\"` pré-existente num `<li>` com filhos abre esse\n  ramo já expandido na renderização inicial (por padrão, todo ramo nasce\n  colapsado).\n\n## Estados\n\n- Colapsado (padrão) / expandido (`aria-expanded=\"true\"` no `<li>`,\n  `hidden` removido do `<ul>` filho) — alternado por clique na\n  label/seta ou por teclado.\n- Selecionado: `aria-selected=\"true\"` (só no nó mais recente; os demais\n  voltam a `\"false\"`) — clicar num nó com filhos expande/colapsa **e**\n  seleciona ao mesmo tempo (como um explorador de arquivos).\n\n## A11y\n\n`role=\"tree\"` na raiz, `role=\"treeitem\"` em cada `<li>`, `role=\"group\"` no\n`<ul>`/`<ol>` aninhado, `aria-expanded` nos nós com filhos. Roving\n`tabindex`: só o nó tabulável atual tem `tabindex=\"0\"`; os demais (visíveis)\nficam em `\"-1\"` — nós dentro de um ramo colapsado não são alcançáveis por\nTab. `aria-selected` reflete a seleção atual.\n\nTeclado (com foco num nó da árvore):\n- `ArrowDown`/`ArrowUp`: move o foco pro próximo/anterior nó **visível**\n  (não desce em ramos colapsados).\n- `ArrowRight`: nó fechado → expande (foco não se move); nó já aberto →\n  move o foco pro primeiro filho; folha → sem efeito.\n- `ArrowLeft`: nó aberto → colapsa; nó fechado ou folha → move o foco pro\n  nó pai.\n- `Home`/`End`: primeiro/último nó visível da árvore inteira.\n- `Enter`/`Espaço`: alterna expansão (se houver filhos) e seleciona o nó.\n\n## API JS\n\nAuto-init via `data-fs=\"tree-view\"` na raiz (`<ul>`/`<ol>`).\n`TreeView.getInstance(rootEl)`.\n\n| Método | Descrição |\n|---|---|\n| `expand(item)` | Expande o `<li>` informado (sem efeito se já expandido ou sem filhos). |\n| `collapse(item)` | Colapsa o `<li>` informado. |\n| `toggle(item)` | Alterna expandido/colapsado. |\n| `select(item)` | Marca `aria-selected=\"true\"` no `<li>` informado (e `\"false\"` nos demais), dispara `fs:tree:selected`. |\n| `dispose()` | Remove listeners e desregistra a instância. |\n\n| Evento (na raiz) | Cancelável | Quando |\n|---|---|---|\n| `fs:tree:expanded` | Não | Após expandir um nó, com `event.detail.item`. |\n| `fs:tree:collapsed` | Não | Após colapsar um nó, com `event.detail.item`. |\n| `fs:tree:selected` | Não | Após selecionar um nó, com `event.detail.value`/`event.detail.item`. |\n\n## Valores, indisponibilidade e ciclo de vida\n\nForneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA.\n\n## Tokens\n\n`--fs-color-text`, `--fs-color-subtle` (hover da label),\n`--fs-color-primary` (nó selecionado, com `color-contrast()` pro texto),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos do projeto\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n    </ul>\n  </li>\n</ul>\n<script>\n  document.querySelector(\".fs-tree\").addEventListener(\"fs:tree:selected\", (e) => {\n    console.log(\"selecionado:\", e.detail.value);\n  });\n</script>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tree-view).\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -55055,7 +55059,7 @@
           },
           {
             "title": "Valores, indisponibilidade e ciclo de vida",
-            "markdown": "Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai. `aria-disabled` e `.is-disabled` não bloqueiam seleção, expansão\nou navegação neste componente. Não use esses atributos como proteção de acesso.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA."
+            "markdown": "Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA."
           },
           {
             "title": "Tokens",
@@ -55070,7 +55074,7 @@
       "sources": [
         {
           "path": "docs/components/tree-view.md",
-          "sha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b"
+          "sha256": "66ef29744bb72703b4107594ee811c1c078acae49a408150815a03f8b843a67e"
         },
         {
           "path": "packages/fokus-components/scss/components/_tree-view.scss",
@@ -55082,7 +55086,7 @@
         },
         {
           "path": "packages/fokus-js/js/tree-view.js",
-          "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+          "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
         }
       ],
       "imports": [
@@ -55098,77 +55102,77 @@
           "attributes": [
             {
               "name": "role",
-              "line": 14,
+              "line": 16,
               "code": "rootEl.setAttribute(\"role\", \"tree\");"
             },
             {
               "name": "role",
-              "line": 37,
+              "line": 40,
               "code": "li.setAttribute(\"role\", \"treeitem\");"
             },
             {
               "name": "role",
-              "line": 42,
+              "line": 45,
               "code": "group.setAttribute(\"role\", \"group\");"
             },
             {
               "name": "aria-expanded",
-              "line": 43,
+              "line": 46,
               "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 43,
+              "line": 46,
               "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 44,
+              "line": 47,
               "code": "group.hidden = li.getAttribute(\"aria-expanded\") !== \"true\";"
             },
             {
               "name": "aria-hidden",
-              "line": 50,
+              "line": 53,
               "code": "toggle.setAttribute(\"aria-hidden\", \"true\");"
             },
             {
               "name": "aria-expanded",
-              "line": 61,
+              "line": 64,
               "code": "return item.getAttribute(\"aria-expanded\") === \"true\";"
             },
             {
               "name": "tabindex",
-              "line": 79,
+              "line": 82,
               "code": "const current = items.find((item) => item.getAttribute(\"tabindex\") === \"0\") ?? items[0];"
             },
             {
               "name": "tabindex",
-              "line": 80,
+              "line": 83,
               "code": "items.forEach((item) => item.setAttribute(\"tabindex\", item === current ? \"0\" : \"-1\"));"
             },
             {
               "name": "aria-expanded",
-              "line": 87,
+              "line": 95,
               "code": "item.setAttribute(\"aria-expanded\", \"true\");"
             },
             {
               "name": "aria-expanded",
-              "line": 97,
+              "line": 106,
               "code": "item.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-selected",
-              "line": 112,
+              "line": 123,
               "code": "this.rootEl.querySelectorAll('[aria-selected=\"true\"]').forEach((el) => el.setAttribute(\"aria-selected\", \"false\"));"
             },
             {
               "name": "aria-selected",
-              "line": 113,
+              "line": 124,
               "code": "item.setAttribute(\"aria-selected\", \"true\");"
             },
             {
               "name": "tabindex",
-              "line": 133,
+              "line": 144,
               "code": "this._visibleItems().forEach((el) => el.setAttribute(\"tabindex\", el === item ? \"0\" : \"-1\"));"
             }
           ],
