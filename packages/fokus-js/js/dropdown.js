@@ -46,11 +46,16 @@ export class Dropdown {
     this._handleToggleKeydown = this._handleToggleKeydown.bind(this);
     this._handleMenuKeydown = this._handleMenuKeydown.bind(this);
     this._handleMenuClick = this._handleMenuClick.bind(this);
+    this._guardDisabledActivation = this._guardDisabledActivation.bind(this);
 
     this.toggleEl.addEventListener("click", this._handleToggleClick);
     this.toggleEl.addEventListener("keydown", this._handleToggleKeydown);
     this.menuEl.addEventListener("keydown", this._handleMenuKeydown);
     this.menuEl.addEventListener("click", this._handleMenuClick);
+    // Capture before item/application handlers, without changing enabled click order.
+    for (const type of ["click", "auxclick", "keydown"]) {
+      this.menuEl.addEventListener(type, this._guardDisabledActivation, true);
+    }
 
     this._removeEscapeListener = onEscapeKey((event) => {
       if (this.isOpen && isTopOverlay(this, event)) {
@@ -84,6 +89,14 @@ export class Dropdown {
 
     const items = this._items();
     (event.key === "ArrowUp" ? items.at(-1) : items[0])?.focus();
+  }
+
+  _guardDisabledActivation(event) {
+    if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+    const item = event.target.closest?.(".fs-dropdown-item, [data-fs-dropdown-dismiss]");
+    if (!item || !this.menuEl.contains(item) || !this._isDisabled(item)) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
   }
 
   _handleMenuClick(event) {
@@ -200,6 +213,9 @@ export class Dropdown {
     this.toggleEl.removeEventListener("keydown", this._handleToggleKeydown);
     this.menuEl.removeEventListener("keydown", this._handleMenuKeydown);
     this.menuEl.removeEventListener("click", this._handleMenuClick);
+    for (const type of ["click", "auxclick", "keydown"]) {
+      this.menuEl.removeEventListener(type, this._guardDisabledActivation, true);
+    }
     this._portal.restore();
     instances.delete(this.toggleEl);
   }

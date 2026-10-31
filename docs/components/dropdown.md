@@ -110,16 +110,18 @@ painéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-dan
 ações destrutivas. O JS publica `data-placement` no menu após o flip automático,
 permitindo ajustes de origem no CSS.
 
-### Limite conhecido: itens indisponíveis
+### Itens indisponíveis
 
-A filtragem de setas reconhece `.is-disabled`, `disabled` nativo e
-`aria-disabled="true"`. Porém o handler de clique não verifica esses estados
-nem cancela a ação padrão do link: `.is-disabled`/ARIA não garantem bloqueio
-por teclado ou clique programático. Não use esse estado visual como controle
-de autorização. Prefira `<button type="button" disabled>` para ações
-indisponíveis; para links, remova o destino ou implemente bloqueio explícito
-na aplicação, além da indicação acessível. É um limite atual, não um contrato
-de interação desejável.
+`.is-disabled`, `disabled` nativo e `aria-disabled="true"` excluem o item da
+navegação por setas e bloqueiam ativação dentro do menu. O componente cancela
+click/auxclick e Enter/Espaço em fase de captura, antes dos handlers do item:
+não segue o link, não fecha o menu e não transfere foco ao gatilho. Itens
+habilitados preservam a ativação nativa e a ordem normal dos seus handlers.
+
+Prefira `<button type="button" disabled>` para ações quando possível. Esses
+estados são controles de interface, não um contrato de autorização de negócio;
+chamadas diretas à lógica da aplicação e listeners de captura externos/anteriores
+não são interceptados pelo componente. Valide permissões na camada apropriada.
 
 Somente `placement` e `align` são opções lidas. Opções JS precedem os atributos;
 o offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de
