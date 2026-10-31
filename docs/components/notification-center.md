@@ -118,3 +118,27 @@ por variante), `--fs-radius-md`, `--fs-shadow-md`.
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#notification-center).
+
+## Opções, conteúdo e ciclo de vida
+
+As opções tipadas do construtor precedem seus atributos:
+
+| Opção | Atributo | Padrão |
+|---|---|---|
+| target | data-fs-target | painel obrigatório |
+| storage | data-storage | memory |
+| storageKey | data-storage-key | fokus-notifications |
+| toastContainer | data-toast-container | contêiner existente ou criado |
+
+Um seletor toastContainer explícito precisa resolver elemento existente: não há
+fallback se ele não encontra nada. Title/body de push são texto, escapados tanto
+no histórico quanto no toast; não são um contrato de HTML rich text. Dados no
+localStorage não são criptografados; não use o histórico como armazenamento de
+segredos. Falha de quota/acesso mantém o histórico em memória, sem garantir
+persistência. Eventos e visibilidade da UI não autorizam ações de negócio.
+
+Clear/remove alteram histórico, não fecham toasts já visíveis. Dispose remove
+listeners do centro, mas não descarta instâncias Toast criadas anteriormente.
+Ao desmontar toda a composição, a aplicação deve descartar esses Toasts e seu
+markup separadamente, especialmente quando autohide=false. Os nomes das opções
+seguem o contrato tipado; não acesse campos de instância internos não tipados.

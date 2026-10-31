@@ -175,7 +175,7 @@
       "sources": [
         {
           "path": "docs/components/command-palette.md",
-          "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
+          "sha256": "923ae98e8a494388942cedc4deb6bfdd9e224d60c244d3c929a15e1733571b55"
         },
         {
           "path": "packages/fokus-components/scss/components/_command-palette.scss",
@@ -1443,7 +1443,7 @@
     },
     {
       "path": "docs/components/command-palette.md",
-      "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
+      "sha256": "923ae98e8a494388942cedc4deb6bfdd9e224d60c244d3c929a15e1733571b55"
     },
     {
       "path": "packages/fokus-components/scss/components/_command-palette.scss",

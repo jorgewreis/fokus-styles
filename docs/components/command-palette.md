@@ -29,9 +29,10 @@ Auto-init em `data-fs="command-palette"` **no botão gatilho**, com
 `data-fs-target` apontando pro painel (convenção idêntica ao Modal). O
 painel não precisa estar pré-posicionado — é um overlay de tela cheia,
 como o Modal. `data-fs-shortcut="mod+k"` é opcional: quando presente,
-registra um atalho de teclado global (`mod` = Ctrl no Windows/Linux, Cmd
-no Mac) que abre/fecha o painel de qualquer lugar da página, sem precisar
-clicar no botão.
+registra um atalho de teclado global (`mod` aceita Ctrl **ou** Meta em qualquer
+plataforma) que abre/fecha o painel de qualquer lugar da página, inclusive
+campos editáveis. Shift e Alt devem coincidir exatamente com a combinação.
+Não há detecção de sistema nem exclusão automática de inputs/contenteditable.
 
 ## Anatomia
 
@@ -46,7 +47,8 @@ clicar no botão.
   (`event.detail.value` no evento de seleção); sem ele, o valor é o texto
   visível do item.
 - Item desabilitado: `.fs-dropdown-item.is-disabled` — ignorado por
-  teclado, mouse e pelo filtro.
+  teclado e mouse. O filtro textual ainda controla sua visibilidade; se só
+  restarem itens disabled, a mensagem de nenhum comando selecionável aparece.
 - Item de "sem resultados": `.fs-dropdown-item.is-disabled[data-fs-empty]`,
   `hidden` por padrão — visibilidade alternada automaticamente pelo JS.
 - `.fs-dropdown-header` agrupa comandos por seção, igual ao Dropdown.
@@ -75,8 +77,9 @@ destacada é comunicada via `aria-activedescendant`, como no Combobox.
 Teclado (com foco no input, painel aberto):
 - `ArrowDown`/`ArrowUp`: move o destaque entre os comandos visíveis, com
   wrap.
-- `Enter`: executa o comando destacado — dispara `fs:command-palette:selected`
-  e fecha.
+- `Enter`: seleciona o comando destacado — fecha e dispara
+  `fs:command-palette:selected`. A aplicação executa a ação no listener; o
+  componente não navega, executa código nem autoriza operações.
 - `Escape`: fecha o painel sem selecionar nada.
 - `Tab`/`Shift+Tab`: preso dentro do diálogo (focus trap).
 
@@ -100,9 +103,11 @@ Auto-init via `data-fs="command-palette"` no botão gatilho, com
 
 ## Tokens
 
-Os mesmos do [Modal](modal.md) (backdrop, `--fs-radius-md`,
-`--fs-shadow-lg`) e do [Dropdown](dropdown.md) para os itens — sem tokens
-próprios de cor.
+O diálogo consome `--fs-radius-md`, `--fs-shadow-lg`, `--fs-color-text`,
+`--fs-color-surface` e `--fs-z-modal`; o input também usa
+`--fs-color-border`/`--fs-color-surface-raised`. Itens reutilizam Dropdown.
+O backdrop é `rgb(0 0 0 / 50%)` fixo no SCSS: não herda token de backdrop
+do Modal. Não há opção JS de cor de backdrop.
 
 ## Exemplo
 
@@ -129,3 +134,11 @@ próprios de cor.
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#command-palette).
+
+## Limites de configuração
+
+A única opção tipada de construtor é shortcut. Ela precede data-fs-shortcut;
+string vazia desativa o registro. O painel continua vindo de data-fs-target.
+O componente aplica papéis ARIA, mas não inventa nome acessível: forneça
+aria-label/aria-labelledby ao diálogo e label/aria-label ao input. O evento
+selected é notificação de escolha, não uma verificação de permissão.
