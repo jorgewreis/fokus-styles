@@ -132,4 +132,72 @@ describe("Stepper", () => {
     stepper.dispose();
     expect(Stepper.getInstance(el)).toBeUndefined();
   });
+  it.each([NaN, Infinity, -Infinity, 0.5, -0.5, "1", null, undefined])(
+    "rejects invalid index %s without events or state/DOM changes",
+    (index) => {
+      const { el, stepper } = buildStepper();
+      stepper.goTo(1);
+      const handler = vi.fn();
+      for (const event of ["beforechange", "changed", "completed"]) {
+        el.addEventListener(`fs:stepper:${event}`, handler);
+      }
+      const snapshot = el.innerHTML;
+      expect(stepper.goTo(index)).toBe(false);
+      expect(stepper.current).toBe(1);
+      expect(stepper.finished).toBe(false);
+      expect(el.innerHTML).toBe(snapshot);
+      expect(handler).not.toHaveBeenCalled();
+      stepper.dispose();
+    },
+  );
+
+  it("rejects invalid indices without reopening a completed wizard", () => {
+    const { el, stepper } = buildStepper();
+    stepper.complete();
+    const snapshot = el.innerHTML;
+    const handler = vi.fn();
+    el.addEventListener("fs:stepper:beforechange", handler);
+    expect(stepper.goTo(NaN)).toBe(false);
+    expect(stepper.finished).toBe(true);
+    expect(el.innerHTML).toBe(snapshot);
+    expect(handler).not.toHaveBeenCalled();
+    stepper.dispose();
+  });
+
+  it("preserves integer clamping, boundary no-ops and cancellation returns", () => {
+    const { el, stepper } = buildStepper();
+    const changed = vi.fn();
+    el.addEventListener("fs:stepper:changed", changed);
+    expect(stepper.prev()).toBe(false);
+    expect(stepper.goTo(99)).toBe(true);
+    expect(stepper.current).toBe(2);
+    expect(changed.mock.calls[0][0].detail).toEqual({ from: 0, to: 2 });
+    expect(stepper.goTo(99)).toBe(false);
+    expect(stepper.goTo(-99)).toBe(true);
+    expect(stepper.current).toBe(0);
+    expect(changed.mock.calls[1][0].detail).toEqual({ from: 2, to: 0 });
+    el.addEventListener("fs:stepper:beforechange", (event) => event.preventDefault());
+    expect(stepper.next()).toBe(false);
+    expect(stepper.complete()).toBe(false);
+    expect(stepper.current).toBe(0);
+    expect(stepper.finished).toBe(false);
+    stepper.dispose();
+  });
+
+  it("complete remains callable at any step and emits again on repeated completion", () => {
+    const { el, stepper } = buildStepper();
+    const before = vi.fn();
+    const completed = vi.fn();
+    el.addEventListener("fs:stepper:beforechange", before);
+    el.addEventListener("fs:stepper:completed", completed);
+    expect(stepper.complete()).toBe(true);
+    expect(stepper.complete()).toBe(true);
+    expect(stepper.current).toBe(0);
+    expect(stepper.finished).toBe(true);
+    expect(completed).toHaveBeenCalledTimes(2);
+    expect(before).toHaveBeenCalledTimes(2);
+    expect(before.mock.calls[1][0].detail).toEqual({ from: 0, to: 0, completing: true });
+    stepper.dispose();
+  });
+
 });

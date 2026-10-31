@@ -5,10 +5,10 @@ export class Stepper {
 
   static getInstance(el: Element): Stepper | undefined;
 
-  next(): void;
-  prev(): void;
-  goTo(index: number): void;
+  next(): boolean;
+  prev(): boolean;
+  goTo(index: number): boolean;
   setError(index: number, hasError?: boolean): void;
-  complete(): void;
+  complete(): boolean;
   dispose(): void;
 }

@@ -80,7 +80,7 @@ Auto-init via `data-fs="stepper"`. `Stepper.getInstance(el)`.
 |---|---|
 | `next()` | Avança um passo; no último, chama `complete()`. |
 | `prev()` | Volta um passo. |
-| `goTo(index)` | Vai direto pro passo `index` (respeitando o modo linear se disparado pelo cabeçalho — via método, sempre permitido). |
+| `goTo(index)` | Vai direto pro passo `index` (respeitando o modo linear se disparado pelo cabeçalho — via método, não restringido pelo modo linear). |
 | `setError(index, hasError = true)` | Marca/desmarca `.fs-step-error` num passo específico. |
 | `complete()` | Marca o wizard como concluído (todos os passos ficam `.fs-step-completed`). |
 | `dispose()` | Remove todos os listeners e desregistra a instância. |
@@ -113,9 +113,19 @@ SetError é visual: não impede next/goTo/complete. Valide a etapa em
 fs:stepper:beforechange e cancele explicitamente quando necessário. O componente
 não submete formulários nem implementa autorização de ações.
 
-Forneça índices inteiros finitos a goTo. Valores finitos fora da faixa são
-limitados às extremidades; NaN não é normalizado pelo runtime. O modo linear
+Forneça índices inteiros a `goTo(index)`. Inteiros fora da faixa são
+limitados às extremidades; frações, NaN, infinitos e valores não numéricos
+são rejeitados com `false`, sem alterar estado/DOM nem emitir eventos. O modo linear
 restringe o cabeçalho, não chamadas programáticas goTo. Data-linear é lido na
 construção; não é uma opção reativa. Concluído é calculado pela posição relativa
 ao passo atual (ou finished), não um histórico persistente de etapas visitadas.
 Voltar pode retirar a marca de concluído das etapas posteriores.
+
+`next()`, `prev()`, `goTo()` e `complete()` retornam boolean: `true` quando
+a operação é aplicada, `false` quando cancelada, quando o índice é inválido
+ou quando a navegação não muda o passo de um wizard ainda não concluído.
+
+`complete()` pode ser chamado em qualquer passo e não é idempotente: cada
+chamada aceita emite `fs:stepper:beforechange` (com `completing: true`) e
+`fs:stepper:completed`, mesmo após a conclusão. Não altera o índice atual.
+Proteja efeitos externos contra execução duplicada no aplicativo.
