@@ -23,6 +23,13 @@ cada item conforme o upload de fato acontece.
 </div>
 ```
 
+**Limites do exemplo acima:** o texto “até 5MB cada” é somente uma regra
+ilustrativa da aplicação, **não implementada** pelo componente. Não há validação
+de tamanho, MIME, extensão ou quantidade. A frase “Arraste arquivos” também
+exige a composição com FileDrop mostrada abaixo; esta primeira marcação sozinha
+só oferece seleção pelo controle nativo. Para um exemplo executável sem essas
+promessas, consulte a fixture básica do catálogo.
+
 A lista (`<ul class="fs-file-upload-list">`) é criada automaticamente
 dentro do wrapper se não existir uma — cada arquivo selecionado vira um
 `<li class="fs-file-upload-item">` com thumbnail, nome, tamanho, barra de
@@ -100,7 +107,7 @@ Reaproveita os tokens do File Upload simples (`--fs-color-border`,
 |---|---|
 | `FileUploadAdvanced.getInstance(el)` | Retorna a instância associada ao wrapper (ou `undefined`). |
 | `getFiles()` | Retorna um array com os `File` atualmente na lista. |
-| `setProgress(id, percent)` | Atualiza a barra de progresso do item (0–100). |
+| `setProgress(id, percent)` | Recebe um número finito de 0–100 e atualiza a barra; também limpa o erro anterior. |
 | `setError(id, message)` | Marca o item com erro e mostra `message` no lugar do tamanho. |
 | `remove(id)` | Remove um item da lista programaticamente. |
 | `dispose()` | Remove os listeners e libera as URLs de thumbnail (`URL.revokeObjectURL`). |
@@ -109,6 +116,23 @@ Reaproveita os tokens do File Upload simples (`--fs-color-border`,
 |---|---|
 | `fs:file-upload:added` | Após novos arquivos serem selecionados — `detail.items` é `{ id, file }[]`. |
 | `fs:file-upload:removed` | Após um item ser removido — `detail` é `{ id, file }`. |
+
+## Contrato de dados e limites
+
+- Cada `change` acrescenta todos os arquivos recebidos à lista, inclusive arquivos
+  repetidos. Seleções sucessivas acumulam itens; não há deduplicação automática.
+- `getFiles()` é a lista autoritativa do componente. `remove(id)` não reescreve
+  `input.files`, não limpa o input e não cancela XHR/fetch iniciado pela aplicação.
+  Não use o FileList nativo como espelho da lista após remoções.
+- `setProgress` limita números comuns ao intervalo 0–100, mas não rejeita `NaN`.
+  Valide `Number.isFinite(percent)` antes de chamar. Não há promessa de
+  normalização de valores não numéricos ou não finitos.
+- Nome de arquivo e mensagem de erro são exibidos como texto escapado; não são
+  pontos de extensão para HTML. Isso não valida o conteúdo ou a segurança do
+  arquivo, que permanecem responsabilidade da aplicação e do servidor.
+- `dispose()` libera URLs de preview, remove listeners e esvazia a lista interna,
+  mas não remove o markup já renderizado nem limpa `input.files`. Se for remontar
+  a mesma área, a aplicação deve limpar explicitamente seus resíduos visuais/input.
 
 ## Exemplo
 

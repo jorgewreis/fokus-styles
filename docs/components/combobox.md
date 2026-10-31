@@ -87,7 +87,7 @@ apontando pro seletor da listbox (convenção idêntica ao Dropdown).
 
 | Propriedade | Descrição |
 |---|---|
-| `value` | Valor da opção selecionada (`data-value` do item, ou o texto visível se não houver). `null` até a primeira seleção. |
+| `value` | Valor da última seleção confirmada (`data-value` do item, ou texto visível). `null` até a primeira seleção; editar o texto depois não limpa nem atualiza esse valor. |
 
 | Evento (no input) | Cancelável | Quando |
 |---|---|---|
@@ -95,6 +95,16 @@ apontando pro seletor da listbox (convenção idêntica ao Dropdown).
 | `fs:combobox:changed` | Não | Mesmo momento, com `event.detail.value`/`event.detail.label`. |
 | `fs:combobox:shown` | Não | Depois de abrir a listbox. |
 | `fs:combobox:hidden` | Não | Depois de fechar. |
+
+## Opções e limites de sincronização
+
+O construtor aceita somente `placement`: opção JS → `data-placement` → `bottom`
+(precedência por valor não nulo). Não há opções de busca remota, múltipla seleção
+ou validação do texto livre. Digitar filtra as opções locais, mas não dispara
+`fs:combobox:changed` nem invalida a última seleção confirmada. A aplicação deve
+conferir se o texto atual ainda corresponde ao valor selecionado antes de enviá-lo.
+A label selecionada é extraída como texto; o componente não sanitiza HTML que a
+aplicação tenha previamente inserido na listbox.
 
 ## Tokens
 

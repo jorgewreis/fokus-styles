@@ -104,7 +104,7 @@ apontando pro painel (convenção idêntica ao Dropdown/Combobox).
 
 | Propriedade | Descrição |
 |---|---|
-| `value` | Data selecionada em ISO (`aaaa-mm-dd`), `null` até a primeira seleção. |
+| `value` | Data válida processada em ISO (`aaaa-mm-dd`), inclusive do valor inicial ou de `change` digitado; `null` para entrada vazia/inválida. |
 
 | Evento (no input) | Cancelável | Quando |
 |---|---|---|
@@ -112,6 +112,23 @@ apontando pro painel (convenção idêntica ao Dropdown/Combobox).
 | `fs:datepicker:changed` | Não | Mesmo momento, com `event.detail.value` (ISO) e `event.detail.date` (`Date`). |
 | `fs:datepicker:shown` | Não | Depois de abrir o painel. |
 | `fs:datepicker:hidden` | Não | Depois de fechar. |
+
+## Parsing, opções e validação
+
+O construtor aceita somente `placement`: opção JS → `data-placement` → `bottom`
+(precedência por valor não nulo). Não há opção de locale/formato, busca, min/max ou
+validador customizado; os textos de calendário usam pt-BR.
+
+O parser aceita dia/mês com um ou dois dígitos e ano com quatro (`d/m/aaaa`),
+rejeitando datas inexistentes. O valor inicial é processado na construção;
+posteriormente o evento `change` atualiza a data/ISO. Alterar `.value` do input
+sem evento não sincroniza automaticamente o estado do componente.
+
+Entrada inválida limpa `selectedDate` e `value`, mas conserva o texto digitado.
+O componente não chama `setCustomValidity`, não adiciona mensagem de erro nem
+valida requisitos de negócio. No input de texto, a aplicação deve implementar
+validação e associação de mensagens; isso não equivale à validação do controle
+nativo `type="date"`. Selecionar um dia no calendário escreve `dd/mm/aaaa`.
 
 ## Tokens
 

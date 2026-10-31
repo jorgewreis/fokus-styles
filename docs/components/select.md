@@ -16,8 +16,8 @@ o `<select>` real por baixo — sincronizado, escondido visualmente.
 
 O JS constrói o dropdown customizado logo depois do `<select>` no DOM e
 esconde o original (`display: none` — continua no DOM, então
-`<select>`/`<option>` do seu HTML/backend seguem sendo a fonte da
-verdade).
+`<select>` mantém o valor para o formulário). A sincronização visual é
+parcial, conforme os limites abaixo.
 
 ## Anatomia
 
@@ -39,7 +39,7 @@ Tamanho: `data-size="sm"`/`"lg"` no `<select>` original — vira
 
 - `<option disabled>` vira um item com `.is-disabled` no menu (não
   clicável).
-- `<select disabled>` desabilita o botão-toggle inteiro.
+- `<select disabled>` desabilita o botão-toggle inteiro na construção.
 - Item selecionado (`selectedIndex`) fica com `.is-active` no menu.
 
 ## A11y
@@ -65,6 +65,26 @@ Auto-init via `data-fs="select"` **no `<select>`**. `Select.getInstance(selectEl
 |---|---|---|
 | `change` (nativo) | Não | Ao selecionar uma opção — mesmo evento que um `<select>` comum dispara. |
 | `fs:select:changed` | Não | Mesmo momento, com `event.detail.value` (o novo valor). |
+
+## Limites de sincronização e dados
+
+- Opções, textos, `option.disabled`, `select.disabled` e tamanho são capturados na
+  construção. Não há observação automática de mudanças nesses atributos/filhos.
+  O evento nativo `change` sincroniza o texto da seleção e `aria-selected`, mas
+  não reconstrói opções nem atualiza o disabled do botão/menu.
+- Após alterar opções ou disponibilidade, desmonte e recrie o componente. Uma
+  alteração programática somente do valor exige disparar `change` para sincronizar
+  a apresentação. O reset de formulário é sincronizado após a ação nativa.
+- `multiple` e `optgroup` não são contratos suportados: as opções são achatadas,
+  somente `selectedIndex` é usado, e `disabled` do optgroup não é propagado aos
+  itens. Prefira o select nativo nesses casos; não interprete a aparência como
+  validação de elegibilidade.
+- Não há objeto de opções JS. Somente `data-size="sm"` ou `"lg"` é consumido;
+  outros tamanhos não são aplicados ao toggle. Texto das opções é copiado com
+  `textContent`, não interpretado como HTML.
+- O wrapper não transfere automaticamente toda validação ou semântica acessível
+  do select para o botão gerado. Verifique nome acessível, erro e formulário na
+  composição final; ouvir `change` não equivale a validar o formulário.
 
 ## Tokens
 
