@@ -22,8 +22,8 @@ clicar fora ou `Escape`.
 
 Sem `data-fs-target`, o menu é o próximo irmão do gatilho no HTML — usar
 `data-fs-target` é mais explícito e não exige ordem específica no DOM (o
-JS move o menu pra `<body>` na inicialização, pra escapar de
-`overflow: hidden` de containers ancestrais).
+JS move o menu para o diálogo proprietário, quando houver, ou `<body>`;
+ao descartar a instância, restaura seu pai e posição originais).
 
 ## Anatomia
 
@@ -49,7 +49,7 @@ de grupo, sem interação).
 ## Estados
 
 `.fs-dropdown-item.is-active` (fundo primário), `.fs-dropdown-item.is-disabled`
-(opacidade reduzida, sem interação/fora da navegação por seta).
+(opacidade reduzida, ponteiro bloqueado e fora da navegação por seta).
 
 ## A11y
 
@@ -109,3 +109,19 @@ Use `.fs-dropdown-menu-sm` ou `.fs-dropdown-menu-lg` para ajustar densidade,
 painéis com cabeçalho, metadados e ações descritas, e `.fs-dropdown-item-danger` para
 ações destrutivas. O JS publica `data-placement` no menu após o flip automático,
 permitindo ajustes de origem no CSS.
+
+### Limite conhecido: itens indisponíveis
+
+A filtragem de setas reconhece `.is-disabled`, `disabled` nativo e
+`aria-disabled="true"`. Porém o handler de clique não verifica esses estados
+nem cancela a ação padrão do link: `.is-disabled`/ARIA não garantem bloqueio
+por teclado ou clique programático. Não use esse estado visual como controle
+de autorização. Prefira `<button type="button" disabled>` para ações
+indisponíveis; para links, remova o destino ou implemente bloqueio explícito
+na aplicação, além da indicação acessível. É um limite atual, não um contrato
+de interação desejável.
+
+Somente `placement` e `align` são opções lidas. Opções JS precedem os atributos;
+o offset interno é 4px. `hide()` não devolve foco por si: Escape e seleção de
+item fazem isso nos respectivos handlers. `dispose()` preserva o painel DOM
+fornecido pela aplicação e o retorna ao pai original.

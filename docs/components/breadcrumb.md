@@ -91,3 +91,23 @@ Sem eventos customizados.
 ```
 
 Mockup: [laboratório do componente](../../mockup/navigation-disclosure.html#breadcrumb).
+
+### Limites atuais do truncamento e descarte
+
+A medição de overflow acontece uma vez, após `document.fonts.ready` (ou um
+requestAnimationFrame). A media query atualiza o colapso, não recalcula todos
+os tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com
+`Number`, sem validação de faixa; forneça um inteiro positivo coerente. Ele é
+o limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam
+primeiro, reticências e último.
+
+**Limitação de lifecycle:** `dispose()` limpa o dropdown de reticências,
+o listener da media query e o registro, mas não descarta Tooltips criados
+pelo truncamento, nem remove classes/data-title adicionados. Também não cancela
+a medição pendente: um Tooltip pode surgir após o descarte. Não suponha cleanup
+completo ao montar/desmontar a versão avançada repetidamente. Esse comportamento
+exige correção de runtime em uma alteração separada; não é API recomendada.
+
+A versão básica sem data-fs não inicia essa medição. Na composição avançada,
+planeje o descarte dos recursos auxiliares da aplicação e valide desmontagem
+assíncrona; remover apenas o HTML não cancela os callbacks internos pendentes.

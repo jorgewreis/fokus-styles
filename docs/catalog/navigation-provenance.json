@@ -1435,7 +1435,7 @@
   "sources": [
     {
       "path": "docs/components/breadcrumb.md",
-      "sha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a"
+      "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
     },
     {
       "path": "packages/fokus-js/js/breadcrumb.js",
@@ -1521,5 +1521,12 @@
       "path": "packages/fokus-js/js/tree-view.js",
       "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
     }
-  ]
+  ],
+  "documentationRefresh": {
+    "baseCommit": "2132738",
+    "path": "docs/components/breadcrumb.md",
+    "previousSha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a",
+    "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38",
+    "reason": "Refresh current sources only; historical auditRows and auditSHA256 retained."
+  }
 }

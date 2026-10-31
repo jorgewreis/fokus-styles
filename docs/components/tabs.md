@@ -54,13 +54,13 @@ O JS aplica automaticamente ao inicializar: `role="tablist"` no `.fs-tabs`,
 `aria-labelledby` no painel correspondente. Nenhum desses atributos precisa
 ser escrito manualmente no HTML.
 
-Teclado (com foco numa aba): `ArrowLeft`/`ArrowRight` move e ativa a
-aba anterior/próxima (pulando desabilitadas), `Home`/`End` vai pra
-primeira/última.
+Teclado (com foco numa aba): `ArrowLeft`/`ArrowRight` no modo horizontal,
+`ArrowUp`/`ArrowDown` com `.fs-tabs-vertical` ou `aria-orientation="vertical"`;
+`Home`/`End` vai à primeira/última. As setas pulam `.is-disabled`.
 
 Para separar navegação e ativação, use `data-tabs-activation="manual"` no
-grupo. Nesse modo as setas apenas movem o foco; `Enter` ou `Espaço` ativa a
-aba focada.
+grupo. Nesse modo as setas apenas movem o foco. Use `<button type="button">`
+para que `Enter` e `Espaço` gerem o clique nativo que ativa a aba.
 
 ## API JS
 
@@ -108,3 +108,25 @@ Além do estilo de linha, estão disponíveis `.fs-tabs-boxed`,
 do estilo padrão, sem classe adicional. Use o modo vertical
 em navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo
 JS.
+
+### Limites de ativação, disabled e ciclo de vida
+
+O handler não implementa Enter/Espaço: depende do click nativo do elemento.
+Links ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elementos
+genéricos com role=tab também não ganham ativação automática. O handler de
+clique não cancela navegação de links, incluindo `href="#"`; prefira botões.
+
+O runtime filtra somente a classe `.is-disabled`, não `aria-disabled` nem
+`disabled` na navegação por setas. Forneça `.is-disabled` e a semântica adequada
+ao elemento; não marque uma aba indisponível como ativa inicialmente.
+
+`show(tabEl)` exige que a aplicação passe uma aba habilitada do próprio grupo.
+O método não valida pertencimento nem disabled; uma referência externa pode
+desativar todas as abas e emitir evento nela. Esse é um limite conhecido,
+não uma maneira suportada de limpar a seleção.
+
+As abas são coletadas na construção; não há refresh para inserções dinâmicas.
+`dispose()` remove listeners e registro, mas não restaura atributos ARIA,
+classes ou visibilidade dos painéis. Recrie a instância após alterar a lista.
+Com o alias `data-fs-tab-target`, a seleção funciona, mas o evento
+`fs:tab:changed` ainda lê apenas `data-fs-target` e pode trazer target nulo.

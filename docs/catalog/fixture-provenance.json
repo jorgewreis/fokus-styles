@@ -2026,7 +2026,7 @@
     "implementation": [
       {
         "path": "docs/components/breadcrumb.md",
-        "sha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a"
+        "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38"
       },
       {
         "path": "packages/fokus-js/js/breadcrumb.js",
@@ -2036,7 +2036,14 @@
     "sha256": "59422a3ca343108e27bea33a6fcf10214670e70f7d17a32b4caedc196d498353",
     "transformations": [
       "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
-    ]
+    ],
+    "documentationRefresh": {
+      "baseCommit": "2132738",
+      "path": "docs/components/breadcrumb.md",
+      "previousSha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a",
+      "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38",
+      "reason": "Documentation-only lifecycle limitation clarification; original fixture and runtime unchanged."
+    }
   },
   "nested-menu/recursive-end": {
     "mode": "authored-runtime",

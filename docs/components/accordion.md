@@ -56,7 +56,7 @@ força todos fechados).
 ## A11y
 
 Use `.fs-accordion-flush` para remover bordas externas. Com `data-fs-always-open="true"`,
-um painel aberto não pode ser fechado isoladamente.
+um painel aberto não pode ser fechado pelo botão e a exclusividade é desativada.
 
 `aria-controls`/`aria-expanded` (botão) e `role="region"`/
 `aria-labelledby` (painel) aplicados automaticamente. Cada botão é um
@@ -102,3 +102,8 @@ botão de cada item (ou disparando o evento de clique programaticamente).
 ```
 
 Mockup: [laboratório do componente](../../mockup/navigation-disclosure.html#accordion).
+
+`data-fs-always-open="true"` não significa "sempre exatamente um aberto":
+ele permite acumular painéis abertos e não abre automaticamente um painel
+quando todos começam fechados. `data-multiple` e `data-fs-always-open` só
+ativam esses modos com o texto exato `"true"`; não são opções do construtor.
