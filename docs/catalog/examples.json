@@ -126,6 +126,35 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ],
       "js": "docs/catalog/fixtures/accordion/basic.js"
+    },
+    {
+      "id": "multiple",
+      "title": "Accordion — multiple",
+      "html": "docs/catalog/fixtures/accordion/multiple.html",
+      "js": "docs/catalog/fixtures/accordion/multiple.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+      ]
+    },
+    {
+      "id": "always-open",
+      "title": "Accordion — always-open",
+      "html": "docs/catalog/fixtures/accordion/always-open.html",
+      "js": "docs/catalog/fixtures/accordion/always-open.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "always-open impede fechar qualquer painel aberto; não significa apenas manter um aberto."
+      ]
     }
   ],
   "tabs": [
@@ -142,6 +171,35 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ],
       "js": "docs/catalog/fixtures/tabs/basic.js"
+    },
+    {
+      "id": "vertical-manual",
+      "title": "Tabs — vertical/manual e disabled",
+      "html": "docs/catalog/fixtures/tabs/vertical-manual.html",
+      "js": "docs/catalog/fixtures/tabs/vertical-manual.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "Enter/Espaço dependem da ativação nativa de button; setas apenas movem foco no modo manual."
+      ]
+    },
+    {
+      "id": "vertical-automatic",
+      "title": "Tabs — vertical/automático",
+      "html": "docs/catalog/fixtures/tabs/vertical-automatic.html",
+      "js": "docs/catalog/fixtures/tabs/vertical-automatic.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+      ]
     }
   ],
   "collapse": [
@@ -175,6 +233,36 @@
         "Confirmar é demonstrativo; não executa ação de aplicativo."
       ],
       "js": "docs/catalog/fixtures/modal/basic.js"
+    },
+    {
+      "id": "static-backdrop",
+      "title": "Modal — static-backdrop",
+      "html": "docs/catalog/fixtures/modal/static-backdrop.html",
+      "js": "docs/catalog/fixtures/modal/static-backdrop.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "Backdrop static bloqueia Escape e clique fora; Cancelar/Fechar continuam disponíveis."
+      ]
+    },
+    {
+      "id": "false-option",
+      "title": "Modal — false-option",
+      "html": "docs/catalog/fixtures/modal/false-option.html",
+      "js": "docs/catalog/fixtures/modal/false-option.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "backdrop:false não remove backdrop nem bloqueia fechamento; runtime só distingue static. Escape e clique fora fecham como no default."
+      ]
     }
   ],
   "breadcrumb": [
@@ -462,6 +550,35 @@
         "Links # demonstrativos; não editam, duplicam ou excluem dados."
       ],
       "js": "docs/catalog/fixtures/dropdown/basic.js"
+    },
+    {
+      "id": "top-end-disabled",
+      "title": "Dropdown — topo/fim e opção desabilitada",
+      "html": "docs/catalog/fixtures/dropdown/top-end-disabled.html",
+      "js": "docs/catalog/fixtures/dropdown/top-end-disabled.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+      ]
+    },
+    {
+      "id": "options-precedence",
+      "title": "Dropdown — opções sobre atributos",
+      "html": "docs/catalog/fixtures/dropdown/options-precedence.html",
+      "js": "docs/catalog/fixtures/dropdown/options-precedence.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "As opções JS prevalecem sobre top/end do HTML; posição efetiva pode mudar junto à borda da viewport."
+      ]
     }
   ],
   "tag": [
@@ -649,6 +766,50 @@
       "limitations": [
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
         "Botão Copiar é demonstrativo; não acessa a área de transferência."
+      ]
+    },
+    {
+      "id": "delays-description",
+      "title": "Tooltip — atraso e descrição existente",
+      "html": "docs/catalog/fixtures/tooltip/delays-description.html",
+      "js": "docs/catalog/fixtures/tooltip/delays-description.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+      ]
+    },
+    {
+      "id": "options-precedence",
+      "title": "Tooltip — opções explícitas",
+      "html": "docs/catalog/fixtures/tooltip/options-precedence.html",
+      "js": "docs/catalog/fixtures/tooltip/options-precedence.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "title/data-title têm prioridade sobre options.title; aqui permanece Ajuda complementar."
+      ]
+    },
+    {
+      "id": "fallback-values",
+      "title": "Tooltip — delays/offset inválidos",
+      "html": "docs/catalog/fixtures/tooltip/fallback-values.html",
+      "js": "docs/catalog/fixtures/tooltip/fallback-values.js",
+      "coverage": [
+        "markup-documentado",
+        "opcoes-estados-selecionados",
+        "inicializacao-teardown"
+      ],
+      "limitations": [
+        "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+        "Valores inválidos de delay normalizam a 0; offset negativo usa 8. Não generaliza fallback de placement."
       ]
     }
   ],

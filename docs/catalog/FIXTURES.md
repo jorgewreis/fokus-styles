@@ -1,6 +1,6 @@
 # Exemplos selecionados para o catálogo
 
-`examples.json` reúne **56 exemplos mínimos, um por componente**. Isso cobre
+`examples.json` reúne **67 exemplos: 56 básicos e 11 variações interativas**. Isso cobre
 presença de exemplos, **não todas as variantes, estados ou combinações**.
 O catálogo continua `complete: false`, candidato `next` não publicado,
 sem certificação de produção ou WCAG.
@@ -74,3 +74,12 @@ ambiente compatível permanece obrigatório antes de alegar validação browser.
 - 56 exemplos: 24 adições e correção de nome acessível no Input Group.
   Presença por componente atingida; cobertura de comportamento/variantes,
   acessibilidade manual e revisão visual permanecem parciais.
+
+
+## Variações interativas (checkpoint posterior às 56 fixtures)
+
+Veja [INTERACTIVE-OPTIONS.md](INTERACTIVE-OPTIONS.md): 11 exemplos adicionais,
+22 testes DOM e 33 casos browser preparados. Os registros de procedência
+`componente/id` preservam o bloco documental original e transformação exata;
+registros sem sufixo continuam descrevendo exclusivamente a fixture básica.
+Nenhuma alegação anterior de browser foi promovida a aprovação.

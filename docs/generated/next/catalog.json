@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "846dc8a55455e704795c8c8bd40d75bf02917f627d93ac6d264bcc53627c8fa8",
+    "digest": "02157ff89d2ba3d64fb60cfd2620a0caea345e5d42457cc2d754a83b2c76f4b7",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,19 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "068cf6b785d46ede3491a856738b14d8077b03cb9f16ddc028ef0fe7ffc7ae93"
+        "sha256": "147fe201058e80d9d19d1f1e1290d2a93bc46d415f9dd13a056609f89c2cb972"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "4a0d2ca71b3ac28e805d4772d1518786b4e123c872c56dd117fed633534e6e31"
+        "sha256": "c8dc973f6430bab23f6eeb4d5a22850676f752d924ae8316f4403524f4843e6b"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/always-open.html",
+        "sha256": "ce22b61fc92e0adf522589d6826e7bb82e9bde6fabf095930579e783586ffd21"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/always-open.js",
+        "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
       },
       {
         "path": "docs/catalog/fixtures/accordion/basic.html",
@@ -25,6 +33,14 @@
       },
       {
         "path": "docs/catalog/fixtures/accordion/basic.js",
+        "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/multiple.html",
+        "sha256": "1ad861712c1068523f613ecb8defffb9bbba6747f455815c7268c4e7f822eb01"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/multiple.js",
         "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
       },
       {
@@ -152,6 +168,22 @@
         "sha256": "d6a313565b0de0a89db0c1fc9a27f4c3e7a953c63afebd1ec5dab2a08093ca67"
       },
       {
+        "path": "docs/catalog/fixtures/dropdown/options-precedence.html",
+        "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226"
+      },
+      {
+        "path": "docs/catalog/fixtures/dropdown/options-precedence.js",
+        "sha256": "716468b4a4516d5f75d0cd7744dfaefa7fe88d6944f2b65ed2e6f1c8165ecb2e"
+      },
+      {
+        "path": "docs/catalog/fixtures/dropdown/top-end-disabled.html",
+        "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226"
+      },
+      {
+        "path": "docs/catalog/fixtures/dropdown/top-end-disabled.js",
+        "sha256": "d6a313565b0de0a89db0c1fc9a27f4c3e7a953c63afebd1ec5dab2a08093ca67"
+      },
+      {
         "path": "docs/catalog/fixtures/empty-state/basic.html",
         "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
       },
@@ -201,6 +233,22 @@
       },
       {
         "path": "docs/catalog/fixtures/modal/basic.js",
+        "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/false-option.html",
+        "sha256": "cc4a354f50c803dda85314d4e215b8aa9214b54b028633b31c32524f5c292eb3"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/false-option.js",
+        "sha256": "3155bdf37e20c541072b4676525b485476625cf0b144ea98480236123f23439b"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/static-backdrop.html",
+        "sha256": "a110d4b386a8ec24e8b701183b37b83f29953115be64b8c902daefe00385a22f"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/static-backdrop.js",
         "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
       },
       {
@@ -340,6 +388,22 @@
         "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
       },
       {
+        "path": "docs/catalog/fixtures/tabs/vertical-automatic.html",
+        "sha256": "5576349fd721f5e2fce0a28ae9b0fcaf8bf748186aeb192da95a231c44d8f900"
+      },
+      {
+        "path": "docs/catalog/fixtures/tabs/vertical-automatic.js",
+        "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+      },
+      {
+        "path": "docs/catalog/fixtures/tabs/vertical-manual.html",
+        "sha256": "f96f788077afdc37997e4130244820997b84feaa5174c076e322ab52f3057749"
+      },
+      {
+        "path": "docs/catalog/fixtures/tabs/vertical-manual.js",
+        "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+      },
+      {
         "path": "docs/catalog/fixtures/tag/basic.html",
         "sha256": "49b23feb188b18e676c28fb35d07d8889610661e7f2a484a78de395362e464c2"
       },
@@ -370,6 +434,30 @@
       {
         "path": "docs/catalog/fixtures/tooltip/basic.js",
         "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/delays-description.html",
+        "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/delays-description.js",
+        "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/fallback-values.html",
+        "sha256": "504fb32a202d44cb3ae8ee3b0b860d34cdc8c19977fed11b3f106cc5e70668c0"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/fallback-values.js",
+        "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/options-precedence.html",
+        "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/options-precedence.js",
+        "sha256": "64647d37e62c2ef3b6d71723beea6996de9b770e0cfebfe7ff878f54cdeeec37"
       },
       {
         "path": "docs/catalog/fixtures/tree-view/basic.html",
@@ -1452,7 +1540,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 61,
+    "examples": 72,
     "complete": false
   },
   "contracts": [
@@ -1983,6 +2071,57 @@
             },
             {
               "path": "docs/catalog/fixtures/accordion/basic.js",
+              "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
+            }
+          ]
+        },
+        {
+          "id": "multiple",
+          "title": "Accordion — multiple",
+          "htmlCode": "<div class=\"fs-accordion\" data-fs=\"accordion\" data-multiple=\"true\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Accordion } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"accordion\"]')]\n  .map((element) => Accordion.getInstance(element) ?? new Accordion(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/accordion/multiple.html",
+              "sha256": "1ad861712c1068523f613ecb8defffb9bbba6747f455815c7268c4e7f822eb01"
+            },
+            {
+              "path": "docs/catalog/fixtures/accordion/multiple.js",
+              "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
+            }
+          ]
+        },
+        {
+          "id": "always-open",
+          "title": "Accordion — always-open",
+          "htmlCode": "<div class=\"fs-accordion\" data-fs=\"accordion\" data-fs-always-open=\"true\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Accordion } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"accordion\"]')]\n  .map((element) => Accordion.getInstance(element) ?? new Accordion(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "always-open impede fechar qualquer painel aberto; não significa apenas manter um aberto."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/accordion/always-open.html",
+              "sha256": "ce22b61fc92e0adf522589d6826e7bb82e9bde6fabf095930579e783586ffd21"
+            },
+            {
+              "path": "docs/catalog/fixtures/accordion/always-open.js",
               "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
             }
           ]
@@ -21020,6 +21159,57 @@
               "sha256": "d6a313565b0de0a89db0c1fc9a27f4c3e7a953c63afebd1ec5dab2a08093ca67"
             }
           ]
+        },
+        {
+          "id": "top-end-disabled",
+          "title": "Dropdown — topo/fim e opção desabilitada",
+          "htmlCode": "<div class=\"fs-dropdown\">\n  <button id=\"menu-trigger\" type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#option-menu\" data-placement=\"top\" data-align=\"end\" aria-controls=\"option-menu\">Ações demonstrativas</button>\n  <div id=\"option-menu\" class=\"fs-dropdown-menu\" role=\"menu\" aria-labelledby=\"menu-trigger\">\n    <div class=\"fs-dropdown-header\">Documento</div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Abrir</button>\n    <button type=\"button\" class=\"fs-dropdown-item\" disabled aria-disabled=\"true\">Indisponível</button>\n    <div class=\"fs-dropdown-divider\" role=\"separator\"></div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Voltar</button>\n  </div>\n</div>\n",
+          "jsCode": "import { Dropdown } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"dropdown\"]')]\n  .map((element) => Dropdown.getInstance(element) ?? new Dropdown(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/dropdown/top-end-disabled.html",
+              "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226"
+            },
+            {
+              "path": "docs/catalog/fixtures/dropdown/top-end-disabled.js",
+              "sha256": "d6a313565b0de0a89db0c1fc9a27f4c3e7a953c63afebd1ec5dab2a08093ca67"
+            }
+          ]
+        },
+        {
+          "id": "options-precedence",
+          "title": "Dropdown — opções sobre atributos",
+          "htmlCode": "<div class=\"fs-dropdown\">\n  <button id=\"menu-trigger\" type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#option-menu\" data-placement=\"top\" data-align=\"end\" aria-controls=\"option-menu\">Ações demonstrativas</button>\n  <div id=\"option-menu\" class=\"fs-dropdown-menu\" role=\"menu\" aria-labelledby=\"menu-trigger\">\n    <div class=\"fs-dropdown-header\">Documento</div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Abrir</button>\n    <button type=\"button\" class=\"fs-dropdown-item\" disabled aria-disabled=\"true\">Indisponível</button>\n    <div class=\"fs-dropdown-divider\" role=\"separator\"></div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Voltar</button>\n  </div>\n</div>\n",
+          "jsCode": "import { Dropdown } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"dropdown\"]')]\n  .map((element) => {\n    // ESM imports can auto-init before this script; replace defaults explicitly.\n    Dropdown.getInstance(element)?.dispose();\n    return new Dropdown(element, { placement: \"right\", align: \"center\" });\n  });\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "As opções JS prevalecem sobre top/end do HTML; posição efetiva pode mudar junto à borda da viewport."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/dropdown/options-precedence.html",
+              "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226"
+            },
+            {
+              "path": "docs/catalog/fixtures/dropdown/options-precedence.js",
+              "sha256": "716468b4a4516d5f75d0cd7744dfaefa7fe88d6944f2b65ed2e6f1c8165ecb2e"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -26353,6 +26543,58 @@
             {
               "path": "docs/catalog/fixtures/modal/basic.js",
               "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
+            }
+          ]
+        },
+        {
+          "id": "static-backdrop",
+          "title": "Modal — static-backdrop",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\" data-backdrop=\"static\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Exemplo de fechamento</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Ação demonstrativa</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Modal } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"modal\"]')]\n  .map((element) => Modal.getInstance(element) ?? new Modal(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "Backdrop static bloqueia Escape e clique fora; Cancelar/Fechar continuam disponíveis."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/modal/static-backdrop.html",
+              "sha256": "a110d4b386a8ec24e8b701183b37b83f29953115be64b8c902daefe00385a22f"
+            },
+            {
+              "path": "docs/catalog/fixtures/modal/static-backdrop.js",
+              "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
+            }
+          ]
+        },
+        {
+          "id": "false-option",
+          "title": "Modal — false-option",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Exemplo de fechamento</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Ação demonstrativa</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Modal } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"modal\"]')]\n  .map((element) => {\n    // ESM imports can auto-init before this script; replace defaults explicitly.\n    Modal.getInstance(element)?.dispose();\n    return new Modal(element, { backdrop: false });\n  });\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "backdrop:false não remove backdrop nem bloqueia fechamento; runtime só distingue static. Escape e clique fora fecham como no default."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/modal/false-option.html",
+              "sha256": "cc4a354f50c803dda85314d4e215b8aa9214b54b028633b31c32524f5c292eb3"
+            },
+            {
+              "path": "docs/catalog/fixtures/modal/false-option.js",
+              "sha256": "3155bdf37e20c541072b4676525b485476625cf0b144ea98480236123f23439b"
             }
           ]
         }
@@ -44997,6 +45239,57 @@
               "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
             }
           ]
+        },
+        {
+          "id": "vertical-manual",
+          "title": "Tabs — vertical/manual e disabled",
+          "htmlCode": "<div class=\"fs-tabs fs-tabs-vertical\" data-fs=\"tabs\" aria-label=\"Preferências\" aria-orientation=\"vertical\" data-tabs-activation=\"manual\">\n  <button type=\"button\" class=\"fs-nav-link is-active\" data-fs-target=\"#account\">Conta</button>\n  <button type=\"button\" class=\"fs-nav-link is-disabled\" disabled aria-disabled=\"true\" data-fs-target=\"#locked\">Indisponível</button>\n  <button type=\"button\" class=\"fs-nav-link\" data-fs-target=\"#privacy\">Privacidade</button>\n</div>\n<div class=\"fs-tab-content\">\n  <div id=\"account\" class=\"fs-tab-pane is-active\">Dados da conta.</div>\n  <div id=\"locked\" class=\"fs-tab-pane\">Área indisponível.</div>\n  <div id=\"privacy\" class=\"fs-tab-pane\">Preferências de privacidade.</div>\n</div>\n",
+          "jsCode": "import { Tabs } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tabs\"]')]\n  .map((element) => Tabs.getInstance(element) ?? new Tabs(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "Enter/Espaço dependem da ativação nativa de button; setas apenas movem foco no modo manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tabs/vertical-manual.html",
+              "sha256": "f96f788077afdc37997e4130244820997b84feaa5174c076e322ab52f3057749"
+            },
+            {
+              "path": "docs/catalog/fixtures/tabs/vertical-manual.js",
+              "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+            }
+          ]
+        },
+        {
+          "id": "vertical-automatic",
+          "title": "Tabs — vertical/automático",
+          "htmlCode": "<div class=\"fs-tabs fs-tabs-vertical\" data-fs=\"tabs\" aria-label=\"Preferências\" aria-orientation=\"vertical\" data-tabs-activation=\"automatic\">\n  <button type=\"button\" class=\"fs-nav-link is-active\" data-fs-target=\"#account\">Conta</button>\n  <button type=\"button\" class=\"fs-nav-link is-disabled\" disabled aria-disabled=\"true\" data-fs-target=\"#locked\">Indisponível</button>\n  <button type=\"button\" class=\"fs-nav-link\" data-fs-target=\"#privacy\">Privacidade</button>\n</div>\n<div class=\"fs-tab-content\">\n  <div id=\"account\" class=\"fs-tab-pane is-active\">Dados da conta.</div>\n  <div id=\"locked\" class=\"fs-tab-pane\">Área indisponível.</div>\n  <div id=\"privacy\" class=\"fs-tab-pane\">Preferências de privacidade.</div>\n</div>\n",
+          "jsCode": "import { Tabs } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tabs\"]')]\n  .map((element) => Tabs.getInstance(element) ?? new Tabs(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tabs/vertical-automatic.html",
+              "sha256": "5576349fd721f5e2fce0a28ae9b0fcaf8bf748186aeb192da95a231c44d8f900"
+            },
+            {
+              "path": "docs/catalog/fixtures/tabs/vertical-automatic.js",
+              "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -52023,6 +52316,83 @@
             },
             {
               "path": "docs/catalog/fixtures/tooltip/basic.js",
+              "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+            }
+          ]
+        },
+        {
+          "id": "delays-description",
+          "title": "Tooltip — atraso e descrição existente",
+          "htmlCode": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"12\" data-show-delay=\"300\" data-hide-delay=\"100\">Ajuda</button>\n",
+          "jsCode": "import { Tooltip } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tooltip\"]')]\n  .map((element) => Tooltip.getInstance(element) ?? new Tooltip(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tooltip/delays-description.html",
+              "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a"
+            },
+            {
+              "path": "docs/catalog/fixtures/tooltip/delays-description.js",
+              "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+            }
+          ]
+        },
+        {
+          "id": "options-precedence",
+          "title": "Tooltip — opções explícitas",
+          "htmlCode": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"12\" data-show-delay=\"300\" data-hide-delay=\"100\">Ajuda</button>\n",
+          "jsCode": "import { Tooltip } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tooltip\"]')]\n  .map((element) => {\n    // ESM imports can auto-init before this script; replace defaults explicitly.\n    Tooltip.getInstance(element)?.dispose();\n    return new Tooltip(element, { placement: \"left-end\", align: \"end\", offset: 16, title: \"Texto de fallback\", showDelay: 150, hideDelay: 50 });\n  });\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "title/data-title têm prioridade sobre options.title; aqui permanece Ajuda complementar."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tooltip/options-precedence.html",
+              "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a"
+            },
+            {
+              "path": "docs/catalog/fixtures/tooltip/options-precedence.js",
+              "sha256": "64647d37e62c2ef3b6d71723beea6996de9b770e0cfebfe7ff878f54cdeeec37"
+            }
+          ]
+        },
+        {
+          "id": "fallback-values",
+          "title": "Tooltip — delays/offset inválidos",
+          "htmlCode": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"-1\" data-show-delay=\"inválido\" data-hide-delay=\"-1\">Ajuda</button>\n",
+          "jsCode": "import { Tooltip } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tooltip\"]')]\n  .map((element) => Tooltip.getInstance(element) ?? new Tooltip(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "opcoes-estados-selecionados",
+            "inicializacao-teardown"
+          ],
+          "limitations": [
+            "Cobertura parcial; layout, temas, RTL, toque, contraste e leitor de tela exigem validação browser/manual.",
+            "Valores inválidos de delay normalizam a 0; offset negativo usa 8. Não generaliza fallback de placement."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tooltip/fallback-values.html",
+              "sha256": "504fb32a202d44cb3ae8ee3b0b860d34cdc8c19977fed11b3f106cc5e70668c0"
+            },
+            {
+              "path": "docs/catalog/fixtures/tooltip/fallback-values.js",
               "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
             }
           ]

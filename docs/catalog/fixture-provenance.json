@@ -1032,5 +1032,236 @@
       }
     ],
     "extraction": "Exemplo novo composto após revisão runtime/tipos e matriz 2026-10-31, não cópia literal de bloco histórico."
+  },
+  "accordion/multiple": {
+    "source": "docs/components/accordion.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "1ad861712c1068523f613ecb8defffb9bbba6747f455815c7268c4e7f822eb01",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<div class=\"fs-accordion\" data-fs=\"accordion\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+    "sourceSha256": "a0167e521ff3091218ad7ad8e1b9c677e072b195de796bcf25d1201955d69550",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-accordion\" data-fs=\"accordion\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+        "to": "<div class=\"fs-accordion\" data-fs=\"accordion\" data-multiple=\"true\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/accordion.js",
+        "sha256": "6f7a5a1ff665410f58df70b7250b4121ff6991606b37f8320b610b5bcb7a1ed1"
+      }
+    ]
+  },
+  "accordion/always-open": {
+    "source": "docs/components/accordion.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "ce22b61fc92e0adf522589d6826e7bb82e9bde6fabf095930579e783586ffd21",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<div class=\"fs-accordion\" data-fs=\"accordion\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+    "sourceSha256": "a0167e521ff3091218ad7ad8e1b9c677e072b195de796bcf25d1201955d69550",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-accordion\" data-fs=\"accordion\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+        "to": "<div class=\"fs-accordion\" data-fs=\"accordion\" data-fs-always-open=\"true\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/accordion.js",
+        "sha256": "6f7a5a1ff665410f58df70b7250b4121ff6991606b37f8320b610b5bcb7a1ed1"
+      }
+    ]
+  },
+  "modal/static-backdrop": {
+    "source": "docs/components/modal.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "a110d4b386a8ec24e8b701183b37b83f29953115be64b8c902daefe00385a22f",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Título</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Confirmar</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+    "sourceSha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff",
+    "transformations": [
+      {
+        "from": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Título</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Confirmar</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+        "to": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\" data-backdrop=\"static\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Exemplo de fechamento</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Ação demonstrativa</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/modal.js",
+        "sha256": "7ce9944a4d0d43587bf655ea650c2bf63f6c2aa5740ad4a0a874a29eed131066"
+      }
+    ]
+  },
+  "modal/false-option": {
+    "source": "docs/components/modal.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "cc4a354f50c803dda85314d4e215b8aa9214b54b028633b31c32524f5c292eb3",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Título</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Confirmar</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+    "sourceSha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff",
+    "transformations": [
+      {
+        "from": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Título</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Confirmar</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+        "to": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Exemplo de fechamento</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Ação demonstrativa</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/modal.js",
+        "sha256": "7ce9944a4d0d43587bf655ea650c2bf63f6c2aa5740ad4a0a874a29eed131066"
+      }
+    ]
+  },
+  "dropdown/top-end-disabled": {
+    "source": "docs/components/dropdown.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/dropdown.js",
+        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+      }
+    ],
+    "sourceCode": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
+    "sourceSha256": "f3c3981a43f5f87920e91f1cb77a02304134cde7b8e002df9901fbfb4e9d1c75",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
+        "to": "<div class=\"fs-dropdown\">\n  <button id=\"menu-trigger\" type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#option-menu\" data-placement=\"top\" data-align=\"end\" aria-controls=\"option-menu\">Ações demonstrativas</button>\n  <div id=\"option-menu\" class=\"fs-dropdown-menu\" role=\"menu\" aria-labelledby=\"menu-trigger\">\n    <div class=\"fs-dropdown-header\">Documento</div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Abrir</button>\n    <button type=\"button\" class=\"fs-dropdown-item\" disabled aria-disabled=\"true\">Indisponível</button>\n    <div class=\"fs-dropdown-divider\" role=\"separator\"></div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Voltar</button>\n  </div>\n</div>\n"
+      }
+    ]
+  },
+  "dropdown/options-precedence": {
+    "source": "docs/components/dropdown.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "431eb7a31550b8bfcc7f3a226cc9e0f336bfcacf3fb16844e47b7331f8e40226",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/dropdown.js",
+        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+      }
+    ],
+    "sourceCode": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
+    "sourceSha256": "f3c3981a43f5f87920e91f1cb77a02304134cde7b8e002df9901fbfb4e9d1c75",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-dropdown\">\n  <button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#meu-menu\">\n    Opções\n  </button>\n  <div class=\"fs-dropdown-menu\" id=\"meu-menu\">\n    <a href=\"#\" class=\"fs-dropdown-item\">Editar</a>\n    <a href=\"#\" class=\"fs-dropdown-item\">Duplicar</a>\n    <div class=\"fs-dropdown-divider\"></div>\n    <a href=\"#\" class=\"fs-dropdown-item\">Excluir</a>\n  </div>\n</div>\n",
+        "to": "<div class=\"fs-dropdown\">\n  <button id=\"menu-trigger\" type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"dropdown\" data-fs-target=\"#option-menu\" data-placement=\"top\" data-align=\"end\" aria-controls=\"option-menu\">Ações demonstrativas</button>\n  <div id=\"option-menu\" class=\"fs-dropdown-menu\" role=\"menu\" aria-labelledby=\"menu-trigger\">\n    <div class=\"fs-dropdown-header\">Documento</div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Abrir</button>\n    <button type=\"button\" class=\"fs-dropdown-item\" disabled aria-disabled=\"true\">Indisponível</button>\n    <div class=\"fs-dropdown-divider\" role=\"separator\"></div>\n    <button type=\"button\" class=\"fs-dropdown-item\">Voltar</button>\n  </div>\n</div>\n"
+      }
+    ]
+  },
+  "tabs/vertical-manual": {
+    "source": "docs/components/tabs.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "f96f788077afdc37997e4130244820997b84feaa5174c076e322ab52f3057749",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n",
+    "sourceSha256": "b3d92505810a07634614a61d766cd701a2c943fc3e43eab9295b1b7550603ae6",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n",
+        "to": "<div class=\"fs-tabs fs-tabs-vertical\" data-fs=\"tabs\" aria-label=\"Preferências\" aria-orientation=\"vertical\" data-tabs-activation=\"manual\">\n  <button type=\"button\" class=\"fs-nav-link is-active\" data-fs-target=\"#account\">Conta</button>\n  <button type=\"button\" class=\"fs-nav-link is-disabled\" disabled aria-disabled=\"true\" data-fs-target=\"#locked\">Indisponível</button>\n  <button type=\"button\" class=\"fs-nav-link\" data-fs-target=\"#privacy\">Privacidade</button>\n</div>\n<div class=\"fs-tab-content\">\n  <div id=\"account\" class=\"fs-tab-pane is-active\">Dados da conta.</div>\n  <div id=\"locked\" class=\"fs-tab-pane\">Área indisponível.</div>\n  <div id=\"privacy\" class=\"fs-tab-pane\">Preferências de privacidade.</div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tabs.js",
+        "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+      }
+    ]
+  },
+  "tabs/vertical-automatic": {
+    "source": "docs/components/tabs.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "5576349fd721f5e2fce0a28ae9b0fcaf8bf748186aeb192da95a231c44d8f900",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada.",
+    "sourceCode": "<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n",
+    "sourceSha256": "b3d92505810a07634614a61d766cd701a2c943fc3e43eab9295b1b7550603ae6",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n",
+        "to": "<div class=\"fs-tabs fs-tabs-vertical\" data-fs=\"tabs\" aria-label=\"Preferências\" aria-orientation=\"vertical\" data-tabs-activation=\"automatic\">\n  <button type=\"button\" class=\"fs-nav-link is-active\" data-fs-target=\"#account\">Conta</button>\n  <button type=\"button\" class=\"fs-nav-link is-disabled\" disabled aria-disabled=\"true\" data-fs-target=\"#locked\">Indisponível</button>\n  <button type=\"button\" class=\"fs-nav-link\" data-fs-target=\"#privacy\">Privacidade</button>\n</div>\n<div class=\"fs-tab-content\">\n  <div id=\"account\" class=\"fs-tab-pane is-active\">Dados da conta.</div>\n  <div id=\"locked\" class=\"fs-tab-pane\">Área indisponível.</div>\n  <div id=\"privacy\" class=\"fs-tab-pane\">Preferências de privacidade.</div>\n</div>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tabs.js",
+        "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+      }
+    ]
+  },
+  "tooltip/delays-description": {
+    "source": "docs/components/tooltip.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a",
+    "sourceSha256": "9d92a533c85f448914b47693d71009804145a7730614e1a8c78b7b2e9267d565",
+    "extraction": "adapted",
+    "transformations": [
+      {
+        "from": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n",
+        "to": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"12\" data-show-delay=\"300\" data-hide-delay=\"100\">Ajuda</button>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tooltip.js",
+        "sha256": "220b59f63a2285fef4bba04d5e1edbdfe7fd42c3df187dfd59780ceff10c0b3f"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n"
+  },
+  "tooltip/options-precedence": {
+    "source": "docs/components/tooltip.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "43ca411ed06eeaf30dd2571234213f672f3f192f4e953b9dab18a6382b346c2a",
+    "sourceSha256": "9d92a533c85f448914b47693d71009804145a7730614e1a8c78b7b2e9267d565",
+    "extraction": "adapted",
+    "transformations": [
+      {
+        "from": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n",
+        "to": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"12\" data-show-delay=\"300\" data-hide-delay=\"100\">Ajuda</button>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tooltip.js",
+        "sha256": "220b59f63a2285fef4bba04d5e1edbdfe7fd42c3df187dfd59780ceff10c0b3f"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n"
+  },
+  "tooltip/fallback-values": {
+    "source": "docs/components/tooltip.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "504fb32a202d44cb3ae8ee3b0b860d34cdc8c19977fed11b3f106cc5e70668c0",
+    "sourceSha256": "9d92a533c85f448914b47693d71009804145a7730614e1a8c78b7b2e9267d565",
+    "extraction": "adapted",
+    "transformations": [
+      {
+        "from": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n",
+        "to": "<p id=\"tip-description\">Informação permanente sobre o exemplo.</p>\n<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Ajuda complementar\" aria-describedby=\"tip-description\" data-placement=\"bottom-end\" data-align=\"start\" data-offset=\"-1\" data-show-delay=\"inválido\" data-hide-delay=\"-1\">Ajuda</button>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tooltip.js",
+        "sha256": "220b59f63a2285fef4bba04d5e1edbdfe7fd42c3df187dfd59780ceff10c0b3f"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n"
   }
 }

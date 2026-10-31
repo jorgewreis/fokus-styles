@@ -20,10 +20,10 @@ try {
    assert(await frame.evaluate(()=>[...document.styleSheets].some(s=>s.href?.endsWith('/dist/css/fokus.css'))));
    if(c.id==='modal') {
     const trigger=frame.locator('[data-fs="modal"]');const dialog=frame.locator('.fs-modal');
-    for(let n=0;n<2;n++) {await trigger.click();await dialog.waitFor({state:'visible'});assert(await dialog.evaluate(el=>el.contains(document.activeElement)));await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});assert(await trigger.evaluate(el=>el===document.activeElement));}
+    for(let n=0;n<2;n++) {await trigger.click();await dialog.waitFor({state:'visible'});assert(await dialog.evaluate(el=>el.contains(document.activeElement)));if(e.id==='static-backdrop') await frame.getByRole('button',{name:'Cancelar',exact:true}).click(); else await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});assert(await trigger.evaluate(el=>el===document.activeElement));}
    }
    if(c.id==='collapse') {const trigger=frame.locator('[data-fs="collapse"]');await trigger.click();await frame.waitForFunction(()=>document.querySelector('[data-fs="collapse"]').getAttribute('aria-expanded')==='true');}
-   if(c.id==='tabs') {const tabs=frame.getByRole('tab');await tabs.nth(1).click();assert.equal(await tabs.nth(1).getAttribute('aria-selected'),'true');}
+   if(c.id==='tabs') {const tabs=frame.getByRole('tab');const enabled=frame.locator('[role=tab]:not(.is-disabled)');await enabled.nth(1).click();assert.equal(await enabled.nth(1).getAttribute('aria-selected'),'true');}
    count++;
   }
  }
