@@ -92,6 +92,13 @@ deve manter estado visual, semântica e comportamento coerentes. Um link marcado
 visualmente indisponível não é mecanismo de autorização. Nenhum conteúdo HTML
 do menu é sanitizado pelo componente.
 
+O retorno antecipado para `.is-disabled` não cancela a ação padrão de links nem
+handlers da aplicação. Um clique sintético ou ativação nativa pode seguir o href;
+prefira botão nativamente disabled e não associe ações a itens indisponíveis.
+Inclua também `.is-disabled`: sem ela, um botão disabled ainda entra na lista de
+setas e pode impedir a travessia porque não recebe foco. O Dropdown tem guarda
+própria de ativação; não presuma que ela se aplique a NestedMenu.
+
 ## Tokens
 
 Mesmos do [Dropdown](dropdown.md) — sem tokens próprios.

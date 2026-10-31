@@ -116,6 +116,11 @@ Links ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elemento
 genéricos com role=tab também não ganham ativação automática. O handler de
 clique não cancela navegação de links, incluindo `href="#"`; prefira botões.
 
+No modo manual, as setas movem foco sem ativar, mas não atualizam o roving
+`tabindex`: a aba selecionada conserva `0` e a focada pode continuar `-1`.
+Sair e reentrar por Tab pode retornar à selecionada, não à última focada.
+Esse limite requer verificação de teclado real no consumidor.
+
 O runtime filtra somente a classe `.is-disabled`, não `aria-disabled` nem
 `disabled` na navegação por setas. Forneça `.is-disabled` e a semântica adequada
 ao elemento; não marque uma aba indisponível como ativa inicialmente.
