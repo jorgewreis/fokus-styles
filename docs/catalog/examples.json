@@ -307,5 +307,176 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
     }
+  ],
+  "close-button": [
+    {
+      "id": "basic",
+      "title": "Close-Button — exemplo documentado",
+      "html": "docs/catalog/fixtures/close-button/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botão apenas estilizado; fechar o aviso exige um handler do aplicativo, não incluído."
+      ]
+    }
+  ],
+  "code": [
+    {
+      "id": "basic",
+      "title": "Code — exemplo documentado",
+      "html": "docs/catalog/fixtures/code/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Código exibido como texto escapado; não é executado e não há syntax highlighting."
+      ]
+    }
+  ],
+  "file-upload": [
+    {
+      "id": "basic",
+      "title": "File-Upload — exemplo documentado",
+      "html": "docs/catalog/fixtures/file-upload/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Seleção nativa local apenas; não envia arquivos nem inicializa drag-and-drop."
+      ]
+    }
+  ],
+  "list-group": [
+    {
+      "id": "basic",
+      "title": "List-Group — exemplo documentado",
+      "html": "docs/catalog/fixtures/list-group/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Lista estática; não demonstra seleção nem itens acionáveis."
+      ]
+    }
+  ],
+  "placeholder": [
+    {
+      "id": "basic",
+      "title": "Placeholder — exemplo documentado",
+      "html": "docs/catalog/fixtures/placeholder/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Estado de carregamento estático; não resolve dados nem remove aria-busy automaticamente."
+      ]
+    }
+  ],
+  "range": [
+    {
+      "id": "basic",
+      "title": "Range — exemplo documentado",
+      "html": "docs/catalog/fixtures/range/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Controle nativo sem Range JS; preenchimento da trilha WebKit não acompanha o valor sem --fs-range-percent."
+      ]
+    }
+  ],
+  "responsive": [
+    {
+      "id": "basic",
+      "title": "Responsive — exemplo documentado",
+      "html": "docs/catalog/fixtures/responsive/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botão Buscar demonstrativo; breakpoint 640px vem do SCSS, não há consulta de contatos."
+      ]
+    }
+  ],
+  "input-group": [
+    {
+      "id": "basic",
+      "title": "Input-Group — exemplo documentado",
+      "html": "docs/catalog/fixtures/input-group/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Trecho literal sem nome acessível para o campo; aplicativo deve adicionar label antes do uso. Não aprovado como exemplo de acessibilidade."
+      ]
+    }
+  ],
+  "dropdown": [
+    {
+      "id": "basic",
+      "title": "Dropdown — exemplo documentado",
+      "html": "docs/catalog/fixtures/dropdown/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Links # demonstrativos; não editam, duplicam ou excluem dados."
+      ],
+      "js": "docs/catalog/fixtures/dropdown/basic.js"
+    }
+  ],
+  "tag": [
+    {
+      "id": "basic",
+      "title": "Tag — exemplo documentado",
+      "html": "docs/catalog/fixtures/tag/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Remove somente o elemento local; não persiste dados nem demonstra retorno de foco em grupo."
+      ],
+      "js": "docs/catalog/fixtures/tag/basic.js"
+    }
+  ],
+  "stepper": [
+    {
+      "id": "basic",
+      "title": "Stepper — exemplo documentado",
+      "html": "docs/catalog/fixtures/stepper/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Navegação local sem formulário, validação de dados ou envio final."
+      ],
+      "js": "docs/catalog/fixtures/stepper/basic.js"
+    }
   ]
 }

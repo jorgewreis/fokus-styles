@@ -145,5 +145,160 @@
     "startLine": 9,
     "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce",
     "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "close-button": {
+    "source": "docs/components/close-button.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sha256": "15861a77f34aa27fb582f8e3ec1df507484ab985d887bda0e0b4a44310489f38",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_close-button.scss",
+        "sha256": "5234d336ee83e08d27fa0e60c290665dcebf33695bbeeccbd10f4b7d8e7cb338"
+      }
+    ]
+  },
+  "code": {
+    "source": "docs/components/code.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sha256": "e6627413be159c5aa8a1340de0f1147f6692d2d67fbd539bf10aa080f5c10a0d",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_code.scss",
+        "sha256": "9424a4eac20a7622dc499ed5622f0fc6492c3a13d299e365710e5ed495756331"
+      }
+    ]
+  },
+  "file-upload": {
+    "source": "docs/components/file-upload.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "1f147bdbcf8eb0636090eb539789d6a80195f8959fa71ba5024bc6fedb4af52f",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ]
+  },
+  "list-group": {
+    "source": "docs/components/list-group.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sha256": "ec704cce2676115fcafaf3296ba3495cd060bf341eb38a38a5d843b964b00b22",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_list-group.scss",
+        "sha256": "800a1d51b2c6347c18054b00f26ecd9c7cbfac7c52a34e9fbdcafc9e254dd58e"
+      }
+    ]
+  },
+  "placeholder": {
+    "source": "docs/components/placeholder.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sha256": "7d0ddcae303263d2d6be825a38c7e4375f59ed1886e9c516a9ba8a9f68499e14",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_placeholder.scss",
+        "sha256": "48e09785f7e251bdbf2478bace67b6ca528cdc799bd04bb14a694c7e68425b36"
+      }
+    ]
+  },
+  "range": {
+    "source": "docs/components/range.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sha256": "81062ab98d7b020ff6746d7ec41499497b4593c41803ae9177c824d4026cd6ef",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_range.scss",
+        "sha256": "a5ca80765059fb29276bdc929b35b4bf7ffa4a2b0b32a707b79617102068c573"
+      }
+    ]
+  },
+  "responsive": {
+    "source": "docs/components/responsive.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 14,
+    "sha256": "729f4d2dcf23af7eef2de794ee38e416181ea6d7a18eec5a2f828ea120b63219",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_responsive.scss",
+        "sha256": "8da4868322cb3733ecbb7f595c57b0b4c5ccb2bc40d647123f0582da388db524"
+      }
+    ]
+  },
+  "input-group": {
+    "source": "docs/components/input-group.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "4c0270d08997ffed0e310f5d1c53942b97de907b9f35bd4354e20d6047fc5bbd",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ]
+  },
+  "dropdown": {
+    "source": "docs/components/dropdown.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "f3c3981a43f5f87920e91f1cb77a02304134cde7b8e002df9901fbfb4e9d1c75",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_dropdown.scss",
+        "sha256": "4aa72d9d9d17d40af1c0f4e5c3bb7b2db25edab0dbce215caad81031aee8701d"
+      },
+      {
+        "path": "packages/fokus-js/js/dropdown.js",
+        "sha256": "5b431b36d7626c31a6cdbd83d149899217ae5527c7c385449905601a9a218209"
+      }
+    ]
+  },
+  "tag": {
+    "source": "docs/components/tag.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "49b23feb188b18e676c28fb35d07d8889610661e7f2a484a78de395362e464c2",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_tag.scss",
+        "sha256": "a96d0b889b37d05512f25d4d85d948876fa45476987c1cd816c0584f9eaff001"
+      },
+      {
+        "path": "packages/fokus-js/js/tag.js",
+        "sha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22"
+      }
+    ]
+  },
+  "stepper": {
+    "source": "docs/components/stepper.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "cb04a74daba3800a0acf08cb70debea7b7c5035ffd8e77a9dc3a6783c22e346b",
+    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_stepper.scss",
+        "sha256": "6abb0a128f02c4651c9f9c83a124c3afd2982061fb97144dd5398270f44c753a"
+      },
+      {
+        "path": "packages/fokus-js/js/stepper.js",
+        "sha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3"
+      }
+    ]
   }
 }

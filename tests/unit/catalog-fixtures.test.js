@@ -12,6 +12,10 @@ describe("curated catalog fixtures", () => {
         const html = read(entry.html);
         const source = provenance[component];
         expect(read(source.source)).toContain(html.trimEnd());
+        expect(read(source.source).split("\n").slice(source.startLine - 1).join("\n").startsWith(html)).toBe(true);
+        for (const implementation of source.implementation ?? []) {
+          expect(createHash("sha256").update(read(implementation.path)).digest("hex")).toBe(implementation.sha256);
+        }
         expect(createHash("sha256").update(html).digest("hex")).toBe(source.sha256);
         expect(html).not.toMatch(/\.\.\.|<script\b|\bon\w+\s*=/i);
         const container = document.createElement("div");
@@ -77,3 +81,67 @@ for (const [id, Constructor] of Object.entries({ accordion: Accordion, tabs: Tab
     replacement.dispose();
   });
 }
+
+import { Dropdown } from "../../packages/fokus-js/js/dropdown.js";
+import { Tag } from "../../packages/fokus-js/js/tag.js";
+import { Stepper } from "../../packages/fokus-js/js/stepper.js";
+
+it("dropdown fixture supports repeated keyboard open, Escape, teardown and reinitialization", () => {
+  document.body.innerHTML = read(examples.dropdown[0].html);
+  const toggle = document.querySelector('[data-fs="dropdown"]');
+  const menu = document.querySelector("#meu-menu");
+  const instance = new Dropdown(toggle);
+  for (let n = 0; n < 2; n++) {
+    toggle.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(document.activeElement).toBe(menu.querySelector("a"));
+    menu.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(toggle);
+  }
+  instance.show(); instance.dispose();
+  expect(Dropdown.getInstance(toggle)).toBeUndefined();
+  expect(menu.parentElement.className).toBe("fs-dropdown");
+  toggle.click(); expect(menu.classList.contains("is-open")).toBe(false);
+  const replacement = new Dropdown(toggle);
+  toggle.click(); expect(menu.classList.contains("is-open")).toBe(true);
+  replacement.dispose();
+});
+
+it("tag fixture permits cancellation and loading, then teardown and reinitialization", () => {
+  document.body.innerHTML = read(examples.tag[0].html);
+  const tag = document.querySelector('[data-fs="tag"]');
+  const button = tag.querySelector("button");
+  const instance = new Tag(tag);
+  tag.addEventListener("fs:tag:dismissed", event => event.preventDefault(), { once: true });
+  button.click(); expect(tag.isConnected).toBe(true);
+  instance.setLoading(true); expect(button.disabled).toBe(true);
+  expect(instance.dismiss()).toBe(false);
+  instance.setLoading(false); instance.dispose();
+  expect(Tag.getInstance(tag)).toBeUndefined();
+  button.click(); expect(tag.isConnected).toBe(true);
+  const replacement = new Tag(tag);
+  button.click(); expect(tag.isConnected).toBe(false);
+  replacement.dispose();
+});
+
+it("stepper fixture cancels transitions, moves forward/back, completes and tears down", () => {
+  document.body.innerHTML = read(examples.stepper[0].html);
+  const element = document.querySelector('[data-fs="stepper"]');
+  const instance = new Stepper(element);
+  const next = element.querySelector('[data-stepper="next"]');
+  const prev = element.querySelector('[data-stepper="prev"]');
+  expect(prev.disabled).toBe(true);
+  element.addEventListener("fs:stepper:beforechange", event => event.preventDefault(), { once: true });
+  next.click(); expect(instance.current).toBe(0);
+  next.click(); expect(instance.current).toBe(1);
+  prev.click(); expect(instance.current).toBe(0);
+  next.click(); next.click(); next.click(); expect(instance.finished).toBe(true);
+  prev.click(); expect(instance.finished).toBe(false);
+  const current = instance.current;
+  instance.dispose(); expect(Stepper.getInstance(element)).toBeUndefined();
+  next.click(); expect(instance.current).toBe(current);
+  const replacement = new Stepper(element);
+  next.click(); expect(replacement.current).toBe(2);
+  replacement.dispose();
+});

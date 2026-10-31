@@ -105,3 +105,77 @@ test("modal repeated open, Escape, focus return and teardown", async ({ page }) 
   await page.getByRole("button", { name: "Cancelar" }).click();
   await expect(page.locator("#meuModal")).toBeHidden();
 });
+
+test("range keyboard and file selection preserve native behavior", async ({ page }) => {
+  await mount(page, "range");
+  const slider = page.getByRole("slider", { name: "Volume" });
+  await slider.focus(); await page.keyboard.press("ArrowRight");
+  await expect(slider).toHaveValue("41");
+  await mount(page, "file-upload");
+  await page.getByLabel("Escolher arquivo").setInputFiles({ name: "example.txt", mimeType: "text/plain", buffer: Buffer.from("catalog fixture") });
+  expect(await page.locator('input[type="file"]').evaluate(el => el.files[0].name)).toBe("example.txt");
+});
+
+test("responsive breakpoint and reduced-motion placeholder follow compiled CSS", async ({ page }) => {
+  await mount(page, "responsive");
+  await page.setViewportSize({ width: 639, height: 720 });
+  await expect(page.locator(".fs-stack")).toHaveCSS("flex-direction", "column");
+  await page.setViewportSize({ width: 640, height: 720 });
+  await expect(page.locator(".fs-stack")).toHaveCSS("flex-direction", "row");
+  await mount(page, "placeholder");
+  await expect(page.locator(".fs-placeholder-glow")).toHaveCSS("animation-name", "none");
+  await expect(page.locator(".fs-placeholder-wave")).toHaveCSS("animation-name", "none");
+  await expect(page.getByRole("status")).toHaveText("Carregando resumo…");
+});
+
+test("dropdown repeated keyboard open, Escape, focus and teardown", async ({ page }) => {
+  await mount(page, "dropdown");
+  const toggle = page.getByRole("button", { name: "Opções" });
+  for (let i = 0; i < 2; i++) {
+    await toggle.focus(); await page.keyboard.press("ArrowDown");
+    await expect(page.getByRole("menuitem", { name: "Editar" })).toBeFocused();
+    await page.keyboard.press("ArrowDown");
+    await expect(page.getByRole("menuitem", { name: "Duplicar" })).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(toggle).toBeFocused();
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  }
+  await toggle.click(); await dispose(page);
+  await expect(page.locator("#meu-menu")).toBeHidden();
+  await toggle.click(); await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await page.addScriptTag({ content: scripts.dropdown });
+  await toggle.click(); await expect(page.getByRole("menu")).toBeVisible();
+});
+
+test("tag canceled dismiss, teardown and reinitialization", async ({ page }) => {
+  await mount(page, "tag");
+  const tag = page.locator('[data-fs="tag"]');
+  await tag.evaluate(el => el.addEventListener("fs:tag:dismissed", event => event.preventDefault(), { once: true }));
+  await page.getByRole("button", { name: "Remover tag Frontend" }).click();
+  await expect(tag).toBeVisible();
+  await dispose(page);
+  await page.getByRole("button", { name: "Remover tag Frontend" }).click();
+  await expect(tag).toBeVisible();
+  await page.addScriptTag({ content: scripts.tag });
+  await page.getByRole("button", { name: "Remover tag Frontend" }).click();
+  await expect(tag).toHaveCount(0);
+});
+
+test("stepper cancel, forward/back, completion and teardown", async ({ page }) => {
+  await mount(page, "stepper");
+  const root = page.locator('[data-fs="stepper"]');
+  const panels = page.locator(".fs-step-panel");
+  const next = page.getByRole("button", { name: "Avançar" });
+  const prev = page.getByRole("button", { name: "Voltar" });
+  await expect(prev).toBeDisabled();
+  await root.evaluate(el => el.addEventListener("fs:stepper:beforechange", event => event.preventDefault(), { once: true }));
+  await next.click(); await expect(panels.nth(0)).toBeVisible();
+  await next.click(); await expect(panels.nth(1)).toBeVisible();
+  await prev.click(); await expect(panels.nth(0)).toBeVisible();
+  await next.click(); await next.click(); await next.click();
+  await expect(page.locator(".fs-step-completed")).toHaveCount(3);
+  await prev.click(); await expect(panels.nth(1)).toBeVisible();
+  await dispose(page); await next.click(); await expect(panels.nth(1)).toBeVisible();
+  await page.addScriptTag({ content: scripts.stepper });
+  await next.click(); await expect(panels.nth(2)).toBeVisible();
+});
