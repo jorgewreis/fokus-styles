@@ -20,10 +20,11 @@ it('pending: manual focus does not transfer the sequential tab stop', () => {
   expect(a.tabIndex).toBe(0);
   expect(a.getAttribute('aria-selected')).toBe('true');
 });
-it('pending: native disabled without class may be selected by Tabs arrow activation', () => {
+it('native disabled tabs are skipped without selecting them', () => {
   const [a, b] = tabs(); b.disabled = true; a.focus();
   a.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
-  expect(b.getAttribute('aria-selected')).toBe('true');
+  expect(b.getAttribute('aria-selected')).toBe('false');
+  expect(a.getAttribute('aria-selected')).toBe('true');
 });
 function menu() {
   document.body.innerHTML = '<button id="toggle">Menu</button><div class="fs-dropdown-menu"><button class="fs-dropdown-item" id="first">A</button><button class="fs-dropdown-item" disabled>B</button><a class="fs-dropdown-item is-disabled" href="#blocked">C</a></div>';

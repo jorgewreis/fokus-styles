@@ -121,14 +121,24 @@ No modo manual, as setas movem foco sem ativar, mas não atualizam o roving
 Sair e reentrar por Tab pode retornar à selecionada, não à última focada.
 Esse limite requer verificação de teclado real no consumidor.
 
-O runtime filtra somente a classe `.is-disabled`, não `aria-disabled` nem
-`disabled` na navegação por setas. Forneça `.is-disabled` e a semântica adequada
-ao elemento; não marque uma aba indisponível como ativa inicialmente.
+`.is-disabled`, `disabled` nativo (inclusive fieldset) e `aria-disabled="true"`
+impedem ativação e seleção. As setas pulam essas abas, preservando o contrato de
+foco anterior de Fokus, embora a APG recomende descoberta de itens indisponíveis
+por foco em composites. Essa escolha de compatibilidade não é uma afirmação de
+conformidade integral com APG. O estado ARIA/classe é local à aba, não herdado.
+Não marque uma aba indisponível como ativa inicialmente; mudar disabled não
+seleciona automaticamente uma substituta. Forneça semântica acessível coerente.
 
-`show(tabEl)` exige que a aplicação passe uma aba habilitada do próprio grupo.
-O método não valida pertencimento nem disabled; uma referência externa pode
-desativar todas as abas e emitir evento nela. Esse é um limite conhecido,
-não uma maneira suportada de limpar a seleção.
+Clicks/auxclicks e Enter/Espaço em aba indisponível são cancelados em captura,
+antes dos handlers do item; não navegam, não selecionam e não chamam esses handlers.
+Listeners de captura externos/anteriores e chamadas diretas da aplicação não
+podem ser desfeitos: essa guarda é de interação, não autorização de negócio.
+Links habilitados mantêm sua navegação/default e ordem de handlers neste lote.
+
+`show(tabEl)` ignora abas indisponíveis ou referências fora do grupo sem limpar
+a seleção existente nem emitir eventos. As assinaturas públicas permanecem.
+
+Referência: [APG: foco de controles disabled](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls).
 
 As abas são coletadas na construção; não há refresh para inserções dinâmicas.
 `dispose()` remove listeners e registro, mas não restaura atributos ARIA,

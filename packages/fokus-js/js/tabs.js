@@ -1,3 +1,4 @@
+import { isDisabled, guardDisabledActivation } from "./core/disabled.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
 const instances = createInstanceRegistry();
@@ -35,6 +36,7 @@ export class Tabs {
     this._handleClick = this._handleClick.bind(this);
     this._handleKeydown = this._handleKeydown.bind(this);
 
+    this._removeDisabledGuard = guardDisabledActivation(tablistEl, ".fs-nav-link, [role=tab], [data-fs-tab-target]");
     tablistEl.addEventListener("click", this._handleClick);
     tablistEl.addEventListener("keydown", this._handleKeydown);
 
@@ -56,7 +58,7 @@ export class Tabs {
   }
 
   _handleKeydown(event) {
-    const enabledTabs = this.tabs.filter((tab) => !tab.classList.contains("is-disabled"));
+    const enabledTabs = this.tabs.filter((tab) => !isDisabled(tab));
     const currentIndex = enabledTabs.indexOf(document.activeElement);
     if (currentIndex === -1) return;
 
@@ -76,7 +78,7 @@ export class Tabs {
   }
 
   show(tab) {
-    if (tab.classList.contains("is-active")) return;
+    if (!this.tabs.includes(tab) || isDisabled(tab) || tab.classList.contains("is-active")) return;
 
     this.tabs.forEach((otherTab) => {
       const isActive = otherTab === tab;
@@ -98,6 +100,7 @@ export class Tabs {
   }
 
   dispose() {
+    this._removeDisabledGuard();
     this.tablistEl.removeEventListener("click", this._handleClick);
     this.tablistEl.removeEventListener("keydown", this._handleKeydown);
     instances.delete(this.tablistEl);
