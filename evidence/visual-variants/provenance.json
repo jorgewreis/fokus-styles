@@ -1,0 +1,180 @@
+{
+  "baseCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+  "auditInput": {
+    "path": "/workspace/shared/catalog-gap-audit-20261031/matrix.csv",
+    "sha256": "fda03d0f400044c52045333badef9813cbb7847308ece75195d797e572ed9c0c"
+  },
+  "files": [
+    {
+      "path": "docs/catalog/fixtures/alert/states.html",
+      "sha256": "8e63cc8433c941effd5fc76b05bf55ff23e7345fd415db13836306e0294da38b"
+    },
+    {
+      "path": "docs/catalog/fixtures/alert/states.js",
+      "sha256": "fa57a76feaf459dcc373f6aeadaeb5802489da542afb8aa22e1a39629d5a6db7"
+    },
+    {
+      "path": "docs/catalog/fixtures/alert/tokens.css",
+      "sha256": "a345dc9b2e9649002a396621bda1a6a085889810ba43846d6c0f8173fe94bda6"
+    },
+    {
+      "path": "docs/catalog/fixtures/alert/tokens.html",
+      "sha256": "05f294ef2aa9ad777c4ee4a462ae9e5ec5f90f5f75d7545b10460c39917cf21e"
+    },
+    {
+      "path": "docs/catalog/fixtures/alert/variants.html",
+      "sha256": "81f93bf4de735da136c01817368d04ea6517e97956c23d96654ed07a6223e0c8"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/states.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/states.html",
+      "sha256": "729ba8e701d7a17facdbe6685b8720c699b90e2adbfe95a1dfb5e494cc59df78"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/tokens.css",
+      "sha256": "000e7b1383ec45382c4e10363cd74963983e2f3f4234250fbd179751a2623c04"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/tokens.html",
+      "sha256": "f42e9ea55216b65a82669e8782e9ab6f7e4b31685b0be28c531bcca00fee148e"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/variants.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/badge/variants.html",
+      "sha256": "32cad487cbc48db98263e2cea4a8a7e25348b305a0bf5d8c4cfafbf2e7c8aa31"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/states.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/states.html",
+      "sha256": "ac93e7860b6dcbdca2df46e932d3d03a852a73b9bd9c4761d9dd3a817ceb19c2"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/tokens.css",
+      "sha256": "ddc23d950a89cfd5fb9ce24ef3921213b5741e4e2db0da8de80cafa671d5b693"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/tokens.html",
+      "sha256": "addc317b9588a87ba8426fbae11d79cda3479a3cdafdcabde950bd123dc76925"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/variants.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/button/variants.html",
+      "sha256": "972e7fb415c38cdfc0502ff185b22f028acdfd6b64c6ec6cc1c2c85590150410"
+    },
+    {
+      "path": "docs/catalog/fixtures/card/states.html",
+      "sha256": "859a2af7107d1b1f9d0a086648b3dc7d878202aae67403297fed59832821013a"
+    },
+    {
+      "path": "docs/catalog/fixtures/card/tokens.css",
+      "sha256": "066185133b28137c7ff29aef1bf3b3a334df20f76a30ab9c8bcddf3997b32330"
+    },
+    {
+      "path": "docs/catalog/fixtures/card/tokens.html",
+      "sha256": "51c777ca4755eabcea0afd1b582547160f764c81712055356634441eccf2af6e"
+    },
+    {
+      "path": "docs/catalog/fixtures/card/variants.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/card/variants.html",
+      "sha256": "2da4cd4d3f8654a3b2d399ff91732cb1f3a2903dc89aa5ea8d69ae24717ab0c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/states.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/states.html",
+      "sha256": "9bd6794eff378af1abae73211786f044d03dbd405debbbb7de0e243702ce6bed"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/states.js",
+      "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/tokens.css",
+      "sha256": "8661b4c019138fb703d7a4c1a9d9319e0817b167257617329c4fc9edc938971f"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/tokens.html",
+      "sha256": "4381b2cbfadb140a4ca97e651289df45867fad58d79cb523cd438f88247e73c4"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/tokens.js",
+      "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/variants.html",
+      "sha256": "a2946bdb1eb3a4b8cfe3bc1343ca7d3ec35cf4133f432757abc919cadb6e7955"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/variants.js",
+      "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
+    },
+    {
+      "path": "docs/catalog/fixtures/table/states.html",
+      "sha256": "dd3bee4346bee8dd73d3e0af84be024d8cc7ac0a6f02afc4336ee7c0df6a70a6"
+    },
+    {
+      "path": "docs/catalog/fixtures/table/tokens.css",
+      "sha256": "2b23636389400fbf83cae3678720561cdf4527027b422b61bffd4ce92e90d478"
+    },
+    {
+      "path": "docs/catalog/fixtures/table/tokens.html",
+      "sha256": "cabd9d12066b57cb75909dacf662082ca26ee2063c6288b3d64701b85fbc6a7c"
+    },
+    {
+      "path": "docs/catalog/fixtures/table/variants.css",
+      "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+    },
+    {
+      "path": "docs/catalog/fixtures/table/variants.html",
+      "sha256": "df35c6a0605b60f0bca167524509aeb3151b39b6cbf05cff512ea3dcf1d1ad99"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_alerts.scss",
+      "sha256": "15edf2932b4eeae0ce3ee942b677c7817cf82cefa4be926be546bb52db22c63c"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_badges.scss",
+      "sha256": "49bad22b3ccd749f47f9d4a22290e8716af6babd579288c9fec52c51d4536e30"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_buttons.scss",
+      "sha256": "dcddbd63d9dba80e7abd5551ea78982af461f4888b0e7fe7e5bc40519e4c4256"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_cards.scss",
+      "sha256": "97dd58a6a2b4e158781dcabeede3a8f6b96000019adc61037d686901be09ba93"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_datatable.scss",
+      "sha256": "f5a2b04ee24b8c3ecb961a33ad515a507afa1d8b86014869c463b7f54d23a12a"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_tables.scss",
+      "sha256": "492ed003c1c711f34c0235fd7241903f9d31f963e3896a5dac039c821c5f537e"
+    },
+    {
+      "path": "packages/fokus-js/js/datatable.js",
+      "sha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa"
+    }
+  ],
+  "runtimeChanged": false,
+  "published": false,
+  "visualVerified": false
+}

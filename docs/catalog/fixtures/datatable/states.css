@@ -1,0 +1,2 @@
+.demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.demo-stack { display: grid; gap: 1rem; }

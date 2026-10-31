@@ -1,0 +1,4 @@
+.demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.demo-stack { display: grid; gap: 1rem; }
+.demo-badge { --fs-badge-bg: #164e63; --fs-badge-color: #ffffff; --fs-badge-border: #0e7490; --fs-badge-height: 32px; --fs-badge-radius: 16px; --fs-badge-padding-inline: 16px; }
+.demo-split { --fs-badge-split-label-bg: #164e63; --fs-badge-split-label-color: #fff; --fs-badge-split-value-bg: #ecfeff; --fs-badge-split-value-color: #164e63; --fs-badge-split-height: 32px; --fs-badge-split-radius: 8px; }

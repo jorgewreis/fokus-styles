@@ -11,6 +11,47 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Button — cores, contornos e tamanhos",
+      "html": "docs/catalog/fixtures/button/variants.html",
+      "coverage": [
+        "seis-cores",
+        "outline",
+        "sm-lg-icon"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/button/variants.css"
+    },
+    {
+      "id": "states",
+      "title": "Button — desabilitado, ocupado e foco",
+      "html": "docs/catalog/fixtures/button/states.html",
+      "coverage": [
+        "disabled-nativo",
+        "loading",
+        "hover-active-focus-manual"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/button/states.css"
+    },
+    {
+      "id": "tokens",
+      "title": "Button — marca por tokens",
+      "html": "docs/catalog/fixtures/button/tokens.html",
+      "coverage": [
+        "tokens-locais",
+        "tokens-hover-active"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/button/tokens.css"
     }
   ],
   "badge": [
@@ -25,6 +66,46 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Badge — sólido, soft, outline e split",
+      "html": "docs/catalog/fixtures/badge/variants.html",
+      "coverage": [
+        "seis-cores",
+        "soft-outline-split"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/badge/variants.css"
+    },
+    {
+      "id": "states",
+      "title": "Badge — densidade, status e contagem",
+      "html": "docs/catalog/fixtures/badge/states.html",
+      "coverage": [
+        "sm-lg",
+        "dot",
+        "count-circle"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/badge/states.css"
+    },
+    {
+      "id": "tokens",
+      "title": "Badge — tokens locais e split",
+      "html": "docs/catalog/fixtures/badge/tokens.html",
+      "coverage": [
+        "tokens-badge",
+        "tokens-split"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/badge/tokens.css"
     }
   ],
   "alert": [
@@ -39,6 +120,45 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Alert — seis cores e inline",
+      "html": "docs/catalog/fixtures/alert/variants.html",
+      "coverage": [
+        "seis-cores",
+        "inline",
+        "estrutura"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ]
+    },
+    {
+      "id": "states",
+      "title": "Alert — ocupado e dispensável",
+      "html": "docs/catalog/fixtures/alert/states.html",
+      "coverage": [
+        "busy",
+        "dismiss-restore-demo"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/alert/states.js"
+    },
+    {
+      "id": "tokens",
+      "title": "Alert — geometria e paleta por tokens",
+      "html": "docs/catalog/fixtures/alert/tokens.html",
+      "coverage": [
+        "tokens-geometria",
+        "tokens-semanticos"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/alert/tokens.css"
     }
   ],
   "card": [
@@ -54,6 +174,44 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botões são demonstrativos: fechar e ação não têm comportamento de aplicativo."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Card — tamanhos e horizontal",
+      "html": "docs/catalog/fixtures/card/variants.html",
+      "coverage": [
+        "sm-lg-horizontal",
+        "subtitle"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/card/variants.css"
+    },
+    {
+      "id": "states",
+      "title": "Card — link estendido e foco",
+      "html": "docs/catalog/fixtures/card/states.html",
+      "coverage": [
+        "clickable",
+        "focus-within",
+        "stretched-link"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Card — tokens herdados delimitados",
+      "html": "docs/catalog/fixtures/card/tokens.html",
+      "coverage": [
+        "tokens-semanticos-escopados"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/card/tokens.css"
     }
   ],
   "checkbox": [
@@ -365,6 +523,46 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Table — cores, bordas e densidade",
+      "html": "docs/catalog/fixtures/table/variants.html",
+      "coverage": [
+        "seis-cores",
+        "bordered-borderless-sm",
+        "caption"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/table/variants.css"
+    },
+    {
+      "id": "states",
+      "title": "Table — vazio, prioridade e rolagem",
+      "html": "docs/catalog/fixtures/table/states.html",
+      "coverage": [
+        "responsive-priority",
+        "empty",
+        "hover"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Table — superfície e zebra por tokens",
+      "html": "docs/catalog/fixtures/table/tokens.html",
+      "coverage": [
+        "tokens-semanticos-escopados",
+        "stripe-hover"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/table/tokens.css"
     }
   ],
   "tile": [
@@ -937,6 +1135,51 @@
         "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
         "Duas linhas locais, sem busca remota, paginação com múltiplas páginas ou persistência."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "DataTable — ordenação monetária e paginação",
+      "html": "docs/catalog/fixtures/datatable/variants.html",
+      "coverage": [
+        "currency-sort",
+        "sort-value",
+        "page-size-2",
+        "filter-pagination"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/datatable/variants.js"
+    },
+    {
+      "id": "states",
+      "title": "DataTable — carregar, falhar, recuperar",
+      "html": "docs/catalog/fixtures/datatable/states.html",
+      "coverage": [
+        "setLoading",
+        "setError",
+        "recovery",
+        "empty-filter"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/datatable/states.css",
+      "js": "docs/catalog/fixtures/datatable/states.js"
+    },
+    {
+      "id": "tokens",
+      "title": "DataTable — tabela, foco e paginação por tokens",
+      "html": "docs/catalog/fixtures/datatable/tokens.html",
+      "coverage": [
+        "tokens-semanticos-escopados",
+        "sort-focus"
+      ],
+      "limitations": [
+        "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+      ],
+      "css": "docs/catalog/fixtures/datatable/tokens.css",
+      "js": "docs/catalog/fixtures/datatable/tokens.js"
     }
   ],
   "datepicker": [

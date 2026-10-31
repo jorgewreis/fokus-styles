@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "02157ff89d2ba3d64fb60cfd2620a0caea345e5d42457cc2d754a83b2c76f4b7",
+    "digest": "7beaece9608795de76703e9609318ae6a3d572b8564b79e13b5371b791e0fdab",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,11 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "147fe201058e80d9d19d1f1e1290d2a93bc46d415f9dd13a056609f89c2cb972"
+        "sha256": "18bbb15108792bf3bb3f4b851471578554a3354c7b0c44b8e78059d91a0b3b5c"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "c8dc973f6430bab23f6eeb4d5a22850676f752d924ae8316f4403524f4843e6b"
+        "sha256": "ad072ba8935d3eed9172f67ec340958ae9d00b20a7af1f100c05328df9b27b7a"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -56,12 +56,56 @@
         "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f"
       },
       {
+        "path": "docs/catalog/fixtures/alert/states.html",
+        "sha256": "8e63cc8433c941effd5fc76b05bf55ff23e7345fd415db13836306e0294da38b"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert/states.js",
+        "sha256": "fa57a76feaf459dcc373f6aeadaeb5802489da542afb8aa22e1a39629d5a6db7"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert/tokens.css",
+        "sha256": "a345dc9b2e9649002a396621bda1a6a085889810ba43846d6c0f8173fe94bda6"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert/tokens.html",
+        "sha256": "05f294ef2aa9ad777c4ee4a462ae9e5ec5f90f5f75d7545b10460c39917cf21e"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert/variants.html",
+        "sha256": "81f93bf4de735da136c01817368d04ea6517e97956c23d96654ed07a6223e0c8"
+      },
+      {
         "path": "docs/catalog/fixtures/avatar/basic.html",
         "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7"
       },
       {
         "path": "docs/catalog/fixtures/badge/basic.html",
         "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/states.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/states.html",
+        "sha256": "729ba8e701d7a17facdbe6685b8720c699b90e2adbfe95a1dfb5e494cc59df78"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/tokens.css",
+        "sha256": "000e7b1383ec45382c4e10363cd74963983e2f3f4234250fbd179751a2623c04"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/tokens.html",
+        "sha256": "f42e9ea55216b65a82669e8782e9ab6f7e4b31685b0be28c531bcca00fee148e"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/variants.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/variants.html",
+        "sha256": "32cad487cbc48db98263e2cea4a8a7e25348b305a0bf5d8c4cfafbf2e7c8aa31"
       },
       {
         "path": "docs/catalog/fixtures/breadcrumb/basic.html",
@@ -76,8 +120,52 @@
         "sha256": "ea073c48488a8f2041e6c7e987016fa829f24665bc0cc48b944304db8a5d0818"
       },
       {
+        "path": "docs/catalog/fixtures/button/states.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/states.html",
+        "sha256": "ac93e7860b6dcbdca2df46e932d3d03a852a73b9bd9c4761d9dd3a817ceb19c2"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/tokens.css",
+        "sha256": "ddc23d950a89cfd5fb9ce24ef3921213b5741e4e2db0da8de80cafa671d5b693"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/tokens.html",
+        "sha256": "addc317b9588a87ba8426fbae11d79cda3479a3cdafdcabde950bd123dc76925"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/variants.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/variants.html",
+        "sha256": "972e7fb415c38cdfc0502ff185b22f028acdfd6b64c6ec6cc1c2c85590150410"
+      },
+      {
         "path": "docs/catalog/fixtures/card/basic.html",
         "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/states.html",
+        "sha256": "859a2af7107d1b1f9d0a086648b3dc7d878202aae67403297fed59832821013a"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/tokens.css",
+        "sha256": "066185133b28137c7ff29aef1bf3b3a334df20f76a30ab9c8bcddf3997b32330"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/tokens.html",
+        "sha256": "51c777ca4755eabcea0afd1b582547160f764c81712055356634441eccf2af6e"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/variants.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/variants.html",
+        "sha256": "2da4cd4d3f8654a3b2d399ff91732cb1f3a2903dc89aa5ea8d69ae24717ab0c5"
       },
       {
         "path": "docs/catalog/fixtures/carousel/basic.html",
@@ -138,6 +226,38 @@
       {
         "path": "docs/catalog/fixtures/datatable/basic.js",
         "sha256": "0aed599ebf3ab464b6a706aa314ed6197de026736ae2f04f8f45eb69174d07a6"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/states.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/states.html",
+        "sha256": "9bd6794eff378af1abae73211786f044d03dbd405debbbb7de0e243702ce6bed"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/states.js",
+        "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/tokens.css",
+        "sha256": "8661b4c019138fb703d7a4c1a9d9319e0817b167257617329c4fc9edc938971f"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/tokens.html",
+        "sha256": "4381b2cbfadb140a4ca97e651289df45867fad58d79cb523cd438f88247e73c4"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/tokens.js",
+        "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/variants.html",
+        "sha256": "a2946bdb1eb3a4b8cfe3bc1343ca7d3ec35cf4133f432757abc919cadb6e7955"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/variants.js",
+        "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
       },
       {
         "path": "docs/catalog/fixtures/datepicker/basic.html",
@@ -378,6 +498,26 @@
       {
         "path": "docs/catalog/fixtures/table/basic.html",
         "sha256": "3501de011edf7dc3a38d3559fdb5b66d425959e5953a7487a3f07a380a3e1b3f"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/states.html",
+        "sha256": "dd3bee4346bee8dd73d3e0af84be024d8cc7ac0a6f02afc4336ee7c0df6a70a6"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/tokens.css",
+        "sha256": "2b23636389400fbf83cae3678720561cdf4527027b422b61bffd4ce92e90d478"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/tokens.html",
+        "sha256": "cabd9d12066b57cb75909dacf662082ca26ee2063c6288b3d64701b85fbc6a7c"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/variants.css",
+        "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/variants.html",
+        "sha256": "df35c6a0605b60f0bca167524509aeb3151b39b6cbf05cff512ea3dcf1d1ad99"
       },
       {
         "path": "docs/catalog/fixtures/tabs/basic.html",
@@ -1540,7 +1680,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 72,
+    "examples": 90,
     "complete": false
   },
   "contracts": [
@@ -4621,6 +4761,75 @@
               "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f"
             }
           ]
+        },
+        {
+          "id": "variants",
+          "title": "Alert — seis cores e inline",
+          "htmlCode": "<div class=\"fs-alert-group\"><div class=\"fs-alert fs-alert-primary\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">primary</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-secondary\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">secondary</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-success\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">success</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-danger\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">danger</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-warning\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">warning</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-info\"><span class=\"fs-alert-icon\" aria-hidden=\"true\">!</span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">info</h2><p class=\"fs-alert-text\">Mensagem com identificação textual.</p></div></div><div class=\"fs-alert fs-alert-inline fs-alert-info\">Aviso compacto.</div></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "seis-cores",
+            "inline",
+            "estrutura"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert/variants.html",
+              "sha256": "81f93bf4de735da136c01817368d04ea6517e97956c23d96654ed07a6223e0c8"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Alert — ocupado e dispensável",
+          "htmlCode": "<div class=\"fs-alert-group\"><div class=\"fs-alert fs-alert-info\" aria-busy=\"true\"><span class=\"fs-spinner fs-spinner-sm\" aria-hidden=\"true\"></span><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">Sincronizando</h2><p class=\"fs-alert-text\">Aguarde a conclusão.</p><div class=\"fs-alert-actions\"><button type=\"button\" class=\"fs-btn \" disabled>Aguarde</button></div></div></div><div class=\"fs-alert fs-alert-warning\" id=\"notice\"><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">Aviso dispensável</h2><p class=\"fs-alert-text\">Fechar e restaurar são lógica local desta demonstração.</p></div><button type=\"button\" class=\"fs-btn-close fs-alert-close\" aria-label=\"Fechar aviso\"></button></div><button type=\"button\" class=\"fs-btn \" id=\"restore\">Restaurar aviso</button></div>\n",
+          "jsCode": "const controller=new AbortController();\nconst notice=document.querySelector(\"#notice\");\ndocument.querySelector(\".fs-alert-close\").addEventListener(\"click\",()=>{notice.hidden=true;document.querySelector(\"#restore\").focus();},{signal:controller.signal});\ndocument.querySelector(\"#restore\").addEventListener(\"click\",()=>{notice.hidden=false;notice.querySelector(\"button\").focus();},{signal:controller.signal});\nwindow.addEventListener(\"pagehide\",()=>controller.abort(),{once:true});\n",
+          "cssCode": "",
+          "coverage": [
+            "busy",
+            "dismiss-restore-demo"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert/states.html",
+              "sha256": "8e63cc8433c941effd5fc76b05bf55ff23e7345fd415db13836306e0294da38b"
+            },
+            {
+              "path": "docs/catalog/fixtures/alert/states.js",
+              "sha256": "fa57a76feaf459dcc373f6aeadaeb5802489da542afb8aa22e1a39629d5a6db7"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Alert — geometria e paleta por tokens",
+          "htmlCode": "<div class=\"fs-alert fs-alert-info demo-alert\"><div class=\"fs-alert-content\"><h2 class=\"fs-alert-heading\">Aviso personalizado</h2><p class=\"fs-alert-text\">Cores e espaçamento locais.</p></div></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-alert { --fs-alert-info-bg: #ecfeff; --fs-alert-info-text: #164e63; --fs-color-info: #0e7490; --fs-alert-radius: 16px; --fs-alert-padding-block: 20px; --fs-alert-padding-inline: 24px; --fs-alert-accent-width: 8px; }\n",
+          "coverage": [
+            "tokens-geometria",
+            "tokens-semanticos"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert/tokens.html",
+              "sha256": "05f294ef2aa9ad777c4ee4a462ae9e5ec5f90f5f75d7545b10460c39917cf21e"
+            },
+            {
+              "path": "docs/catalog/fixtures/alert/tokens.css",
+              "sha256": "a345dc9b2e9649002a396621bda1a6a085889810ba43846d6c0f8173fe94bda6"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -6412,6 +6621,79 @@
               "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f"
             }
           ]
+        },
+        {
+          "id": "variants",
+          "title": "Badge — sólido, soft, outline e split",
+          "htmlCode": "<div class=\"demo-grid\"><span class=\"fs-badge fs-badge-primary\">primary</span><span class=\"fs-badge fs-badge-soft-primary\">soft-primary</span><span class=\"fs-badge fs-badge-outline-primary\">outline-primary</span><span class=\"fs-badge fs-badge-secondary\">secondary</span><span class=\"fs-badge fs-badge-soft-secondary\">soft-secondary</span><span class=\"fs-badge fs-badge-outline-secondary\">outline-secondary</span><span class=\"fs-badge fs-badge-success\">success</span><span class=\"fs-badge fs-badge-soft-success\">soft-success</span><span class=\"fs-badge fs-badge-outline-success\">outline-success</span><span class=\"fs-badge fs-badge-danger\">danger</span><span class=\"fs-badge fs-badge-soft-danger\">soft-danger</span><span class=\"fs-badge fs-badge-outline-danger\">outline-danger</span><span class=\"fs-badge fs-badge-warning\">warning</span><span class=\"fs-badge fs-badge-soft-warning\">soft-warning</span><span class=\"fs-badge fs-badge-outline-warning\">outline-warning</span><span class=\"fs-badge fs-badge-info\">info</span><span class=\"fs-badge fs-badge-soft-info\">soft-info</span><span class=\"fs-badge fs-badge-outline-info\">outline-info</span><span class=\"fs-badge-split fs-badge-split-primary\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">primary</span></span><span class=\"fs-badge-split fs-badge-split-secondary\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">secondary</span></span><span class=\"fs-badge-split fs-badge-split-success\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">success</span></span><span class=\"fs-badge-split fs-badge-split-danger\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">danger</span></span><span class=\"fs-badge-split fs-badge-split-warning\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">warning</span></span><span class=\"fs-badge-split fs-badge-split-info\"><span class=\"fs-badge-split-label\">Build</span><span class=\"fs-badge-split-value\">info</span></span></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "seis-cores",
+            "soft-outline-split"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/badge/variants.html",
+              "sha256": "32cad487cbc48db98263e2cea4a8a7e25348b305a0bf5d8c4cfafbf2e7c8aa31"
+            },
+            {
+              "path": "docs/catalog/fixtures/badge/variants.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Badge — densidade, status e contagem",
+          "htmlCode": "<div class=\"demo-grid\"><span class=\"fs-badge fs-badge-sm\">Pequeno</span><span class=\"fs-badge fs-badge-lg\">Grande</span><span class=\"fs-badge fs-badge-success fs-badge-dot\">Disponível</span><span class=\"fs-badge fs-badge-count\" aria-label=\"12 notificações\">12</span><span class=\"fs-badge fs-badge-count fs-badge-count-circle\" aria-label=\"3 pendências\">3</span></div><p>Badges são texto; não possuem estado disabled ou loading próprio.</p>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "sm-lg",
+            "dot",
+            "count-circle"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/badge/states.html",
+              "sha256": "729ba8e701d7a17facdbe6685b8720c699b90e2adbfe95a1dfb5e494cc59df78"
+            },
+            {
+              "path": "docs/catalog/fixtures/badge/states.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Badge — tokens locais e split",
+          "htmlCode": "<div class=\"demo-grid\"><span class=\"fs-badge demo-badge\">Marca</span><span class=\"fs-badge-split demo-split\"><span class=\"fs-badge-split-label\">Versão</span><span class=\"fs-badge-split-value\">next</span></span></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n.demo-badge { --fs-badge-bg: #164e63; --fs-badge-color: #ffffff; --fs-badge-border: #0e7490; --fs-badge-height: 32px; --fs-badge-radius: 16px; --fs-badge-padding-inline: 16px; }\n.demo-split { --fs-badge-split-label-bg: #164e63; --fs-badge-split-label-color: #fff; --fs-badge-split-value-bg: #ecfeff; --fs-badge-split-value-color: #164e63; --fs-badge-split-height: 32px; --fs-badge-split-radius: 8px; }\n",
+          "coverage": [
+            "tokens-badge",
+            "tokens-split"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/badge/tokens.html",
+              "sha256": "f42e9ea55216b65a82669e8782e9ab6f7e4b31685b0be28c531bcca00fee148e"
+            },
+            {
+              "path": "docs/catalog/fixtures/badge/tokens.css",
+              "sha256": "000e7b1383ec45382c4e10363cd74963983e2f3f4234250fbd179751a2623c04"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -8162,6 +8444,80 @@
             {
               "path": "docs/catalog/fixtures/button/basic.html",
               "sha256": "ea073c48488a8f2041e6c7e987016fa829f24665bc0cc48b944304db8a5d0818"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Button — cores, contornos e tamanhos",
+          "htmlCode": "<div class=\"demo-grid\"><button type=\"button\" class=\"fs-btn fs-btn-primary\" > primary</button><button type=\"button\" class=\"fs-btn fs-btn-outline-primary\" >outline- primary</button><button type=\"button\" class=\"fs-btn fs-btn-secondary\" > secondary</button><button type=\"button\" class=\"fs-btn fs-btn-outline-secondary\" >outline- secondary</button><button type=\"button\" class=\"fs-btn fs-btn-success\" > success</button><button type=\"button\" class=\"fs-btn fs-btn-outline-success\" >outline- success</button><button type=\"button\" class=\"fs-btn fs-btn-danger\" > danger</button><button type=\"button\" class=\"fs-btn fs-btn-outline-danger\" >outline- danger</button><button type=\"button\" class=\"fs-btn fs-btn-warning\" > warning</button><button type=\"button\" class=\"fs-btn fs-btn-outline-warning\" >outline- warning</button><button type=\"button\" class=\"fs-btn fs-btn-info\" > info</button><button type=\"button\" class=\"fs-btn fs-btn-outline-info\" >outline- info</button><button type=\"button\" class=\"fs-btn fs-btn-sm\" >Pequeno</button><button type=\"button\" class=\"fs-btn fs-btn-lg\" >Grande</button><button type=\"button\" class=\"fs-btn fs-btn-icon\" aria-label=\"Adicionar item\">+</button></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "seis-cores",
+            "outline",
+            "sm-lg-icon"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button/variants.html",
+              "sha256": "972e7fb415c38cdfc0502ff185b22f028acdfd6b64c6ec6cc1c2c85590150410"
+            },
+            {
+              "path": "docs/catalog/fixtures/button/variants.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Button — desabilitado, ocupado e foco",
+          "htmlCode": "<div class=\"demo-grid\"><button type=\"button\" class=\"fs-btn \" disabled>Indisponível</button><button type=\"button\" class=\"fs-btn is-loading\" disabled aria-busy=\"true\">Salvando</button><button type=\"button\" class=\"fs-btn fs-btn-primary\" >Use Tab, hover e pressione</button></div><p>Disabled nativo bloqueia teclado e ponteiro; aria-busy sozinho não bloqueia ativação por teclado.</p>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "disabled-nativo",
+            "loading",
+            "hover-active-focus-manual"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button/states.html",
+              "sha256": "ac93e7860b6dcbdca2df46e932d3d03a852a73b9bd9c4761d9dd3a817ceb19c2"
+            },
+            {
+              "path": "docs/catalog/fixtures/button/states.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Button — marca por tokens",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn demo-brand\" >Marca: hover e pressione</button>\n",
+          "jsCode": "",
+          "cssCode": ".demo-brand { --fs-color-bg-subtle: #164e63; --fs-btn-color: #ffffff; --fs-btn-border-color: #0e7490; --fs-btn-hover-bg: #155e75; --fs-btn-active-bg: #083344; --fs-control-height: 48px; --fs-radius-sm: 12px; }\n",
+          "coverage": [
+            "tokens-locais",
+            "tokens-hover-active"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button/tokens.html",
+              "sha256": "addc317b9588a87ba8426fbae11d79cda3479a3cdafdcabde950bd123dc76925"
+            },
+            {
+              "path": "docs/catalog/fixtures/button/tokens.css",
+              "sha256": "ddc23d950a89cfd5fb9ce24ef3921213b5741e4e2db0da8de80cafa671d5b693"
             }
           ]
         }
@@ -10048,6 +10404,74 @@
             {
               "path": "docs/catalog/fixtures/card/basic.html",
               "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Card — tamanhos e horizontal",
+          "htmlCode": "<div class=\"demo-stack\"><article class=\"fs-card fs-card-sm\"><header class=\"fs-card-header\"><h2 class=\"fs-card-title\">Compacto</h2></header><div class=\"fs-card-body\"><p class=\"fs-card-subtitle\">Plano de exemplo</p><p class=\"fs-card-text\">Menor densidade de padding.</p></div><footer class=\"fs-card-footer\">Disponível</footer></article><article class=\"fs-card fs-card-lg\"><header class=\"fs-card-header\"><h2 class=\"fs-card-title\">Amplo</h2></header><div class=\"fs-card-body\"><p class=\"fs-card-subtitle\">Plano de exemplo</p><p class=\"fs-card-text\">Maior padding.</p></div><footer class=\"fs-card-footer\">Disponível</footer></article><article class=\"fs-card fs-card-horizontal\"><header class=\"fs-card-header\"><h2 class=\"fs-card-title\">Horizontal</h2></header><div class=\"fs-card-body\"><p class=\"fs-card-subtitle\">Plano de exemplo</p><p class=\"fs-card-text\">Cabeçalho, corpo e rodapé em linha.</p></div><footer class=\"fs-card-footer\">Disponível</footer></article></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "sm-lg-horizontal",
+            "subtitle"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/card/variants.html",
+              "sha256": "2da4cd4d3f8654a3b2d399ff91732cb1f3a2903dc89aa5ea8d69ae24717ab0c5"
+            },
+            {
+              "path": "docs/catalog/fixtures/card/variants.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Card — link estendido e foco",
+          "htmlCode": "<article class=\"fs-card fs-card-clickable\"><div class=\"fs-card-body\"><h2 class=\"fs-card-title\"><a class=\"fs-stretched-link\" href=\"#details\">Consultar plano</a></h2><p class=\"fs-card-text\">Use Tab e Enter. Não há outros controles dentro deste card.</p></div></article><section id=\"details\" tabindex=\"-1\"><h2>Detalhes do plano</h2><p>Destino local real do link.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "clickable",
+            "focus-within",
+            "stretched-link"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/card/states.html",
+              "sha256": "859a2af7107d1b1f9d0a086648b3dc7d878202aae67403297fed59832821013a"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Card — tokens herdados delimitados",
+          "htmlCode": "<article class=\"fs-card demo-card\"><header class=\"fs-card-header\"><h2 class=\"fs-card-title\">Card personalizado</h2></header><div class=\"fs-card-body\"><p class=\"fs-card-subtitle\">Plano de exemplo</p><p class=\"fs-card-text\">Superfície e borda locais, sem inventar tokens fs-card.</p></div><footer class=\"fs-card-footer\">Disponível</footer></article>\n",
+          "jsCode": "",
+          "cssCode": ".demo-card { --fs-color-surface: #ecfeff; --fs-color-subtle: #cffafe; --fs-color-text: #164e63; --fs-color-muted: #155e75; --fs-color-border: #0e7490; --fs-color-border-default: #0e7490; --fs-border-width: 2px; --fs-radius-lg: 20px; }\n",
+          "coverage": [
+            "tokens-semanticos-escopados"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/card/tokens.html",
+              "sha256": "51c777ca4755eabcea0afd1b582547160f764c81712055356634441eccf2af6e"
+            },
+            {
+              "path": "docs/catalog/fixtures/card/tokens.css",
+              "sha256": "066185133b28137c7ff29aef1bf3b3a334df20f76a30ab9c8bcddf3997b32330"
             }
           ]
         }
@@ -16806,6 +17230,90 @@
             {
               "path": "docs/catalog/fixtures/datatable/basic.js",
               "sha256": "0aed599ebf3ab464b6a706aa314ed6197de026736ae2f04f8f45eb69174d07a6"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "DataTable — ordenação monetária e paginação",
+          "htmlCode": "<div class=\"fs-datatable fs-table-responsive\" data-fs=\"datatable\" data-fs-page-size=\"2\"><div class=\"fs-datatable-toolbar\"><label for=\"people-filter\">Filtrar pessoas</label><input id=\"people-filter\" type=\"search\" data-fs-datatable-filter></div><table class=\"fs-table fs-table-bordered fs-table-sm\"><caption class=\"fs-table-caption\">Valores ordenados numericamente</caption><thead><tr><th scope=\"col\" data-fs-sort=\"name\">Nome</th><th scope=\"col\" data-fs-sort=\"amount\" data-fs-sort-type=\"currency\">Valor</th></tr></thead><tbody><tr><td>Ana</td><td data-fs-sort-value=\"1200\">R$ 1.200,00</td></tr><tr><td>Bruno</td><td data-fs-sort-value=\"20\">R$ 20,00</td></tr><tr><td>Clara</td><td data-fs-sort-value=\"300\">R$ 300,00</td></tr><tr><td>Davi</td><td data-fs-sort-value=\"5\">R$ 5,00</td></tr></tbody></table><p data-fs-datatable-empty hidden>Nenhuma pessoa encontrada.</p><p data-fs-datatable-loading role=\"status\" hidden>Carregando registros.</p><div data-fs-datatable-error role=\"alert\" hidden><span data-fs-datatable-error-message></span></div><nav data-fs-datatable-pagination aria-label=\"Paginação de pessoas\"></nav></div>\n",
+          "jsCode": "import { DataTable } from \"fokus-styles/js\";\nconst root=document.querySelector(\"[data-fs=datatable]\");\nconst instance=DataTable.getInstance(root) ?? new DataTable(root);\nwindow.addEventListener(\"pagehide\",()=>instance.dispose(),{once:true});\n",
+          "cssCode": "",
+          "coverage": [
+            "currency-sort",
+            "sort-value",
+            "page-size-2",
+            "filter-pagination"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datatable/variants.html",
+              "sha256": "a2946bdb1eb3a4b8cfe3bc1343ca7d3ec35cf4133f432757abc919cadb6e7955"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/variants.js",
+              "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "DataTable — carregar, falhar, recuperar",
+          "htmlCode": "<div class=\"demo-grid\"><button type=\"button\" class=\"fs-btn \" id=\"load\">Carregar</button><button type=\"button\" class=\"fs-btn \" id=\"error\">Simular erro</button><button type=\"button\" class=\"fs-btn \" id=\"recover\">Recuperar</button></div><div class=\"fs-datatable fs-table-responsive\" data-fs=\"datatable\" data-fs-page-size=\"2\"><div class=\"fs-datatable-toolbar\"><label for=\"people-filter\">Filtrar pessoas</label><input id=\"people-filter\" type=\"search\" data-fs-datatable-filter></div><table class=\"fs-table fs-table-bordered fs-table-sm\"><caption class=\"fs-table-caption\">Valores ordenados numericamente</caption><thead><tr><th scope=\"col\" data-fs-sort=\"name\">Nome</th><th scope=\"col\" data-fs-sort=\"amount\" data-fs-sort-type=\"currency\">Valor</th></tr></thead><tbody><tr><td>Ana</td><td data-fs-sort-value=\"1200\">R$ 1.200,00</td></tr><tr><td>Bruno</td><td data-fs-sort-value=\"20\">R$ 20,00</td></tr><tr><td>Clara</td><td data-fs-sort-value=\"300\">R$ 300,00</td></tr><tr><td>Davi</td><td data-fs-sort-value=\"5\">R$ 5,00</td></tr></tbody></table><p data-fs-datatable-empty hidden>Nenhuma pessoa encontrada.</p><p data-fs-datatable-loading role=\"status\" hidden>Carregando registros.</p><div data-fs-datatable-error role=\"alert\" hidden><span data-fs-datatable-error-message></span></div><nav data-fs-datatable-pagination aria-label=\"Paginação de pessoas\"></nav></div>\n",
+          "jsCode": "import { DataTable } from \"fokus-styles/js\";\nconst root=document.querySelector(\"[data-fs=datatable]\");\nconst instance=DataTable.getInstance(root) ?? new DataTable(root);\nwindow.addEventListener(\"pagehide\",()=>instance.dispose(),{once:true});\ndocument.querySelector(\"#load\").addEventListener(\"click\",()=>instance.setLoading(true));\ndocument.querySelector(\"#error\").addEventListener(\"click\",()=>instance.setError(\"Falha demonstrativa. Tente recuperar.\"));\ndocument.querySelector(\"#recover\").addEventListener(\"click\",()=>{instance.setLoading(false);instance.setError(null);});\n",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "setLoading",
+            "setError",
+            "recovery",
+            "empty-filter"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datatable/states.html",
+              "sha256": "9bd6794eff378af1abae73211786f044d03dbd405debbbb7de0e243702ce6bed"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/states.js",
+              "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/states.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "DataTable — tabela, foco e paginação por tokens",
+          "htmlCode": "<div class=\"demo-data\"><div class=\"fs-datatable fs-table-responsive\" data-fs=\"datatable\" data-fs-page-size=\"2\"><div class=\"fs-datatable-toolbar\"><label for=\"people-filter\">Filtrar pessoas</label><input id=\"people-filter\" type=\"search\" data-fs-datatable-filter></div><table class=\"fs-table fs-table-bordered fs-table-sm\"><caption class=\"fs-table-caption\">Valores ordenados numericamente</caption><thead><tr><th scope=\"col\" data-fs-sort=\"name\">Nome</th><th scope=\"col\" data-fs-sort=\"amount\" data-fs-sort-type=\"currency\">Valor</th></tr></thead><tbody><tr><td>Ana</td><td data-fs-sort-value=\"1200\">R$ 1.200,00</td></tr><tr><td>Bruno</td><td data-fs-sort-value=\"20\">R$ 20,00</td></tr><tr><td>Clara</td><td data-fs-sort-value=\"300\">R$ 300,00</td></tr><tr><td>Davi</td><td data-fs-sort-value=\"5\">R$ 5,00</td></tr></tbody></table><p data-fs-datatable-empty hidden>Nenhuma pessoa encontrada.</p><p data-fs-datatable-loading role=\"status\" hidden>Carregando registros.</p><div data-fs-datatable-error role=\"alert\" hidden><span data-fs-datatable-error-message></span></div><nav data-fs-datatable-pagination aria-label=\"Paginação de pessoas\"></nav></div></div>\n",
+          "jsCode": "import { DataTable } from \"fokus-styles/js\";\nconst root=document.querySelector(\"[data-fs=datatable]\");\nconst instance=DataTable.getInstance(root) ?? new DataTable(root);\nwindow.addEventListener(\"pagehide\",()=>instance.dispose(),{once:true});\n",
+          "cssCode": ".demo-data { --fs-color-surface-raised: #ecfeff; --fs-color-text: #164e63; --fs-color-muted: #155e75; --fs-color-subtle: #cffafe; --fs-color-border: #0e7490; --fs-color-primary: #0e7490; --fs-focus-width: 3px; --fs-focus-offset: 3px; }\n",
+          "coverage": [
+            "tokens-semanticos-escopados",
+            "sort-focus"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datatable/tokens.html",
+              "sha256": "4381b2cbfadb140a4ca97e651289df45867fad58d79cb523cd438f88247e73c4"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/tokens.js",
+              "sha256": "2f9769f34f6ad279504ba54058f52517f2c238393bb7025dc54454447bb9410c"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/tokens.css",
+              "sha256": "8661b4c019138fb703d7a4c1a9d9319e0817b167257617329c4fc9edc938971f"
             }
           ]
         }
@@ -44423,6 +44931,76 @@
             {
               "path": "docs/catalog/fixtures/table/basic.html",
               "sha256": "3501de011edf7dc3a38d3559fdb5b66d425959e5953a7487a3f07a380a3e1b3f"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Table — cores, bordas e densidade",
+          "htmlCode": "<div class=\"demo-stack\"><table class=\"fs-table fs-table-primary\"><caption class=\"fs-table-caption\">primary</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-secondary\"><caption class=\"fs-table-caption\">secondary</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-success\"><caption class=\"fs-table-caption\">success</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-danger\"><caption class=\"fs-table-caption\">danger</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-warning\"><caption class=\"fs-table-caption\">warning</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-info\"><caption class=\"fs-table-caption\">info</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-bordered fs-table-sm\"><caption class=\"fs-table-caption\">Bordas e compacto</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table><table class=\"fs-table fs-table-borderless\"><caption class=\"fs-table-caption\">Sem bordas</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
+          "coverage": [
+            "seis-cores",
+            "bordered-borderless-sm",
+            "caption"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/table/variants.html",
+              "sha256": "df35c6a0605b60f0bca167524509aeb3151b39b6cbf05cff512ea3dcf1d1ad99"
+            },
+            {
+              "path": "docs/catalog/fixtures/table/variants.css",
+              "sha256": "49af3f4770f5e493961c7d2f50899528d0e4a132a2917a68bdbba9f38ed075c5"
+            }
+          ]
+        },
+        {
+          "id": "states",
+          "title": "Table — vazio, prioridade e rolagem",
+          "htmlCode": "<div class=\"fs-table-responsive\" role=\"region\" aria-label=\"Tabela larga\" tabindex=\"0\"><table class=\"fs-table fs-table-priority fs-table-hover\"><caption class=\"fs-table-caption\">Coluna quatro oculta abaixo de 640px</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th><th scope=\"col\">Equipe</th><th scope=\"col\">Detalhe secundário</th></tr></thead><tbody><tr><td>Ana</td><td>Ativo</td><td>Operações</td><td>Informação complementar</td></tr></tbody></table></div><table class=\"fs-table\"><caption class=\"fs-table-caption\">Lista vazia</caption><thead><tr><th scope=\"col\">Nome</th></tr></thead><tbody><tr><td class=\"fs-table-empty\">Nenhum registro.</td></tr></tbody></table>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "responsive-priority",
+            "empty",
+            "hover"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/table/states.html",
+              "sha256": "dd3bee4346bee8dd73d3e0af84be024d8cc7ac0a6f02afc4336ee7c0df6a70a6"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Table — superfície e zebra por tokens",
+          "htmlCode": "<table class=\"fs-table fs-table-striped fs-table-hover demo-table\"><caption class=\"fs-table-caption\">Tabela personalizada</caption><thead><tr><th scope=\"col\">Nome</th><th scope=\"col\">Situação</th></tr></thead><tbody><tr><th scope=\"row\">Ana</th><td>Ativo</td></tr><tr><th scope=\"row\">Bruno</th><td>Pendente</td></tr></tbody></table>\n",
+          "jsCode": "",
+          "cssCode": ".demo-table { --fs-color-surface-raised: #ecfeff; --fs-color-subtle: #cffafe; --fs-color-text: #164e63; --fs-color-muted: #155e75; --fs-color-border: #0e7490; --fs-space-2: 12px; }\n",
+          "coverage": [
+            "tokens-semanticos-escopados",
+            "stripe-hover"
+          ],
+          "limitations": [
+            "Composição de documentação, não alteração da API; cobertura parcial, sem certificação WCAG ou de todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/table/tokens.html",
+              "sha256": "cabd9d12066b57cb75909dacf662082ca26ee2063c6288b3d64701b85fbc6a7c"
+            },
+            {
+              "path": "docs/catalog/fixtures/table/tokens.css",
+              "sha256": "2b23636389400fbf83cae3678720561cdf4527027b422b61bffd4ce92e90d478"
             }
           ]
         }

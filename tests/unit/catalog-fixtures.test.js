@@ -58,9 +58,10 @@ describe("curated catalog fixtures", () => {
         expect(entry.limitations.length).toBeGreaterThan(0);
         if (entry.js) {
           const js = read(entry.js);
-          expect(js).toMatch(/from "fokus-styles\/js"/);
+          if (source.scriptKind !== "demo-dom") expect(js).toMatch(/from "fokus-styles\/js"/);
+          else expect(js).toContain("controller.abort()");
           expect(js).toContain("pagehide");
-          if (component !== "alert-dialog") expect(js).toContain("instance.dispose()");
+          if (component !== "alert-dialog" && source.scriptKind !== "demo-dom") expect(js).toContain("instance.dispose()");
         }
       });
     }

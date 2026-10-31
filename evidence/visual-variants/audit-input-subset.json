@@ -1,0 +1,80 @@
+[
+  {
+    "component": "alert",
+    "priority": "P2",
+    "examples": "1",
+    "css_classes_present": "2",
+    "css_classes_absent_static": "fs-alert-actions; fs-alert-close; fs-alert-content; fs-alert-danger; fs-alert-dialog-message; fs-alert-group; fs-alert-heading; fs-alert-icon; fs-alert-info; fs-alert-inline; fs-alert-link; fs-alert-primary; fs-alert-secondary; fs-alert-text; fs-alert-warning; fs-btn; fs-btn-close; fs-btn-danger; fs-btn-group-responsive; fs-btn-icon; fs-btn-info; fs-btn-lg; fs-btn-outline-danger; fs-btn-outline-info; fs-btn-outline-primary; fs-btn-outline-secondary; fs-btn-outline-success; fs-btn-outline-warning; fs-btn-primary; fs-btn-secondary; fs-btn-sm; fs-btn-success; fs-btn-warning; fs-icon; fs-icon-lg; fs-icon-link; fs-icon-sm; fs-icon-xl; fs-icon-xs; fs-spinner; fs-spinner-danger; fs-spinner-info; fs-spinner-lg; fs-spinner-primary; fs-spinner-secondary; fs-spinner-sm; fs-spinner-success; fs-spinner-warning",
+    "read_attributes_absent": "",
+    "options_without_explicit_fixture_mention": "",
+    "consumed_tokens": "70",
+    "tokens_not_named_in_doc": "--fs-alert-danger-bg; --fs-alert-danger-text; --fs-alert-info-bg; --fs-alert-info-text; --fs-alert-primary-bg; --fs-alert-primary-text; --fs-alert-secondary-bg; --fs-alert-secondary-text; --fs-alert-success-bg; --fs-alert-success-text; --fs-alert-warning-bg; --fs-alert-warning-text; --fs-badge-radius; --fs-border-width; --fs-btn-active-bg; --fs-btn-bg; --fs-btn-border-color; --fs-btn-color; --fs-btn-hover-bg; --fs-color-bg-subtle; --fs-color-black; --fs-color-border-default; --fs-color-danger; --fs-color-info; --fs-color-muted; --fs-color-on-danger; --fs-color-on-info; --fs-color-on-primary; --fs-color-on-secondary; --fs-color-on-success; --fs-color-on-warning; --fs-color-primary; --fs-color-secondary; --fs-color-subtle; --fs-color-success; --fs-color-surface-raised; --fs-color-text; --fs-color-text-primary; --fs-color-warning; --fs-color-white; --fs-control-height; --fs-control-height-lg; --fs-control-height-sm; --fs-control-padding-x; --fs-control-padding-x-lg; --fs-control-padding-x-sm; --fs-control-touch-target; --fs-control-transition; --fs-disabled-opacity; --fs-focus-offset; --fs-focus-width; --fs-radius-md; --fs-radius-sm; --fs-space-1; --fs-spinner-duration; --fs-spinner-size; --fs-spinner-stroke; --fs-tag-close-gap; --fs-tag-close-size; --fs-tag-icon-glyph-size",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  },
+  {
+    "component": "badge",
+    "priority": "P3",
+    "examples": "1",
+    "css_classes_present": "2",
+    "css_classes_absent_static": "fs-badge-count; fs-badge-count-circle; fs-badge-danger; fs-badge-dot; fs-badge-info; fs-badge-lg; fs-badge-outline-danger; fs-badge-outline-info; fs-badge-outline-primary; fs-badge-outline-secondary; fs-badge-outline-success; fs-badge-outline-warning; fs-badge-secondary; fs-badge-sm; fs-badge-soft-danger; fs-badge-soft-info; fs-badge-soft-primary; fs-badge-soft-secondary; fs-badge-soft-success; fs-badge-soft-warning; fs-badge-split; fs-badge-split-danger; fs-badge-split-info; fs-badge-split-label; fs-badge-split-primary; fs-badge-split-secondary; fs-badge-split-success; fs-badge-split-value; fs-badge-split-warning; fs-badge-success; fs-badge-warning",
+    "read_attributes_absent": "",
+    "options_without_explicit_fixture_mention": "",
+    "consumed_tokens": "25",
+    "tokens_not_named_in_doc": "--fs-badge-split-label-bg; --fs-badge-split-label-color; --fs-badge-split-value-bg; --fs-badge-split-value-color; --fs-color-black; --fs-color-danger; --fs-color-info; --fs-color-primary; --fs-color-secondary; --fs-color-success; --fs-color-warning; --fs-color-white",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  },
+  {
+    "component": "button",
+    "priority": "P2",
+    "examples": "1",
+    "css_classes_present": "3",
+    "css_classes_absent_static": "fs-btn-close; fs-btn-danger; fs-btn-group-responsive; fs-btn-icon; fs-btn-info; fs-btn-lg; fs-btn-outline-danger; fs-btn-outline-info; fs-btn-outline-secondary; fs-btn-outline-success; fs-btn-outline-warning; fs-btn-secondary; fs-btn-sm; fs-btn-success; fs-btn-warning",
+    "read_attributes_absent": "",
+    "options_without_explicit_fixture_mention": "",
+    "consumed_tokens": "49",
+    "tokens_not_named_in_doc": "--fs-alert-danger-text; --fs-alert-info-text; --fs-alert-primary-text; --fs-alert-secondary-text; --fs-alert-success-text; --fs-alert-warning-text; --fs-badge-radius; --fs-border-width; --fs-color-border; --fs-color-danger; --fs-color-info; --fs-color-muted; --fs-color-on-danger; --fs-color-on-info; --fs-color-on-primary; --fs-color-on-secondary; --fs-color-on-success; --fs-color-on-warning; --fs-color-primary; --fs-color-secondary; --fs-color-subtle; --fs-color-success; --fs-color-surface-raised; --fs-color-text; --fs-color-warning; --fs-color-white; --fs-control-height-lg; --fs-control-height-sm; --fs-control-padding-x-lg; --fs-control-padding-x-sm; --fs-control-transition; --fs-disabled-opacity; --fs-focus-offset; --fs-focus-width; --fs-space-1; --fs-tag-close-gap; --fs-tag-close-size",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  },
+  {
+    "component": "card",
+    "priority": "P2",
+    "examples": "1",
+    "css_classes_present": "6",
+    "css_classes_absent_static": "fs-card-clickable; fs-card-horizontal; fs-card-lg; fs-card-sm; fs-card-subtitle; fs-stretched-link",
+    "read_attributes_absent": "",
+    "options_without_explicit_fixture_mention": "",
+    "consumed_tokens": "12",
+    "tokens_not_named_in_doc": "--fs-border-width; --fs-color-border-default; --fs-color-muted; --fs-color-text; --fs-ease-standard; --fs-transition-fast",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  },
+  {
+    "component": "datatable",
+    "priority": "P1",
+    "examples": "1",
+    "css_classes_present": "7",
+    "css_classes_absent_static": "fs-datatable-sort-btn; fs-empty-state-icon; fs-empty-state-text; fs-pagination; fs-pagination-bordered; fs-pagination-centered; fs-pagination-lg; fs-pagination-list; fs-pagination-right; fs-pagination-rounded; fs-pagination-scroll; fs-pagination-sm; fs-table-bordered; fs-table-borderless; fs-table-caption; fs-table-danger; fs-table-empty; fs-table-info; fs-table-primary; fs-table-priority; fs-table-responsive; fs-table-secondary; fs-table-sm; fs-table-success; fs-table-warning",
+    "read_attributes_absent": "data-fs-sort-type; data-fs-sort-value",
+    "options_without_explicit_fixture_mention": "pageSize",
+    "consumed_tokens": "23",
+    "tokens_not_named_in_doc": "--fs-alert-danger-bg; --fs-alert-danger-text; --fs-alert-info-bg; --fs-alert-info-text; --fs-alert-primary-bg; --fs-alert-primary-text; --fs-alert-secondary-bg; --fs-alert-secondary-text; --fs-alert-success-bg; --fs-alert-success-text; --fs-alert-warning-bg; --fs-alert-warning-text; --fs-color-border; --fs-color-primary; --fs-color-subtle; --fs-color-surface-raised; --fs-focus-offset; --fs-focus-width; --fs-radius-sm; --fs-space-2; --fs-space-5",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  },
+  {
+    "component": "table",
+    "priority": "P2",
+    "examples": "1",
+    "css_classes_present": "3",
+    "css_classes_absent_static": "fs-datatable; fs-datatable-sort-btn; fs-datatable-toolbar; fs-table-bordered; fs-table-borderless; fs-table-caption; fs-table-danger; fs-table-empty; fs-table-info; fs-table-primary; fs-table-priority; fs-table-responsive; fs-table-secondary; fs-table-sm; fs-table-success; fs-table-warning",
+    "read_attributes_absent": "",
+    "options_without_explicit_fixture_mention": "",
+    "consumed_tokens": "22",
+    "tokens_not_named_in_doc": "--fs-alert-danger-bg; --fs-alert-danger-text; --fs-alert-info-bg; --fs-alert-info-text; --fs-alert-primary-bg; --fs-alert-primary-text; --fs-alert-secondary-bg; --fs-alert-secondary-text; --fs-alert-success-bg; --fs-alert-success-text; --fs-alert-warning-bg; --fs-alert-warning-text; --fs-color-primary; --fs-color-surface-raised; --fs-focus-offset; --fs-focus-width; --fs-space-2; --fs-space-5",
+    "token_override_examples": "",
+    "browser_status": "não verificado nesta auditoria; infraestrutura anterior bloqueada"
+  }
+]
