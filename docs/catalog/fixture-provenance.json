@@ -1895,5 +1895,235 @@
         "sha256": "ae0d879195d5632f190f064de3e8cae8158f26b041f2013c68d127d43a0166ff"
       }
     ]
+  },
+  "navbar/static-disabled": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/navbar.md",
+        "sha256": "6878df33044d8a19c93552592d8ff7ee109a2bcf5afbb24b741de656c56ad858"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_navbar.scss",
+        "sha256": "2250b8befbd84dd37f65ee1661bdbc1fea5a825a282ef483d92df5670f2b2035"
+      },
+      {
+        "path": "packages/fokus-js/js/navbar.js",
+        "sha256": "7d60228e5fee7556a23ab16853bb2bab4a3fe919a660538290f023b49fa4b99f"
+      }
+    ],
+    "sha256": "fbacd5e4dc1e3829fcd8bbe91ade213ac271e49a47f7810cdf31a94d18e5659d",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "navbar/responsive-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/navbar.md",
+        "sha256": "6878df33044d8a19c93552592d8ff7ee109a2bcf5afbb24b741de656c56ad858"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_navbar.scss",
+        "sha256": "2250b8befbd84dd37f65ee1661bdbc1fea5a825a282ef483d92df5670f2b2035"
+      },
+      {
+        "path": "packages/fokus-js/js/navbar.js",
+        "sha256": "7d60228e5fee7556a23ab16853bb2bab4a3fe919a660538290f023b49fa4b99f"
+      }
+    ],
+    "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "menu/compact-nested": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/menu.md",
+        "sha256": "11d74460d125857519038008528eff99b8e7263efcf1764be9e64f873633c31a"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_menu.scss",
+        "sha256": "9e1a5f43c3f4b5106057ec2583dde94cc4993183f6a9c23aa376cdf9320e0549"
+      }
+    ],
+    "sha256": "78e1a1f67450404e773ebbe587fa720224b8d0c0f33e1df7cb89c095ace1ab52",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "menu/local-tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/menu.md",
+        "sha256": "11d74460d125857519038008528eff99b8e7263efcf1764be9e64f873633c31a"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_menu.scss",
+        "sha256": "9e1a5f43c3f4b5106057ec2583dde94cc4993183f6a9c23aa376cdf9320e0549"
+      }
+    ],
+    "sha256": "4b365ded05215493a168edf5de866020466c2b004b64bf635f8c7746a9d46f07",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "pagination/bordered-small": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/pagination.md",
+        "sha256": "e1fbb037d3da8b9d9a29c4bc785081db7f5528807a9f1fcd155716c5e715a4b1"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_pagination.scss",
+        "sha256": "c6d2079fefcd178a698567a5713ef1752467ebbcc086e61fee395cbfea417577"
+      },
+      {
+        "path": "packages/fokus-js/js/pagination.js",
+        "sha256": "98bcb367759e942d0f27a8eb4ffcca5bd84ced174d1c734358edd66e43036786"
+      }
+    ],
+    "sha256": "c77cb3cf7437b9c940fbb58b9dfabea0dfff91cf88438ccb70b671b71fb10f22",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "pagination/rounded-large": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/pagination.md",
+        "sha256": "e1fbb037d3da8b9d9a29c4bc785081db7f5528807a9f1fcd155716c5e715a4b1"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_pagination.scss",
+        "sha256": "c6d2079fefcd178a698567a5713ef1752467ebbcc086e61fee395cbfea417577"
+      },
+      {
+        "path": "packages/fokus-js/js/pagination.js",
+        "sha256": "98bcb367759e942d0f27a8eb4ffcca5bd84ced174d1c734358edd66e43036786"
+      }
+    ],
+    "sha256": "80ae5c40f9ecfb8377f4ad98db2f9b6f6da87e9909ba39b90874cff48594916e",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "breadcrumb/responsive-collapse": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/breadcrumb.md",
+        "sha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a"
+      },
+      {
+        "path": "packages/fokus-js/js/breadcrumb.js",
+        "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+      }
+    ],
+    "sha256": "59422a3ca343108e27bea33a6fcf10214670e70f7d17a32b4caedc196d498353",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "nested-menu/recursive-end": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/nested-menu.md",
+        "sha256": "167ab633a3143b1a4d4fd54e4aa007c05ba1999ca78565992c8d11a3f62521b8"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+        "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+      },
+      {
+        "path": "packages/fokus-js/js/nested-menu.js",
+        "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+      }
+    ],
+    "sha256": "175bb4da6d0519ffab1fde83d7d7478bda5f4f26721b55afbb1722203ac41be7",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "tree-view/expanded-values": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/tree-view.md",
+        "sha256": "2ff9b4668ef1e888c8a14b5074351252b4c5685f64a4d11379b15399a70402fb"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_tree-view.scss",
+        "sha256": "6b43841396a2f4ad7a70f92280c7bb611c75b34538f7c80def4abdf3023d36c9"
+      },
+      {
+        "path": "packages/fokus-js/js/tree-view.js",
+        "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+      }
+    ],
+    "sha256": "cc2cde67ecc2c7e09b498a1eab002682ff48fc05aed365b79b878da242df0e07",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "command-palette/shortcut-empty": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/command-palette.md",
+        "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_command-palette.scss",
+        "sha256": "59f738e7b1d872e4373dafd32fefa60c4e3593807027cf6005ea665aa10ba026"
+      },
+      {
+        "path": "packages/fokus-js/js/command-palette.js",
+        "sha256": "660e005c6296e1d9ef56f521b10a72572f2dcffcc0819adc637a149aec5c786b"
+      }
+    ],
+    "sha256": "54cca51496cd55754ac5303f9b8944d321dcd5df7d5f015c0dea0605e765b2dc",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
+  },
+  "scrollspy/long-sections": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "implementation": [
+      {
+        "path": "docs/components/scrollspy.md",
+        "sha256": "5cf7ceebb92a67ddae36080f035da4928e7155293a75f5ea6f0e5e551668b1e7"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_scrollspy.scss",
+        "sha256": "ea330eda39160f2a056eb9d93d41cd200761b50e04c3fe8c9d104f1b4ab9bf9a"
+      },
+      {
+        "path": "packages/fokus-js/js/scrollspy.js",
+        "sha256": "14f6f8fe57f93cadc527361385fc35806ae2b4d7ed5a9d38df6dd811e899e0c9"
+      }
+    ],
+    "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c",
+    "transformations": [
+      "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
+    ]
   }
 }

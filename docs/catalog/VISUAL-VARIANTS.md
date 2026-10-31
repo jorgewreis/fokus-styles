@@ -3,7 +3,7 @@
 Base: commit 68bc915 do catálogo expandido; matriz de lacunas de 31/10/2026.
 Foram acrescentadas 18 fixtures: três por componente (variants, states,
 tokens). Esta frente passou de 56 a 74 exemplos. Após integrar também estados
-de formulários e opções interativas, o catálogo contém **90 exemplos**, ainda
+de formulários, opções interativas, conteúdo, feedback e Navigation, o catálogo contém **125 exemplos**, ainda
 parcial e não publicado.
 Nada em packages/, scss/ ou no comportamento do runtime foi alterado.
 

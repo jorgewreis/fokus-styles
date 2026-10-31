@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "54d2c8cf143e396f06cb187e36da5883f52696845978079f7714461650169062",
+    "digest": "9621bae16bbc39897eed9666217c314eaf2d6808c3d391a0b809e39354eb937d",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "fbbd0e72fcbe88d88e587b0dfedb3a4724c4b20651fc6ce735de9348de921a60"
+        "sha256": "4e06b44cd028e566f76408fdd5fdaaaf9e47cd8ff05ce1684a9e8d274f034221"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "c97bb2b22a01a666a2aff7163c32a6de8e7e3366685de2c7dc6bba5bf8098d62"
+        "sha256": "47e412e38e481fb373f5ebd526317160fee3f5a317d0bddb342b0502ad19e14e"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -114,6 +114,14 @@
       {
         "path": "docs/catalog/fixtures/breadcrumb/basic.html",
         "sha256": "20ce604d5998f4edb81c7f5a8c66ae0b6db434259a0dc42a98ce51056c305532"
+      },
+      {
+        "path": "docs/catalog/fixtures/breadcrumb/responsive-collapse.html",
+        "sha256": "59422a3ca343108e27bea33a6fcf10214670e70f7d17a32b4caedc196d498353"
+      },
+      {
+        "path": "docs/catalog/fixtures/breadcrumb/responsive-collapse.js",
+        "sha256": "8b56f5c1b2f5c1ada6b14ad6749570278423a22fc7743657c5fa9e80ec6302df"
       },
       {
         "path": "docs/catalog/fixtures/button-group/basic.html",
@@ -238,6 +246,14 @@
       {
         "path": "docs/catalog/fixtures/command-palette/basic.js",
         "sha256": "2652ecea099a424e50228d9d351ca04786353a5ed3678f90eb6caa9a0061a179"
+      },
+      {
+        "path": "docs/catalog/fixtures/command-palette/shortcut-empty.html",
+        "sha256": "54cca51496cd55754ac5303f9b8944d321dcd5df7d5f015c0dea0605e765b2dc"
+      },
+      {
+        "path": "docs/catalog/fixtures/command-palette/shortcut-empty.js",
+        "sha256": "6e978f69435404cb9cda5041c64cec823ce9ad9b8e67a989959fb8150d58e0d8"
       },
       {
         "path": "docs/catalog/fixtures/datatable/basic.html",
@@ -408,6 +424,18 @@
         "sha256": "c2a5c756e23092b4391d89e433c2dbd803246d05e8151825ade83ab7b4d54a4c"
       },
       {
+        "path": "docs/catalog/fixtures/menu/compact-nested.html",
+        "sha256": "78e1a1f67450404e773ebbe587fa720224b8d0c0f33e1df7cb89c095ace1ab52"
+      },
+      {
+        "path": "docs/catalog/fixtures/menu/local-tokens.css",
+        "sha256": "7ce26624ee088a43c2352059f519e39440323ee1a07facd462531a0e94a08b05"
+      },
+      {
+        "path": "docs/catalog/fixtures/menu/local-tokens.html",
+        "sha256": "4b365ded05215493a168edf5de866020466c2b004b64bf635f8c7746a9d46f07"
+      },
+      {
         "path": "docs/catalog/fixtures/modal/basic.html",
         "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff"
       },
@@ -440,12 +468,32 @@
         "sha256": "6074e84cbdb3d1a414994b1e3007ff617554afc8b3710d9bf1cc0f339782bace"
       },
       {
+        "path": "docs/catalog/fixtures/navbar/responsive-states.html",
+        "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b"
+      },
+      {
+        "path": "docs/catalog/fixtures/navbar/responsive-states.js",
+        "sha256": "a1488afef25d572a43b0166bede13b4e3ad59ea828563ca971fec5ce86c6b853"
+      },
+      {
+        "path": "docs/catalog/fixtures/navbar/static-disabled.html",
+        "sha256": "fbacd5e4dc1e3829fcd8bbe91ade213ac271e49a47f7810cdf31a94d18e5659d"
+      },
+      {
         "path": "docs/catalog/fixtures/nested-menu/basic.html",
         "sha256": "3fd00b6c46c56adfdeadcaf6e9dfea5a02cd312c98ac78992e561fc56d811448"
       },
       {
         "path": "docs/catalog/fixtures/nested-menu/basic.js",
         "sha256": "a0732f1a721fb29f0464bd34b5a84a784cb8874aaa3317e84e93b8578caf25f5"
+      },
+      {
+        "path": "docs/catalog/fixtures/nested-menu/recursive-end.html",
+        "sha256": "175bb4da6d0519ffab1fde83d7d7478bda5f4f26721b55afbb1722203ac41be7"
+      },
+      {
+        "path": "docs/catalog/fixtures/nested-menu/recursive-end.js",
+        "sha256": "fec83b1e864c5751b964b1d41454e12946a38641ff44cfc0ee8eaad679328486"
       },
       {
         "path": "docs/catalog/fixtures/notification-center/basic.html",
@@ -474,6 +522,14 @@
       {
         "path": "docs/catalog/fixtures/pagination/basic.html",
         "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf"
+      },
+      {
+        "path": "docs/catalog/fixtures/pagination/bordered-small.html",
+        "sha256": "c77cb3cf7437b9c940fbb58b9dfabea0dfff91cf88438ccb70b671b71fb10f22"
+      },
+      {
+        "path": "docs/catalog/fixtures/pagination/rounded-large.html",
+        "sha256": "80ae5c40f9ecfb8377f4ad98db2f9b6f6da87e9909ba39b90874cff48594916e"
       },
       {
         "path": "docs/catalog/fixtures/placeholder/basic.html",
@@ -573,6 +629,18 @@
       },
       {
         "path": "docs/catalog/fixtures/scrollspy/basic.js",
+        "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
+      },
+      {
+        "path": "docs/catalog/fixtures/scrollspy/long-sections.css",
+        "sha256": "e5315d892a2438de50dc178645f2698e5cb8b86712214d178d4cd260956c4f1d"
+      },
+      {
+        "path": "docs/catalog/fixtures/scrollspy/long-sections.html",
+        "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c"
+      },
+      {
+        "path": "docs/catalog/fixtures/scrollspy/long-sections.js",
         "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
       },
       {
@@ -786,6 +854,18 @@
       {
         "path": "docs/catalog/fixtures/tree-view/basic.js",
         "sha256": "69c655df1040387ce24ffff4533e8c2f63a33482c8319688a9058f5e1703f9e2"
+      },
+      {
+        "path": "docs/catalog/fixtures/tree-view/expanded-values.html",
+        "sha256": "cc2cde67ecc2c7e09b498a1eab002682ff48fc05aed365b79b878da242df0e07"
+      },
+      {
+        "path": "docs/catalog/fixtures/tree-view/expanded-values.js",
+        "sha256": "dd3d8c29c3d47ae3a148c38d21d3c2ec8703097a3ddbc3c6ebf97d49d9e52776"
+      },
+      {
+        "path": "docs/catalog/navigation-provenance.json",
+        "sha256": "856912bc89c2260d0bc51a002720bb574f217895c76067bebbe5ce93aaf9264b"
       },
       {
         "path": "docs/components/accordion.md",
@@ -1860,7 +1940,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 114,
+    "examples": 125,
     "complete": false
   },
   "contracts": [
@@ -7257,6 +7337,32 @@
             {
               "path": "docs/catalog/fixtures/breadcrumb/basic.html",
               "sha256": "20ce604d5998f4edb81c7f5a8c66ae0b6db434259a0dc42a98ce51056c305532"
+            }
+          ]
+        },
+        {
+          "id": "responsive-collapse",
+          "title": "Breadcrumb — níveis ocultos",
+          "htmlCode": "<nav aria-label=\"Trilha de navegação\"><ol class=\"fs-breadcrumb\" data-fs=\"breadcrumb\" data-max-items=\"3\"><li class=\"fs-breadcrumb-item\"><a href=\"#nivel0\">Início</a></li><li class=\"fs-breadcrumb-item\"><a href=\"#nivel1\">Catálogo</a></li><li class=\"fs-breadcrumb-item\"><a href=\"#nivel2\">Coleção</a></li><li class=\"fs-breadcrumb-item is-active\" aria-current=\"page\">Atual</li></ol></nav><section id=\"nivel0\"><h2>Início</h2></section><section id=\"nivel1\"><h2>Catálogo</h2></section><section id=\"nivel2\"><h2>Coleção</h2></section>\n",
+          "jsCode": "import { Breadcrumb } from \"fokus-styles/js\";\nconst element = document.querySelector('[data-fs=\"breadcrumb\"]');\nconst instance = Breadcrumb.getInstance(element) ?? new Breadcrumb(element);\nwindow.addEventListener(\"pagehide\", () => instance.dispose(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "max-items-3",
+            "breakpoint-640",
+            "dropdown-niveis"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Labels curtos evitam tooltips: dispose de Breadcrumb não descarta os Tooltip criados por truncamento. Truncamento não é coberto aqui."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/breadcrumb/responsive-collapse.html",
+              "sha256": "59422a3ca343108e27bea33a6fcf10214670e70f7d17a32b4caedc196d498353"
+            },
+            {
+              "path": "docs/catalog/fixtures/breadcrumb/responsive-collapse.js",
+              "sha256": "8b56f5c1b2f5c1ada6b14ad6749570278423a22fc7743657c5fa9e80ec6302df"
             }
           ]
         }
@@ -16282,6 +16388,33 @@
             {
               "path": "docs/catalog/fixtures/command-palette/basic.js",
               "sha256": "2652ecea099a424e50228d9d351ca04786353a5ed3678f90eb6caa9a0061a179"
+            }
+          ]
+        },
+        {
+          "id": "shortcut-empty",
+          "title": "CommandPalette — atalho, filtro e seleção",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"command-palette\" data-fs-target=\"#commands\" data-fs-shortcut=\"mod+shift+p\">Comandos (Ctrl/Cmd+Shift+P)</button><div id=\"commands\" class=\"fs-command-palette\" aria-label=\"Comandos locais\"><div class=\"fs-command-palette-dialog\"><input class=\"fs-command-palette-input\" type=\"text\" aria-label=\"Buscar comando\"><ul class=\"fs-command-palette-list\" aria-label=\"Resultados\"><li class=\"fs-dropdown-item\" data-value=\"new\">Novo arquivo</li><li class=\"fs-dropdown-item is-disabled\" aria-disabled=\"true\" data-value=\"delete\">Excluir bloqueado</li><li class=\"fs-dropdown-item\" data-value=\"settings\">Configurações</li><li class=\"fs-dropdown-item is-disabled\" data-fs-empty hidden>Nenhum comando encontrado.</li></ul></div></div><p role=\"status\" id=\"command-status\">Nenhum comando selecionado.</p>\n",
+          "jsCode": "import { CommandPalette } from \"fokus-styles/js\";\nconst element=document.querySelector('[data-fs=\"command-palette\"]');\nconst selected=event=>{document.getElementById('command-status').textContent=`Selecionado: ${event.detail.value}`;};\nelement.addEventListener('fs:command-palette:selected',selected);\nconst instance=CommandPalette.getInstance(element) ?? new CommandPalette(element);\nwindow.addEventListener('pagehide',()=>{instance.dispose();element.removeEventListener('fs:command-palette:selected',selected);},{once:true});\n",
+          "cssCode": "",
+          "coverage": [
+            "atalho-mod-shift-p",
+            "filtro-vazio",
+            "disabled",
+            "evento-valor"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Demonstra evento, não executa ações. Runtime não sincroniza aria-selected com destaque; headers não filtram; disabled pode continuar visível."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/command-palette/shortcut-empty.html",
+              "sha256": "54cca51496cd55754ac5303f9b8944d321dcd5df7d5f015c0dea0605e765b2dc"
+            },
+            {
+              "path": "docs/catalog/fixtures/command-palette/shortcut-empty.js",
+              "sha256": "6e978f69435404cb9cda5041c64cec823ce9ad9b8e67a989959fb8150d58e0d8"
             }
           ]
         }
@@ -26829,6 +26962,52 @@
               "sha256": "c2a5c756e23092b4391d89e433c2dbd803246d05e8151825ade83ab7b4d54a4c"
             }
           ]
+        },
+        {
+          "id": "compact-nested",
+          "title": "Menu — compacto, borda e níveis",
+          "htmlCode": "<nav class=\"fs-menu fs-menu-bordered fs-menu-compact\" aria-label=\"Configurações detalhadas\"><p class=\"fs-menu-label\">Conta</p><ul class=\"fs-menu-list\"><li><a href=\"#perfil\" aria-current=\"page\">Perfil</a><ul><li><a href=\"#preferencias\">Preferências</a></li></ul></li><li><a aria-disabled=\"true\">Segurança indisponível</a></li></ul></nav><section id=\"perfil\"><h2>Perfil</h2></section><section id=\"preferencias\"><h2>Preferências</h2></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "compact",
+            "bordered",
+            "nested",
+            "disabled-sem-href"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Sem JS; indisponível não tem href; estados não acompanham as âncoras."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/menu/compact-nested.html",
+              "sha256": "78e1a1f67450404e773ebbe587fa720224b8d0c0f33e1df7cb89c095ace1ab52"
+            }
+          ]
+        },
+        {
+          "id": "local-tokens",
+          "title": "Menu — tokens locais",
+          "htmlCode": "<nav id=\"menu-tokens\" class=\"fs-menu fs-menu-bordered\" aria-label=\"Menu com espaçamento local\"><p class=\"fs-menu-label\">Biblioteca</p><ul class=\"fs-menu-list\"><li><a href=\"#livros\" aria-current=\"page\">Livros</a><ul><li><a href=\"#recentes\">Recentes</a></li></ul></li></ul></nav><section id=\"livros\"><h2>Livros</h2></section><section id=\"recentes\"><h2>Recentes</h2></section>\n",
+          "jsCode": "",
+          "cssCode": "#menu-tokens { --fs-menu-item-padding-block: 0.75rem; --fs-menu-item-padding-inline: 1rem; --fs-menu-item-radius: 0.75rem; --fs-menu-nested-indent: 1.5rem; }\n",
+          "coverage": [
+            "tokens-padding-radius-indent"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/menu/local-tokens.html",
+              "sha256": "4b365ded05215493a168edf5de866020466c2b004b64bf635f8c7746a9d46f07"
+            },
+            {
+              "path": "docs/catalog/fixtures/menu/local-tokens.css",
+              "sha256": "7ce26624ee088a43c2352059f519e39440323ee1a07facd462531a0e94a08b05"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -28238,6 +28417,54 @@
               "sha256": "6074e84cbdb3d1a414994b1e3007ff617554afc8b3710d9bf1cc0f339782bace"
             }
           ]
+        },
+        {
+          "id": "static-disabled",
+          "title": "Navbar — estática e indisponível",
+          "htmlCode": "<nav class=\"fs-navbar\" aria-label=\"Navegação estática\"><a class=\"fs-navbar-brand\" href=\"#inicio\">Marca</a><ul class=\"fs-navbar-nav\"><li><a class=\"fs-nav-link is-active\" href=\"#inicio\" aria-current=\"page\">Início</a></li><li><span class=\"fs-nav-link is-disabled\" aria-disabled=\"true\">Relatórios indisponíveis</span></li></ul></nav><section id=\"inicio\"><h2>Início</h2></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "sem-js",
+            "disabled-sem-href",
+            "aria-current-estatico"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Sem roteador; aria-current estático."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/navbar/static-disabled.html",
+              "sha256": "fbacd5e4dc1e3829fcd8bbe91ade213ac271e49a47f7810cdf31a94d18e5659d"
+            }
+          ]
+        },
+        {
+          "id": "responsive-states",
+          "title": "Navbar — responsividade e Escape",
+          "htmlCode": "<nav class=\"fs-navbar\" data-fs=\"navbar\" aria-label=\"Navegação principal\">\n  <a href=\"#inicio\" class=\"fs-navbar-brand\">Minha Marca</a>\n  <button type=\"button\" class=\"fs-navbar-toggler\" data-fs-toggle=\"navbar\"\n          data-fs-target=\"#menuPrincipal\" aria-controls=\"menuPrincipal\" aria-expanded=\"false\">\n    Menu\n  </button>\n  <div id=\"menuPrincipal\" class=\"fs-navbar-collapse\" hidden>\n    <ul class=\"fs-navbar-nav\">\n      <li><a href=\"#inicio\" class=\"fs-nav-link is-active\" aria-current=\"location\">Início</a></li>\n      <li><a href=\"#produtos\" class=\"fs-nav-link\">Produtos</a></li>\n    </ul>\n  </div>\n</nav>\n<section id=\"inicio\"><h2>Início</h2><p>Conteúdo demonstrativo inicial.</p></section>\n<section id=\"produtos\"><h2>Produtos</h2><p>Conteúdo demonstrativo dos produtos.</p></section>\n",
+          "jsCode": "import { Navbar } from \"fokus-styles/js\";\nconst element = document.querySelector('[data-fs=\"navbar\"]');\nconst instance = Navbar.getInstance(element) ?? new Navbar(element);\nwindow.addEventListener(\"pagehide\", () => instance.dispose(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "breakpoint-768",
+            "aberto-fechado",
+            "escape-foco"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "isOpen não representa a visibilidade desktop; dispose não restaura o HTML."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/navbar/responsive-states.html",
+              "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b"
+            },
+            {
+              "path": "docs/catalog/fixtures/navbar/responsive-states.js",
+              "sha256": "a1488afef25d572a43b0166bede13b4e3ad59ea828563ca971fec5ce86c6b853"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -29068,6 +29295,33 @@
             {
               "path": "docs/catalog/fixtures/nested-menu/basic.js",
               "sha256": "a0732f1a721fb29f0464bd34b5a84a784cb8874aaa3317e84e93b8578caf25f5"
+            }
+          ]
+        },
+        {
+          "id": "recursive-end",
+          "title": "NestedMenu — níveis e alinhamento",
+          "htmlCode": "<button class=\"fs-btn\" type=\"button\" data-fs=\"nested-menu\" data-fs-target=\"#nested-root\" data-placement=\"bottom\" data-align=\"end\">Ações</button><div id=\"nested-root\" class=\"fs-dropdown-menu\" aria-label=\"Ações\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">Novo</button><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item is-disabled\" disabled>Indisponível</button><div class=\"fs-dropdown-submenu\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</button><div class=\"fs-dropdown-menu\" aria-label=\"Exportar\"><div class=\"fs-dropdown-submenu\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Formato</button><div class=\"fs-dropdown-menu\" aria-label=\"Formato\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">PDF</button></div></div></div></div><div class=\"fs-dropdown-submenu\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Importar</button><div class=\"fs-dropdown-menu\" aria-label=\"Importar\"><button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">CSV</button></div></div></div>\n",
+          "jsCode": "import { NestedMenu } from \"fokus-styles/js\";\nconst element = document.querySelector('[data-fs=\"nested-menu\"]');\nconst instance = NestedMenu.getInstance(element) ?? new NestedMenu(element);\nwindow.addEventListener(\"pagehide\", () => instance.dispose(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "tres-niveis",
+            "disabled-nativo",
+            "placement-align",
+            "setas-escape"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Ações demonstrativas; não exportam arquivos. Flip geométrico/hover/touch não exaustivos. Roles menuitem explícitos: runtime não os injeta."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/nested-menu/recursive-end.html",
+              "sha256": "175bb4da6d0519ffab1fde83d7d7478bda5f4f26721b55afbb1722203ac41be7"
+            },
+            {
+              "path": "docs/catalog/fixtures/nested-menu/recursive-end.js",
+              "sha256": "fec83b1e864c5751b964b1d41454e12946a38641ff44cfc0ee8eaad679328486"
             }
           ]
         }
@@ -32140,6 +32394,50 @@
             {
               "path": "docs/catalog/fixtures/pagination/basic.html",
               "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf"
+            }
+          ]
+        },
+        {
+          "id": "bordered-small",
+          "title": "Pagination — bordered-small",
+          "htmlCode": "<nav aria-label=\"Paginação bordered-small\" class=\"fs-pagination-scroll\"><ul class=\"fs-pagination fs-pagination-bordered fs-pagination-sm fs-pagination-centered\"><li class=\"fs-page-item is-disabled\"><span class=\"fs-page-link fs-page-link-text\" aria-disabled=\"true\">Anterior</span></li><li class=\"fs-page-item is-active\"><a class=\"fs-page-link\" aria-current=\"page\" href=\"#pagina1\">1</a></li><li class=\"fs-page-item is-disabled\" aria-hidden=\"true\"><span class=\"fs-page-link\">…</span></li><li class=\"fs-page-item\"><a class=\"fs-page-link fs-page-link-text\" href=\"#pagina8\">Próxima: 8</a></li></ul></nav><section id=\"pagina1\"><h2>Página 1</h2></section><section id=\"pagina8\"><h2>Página 8</h2></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "tamanho-alinhamento",
+            "reticencias",
+            "disabled-sem-href"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/pagination/bordered-small.html",
+              "sha256": "c77cb3cf7437b9c940fbb58b9dfabea0dfff91cf88438ccb70b671b71fb10f22"
+            }
+          ]
+        },
+        {
+          "id": "rounded-large",
+          "title": "Pagination — rounded-large",
+          "htmlCode": "<nav aria-label=\"Paginação rounded-large\" class=\"fs-pagination-scroll\"><ul class=\"fs-pagination fs-pagination-rounded fs-pagination-lg fs-pagination-right\"><li class=\"fs-page-item is-disabled\"><span class=\"fs-page-link fs-page-link-text\" aria-disabled=\"true\">Anterior</span></li><li class=\"fs-page-item is-active\"><a class=\"fs-page-link\" aria-current=\"page\" href=\"#pagina1\">1</a></li><li class=\"fs-page-item is-disabled\" aria-hidden=\"true\"><span class=\"fs-page-link\">…</span></li><li class=\"fs-page-item\"><a class=\"fs-page-link fs-page-link-text\" href=\"#pagina8\">Próxima: 8</a></li></ul></nav><section id=\"pagina1\"><h2>Página 1</h2></section><section id=\"pagina8\"><h2>Página 8</h2></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "tamanho-alinhamento",
+            "reticencias",
+            "disabled-sem-href"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/pagination/rounded-large.html",
+              "sha256": "80ae5c40f9ecfb8377f4ad98db2f9b6f6da87e9909ba39b90874cff48594916e"
             }
           ]
         }
@@ -40244,6 +40542,36 @@
             {
               "path": "docs/catalog/fixtures/scrollspy/basic.js",
               "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
+            }
+          ]
+        },
+        {
+          "id": "long-sections",
+          "title": "Scrollspy — rolagem real e localização",
+          "htmlCode": "<nav data-fs=\"scrollspy\" data-fs-scrollspy class=\"fs-scrollspy-nav\" aria-label=\"Nesta página\">\n  <a href=\"#introducao\">Introdução</a>\n  <a href=\"#detalhes\">Detalhes</a>\n</nav>\n<section id=\"introducao\" style=\"min-height: 100vh\"><h2>Introdução</h2><p>Conteúdo introdutório.</p></section>\n<section id=\"detalhes\" style=\"min-height: 100vh\"><h2>Detalhes</h2><p>Detalhes do documento.</p></section>\n",
+          "jsCode": "import { Scrollspy } from \"fokus-styles/js\";\n\nconst nav = document.querySelector('[data-fs=\"scrollspy\"]');\nconst syncCurrent = event => {\n  for (const link of nav.querySelectorAll('a[href^=\"#\"]')) {\n    if (link.getAttribute(\"href\") === `#${event.detail.section.id}`) link.setAttribute(\"aria-current\", \"location\");\n    else link.removeAttribute(\"aria-current\");\n  }\n};\nnav.addEventListener(\"fs:scrollspy:activate\", syncCurrent);\nconst instance = Scrollspy.getInstance(nav) ?? new Scrollspy(nav);\ninstance.activate(document.getElementById(\"introducao\"));\nwindow.addEventListener(\"pagehide\", () => {\n  instance.dispose();\n  nav.removeEventListener(\"fs:scrollspy:activate\", syncCurrent);\n}, { once: true });\n",
+          "cssCode": "section { min-height: 110vh; padding-block: 2rem; } [data-fs-scrollspy] { --fs-space-4: 0.5rem; background: var(--fs-color-surface); }\n",
+          "coverage": [
+            "intersectionobserver-real",
+            "aria-current-evento",
+            "foco-preservado"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Alturas demonstrativas. Sem scroll interno configurável, ranking de interseção ou fallback testado neste exemplo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/scrollspy/long-sections.html",
+              "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c"
+            },
+            {
+              "path": "docs/catalog/fixtures/scrollspy/long-sections.js",
+              "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
+            },
+            {
+              "path": "docs/catalog/fixtures/scrollspy/long-sections.css",
+              "sha256": "e5315d892a2438de50dc178645f2698e5cb8b86712214d178d4cd260956c4f1d"
             }
           ]
         }
@@ -54175,6 +54503,33 @@
             {
               "path": "docs/catalog/fixtures/tree-view/basic.js",
               "sha256": "69c655df1040387ce24ffff4533e8c2f63a33482c8319688a9058f5e1703f9e2"
+            }
+          ]
+        },
+        {
+          "id": "expanded-values",
+          "title": "TreeView — expansão inicial e valores",
+          "htmlCode": "<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos\"><li data-value=\"src\" aria-expanded=\"true\"><span class=\"fs-tree-label\">Código</span><ul><li data-value=\"index\"><span class=\"fs-tree-label\">index.js</span></li></ul></li><li data-value=\"readme\"><span class=\"fs-tree-label\">README.md</span></li></ul><p role=\"status\" id=\"tree-status\">Nenhum arquivo selecionado.</p>\n",
+          "jsCode": "import { TreeView } from \"fokus-styles/js\";\nconst element=document.querySelector('[data-fs=\"tree-view\"]');\nconst selected=event=>{document.getElementById('tree-status').textContent=`Selecionado: ${event.detail.value}`;};\nelement.addEventListener('fs:tree:selected',selected);\nconst instance=TreeView.getInstance(element) ?? new TreeView(element);\nwindow.addEventListener('pagehide',()=>{instance.dispose();element.removeEventListener('fs:tree:selected',selected);},{once:true});\n",
+          "cssCode": "",
+          "coverage": [
+            "expanded-inicial",
+            "data-value",
+            "selecao-evento",
+            "roving-setas"
+          ],
+          "limitations": [
+            "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+            "Experimental; não abre arquivos. dispose preserva roles, setas, tabindex e seleção."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tree-view/expanded-values.html",
+              "sha256": "cc2cde67ecc2c7e09b498a1eab002682ff48fc05aed365b79b878da242df0e07"
+            },
+            {
+              "path": "docs/catalog/fixtures/tree-view/expanded-values.js",
+              "sha256": "dd3d8c29c3d47ae3a148c38d21d3c2ec8703097a3ddbc3c6ebf97d49d9e52776"
             }
           ]
         }

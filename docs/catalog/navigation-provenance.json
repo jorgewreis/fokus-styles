@@ -1,0 +1,1525 @@
+{
+  "baseCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+  "auditSHA256": "12fa2b2226344e907097e1d463266bea5943ac9f2e825c73697faa5ee49110e7",
+  "auditRows": [
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "data-fs",
+          "breadcrumb"
+        ],
+        [
+          "data-max-items",
+          "3"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "breadcrumb"
+        ]
+      ],
+      "component": "breadcrumb",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/breadcrumb.md",
+          "sha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_breadcrumbs.scss",
+          "sha256": "6d2221396a21445ff5a5e0e39f4b6d7a4829d73c7abedf214f70faa346bf1cfb"
+        },
+        {
+          "path": "packages/fokus-js/js/breadcrumb.d.ts",
+          "sha256": "1673d4a5ca68b715e79e0cd2ff01d308359fd919d25fdf311d94793b1638fd77"
+        },
+        {
+          "path": "packages/fokus-js/js/breadcrumb.js",
+          "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-breadcrumb",
+        "fs-breadcrumb-item",
+        "is-active"
+      ],
+      "cssScopeClasses": [
+        "fs-breadcrumb",
+        "fs-breadcrumb-item",
+        "fs-breadcrumb-item-truncate",
+        "fs-breadcrumb-more"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-breadcrumb-item-truncate",
+        "fs-breadcrumb-more"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-max-items",
+          "line": 10,
+          "code": "this.maxItems = Number(options.maxItems ?? listEl.getAttribute(\"data-max-items\") ?? 4);",
+          "path": "packages/fokus-js/js/breadcrumb.js"
+        },
+        {
+          "name": "href",
+          "line": 100,
+          "code": "if (isLink) link.href = source.getAttribute(\"href\");",
+          "path": "packages/fokus-js/js/breadcrumb.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "href"
+      ],
+      "readAttributesAbsent": [
+        "data-max-items"
+      ],
+      "typedOptions": [
+        {
+          "interface": "BreadcrumbOptions",
+          "name": "maxItems",
+          "type": "number",
+          "path": "packages/fokus-js/js/breadcrumb.d.ts",
+          "explicitFixtureMention": false
+        }
+      ],
+      "consumedTokens": [
+        "--fs-alert-primary-text",
+        "--fs-color-muted",
+        "--fs-color-surface-raised",
+        "--fs-color-text"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-primary-text",
+        "--fs-color-surface-raised"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-primary-text",
+        "--fs-color-muted",
+        "--fs-color-surface-raised",
+        "--fs-color-text"
+      ],
+      "cssStates": [
+        ":hover"
+      ],
+      "documentationVariantStateSections": "Nenhuma variação visual (cor/tamanho); a variação é comportamental (ver\nAvançado abaixo).\n\n`.fs-breadcrumb-item.is-active` — marca o item atual, sem link, cor de\ntexto normal (os demais usam `--fs-color-muted`).",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Links demonstrativos (#); não há navegação nem breadcrumb responsivo JavaScript."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/breadcrumb.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "data-fs-target",
+          "#paleta-exemplo"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Comandos disponíveis"
+        ],
+        [
+          "aria-label",
+          "Resultados de comandos"
+        ],
+        [
+          "data-fs",
+          "command-palette"
+        ],
+        [
+          "data-fs-empty",
+          null
+        ],
+        [
+          "data-fs-shortcut",
+          "mod+k"
+        ],
+        [
+          "data-fs-target",
+          "#paleta"
+        ],
+        [
+          "data-value",
+          "new-file"
+        ],
+        [
+          "data-value",
+          "open-settings"
+        ],
+        [
+          "type",
+          "button"
+        ],
+        [
+          "type",
+          "text"
+        ]
+      ],
+      "component": "command-palette",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/command-palette.md",
+          "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_command-palette.scss",
+          "sha256": "59f738e7b1d872e4373dafd32fefa60c4e3593807027cf6005ea665aa10ba026"
+        },
+        {
+          "path": "packages/fokus-js/js/command-palette.d.ts",
+          "sha256": "5c2cd9efc60a014e593c4cf89aa71506595cae448675ca51977164cbe9bcf3c7"
+        },
+        {
+          "path": "packages/fokus-js/js/command-palette.js",
+          "sha256": "660e005c6296e1d9ef56f521b10a72572f2dcffcc0819adc637a149aec5c786b"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-command-palette",
+        "fs-command-palette-dialog",
+        "fs-command-palette-input",
+        "fs-command-palette-list",
+        "fs-dropdown-item",
+        "fs-empty",
+        "fs-shortcut",
+        "fs-target",
+        "is-disabled"
+      ],
+      "cssScopeClasses": [
+        "fs-command-palette",
+        "fs-command-palette-dialog",
+        "fs-command-palette-input",
+        "fs-command-palette-list",
+        "fs-dropdown-item",
+        "fs-dropdown-item-danger",
+        "fs-dropdown-item-submenu"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-dropdown-item-danger",
+        "fs-dropdown-item-submenu"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-target",
+          "line": 42,
+          "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");",
+          "path": "packages/fokus-js/js/command-palette.js"
+        },
+        {
+          "name": "data-fs-shortcut",
+          "line": 90,
+          "code": "const shortcut = options.shortcut ?? triggerEl.getAttribute(\"data-fs-shortcut\");",
+          "path": "packages/fokus-js/js/command-palette.js"
+        },
+        {
+          "name": "data-fs-empty",
+          "line": 110,
+          "code": "return this._getItems().filter((item) => !item.hidden && !item.hasAttribute(\"data-fs-empty\") && !item.classList.contains(\"is-disabled\"));",
+          "path": "packages/fokus-js/js/command-palette.js"
+        },
+        {
+          "name": "data-fs-empty",
+          "line": 117,
+          "code": "if (item.hasAttribute(\"data-fs-empty\")) return;",
+          "path": "packages/fokus-js/js/command-palette.js"
+        },
+        {
+          "name": "data-value",
+          "line": 145,
+          "code": "const value = item.getAttribute(\"data-value\") ?? label;",
+          "path": "packages/fokus-js/js/command-palette.js"
+        },
+        {
+          "name": "data-fs-empty",
+          "line": 185,
+          "code": "if (!item || item.hasAttribute(\"data-fs-empty\")) return;",
+          "path": "packages/fokus-js/js/command-palette.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "data-fs-empty",
+        "data-fs-shortcut",
+        "data-fs-target",
+        "data-value"
+      ],
+      "readAttributesAbsent": [],
+      "typedOptions": [
+        {
+          "interface": "CommandPaletteOptions",
+          "name": "shortcut",
+          "type": "string",
+          "path": "packages/fokus-js/js/command-palette.d.ts",
+          "explicitFixtureMention": false
+        }
+      ],
+      "consumedTokens": [
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-lg",
+        "--fs-z-modal"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-z-modal"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-lg",
+        "--fs-z-modal"
+      ],
+      "cssStates": [
+        ":disabled",
+        ":focus-visible",
+        ":hover",
+        "[aria-disabled=true]"
+      ],
+      "documentationVariantStateSections": "- `data-value` em cada `.fs-dropdown-item` define o valor \"de verdade\"\n  (`event.detail.value` no evento de seleção); sem ele, o valor é o texto\n  visível do item.\n- Item desabilitado: `.fs-dropdown-item.is-disabled` — ignorado por\n  teclado, mouse e pelo filtro.\n- Item de \"sem resultados\": `.fs-dropdown-item.is-disabled[data-fs-empty]`,\n  `hidden` por padrão — visibilidade alternada automaticamente pelo JS.\n- `.fs-dropdown-header` agrupa comandos por seção, igual ao Dropdown.\n- `data-fs-shortcut=\"mod+k\"` (ou `options.shortcut` no construtor): aceita\n  combinações com `mod`/`shift`/`alt` + uma tecla, ex. `\"mod+shift+p\"`.\n\n- Ao abrir, o input é limpo e a lista completa (sem filtro) é exibida.\n- Digitar filtra os itens por substring (case-insensitive) — os que não\n  correspondem recebem o atributo `hidden`.\n- Primeiro item selecionável sempre começa destacado (`.is-active`),\n  pronto pra `Enter` imediato.\n- Selecionar um item fecha o painel e devolve o foco ao gatilho.",
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Comandos demonstrativos: seleção emite evento, mas não cria arquivo nem abre configurações."
+      ],
+      "historicalSnippets": 2,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/command-palette.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "aria-current",
+          "page"
+        ],
+        [
+          "aria-label",
+          "Configurações"
+        ]
+      ],
+      "component": "menu",
+      "priority": "P2",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/menu.md",
+          "sha256": "11d74460d125857519038008528eff99b8e7263efcf1764be9e64f873633c31a"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_menu.scss",
+          "sha256": "9e1a5f43c3f4b5106057ec2583dde94cc4993183f6a9c23aa376cdf9320e0549"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-menu",
+        "fs-menu-label",
+        "fs-menu-list"
+      ],
+      "cssScopeClasses": [
+        "fs-menu",
+        "fs-menu-bordered",
+        "fs-menu-compact",
+        "fs-menu-label",
+        "fs-menu-list"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-menu-bordered",
+        "fs-menu-compact"
+      ],
+      "runtimeReadAttributes": [],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-primary-text",
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-muted",
+        "--fs-color-primary-bg-subtle",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-menu-item-padding-block",
+        "--fs-menu-item-padding-inline",
+        "--fs-menu-item-radius",
+        "--fs-menu-label-color",
+        "--fs-menu-nested-indent",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-sm"
+      ],
+      "declaredTokens": [
+        "--fs-menu-item-padding-block",
+        "--fs-menu-item-padding-inline",
+        "--fs-menu-item-radius",
+        "--fs-menu-label-color",
+        "--fs-menu-nested-indent"
+      ],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-primary-text",
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-muted",
+        "--fs-color-primary-bg-subtle",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-menu-item-padding-block",
+        "--fs-menu-item-padding-inline",
+        "--fs-menu-item-radius",
+        "--fs-menu-label-color",
+        "--fs-menu-nested-indent",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-sm"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-primary-text",
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-muted",
+        "--fs-color-primary-bg-subtle",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-menu-item-padding-block",
+        "--fs-menu-item-padding-inline",
+        "--fs-menu-item-radius",
+        "--fs-menu-label-color",
+        "--fs-menu-nested-indent",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-sm"
+      ],
+      "cssStates": [
+        ":disabled",
+        ":focus-visible",
+        ":hover",
+        "[aria-current=page]",
+        "[aria-disabled=true]"
+      ],
+      "documentationVariantStateSections": "O menu suporta destino ativo, níveis aninhados, densidade compacta, superfície\ncom borda e links temporariamente indisponíveis.",
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Links locais funcionais; aria-current permanece estático, sem roteador de aplicativo."
+      ],
+      "historicalSnippets": 1,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": []
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-current",
+          "page"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-controls",
+          "menuPrincipal"
+        ],
+        [
+          "aria-current",
+          "location"
+        ],
+        [
+          "aria-expanded",
+          "false"
+        ],
+        [
+          "aria-label",
+          "Navegação principal"
+        ],
+        [
+          "data-fs",
+          "navbar"
+        ],
+        [
+          "data-fs-target",
+          "#menuPrincipal"
+        ],
+        [
+          "data-fs-toggle",
+          "navbar"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "navbar",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/navbar.md",
+          "sha256": "6878df33044d8a19c93552592d8ff7ee109a2bcf5afbb24b741de656c56ad858"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_navbar.scss",
+          "sha256": "2250b8befbd84dd37f65ee1661bdbc1fea5a825a282ef483d92df5670f2b2035"
+        },
+        {
+          "path": "packages/fokus-js/js/navbar.d.ts",
+          "sha256": "cb4f05157853623e4ba479015b68913ef6c1ca763413f11cee3d78fba618d0e6"
+        },
+        {
+          "path": "packages/fokus-js/js/navbar.js",
+          "sha256": "7d60228e5fee7556a23ab16853bb2bab4a3fe919a660538290f023b49fa4b99f"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-nav-link",
+        "fs-navbar",
+        "fs-navbar-brand",
+        "fs-navbar-collapse",
+        "fs-navbar-nav",
+        "fs-navbar-toggler",
+        "fs-target",
+        "fs-toggle",
+        "is-active"
+      ],
+      "cssScopeClasses": [
+        "fs-nav-link",
+        "fs-navbar",
+        "fs-navbar-brand",
+        "fs-navbar-collapse",
+        "fs-navbar-nav",
+        "fs-navbar-toggler"
+      ],
+      "classesAbsentFromStaticFixture": [],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-target",
+          "line": 9,
+          "code": "const target = this.toggleEl?.getAttribute(\"data-fs-target\");",
+          "path": "packages/fokus-js/js/navbar.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "data-fs-target"
+      ],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-primary-text",
+        "--fs-color-border",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-shadow-sm"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface-raised",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-shadow-sm"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-primary-text",
+        "--fs-color-border",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-shadow-sm"
+      ],
+      "cssStates": [
+        ":focus-visible",
+        ":hover",
+        "[hidden]"
+      ],
+      "documentationVariantStateSections": "Para navegação sempre visível, omita o botão, o painel collapse e `data-fs`;\ncoloque `.fs-navbar-nav` diretamente no `<nav>`. Essa composição não requer JS.\nNão existem variantes de cor ou tamanho próprias da Navbar.\n\n- `.fs-navbar-collapse.is-open` — painel aberto em telas pequenas.\n- `.fs-nav-link.is-active` — destaque visual; acrescente `aria-current=\"page\"`.\n- `.fs-nav-link.is-disabled` — aparência e bloqueio do ponteiro, não do teclado.\n  Para itens indisponíveis, prefira texto sem `href` e `aria-disabled=\"true\"`.",
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Estado aria-current é estático e não acompanha navegação por âncora; exemplo demonstra apenas menu recolhível."
+      ],
+      "historicalSnippets": 2,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/navbar.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Arquivo"
+        ],
+        [
+          "aria-label",
+          "Exportar"
+        ],
+        [
+          "data-fs",
+          "nested-menu"
+        ],
+        [
+          "data-fs-target",
+          "#menu"
+        ],
+        [
+          "role",
+          "menuitem"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "nested-menu",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/nested-menu.md",
+          "sha256": "167ab633a3143b1a4d4fd54e4aa007c05ba1999ca78565992c8d11a3f62521b8"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+          "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+        },
+        {
+          "path": "packages/fokus-js/js/nested-menu.d.ts",
+          "sha256": "374a1ad6a9c8736da62f57166ce60938c02c8ca95fdc7262e7227c16284497d2"
+        },
+        {
+          "path": "packages/fokus-js/js/nested-menu.js",
+          "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-dropdown-item",
+        "fs-dropdown-item-submenu",
+        "fs-dropdown-menu",
+        "fs-dropdown-submenu",
+        "fs-dropdown-toggle",
+        "fs-target"
+      ],
+      "cssScopeClasses": [
+        "fs-dropdown-item",
+        "fs-dropdown-item-danger",
+        "fs-dropdown-item-submenu",
+        "fs-dropdown-menu",
+        "fs-dropdown-menu-lg",
+        "fs-dropdown-menu-sm",
+        "fs-dropdown-submenu",
+        "fs-dropdown-submenu-left",
+        "fs-dropdown-toggle"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-dropdown-item-danger",
+        "fs-dropdown-menu-lg",
+        "fs-dropdown-menu-sm",
+        "fs-dropdown-submenu-left"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-target",
+          "line": 39,
+          "code": "const targetSelector = toggleEl.getAttribute(\"data-fs-target\");",
+          "path": "packages/fokus-js/js/nested-menu.js"
+        },
+        {
+          "name": "data-placement",
+          "line": 48,
+          "code": "this.placement = options.placement ?? toggleEl.getAttribute(\"data-placement\") ?? \"bottom\";",
+          "path": "packages/fokus-js/js/nested-menu.js"
+        },
+        {
+          "name": "data-align",
+          "line": 49,
+          "code": "this.align = options.align ?? toggleEl.getAttribute(\"data-align\") ?? \"start\";",
+          "path": "packages/fokus-js/js/nested-menu.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "data-fs-target"
+      ],
+      "readAttributesAbsent": [
+        "data-align",
+        "data-placement"
+      ],
+      "typedOptions": [
+        {
+          "interface": "NestedMenuOptions",
+          "name": "placement",
+          "type": "Placement",
+          "path": "packages/fokus-js/js/nested-menu.d.ts",
+          "explicitFixtureMention": false
+        },
+        {
+          "interface": "NestedMenuOptions",
+          "name": "align",
+          "type": "Align",
+          "path": "packages/fokus-js/js/nested-menu.d.ts",
+          "explicitFixtureMention": false
+        }
+      ],
+      "consumedTokens": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-dropdown-max-block-size",
+        "--fs-dropdown-min-inline-size",
+        "--fs-dropdown-padding-block",
+        "--fs-dropdown-rich-inline-size",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-md",
+        "--fs-z-dropdown"
+      ],
+      "declaredTokens": [
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-dropdown-max-block-size",
+        "--fs-dropdown-min-inline-size",
+        "--fs-dropdown-offset",
+        "--fs-dropdown-padding-block",
+        "--fs-dropdown-rich-inline-size"
+      ],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-dropdown-max-block-size",
+        "--fs-dropdown-min-inline-size",
+        "--fs-dropdown-padding-block",
+        "--fs-dropdown-rich-inline-size",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-md",
+        "--fs-z-dropdown"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-danger",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-dropdown-item-padding-block",
+        "--fs-dropdown-item-padding-inline",
+        "--fs-dropdown-max-block-size",
+        "--fs-dropdown-min-inline-size",
+        "--fs-dropdown-padding-block",
+        "--fs-dropdown-rich-inline-size",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-md",
+        "--fs-z-dropdown"
+      ],
+      "cssStates": [
+        ":disabled",
+        ":focus-visible",
+        ":hover",
+        "[aria-disabled=true]",
+        "[data-placement=bottom]",
+        "[data-placement=left]",
+        "[data-placement=right]",
+        "[data-placement=top]"
+      ],
+      "documentationVariantStateSections": "Mesmas de [Dropdown](dropdown.md) no gatilho raiz (`data-placement`,\n`data-align`). Submenus não têm variação própria — abrem sempre à direita\ndo item pai, com flip automático para a esquerda se não couber (a classe\n`.fs-dropdown-submenu-left` é aplicada/removida pelo JS, não escreva\nmanualmente).\n\n`.is-open` em cada `.fs-dropdown-menu` (raiz e submenus, independentes).\nSó um submenu por nível fica aberto por vez — abrir um fecha os irmãos do\nmesmo nível.\n\nAbertura por **hover** é 100% CSS (`:hover` no `.fs-dropdown-submenu`);\npor **clique/teclado** é controlada pelo JS, coexistindo sem conflito\n(passar o mouse fecha ramos abertos por teclado que não estão no caminho\ndo hover).",
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Ações Novo/PDF/CSV/Fechar são demonstrativas; folhas fecham o menu mas não criam/exportam arquivos."
+      ],
+      "historicalSnippets": 1,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/nested-menu.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-label",
+          "Anterior"
+        ],
+        [
+          "aria-label",
+          "Paginação"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-current",
+          "page"
+        ],
+        [
+          "aria-disabled",
+          "true"
+        ],
+        [
+          "aria-hidden",
+          "true"
+        ],
+        [
+          "aria-label",
+          "Paginação do exemplo"
+        ],
+        [
+          "aria-label",
+          "Próxima"
+        ]
+      ],
+      "component": "pagination",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/pagination.md",
+          "sha256": "e1fbb037d3da8b9d9a29c4bc785081db7f5528807a9f1fcd155716c5e715a4b1"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_pagination.scss",
+          "sha256": "c6d2079fefcd178a698567a5713ef1752467ebbcc086e61fee395cbfea417577"
+        },
+        {
+          "path": "packages/fokus-js/js/pagination.d.ts",
+          "sha256": "e7675004f8ea2b0880a789882444682ed3177f62a8c3b562d6d4aa2aea1d7542"
+        },
+        {
+          "path": "packages/fokus-js/js/pagination.js",
+          "sha256": "98bcb367759e942d0f27a8eb4ffcca5bd84ced174d1c734358edd66e43036786"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-icon",
+        "fs-page-item",
+        "fs-page-link",
+        "fs-pagination",
+        "is-active",
+        "is-disabled"
+      ],
+      "cssScopeClasses": [
+        "fs-page-item",
+        "fs-page-link",
+        "fs-page-link-text",
+        "fs-pagination",
+        "fs-pagination-bordered",
+        "fs-pagination-centered",
+        "fs-pagination-lg",
+        "fs-pagination-list",
+        "fs-pagination-right",
+        "fs-pagination-rounded",
+        "fs-pagination-scroll",
+        "fs-pagination-sm"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-page-link-text",
+        "fs-pagination-bordered",
+        "fs-pagination-centered",
+        "fs-pagination-lg",
+        "fs-pagination-list",
+        "fs-pagination-right",
+        "fs-pagination-rounded",
+        "fs-pagination-scroll",
+        "fs-pagination-sm"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-pages",
+          "line": 7,
+          "code": "this.total = Math.max(1, this._normalizePage(element.getAttribute(\"data-fs-pages\"), element.querySelectorAll(\"[data-fs-page]\").length || 1));",
+          "path": "packages/fokus-js/js/pagination.js"
+        },
+        {
+          "name": "data-fs-page",
+          "line": 8,
+          "code": "this.current = Math.min(this.total, this._normalizePage(element.getAttribute(\"data-fs-page\"), 1));",
+          "path": "packages/fokus-js/js/pagination.js"
+        },
+        {
+          "name": "aria-disabled",
+          "line": 13,
+          "code": "if (button.disabled || button.getAttribute(\"aria-disabled\") === \"true\" || button.closest(\".is-disabled\")) return;",
+          "path": "packages/fokus-js/js/pagination.js"
+        },
+        {
+          "name": "data-fs-page",
+          "line": 14,
+          "code": "this.goTo(button.getAttribute(\"data-fs-page\"));",
+          "path": "packages/fokus-js/js/pagination.js"
+        },
+        {
+          "name": "data-fs-page",
+          "line": 33,
+          "code": "const active = Number(item.getAttribute(\"data-fs-page\")) === this.current;",
+          "path": "packages/fokus-js/js/pagination.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "aria-disabled"
+      ],
+      "readAttributesAbsent": [
+        "data-fs-page",
+        "data-fs-pages"
+      ],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-ease-standard",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-transition-fast"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-on-primary",
+        "--fs-color-text",
+        "--fs-ease-standard",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-transition-fast"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-border-width",
+        "--fs-color-border-default",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-ease-standard",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-transition-fast"
+      ],
+      "cssStates": [
+        ":focus-visible",
+        ":hover",
+        "[aria-disabled=true]"
+      ],
+      "documentationVariantStateSections": "- **Bordered**: `.fs-pagination-bordered` — itens colados (sem gap), borda\n  fundida entre eles (técnica de margin negativo do\n  [Input Group](input-group.md)), cantos arredondados só nas pontas.\n- **Tamanho**: `.fs-pagination-sm`, `.fs-pagination-lg`; sem sufixo =\n  padrão (32px).\n- **Prev/next descritivo**: `.fs-page-link-text` no item de anterior/\n  próxima, pra ícone + texto (`\"Anterior\"`/`\"Próxima\"`) em vez de só o\n  ícone — só ajusta o `gap`/padding, o `.fs-page-link` já acomoda largura\n  variável. Com texto visível, dispensa o `aria-label` (o link já tem\n  nome acessível pelo próprio texto).\n- **Reticências** (intervalo de páginas omitido, ex. `1 2 3 … 8 9 10`):\n  `.fs-page-item.is-disabled` com um `<span>` (não `<a>` — não é uma ação)\n  contendo o ícone `ellipsis`, `aria-hidden=\"true\"` no item inteiro\n  (não comunica nada de acionável a leitores de tela).\n\n```html\n<ul class=\"fs-pagination fs-pagination-bordered fs-pagination-sm\">\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item is-active\"><a href=\"#\" class=\"fs-page-link\">2</a></li>\n</ul>\n\n<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item\">\n    <a href=\"#\" class=\"fs-page-link fs-page-link-text\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n      Anterior\n    </a>\n  </li>\n  <li class=\"fs-page-item\">\n    <a href=\"#\" class=\"fs-page-link fs-page-link-text\">\n      Próxima\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg>\n    </a>\n  </li>\n</ul>\n\n<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">2</a></li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">3</a></li>\n  <li class=\"fs-page-item is-disabled\" aria-hidden=\"true\">\n    <span class=\"fs-page-link\">\n      <svg class=\"fs-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"1\"/><circle cx=\"19\" cy=\"12\" r=\"1\"/><circle cx=\"5\" cy=\"12\" r=\"1\"/></svg>\n    </span>\n  </li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">8</a></li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">9</a></li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">10</a></li>\n</ul>\n```\n\n- `.fs-page-item.is-active .fs-page-link` — fundo/borda na cor primária.\n- `.fs-page-item.is-disabled .fs-page-link` — opacidade reduzida,\n  `pointer-events: none` (não clicável, não focável por mouse; ainda é\n  focável por teclado como um link comum — considere `aria-disabled=\"true\"`\n  e remover do fluxo de tab se precisar bloquear totalmente). No item de\n  reticências (sem `<a>`), isso não se aplica — ele nunca é focável.",
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Navega entre âncoras locais; página ativa estática, sem carregamento/paginação de dados."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/pagination.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Nesta página"
+        ],
+        [
+          "data-fs",
+          "scrollspy"
+        ],
+        [
+          "data-fs-scrollspy",
+          null
+        ]
+      ],
+      "component": "scrollspy",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/scrollspy.md",
+          "sha256": "5cf7ceebb92a67ddae36080f035da4928e7155293a75f5ea6f0e5e551668b1e7"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_scrollspy.scss",
+          "sha256": "ea330eda39160f2a056eb9d93d41cd200761b50e04c3fe8c9d104f1b4ab9bf9a"
+        },
+        {
+          "path": "packages/fokus-js/js/scrollspy.d.ts",
+          "sha256": "69b3f1017ec656b6fa794e752d64796a7e8474db28fb56ceb579e2e512696225"
+        },
+        {
+          "path": "packages/fokus-js/js/scrollspy.js",
+          "sha256": "14f6f8fe57f93cadc527361385fc35806ae2b4d7ed5a9d38df6dd811e899e0c9"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-scrollspy",
+        "fs-scrollspy-nav"
+      ],
+      "cssScopeClasses": [
+        "fs-scrollspy-nav"
+      ],
+      "classesAbsentFromStaticFixture": [],
+      "runtimeReadAttributes": [
+        {
+          "name": "href",
+          "line": 9,
+          "code": "this.sections = this.links.map((link) => document.getElementById(link.getAttribute(\"href\").slice(1))).filter(Boolean);",
+          "path": "packages/fokus-js/js/scrollspy.js"
+        },
+        {
+          "name": "href",
+          "line": 22,
+          "code": "activate(section) { this.links.forEach((link) => link.classList.toggle(\"is-active\", link.getAttribute(\"href\") === `#${section.id}`)); this.navEl.dispatchEvent(new CustomEvent(\"fs:scrollspy:activate\", { bubbles: true, detail: { section } })); }",
+          "path": "packages/fokus-js/js/scrollspy.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "href"
+      ],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-space-4"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-space-4"
+      ],
+      "cssStates": [],
+      "documentationVariantStateSections": "O JS alterna `.is-active` nos links e emite `fs:scrollspy:activate` na navegação,\ncom `event.detail.section` (elemento da seção). O evento borbulha e pode se\nrepetir para uma mesma seção. A ativação não rola a página nem move o foco.\n\nUsa IntersectionObserver com rootMargin fixo `-20% 0px -65%`. Sem essa API,\num listener de scroll escolhe a última seção na ordem dos links cujo topo\nesteja acima de 35% da altura da janela. O fallback não faz uma ativação inicial\naté haver scroll ou chamada explícita de activate.",
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Alturas artificiais apenas para demonstração; rastreamento real exige browser e geometria. Sem configuração de observer ou scroll interno."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/scrollspy.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-label",
+          "Arquivos do projeto"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Arquivos de exemplo"
+        ],
+        [
+          "data-fs",
+          "tree-view"
+        ]
+      ],
+      "component": "tree-view",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/tree-view.md",
+          "sha256": "2ff9b4668ef1e888c8a14b5074351252b4c5685f64a4d11379b15399a70402fb"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_tree-view.scss",
+          "sha256": "6b43841396a2f4ad7a70f92280c7bb611c75b34538f7c80def4abdf3023d36c9"
+        },
+        {
+          "path": "packages/fokus-js/js/tree-view.d.ts",
+          "sha256": "86c00b7689d3abc8417bb47a80badadf18875f57680e1ccdfeae19d8e8b1b9e2"
+        },
+        {
+          "path": "packages/fokus-js/js/tree-view.js",
+          "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-tree",
+        "fs-tree-label"
+      ],
+      "cssScopeClasses": [
+        "fs-tree",
+        "fs-tree-label",
+        "fs-tree-toggle"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-tree-toggle"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "aria-expanded",
+          "line": 43,
+          "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");",
+          "path": "packages/fokus-js/js/tree-view.js"
+        },
+        {
+          "name": "aria-expanded",
+          "line": 43,
+          "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");",
+          "path": "packages/fokus-js/js/tree-view.js"
+        },
+        {
+          "name": "aria-expanded",
+          "line": 44,
+          "code": "group.hidden = li.getAttribute(\"aria-expanded\") !== \"true\";",
+          "path": "packages/fokus-js/js/tree-view.js"
+        },
+        {
+          "name": "aria-expanded",
+          "line": 61,
+          "code": "return item.getAttribute(\"aria-expanded\") === \"true\";",
+          "path": "packages/fokus-js/js/tree-view.js"
+        },
+        {
+          "name": "tabindex",
+          "line": 79,
+          "code": "const current = items.find((item) => item.getAttribute(\"tabindex\") === \"0\") ?? items[0];",
+          "path": "packages/fokus-js/js/tree-view.js"
+        }
+      ],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [
+        "aria-expanded",
+        "tabindex"
+      ],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-text",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-color-on-primary",
+        "--fs-focus-offset",
+        "--fs-focus-width"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-subtle",
+        "--fs-color-text",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm"
+      ],
+      "cssStates": [
+        ":focus-visible",
+        ":hover",
+        "[aria-expanded=true]",
+        "[aria-selected=true]",
+        "[role=group]",
+        "[role=treeitem]"
+      ],
+      "documentationVariantStateSections": "- `data-value` num `<li>` define o valor \"de verdade\" reportado em\n  `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto\n  visível do nó.\n- `aria-expanded=\"true\"` pré-existente num `<li>` com filhos abre esse\n  ramo já expandido na renderização inicial (por padrão, todo ramo nasce\n  colapsado).\n\n- Colapsado (padrão) / expandido (`aria-expanded=\"true\"` no `<li>`,\n  `hidden` removido do `<ul>` filho) — alternado por clique na\n  label/seta ou por teclado.\n- Selecionado: `aria-selected=\"true\"` (só no nó mais recente; os demais\n  voltam a `\"false\"`) — clicar num nó com filhos expande/colapsa **e**\n  seleciona ao mesmo tempo (como um explorador de arquivos).",
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Árvore de exemplo; selecionar um nó não abre arquivos."
+      ],
+      "historicalSnippets": 2,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/tree-view.js"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "component": "navbar",
+      "id": "static-disabled",
+      "title": "Navbar — estática e indisponível",
+      "html": "docs/catalog/fixtures/navbar/static-disabled.html",
+      "coverage": [
+        "sem-js",
+        "disabled-sem-href",
+        "aria-current-estatico"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Sem roteador; aria-current estático."
+      ]
+    },
+    {
+      "component": "navbar",
+      "id": "responsive-states",
+      "title": "Navbar — responsividade e Escape",
+      "html": "docs/catalog/fixtures/navbar/responsive-states.html",
+      "coverage": [
+        "breakpoint-768",
+        "aberto-fechado",
+        "escape-foco"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "isOpen não representa a visibilidade desktop; dispose não restaura o HTML."
+      ],
+      "js": "docs/catalog/fixtures/navbar/responsive-states.js"
+    },
+    {
+      "component": "menu",
+      "id": "compact-nested",
+      "title": "Menu — compacto, borda e níveis",
+      "html": "docs/catalog/fixtures/menu/compact-nested.html",
+      "coverage": [
+        "compact",
+        "bordered",
+        "nested",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Sem JS; indisponível não tem href; estados não acompanham as âncoras."
+      ]
+    },
+    {
+      "component": "menu",
+      "id": "local-tokens",
+      "title": "Menu — tokens locais",
+      "html": "docs/catalog/fixtures/menu/local-tokens.html",
+      "coverage": [
+        "tokens-padding-radius-indent"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação."
+      ],
+      "css": "docs/catalog/fixtures/menu/local-tokens.css"
+    },
+    {
+      "component": "pagination",
+      "id": "bordered-small",
+      "title": "Pagination — bordered-small",
+      "html": "docs/catalog/fixtures/pagination/bordered-small.html",
+      "coverage": [
+        "tamanho-alinhamento",
+        "reticencias",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
+      ]
+    },
+    {
+      "component": "pagination",
+      "id": "rounded-large",
+      "title": "Pagination — rounded-large",
+      "html": "docs/catalog/fixtures/pagination/rounded-large.html",
+      "coverage": [
+        "tamanho-alinhamento",
+        "reticencias",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
+      ]
+    },
+    {
+      "component": "breadcrumb",
+      "id": "responsive-collapse",
+      "title": "Breadcrumb — níveis ocultos",
+      "html": "docs/catalog/fixtures/breadcrumb/responsive-collapse.html",
+      "coverage": [
+        "max-items-3",
+        "breakpoint-640",
+        "dropdown-niveis"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Labels curtos evitam tooltips: dispose de Breadcrumb não descarta os Tooltip criados por truncamento. Truncamento não é coberto aqui."
+      ],
+      "js": "docs/catalog/fixtures/breadcrumb/responsive-collapse.js"
+    },
+    {
+      "component": "nested-menu",
+      "id": "recursive-end",
+      "title": "NestedMenu — níveis e alinhamento",
+      "html": "docs/catalog/fixtures/nested-menu/recursive-end.html",
+      "coverage": [
+        "tres-niveis",
+        "disabled-nativo",
+        "placement-align",
+        "setas-escape"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Ações demonstrativas; não exportam arquivos. Flip geométrico/hover/touch não exaustivos. Roles menuitem explícitos: runtime não os injeta."
+      ],
+      "js": "docs/catalog/fixtures/nested-menu/recursive-end.js"
+    },
+    {
+      "component": "tree-view",
+      "id": "expanded-values",
+      "title": "TreeView — expansão inicial e valores",
+      "html": "docs/catalog/fixtures/tree-view/expanded-values.html",
+      "coverage": [
+        "expanded-inicial",
+        "data-value",
+        "selecao-evento",
+        "roving-setas"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Experimental; não abre arquivos. dispose preserva roles, setas, tabindex e seleção."
+      ],
+      "js": "docs/catalog/fixtures/tree-view/expanded-values.js"
+    },
+    {
+      "component": "command-palette",
+      "id": "shortcut-empty",
+      "title": "CommandPalette — atalho, filtro e seleção",
+      "html": "docs/catalog/fixtures/command-palette/shortcut-empty.html",
+      "coverage": [
+        "atalho-mod-shift-p",
+        "filtro-vazio",
+        "disabled",
+        "evento-valor"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Demonstra evento, não executa ações. Runtime não sincroniza aria-selected com destaque; headers não filtram; disabled pode continuar visível."
+      ],
+      "js": "docs/catalog/fixtures/command-palette/shortcut-empty.js"
+    },
+    {
+      "component": "scrollspy",
+      "id": "long-sections",
+      "title": "Scrollspy — rolagem real e localização",
+      "html": "docs/catalog/fixtures/scrollspy/long-sections.html",
+      "coverage": [
+        "intersectionobserver-real",
+        "aria-current-evento",
+        "foco-preservado"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Alturas demonstrativas. Sem scroll interno configurável, ranking de interseção ou fallback testado neste exemplo."
+      ],
+      "js": "docs/catalog/fixtures/scrollspy/long-sections.js",
+      "css": "docs/catalog/fixtures/scrollspy/long-sections.css"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/components/breadcrumb.md",
+      "sha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a"
+    },
+    {
+      "path": "packages/fokus-js/js/breadcrumb.js",
+      "sha256": "cd41d74aaf1df318ee61d18d23017bf8c50217900246d1b4a387ed20f7718395"
+    },
+    {
+      "path": "docs/components/command-palette.md",
+      "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_command-palette.scss",
+      "sha256": "59f738e7b1d872e4373dafd32fefa60c4e3593807027cf6005ea665aa10ba026"
+    },
+    {
+      "path": "packages/fokus-js/js/command-palette.js",
+      "sha256": "660e005c6296e1d9ef56f521b10a72572f2dcffcc0819adc637a149aec5c786b"
+    },
+    {
+      "path": "docs/components/menu.md",
+      "sha256": "11d74460d125857519038008528eff99b8e7263efcf1764be9e64f873633c31a"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_menu.scss",
+      "sha256": "9e1a5f43c3f4b5106057ec2583dde94cc4993183f6a9c23aa376cdf9320e0549"
+    },
+    {
+      "path": "docs/components/navbar.md",
+      "sha256": "6878df33044d8a19c93552592d8ff7ee109a2bcf5afbb24b741de656c56ad858"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_navbar.scss",
+      "sha256": "2250b8befbd84dd37f65ee1661bdbc1fea5a825a282ef483d92df5670f2b2035"
+    },
+    {
+      "path": "packages/fokus-js/js/navbar.js",
+      "sha256": "7d60228e5fee7556a23ab16853bb2bab4a3fe919a660538290f023b49fa4b99f"
+    },
+    {
+      "path": "docs/components/nested-menu.md",
+      "sha256": "167ab633a3143b1a4d4fd54e4aa007c05ba1999ca78565992c8d11a3f62521b8"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+      "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+    },
+    {
+      "path": "packages/fokus-js/js/nested-menu.js",
+      "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+    },
+    {
+      "path": "docs/components/pagination.md",
+      "sha256": "e1fbb037d3da8b9d9a29c4bc785081db7f5528807a9f1fcd155716c5e715a4b1"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_pagination.scss",
+      "sha256": "c6d2079fefcd178a698567a5713ef1752467ebbcc086e61fee395cbfea417577"
+    },
+    {
+      "path": "packages/fokus-js/js/pagination.js",
+      "sha256": "98bcb367759e942d0f27a8eb4ffcca5bd84ced174d1c734358edd66e43036786"
+    },
+    {
+      "path": "docs/components/scrollspy.md",
+      "sha256": "5cf7ceebb92a67ddae36080f035da4928e7155293a75f5ea6f0e5e551668b1e7"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_scrollspy.scss",
+      "sha256": "ea330eda39160f2a056eb9d93d41cd200761b50e04c3fe8c9d104f1b4ab9bf9a"
+    },
+    {
+      "path": "packages/fokus-js/js/scrollspy.js",
+      "sha256": "14f6f8fe57f93cadc527361385fc35806ae2b4d7ed5a9d38df6dd811e899e0c9"
+    },
+    {
+      "path": "docs/components/tree-view.md",
+      "sha256": "2ff9b4668ef1e888c8a14b5074351252b4c5685f64a4d11379b15399a70402fb"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_tree-view.scss",
+      "sha256": "6b43841396a2f4ad7a70f92280c7bb611c75b34538f7c80def4abdf3023d36c9"
+    },
+    {
+      "path": "packages/fokus-js/js/tree-view.js",
+      "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+    }
+  ]
+}

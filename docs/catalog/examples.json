@@ -436,6 +436,21 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Links demonstrativos (#); não há navegação nem breadcrumb responsivo JavaScript."
       ]
+    },
+    {
+      "id": "responsive-collapse",
+      "title": "Breadcrumb — níveis ocultos",
+      "html": "docs/catalog/fixtures/breadcrumb/responsive-collapse.html",
+      "coverage": [
+        "max-items-3",
+        "breakpoint-640",
+        "dropdown-niveis"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Labels curtos evitam tooltips: dispose de Breadcrumb não descarta os Tooltip criados por truncamento. Truncamento não é coberto aqui."
+      ],
+      "js": "docs/catalog/fixtures/breadcrumb/responsive-collapse.js"
     }
   ],
   "button-group": [
@@ -1099,6 +1114,33 @@
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Links locais funcionais; aria-current permanece estático, sem roteador de aplicativo."
       ]
+    },
+    {
+      "id": "compact-nested",
+      "title": "Menu — compacto, borda e níveis",
+      "html": "docs/catalog/fixtures/menu/compact-nested.html",
+      "coverage": [
+        "compact",
+        "bordered",
+        "nested",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Sem JS; indisponível não tem href; estados não acompanham as âncoras."
+      ]
+    },
+    {
+      "id": "local-tokens",
+      "title": "Menu — tokens locais",
+      "html": "docs/catalog/fixtures/menu/local-tokens.html",
+      "coverage": [
+        "tokens-padding-radius-indent"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação."
+      ],
+      "css": "docs/catalog/fixtures/menu/local-tokens.css"
     }
   ],
   "pagination": [
@@ -1113,6 +1155,34 @@
       "limitations": [
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Navega entre âncoras locais; página ativa estática, sem carregamento/paginação de dados."
+      ]
+    },
+    {
+      "id": "bordered-small",
+      "title": "Pagination — bordered-small",
+      "html": "docs/catalog/fixtures/pagination/bordered-small.html",
+      "coverage": [
+        "tamanho-alinhamento",
+        "reticencias",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
+      ]
+    },
+    {
+      "id": "rounded-large",
+      "title": "Pagination — rounded-large",
+      "html": "docs/catalog/fixtures/pagination/rounded-large.html",
+      "coverage": [
+        "tamanho-alinhamento",
+        "reticencias",
+        "disabled-sem-href"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "CSS apenas; âncoras não paginam dados; aria-current permanece estático."
       ]
     }
   ],
@@ -1377,6 +1447,35 @@
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
         "Estado aria-current é estático e não acompanha navegação por âncora; exemplo demonstra apenas menu recolhível."
       ]
+    },
+    {
+      "id": "static-disabled",
+      "title": "Navbar — estática e indisponível",
+      "html": "docs/catalog/fixtures/navbar/static-disabled.html",
+      "coverage": [
+        "sem-js",
+        "disabled-sem-href",
+        "aria-current-estatico"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Sem roteador; aria-current estático."
+      ]
+    },
+    {
+      "id": "responsive-states",
+      "title": "Navbar — responsividade e Escape",
+      "html": "docs/catalog/fixtures/navbar/responsive-states.html",
+      "coverage": [
+        "breakpoint-768",
+        "aberto-fechado",
+        "escape-foco"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "isOpen não representa a visibilidade desktop; dispose não restaura o HTML."
+      ],
+      "js": "docs/catalog/fixtures/navbar/responsive-states.js"
     }
   ],
   "nested-menu": [
@@ -1394,6 +1493,22 @@
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
         "Ações Novo/PDF/CSV/Fechar são demonstrativas; folhas fecham o menu mas não criam/exportam arquivos."
       ]
+    },
+    {
+      "id": "recursive-end",
+      "title": "NestedMenu — níveis e alinhamento",
+      "html": "docs/catalog/fixtures/nested-menu/recursive-end.html",
+      "coverage": [
+        "tres-niveis",
+        "disabled-nativo",
+        "placement-align",
+        "setas-escape"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Ações demonstrativas; não exportam arquivos. Flip geométrico/hover/touch não exaustivos. Roles menuitem explícitos: runtime não os injeta."
+      ],
+      "js": "docs/catalog/fixtures/nested-menu/recursive-end.js"
     }
   ],
   "combobox": [
@@ -1450,6 +1565,22 @@
         "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
         "Comandos demonstrativos: seleção emite evento, mas não cria arquivo nem abre configurações."
       ]
+    },
+    {
+      "id": "shortcut-empty",
+      "title": "CommandPalette — atalho, filtro e seleção",
+      "html": "docs/catalog/fixtures/command-palette/shortcut-empty.html",
+      "coverage": [
+        "atalho-mod-shift-p",
+        "filtro-vazio",
+        "disabled",
+        "evento-valor"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Demonstra evento, não executa ações. Runtime não sincroniza aria-selected com destaque; headers não filtram; disabled pode continuar visível."
+      ],
+      "js": "docs/catalog/fixtures/command-palette/shortcut-empty.js"
     }
   ],
   "datatable": [
@@ -1606,6 +1737,22 @@
         "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
         "Árvore de exemplo; selecionar um nó não abre arquivos."
       ]
+    },
+    {
+      "id": "expanded-values",
+      "title": "TreeView — expansão inicial e valores",
+      "html": "docs/catalog/fixtures/tree-view/expanded-values.html",
+      "coverage": [
+        "expanded-inicial",
+        "data-value",
+        "selecao-evento",
+        "roving-setas"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Experimental; não abre arquivos. dispose preserva roles, setas, tabindex e seleção."
+      ],
+      "js": "docs/catalog/fixtures/tree-view/expanded-values.js"
     }
   ],
   "alert-dialog": [
@@ -1729,6 +1876,22 @@
         "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
         "Alturas artificiais apenas para demonstração; rastreamento real exige browser e geometria. Sem configuração de observer ou scroll interno."
       ]
+    },
+    {
+      "id": "long-sections",
+      "title": "Scrollspy — rolagem real e localização",
+      "html": "docs/catalog/fixtures/scrollspy/long-sections.html",
+      "coverage": [
+        "intersectionobserver-real",
+        "aria-current-evento",
+        "foco-preservado"
+      ],
+      "limitations": [
+        "Cobertura parcial; sem certificação WCAG, maturidade ou publicação.",
+        "Alturas demonstrativas. Sem scroll interno configurável, ranking de interseção ou fallback testado neste exemplo."
+      ],
+      "js": "docs/catalog/fixtures/scrollspy/long-sections.js",
+      "css": "docs/catalog/fixtures/scrollspy/long-sections.css"
     }
   ]
 }
