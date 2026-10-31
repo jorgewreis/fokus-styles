@@ -80,6 +80,18 @@ Auto-init via `data-fs="nested-menu"`. `NestedMenu.getInstance(el)` (`el`
 | `fs:nested-menu:shown` | Não | Depois de abrir o menu raiz. |
 | `fs:nested-menu:hidden` | Não | Depois de fechar o menu raiz (fecha todos os submenus junto). |
 
+## Opções e itens indisponíveis
+
+As opções JS placement/align precedem os atributos data-placement/data-align;
+os padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown
+inteiro: este componente tem contrato próprio.
+
+O filtro de navegação e o handler de clique ignoram itens com `.is-disabled`.
+`aria-disabled` sozinho não implementa esse bloqueio; se a aplicação o declarar,
+deve manter estado visual, semântica e comportamento coerentes. Um link marcado
+visualmente indisponível não é mecanismo de autorização. Nenhum conteúdo HTML
+do menu é sanitizado pelo componente.
+
 ## Tokens
 
 Mesmos do [Dropdown](dropdown.md) — sem tokens próprios.

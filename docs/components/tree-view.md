@@ -40,7 +40,7 @@ filhos) + opcionalmente `ul[role="group"]` (o próximo nível).
 
 - `data-value` num `<li>` define o valor "de verdade" reportado em
   `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto
-  visível do nó.
+  integral do nó, incluindo seus descendentes.
 - `aria-expanded="true"` pré-existente num `<li>` com filhos abre esse
   ramo já expandido na renderização inicial (por padrão, todo ramo nasce
   colapsado).
@@ -90,6 +90,18 @@ Auto-init via `data-fs="tree-view"` na raiz (`<ul>`/`<ol>`).
 | `fs:tree:expanded` | Não | Após expandir um nó, com `event.detail.item`. |
 | `fs:tree:collapsed` | Não | Após colapsar um nó, com `event.detail.item`. |
 | `fs:tree:selected` | Não | Após selecionar um nó, com `event.detail.value`/`event.detail.item`. |
+
+## Valores, indisponibilidade e ciclo de vida
+
+Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent
+integral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente
+a label do pai. `aria-disabled` e `.is-disabled` não bloqueiam seleção, expansão
+ou navegação neste componente. Não use esses atributos como proteção de acesso.
+
+A estrutura é preparada na construção; não existe API refresh ou carregamento
+remoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos
+e setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela
+aplicação e conferência de foco/ARIA.
 
 ## Tokens
 

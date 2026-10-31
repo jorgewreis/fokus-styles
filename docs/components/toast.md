@@ -65,8 +65,8 @@ Variantes: `.fs-toast-primary`, `.fs-toast-secondary`, `.fs-toast-success`,
 
 ## Estados
 
-O Toast começa oculto, entra em `.is-open` durante a exibição e pode ser
-pausado por hover ou foco. `hide()` e auto-dismiss cancelam o timer e ocultam
+O Toast começa oculto; a propriedade `isOpen` acompanha a exibição, sem classe
+`.is-open` aplicada pelo runtime. Pode ser pausado por hover ou foco. `hide()` e auto-dismiss cancelam o timer e ocultam
 o elemento sem transferir foco.
 
 ## A11y
@@ -93,6 +93,21 @@ toast.dispose();
 
 Eventos preservados: `fs:toast:shown` e `fs:toast:hidden`. O componente pausa
 o auto-dismiss durante hover e foco, sem transferir foco para outro Toast.
+
+## Configuração e limites de pausa
+
+Os atributos delay/autohide são capturados na construção; não há objeto de opções
+JS. `data-delay` ausente, zero ou não numérico usa 4000 ms por causa do fallback;
+valores negativos/não finitos não são validados. Forneça duração finita positiva.
+Somente a string exata `data-autohide="false"` desliga o fechamento automático.
+
+Limitação atual: hover e foco compartilham um único indicador de pausa. Um
+mouseleave pode retomar o timer mesmo com foco interno; focusout também pode
+retomar enquanto o ponteiro permanece sobre o Toast. Não há contagem independente
+das condições. Para mensagens com ações que não podem expirar, use autohide=false.
+
+`dispose()` cancela timers/transição e remove listeners, mas não equivale a
+`hide()` nem remove o elemento da página. A aplicação administra sua remoção.
 
 ## Tokens
 

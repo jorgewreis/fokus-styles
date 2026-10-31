@@ -124,6 +124,14 @@ instância criada.
 |---|---|---|
 | `fs:carousel:slid` | Não | Após trocar de slide; `detail` contém `{ from, to }`. |
 
+## Configuração e índices
+
+Não há objeto de opções JS: autoplay, interval e drag são lidos dos atributos na
+construção. `goTo(index)` espera um inteiro finito e normaliza índices por módulo
+circular: -1 vai ao último, e um índice igual à quantidade retorna ao primeiro.
+Valores fracionários ou NaN não são validados e podem deixar nenhum slide ativo;
+valide o índice antes de chamar. O componente não sanitiza o markup dos slides.
+
 ## Tokens
 
 O componente expõe tokens locais com fallback para tokens globais:

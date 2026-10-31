@@ -102,6 +102,18 @@ Auto-init via `data-fs="tag"`. `Tag.getInstance(el)`.
 |---|---|---|
 | `fs:tag:dismissed` | Sim | Antes de remover — `event.preventDefault()` cancela a remoção. |
 
+## Limites de proteção e disabled
+
+`fs-tag-protected` é uma composição visual/de ponteiro, não uma trava na API.
+`dismiss()` não consulta essa classe. Substitua o botão de remoção pela marca de
+proteção indicada acima e aplique autorização/regras de negócio na aplicação.
+
+Na construção, setLoading sincroniza o disabled do botão com o estado loading.
+Assim, um botão com disabled no HTML, mas sem is-loading/aria-busy=true na Tag,
+será reabilitado. setLoading(false) também o reabilita; não conserva um motivo de
+indisponibilidade independente. Para impedir uma remoção permitida pelo controle,
+use o evento cancelável e a regra de negócio apropriada.
+
 ## Tokens
 
 Usa os tokens de [Badge](badge.md) e expõe tokens locais para composição:

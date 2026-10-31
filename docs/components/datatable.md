@@ -54,9 +54,9 @@ toolbar/tabela/estados — não no `<table>` diretamente. O JS lê as linhas de
   comparação tipada; números aceitam ponto decimal (como `1.5`) e valores
   brasileiros com vírgula decimal (como `R$ 1.234,50`). Use um valor
   numérico canônico em `data-fs-sort-value` para formatos ambíguos.
-  Sem o atributo, a ordenação usa texto. Combine com
+  Sem o atributo, textos numéricos são comparados numericamente; os demais usam texto. Combine com
   `data-fs-sort-value` quando o valor exibido for formatado.
-- `data-fs-sort-value` numa `<td>` define o valor usado pra ordenar aquela
+- `data-fs-sort-value` numa `<td>` define o valor usado pra ordenar e filtrar aquela
   célula, se for diferente do texto exibido (ex.: data ISO por trás de um
   texto formatado, número por trás de um texto com símbolo).
 - `data-fs-page-size="N"` no elemento raiz define quantas linhas por
@@ -135,6 +135,26 @@ Auto-init via `data-fs="datatable"` no elemento raiz.
 | `fs:datatable:sorted` | Não | Após ordenar, com `detail.key`/`detail.direction`. |
 | `fs:datatable:filtered` | Não | Após filtrar, com `detail.query`/`detail.matched`. |
 | `fs:datatable:paged` | Não | Após trocar de página, com `detail.page`/`detail.pageCount`. |
+
+## Opções e limites do contrato
+
+`data-fs-page-size` tem precedência sobre `options.pageSize`, seguido do padrão
+10. Forneça um inteiro positivo: o runtime converte com Number e arredonda para
+baixo, mas uma fração positiva menor que 1 pode resultar em zero. Não use o
+componente como validador dessa configuração.
+
+O snapshot de células usa `data-fs-sort-value` quando presente, tanto para ordenar
+quanto para filtrar. Portanto, uma data exibida como “31 outubro” com override
+“2026-10-31” será encontrada por “2026”, não por “outubro”. Sem tipo explícito,
+textos numéricos reconhecidos por Number são comparados numericamente; os demais
+usam comparação textual pt-BR. Valores tipados devem ser válidos e canônicos;
+a comparação não é validação de datas ou números de negócio.
+
+O runtime aceita a direção `none` e o ciclo do cabeçalho a usa, mas a declaração
+TypeScript atual de `sort()` aceita somente `asc`/`desc`. Essa divergência de tipos
+permanece: não presuma que a chamada `sort(chave, "none")` compile com os tipos
+publicados. As propriedades pageCount/rowCount também não constam na declaração
+atual. Este ajuste documental não amplia a API tipada.
 
 ## Tokens
 

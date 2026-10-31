@@ -1475,7 +1475,7 @@
     },
     {
       "path": "docs/components/nested-menu.md",
-      "sha256": "167ab633a3143b1a4d4fd54e4aa007c05ba1999ca78565992c8d11a3f62521b8"
+      "sha256": "7c17c2028b5e139895431aabc102dd0810c5ba924c00b66e1a8bee367959e034"
     },
     {
       "path": "packages/fokus-components/scss/components/_nested-menu.scss",
@@ -1511,7 +1511,7 @@
     },
     {
       "path": "docs/components/tree-view.md",
-      "sha256": "2ff9b4668ef1e888c8a14b5074351252b4c5685f64a4d11379b15399a70402fb"
+      "sha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b"
     },
     {
       "path": "packages/fokus-components/scss/components/_tree-view.scss",
