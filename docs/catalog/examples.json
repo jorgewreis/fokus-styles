@@ -1,0 +1,180 @@
+{
+  "button": [
+    {
+      "id": "basic",
+      "title": "Button — exemplo documentado",
+      "html": "docs/catalog/fixtures/button/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "badge": [
+    {
+      "id": "basic",
+      "title": "Badge — exemplo documentado",
+      "html": "docs/catalog/fixtures/badge/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "alert": [
+    {
+      "id": "basic",
+      "title": "Alert — exemplo documentado",
+      "html": "docs/catalog/fixtures/alert/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "card": [
+    {
+      "id": "basic",
+      "title": "Card — exemplo documentado",
+      "html": "docs/catalog/fixtures/card/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botões são demonstrativos: fechar e ação não têm comportamento de aplicativo."
+      ]
+    }
+  ],
+  "checkbox": [
+    {
+      "id": "basic",
+      "title": "Checkbox — exemplo documentado",
+      "html": "docs/catalog/fixtures/checkbox/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "radio": [
+    {
+      "id": "basic",
+      "title": "Radio — exemplo documentado",
+      "html": "docs/catalog/fixtures/radio/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "switch": [
+    {
+      "id": "basic",
+      "title": "Switch — exemplo documentado",
+      "html": "docs/catalog/fixtures/switch/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "input": [
+    {
+      "id": "basic",
+      "title": "Input — exemplo documentado",
+      "html": "docs/catalog/fixtures/input/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "accordion": [
+    {
+      "id": "basic",
+      "title": "Accordion — exemplo documentado",
+      "html": "docs/catalog/fixtures/accordion/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ],
+      "js": "docs/catalog/fixtures/accordion/basic.js"
+    }
+  ],
+  "tabs": [
+    {
+      "id": "basic",
+      "title": "Tabs — exemplo documentado",
+      "html": "docs/catalog/fixtures/tabs/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ],
+      "js": "docs/catalog/fixtures/tabs/basic.js"
+    }
+  ],
+  "collapse": [
+    {
+      "id": "basic",
+      "title": "Collapse — exemplo documentado",
+      "html": "docs/catalog/fixtures/collapse/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ],
+      "js": "docs/catalog/fixtures/collapse/basic.js"
+    }
+  ],
+  "modal": [
+    {
+      "id": "basic",
+      "title": "Modal — exemplo documentado",
+      "html": "docs/catalog/fixtures/modal/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Confirmar é demonstrativo; não executa ação de aplicativo."
+      ],
+      "js": "docs/catalog/fixtures/modal/basic.js"
+    }
+  ]
+}

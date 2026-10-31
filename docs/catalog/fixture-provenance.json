@@ -1,0 +1,86 @@
+{
+  "button": {
+    "source": "docs/components/button.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "ea073c48488a8f2041e6c7e987016fa829f24665bc0cc48b944304db8a5d0818",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "badge": {
+    "source": "docs/components/badge.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "alert": {
+    "source": "docs/components/alert.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "card": {
+    "source": "docs/components/card.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "checkbox": {
+    "source": "docs/components/checkbox.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "radio": {
+    "source": "docs/components/radio.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sha256": "537ebf8fe682524ea7944f74c9f2b3cd6a03d45ea476be4410364a2d1afb6da3",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "switch": {
+    "source": "docs/components/switch.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sha256": "b910c06625f27e7c00b76574c046f63c36f68ea909d71ba27f862d908210b752",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "input": {
+    "source": "docs/components/input.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sha256": "e7cf7c05904c209cb8113a1a5876ba85367515f575c233673865a58964397211",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "accordion": {
+    "source": "docs/components/accordion.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "a0167e521ff3091218ad7ad8e1b9c677e072b195de796bcf25d1201955d69550",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "tabs": {
+    "source": "docs/components/tabs.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "b3d92505810a07634614a61d766cd701a2c943fc3e43eab9295b1b7550603ae6",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "collapse": {
+    "source": "docs/components/collapse.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "b8f51d8bc595a386224f05f585d26feedb8c2628c584ea69084b33c22202dbc6",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "modal": {
+    "source": "docs/components/modal.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  }
+}
