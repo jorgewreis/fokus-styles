@@ -175,7 +175,7 @@
       "sources": [
         {
           "path": "docs/components/command-palette.md",
-          "sha256": "923ae98e8a494388942cedc4deb6bfdd9e224d60c244d3c929a15e1733571b55"
+          "sha256": "3bcbd8fd1d68dfc26ab74db6ebd5d3dc0b5ea98fdfa0b1ab4666d3b1b65c37cb"
         },
         {
           "path": "packages/fokus-components/scss/components/_command-palette.scss",
@@ -1528,5 +1528,9 @@
     "previousSha256": "73df64c0a6ab9ec26d60a9ce5b8f34cd23da61ba2430a4aff756ab7fe0a3282a",
     "sha256": "1f253b013761b7473f991ef1694e2c1834f974abaa7d6bec60114d3f619acd38",
     "reason": "Refresh current sources only; historical auditRows and auditSHA256 retained."
+  },
+  "historicalSnapshotRestoration": {
+    "baseCommit": "79dff2f",
+    "reason": "Restore original auditRows snapshot; current sources retain revalidated documentation hashes. Previous batch refreshed the historical CommandPalette entry unintentionally."
   }
 }
