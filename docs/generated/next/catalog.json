@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "aba4d61e443c0b49af4729b09a642f341b10dad0ce6575f8e6083a156b6be330",
+    "digest": "61e32612d22355fe9e3e068fbfd7576a6489c4124a22f654479f0b1489292545",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,11 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "18bbb15108792bf3bb3f4b851471578554a3354c7b0c44b8e78059d91a0b3b5c"
+        "sha256": "17cef8caedc413c9250012a05477ea2d17ca98680ad82384f3525e30c15c52e9"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "f64757ee1a79b66886d6354bf9a1331e1c14fd5222e9558deae683fd4641a3a4"
+        "sha256": "73aeca6d6f00d1d9ce41b9b74b36f6dd87151308e18dbf8c5dda23e63b9a9c8a"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -188,6 +188,22 @@
         "sha256": "e6627413be159c5aa8a1340de0f1147f6692d2d67fbd539bf10aa080f5c10a0d"
       },
       {
+        "path": "docs/catalog/fixtures/code/tokens.css",
+        "sha256": "805df163236b5031d22d3a786d1ed227cbd4c1d035553bc9571be86fcf0f714b"
+      },
+      {
+        "path": "docs/catalog/fixtures/code/tokens.html",
+        "sha256": "3f9c9e45651b3aa9e4ffe80176fff090affad11e9a9d1899eef51ae225cb52ca"
+      },
+      {
+        "path": "docs/catalog/fixtures/code/variants.css",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "docs/catalog/fixtures/code/variants.html",
+        "sha256": "f18eea3951a3ec25b0bb65809dd2e6751b0777da79750f35b034d87be48b18ed"
+      },
+      {
         "path": "docs/catalog/fixtures/collapse/basic.html",
         "sha256": "b8f51d8bc595a386224f05f585d26feedb8c2628c584ea69084b33c22202dbc6"
       },
@@ -280,6 +296,22 @@
         "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
       },
       {
+        "path": "docs/catalog/fixtures/divider/tokens.css",
+        "sha256": "3fedcbf24845d08b356f6b4f78717f2266f20cfde3298a4dbef2d5ca47884215"
+      },
+      {
+        "path": "docs/catalog/fixtures/divider/tokens.html",
+        "sha256": "3b4ffa21dc4df17e421849c61019d81f879a790555c2846dea1824f0c0b0f5ee"
+      },
+      {
+        "path": "docs/catalog/fixtures/divider/variants.css",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "docs/catalog/fixtures/divider/variants.html",
+        "sha256": "e53311a0819f21f19cd54d1013096356292da4e2fb7912b4d6972fe55e19b88e"
+      },
+      {
         "path": "docs/catalog/fixtures/dropdown/basic.html",
         "sha256": "f3c3981a43f5f87920e91f1cb77a02304134cde7b8e002df9901fbfb4e9d1c75"
       },
@@ -342,6 +374,22 @@
       {
         "path": "docs/catalog/fixtures/list-group/basic.html",
         "sha256": "ec704cce2676115fcafaf3296ba3495cd060bf341eb38a38a5d843b964b00b22"
+      },
+      {
+        "path": "docs/catalog/fixtures/list-group/tokens.css",
+        "sha256": "e5af1cdcb3594131d67717c9e69a3df7b9805b0793bfd50d2c2da6a566147685"
+      },
+      {
+        "path": "docs/catalog/fixtures/list-group/tokens.html",
+        "sha256": "6ce538eb9d63236bd08f81e59a361c86de13b2b33b7b2cfd7cdf51c9f9db3dfc"
+      },
+      {
+        "path": "docs/catalog/fixtures/list-group/variants.css",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "docs/catalog/fixtures/list-group/variants.html",
+        "sha256": "d548d4af5968655e6f6ab69e46eb0d6a569c9e33cfd540668251e8764113610f"
       },
       {
         "path": "docs/catalog/fixtures/menu/basic.html",
@@ -448,8 +496,40 @@
         "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd"
       },
       {
+        "path": "docs/catalog/fixtures/ratio/tokens.css",
+        "sha256": "1247e0a093a3845a7bc38caa2ddd9ba9bf3c04db7fb85efb0d4712a844b886dd"
+      },
+      {
+        "path": "docs/catalog/fixtures/ratio/tokens.html",
+        "sha256": "1da01c96e52057220eb7536c1a059340d3d4994187d08ea9ff68f486a0ef6869"
+      },
+      {
+        "path": "docs/catalog/fixtures/ratio/variants.css",
+        "sha256": "725ee5428c50db64a6c2e01b2997b91e5e618d0d9e9a9ff4b243b2052557d05c"
+      },
+      {
+        "path": "docs/catalog/fixtures/ratio/variants.html",
+        "sha256": "7923ad945fdc3d77fea8a0dcffc8424832b90f42594116ff72dcc92b7636a06a"
+      },
+      {
         "path": "docs/catalog/fixtures/responsive/basic.html",
         "sha256": "729f4d2dcf23af7eef2de794ee38e416181ea6d7a18eec5a2f828ea120b63219"
+      },
+      {
+        "path": "docs/catalog/fixtures/responsive/tokens.css",
+        "sha256": "4649aa756b025b7c2a4cd5f3617375af9751ece106defab5ad7beb7f9824f007"
+      },
+      {
+        "path": "docs/catalog/fixtures/responsive/tokens.html",
+        "sha256": "e1391befbd4e9172b4e9fa0779ba65ab5afd969878b05884a5d01b732b4bae62"
+      },
+      {
+        "path": "docs/catalog/fixtures/responsive/variants.css",
+        "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+      },
+      {
+        "path": "docs/catalog/fixtures/responsive/variants.html",
+        "sha256": "6b07aa8bbfa8a3495dae31bacc2856350beece18ada6861ec72eb767c26c6c82"
       },
       {
         "path": "docs/catalog/fixtures/scrollspy/basic.html",
@@ -554,6 +634,22 @@
       {
         "path": "docs/catalog/fixtures/tile/basic.html",
         "sha256": "4d0218ac209b6dd77b88c93c3675e4b8bbe1e7dc526b1a46c870f4fc706b1a3b"
+      },
+      {
+        "path": "docs/catalog/fixtures/tile/tokens.css",
+        "sha256": "b678d159bc83f14087d1b30a92938d7c80c6453d471576ad8edc8e049a75ec4a"
+      },
+      {
+        "path": "docs/catalog/fixtures/tile/tokens.html",
+        "sha256": "94f605e2816020738b4d880d4205be5e3d52041a07dc86cd55c2d6fc15b5c5a6"
+      },
+      {
+        "path": "docs/catalog/fixtures/tile/variants.css",
+        "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+      },
+      {
+        "path": "docs/catalog/fixtures/tile/variants.html",
+        "sha256": "b7d6394a5689b183fe8f89476231910d50d9c8cddc80c7b6ee7ed6a0e6c5874e"
       },
       {
         "path": "docs/catalog/fixtures/timeline/basic.html",
@@ -1680,7 +1776,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 90,
+    "examples": 102,
     "complete": false
   },
   "contracts": [
@@ -14559,6 +14655,54 @@
               "sha256": "e6627413be159c5aa8a1340de0f1147f6692d2d67fbd539bf10aa080f5c10a0d"
             }
           ]
+        },
+        {
+          "id": "variants",
+          "title": "Code — bloco longo rolável e HTML escapado",
+          "htmlCode": "<p>Inline: <code class=\"fs-code\">&lt;button&gt;</code>.</p><pre class=\"fs-pre\" tabindex=\"0\" role=\"region\" aria-label=\"Código longo, role horizontalmente\"><code>const mensagem = \"Esta linha longa preserva espaços e não quebra automaticamente; use a rolagem horizontal para ler todo o exemplo no celular.\";\n// HTML mostrado como texto, não executado:\n&lt;button type=\"button\"&gt;Salvar&lt;/button&gt;</code></pre>\n",
+          "jsCode": "",
+          "cssCode": "\n",
+          "coverage": [
+            "inline-bloco",
+            "rolagem-teclado",
+            "html-escapado"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/code/variants.html",
+              "sha256": "f18eea3951a3ec25b0bb65809dd2e6751b0777da79750f35b034d87be48b18ed"
+            },
+            {
+              "path": "docs/catalog/fixtures/code/variants.css",
+              "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Code — paleta e espaçamento locais",
+          "htmlCode": "<section class=\"demo-code\" aria-label=\"Código personalizado\"><p>Execute <code class=\"fs-code\">npm test</code>.</p><pre class=\"fs-pre\"><code>const pronto = true;</code></pre></section>\n",
+          "jsCode": "",
+          "cssCode": ".demo-code { --fs-color-danger: #9f1239; --fs-color-subtle: #fff1f2; --fs-color-text: #4c0519; --fs-color-border: #be123c; --fs-radius-sm: 6px; --fs-radius-md: 12px; --fs-space-4: 1.5rem; }\n",
+          "coverage": [
+            "tokens-inline-bloco"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/code/tokens.html",
+              "sha256": "3f9c9e45651b3aa9e4ffe80176fff090affad11e9a9d1899eef51ae225cb52ca"
+            },
+            {
+              "path": "docs/catalog/fixtures/code/tokens.css",
+              "sha256": "805df163236b5031d22d3a786d1ed227cbd4c1d035553bc9571be86fcf0f714b"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -18769,6 +18913,53 @@
             {
               "path": "docs/catalog/fixtures/divider/basic.html",
               "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Divider — separação semântica e visual",
+          "htmlCode": "<section><h2>Primeira seção</h2><p>Informações principais.</p></section><hr class=\"fs-divider\"><section><h2>Segunda seção</h2><p>Informações complementares.</p></section><div class=\"fs-divider\"><span class=\"fs-divider-label\">ou</span></div><p>Alternativa de apresentação; rótulo visível, sem papel interativo.</p>\n",
+          "jsCode": "",
+          "cssCode": "\n",
+          "coverage": [
+            "hr-semantico",
+            "rotulo-visual"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/divider/variants.html",
+              "sha256": "e53311a0819f21f19cd54d1013096356292da4e2fb7912b4d6972fe55e19b88e"
+            },
+            {
+              "path": "docs/catalog/fixtures/divider/variants.css",
+              "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Divider — borda e rótulo",
+          "htmlCode": "<div class=\"demo-divider\"><p>Conteúdo anterior</p><hr class=\"fs-divider\"><div class=\"fs-divider\"><span class=\"fs-divider-label\">Continuação</span></div><p>Conteúdo seguinte</p></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-divider { --fs-color-border: #0e7490; --fs-color-muted: #155e75; color: #164e63; background: #ecfeff; padding: 1rem; }\n",
+          "coverage": [
+            "tokens-borda-rotulo"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/divider/tokens.html",
+              "sha256": "3b4ffa21dc4df17e421849c61019d81f879a790555c2846dea1824f0c0b0f5ee"
+            },
+            {
+              "path": "docs/catalog/fixtures/divider/tokens.css",
+              "sha256": "3fedcbf24845d08b356f6b4f78717f2266f20cfde3298a4dbef2d5ca47884215"
             }
           ]
         }
@@ -26091,6 +26282,56 @@
             {
               "path": "docs/catalog/fixtures/list-group/basic.html",
               "sha256": "ec704cce2676115fcafaf3296ba3495cd060bf341eb38a38a5d843b964b00b22"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "ListGroup — navegação e página atual",
+          "htmlCode": "<nav class=\"fs-list-group\" aria-label=\"Seções de exemplo\"><a class=\"fs-list-group-item is-active\" aria-current=\"location\" href=\"#overview\">Visão geral</a><a class=\"fs-list-group-item\" href=\"#history\">Histórico</a></nav><section id=\"overview\"><h2>Visão geral</h2><p>Seleção estática ilustrativa; CSS não acompanha a navegação.</p></section><section id=\"history\"><h2>Histórico</h2><p>Destino local real.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "\n",
+          "coverage": [
+            "links-nativos",
+            "is-active",
+            "aria-current",
+            "sem-listbox"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/list-group/variants.html",
+              "sha256": "d548d4af5968655e6f6ab69e46eb0d6a569c9e33cfd540668251e8764113610f"
+            },
+            {
+              "path": "docs/catalog/fixtures/list-group/variants.css",
+              "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "ListGroup — densidade e cores",
+          "htmlCode": "<ul class=\"fs-list-group demo-list\"><li class=\"fs-list-group-item\">Documento recebido</li><li class=\"fs-list-group-item\">Conferência pendente</li></ul>\n",
+          "jsCode": "",
+          "cssCode": ".demo-list { --fs-space-3: 1.25rem; --fs-space-4: 1.5rem; --fs-color-surface: #ecfeff; --fs-color-text: #164e63; --fs-color-border: #0e7490; --fs-color-subtle: #cffafe; --fs-radius-md: 0; }\n",
+          "coverage": [
+            "tokens-padding",
+            "tokens-superficie-hover"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/list-group/tokens.html",
+              "sha256": "6ce538eb9d63236bd08f81e59a361c86de13b2b33b7b2cfd7cdf51c9f9db3dfc"
+            },
+            {
+              "path": "docs/catalog/fixtures/list-group/tokens.css",
+              "sha256": "e5af1cdcb3594131d67717c9e69a3df7b9805b0793bfd50d2c2da6a566147685"
             }
           ]
         }
@@ -35957,6 +36198,57 @@
               "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd"
             }
           ]
+        },
+        {
+          "id": "variants",
+          "title": "Ratio — quatro proporções disponíveis",
+          "htmlCode": "<div class=\"demo-ratios\"><figure><div class=\"fs-ratio fs-ratio-1x1\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"></div><figcaption>1x1</figcaption></figure><figure><div class=\"fs-ratio fs-ratio-4x3\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"></div><figcaption>4x3</figcaption></figure><figure><div class=\"fs-ratio fs-ratio-16x9\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"></div><figcaption>16x9</figcaption></figure><figure><div class=\"fs-ratio fs-ratio-21x9\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"></div><figcaption>21x9</figcaption></figure></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-ratios { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; }\n.demo-ratios figure { margin: 0; min-width: 0; }\n",
+          "coverage": [
+            "1x1",
+            "4x3",
+            "16x9",
+            "21x9",
+            "midia-embutida"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/ratio/variants.html",
+              "sha256": "7923ad945fdc3d77fea8a0dcffc8424832b90f42594116ff72dcc92b7636a06a"
+            },
+            {
+              "path": "docs/catalog/fixtures/ratio/variants.css",
+              "sha256": "725ee5428c50db64a6c2e01b2997b91e5e618d0d9e9a9ff4b243b2052557d05c"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Ratio — proporção personalizada 3:2",
+          "htmlCode": "<figure class=\"demo-figure\"><div class=\"fs-ratio demo-ratio\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"></div><figcaption>3:2 — percentual de altura, não string 3/2.</figcaption></figure>\n",
+          "jsCode": "",
+          "cssCode": ".demo-figure { margin: 0; max-width: 600px; }\n.demo-ratio { --fs-ratio: 66.6667%; }\n",
+          "coverage": [
+            "token-percentual",
+            "3x2"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/ratio/tokens.html",
+              "sha256": "1da01c96e52057220eb7536c1a059340d3d4994187d08ea9ff68f486a0ef6869"
+            },
+            {
+              "path": "docs/catalog/fixtures/ratio/tokens.css",
+              "sha256": "1247e0a093a3845a7bc38caa2ddd9ba9bf3c04db7fb85efb0d4712a844b886dd"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -39523,6 +39815,56 @@
             {
               "path": "docs/catalog/fixtures/responsive/basic.html",
               "sha256": "729f4d2dcf23af7eef2de794ee38e416181ea6d7a18eec5a2f828ea120b63219"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Responsive — pilha, cluster e mídia",
+          "htmlCode": "<div class=\"demo-stack\"><div class=\"fs-stack fs-stack-md-row\"><a href=\"#responsive-destination\">Visão geral</a><a href=\"#responsive-destination\">Documentos</a><a href=\"#responsive-destination\">Histórico</a></div><nav class=\"fs-cluster\" aria-label=\"Atalhos\"><a href=\"#responsive-destination\">Acompanhamento de processos</a><a href=\"#responsive-destination\">Documentos recebidos</a><a href=\"#responsive-destination\">Configurações de apresentação</a></nav><img class=\"fs-responsive-media\" src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22%230e7490%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22200%22%20r%3D%22100%22%20fill%3D%22%23cffafe%22%2F%3E%3C%2Fsvg%3E\" alt=\"Círculo claro sobre fundo azul, imagem de demonstração\" width=\"600\" height=\"400\"><section id=\"responsive-destination\"><h2>Conteúdo de destino</h2><p>Redimensione para observar coluna abaixo de 640px e linha a partir de 640px; o cluster quebra pelo espaço disponível.</p></section></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-stack { display: grid; gap: 1rem; min-width: 0; }\n\n",
+          "coverage": [
+            "stack-md-row",
+            "cluster-wrap",
+            "responsive-media",
+            "breakpoint-640"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/responsive/variants.html",
+              "sha256": "6b07aa8bbfa8a3495dae31bacc2856350beece18ada6861ec72eb767c26c6c82"
+            },
+            {
+              "path": "docs/catalog/fixtures/responsive/variants.css",
+              "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Responsive — gaps de pilha e cluster",
+          "htmlCode": "<div class=\"fs-stack demo-responsive\"><p>Pilha com gap de 2rem</p><nav class=\"fs-cluster\" aria-label=\"Navegação de exemplo\"><a href=\"#gap-details\">Detalhes</a><a href=\"#gap-details\">Ajuda</a></nav><section id=\"gap-details\"><h2>Espaçamento local</h2><p>O cluster usa gap independente de 1.5rem.</p></section></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-responsive { --fs-stack-gap: 2rem; --fs-cluster-gap: 1.5rem; }\n",
+          "coverage": [
+            "stack-gap",
+            "cluster-gap"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/responsive/tokens.html",
+              "sha256": "e1391befbd4e9172b4e9fa0779ba65ab5afd969878b05884a5d01b732b4bae62"
+            },
+            {
+              "path": "docs/catalog/fixtures/responsive/tokens.css",
+              "sha256": "4649aa756b025b7c2a4cd5f3617375af9751ece106defab5ad7beb7f9824f007"
             }
           ]
         }
@@ -50164,6 +50506,55 @@
             {
               "path": "docs/catalog/fixtures/tile/basic.html",
               "sha256": "4d0218ac209b6dd77b88c93c3675e4b8bbe1e7dc526b1a46c870f4fc706b1a3b"
+            }
+          ]
+        },
+        {
+          "id": "variants",
+          "title": "Tile — tamanhos, ações abaixo e link",
+          "htmlCode": "<div class=\"demo-stack\"><article class=\"fs-tile fs-tile-sm\"><span class=\"fs-tile-icon\" aria-hidden=\"true\">A</span><div class=\"fs-tile-body\"><h2 class=\"fs-tile-title\">Compacto</h2><p class=\"fs-tile-subtitle\">Conteúdo de demonstração</p></div></article><article class=\"fs-tile fs-tile-lg\"><span class=\"fs-tile-icon\" aria-hidden=\"true\">A</span><div class=\"fs-tile-body\"><h2 class=\"fs-tile-title\">Amplo</h2><p class=\"fs-tile-subtitle\">Conteúdo de demonstração</p></div></article><article class=\"fs-tile fs-tile-actions-bottom\"><div class=\"fs-tile-body\"><h2 class=\"fs-tile-title\">Documentos</h2><p class=\"fs-tile-subtitle\">Ações na segunda linha</p></div><div class=\"fs-tile-actions\"><a class=\"fs-btn fs-btn-primary\" href=\"#documents\">Consultar</a></div></article><article class=\"fs-tile fs-tile-clickable\"><div class=\"fs-tile-body\"><h2 class=\"fs-tile-title\"><a class=\"fs-stretched-link\" href=\"#documents\">Abrir documentos</a></h2><p class=\"fs-tile-subtitle\">Link único: Tab e Enter</p></div></article><section id=\"documents\"><h2>Documentos disponíveis</h2><p>Destino local dos links.</p></section></div>\n",
+          "jsCode": "",
+          "cssCode": ".demo-stack { display: grid; gap: 1rem; min-width: 0; }\n\n",
+          "coverage": [
+            "sm-lg",
+            "actions-bottom",
+            "clickable-stretched-link"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tile/variants.html",
+              "sha256": "b7d6394a5689b183fe8f89476231910d50d9c8cddc80c7b6ee7ed6a0e6c5874e"
+            },
+            {
+              "path": "docs/catalog/fixtures/tile/variants.css",
+              "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+            }
+          ]
+        },
+        {
+          "id": "tokens",
+          "title": "Tile — superfície, ícone e texto",
+          "htmlCode": "<article class=\"fs-tile demo-tile\"><span class=\"fs-tile-icon\" aria-hidden=\"true\">A</span><div class=\"fs-tile-body\"><h2 class=\"fs-tile-title\">Tile personalizado</h2><p class=\"fs-tile-subtitle\">Conteúdo de demonstração</p></div></article>\n",
+          "jsCode": "",
+          "cssCode": ".demo-tile { --fs-color-surface: #ecfeff; --fs-color-subtle: #cffafe; --fs-color-text: #164e63; --fs-color-muted: #155e75; --fs-color-border: #0e7490; --fs-radius-md: 20px; --fs-radius-sm: 10px; }\n",
+          "coverage": [
+            "tokens-semanticos-locais",
+            "icone-subtle"
+          ],
+          "limitations": [
+            "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tile/tokens.html",
+              "sha256": "94f605e2816020738b4d880d4205be5e3d52041a07dc86cd55c2d6fc15b5c5a6"
+            },
+            {
+              "path": "docs/catalog/fixtures/tile/tokens.css",
+              "sha256": "b678d159bc83f14087d1b30a92938d7c80c6453d471576ad8edc8e049a75ec4a"
             }
           ]
         }

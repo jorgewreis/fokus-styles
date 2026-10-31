@@ -1,0 +1,2 @@
+.demo-ratios { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; }
+.demo-ratios figure { margin: 0; min-width: 0; }

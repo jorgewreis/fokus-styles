@@ -1,0 +1,1 @@
+Execution escalation failed before command: bwrap: cannot create file at restricted session mount: Read-only file system. No browser assertions executed.

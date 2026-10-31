@@ -1,0 +1,19 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 test
+> vitest run
+
+
+ RUN  v4.1.9 /workspace/shared/catalog-content-variants
+
+
+ Test Files  58 passed (58)
+      Tests  740 passed (740)
+   Start at  12:33:17
+   Duration  62.52s (transform 28.15s, setup 11.01s, import 49.01s, tests 101.09s, environment 135.54s)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

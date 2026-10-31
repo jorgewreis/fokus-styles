@@ -465,6 +465,31 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Divider — separação semântica e visual",
+      "html": "docs/catalog/fixtures/divider/variants.html",
+      "css": "docs/catalog/fixtures/divider/variants.css",
+      "coverage": [
+        "hr-semantico",
+        "rotulo-visual"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Divider — borda e rótulo",
+      "html": "docs/catalog/fixtures/divider/tokens.html",
+      "css": "docs/catalog/fixtures/divider/tokens.css",
+      "coverage": [
+        "tokens-borda-rotulo"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
     }
   ],
   "empty-state": [
@@ -578,6 +603,33 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botões demonstrativos sem comportamento de aplicativo."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Tile — tamanhos, ações abaixo e link",
+      "html": "docs/catalog/fixtures/tile/variants.html",
+      "css": "docs/catalog/fixtures/tile/variants.css",
+      "coverage": [
+        "sm-lg",
+        "actions-bottom",
+        "clickable-stretched-link"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Tile — superfície, ícone e texto",
+      "html": "docs/catalog/fixtures/tile/tokens.html",
+      "css": "docs/catalog/fixtures/tile/tokens.css",
+      "coverage": [
+        "tokens-semanticos-locais",
+        "icone-subtle"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
     }
   ],
   "timeline": [
@@ -622,6 +674,32 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Código exibido como texto escapado; não é executado e não há syntax highlighting."
       ]
+    },
+    {
+      "id": "variants",
+      "title": "Code — bloco longo rolável e HTML escapado",
+      "html": "docs/catalog/fixtures/code/variants.html",
+      "css": "docs/catalog/fixtures/code/variants.css",
+      "coverage": [
+        "inline-bloco",
+        "rolagem-teclado",
+        "html-escapado"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Code — paleta e espaçamento locais",
+      "html": "docs/catalog/fixtures/code/tokens.html",
+      "css": "docs/catalog/fixtures/code/tokens.css",
+      "coverage": [
+        "tokens-inline-bloco"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
     }
   ],
   "file-upload": [
@@ -651,6 +729,34 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Lista estática; não demonstra seleção nem itens acionáveis."
+      ]
+    },
+    {
+      "id": "variants",
+      "title": "ListGroup — navegação e página atual",
+      "html": "docs/catalog/fixtures/list-group/variants.html",
+      "css": "docs/catalog/fixtures/list-group/variants.css",
+      "coverage": [
+        "links-nativos",
+        "is-active",
+        "aria-current",
+        "sem-listbox"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "ListGroup — densidade e cores",
+      "html": "docs/catalog/fixtures/list-group/tokens.html",
+      "css": "docs/catalog/fixtures/list-group/tokens.css",
+      "coverage": [
+        "tokens-padding",
+        "tokens-superficie-hover"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
       ]
     }
   ],
@@ -715,6 +821,34 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botão Buscar demonstrativo; breakpoint 640px vem do SCSS, não há consulta de contatos."
+      ]
+    },
+    {
+      "id": "variants",
+      "title": "Responsive — pilha, cluster e mídia",
+      "html": "docs/catalog/fixtures/responsive/variants.html",
+      "css": "docs/catalog/fixtures/responsive/variants.css",
+      "coverage": [
+        "stack-md-row",
+        "cluster-wrap",
+        "responsive-media",
+        "breakpoint-640"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Responsive — gaps de pilha e cluster",
+      "html": "docs/catalog/fixtures/responsive/tokens.html",
+      "css": "docs/catalog/fixtures/responsive/tokens.css",
+      "coverage": [
+        "stack-gap",
+        "cluster-gap"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
       ]
     }
   ],
@@ -915,6 +1049,35 @@
       "limitations": [
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "SVG ilustrativo autossuficiente; não valida recorte de fotos, vídeo ou conteúdo remoto."
+      ]
+    },
+    {
+      "id": "variants",
+      "title": "Ratio — quatro proporções disponíveis",
+      "html": "docs/catalog/fixtures/ratio/variants.html",
+      "css": "docs/catalog/fixtures/ratio/variants.css",
+      "coverage": [
+        "1x1",
+        "4x3",
+        "16x9",
+        "21x9",
+        "midia-embutida"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
+      ]
+    },
+    {
+      "id": "tokens",
+      "title": "Ratio — proporção personalizada 3:2",
+      "html": "docs/catalog/fixtures/ratio/tokens.html",
+      "css": "docs/catalog/fixtures/ratio/tokens.css",
+      "coverage": [
+        "token-percentual",
+        "3x2"
+      ],
+      "limitations": [
+        "Composição CSS de demonstração, sem API JS adicional; cobertura parcial. Layout, contraste e foco dependem de verificação em navegador."
       ]
     }
   ],

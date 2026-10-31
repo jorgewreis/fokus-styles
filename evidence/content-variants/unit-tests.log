@@ -1,0 +1,14 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 test
+> vitest run tests/unit/catalog-content-variants.test.js
+
+
+ RUN  v4.1.9 /workspace/shared/catalog-content-variants
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  12:31:49
+   Duration  1.25s (transform 55ms, setup 60ms, import 20ms, tests 125ms, environment 815ms)
+

@@ -1,0 +1,135 @@
+{
+  "baseCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+  "matrixSha256": "12fa2b2226344e907097e1d463266bea5943ac9f2e825c73697faa5ee49110e7",
+  "components": [
+    "tile",
+    "list-group",
+    "code",
+    "divider",
+    "ratio",
+    "responsive"
+  ],
+  "card": "Existing variants/states/tokens preserved without duplication",
+  "files": [
+    {
+      "path": "packages/fokus-components/scss/components/_tile.scss",
+      "sha256": "5b1d9eac0f2b027f79cdb452c390480cf631a6bd8d14f1ab41356501d83b9a49"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_list-group.scss",
+      "sha256": "800a1d51b2c6347c18054b00f26ecd9c7cbfac7c52a34e9fbdcafc9e254dd58e"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_code.scss",
+      "sha256": "9424a4eac20a7622dc499ed5622f0fc6492c3a13d299e365710e5ed495756331"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_divider.scss",
+      "sha256": "9f5cceea735dbd1a3f83994b3992e45bad3241ddff402fc70bd8e7db16c269d3"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_ratio.scss",
+      "sha256": "acb81b12ae0ac9ba95a8bfeb499d0fabcdd5a720444612c01ba1492f61728b87"
+    },
+    {
+      "path": "packages/fokus-components/scss/components/_responsive.scss",
+      "sha256": "8da4868322cb3733ecbb7f595c57b0b4c5ccb2bc40d647123f0582da388db524"
+    },
+    {
+      "path": "docs/catalog/fixtures/tile/variants.html",
+      "sha256": "b7d6394a5689b183fe8f89476231910d50d9c8cddc80c7b6ee7ed6a0e6c5874e"
+    },
+    {
+      "path": "docs/catalog/fixtures/tile/variants.css",
+      "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+    },
+    {
+      "path": "docs/catalog/fixtures/tile/tokens.html",
+      "sha256": "94f605e2816020738b4d880d4205be5e3d52041a07dc86cd55c2d6fc15b5c5a6"
+    },
+    {
+      "path": "docs/catalog/fixtures/tile/tokens.css",
+      "sha256": "b678d159bc83f14087d1b30a92938d7c80c6453d471576ad8edc8e049a75ec4a"
+    },
+    {
+      "path": "docs/catalog/fixtures/list-group/variants.html",
+      "sha256": "d548d4af5968655e6f6ab69e46eb0d6a569c9e33cfd540668251e8764113610f"
+    },
+    {
+      "path": "docs/catalog/fixtures/list-group/variants.css",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "docs/catalog/fixtures/list-group/tokens.html",
+      "sha256": "6ce538eb9d63236bd08f81e59a361c86de13b2b33b7b2cfd7cdf51c9f9db3dfc"
+    },
+    {
+      "path": "docs/catalog/fixtures/list-group/tokens.css",
+      "sha256": "e5af1cdcb3594131d67717c9e69a3df7b9805b0793bfd50d2c2da6a566147685"
+    },
+    {
+      "path": "docs/catalog/fixtures/code/variants.html",
+      "sha256": "f18eea3951a3ec25b0bb65809dd2e6751b0777da79750f35b034d87be48b18ed"
+    },
+    {
+      "path": "docs/catalog/fixtures/code/variants.css",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "docs/catalog/fixtures/code/tokens.html",
+      "sha256": "3f9c9e45651b3aa9e4ffe80176fff090affad11e9a9d1899eef51ae225cb52ca"
+    },
+    {
+      "path": "docs/catalog/fixtures/code/tokens.css",
+      "sha256": "805df163236b5031d22d3a786d1ed227cbd4c1d035553bc9571be86fcf0f714b"
+    },
+    {
+      "path": "docs/catalog/fixtures/divider/variants.html",
+      "sha256": "e53311a0819f21f19cd54d1013096356292da4e2fb7912b4d6972fe55e19b88e"
+    },
+    {
+      "path": "docs/catalog/fixtures/divider/variants.css",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "docs/catalog/fixtures/divider/tokens.html",
+      "sha256": "3b4ffa21dc4df17e421849c61019d81f879a790555c2846dea1824f0c0b0f5ee"
+    },
+    {
+      "path": "docs/catalog/fixtures/divider/tokens.css",
+      "sha256": "3fedcbf24845d08b356f6b4f78717f2266f20cfde3298a4dbef2d5ca47884215"
+    },
+    {
+      "path": "docs/catalog/fixtures/ratio/variants.html",
+      "sha256": "7923ad945fdc3d77fea8a0dcffc8424832b90f42594116ff72dcc92b7636a06a"
+    },
+    {
+      "path": "docs/catalog/fixtures/ratio/variants.css",
+      "sha256": "725ee5428c50db64a6c2e01b2997b91e5e618d0d9e9a9ff4b243b2052557d05c"
+    },
+    {
+      "path": "docs/catalog/fixtures/ratio/tokens.html",
+      "sha256": "1da01c96e52057220eb7536c1a059340d3d4994187d08ea9ff68f486a0ef6869"
+    },
+    {
+      "path": "docs/catalog/fixtures/ratio/tokens.css",
+      "sha256": "1247e0a093a3845a7bc38caa2ddd9ba9bf3c04db7fb85efb0d4712a844b886dd"
+    },
+    {
+      "path": "docs/catalog/fixtures/responsive/variants.html",
+      "sha256": "6b07aa8bbfa8a3495dae31bacc2856350beece18ada6861ec72eb767c26c6c82"
+    },
+    {
+      "path": "docs/catalog/fixtures/responsive/variants.css",
+      "sha256": "a18416c3ccc0bdfefecf51ace95bff398672f4786558203973c29971b3deadb2"
+    },
+    {
+      "path": "docs/catalog/fixtures/responsive/tokens.html",
+      "sha256": "e1391befbd4e9172b4e9fa0779ba65ab5afd969878b05884a5d01b732b4bae62"
+    },
+    {
+      "path": "docs/catalog/fixtures/responsive/tokens.css",
+      "sha256": "4649aa756b025b7c2a4cd5f3617375af9751ece106defab5ad7beb7f9824f007"
+    }
+  ]
+}

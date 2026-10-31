@@ -1548,5 +1548,149 @@
     ],
     "mode": "authored-runtime",
     "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778"
+  },
+  "tile/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "b7d6394a5689b183fe8f89476231910d50d9c8cddc80c7b6ee7ed6a0e6c5874e",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_tile.scss",
+        "sha256": "5b1d9eac0f2b027f79cdb452c390480cf631a6bd8d14f1ab41356501d83b9a49"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "tile/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "94f605e2816020738b4d880d4205be5e3d52041a07dc86cd55c2d6fc15b5c5a6",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_tile.scss",
+        "sha256": "5b1d9eac0f2b027f79cdb452c390480cf631a6bd8d14f1ab41356501d83b9a49"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "list-group/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "d548d4af5968655e6f6ab69e46eb0d6a569c9e33cfd540668251e8764113610f",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_list-group.scss",
+        "sha256": "800a1d51b2c6347c18054b00f26ecd9c7cbfac7c52a34e9fbdcafc9e254dd58e"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "list-group/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "6ce538eb9d63236bd08f81e59a361c86de13b2b33b7b2cfd7cdf51c9f9db3dfc",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_list-group.scss",
+        "sha256": "800a1d51b2c6347c18054b00f26ecd9c7cbfac7c52a34e9fbdcafc9e254dd58e"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "code/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "f18eea3951a3ec25b0bb65809dd2e6751b0777da79750f35b034d87be48b18ed",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_code.scss",
+        "sha256": "9424a4eac20a7622dc499ed5622f0fc6492c3a13d299e365710e5ed495756331"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "code/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "3f9c9e45651b3aa9e4ffe80176fff090affad11e9a9d1899eef51ae225cb52ca",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_code.scss",
+        "sha256": "9424a4eac20a7622dc499ed5622f0fc6492c3a13d299e365710e5ed495756331"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "divider/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "e53311a0819f21f19cd54d1013096356292da4e2fb7912b4d6972fe55e19b88e",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_divider.scss",
+        "sha256": "9f5cceea735dbd1a3f83994b3992e45bad3241ddff402fc70bd8e7db16c269d3"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "divider/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "3b4ffa21dc4df17e421849c61019d81f879a790555c2846dea1824f0c0b0f5ee",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_divider.scss",
+        "sha256": "9f5cceea735dbd1a3f83994b3992e45bad3241ddff402fc70bd8e7db16c269d3"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "ratio/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "7923ad945fdc3d77fea8a0dcffc8424832b90f42594116ff72dcc92b7636a06a",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_ratio.scss",
+        "sha256": "acb81b12ae0ac9ba95a8bfeb499d0fabcdd5a720444612c01ba1492f61728b87"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "ratio/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "1da01c96e52057220eb7536c1a059340d3d4994187d08ea9ff68f486a0ef6869",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_ratio.scss",
+        "sha256": "acb81b12ae0ac9ba95a8bfeb499d0fabcdd5a720444612c01ba1492f61728b87"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "responsive/variants": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "6b07aa8bbfa8a3495dae31bacc2856350beece18ada6861ec72eb767c26c6c82",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_responsive.scss",
+        "sha256": "8da4868322cb3733ecbb7f595c57b0b4c5ccb2bc40d647123f0582da388db524"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "responsive/tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "sha256": "e1391befbd4e9172b4e9fa0779ba65ab5afd969878b05884a5d01b732b4bae62",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_responsive.scss",
+        "sha256": "8da4868322cb3733ecbb7f595c57b0b4c5ccb2bc40d647123f0582da388db524"
+      }
+    ],
+    "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
   }
 }

@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 docs:generate
+> node scripts/catalog.mjs
+
+Catalog: 56 components; 102 reviewed examples; next/unpublished; partial.
