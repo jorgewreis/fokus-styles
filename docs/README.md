@@ -116,3 +116,7 @@ Leia o [guia de contribuição](contributing/contributing.md) antes de alterar
 SCSS, JavaScript, documentação ou snapshots. Uma mudança pública deve manter
 implementação, exemplo, documentação e testes alinhados; `npm run docs:check`
 verifica parte desse contrato automaticamente.
+
+## Catálogo canônico candidato
+
+Consulte [o catálogo next e seus limites](catalog/README.md). Ele preserva as páginas existentes e distingue referência, evidência compilada e exemplos revisados.

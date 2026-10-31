@@ -142,13 +142,17 @@
     "size:check": "node scripts/size.mjs --check",
     "contrast": "node scripts/contrast.mjs",
     "contrast:check": "node scripts/contrast.mjs --strict",
-    "docs:check": "node scripts/check-docs.mjs",
+    "docs:check": "node scripts/check-docs.mjs && npm run docs:catalog:check",
     "types:check": "tsc --noEmit -p tsconfig.types.json",
     "prepublishOnly": "npm run lint && npm run build && npm test && npm run types:check && npm run docs:check && npm run package:check && npm run test:consumers && npm run contrast:check && npm run size:check",
     "package:check": "node scripts/check-consumer-package.mjs",
     "test:browsers": "playwright test --config=playwright.browser.config.mjs",
     "test:consumers": "node scripts/check-react-consumers.mjs",
-    "package:prepare": "node scripts/prepare-package.mjs"
+    "package:prepare": "node scripts/prepare-package.mjs",
+    "docs:generate": "node scripts/catalog.mjs",
+    "docs:catalog:check": "node scripts/catalog.mjs --check",
+    "test:catalog": "node --test tests/catalog/*.test.mjs",
+    "docs:preview": "node scripts/catalog-preview-server.mjs"
   },
   "publishConfig": {
     "access": "public"
