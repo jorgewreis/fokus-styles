@@ -69,7 +69,8 @@ ficar distinguível em agrupamentos densos.
 Para uma operação assíncrona, aplique `aria-busy="true"` e `.is-loading`, ou
 use `Tag.setLoading(true)`. Inclua um `.fs-spinner` depois de `.fs-tag-label`:
 o estado pendente usa fundo `warning`, texto e spinner pretos. O botão de
-remoção é desabilitado até que o estado seja removido.
+remoção é desabilitado até que o estado seja removido, sem reabilitar botões
+que já estavam desabilitados antes do loading.
 
 ## A11y
 
@@ -108,11 +109,27 @@ Auto-init via `data-fs="tag"`. `Tag.getInstance(el)`.
 `dismiss()` não consulta essa classe. Substitua o botão de remoção pela marca de
 proteção indicada acima e aplique autorização/regras de negócio na aplicação.
 
-Na construção, setLoading sincroniza o disabled do botão com o estado loading.
-Assim, um botão com disabled no HTML, mas sem is-loading/aria-busy=true na Tag,
-será reabilitado. setLoading(false) também o reabilita; não conserva um motivo de
-indisponibilidade independente. Para impedir uma remoção permitida pelo controle,
-use o evento cancelável e a regra de negócio apropriada.
+A construção e `setLoading(false)` preservam um botão já `disabled` pelo
+consumidor. Ao entrar em loading, a instância registra apenas os botões que ela
+própria desabilita e os reabilita ao sair; chamadas repetidas não substituem essa
+informação. Isso também vale para markup inicialmente loading: um `disabled`
+explícito é considerado do consumidor e não será removido automaticamente.
+Para loading gerenciado pelo JS, deixe o componente aplicar `disabled`; para
+conteúdo que precisa ficar bloqueado antes do JS, a aplicação deve administrar
+esse `disabled` explícito (como no exemplo de markup pendente abaixo).
+
+```js
+const instance = Tag.getInstance(element) ?? new Tag(element);
+// Ao concluir a operação cujo HTML já trazia disabled:
+instance.setLoading(false);
+element.querySelector('[data-fs-dismiss="tag"]').disabled = false;
+```
+
+Evite alterar diretamente `disabled` durante o loading: o mesmo atributo não
+distingue uma segunda causa de bloqueio. Termine o loading e aplique o estado
+da aplicação. `disabled` protege a ativação nativa do botão, não chamadas
+programáticas a `dismiss()`; para impedir a remoção, use o evento cancelável
+e a regra de negócio apropriada.
 
 ## Tokens
 

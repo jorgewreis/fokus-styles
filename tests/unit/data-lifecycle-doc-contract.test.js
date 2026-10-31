@@ -27,8 +27,8 @@ it('Toast fallback and visibility use isOpen, and mouseleave preserves pause dur
  const t=new Toast(document.querySelector('div'));instances.push(t);expect(t.delay).toBe(4000);t.show();await Promise.resolve();expect(t.isOpen).toBe(true);expect(t.toastEl.classList.contains('is-open')).toBe(false);
  t.toastEl.dispatchEvent(new Event('mouseenter'));t.toastEl.querySelector('button').focus();t.toastEl.dispatchEvent(new Event('mouseleave'));expect(document.activeElement.tagName).toBe('BUTTON');expect(t.toastEl.classList.contains('is-paused')).toBe(true);expect(doc('toast')).toContain('causas independentes de pausa');
 });
-it('Tag loading synchronization resets disabled, protected styling does not veto API dismissal',()=>{
- document.body.innerHTML='<span class="fs-tag fs-tag-protected"><button data-fs-dismiss="tag" disabled>Remove</button></span>';const t=new Tag(document.querySelector('span'));instances.push(t);expect(t.tagEl.querySelector('button').disabled).toBe(false);expect(t.dismiss()).toBe(true);expect(doc('tag')).toContain('não uma trava na API');
+it('Tag loading preserves consumer disabled, protected styling does not veto API dismissal',()=>{
+ document.body.innerHTML='<span class="fs-tag fs-tag-protected"><button data-fs-dismiss="tag" disabled>Remove</button></span>';const t=new Tag(document.querySelector('span'));instances.push(t);expect(t.tagEl.querySelector('button').disabled).toBe(true);expect(t.dismiss()).toBe(true);expect(doc('tag')).toContain('não uma trava na API');
 });
 it('Carousel modulo wraps negative index and ignores NaN',()=>{
  document.body.innerHTML='<div><div class="fs-carousel-inner"><div class="fs-carousel-item is-active">A</div><div class="fs-carousel-item">B</div></div></div>';const c=new Carousel(document.querySelector('div'));instances.push(c);c.goTo(-1);expect(document.querySelector('.is-active').textContent).toBe('B');c.goTo(NaN);expect(document.querySelectorAll('.is-active')).toHaveLength(1);expect(document.querySelector('.is-active').textContent).toBe('B');expect(doc('carousel')).toContain('inteiro finito');

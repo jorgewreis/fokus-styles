@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### Tag: preservar disabled do consumidor
+
+- construção e saída de loading não reabilitam controles previamente disabled;
+  somente controles desabilitados pela própria instância são restaurados.
+- exemplo loading-recovery libera explicitamente o disabled inicial fornecido
+  pela aplicação. Proteção visual e chamada programática dismiss permanecem
+  inalteradas; regras de autorização continuam na aplicação/evento cancelável.
+- 28 testes focais passam; build e tipos passam. Revalidação de provenance e
+  catálogo gerado fica para a integração. Browser/axe depende do Chromium ausente.
+- JS gzip isolado: 26.660 bytes, 36 acima do teto 26.624; size:check bloqueado.
+  Nenhum orçamento alterado; integração deve reavaliar o total.
+
 ### Toast e Carousel: temporização e índices seguros
 
 - Toast coordena hover/foco independentemente; mover foco entre descendentes
