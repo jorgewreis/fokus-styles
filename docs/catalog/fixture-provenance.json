@@ -2125,5 +2125,149 @@
     "transformations": [
       "Composição autoral das seções Anatomia/Variações/Estados e implementação; nomes acessíveis, destinos locais, teardown e limites em NAVIGATION-VARIANTS.md."
     ]
+  },
+  "checkbox/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "d2b248bb37447759d347fa16ef47f2c8a214e4064448b870c03c9c0bb5516306",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "checkbox/native-tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "94c21a25a6494a06ff8297baaf7075a72d1f4076ad9f4358d7998ab4003fca00",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "radio/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "c2ba87a1b576f6ee7ac8bfb4e63d8f918d8a48b6c5281f770baa39c665dd932a",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "radio/native-tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "d378df04cfd238bd11c9ff1090a6b9c1cc69d5d53d2ca6d5eea3703f0f47e061",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "switch/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "5e35bfafed7de745399c2bfd703d72f54d3a4a9a3c15130552e87faf5229a13a",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "switch/native-tokens": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "aa63bd2aca6ea25fefc0be43e769560bba0e27d4300c6ef5033b6dbaab54b305",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "input/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "76cbe1346375d8bf7c7611a9710f9e2f11b0913daa6f154f38675d127f7619da",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "input/native-sizes": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "d34776883f076e538045bfd7658931e3df397fb9fd693c77ae0dc2e2f4263e41",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "input-group/native-sizes": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "a7e049ee4c865b8c317ea7396baf5db1ac26a673c56c659d4272b498509115ba",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "input-group/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "9a7f2d50730da55cd85013c7da0c286018d529d7db4c0d40010ae3dc93f5159c",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "file-upload/native-sizes": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "3b64fde74aa924e300495aefa11ec7ade42a1bfcf2691816a463c6f168b3fc41",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
+  },
+  "file-upload/native-states": {
+    "mode": "authored-runtime",
+    "sourceCommit": "c3f174d61743b627e9bca0ca6cbfbd8a60943060",
+    "sha256": "8a71464aa10b38271845d07ff63afac7b66a6042e66cc74c7087921b7b86e6f5",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral conferida no SCSS e documentação; comportamento HTML nativo, sem runtime adicional."
   }
 }

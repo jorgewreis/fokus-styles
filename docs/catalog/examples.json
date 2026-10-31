@@ -226,6 +226,33 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "native-states",
+      "title": "checkbox — tamanhos e estados nativos",
+      "html": "docs/catalog/fixtures/checkbox/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-tokens",
+      "title": "checkbox — token local de espaçamento",
+      "html": "docs/catalog/fixtures/checkbox/native-tokens.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ],
+      "css": "docs/catalog/fixtures/checkbox/native-tokens.css"
     }
   ],
   "radio": [
@@ -240,6 +267,33 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "native-states",
+      "title": "radio — tamanhos e estados nativos",
+      "html": "docs/catalog/fixtures/radio/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-tokens",
+      "title": "radio — token local de espaçamento",
+      "html": "docs/catalog/fixtures/radio/native-tokens.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ],
+      "css": "docs/catalog/fixtures/radio/native-tokens.css"
     }
   ],
   "switch": [
@@ -254,6 +308,33 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "native-states",
+      "title": "switch — tamanhos e estados nativos",
+      "html": "docs/catalog/fixtures/switch/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-tokens",
+      "title": "switch — token local de espaçamento",
+      "html": "docs/catalog/fixtures/switch/native-tokens.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ],
+      "css": "docs/catalog/fixtures/switch/native-tokens.css"
     }
   ],
   "input": [
@@ -267,6 +348,32 @@
       ],
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-states",
+      "title": "Input — readonly, disabled e erro explícito",
+      "html": "docs/catalog/fixtures/input/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-sizes",
+      "title": "Input — tamanhos, textarea e select nativos",
+      "html": "docs/catalog/fixtures/input/native-sizes.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
       ]
     }
   ],
@@ -792,6 +899,32 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Seleção nativa local apenas; não envia arquivos nem inicializa drag-and-drop."
       ]
+    },
+    {
+      "id": "native-sizes",
+      "title": "File Upload — seleção nativa pequena e grande",
+      "html": "docs/catalog/fixtures/file-upload/native-sizes.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-states",
+      "title": "File Upload — filtro sugerido e indisponibilidade",
+      "html": "docs/catalog/fixtures/file-upload/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
     }
   ],
   "list-group": [
@@ -956,6 +1089,32 @@
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Campo nomeado e moeda descrita; não inclui validação, formatação monetária nem envio."
+      ]
+    },
+    {
+      "id": "native-sizes",
+      "title": "Input Group — prefixo e sufixo em dois tamanhos",
+      "html": "docs/catalog/fixtures/input-group/native-sizes.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "native-states",
+      "title": "Input Group — erro e indisponibilidade do campo",
+      "html": "docs/catalog/fixtures/input-group/native-states.html",
+      "coverage": [
+        "classes-css-compiladas",
+        "semantica-nativa",
+        "rotulos-e-ajuda-associados"
+      ],
+      "limitations": [
+        "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
       ]
     }
   ],

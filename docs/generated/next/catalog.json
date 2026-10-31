@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "9621bae16bbc39897eed9666217c314eaf2d6808c3d391a0b809e39354eb937d",
+    "digest": "97a63e72f6be58d4a39fd241edd02a39cd9b33987e5906d2f15c81d17a6fdc29",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "4e06b44cd028e566f76408fdd5fdaaaf9e47cd8ff05ce1684a9e8d274f034221"
+        "sha256": "28cbd49b6ad7a6952c52823b0a5701c44bef3a66044576d3e9a6d384ec55e2a8"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "47e412e38e481fb373f5ebd526317160fee3f5a317d0bddb342b0502ad19e14e"
+        "sha256": "10319d56a453232fb5d27b3dbb8f778c12f40cc782e516bed954a07d606fe41c"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -190,6 +190,18 @@
       {
         "path": "docs/catalog/fixtures/checkbox/basic.html",
         "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
+      },
+      {
+        "path": "docs/catalog/fixtures/checkbox/native-states.html",
+        "sha256": "d2b248bb37447759d347fa16ef47f2c8a214e4064448b870c03c9c0bb5516306"
+      },
+      {
+        "path": "docs/catalog/fixtures/checkbox/native-tokens.css",
+        "sha256": "6e193ab893eb054e8107c1f2ecb305123e69e0698c1717796f2d49bc200b8842"
+      },
+      {
+        "path": "docs/catalog/fixtures/checkbox/native-tokens.html",
+        "sha256": "94c21a25a6494a06ff8297baaf7075a72d1f4076ad9f4358d7998ab4003fca00"
       },
       {
         "path": "docs/catalog/fixtures/close-button/basic.html",
@@ -388,6 +400,14 @@
         "sha256": "1f147bdbcf8eb0636090eb539789d6a80195f8959fa71ba5024bc6fedb4af52f"
       },
       {
+        "path": "docs/catalog/fixtures/file-upload/native-sizes.html",
+        "sha256": "3b64fde74aa924e300495aefa11ec7ade42a1bfcf2691816a463c6f168b3fc41"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload/native-states.html",
+        "sha256": "8a71464aa10b38271845d07ff63afac7b66a6042e66cc74c7087921b7b86e6f5"
+      },
+      {
         "path": "docs/catalog/fixtures/icon-link/basic.html",
         "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284"
       },
@@ -396,8 +416,24 @@
         "sha256": "8ec6e1bf606f93358bc5ccdbb429ce138f128b381b21e79c3ee11a746dc65534"
       },
       {
+        "path": "docs/catalog/fixtures/input-group/native-sizes.html",
+        "sha256": "a7e049ee4c865b8c317ea7396baf5db1ac26a673c56c659d4272b498509115ba"
+      },
+      {
+        "path": "docs/catalog/fixtures/input-group/native-states.html",
+        "sha256": "9a7f2d50730da55cd85013c7da0c286018d529d7db4c0d40010ae3dc93f5159c"
+      },
+      {
         "path": "docs/catalog/fixtures/input/basic.html",
         "sha256": "e7cf7c05904c209cb8113a1a5876ba85367515f575c233673865a58964397211"
+      },
+      {
+        "path": "docs/catalog/fixtures/input/native-sizes.html",
+        "sha256": "d34776883f076e538045bfd7658931e3df397fb9fd693c77ae0dc2e2f4263e41"
+      },
+      {
+        "path": "docs/catalog/fixtures/input/native-states.html",
+        "sha256": "76cbe1346375d8bf7c7611a9710f9e2f11b0913daa6f154f38675d127f7619da"
       },
       {
         "path": "docs/catalog/fixtures/list-group/basic.html",
@@ -568,6 +604,18 @@
         "sha256": "537ebf8fe682524ea7944f74c9f2b3cd6a03d45ea476be4410364a2d1afb6da3"
       },
       {
+        "path": "docs/catalog/fixtures/radio/native-states.html",
+        "sha256": "c2ba87a1b576f6ee7ac8bfb4e63d8f918d8a48b6c5281f770baa39c665dd932a"
+      },
+      {
+        "path": "docs/catalog/fixtures/radio/native-tokens.css",
+        "sha256": "2399de1ccc897261f06aff38627abe9d02382c67e42aa8b6a5c61ea3ab39221c"
+      },
+      {
+        "path": "docs/catalog/fixtures/radio/native-tokens.html",
+        "sha256": "d378df04cfd238bd11c9ff1090a6b9c1cc69d5d53d2ca6d5eea3703f0f47e061"
+      },
+      {
         "path": "docs/catalog/fixtures/range/basic.html",
         "sha256": "81062ab98d7b020ff6746d7ec41499497b4593c41803ae9177c824d4026cd6ef"
       },
@@ -706,6 +754,18 @@
       {
         "path": "docs/catalog/fixtures/switch/basic.html",
         "sha256": "b910c06625f27e7c00b76574c046f63c36f68ea909d71ba27f862d908210b752"
+      },
+      {
+        "path": "docs/catalog/fixtures/switch/native-states.html",
+        "sha256": "5e35bfafed7de745399c2bfd703d72f54d3a4a9a3c15130552e87faf5229a13a"
+      },
+      {
+        "path": "docs/catalog/fixtures/switch/native-tokens.css",
+        "sha256": "ced8ed997ae41016ce46c8f244144dab9832e9863c01c80b43baf938ed840959"
+      },
+      {
+        "path": "docs/catalog/fixtures/switch/native-tokens.html",
+        "sha256": "aa63bd2aca6ea25fefc0be43e769560bba0e27d4300c6ef5033b6dbaab54b305"
       },
       {
         "path": "docs/catalog/fixtures/table/basic.html",
@@ -1940,7 +2000,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 125,
+    "examples": 137,
     "complete": false
   },
   "contracts": [
@@ -14481,6 +14541,52 @@
               "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
             }
           ]
+        },
+        {
+          "id": "native-states",
+          "title": "checkbox — tamanhos e estados nativos",
+          "htmlCode": "<fieldset><legend>checkbox — escolha nativa</legend><div class=\"fs-check fs-check-sm\"><input type=\"checkbox\" class=\"fs-check-input\" id=\"checkbox-state-0\" name=\"checkbox-native\" value=\"0\" ><label for=\"checkbox-state-0\" class=\"fs-check-label\">Pequeno</label></div><div class=\"fs-check\"><input type=\"checkbox\" class=\"fs-check-input\" id=\"checkbox-state-1\" name=\"checkbox-native\" value=\"1\" checked><label for=\"checkbox-state-1\" class=\"fs-check-label\">Selecionado</label></div><div class=\"fs-check fs-check-lg\"><input type=\"checkbox\" class=\"fs-check-input\" id=\"checkbox-state-2\" name=\"checkbox-native\" value=\"2\" disabled><label for=\"checkbox-state-2\" class=\"fs-check-label\">Indisponível</label></div></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/checkbox/native-states.html",
+              "sha256": "d2b248bb37447759d347fa16ef47f2c8a214e4064448b870c03c9c0bb5516306"
+            }
+          ]
+        },
+        {
+          "id": "native-tokens",
+          "title": "checkbox — token local de espaçamento",
+          "htmlCode": "<div class=\"fs-check native-token\"><input type=\"checkbox\" class=\"fs-check-input\" id=\"checkbox-token\" checked><label for=\"checkbox-token\" class=\"fs-check-label\">Espaçamento local, sem mudar a semântica</label></div>\n",
+          "jsCode": "",
+          "cssCode": ".native-token.fs-check { --fs-check-gap: 1rem; }\n",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/checkbox/native-tokens.html",
+              "sha256": "94c21a25a6494a06ff8297baaf7075a72d1f4076ad9f4358d7998ab4003fca00"
+            },
+            {
+              "path": "docs/catalog/fixtures/checkbox/native-tokens.css",
+              "sha256": "6e193ab893eb054e8107c1f2ecb305123e69e0698c1717796f2d49bc200b8842"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -23204,6 +23310,48 @@
               "sha256": "1f147bdbcf8eb0636090eb539789d6a80195f8959fa71ba5024bc6fedb4af52f"
             }
           ]
+        },
+        {
+          "id": "native-sizes",
+          "title": "File Upload — seleção nativa pequena e grande",
+          "htmlCode": "<div class=\"fs-file-upload\"><input type=\"file\" id=\"native-file-small\" class=\"fs-file-input\"><label for=\"native-file-small\" class=\"fs-file-label fs-file-label-sm\">Escolher documento</label></div>\n<div class=\"fs-file-upload\"><input type=\"file\" id=\"native-file-large\" class=\"fs-file-input\" multiple><label for=\"native-file-large\" class=\"fs-file-label fs-file-label-lg\">Escolher vários arquivos</label></div><p>Seleção local, sem envio de arquivos.</p>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/file-upload/native-sizes.html",
+              "sha256": "3b64fde74aa924e300495aefa11ec7ade42a1bfcf2691816a463c6f168b3fc41"
+            }
+          ]
+        },
+        {
+          "id": "native-states",
+          "title": "File Upload — filtro sugerido e indisponibilidade",
+          "htmlCode": "<div class=\"fs-file-upload\"><input type=\"file\" id=\"native-images\" class=\"fs-file-input\" accept=\"image/png,image/jpeg\" multiple aria-describedby=\"native-file-help\"><label for=\"native-images\" class=\"fs-file-label\">Escolher imagens</label></div><p id=\"native-file-help\" class=\"fs-form-text\">PNG ou JPEG sugeridos pelo seletor. Accept não valida conteúdo nem tamanho; nenhum upload ocorre.</p>\n<div class=\"fs-file-upload\"><input type=\"file\" id=\"native-file-disabled\" class=\"fs-file-input\" disabled><label for=\"native-file-disabled\" class=\"fs-file-label\">Seleção indisponível</label></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/file-upload/native-states.html",
+              "sha256": "8a71464aa10b38271845d07ff63afac7b66a6042e66cc74c7087921b7b86e6f5"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -25900,6 +26048,48 @@
               "sha256": "e7cf7c05904c209cb8113a1a5876ba85367515f575c233673865a58964397211"
             }
           ]
+        },
+        {
+          "id": "native-states",
+          "title": "Input — readonly, disabled e erro explícito",
+          "htmlCode": "<div class=\"fs-form-col\"><label for=\"native-read\" class=\"fs-form-label\">Identificador somente leitura</label><input id=\"native-read\" class=\"fs-form-control\" value=\"CAT-137\" readonly name=\"record\"></div>\n<div class=\"fs-form-col\"><label for=\"native-disabled\" class=\"fs-form-label\">Campo indisponível</label><input id=\"native-disabled\" class=\"fs-form-control\" value=\"Não enviado\" disabled name=\"disabled\"></div>\n<div class=\"fs-form-col\"><label for=\"native-email\" class=\"fs-form-label\">E-mail obrigatório</label><input id=\"native-email\" type=\"email\" class=\"fs-form-control is-invalid\" required aria-invalid=\"true\" aria-describedby=\"native-error\"><div id=\"native-error\" class=\"fs-invalid-feedback\">Exemplo de erro fornecido pela aplicação; informe um e-mail.</div></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/input/native-states.html",
+              "sha256": "76cbe1346375d8bf7c7611a9710f9e2f11b0913daa6f154f38675d127f7619da"
+            }
+          ]
+        },
+        {
+          "id": "native-sizes",
+          "title": "Input — tamanhos, textarea e select nativos",
+          "htmlCode": "<label class=\"fs-form-label\" for=\"native-small\">Texto pequeno</label><input id=\"native-small\" class=\"fs-form-control fs-form-control-sm\">\n<label class=\"fs-form-label\" for=\"native-notes\">Observações</label><textarea id=\"native-notes\" class=\"fs-form-control fs-form-control-lg\" rows=\"3\"></textarea>\n<label class=\"fs-form-label\" for=\"native-select\">Entrega</label><select id=\"native-select\" class=\"fs-form-select fs-form-select-lg\"><option value=\"standard\">Normal</option><option value=\"express\">Expressa</option><option value=\"unavailable\" disabled>Indisponível</option></select>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/input/native-sizes.html",
+              "sha256": "d34776883f076e538045bfd7658931e3df397fb9fd693c77ae0dc2e2f4263e41"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -26294,6 +26484,48 @@
             {
               "path": "docs/catalog/fixtures/input-group/basic.html",
               "sha256": "8ec6e1bf606f93358bc5ccdbb429ce138f128b381b21e79c3ee11a746dc65534"
+            }
+          ]
+        },
+        {
+          "id": "native-sizes",
+          "title": "Input Group — prefixo e sufixo em dois tamanhos",
+          "htmlCode": "<label class=\"fs-form-label\" for=\"native-price\">Valor</label><div class=\"fs-input-group fs-input-group-sm\"><span class=\"fs-input-group-text\" id=\"native-currency\">R$</span><input id=\"native-price\" type=\"number\" min=\"0\" step=\"0.01\" class=\"fs-form-control\" aria-describedby=\"native-currency\"></div>\n<label class=\"fs-form-label\" for=\"native-domain\">Endereço do site</label><div class=\"fs-input-group fs-input-group-lg\"><span class=\"fs-input-group-text\" id=\"native-protocol\">https://</span><input id=\"native-domain\" class=\"fs-form-control\" aria-describedby=\"native-protocol native-domain-suffix\"><span class=\"fs-input-group-text\" id=\"native-domain-suffix\">.example</span></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/input-group/native-sizes.html",
+              "sha256": "a7e049ee4c865b8c317ea7396baf5db1ac26a673c56c659d4272b498509115ba"
+            }
+          ]
+        },
+        {
+          "id": "native-states",
+          "title": "Input Group — erro e indisponibilidade do campo",
+          "htmlCode": "<label class=\"fs-form-label\" for=\"native-handle\">Nome público obrigatório</label><div class=\"fs-input-group\"><span class=\"fs-input-group-text\" id=\"native-at\">@</span><input id=\"native-handle\" class=\"fs-form-control is-invalid\" required aria-invalid=\"true\" aria-describedby=\"native-at native-handle-error\"></div><p class=\"fs-form-text\" id=\"native-handle-error\">Erro demonstrativo da aplicação: informe um nome.</p>\n<label class=\"fs-form-label\" for=\"native-fixed\">Preço indisponível</label><div class=\"fs-input-group\"><span class=\"fs-input-group-text\" id=\"native-fixed-unit\">R$</span><input id=\"native-fixed\" class=\"fs-form-control\" value=\"25\" disabled aria-describedby=\"native-fixed-unit\"></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/input-group/native-states.html",
+              "sha256": "9a7f2d50730da55cd85013c7da0c286018d529d7db4c0d40010ae3dc93f5159c"
             }
           ]
         }
@@ -35685,6 +35917,52 @@
             {
               "path": "docs/catalog/fixtures/radio/basic.html",
               "sha256": "537ebf8fe682524ea7944f74c9f2b3cd6a03d45ea476be4410364a2d1afb6da3"
+            }
+          ]
+        },
+        {
+          "id": "native-states",
+          "title": "radio — tamanhos e estados nativos",
+          "htmlCode": "<fieldset><legend>radio — escolha nativa</legend><div class=\"fs-radio fs-radio-sm\"><input type=\"radio\" class=\"fs-radio-input\" id=\"radio-state-0\" name=\"radio-native\" value=\"0\" ><label for=\"radio-state-0\" class=\"fs-radio-label\">Pequeno</label></div><div class=\"fs-radio\"><input type=\"radio\" class=\"fs-radio-input\" id=\"radio-state-1\" name=\"radio-native\" value=\"1\" checked><label for=\"radio-state-1\" class=\"fs-radio-label\">Selecionado</label></div><div class=\"fs-radio fs-radio-lg\"><input type=\"radio\" class=\"fs-radio-input\" id=\"radio-state-2\" name=\"radio-native\" value=\"2\" disabled><label for=\"radio-state-2\" class=\"fs-radio-label\">Indisponível</label></div></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/radio/native-states.html",
+              "sha256": "c2ba87a1b576f6ee7ac8bfb4e63d8f918d8a48b6c5281f770baa39c665dd932a"
+            }
+          ]
+        },
+        {
+          "id": "native-tokens",
+          "title": "radio — token local de espaçamento",
+          "htmlCode": "<div class=\"fs-radio native-token\"><input type=\"radio\" class=\"fs-radio-input\" id=\"radio-token\" checked><label for=\"radio-token\" class=\"fs-radio-label\">Espaçamento local, sem mudar a semântica</label></div>\n",
+          "jsCode": "",
+          "cssCode": ".native-token.fs-radio { --fs-radio-gap: 1rem; }\n",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/radio/native-tokens.html",
+              "sha256": "d378df04cfd238bd11c9ff1090a6b9c1cc69d5d53d2ca6d5eea3703f0f47e061"
+            },
+            {
+              "path": "docs/catalog/fixtures/radio/native-tokens.css",
+              "sha256": "2399de1ccc897261f06aff38627abe9d02382c67e42aa8b6a5c61ea3ab39221c"
             }
           ]
         }
@@ -45245,6 +45523,52 @@
             {
               "path": "docs/catalog/fixtures/switch/basic.html",
               "sha256": "b910c06625f27e7c00b76574c046f63c36f68ea909d71ba27f862d908210b752"
+            }
+          ]
+        },
+        {
+          "id": "native-states",
+          "title": "switch — tamanhos e estados nativos",
+          "htmlCode": "<fieldset><legend>switch — escolha nativa</legend><div class=\"fs-switch fs-switch-sm\"><input type=\"checkbox\" class=\"fs-switch-input\" id=\"switch-state-0\" name=\"switch-native\" value=\"0\" ><label for=\"switch-state-0\" class=\"fs-switch-label\">Pequeno</label></div><div class=\"fs-switch\"><input type=\"checkbox\" class=\"fs-switch-input\" id=\"switch-state-1\" name=\"switch-native\" value=\"1\" checked><label for=\"switch-state-1\" class=\"fs-switch-label\">Selecionado</label></div><div class=\"fs-switch fs-switch-lg\"><input type=\"checkbox\" class=\"fs-switch-input\" id=\"switch-state-2\" name=\"switch-native\" value=\"2\" disabled><label for=\"switch-state-2\" class=\"fs-switch-label\">Indisponível</label></div></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/switch/native-states.html",
+              "sha256": "5e35bfafed7de745399c2bfd703d72f54d3a4a9a3c15130552e87faf5229a13a"
+            }
+          ]
+        },
+        {
+          "id": "native-tokens",
+          "title": "switch — token local de espaçamento",
+          "htmlCode": "<div class=\"fs-switch native-token\"><input type=\"checkbox\" class=\"fs-switch-input\" id=\"switch-token\" checked><label for=\"switch-token\" class=\"fs-switch-label\">Espaçamento local, sem mudar a semântica</label></div>\n",
+          "jsCode": "",
+          "cssCode": ".native-token.fs-switch { --fs-switch-gap: 1rem; }\n",
+          "coverage": [
+            "classes-css-compiladas",
+            "semantica-nativa",
+            "rotulos-e-ajuda-associados"
+          ],
+          "limitations": [
+            "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/switch/native-tokens.html",
+              "sha256": "aa63bd2aca6ea25fefc0be43e769560bba0e27d4300c6ef5033b6dbaab54b305"
+            },
+            {
+              "path": "docs/catalog/fixtures/switch/native-tokens.css",
+              "sha256": "ced8ed997ae41016ce46c8f244144dab9832e9863c01c80b43baf938ed840959"
             }
           ]
         }
