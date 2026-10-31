@@ -505,6 +505,20 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Botões demonstrativos sem comportamento de aplicativo."
       ]
+    },
+    {
+      "id": "recoverable",
+      "title": "EmptyState — recuperar e mostrar vazio",
+      "html": "docs/catalog/fixtures/empty-state/recoverable.html",
+      "coverage": [
+        "hidden-flex",
+        "recuperação",
+        "status"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/empty-state/recoverable.js"
     }
   ],
   "segmented-control": [
@@ -534,6 +548,38 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Placeholder visual; contexto de carregamento e anúncio acessível são responsabilidade do aplicativo."
       ]
+    },
+    {
+      "id": "shapes-wave",
+      "title": "Skeleton — formas e wave",
+      "html": "docs/catalog/fixtures/skeleton/shapes-wave.html",
+      "coverage": [
+        "card",
+        "avatar",
+        "rect",
+        "wave",
+        "table",
+        "busy",
+        "decorative-hidden"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ]
+    },
+    {
+      "id": "loading-complete",
+      "title": "skeleton — carregando/concluído",
+      "html": "docs/catalog/fixtures/skeleton/loading-complete.html",
+      "coverage": [
+        "busy-toggle",
+        "hidden-decorations",
+        "status",
+        "pagehide"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/skeleton/loading-complete.js"
     }
   ],
   "table": [
@@ -643,6 +689,22 @@
       ],
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    },
+    {
+      "id": "horizontal-states",
+      "title": "Timeline — horizontal com falha e pendência",
+      "html": "docs/catalog/fixtures/timeline/horizontal-states.html",
+      "coverage": [
+        "horizontal",
+        "failed",
+        "completed",
+        "active",
+        "time",
+        "status-text"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
       ]
     }
   ],
@@ -773,6 +835,21 @@
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
         "Estado de carregamento estático; não resolve dados nem remove aria-busy automaticamente."
       ]
+    },
+    {
+      "id": "loading-complete",
+      "title": "placeholder — carregando/concluído",
+      "html": "docs/catalog/fixtures/placeholder/loading-complete.html",
+      "coverage": [
+        "busy-toggle",
+        "hidden-decorations",
+        "status",
+        "pagehide"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/placeholder/loading-complete.js"
     }
   ],
   "range": [
@@ -945,6 +1022,38 @@
         "Navegação local sem formulário, validação de dados ou envio final."
       ],
       "js": "docs/catalog/fixtures/stepper/basic.js"
+    },
+    {
+      "id": "nonlinear-vertical",
+      "title": "Stepper — nonlinear-vertical",
+      "html": "docs/catalog/fixtures/stepper/nonlinear-vertical.html",
+      "coverage": [
+        "data-linear",
+        "data-fs-target",
+        "beforechange-cancelável",
+        "erro-textual",
+        "conclusão"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/stepper/nonlinear-vertical.js"
+    },
+    {
+      "id": "validation-error",
+      "title": "Stepper — validation-error",
+      "html": "docs/catalog/fixtures/stepper/validation-error.html",
+      "coverage": [
+        "data-linear",
+        "data-fs-target",
+        "beforechange-cancelável",
+        "erro-textual",
+        "conclusão"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/stepper/validation-error.js"
     }
   ],
   "avatar": [
@@ -1019,6 +1128,36 @@
       "limitations": [
         "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
         "Valor fixo em 60%; aplicativo deve manter CSS e ARIA sincronizados quando houver progresso real."
+      ]
+    },
+    {
+      "id": "determinate-states",
+      "title": "Progress — valores, marcadores e estados",
+      "html": "docs/catalog/fixtures/progress/determinate-states.html",
+      "coverage": [
+        "zero",
+        "100",
+        "striped",
+        "sm-lg",
+        "complete-error",
+        "marker",
+        "minimum"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ]
+    },
+    {
+      "id": "indeterminate",
+      "title": "Progress — duração desconhecida",
+      "html": "docs/catalog/fixtures/progress/indeterminate.html",
+      "coverage": [
+        "indeterminate",
+        "aria-valuenow-ausente",
+        "spinner-lg"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
       ]
     }
   ],
@@ -1189,6 +1328,38 @@
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
         "Notificação demonstrativa; não confirma gravação real. Timer de 4000ms pausa com hover/foco conforme runtime."
       ]
+    },
+    {
+      "id": "timed-progress",
+      "title": "Toast — timed-progress",
+      "html": "docs/catalog/fixtures/toast/timed-progress.html",
+      "coverage": [
+        "autohide",
+        "progress",
+        "pause-focus",
+        "dismiss",
+        "variantes-semânticas"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/toast/timed-progress.js"
+    },
+    {
+      "id": "persistent-variants",
+      "title": "Toast — persistent-variants",
+      "html": "docs/catalog/fixtures/toast/persistent-variants.html",
+      "coverage": [
+        "autohide",
+        "progress",
+        "pause-focus",
+        "dismiss",
+        "variantes-semânticas"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/toast/persistent-variants.js"
     }
   ],
   "navbar": [
@@ -1523,6 +1694,24 @@
         "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
         "Histórico somente em memória; não usa localStorage nem notificações remotas. Painel não modal, sem focus trap; o exemplo foca o botão Limpar ao abrir."
       ]
+    },
+    {
+      "id": "history-actions",
+      "title": "NotificationCenter — histórico, leitura e remoção",
+      "html": "docs/catalog/fixtures/notification-center/history-actions.html",
+      "coverage": [
+        "push",
+        "unreadCount",
+        "open-reads-all",
+        "remove",
+        "clear",
+        "escape-focus",
+        "escaped-text"
+      ],
+      "limitations": [
+        "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+      ],
+      "js": "docs/catalog/fixtures/notification-center/history-actions.js"
     }
   ],
   "scrollspy": [

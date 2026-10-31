@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "61e32612d22355fe9e3e068fbfd7576a6489c4124a22f654479f0b1489292545",
+    "digest": "54d2c8cf143e396f06cb187e36da5883f52696845978079f7714461650169062",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,15 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "17cef8caedc413c9250012a05477ea2d17ca98680ad82384f3525e30c15c52e9"
+        "sha256": "fbbd0e72fcbe88d88e587b0dfedb3a4724c4b20651fc6ce735de9348de921a60"
+      },
+      {
+        "path": "docs/catalog/feedback-cases.json",
+        "sha256": "88793c8d6c58418a90b9cda0c4a04ad06dc0df7de7fa5c188e544064df606b18"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "73aeca6d6f00d1d9ce41b9b74b36f6dd87151308e18dbf8c5dda23e63b9a9c8a"
+        "sha256": "c97bb2b22a01a666a2aff7163c32a6de8e7e3366685de2c7dc6bba5bf8098d62"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -340,6 +344,14 @@
         "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
       },
       {
+        "path": "docs/catalog/fixtures/empty-state/recoverable.html",
+        "sha256": "e477fabd7f9694326b286aefbe5d42e553c55f07c20a16fa1b40cb62ff50b00e"
+      },
+      {
+        "path": "docs/catalog/fixtures/empty-state/recoverable.js",
+        "sha256": "87fd8db42c44a8c2b154fae21b001aeaf21eff30937df5268a0b8b99d8912f5c"
+      },
+      {
         "path": "docs/catalog/fixtures/file-upload-advanced/basic.html",
         "sha256": "d3cbe2b9ba47e3fb564d777fcfdf07082290f267e9cede1217675f1425ea4145"
       },
@@ -444,6 +456,14 @@
         "sha256": "1821f14b67a390d66979a525340d47a8a020488bdf9ac46f6ddb607066bf8a4d"
       },
       {
+        "path": "docs/catalog/fixtures/notification-center/history-actions.html",
+        "sha256": "84c3e47e98154b74995c76e4c305f9418b33ee08ab86fdf17b0c865c0274074f"
+      },
+      {
+        "path": "docs/catalog/fixtures/notification-center/history-actions.js",
+        "sha256": "67d810892c584bfd4eb70ba70811d98aa305911936120a36331807e583352641"
+      },
+      {
         "path": "docs/catalog/fixtures/offcanvas/basic.html",
         "sha256": "580157829cc682747726eae055d1a4dd626983aa3528789263b3c3fe0eeb2525"
       },
@@ -460,6 +480,14 @@
         "sha256": "7d0ddcae303263d2d6be825a38c7e4375f59ed1886e9c516a9ba8a9f68499e14"
       },
       {
+        "path": "docs/catalog/fixtures/placeholder/loading-complete.html",
+        "sha256": "81ba5f741618c90de8c5add9cf4af02f54548c19aae30dff0670d497127a879d"
+      },
+      {
+        "path": "docs/catalog/fixtures/placeholder/loading-complete.js",
+        "sha256": "b1f67b7825e847d8dac7faef67392435a7fce04eb9f16e13cbdabf44e9d65c84"
+      },
+      {
         "path": "docs/catalog/fixtures/popover/basic.html",
         "sha256": "9a8440b0ef055aa8f2182d65777b1a1559bfbc149cb4c8b321e8faa662ed2f2f"
       },
@@ -470,6 +498,14 @@
       {
         "path": "docs/catalog/fixtures/progress/basic.html",
         "sha256": "c0407f433130d477f2529d8f737cf90c212ef9943173667a68f68719c29d7e13"
+      },
+      {
+        "path": "docs/catalog/fixtures/progress/determinate-states.html",
+        "sha256": "09b600e131875108505b69c9e64a594b7b62caee9690b6816c64ff1cf8648b79"
+      },
+      {
+        "path": "docs/catalog/fixtures/progress/indeterminate.html",
+        "sha256": "575706718f0c81c43dbd627e4d9d105e14d8f58546e1117b004dbdfd03630bc2"
       },
       {
         "path": "docs/catalog/fixtures/radio/basic.html",
@@ -564,12 +600,40 @@
         "sha256": "d8d1fc7d365ecd657c2a725b17b6e689c2064d142ecd3b9a9f066c26c4a323a3"
       },
       {
+        "path": "docs/catalog/fixtures/skeleton/loading-complete.html",
+        "sha256": "ac14005ce3161a24a1978302c1caf4f2e3d6dd80537d32d1ad53264cd07cd239"
+      },
+      {
+        "path": "docs/catalog/fixtures/skeleton/loading-complete.js",
+        "sha256": "b1f67b7825e847d8dac7faef67392435a7fce04eb9f16e13cbdabf44e9d65c84"
+      },
+      {
+        "path": "docs/catalog/fixtures/skeleton/shapes-wave.html",
+        "sha256": "7b60c7bbe044b56674767ef7ddd5721ee51ebe0049e265d57b61a55786f449af"
+      },
+      {
         "path": "docs/catalog/fixtures/stepper/basic.html",
         "sha256": "cb04a74daba3800a0acf08cb70debea7b7c5035ffd8e77a9dc3a6783c22e346b"
       },
       {
         "path": "docs/catalog/fixtures/stepper/basic.js",
         "sha256": "06e91f17eca0a8b51bbeb6d4715e9b76d936bc2240cf0c6eee4e3c85372968e2"
+      },
+      {
+        "path": "docs/catalog/fixtures/stepper/nonlinear-vertical.html",
+        "sha256": "863b664042f0b67d74662fe206ed132509ce1185d2a73dcbc244e33f646d63ce"
+      },
+      {
+        "path": "docs/catalog/fixtures/stepper/nonlinear-vertical.js",
+        "sha256": "af6608cdf9c5cd86641564bef7d93867261dece0ef7fa01b812f032c9c6b8626"
+      },
+      {
+        "path": "docs/catalog/fixtures/stepper/validation-error.html",
+        "sha256": "b7f5f89be370248e445ed9702b344512458abe06d42603d9f74b2cc3babf9b0f"
+      },
+      {
+        "path": "docs/catalog/fixtures/stepper/validation-error.js",
+        "sha256": "af6608cdf9c5cd86641564bef7d93867261dece0ef7fa01b812f032c9c6b8626"
       },
       {
         "path": "docs/catalog/fixtures/switch/basic.html",
@@ -656,12 +720,32 @@
         "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce"
       },
       {
+        "path": "docs/catalog/fixtures/timeline/horizontal-states.html",
+        "sha256": "04af8e7f53287ae71abfd030a37024808d968c2bc5dbdd88e7142053ea877469"
+      },
+      {
         "path": "docs/catalog/fixtures/toast/basic.html",
         "sha256": "9c1b7f0fe58e3f7a6e64f8329a7a147eb30b049505f6dfb1752f7ea76ebf1b1c"
       },
       {
         "path": "docs/catalog/fixtures/toast/basic.js",
         "sha256": "e7f134ce1c3a6211d2cb4aab90ee2c2b5a693042fff9fbc4c35f114a8acae1a3"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/persistent-variants.html",
+        "sha256": "32da1794e7904ad4d8893de22d50c3d42dc78640c142ea20db552257d1556aea"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/persistent-variants.js",
+        "sha256": "00d7eb0851ffcd4fd4fb68a88a2c8bb09e5fb832a3df2a2a19ddea3d60bacb3e"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/timed-progress.html",
+        "sha256": "a7a8e32ee6d0c258cd1cefa082370760c1f6caadc8be19c05dea6bdea3c28489"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/timed-progress.js",
+        "sha256": "00d7eb0851ffcd4fd4fb68a88a2c8bb09e5fb832a3df2a2a19ddea3d60bacb3e"
       },
       {
         "path": "docs/catalog/fixtures/tooltip/basic.html",
@@ -1776,7 +1860,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 102,
+    "examples": 114,
     "complete": false
   },
   "contracts": [
@@ -22275,6 +22359,31 @@
               "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
             }
           ]
+        },
+        {
+          "id": "recoverable",
+          "title": "EmptyState — recuperar e mostrar vazio",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"feedback-toggle\">Alternar resultados</button><div class=\"fs-empty-state\" id=\"feedback-empty\"><h2 class=\"fs-empty-state-title\">Nenhum item encontrado</h2><p class=\"fs-empty-state-text\">Ajuste os filtros com o botão acima.</p></div><ul id=\"feedback-results\" hidden><li>Resultado de demonstração</li></ul><p role=\"status\" id=\"feedback-status\">Nenhum resultado.</p>\n",
+          "jsCode": "const controller = new AbortController();\nconst empty = document.getElementById('feedback-empty');\ndocument.getElementById('feedback-toggle').addEventListener('click', () => {\n empty.hidden = !empty.hidden;\n document.getElementById('feedback-results').hidden = !empty.hidden;\n document.getElementById('feedback-status').textContent = empty.hidden ? '1 resultado disponível.' : 'Nenhum resultado.';\n}, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => controller.abort(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "hidden-flex",
+            "recuperação",
+            "status"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/empty-state/recoverable.html",
+              "sha256": "e477fabd7f9694326b286aefbe5d42e553c55f07c20a16fa1b40cb62ff50b00e"
+            },
+            {
+              "path": "docs/catalog/fixtures/empty-state/recoverable.js",
+              "sha256": "87fd8db42c44a8c2b154fae21b001aeaf21eff30937df5268a0b8b99d8912f5c"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -30763,6 +30872,35 @@
               "sha256": "1821f14b67a390d66979a525340d47a8a020488bdf9ac46f6ddb607066bf8a4d"
             }
           ]
+        },
+        {
+          "id": "history-actions",
+          "title": "NotificationCenter — histórico, leitura e remoção",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"notification-center\" data-fs-target=\"#painel-notif\" data-toast-container=\"#demo-toast-container\" aria-label=\"Notificações\">\n  <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/></svg>\n  <span class=\"fs-notification-badge\" hidden>0</span>\n</button>\n\n<div class=\"fs-notification-center\" id=\"painel-notif\" role=\"dialog\" aria-label=\"Notificações\">\n  <div class=\"fs-notification-center-header\">\n    <span class=\"fs-notification-center-title\">Notificações</span>\n    <button type=\"button\" class=\"fs-btn fs-btn-sm\" data-notification=\"clear\">Limpar tudo</button>\n  </div>\n  <ul class=\"fs-notification-list\"></ul>\n  <p class=\"fs-notification-empty\">Nenhuma notificação.</p>\n</div>\n<button type=\"button\" class=\"fs-btn\" id=\"demo-notification\">Adicionar aviso não lido</button>\n<div class=\"fs-toast-container\" id=\"demo-toast-container\"></div>\n<button type=\"button\" class=\"fs-btn\" id=\"feedback-remove\">Remover mais recente</button><p role=\"status\" id=\"feedback-status\">Histórico somente em memória.</p>\n",
+          "jsCode": "import { NotificationCenter, Toast } from \"fokus-styles/js\";\n\nconst trigger = document.querySelector('[data-fs=\"notification-center\"]');\nconst instance = NotificationCenter.getInstance(trigger) ?? new NotificationCenter(trigger);\nconst add = document.getElementById(\"demo-notification\");\nconst push = () => instance.push({ title: \"Aviso <local> literal\", body: \"Nenhum dado foi enviado.\", variant: \"warning\", autohide: false });\nconst panel = document.getElementById(\"painel-notif\");\nconst focusPanel = () => panel.querySelector(\"button\")?.focus();\nconst remove = document.getElementById('feedback-remove');\nconst removeLatest = () => { const latest = instance.getAll()[0]; if (latest) instance.remove(latest.id); document.getElementById('feedback-status').textContent = `${instance.getAll().length} notificações no histórico.`; };\nremove.addEventListener('click', removeLatest);\nadd.addEventListener(\"click\", push);\ntrigger.addEventListener(\"fs:notification:opened\", focusPanel);\nwindow.addEventListener(\"pagehide\", () => {\n  add.removeEventListener(\"click\", push);\n  remove.removeEventListener(\"click\", removeLatest);\n  trigger.removeEventListener(\"fs:notification:opened\", focusPanel);\n  instance.dispose();\n  for (const element of document.querySelectorAll(\"#demo-toast-container .fs-toast\")) {\n    Toast.getInstance(element)?.dispose();\n    element.remove();\n  }\n}, { once: true });\n\n",
+          "cssCode": "",
+          "coverage": [
+            "push",
+            "unreadCount",
+            "open-reads-all",
+            "remove",
+            "clear",
+            "escape-focus",
+            "escaped-text"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/notification-center/history-actions.html",
+              "sha256": "84c3e47e98154b74995c76e4c305f9418b33ee08ab86fdf17b0c865c0274074f"
+            },
+            {
+              "path": "docs/catalog/fixtures/notification-center/history-actions.js",
+              "sha256": "67d810892c584bfd4eb70ba70811d98aa305911936120a36331807e583352641"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -32200,6 +32338,32 @@
             {
               "path": "docs/catalog/fixtures/placeholder/basic.html",
               "sha256": "7d0ddcae303263d2d6be825a38c7e4375f59ed1886e9c516a9ba8a9f68499e14"
+            }
+          ]
+        },
+        {
+          "id": "loading-complete",
+          "title": "placeholder — carregando/concluído",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"feedback-toggle\">Alternar carregamento</button><p role=\"status\" id=\"feedback-status\">Carregando conteúdo…</p><section id=\"feedback-region\" aria-label=\"Resumo\" aria-busy=\"true\"><div id=\"feedback-loading\" aria-hidden=\"true\"><span class=\"fs-placeholder fs-placeholder-glow\" style=\"width:75%\"></span><span class=\"fs-placeholder fs-placeholder-wave\" style=\"width:50%\"></span><span class=\"fs-placeholder fs-placeholder-btn\"></span></div><p id=\"feedback-loaded\" hidden>Resumo disponível, sem elementos de espera.</p></section>\n",
+          "jsCode": "const controller = new AbortController();\nconst region = document.getElementById('feedback-region');\nconst button = document.getElementById('feedback-toggle');\nbutton.addEventListener('click', () => {\n const busy = region.getAttribute('aria-busy') !== 'true';\n region.setAttribute('aria-busy', String(busy));\n document.getElementById('feedback-loading').hidden = !busy;\n document.getElementById('feedback-loaded').hidden = busy;\n document.getElementById('feedback-status').textContent = busy ? 'Carregando conteúdo…' : 'Conteúdo disponível.';\n}, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => controller.abort(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "busy-toggle",
+            "hidden-decorations",
+            "status",
+            "pagehide"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/placeholder/loading-complete.html",
+              "sha256": "81ba5f741618c90de8c5add9cf4af02f54548c19aae30dff0670d497127a879d"
+            },
+            {
+              "path": "docs/catalog/fixtures/placeholder/loading-complete.js",
+              "sha256": "b1f67b7825e847d8dac7faef67392435a7fce04eb9f16e13cbdabf44e9d65c84"
             }
           ]
         }
@@ -34460,6 +34624,52 @@
             {
               "path": "docs/catalog/fixtures/progress/basic.html",
               "sha256": "c0407f433130d477f2529d8f737cf90c212ef9943173667a68f68719c29d7e13"
+            }
+          ]
+        },
+        {
+          "id": "determinate-states",
+          "title": "Progress — valores, marcadores e estados",
+          "htmlCode": "<p>Início: 0%</p><div class=\"fs-progress fs-progress-sm\" role=\"progressbar\" aria-label=\"Início\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"0\"><div class=\"fs-progress-bar fs-progress-bar-striped\" style=\"--fs-progress-value:0\"></div><span class=\"fs-progress-marker\" style=\"--fs-progress-marker-value:75\" aria-hidden=\"true\"></span></div><p>Envio: 40%</p><div class=\"fs-progress fs-progress-lg\" role=\"progressbar\" aria-label=\"Envio\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"40\"><div class=\"fs-progress-bar fs-progress-bar-striped\" style=\"--fs-progress-value:40\"></div><span class=\"fs-progress-marker\" style=\"--fs-progress-marker-value:75\" aria-hidden=\"true\"></span></div><p>Concluído: 100%</p><div class=\"fs-progress fs-progress-complete\" role=\"progressbar\" aria-label=\"Concluído\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"100\"><div class=\"fs-progress-bar fs-progress-bar-striped\" style=\"--fs-progress-value:100\"></div><span class=\"fs-progress-marker\" style=\"--fs-progress-marker-value:75\" aria-hidden=\"true\"></span></div><p>Falha no envio: 60%</p><div class=\"fs-progress fs-progress-error\" role=\"progressbar\" aria-label=\"Falha no envio\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"60\"><div class=\"fs-progress-bar fs-progress-bar-striped\" style=\"--fs-progress-value:60\"></div><span class=\"fs-progress-marker\" style=\"--fs-progress-marker-value:75\" aria-hidden=\"true\"></span></div><p>Mínimo visível: 1%</p><div class=\"fs-progress fs-progress-minimum\" role=\"progressbar\" aria-label=\"Mínimo visível\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"1\"><div class=\"fs-progress-bar fs-progress-bar-striped\" style=\"--fs-progress-value:1\"></div><span class=\"fs-progress-marker\" style=\"--fs-progress-marker-value:75\" aria-hidden=\"true\"></span></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "zero",
+            "100",
+            "striped",
+            "sm-lg",
+            "complete-error",
+            "marker",
+            "minimum"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/progress/determinate-states.html",
+              "sha256": "09b600e131875108505b69c9e64a594b7b62caee9690b6816c64ff1cf8648b79"
+            }
+          ]
+        },
+        {
+          "id": "indeterminate",
+          "title": "Progress — duração desconhecida",
+          "htmlCode": "<p role=\"status\">Aguardando resposta; duração desconhecida.</p><div class=\"fs-progress fs-progress-indeterminate\" role=\"progressbar\" aria-label=\"Aguardando resposta\"><div class=\"fs-progress-bar\"></div></div><div class=\"fs-spinner fs-spinner-lg\" aria-hidden=\"true\"></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "indeterminate",
+            "aria-valuenow-ausente",
+            "spinner-lg"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/progress/indeterminate.html",
+              "sha256": "575706718f0c81c43dbd627e4d9d105e14d8f58546e1117b004dbdfd03630bc2"
             }
           ]
         }
@@ -42953,6 +43163,57 @@
               "sha256": "d8d1fc7d365ecd657c2a725b17b6e689c2064d142ecd3b9a9f066c26c4a323a3"
             }
           ]
+        },
+        {
+          "id": "shapes-wave",
+          "title": "Skeleton — formas e wave",
+          "htmlCode": "<p role=\"status\">Carregando perfil e tabela…</p><section aria-label=\"Perfil\" aria-busy=\"true\"><div aria-hidden=\"true\"><div class=\"fs-skeleton fs-skeleton-card\"><div class=\"fs-skeleton fs-skeleton-avatar\"></div><div class=\"fs-skeleton fs-skeleton-text\"></div></div><div class=\"fs-skeleton fs-skeleton-rect fs-skeleton-wave\" style=\"height:4rem\"></div><div class=\"fs-skeleton fs-skeleton-circle\" style=\"width:3rem;height:3rem\"></div><div class=\"fs-skeleton fs-skeleton-table\"></div></div></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "card",
+            "avatar",
+            "rect",
+            "wave",
+            "table",
+            "busy",
+            "decorative-hidden"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/skeleton/shapes-wave.html",
+              "sha256": "7b60c7bbe044b56674767ef7ddd5721ee51ebe0049e265d57b61a55786f449af"
+            }
+          ]
+        },
+        {
+          "id": "loading-complete",
+          "title": "skeleton — carregando/concluído",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"feedback-toggle\">Alternar carregamento</button><p role=\"status\" id=\"feedback-status\">Carregando conteúdo…</p><section id=\"feedback-region\" aria-label=\"Resumo\" aria-busy=\"true\"><div id=\"feedback-loading\" aria-hidden=\"true\"><div class=\"fs-skeleton fs-skeleton-text\"></div></div><p id=\"feedback-loaded\" hidden>Resumo disponível, sem elementos de espera.</p></section>\n",
+          "jsCode": "const controller = new AbortController();\nconst region = document.getElementById('feedback-region');\nconst button = document.getElementById('feedback-toggle');\nbutton.addEventListener('click', () => {\n const busy = region.getAttribute('aria-busy') !== 'true';\n region.setAttribute('aria-busy', String(busy));\n document.getElementById('feedback-loading').hidden = !busy;\n document.getElementById('feedback-loaded').hidden = busy;\n document.getElementById('feedback-status').textContent = busy ? 'Carregando conteúdo…' : 'Conteúdo disponível.';\n}, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => controller.abort(), { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "busy-toggle",
+            "hidden-decorations",
+            "status",
+            "pagehide"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/skeleton/loading-complete.html",
+              "sha256": "ac14005ce3161a24a1978302c1caf4f2e3d6dd80537d32d1ad53264cd07cd239"
+            },
+            {
+              "path": "docs/catalog/fixtures/skeleton/loading-complete.js",
+              "sha256": "b1f67b7825e847d8dac7faef67392435a7fce04eb9f16e13cbdabf44e9d65c84"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -43612,6 +43873,60 @@
             {
               "path": "docs/catalog/fixtures/stepper/basic.js",
               "sha256": "06e91f17eca0a8b51bbeb6d4715e9b76d936bc2240cf0c6eee4e3c85372968e2"
+            }
+          ]
+        },
+        {
+          "id": "nonlinear-vertical",
+          "title": "Stepper — nonlinear-vertical",
+          "htmlCode": "<div class=\"fs-stepper fs-stepper-vertical\" data-fs=\"stepper\" data-linear=\"false\"><ol class=\"fs-stepper-header\"><li class=\"fs-step fs-step-active\" data-fs-target=\"#feedback-panel-0\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">1</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Conta</span><span class=\"fs-step-description\">Etapa 1 de 3</span></span></li><li class=\"fs-step \" data-fs-target=\"#feedback-panel-1\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">2</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Perfil</span><span class=\"fs-step-description\">Etapa 2 de 3</span></span></li><li class=\"fs-step \" data-fs-target=\"#feedback-panel-2\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">3</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Revisão</span><span class=\"fs-step-description\">Etapa 3 de 3</span></span></li></ol><div class=\"fs-stepper-content\"><div class=\"fs-step-panel\" id=\"feedback-panel-0\">Conteúdo da etapa 1.</div><div class=\"fs-step-panel\" id=\"feedback-panel-1\">Conteúdo da etapa 2.</div><div class=\"fs-step-panel\" id=\"feedback-panel-2\">Conteúdo da etapa 3.</div></div><div class=\"fs-stepper-actions\"><button class=\"fs-btn\" type=\"button\" data-stepper=\"prev\">Voltar</button><button class=\"fs-btn\" type=\"button\" data-stepper=\"next\">Avançar ou concluir</button></div></div><p id=\"feedback-status\" role=\"status\">Etapa 1 de 3.</p>\n",
+          "jsCode": "import { Stepper } from \"fokus-styles/js\";\nconst el = document.querySelector('[data-fs=\"stepper\"]');\nconst instance = Stepper.getInstance(el) ?? new Stepper(el);\nconst controller = new AbortController();\nconst status = document.getElementById('feedback-status');\nconst confirmation = document.getElementById('feedback-confirm');\nel.addEventListener('fs:stepper:beforechange', event => {\n if (confirmation && event.detail.from === 0 && event.detail.to > 0 && !confirmation.checked) {\n  event.preventDefault(); instance.setError(0); status.textContent = 'Erro: confirme os dados antes de avançar.'; confirmation.focus();\n } else instance.setError(0, false);\n}, { signal: controller.signal });\nel.addEventListener('fs:stepper:changed', event => { status.textContent = `Etapa ${event.detail.to + 1} de 3.`; }, { signal: controller.signal });\nel.addEventListener('fs:stepper:completed', () => { status.textContent = 'Todas as etapas concluídas.'; }, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => { controller.abort(); instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "data-linear",
+            "data-fs-target",
+            "beforechange-cancelável",
+            "erro-textual",
+            "conclusão"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/stepper/nonlinear-vertical.html",
+              "sha256": "863b664042f0b67d74662fe206ed132509ce1185d2a73dcbc244e33f646d63ce"
+            },
+            {
+              "path": "docs/catalog/fixtures/stepper/nonlinear-vertical.js",
+              "sha256": "af6608cdf9c5cd86641564bef7d93867261dece0ef7fa01b812f032c9c6b8626"
+            }
+          ]
+        },
+        {
+          "id": "validation-error",
+          "title": "Stepper — validation-error",
+          "htmlCode": "<div class=\"fs-stepper \" data-fs=\"stepper\" data-linear=\"true\"><ol class=\"fs-stepper-header\"><li class=\"fs-step fs-step-active\" data-fs-target=\"#feedback-panel-0\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">1</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Conta</span><span class=\"fs-step-description\">Etapa 1 de 3</span></span></li><li class=\"fs-step \" data-fs-target=\"#feedback-panel-1\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">2</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Perfil</span><span class=\"fs-step-description\">Etapa 2 de 3</span></span></li><li class=\"fs-step \" data-fs-target=\"#feedback-panel-2\"><span class=\"fs-step-indicator\" aria-hidden=\"true\">3</span><span class=\"fs-step-content\"><span class=\"fs-step-label\">Revisão</span><span class=\"fs-step-description\">Etapa 3 de 3</span></span></li></ol><div class=\"fs-stepper-content\"><div class=\"fs-step-panel\" id=\"feedback-panel-0\">Conteúdo da etapa 1.</div><div class=\"fs-step-panel\" id=\"feedback-panel-1\">Conteúdo da etapa 2.</div><div class=\"fs-step-panel\" id=\"feedback-panel-2\">Conteúdo da etapa 3.</div></div><div class=\"fs-stepper-actions\"><button class=\"fs-btn\" type=\"button\" data-stepper=\"prev\">Voltar</button><button class=\"fs-btn\" type=\"button\" data-stepper=\"next\">Avançar ou concluir</button></div></div><p id=\"feedback-status\" role=\"status\">Etapa 1 de 3.</p><label><input type=\"checkbox\" id=\"feedback-confirm\"> Confirmar dados antes de avançar</label>\n",
+          "jsCode": "import { Stepper } from \"fokus-styles/js\";\nconst el = document.querySelector('[data-fs=\"stepper\"]');\nconst instance = Stepper.getInstance(el) ?? new Stepper(el);\nconst controller = new AbortController();\nconst status = document.getElementById('feedback-status');\nconst confirmation = document.getElementById('feedback-confirm');\nel.addEventListener('fs:stepper:beforechange', event => {\n if (confirmation && event.detail.from === 0 && event.detail.to > 0 && !confirmation.checked) {\n  event.preventDefault(); instance.setError(0); status.textContent = 'Erro: confirme os dados antes de avançar.'; confirmation.focus();\n } else instance.setError(0, false);\n}, { signal: controller.signal });\nel.addEventListener('fs:stepper:changed', event => { status.textContent = `Etapa ${event.detail.to + 1} de 3.`; }, { signal: controller.signal });\nel.addEventListener('fs:stepper:completed', () => { status.textContent = 'Todas as etapas concluídas.'; }, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => { controller.abort(); instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "data-linear",
+            "data-fs-target",
+            "beforechange-cancelável",
+            "erro-textual",
+            "conclusão"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/stepper/validation-error.html",
+              "sha256": "b7f5f89be370248e445ed9702b344512458abe06d42603d9f74b2cc3babf9b0f"
+            },
+            {
+              "path": "docs/catalog/fixtures/stepper/validation-error.js",
+              "sha256": "af6608cdf9c5cd86641564bef7d93867261dece0ef7fa01b812f032c9c6b8626"
             }
           ]
         }
@@ -51481,6 +51796,30 @@
               "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce"
             }
           ]
+        },
+        {
+          "id": "horizontal-states",
+          "title": "Timeline — horizontal com falha e pendência",
+          "htmlCode": "<ol class=\"fs-timeline fs-timeline-horizontal\" aria-label=\"Histórico do envio\"><li class=\"fs-timeline-item fs-timeline-completed\" ><div class=\"fs-timeline-marker\" aria-hidden=\"true\"></div><div class=\"fs-timeline-content\"><p class=\"fs-timeline-title\">Recebido</p><p class=\"fs-timeline-text\">Concluído</p><time class=\"fs-timeline-time\" datetime=\"2026-10-31T10:00:00Z\">10:00 UTC</time></div></li><li class=\"fs-timeline-item fs-timeline-active\" aria-current=\"step\"><div class=\"fs-timeline-marker\" aria-hidden=\"true\"></div><div class=\"fs-timeline-content\"><p class=\"fs-timeline-title\">Processando</p><p class=\"fs-timeline-text\">Em andamento</p><time class=\"fs-timeline-time\" datetime=\"2026-10-31T10:01:00Z\">10:01 UTC</time></div></li><li class=\"fs-timeline-item fs-timeline-failed\" ><div class=\"fs-timeline-marker\" aria-hidden=\"true\"></div><div class=\"fs-timeline-content\"><p class=\"fs-timeline-title\">Tentativa anterior</p><p class=\"fs-timeline-text\">Falhou</p><time class=\"fs-timeline-time\" datetime=\"2026-10-31T10:02:00Z\">10:02 UTC</time></div></li><li class=\"fs-timeline-item \" ><div class=\"fs-timeline-marker\" aria-hidden=\"true\"></div><div class=\"fs-timeline-content\"><p class=\"fs-timeline-title\">Entrega</p><p class=\"fs-timeline-text\">Pendente</p><time class=\"fs-timeline-time\" datetime=\"2026-10-31T10:03:00Z\">10:03 UTC</time></div></li></ol>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "horizontal",
+            "failed",
+            "completed",
+            "active",
+            "time",
+            "status-text"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/timeline/horizontal-states.html",
+              "sha256": "04af8e7f53287ae71abfd030a37024808d968c2bc5dbdd88e7142053ea877469"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -52755,6 +53094,60 @@
             {
               "path": "docs/catalog/fixtures/toast/basic.js",
               "sha256": "e7f134ce1c3a6211d2cb4aab90ee2c2b5a693042fff9fbc4c35f114a8acae1a3"
+            }
+          ]
+        },
+        {
+          "id": "timed-progress",
+          "title": "Toast — timed-progress",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"feedback-show\">Mostrar notificações</button><p>O foco e o ponteiro pausam o temporizador. Fechar é sempre uma ação explícita disponível.</p><div class=\"fs-toast-container\"><div class=\"fs-toast fs-toast-info\" data-fs=\"toast\" data-delay=\"1500\" data-autohide=\"true\" data-toast-progress=\"true\"><div class=\"fs-toast-header\"><span>info: exemplo local</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar info\"></button></div><div class=\"fs-toast-body\">Sem envio de dados.</div><div class=\"fs-toast-progress\" aria-hidden=\"true\"></div></div></div>\n",
+          "jsCode": "import { Toast } from \"fokus-styles/js\";\nconst instances = [...document.querySelectorAll('[data-fs=\"toast\"]')].map(el => Toast.getInstance(el) ?? new Toast(el));\nconst controller = new AbortController();\ndocument.getElementById('feedback-show').addEventListener('click', () => instances.forEach(instance => instance.show()), { signal: controller.signal });\nwindow.addEventListener('pagehide', () => { controller.abort(); instances.forEach(instance => instance.dispose()); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "autohide",
+            "progress",
+            "pause-focus",
+            "dismiss",
+            "variantes-semânticas"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/toast/timed-progress.html",
+              "sha256": "a7a8e32ee6d0c258cd1cefa082370760c1f6caadc8be19c05dea6bdea3c28489"
+            },
+            {
+              "path": "docs/catalog/fixtures/toast/timed-progress.js",
+              "sha256": "00d7eb0851ffcd4fd4fb68a88a2c8bb09e5fb832a3df2a2a19ddea3d60bacb3e"
+            }
+          ]
+        },
+        {
+          "id": "persistent-variants",
+          "title": "Toast — persistent-variants",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"feedback-show\">Mostrar notificações</button><p>O foco e o ponteiro pausam o temporizador. Fechar é sempre uma ação explícita disponível.</p><div class=\"fs-toast-container\"><div class=\"fs-toast fs-toast-success\" data-fs=\"toast\" data-delay=\"1500\" data-autohide=\"false\" data-toast-progress=\"true\"><div class=\"fs-toast-header\"><span>success: exemplo local</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar success\"></button></div><div class=\"fs-toast-body\">Sem envio de dados.</div><div class=\"fs-toast-progress\" aria-hidden=\"true\"></div></div><div class=\"fs-toast fs-toast-warning\" data-fs=\"toast\" data-delay=\"1500\" data-autohide=\"false\" data-toast-progress=\"true\"><div class=\"fs-toast-header\"><span>warning: exemplo local</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar warning\"></button></div><div class=\"fs-toast-body\">Sem envio de dados.</div><div class=\"fs-toast-progress\" aria-hidden=\"true\"></div></div><div class=\"fs-toast fs-toast-danger\" data-fs=\"toast\" data-delay=\"1500\" data-autohide=\"false\" data-toast-progress=\"true\"><div class=\"fs-toast-header\"><span>danger: exemplo local</span><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar danger\"></button></div><div class=\"fs-toast-body\">Sem envio de dados.</div><div class=\"fs-toast-progress\" aria-hidden=\"true\"></div></div></div>\n",
+          "jsCode": "import { Toast } from \"fokus-styles/js\";\nconst instances = [...document.querySelectorAll('[data-fs=\"toast\"]')].map(el => Toast.getInstance(el) ?? new Toast(el));\nconst controller = new AbortController();\ndocument.getElementById('feedback-show').addEventListener('click', () => instances.forEach(instance => instance.show()), { signal: controller.signal });\nwindow.addEventListener('pagehide', () => { controller.abort(); instances.forEach(instance => instance.dispose()); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "autohide",
+            "progress",
+            "pause-focus",
+            "dismiss",
+            "variantes-semânticas"
+          ],
+          "limitations": [
+            "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/toast/persistent-variants.html",
+              "sha256": "32da1794e7904ad4d8893de22d50c3d42dc78640c142ea20db552257d1556aea"
+            },
+            {
+              "path": "docs/catalog/fixtures/toast/persistent-variants.js",
+              "sha256": "00d7eb0851ffcd4fd4fb68a88a2c8bb09e5fb832a3df2a2a19ddea3d60bacb3e"
             }
           ]
         }

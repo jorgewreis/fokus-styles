@@ -1,0 +1,203 @@
+[
+  {
+    "component": "stepper",
+    "id": "nonlinear-vertical",
+    "title": "Stepper — nonlinear-vertical",
+    "html": "docs/catalog/fixtures/stepper/nonlinear-vertical.html",
+    "coverage": [
+      "data-linear",
+      "data-fs-target",
+      "beforechange-cancelável",
+      "erro-textual",
+      "conclusão"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/stepper/nonlinear-vertical.js"
+  },
+  {
+    "component": "stepper",
+    "id": "validation-error",
+    "title": "Stepper — validation-error",
+    "html": "docs/catalog/fixtures/stepper/validation-error.html",
+    "coverage": [
+      "data-linear",
+      "data-fs-target",
+      "beforechange-cancelável",
+      "erro-textual",
+      "conclusão"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/stepper/validation-error.js"
+  },
+  {
+    "component": "toast",
+    "id": "timed-progress",
+    "title": "Toast — timed-progress",
+    "html": "docs/catalog/fixtures/toast/timed-progress.html",
+    "coverage": [
+      "autohide",
+      "progress",
+      "pause-focus",
+      "dismiss",
+      "variantes-semânticas"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/toast/timed-progress.js"
+  },
+  {
+    "component": "toast",
+    "id": "persistent-variants",
+    "title": "Toast — persistent-variants",
+    "html": "docs/catalog/fixtures/toast/persistent-variants.html",
+    "coverage": [
+      "autohide",
+      "progress",
+      "pause-focus",
+      "dismiss",
+      "variantes-semânticas"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/toast/persistent-variants.js"
+  },
+  {
+    "component": "notification-center",
+    "id": "history-actions",
+    "title": "NotificationCenter — histórico, leitura e remoção",
+    "html": "docs/catalog/fixtures/notification-center/history-actions.html",
+    "coverage": [
+      "push",
+      "unreadCount",
+      "open-reads-all",
+      "remove",
+      "clear",
+      "escape-focus",
+      "escaped-text"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/notification-center/history-actions.js"
+  },
+  {
+    "component": "progress",
+    "id": "determinate-states",
+    "title": "Progress — valores, marcadores e estados",
+    "html": "docs/catalog/fixtures/progress/determinate-states.html",
+    "coverage": [
+      "zero",
+      "100",
+      "striped",
+      "sm-lg",
+      "complete-error",
+      "marker",
+      "minimum"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ]
+  },
+  {
+    "component": "progress",
+    "id": "indeterminate",
+    "title": "Progress — duração desconhecida",
+    "html": "docs/catalog/fixtures/progress/indeterminate.html",
+    "coverage": [
+      "indeterminate",
+      "aria-valuenow-ausente",
+      "spinner-lg"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ]
+  },
+  {
+    "component": "skeleton",
+    "id": "shapes-wave",
+    "title": "Skeleton — formas e wave",
+    "html": "docs/catalog/fixtures/skeleton/shapes-wave.html",
+    "coverage": [
+      "card",
+      "avatar",
+      "rect",
+      "wave",
+      "table",
+      "busy",
+      "decorative-hidden"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ]
+  },
+  {
+    "component": "skeleton",
+    "id": "loading-complete",
+    "title": "skeleton — carregando/concluído",
+    "html": "docs/catalog/fixtures/skeleton/loading-complete.html",
+    "coverage": [
+      "busy-toggle",
+      "hidden-decorations",
+      "status",
+      "pagehide"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/skeleton/loading-complete.js"
+  },
+  {
+    "component": "placeholder",
+    "id": "loading-complete",
+    "title": "placeholder — carregando/concluído",
+    "html": "docs/catalog/fixtures/placeholder/loading-complete.html",
+    "coverage": [
+      "busy-toggle",
+      "hidden-decorations",
+      "status",
+      "pagehide"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/placeholder/loading-complete.js"
+  },
+  {
+    "component": "empty-state",
+    "id": "recoverable",
+    "title": "EmptyState — recuperar e mostrar vazio",
+    "html": "docs/catalog/fixtures/empty-state/recoverable.html",
+    "coverage": [
+      "hidden-flex",
+      "recuperação",
+      "status"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ],
+    "js": "docs/catalog/fixtures/empty-state/recoverable.js"
+  },
+  {
+    "component": "timeline",
+    "id": "horizontal-states",
+    "title": "Timeline — horizontal com falha e pendência",
+    "html": "docs/catalog/fixtures/timeline/horizontal-states.html",
+    "coverage": [
+      "horizontal",
+      "failed",
+      "completed",
+      "active",
+      "time",
+      "status-text"
+    ],
+    "limitations": [
+      "Composição de documentação; não altera o runtime. Cobertura parcial; não certifica WCAG, leitor de tela, touch ou todas as combinações."
+    ]
+  }
+]

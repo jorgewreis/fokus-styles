@@ -1,0 +1,172 @@
+[
+  {
+    "component": "empty-state",
+    "historicalMissingClassesNowExemplified": [],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-notification-badge",
+      "fs-notification-empty"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "notification-center",
+    "historicalMissingClassesNowExemplified": [],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-btn-close",
+      "fs-notification-item",
+      "fs-notification-item-content",
+      "fs-notification-item-danger",
+      "fs-notification-item-info",
+      "fs-notification-item-primary",
+      "fs-notification-item-secondary",
+      "fs-notification-item-success",
+      "fs-notification-item-text",
+      "fs-notification-item-time",
+      "fs-notification-item-title",
+      "fs-notification-item-unread",
+      "fs-notification-item-warning",
+      "fs-toast",
+      "fs-toast-actions",
+      "fs-toast-body",
+      "fs-toast-close",
+      "fs-toast-danger",
+      "fs-toast-header",
+      "fs-toast-heading",
+      "fs-toast-icon",
+      "fs-toast-info",
+      "fs-toast-link",
+      "fs-toast-meta",
+      "fs-toast-primary",
+      "fs-toast-progress",
+      "fs-toast-secondary",
+      "fs-toast-success",
+      "fs-toast-title",
+      "fs-toast-warning"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "placeholder",
+    "historicalMissingClassesNowExemplified": [],
+    "historicalClassGapsStillNotInNewFixtures": [],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "progress",
+    "historicalMissingClassesNowExemplified": [
+      "fs-progress-bar-striped",
+      "fs-progress-complete",
+      "fs-progress-error",
+      "fs-progress-indeterminate",
+      "fs-progress-lg",
+      "fs-progress-marker",
+      "fs-progress-minimum",
+      "fs-progress-sm",
+      "fs-spinner-lg"
+    ],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-progress-bar-animated",
+      "fs-progress-bar-danger",
+      "fs-progress-bar-info",
+      "fs-progress-bar-primary",
+      "fs-progress-bar-secondary",
+      "fs-progress-bar-success",
+      "fs-progress-bar-warning",
+      "fs-progress-meta",
+      "fs-progress-status",
+      "fs-progress-status-danger",
+      "fs-progress-status-icon",
+      "fs-spinner-danger",
+      "fs-spinner-info",
+      "fs-spinner-primary",
+      "fs-spinner-secondary",
+      "fs-spinner-sm",
+      "fs-spinner-success",
+      "fs-spinner-warning"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "skeleton",
+    "historicalMissingClassesNowExemplified": [
+      "fs-skeleton-avatar",
+      "fs-skeleton-card",
+      "fs-skeleton-rect",
+      "fs-skeleton-table",
+      "fs-skeleton-wave"
+    ],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-progress-bar",
+      "fs-progress-bar-animated",
+      "fs-progress-bar-danger",
+      "fs-progress-bar-info",
+      "fs-progress-bar-primary",
+      "fs-progress-bar-secondary",
+      "fs-progress-bar-striped",
+      "fs-progress-bar-success",
+      "fs-progress-bar-warning"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "stepper",
+    "historicalMissingClassesNowExemplified": [
+      "fs-step-content",
+      "fs-step-description",
+      "fs-stepper-vertical"
+    ],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-step-clickable",
+      "fs-step-completed",
+      "fs-step-error"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "timeline",
+    "historicalMissingClassesNowExemplified": [
+      "fs-timeline-failed",
+      "fs-timeline-horizontal"
+    ],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-step",
+      "fs-step-active",
+      "fs-step-clickable",
+      "fs-step-completed",
+      "fs-step-content",
+      "fs-step-description",
+      "fs-step-error",
+      "fs-step-indicator",
+      "fs-step-label",
+      "fs-step-panel"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  },
+  {
+    "component": "toast",
+    "historicalMissingClassesNowExemplified": [
+      "fs-toast-danger",
+      "fs-toast-info",
+      "fs-toast-progress",
+      "fs-toast-warning"
+    ],
+    "historicalClassGapsStillNotInNewFixtures": [
+      "fs-icon",
+      "fs-icon-lg",
+      "fs-icon-link",
+      "fs-icon-sm",
+      "fs-icon-xl",
+      "fs-icon-xs",
+      "fs-toast-actions",
+      "fs-toast-close",
+      "fs-toast-heading",
+      "fs-toast-icon",
+      "fs-toast-link",
+      "fs-toast-meta",
+      "fs-toast-primary",
+      "fs-toast-secondary",
+      "fs-toast-title"
+    ],
+    "note": "Comparação sintática com matriz histórica; não prova cobertura comportamental completa."
+  }
+]

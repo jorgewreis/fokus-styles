@@ -1,0 +1,1604 @@
+{
+  "source": "/workspace/shared/catalog-gap-audit-20261031/matrix.json",
+  "sha256": "12fa2b2226344e907097e1d463266bea5943ac9f2e825c73697faa5ee49110e7",
+  "summary": {
+    "timestamp": "2026-10-31T14:39:07.687128+00:00",
+    "repository": "/workspace/shared/catalog-expanded-styles",
+    "head": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "catalogSHA256": "6490329c80c317bec7f06ffd546ceff93bbf687c8b07612db581789e553317bb",
+    "catalogSourceHashMismatches": [],
+    "components": 56,
+    "examples": 56,
+    "componentsWithAbsentStaticClasses": 47,
+    "componentClassAbsences": 697,
+    "componentsWithAbsentReadAttrs": 24,
+    "componentReadAttributeAbsences": 49,
+    "typedOptionFields": 34,
+    "explicitFixtureOptionMentions": 8,
+    "componentsWithNoTokenOverrides": 54,
+    "uniqueConsumedTokens": 242
+  },
+  "components": [
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "aria-hidden",
+          "true"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "empty-state",
+      "priority": "P3",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/empty-state.md",
+          "sha256": "c2d2bb719613b5bf824befbd66efaa5cf0f2c77622611d7962ae0d1a476dc9fb"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_empty-state.scss",
+          "sha256": "16f70abc362a747d943e89f24403505a7939062455b455e6a827303de3d335e7"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-btn-primary",
+        "fs-empty-state",
+        "fs-empty-state-icon",
+        "fs-empty-state-text",
+        "fs-empty-state-title",
+        "fs-icon"
+      ],
+      "cssScopeClasses": [
+        "fs-empty-state",
+        "fs-empty-state-icon",
+        "fs-empty-state-text",
+        "fs-empty-state-title",
+        "fs-notification-badge",
+        "fs-notification-empty"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-notification-badge",
+        "fs-notification-empty"
+      ],
+      "runtimeReadAttributes": [],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-subtle",
+        "--fs-color-text"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-color-danger"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-subtle",
+        "--fs-color-text"
+      ],
+      "cssStates": [
+        "[hidden]"
+      ],
+      "documentationVariantStateSections": "Nenhuma — o componente é deliberadamente sem modificadores; a variação vem\ndo conteúdo que você põe dentro do slot de ícone.\n\nNenhum — elemento estático.",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botões demonstrativos sem comportamento de aplicativo."
+      ],
+      "historicalSnippets": 2,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": []
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "data-fs-target",
+          "#nc"
+        ],
+        [
+          "data-fs-target",
+          "#painel"
+        ],
+        [
+          "data-storage",
+          "local"
+        ],
+        [
+          "data-storage-key",
+          "minhas-notificacoes"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-hidden",
+          "true"
+        ],
+        [
+          "aria-label",
+          "Notificações"
+        ],
+        [
+          "data-fs",
+          "notification-center"
+        ],
+        [
+          "data-fs-target",
+          "#painel-notif"
+        ],
+        [
+          "data-notification",
+          "clear"
+        ],
+        [
+          "data-toast-container",
+          "#demo-toast-container"
+        ],
+        [
+          "role",
+          "dialog"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "notification-center",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/notification-center.md",
+          "sha256": "299fbef89bc51c43b3bff91e6be045badf88be4411afad30a1a2aab8dac61704"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_notification-center.scss",
+          "sha256": "5d3f05649396033053f4b48fa68e54753a93a45a7756fe472dfa4e6ef55767f9"
+        },
+        {
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "sha256": "732e6ac5278d8320d9eba918420bd9fa7fb8d0571f0a9e2b22d52dfc95edbfcf"
+        },
+        {
+          "path": "packages/fokus-js/js/notification-center.js",
+          "sha256": "328d3eee486c7008141320b69e2e9a509711602a8301ce89471e8bea67889566"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-btn-sm",
+        "fs-icon",
+        "fs-notification-badge",
+        "fs-notification-center",
+        "fs-notification-center-header",
+        "fs-notification-center-title",
+        "fs-notification-empty",
+        "fs-notification-list",
+        "fs-target",
+        "fs-toast-container"
+      ],
+      "cssScopeClasses": [
+        "fs-btn-close",
+        "fs-notification-badge",
+        "fs-notification-center",
+        "fs-notification-center-header",
+        "fs-notification-center-title",
+        "fs-notification-empty",
+        "fs-notification-item",
+        "fs-notification-item-content",
+        "fs-notification-item-danger",
+        "fs-notification-item-info",
+        "fs-notification-item-primary",
+        "fs-notification-item-secondary",
+        "fs-notification-item-success",
+        "fs-notification-item-text",
+        "fs-notification-item-time",
+        "fs-notification-item-title",
+        "fs-notification-item-unread",
+        "fs-notification-item-warning",
+        "fs-notification-list",
+        "fs-toast",
+        "fs-toast-actions",
+        "fs-toast-body",
+        "fs-toast-close",
+        "fs-toast-container",
+        "fs-toast-danger",
+        "fs-toast-header",
+        "fs-toast-heading",
+        "fs-toast-icon",
+        "fs-toast-info",
+        "fs-toast-link",
+        "fs-toast-meta",
+        "fs-toast-primary",
+        "fs-toast-progress",
+        "fs-toast-secondary",
+        "fs-toast-success",
+        "fs-toast-title",
+        "fs-toast-warning"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-btn-close",
+        "fs-notification-item",
+        "fs-notification-item-content",
+        "fs-notification-item-danger",
+        "fs-notification-item-info",
+        "fs-notification-item-primary",
+        "fs-notification-item-secondary",
+        "fs-notification-item-success",
+        "fs-notification-item-text",
+        "fs-notification-item-time",
+        "fs-notification-item-title",
+        "fs-notification-item-unread",
+        "fs-notification-item-warning",
+        "fs-toast",
+        "fs-toast-actions",
+        "fs-toast-body",
+        "fs-toast-close",
+        "fs-toast-danger",
+        "fs-toast-header",
+        "fs-toast-heading",
+        "fs-toast-icon",
+        "fs-toast-info",
+        "fs-toast-link",
+        "fs-toast-meta",
+        "fs-toast-primary",
+        "fs-toast-progress",
+        "fs-toast-secondary",
+        "fs-toast-success",
+        "fs-toast-title",
+        "fs-toast-warning"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-target",
+          "line": 29,
+          "code": "const panelSelector = options.target ?? triggerEl.getAttribute(\"data-fs-target\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "data-storage",
+          "line": 38,
+          "code": "this.storage = options.storage ?? triggerEl.getAttribute(\"data-storage\") ?? \"memory\";",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "data-storage-key",
+          "line": 39,
+          "code": "this.storageKey = options.storageKey ?? triggerEl.getAttribute(\"data-storage-key\") ?? \"fokus-notifications\";",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "data-toast-container",
+          "line": 41,
+          "code": "const containerSelector = options.toastContainer ?? triggerEl.getAttribute(\"data-toast-container\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "role",
+          "line": 57,
+          "code": "if (!panelEl.getAttribute(\"role\")) panelEl.setAttribute(\"role\", \"region\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "role",
+          "line": 57,
+          "code": "if (!panelEl.getAttribute(\"role\")) panelEl.setAttribute(\"role\", \"region\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "aria-label",
+          "line": 58,
+          "code": "if (!panelEl.getAttribute(\"aria-label\")) panelEl.setAttribute(\"aria-label\", \"Notificações\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        },
+        {
+          "name": "aria-label",
+          "line": 58,
+          "code": "if (!panelEl.getAttribute(\"aria-label\")) panelEl.setAttribute(\"aria-label\", \"Notificações\");",
+          "path": "packages/fokus-js/js/notification-center.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "aria-label",
+        "data-fs-target",
+        "data-toast-container",
+        "role"
+      ],
+      "readAttributesAbsent": [
+        "data-storage",
+        "data-storage-key"
+      ],
+      "typedOptions": [
+        {
+          "interface": "NotificationCenterOptions",
+          "name": "target",
+          "type": "string",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": false
+        },
+        {
+          "interface": "NotificationCenterOptions",
+          "name": "storage",
+          "type": "\"memory\" | \"local\"",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": false
+        },
+        {
+          "interface": "NotificationCenterOptions",
+          "name": "storageKey",
+          "type": "string",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": false
+        },
+        {
+          "interface": "NotificationCenterOptions",
+          "name": "toastContainer",
+          "type": "string",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": false
+        },
+        {
+          "interface": "PushOptions",
+          "name": "title",
+          "type": "string",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": true
+        },
+        {
+          "interface": "PushOptions",
+          "name": "body",
+          "type": "string",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": true
+        },
+        {
+          "interface": "PushOptions",
+          "name": "variant",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\" | \"info\"",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": true
+        },
+        {
+          "interface": "PushOptions",
+          "name": "autohide",
+          "type": "boolean",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": true
+        },
+        {
+          "interface": "PushOptions",
+          "name": "delay",
+          "type": "number",
+          "path": "packages/fokus-js/js/notification-center.d.ts",
+          "explicitFixtureMention": false
+        }
+      ],
+      "consumedTokens": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-badge-radius",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-md",
+        "--fs-space-3",
+        "--fs-tag-close-gap",
+        "--fs-tag-close-size",
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width",
+        "--fs-z-notification",
+        "--fs-z-toast"
+      ],
+      "declaredTokens": [
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width"
+      ],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-badge-radius",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-sm",
+        "--fs-space-3",
+        "--fs-tag-close-gap",
+        "--fs-tag-close-size",
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width",
+        "--fs-z-notification",
+        "--fs-z-toast"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-badge-radius",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-surface-raised",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-focus-offset",
+        "--fs-focus-width",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-shadow-md",
+        "--fs-space-3",
+        "--fs-tag-close-gap",
+        "--fs-tag-close-size",
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width",
+        "--fs-z-notification",
+        "--fs-z-toast"
+      ],
+      "cssStates": [
+        ":active",
+        ":focus",
+        ":focus-visible",
+        ":hover",
+        "[aria-busy=true]",
+        "[data-autohide=false]",
+        "[data-toast-progress=true]",
+        "[hidden]"
+      ],
+      "documentationVariantStateSections": "Cor por item de notificação: `.fs-notification-item-{nome}` (borda\nesquerda colorida) — aplicada automaticamente a partir do `variant`\npassado em `push()`. As variantes aceitas são `primary`, `secondary`,\n`success`, `warning`, `danger` e `info`; valores desconhecidos usam `primary`.\nHistórico local é tratado como entrada não confiável: valores que não sejam\narrays e registros sem ID textual são ignorados; campos inválidos são\nnormalizados. IDs são atribuídos via DOM, nunca interpretados como HTML.\n\n- `.fs-notification-item-unread` — aplicada automaticamente aos itens\n  ainda não lidos (some ao abrir o painel — abrir marca tudo como lido).\n- Persistência: `data-storage=\"local\"` + `data-storage-key=\"...\"` no\n  gatilho grava o histórico em `localStorage` (sobrevive a reload); padrão\n  é `\"memory\"` (perde ao recarregar a página).\n\n```html\n<button data-fs=\"notification-center\" data-fs-target=\"#painel\" data-storage=\"local\" data-storage-key=\"minhas-notificacoes\" aria-label=\"Notificações\">\n  <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/></svg>\n</button>\n```",
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Histórico somente em memória; não usa localStorage nem notificações remotas. Painel não modal, sem focus trap; o exemplo foca o botão Limpar ao abrir."
+      ],
+      "historicalSnippets": 4,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/notification-center.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "aria-busy",
+          "true"
+        ],
+        [
+          "aria-hidden",
+          "true"
+        ],
+        [
+          "aria-label",
+          "Resumo do processo"
+        ],
+        [
+          "role",
+          "status"
+        ]
+      ],
+      "component": "placeholder",
+      "priority": "P3",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/placeholder.md",
+          "sha256": "6790f6646034a3777c4d6ca4fd183dd427c161ac01666ba748c2bdafc82a3800"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_placeholder.scss",
+          "sha256": "48e09785f7e251bdbf2478bace67b6ca528cdc799bd04bb14a694c7e68425b36"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-placeholder",
+        "fs-placeholder-btn",
+        "fs-placeholder-glow",
+        "fs-placeholder-wave"
+      ],
+      "cssScopeClasses": [
+        "fs-placeholder",
+        "fs-placeholder-btn",
+        "fs-placeholder-glow",
+        "fs-placeholder-wave"
+      ],
+      "classesAbsentFromStaticFixture": [],
+      "runtimeReadAttributes": [],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-radius-sm"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-radius-sm"
+      ],
+      "cssStates": [],
+      "documentationVariantStateSections": "| Classe combinada com `.fs-placeholder` | Efeito |\n| --- | --- |\n| `.fs-placeholder-glow` | Oscilação de opacidade em 1.5s |\n| `.fs-placeholder-wave` | Gradiente em movimento em 1.5s |\n| `.fs-placeholder-btn` | Forma 6rem × 2.5rem e raio sm |\n\nBase: `min-height:1em`, fundo currentColor, opacidade .18, cursor wait.\nGlow chega a .08. Em `prefers-reduced-motion:reduce`, glow/wave têm\n`animation:none`. Ao concluir, substitua os placeholders pelo conteúdo e mude\n`aria-busy` para false; em erro, mostre mensagem e possibilidade real de tentar\nnovamente. O framework não controla esse ciclo.",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Estado de carregamento estático; não resolve dados nem remove aria-busy automaticamente."
+      ],
+      "historicalSnippets": 1,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": []
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-busy",
+          "true"
+        ],
+        [
+          "aria-label",
+          "Processando pagamento"
+        ],
+        [
+          "aria-label",
+          "Upload de anexos"
+        ],
+        [
+          "aria-valuenow",
+          "38"
+        ],
+        [
+          "aria-valuetext",
+          "3 de 8 arquivos enviados"
+        ],
+        [
+          "aria-valuetext",
+          "Progresso indeterminado"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Carregando"
+        ],
+        [
+          "aria-label",
+          "Envio demonstrativo"
+        ],
+        [
+          "aria-valuemax",
+          "100"
+        ],
+        [
+          "aria-valuemin",
+          "0"
+        ],
+        [
+          "aria-valuenow",
+          "60"
+        ],
+        [
+          "role",
+          "progressbar"
+        ],
+        [
+          "role",
+          "status"
+        ]
+      ],
+      "component": "progress",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/progress.md",
+          "sha256": "af209b4dde69575885e93b7d4335ddffeb78ace224e05e986859b6c851bf147d"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_progress.scss",
+          "sha256": "ce3b984af79caa1e076d54dfaff7ac9d1793733413d37a2fdece50b938d856e2"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_spinner.scss",
+          "sha256": "baf65aa5811ba79614e99bbb4dd8c8166c2a3ca5647586ad5d735f351527eb20"
+        },
+        {
+          "path": "packages/fokus-js/js/spinner.d.ts",
+          "sha256": "1cd770d4f17b6ba8b626e5421fc767b5a401d6501944526273febd51fb80c40d"
+        },
+        {
+          "path": "packages/fokus-js/js/spinner.js",
+          "sha256": "8843c101636bb33eadfddb4b4a9fb733a53c04f4eaf9ec7922f36cbfc4d20c23"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-progress",
+        "fs-progress-bar",
+        "fs-progress-value",
+        "fs-spinner"
+      ],
+      "cssScopeClasses": [
+        "fs-progress",
+        "fs-progress-bar",
+        "fs-progress-bar-animated",
+        "fs-progress-bar-danger",
+        "fs-progress-bar-info",
+        "fs-progress-bar-primary",
+        "fs-progress-bar-secondary",
+        "fs-progress-bar-striped",
+        "fs-progress-bar-success",
+        "fs-progress-bar-warning",
+        "fs-progress-complete",
+        "fs-progress-error",
+        "fs-progress-indeterminate",
+        "fs-progress-lg",
+        "fs-progress-marker",
+        "fs-progress-meta",
+        "fs-progress-minimum",
+        "fs-progress-sm",
+        "fs-progress-status",
+        "fs-progress-status-danger",
+        "fs-progress-status-icon",
+        "fs-progress-value",
+        "fs-spinner",
+        "fs-spinner-danger",
+        "fs-spinner-info",
+        "fs-spinner-lg",
+        "fs-spinner-primary",
+        "fs-spinner-secondary",
+        "fs-spinner-sm",
+        "fs-spinner-success",
+        "fs-spinner-warning"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-progress-bar-animated",
+        "fs-progress-bar-danger",
+        "fs-progress-bar-info",
+        "fs-progress-bar-primary",
+        "fs-progress-bar-secondary",
+        "fs-progress-bar-striped",
+        "fs-progress-bar-success",
+        "fs-progress-bar-warning",
+        "fs-progress-complete",
+        "fs-progress-error",
+        "fs-progress-indeterminate",
+        "fs-progress-lg",
+        "fs-progress-marker",
+        "fs-progress-meta",
+        "fs-progress-minimum",
+        "fs-progress-sm",
+        "fs-progress-status",
+        "fs-progress-status-danger",
+        "fs-progress-status-icon",
+        "fs-spinner-danger",
+        "fs-spinner-info",
+        "fs-spinner-lg",
+        "fs-spinner-primary",
+        "fs-spinner-secondary",
+        "fs-spinner-sm",
+        "fs-spinner-success",
+        "fs-spinner-warning"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-fs-loading",
+          "line": 7,
+          "code": "this._setLoading(element.hasAttribute(\"data-fs-loading\") && element.getAttribute(\"data-fs-loading\") !== \"false\");",
+          "path": "packages/fokus-js/js/spinner.js"
+        },
+        {
+          "name": "data-fs-loading",
+          "line": 7,
+          "code": "this._setLoading(element.hasAttribute(\"data-fs-loading\") && element.getAttribute(\"data-fs-loading\") !== \"false\");",
+          "path": "packages/fokus-js/js/spinner.js"
+        }
+      ],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [
+        "data-fs-loading"
+      ],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-danger-text",
+        "--fs-alert-success-text",
+        "--fs-color-black",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-height",
+        "--fs-progress-marker-value",
+        "--fs-progress-radius",
+        "--fs-progress-track",
+        "--fs-progress-value",
+        "--fs-spinner-duration",
+        "--fs-spinner-size",
+        "--fs-spinner-stroke"
+      ],
+      "declaredTokens": [
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-height",
+        "--fs-progress-radius",
+        "--fs-progress-track",
+        "--fs-spinner-duration",
+        "--fs-spinner-size",
+        "--fs-spinner-stroke"
+      ],
+      "explicitFixtureTokenOverrides": [
+        "--fs-progress-value"
+      ],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-danger-text",
+        "--fs-alert-success-text",
+        "--fs-color-black",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-color"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-danger-text",
+        "--fs-alert-success-text",
+        "--fs-color-black",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-height",
+        "--fs-progress-marker-value",
+        "--fs-progress-radius",
+        "--fs-progress-track",
+        "--fs-spinner-duration",
+        "--fs-spinner-size",
+        "--fs-spinner-stroke"
+      ],
+      "cssStates": [
+        "[aria-busy=true]",
+        "[data-fs-loading=false]"
+      ],
+      "documentationVariantStateSections": "**Spinner**:\n- Tamanho: `.fs-spinner-sm` (14px), `.fs-spinner-lg` (32px); sem sufixo =\n  20px.\n- Cor: `.fs-spinner-{primary|secondary|success|warning|danger|info}` — o\n  spinner herda `currentColor` por padrão, então também responde a\n  qualquer utilitário de cor de texto (`.fs-u-text-*`) se você não usar essas\n  classes.\n\n**Progress**:\n- Altura: `.fs-progress-sm` (4px), `.fs-progress-lg` (16px); sem sufixo =\n  8px.\n- Cor da barra: `.fs-progress-bar-{cor}` — mesmas 6 cores de tema.\n- `.fs-progress-bar-striped` — faixas diagonais; some com\n  `.fs-progress-bar-animated` pra elas se moverem continuamente.\n- Valor visual: use texto dentro de `.fs-progress-bar` apenas em\n  `.fs-progress-lg`; nas barras compactas, exponha o valor por `aria-valuenow`\n  e por um rótulo externo quando ele precisar ser visível.\n- Rótulo externo: `.fs-progress-meta` contém o nome da operação e\n  `.fs-progress-value` para percentual, contagem ou duração.\n- Indeterminado: `.fs-progress-indeterminate` mostra deslocamento contínuo;\n  omita `aria-valuenow` e use `aria-valuetext=\"Progresso indeterminado\"`.\n- Finalização: `.fs-progress-complete` aplica `success`; `.fs-progress-error`\n  aplica `danger`. Use `.fs-progress-status` para uma confirmação ou ação de\n  recuperação fora da barra.\n- Meta: adicione `.fs-progress-marker` dentro do trilho e defina\n  `--fs-progress-marker-value` (0–100). Explique a meta em texto externo.\n- Início perceptível: `.fs-progress-minimum` preserva ao menos 4px visíveis\n  para valores reais acima de zero; `aria-valuenow` continua sendo a fonte de\n  verdade.\n- Fluxo por etapas: componha [Stepper](stepper.md) para comunicar a etapa\n  atual e uma `.fs-progress` para representar o avanço global. Não duplique\n  ambos para o mesmo significado.\n\n```html\n<div class=\"fs-spinner fs-spinner-lg fs-spinner-primary\"></div>\n\n<div class=\"fs-progress fs-progress-lg\">\n  <div class=\"fs-progress-bar fs-progress-bar-success fs-progress-bar-striped fs-progress-bar-animated\" style=\"--fs-progress-value: 40;\"></div>\n</div>\n```\n\nNenhum — ambos refletem o valor/presença que você controla (spinner:\npresente = carregando; progress: `--fs-progress-value` = progresso atual).",
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Valor fixo em 60%; aplicativo deve manter CSS e ARIA sincronizados quando houver progresso real."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/spinner.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-busy",
+          "true"
+        ]
+      ],
+      "fixtureAttributeValues": [],
+      "component": "skeleton",
+      "priority": "P3",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/skeleton.md",
+          "sha256": "b6ca3b40552ad43d3e9192aaeeb1e6a4a1ecb3ea9b2ad322a4acb833e4171e8b"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_skeleton.scss",
+          "sha256": "4edfcd145116756604f49e822cd0c83d9eb7cfa9c80829d8b16c8e3b52ce1db6"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-skeleton",
+        "fs-skeleton-circle",
+        "fs-skeleton-text"
+      ],
+      "cssScopeClasses": [
+        "fs-progress-bar",
+        "fs-progress-bar-animated",
+        "fs-progress-bar-danger",
+        "fs-progress-bar-info",
+        "fs-progress-bar-primary",
+        "fs-progress-bar-secondary",
+        "fs-progress-bar-striped",
+        "fs-progress-bar-success",
+        "fs-progress-bar-warning",
+        "fs-skeleton",
+        "fs-skeleton-avatar",
+        "fs-skeleton-card",
+        "fs-skeleton-circle",
+        "fs-skeleton-rect",
+        "fs-skeleton-table",
+        "fs-skeleton-text",
+        "fs-skeleton-wave"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-progress-bar",
+        "fs-progress-bar-animated",
+        "fs-progress-bar-danger",
+        "fs-progress-bar-info",
+        "fs-progress-bar-primary",
+        "fs-progress-bar-secondary",
+        "fs-progress-bar-striped",
+        "fs-progress-bar-success",
+        "fs-progress-bar-warning",
+        "fs-skeleton-avatar",
+        "fs-skeleton-card",
+        "fs-skeleton-rect",
+        "fs-skeleton-table",
+        "fs-skeleton-wave"
+      ],
+      "runtimeReadAttributes": [],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-value",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-space-2",
+        "--fs-space-3",
+        "--fs-space-4"
+      ],
+      "declaredTokens": [
+        "--fs-progress-bar-bg",
+        "--fs-progress-color"
+      ],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-value",
+        "--fs-radius-md",
+        "--fs-space-2",
+        "--fs-space-3",
+        "--fs-space-4"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-subtle",
+        "--fs-color-success",
+        "--fs-color-warning",
+        "--fs-motion-duration-normal",
+        "--fs-motion-ease-standard",
+        "--fs-progress-bar-bg",
+        "--fs-progress-color",
+        "--fs-progress-value",
+        "--fs-radius-md",
+        "--fs-radius-sm",
+        "--fs-space-2",
+        "--fs-space-3",
+        "--fs-space-4"
+      ],
+      "cssStates": [],
+      "documentationVariantStateSections": "`.fs-skeleton-wave` — em vez de pulsar a opacidade inteira, varre um\nbrilho da esquerda pra direita (substitui a animação padrão, não combine\nos dois).\n\n```html\n<div class=\"fs-skeleton fs-skeleton-rect fs-skeleton-wave\" style=\"width: 100%; height: 120px;\"></div>\n```\n\nNenhum — é ele mesmo um estado (de carregamento) de outro conteúdo.\nAnima infinitamente enquanto presente no DOM; remova/substitua quando os\ndados reais chegarem.",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Placeholder visual; contexto de carregamento e anúncio acessível são responsabilidade do aplicativo."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": []
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [
+        [
+          "data-fs",
+          "stepper"
+        ],
+        [
+          "data-stepper",
+          "next"
+        ],
+        [
+          "data-stepper",
+          "prev"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "stepper",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/stepper.md",
+          "sha256": "257126dc6cbd44ce854b9ca467414e43f31b665b80c7ee3b99fbfdd5a08325c0"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_stepper.scss",
+          "sha256": "6abb0a128f02c4651c9f9c83a124c3afd2982061fb97144dd5398270f44c753a"
+        },
+        {
+          "path": "packages/fokus-js/js/stepper.d.ts",
+          "sha256": "11402d03e8166560b6237203f65a923da678e3937c597813a1990c0b94594137"
+        },
+        {
+          "path": "packages/fokus-js/js/stepper.js",
+          "sha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-btn-primary",
+        "fs-step",
+        "fs-step-active",
+        "fs-step-indicator",
+        "fs-step-label",
+        "fs-step-panel",
+        "fs-stepper",
+        "fs-stepper-actions",
+        "fs-stepper-content",
+        "fs-stepper-header",
+        "is-active"
+      ],
+      "cssScopeClasses": [
+        "fs-step",
+        "fs-step-active",
+        "fs-step-clickable",
+        "fs-step-completed",
+        "fs-step-content",
+        "fs-step-description",
+        "fs-step-error",
+        "fs-step-indicator",
+        "fs-step-label",
+        "fs-step-panel",
+        "fs-stepper-actions",
+        "fs-stepper-content",
+        "fs-stepper-header",
+        "fs-stepper-vertical"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-step-clickable",
+        "fs-step-completed",
+        "fs-step-content",
+        "fs-step-description",
+        "fs-step-error",
+        "fs-stepper-vertical"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-linear",
+          "line": 9,
+          "code": "this.linear = stepperEl.getAttribute(\"data-linear\") !== \"false\";",
+          "path": "packages/fokus-js/js/stepper.js"
+        }
+      ],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [
+        "data-linear"
+      ],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-danger-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-radius-sm"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-danger-text",
+        "--fs-color-on-primary",
+        "--fs-color-surface",
+        "--fs-radius-sm"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-danger-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-radius-sm"
+      ],
+      "cssStates": [
+        ":focus-visible"
+      ],
+      "documentationVariantStateSections": "`.fs-stepper-vertical` no `.fs-stepper` — cabeçalho em coluna, cada passo\ncom label/descrição ao lado do indicador em vez de embaixo.\n\nCada `.fs-step` recebe uma destas classes, sincronizadas pelo JS:\n\n| Classe | Significado |\n|---|---|\n| (nenhuma) | Pendente — ainda não alcançado. |\n| `.fs-step-active` | Passo atual. |\n| `.fs-step-completed` | Já concluído (indicador vira um check). |\n| `.fs-step-error` | Marcado com erro via `setError()` — não muda automaticamente. |\n| `.fs-step-clickable` | Aplicada automaticamente aos passos navegáveis pelo cabeçalho. |\n\n**Modo linear** (padrão, `data-linear` ausente ou `\"true\"`): só permite\nvoltar clicando em passos já concluídos, não pular pra frente. `data-linear=\"false\"` libera clicar em qualquer passo do cabeçalho a\nqualquer momento.",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Navegação local sem formulário, validação de dados ou envio final."
+      ],
+      "historicalSnippets": 2,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/stepper.js"
+      ]
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [],
+      "fixtureAttributeValues": [],
+      "component": "timeline",
+      "priority": "P3",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/timeline.md",
+          "sha256": "4f814ee452346997076a3db7ace1edb052735fd7779318037d487e3af8f91707"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_timeline.scss",
+          "sha256": "ae0d879195d5632f190f064de3e8cae8158f26b041f2013c68d127d43a0166ff"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-timeline",
+        "fs-timeline-active",
+        "fs-timeline-completed",
+        "fs-timeline-content",
+        "fs-timeline-item",
+        "fs-timeline-marker",
+        "fs-timeline-text",
+        "fs-timeline-time",
+        "fs-timeline-title"
+      ],
+      "cssScopeClasses": [
+        "fs-step",
+        "fs-step-active",
+        "fs-step-clickable",
+        "fs-step-completed",
+        "fs-step-content",
+        "fs-step-description",
+        "fs-step-error",
+        "fs-step-indicator",
+        "fs-step-label",
+        "fs-step-panel",
+        "fs-timeline",
+        "fs-timeline-active",
+        "fs-timeline-completed",
+        "fs-timeline-content",
+        "fs-timeline-failed",
+        "fs-timeline-horizontal",
+        "fs-timeline-item",
+        "fs-timeline-marker",
+        "fs-timeline-text",
+        "fs-timeline-time",
+        "fs-timeline-title"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-step",
+        "fs-step-active",
+        "fs-step-clickable",
+        "fs-step-completed",
+        "fs-step-content",
+        "fs-step-description",
+        "fs-step-error",
+        "fs-step-indicator",
+        "fs-step-label",
+        "fs-step-panel",
+        "fs-timeline-failed",
+        "fs-timeline-horizontal"
+      ],
+      "runtimeReadAttributes": [],
+      "readAttributesPresent": [],
+      "readAttributesAbsent": [],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-danger-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-radius-sm"
+      ],
+      "declaredTokens": [],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-danger-text",
+        "--fs-color-on-primary",
+        "--fs-color-surface",
+        "--fs-radius-sm"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-danger-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-muted",
+        "--fs-color-on-primary",
+        "--fs-color-primary",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-radius-sm"
+      ],
+      "cssStates": [
+        ":focus-visible"
+      ],
+      "documentationVariantStateSections": "`.fs-timeline-horizontal` no `<ol>` — inverte o eixo (itens em colunas,\nmarcador no topo, conector na horizontal).\n\nCada `.fs-timeline-item` aceita uma destas classes (mesma lógica visual do\n[Stepper](stepper.md) — controle manual, sem JS):\n\n| Classe | Efeito |\n|---|---|\n| (nenhuma) | Pendente — marcador vazio, conector cinza. |\n| `.fs-timeline-active` | Em andamento — marcador preenchido na cor primária. |\n| `.fs-timeline-completed` | Concluído — marcador com check verde; o conector seguinte também fica verde (indica progresso). |\n| `.fs-timeline-failed` | Falhou — marcador e título em vermelho. |",
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ],
+      "historicalSnippets": 1,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": []
+    },
+    {
+      "documentedAttributeValuesAbsentFromFixture": [
+        [
+          "aria-hidden",
+          "true"
+        ],
+        [
+          "aria-label",
+          "Fechar aviso de arquivo salvo"
+        ],
+        [
+          "data-delay",
+          "5000"
+        ],
+        [
+          "data-toast-progress",
+          "true"
+        ]
+      ],
+      "fixtureAttributeValues": [
+        [
+          "aria-label",
+          "Fechar"
+        ],
+        [
+          "data-delay",
+          "4000"
+        ],
+        [
+          "data-fs",
+          "toast"
+        ],
+        [
+          "data-fs-dismiss",
+          "toast"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ],
+      "component": "toast",
+      "priority": "P1",
+      "examples": [
+        "basic"
+      ],
+      "sources": [
+        {
+          "path": "docs/components/toast.md",
+          "sha256": "5bf0b89f506cef58970c2dff71e369a34f6c14cd82ad2249bb68b15bd3fad1b9"
+        },
+        {
+          "path": "packages/fokus-components/scss/components/_toasts.scss",
+          "sha256": "7a116e15855bebf5cd90e9d4a14fc483798198a065986dcafa9092ba15a47ebe"
+        },
+        {
+          "path": "packages/fokus-js/js/toast.d.ts",
+          "sha256": "a0ae33e05c6476512138b33e11eb736098dadcf2c387e1c68abac1d6982d6611"
+        },
+        {
+          "path": "packages/fokus-js/js/toast.js",
+          "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
+        }
+      ],
+      "fixtureClasses": [
+        "fs-btn",
+        "fs-btn-close",
+        "fs-dismiss",
+        "fs-toast",
+        "fs-toast-body",
+        "fs-toast-container",
+        "fs-toast-header",
+        "fs-toast-success"
+      ],
+      "cssScopeClasses": [
+        "fs-icon",
+        "fs-icon-lg",
+        "fs-icon-link",
+        "fs-icon-sm",
+        "fs-icon-xl",
+        "fs-icon-xs",
+        "fs-toast",
+        "fs-toast-actions",
+        "fs-toast-body",
+        "fs-toast-close",
+        "fs-toast-container",
+        "fs-toast-danger",
+        "fs-toast-header",
+        "fs-toast-heading",
+        "fs-toast-icon",
+        "fs-toast-info",
+        "fs-toast-link",
+        "fs-toast-meta",
+        "fs-toast-primary",
+        "fs-toast-progress",
+        "fs-toast-secondary",
+        "fs-toast-success",
+        "fs-toast-title",
+        "fs-toast-warning"
+      ],
+      "classesAbsentFromStaticFixture": [
+        "fs-icon",
+        "fs-icon-lg",
+        "fs-icon-link",
+        "fs-icon-sm",
+        "fs-icon-xl",
+        "fs-icon-xs",
+        "fs-toast-actions",
+        "fs-toast-close",
+        "fs-toast-danger",
+        "fs-toast-heading",
+        "fs-toast-icon",
+        "fs-toast-info",
+        "fs-toast-link",
+        "fs-toast-meta",
+        "fs-toast-primary",
+        "fs-toast-progress",
+        "fs-toast-secondary",
+        "fs-toast-title",
+        "fs-toast-warning"
+      ],
+      "runtimeReadAttributes": [
+        {
+          "name": "data-delay",
+          "line": 9,
+          "code": "this.delay = Number(toastEl.getAttribute(\"data-delay\")) || 4000;",
+          "path": "packages/fokus-js/js/toast.js"
+        },
+        {
+          "name": "data-autohide",
+          "line": 10,
+          "code": "this.autohide = toastEl.getAttribute(\"data-autohide\") !== \"false\";",
+          "path": "packages/fokus-js/js/toast.js"
+        },
+        {
+          "name": "data-toast-progress",
+          "line": 71,
+          "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") === \"true\" && this.autohide) {",
+          "path": "packages/fokus-js/js/toast.js"
+        },
+        {
+          "name": "data-toast-progress",
+          "line": 94,
+          "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") !== \"true\" || !this.autohide) return;",
+          "path": "packages/fokus-js/js/toast.js"
+        },
+        {
+          "name": "data-toast-progress",
+          "line": 101,
+          "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") !== \"true\" || !this.autohide) return;",
+          "path": "packages/fokus-js/js/toast.js"
+        }
+      ],
+      "readAttributesPresent": [
+        "data-delay"
+      ],
+      "readAttributesAbsent": [
+        "data-autohide",
+        "data-toast-progress"
+      ],
+      "typedOptions": [],
+      "consumedTokens": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-radius-md",
+        "--fs-shadow-md",
+        "--fs-tag-icon-glyph-size",
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width",
+        "--fs-z-toast"
+      ],
+      "declaredTokens": [
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width"
+      ],
+      "explicitFixtureTokenOverrides": [],
+      "consumedTokensNotNamedInDoc": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-radius-md",
+        "--fs-shadow-md",
+        "--fs-tag-icon-glyph-size",
+        "--fs-z-toast"
+      ],
+      "tokensWithoutExplicitOverrideExample": [
+        "--fs-alert-danger-bg",
+        "--fs-alert-danger-text",
+        "--fs-alert-info-bg",
+        "--fs-alert-info-text",
+        "--fs-alert-primary-bg",
+        "--fs-alert-primary-text",
+        "--fs-alert-secondary-bg",
+        "--fs-alert-secondary-text",
+        "--fs-alert-success-bg",
+        "--fs-alert-success-text",
+        "--fs-alert-warning-bg",
+        "--fs-alert-warning-text",
+        "--fs-color-border",
+        "--fs-color-danger",
+        "--fs-color-info",
+        "--fs-color-muted",
+        "--fs-color-primary",
+        "--fs-color-secondary",
+        "--fs-color-success",
+        "--fs-color-surface",
+        "--fs-color-text",
+        "--fs-color-warning",
+        "--fs-radius-md",
+        "--fs-shadow-md",
+        "--fs-tag-icon-glyph-size",
+        "--fs-toast-actions-gap",
+        "--fs-toast-border-width",
+        "--fs-toast-gap",
+        "--fs-toast-icon-size",
+        "--fs-toast-max-width",
+        "--fs-toast-offset",
+        "--fs-toast-padding-block",
+        "--fs-toast-padding-inline",
+        "--fs-toast-progress-height",
+        "--fs-toast-radius",
+        "--fs-toast-shadow",
+        "--fs-toast-title-gap",
+        "--fs-toast-width",
+        "--fs-z-toast"
+      ],
+      "cssStates": [
+        ":checked",
+        ":hover",
+        "[data-autohide=false]",
+        "[data-toast-progress=true]"
+      ],
+      "documentationVariantStateSections": "Variantes: `.fs-toast-primary`, `.fs-toast-secondary`, `.fs-toast-success`,\n`.fs-toast-warning`, `.fs-toast-danger` e `.fs-toast-info`.\n\n- `data-delay=\"4000\"` define o tempo de auto-dismiss em milissegundos;\n- `data-autohide=\"false\"` mantém o Toast aberto;\n- `data-toast-progress=\"true\"` exibe a barra de tempo quando o auto-dismiss está ativo;\n- hover, foco e interação pausam o timer e a barra de progresso;\n- `prefers-reduced-motion` elimina a animação contínua do progresso.\n\nO Toast começa oculto, entra em `.is-open` durante a exibição e pode ser\npausado por hover ou foco. `hide()` e auto-dismiss cancelam o timer e ocultam\no elemento sem transferir foco.",
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Notificação demonstrativa; não confirma gravação real. Timer de 4000ms pausa com hover/foco conforme runtime."
+      ],
+      "historicalSnippets": 3,
+      "browserStatus": "não verificado nesta auditoria; infraestrutura anterior bloqueada",
+      "runtimeSources": [
+        "packages/fokus-js/js/toast.js"
+      ]
+    }
+  ]
+}

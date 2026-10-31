@@ -1,0 +1,4 @@
+72 scenarios prepared (12 fixtures × 2 environments × 3 engines). None ran: launch failed.
+Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/firefox-1532/firefox/firefox
+Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/webkit-2311/pw_run.sh

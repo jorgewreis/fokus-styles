@@ -1692,5 +1692,208 @@
       }
     ],
     "extraction": "Composição autoral das classes e tokens conferidos no SCSS; sem runtime JavaScript adicional. Matriz e hashes em evidence/content-variants/."
+  },
+  "stepper/nonlinear-vertical": {
+    "source": "docs/catalog/fixtures/stepper/nonlinear-vertical.html",
+    "startLine": 1,
+    "sha256": "863b664042f0b67d74662fe206ed132509ce1185d2a73dcbc244e33f646d63ce",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_stepper.scss",
+        "sha256": "6abb0a128f02c4651c9f9c83a124c3afd2982061fb97144dd5398270f44c753a"
+      },
+      {
+        "path": "packages/fokus-js/js/stepper.js",
+        "sha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3"
+      }
+    ]
+  },
+  "stepper/validation-error": {
+    "source": "docs/catalog/fixtures/stepper/validation-error.html",
+    "startLine": 1,
+    "sha256": "b7f5f89be370248e445ed9702b344512458abe06d42603d9f74b2cc3babf9b0f",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_stepper.scss",
+        "sha256": "6abb0a128f02c4651c9f9c83a124c3afd2982061fb97144dd5398270f44c753a"
+      },
+      {
+        "path": "packages/fokus-js/js/stepper.js",
+        "sha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3"
+      }
+    ]
+  },
+  "toast/timed-progress": {
+    "source": "docs/catalog/fixtures/toast/timed-progress.html",
+    "startLine": 1,
+    "sha256": "a7a8e32ee6d0c258cd1cefa082370760c1f6caadc8be19c05dea6bdea3c28489",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/toast.js",
+        "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
+      }
+    ]
+  },
+  "toast/persistent-variants": {
+    "source": "docs/catalog/fixtures/toast/persistent-variants.html",
+    "startLine": 1,
+    "sha256": "32da1794e7904ad4d8893de22d50c3d42dc78640c142ea20db552257d1556aea",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/toast.js",
+        "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
+      }
+    ]
+  },
+  "notification-center/history-actions": {
+    "source": "docs/catalog/fixtures/notification-center/history-actions.html",
+    "startLine": 1,
+    "sha256": "84c3e47e98154b74995c76e4c305f9418b33ee08ab86fdf17b0c865c0274074f",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_notification-center.scss",
+        "sha256": "5d3f05649396033053f4b48fa68e54753a93a45a7756fe472dfa4e6ef55767f9"
+      },
+      {
+        "path": "packages/fokus-js/js/notification-center.js",
+        "sha256": "328d3eee486c7008141320b69e2e9a509711602a8301ce89471e8bea67889566"
+      }
+    ]
+  },
+  "progress/determinate-states": {
+    "source": "docs/catalog/fixtures/progress/determinate-states.html",
+    "startLine": 1,
+    "sha256": "09b600e131875108505b69c9e64a594b7b62caee9690b6816c64ff1cf8648b79",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_progress.scss",
+        "sha256": "ce3b984af79caa1e076d54dfaff7ac9d1793733413d37a2fdece50b938d856e2"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_spinner.scss",
+        "sha256": "baf65aa5811ba79614e99bbb4dd8c8166c2a3ca5647586ad5d735f351527eb20"
+      }
+    ]
+  },
+  "progress/indeterminate": {
+    "source": "docs/catalog/fixtures/progress/indeterminate.html",
+    "startLine": 1,
+    "sha256": "575706718f0c81c43dbd627e4d9d105e14d8f58546e1117b004dbdfd03630bc2",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_progress.scss",
+        "sha256": "ce3b984af79caa1e076d54dfaff7ac9d1793733413d37a2fdece50b938d856e2"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_spinner.scss",
+        "sha256": "baf65aa5811ba79614e99bbb4dd8c8166c2a3ca5647586ad5d735f351527eb20"
+      }
+    ]
+  },
+  "skeleton/shapes-wave": {
+    "source": "docs/catalog/fixtures/skeleton/shapes-wave.html",
+    "startLine": 1,
+    "sha256": "7b60c7bbe044b56674767ef7ddd5721ee51ebe0049e265d57b61a55786f449af",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_skeleton.scss",
+        "sha256": "4edfcd145116756604f49e822cd0c83d9eb7cfa9c80829d8b16c8e3b52ce1db6"
+      }
+    ]
+  },
+  "skeleton/loading-complete": {
+    "source": "docs/catalog/fixtures/skeleton/loading-complete.html",
+    "startLine": 1,
+    "sha256": "ac14005ce3161a24a1978302c1caf4f2e3d6dd80537d32d1ad53264cd07cd239",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_skeleton.scss",
+        "sha256": "4edfcd145116756604f49e822cd0c83d9eb7cfa9c80829d8b16c8e3b52ce1db6"
+      }
+    ],
+    "scriptKind": "demo-dom"
+  },
+  "placeholder/loading-complete": {
+    "source": "docs/catalog/fixtures/placeholder/loading-complete.html",
+    "startLine": 1,
+    "sha256": "81ba5f741618c90de8c5add9cf4af02f54548c19aae30dff0670d497127a879d",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_placeholder.scss",
+        "sha256": "48e09785f7e251bdbf2478bace67b6ca528cdc799bd04bb14a694c7e68425b36"
+      }
+    ],
+    "scriptKind": "demo-dom"
+  },
+  "empty-state/recoverable": {
+    "source": "docs/catalog/fixtures/empty-state/recoverable.html",
+    "startLine": 1,
+    "sha256": "e477fabd7f9694326b286aefbe5d42e553c55f07c20a16fa1b40cb62ff50b00e",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_empty-state.scss",
+        "sha256": "16f70abc362a747d943e89f24403505a7939062455b455e6a827303de3d335e7"
+      }
+    ],
+    "scriptKind": "demo-dom"
+  },
+  "timeline/horizontal-states": {
+    "source": "docs/catalog/fixtures/timeline/horizontal-states.html",
+    "startLine": 1,
+    "sha256": "04af8e7f53287ae71abfd030a37024808d968c2bc5dbdd88e7142053ea877469",
+    "origin": "authored-example",
+    "mode": "authored-runtime",
+    "sourceCommit": "519afe3ccc30205b8203ba08d7f4b25ffbe941d6",
+    "rationale": "Derivado das fontes reais e matriz gap 2026-10-31; ver FEEDBACK-VARIANTS.md.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_timeline.scss",
+        "sha256": "ae0d879195d5632f190f064de3e8cae8158f26b041f2013c68d127d43a0166ff"
+      }
+    ]
   }
 }
