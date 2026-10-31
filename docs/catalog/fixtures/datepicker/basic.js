@@ -4,7 +4,7 @@ const instances = [...document.querySelectorAll('[data-fs="datepicker"]')]
   .map((element) => Datepicker.getInstance(element) ?? new Datepicker(element));
 
 for (const instance of instances) {
-  instance.gridEl.setAttribute("aria-label", "Data de entrega");
+  instance.panelEl.querySelector('[role="grid"]').setAttribute("aria-label", "Data de entrega");
 }
 
 window.addEventListener("pagehide", () => {

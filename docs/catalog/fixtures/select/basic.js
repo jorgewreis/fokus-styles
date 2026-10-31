@@ -5,7 +5,8 @@ const instances = [...document.querySelectorAll('[data-fs="select"]')]
 
 // O runtime não transfere o nome do select para o botão gerado.
 for (const instance of instances) {
-  instance.toggleEl.setAttribute("aria-labelledby", `catalog-country-label ${instance.toggleEl.id}`);
+  const toggle = instance.selectEl.nextElementSibling.querySelector("button");
+  toggle.setAttribute("aria-labelledby", `catalog-country-label ${toggle.id}`);
 }
 
 window.addEventListener("pagehide", () => {

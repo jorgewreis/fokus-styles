@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "7beaece9608795de76703e9609318ae6a3d572b8564b79e13b5371b791e0fdab",
+    "digest": "aba4d61e443c0b49af4729b09a642f341b10dad0ce6575f8e6083a156b6be330",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -17,7 +17,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "ad072ba8935d3eed9172f67ec340958ae9d00b20a7af1f100c05328df9b27b7a"
+        "sha256": "f64757ee1a79b66886d6354bf9a1331e1c14fd5222e9558deae683fd4641a3a4"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -237,7 +237,7 @@
       },
       {
         "path": "docs/catalog/fixtures/datatable/states.js",
-        "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+        "sha256": "d8a44f666599b5fa735396ba1cb2a542fd5280e04488a3819220ea3e66d00234"
       },
       {
         "path": "docs/catalog/fixtures/datatable/tokens.css",
@@ -265,7 +265,7 @@
       },
       {
         "path": "docs/catalog/fixtures/datepicker/basic.js",
-        "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+        "sha256": "dc84e3dcc2f809e5935ec96269029769dc64340525e6a0979498335dd2d3c4ea"
       },
       {
         "path": "docs/catalog/fixtures/datepicker/states.html",
@@ -393,7 +393,7 @@
       },
       {
         "path": "docs/catalog/fixtures/notification-center/basic.js",
-        "sha256": "acfcde9309d88dce188d89b8c23f6c6c42e5ca21eeed3b20f003a9c901037120"
+        "sha256": "1821f14b67a390d66979a525340d47a8a020488bdf9ac46f6ddb607066bf8a4d"
       },
       {
         "path": "docs/catalog/fixtures/offcanvas/basic.html",
@@ -469,7 +469,7 @@
       },
       {
         "path": "docs/catalog/fixtures/select/basic.js",
-        "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+        "sha256": "ab437b59b381b8bec422d59f2370c86256fddb5fcac00a99fb3e4ca6c6735719"
       },
       {
         "path": "docs/catalog/fixtures/select/states.html",
@@ -17263,7 +17263,7 @@
           "id": "states",
           "title": "DataTable — carregar, falhar, recuperar",
           "htmlCode": "<div class=\"demo-grid\"><button type=\"button\" class=\"fs-btn \" id=\"load\">Carregar</button><button type=\"button\" class=\"fs-btn \" id=\"error\">Simular erro</button><button type=\"button\" class=\"fs-btn \" id=\"recover\">Recuperar</button></div><div class=\"fs-datatable fs-table-responsive\" data-fs=\"datatable\" data-fs-page-size=\"2\"><div class=\"fs-datatable-toolbar\"><label for=\"people-filter\">Filtrar pessoas</label><input id=\"people-filter\" type=\"search\" data-fs-datatable-filter></div><table class=\"fs-table fs-table-bordered fs-table-sm\"><caption class=\"fs-table-caption\">Valores ordenados numericamente</caption><thead><tr><th scope=\"col\" data-fs-sort=\"name\">Nome</th><th scope=\"col\" data-fs-sort=\"amount\" data-fs-sort-type=\"currency\">Valor</th></tr></thead><tbody><tr><td>Ana</td><td data-fs-sort-value=\"1200\">R$ 1.200,00</td></tr><tr><td>Bruno</td><td data-fs-sort-value=\"20\">R$ 20,00</td></tr><tr><td>Clara</td><td data-fs-sort-value=\"300\">R$ 300,00</td></tr><tr><td>Davi</td><td data-fs-sort-value=\"5\">R$ 5,00</td></tr></tbody></table><p data-fs-datatable-empty hidden>Nenhuma pessoa encontrada.</p><p data-fs-datatable-loading role=\"status\" hidden>Carregando registros.</p><div data-fs-datatable-error role=\"alert\" hidden><span data-fs-datatable-error-message></span></div><nav data-fs-datatable-pagination aria-label=\"Paginação de pessoas\"></nav></div>\n",
-          "jsCode": "import { DataTable } from \"fokus-styles/js\";\nconst root=document.querySelector(\"[data-fs=datatable]\");\nconst instance=DataTable.getInstance(root) ?? new DataTable(root);\nwindow.addEventListener(\"pagehide\",()=>instance.dispose(),{once:true});\ndocument.querySelector(\"#load\").addEventListener(\"click\",()=>instance.setLoading(true));\ndocument.querySelector(\"#error\").addEventListener(\"click\",()=>instance.setError(\"Falha demonstrativa. Tente recuperar.\"));\ndocument.querySelector(\"#recover\").addEventListener(\"click\",()=>{instance.setLoading(false);instance.setError(null);});\n",
+          "jsCode": "import { DataTable } from \"fokus-styles/js\";\nconst root = document.querySelector(\"[data-fs=datatable]\");\nconst instance = DataTable.getInstance(root) ?? new DataTable(root);\nconst controller = new AbortController();\nconst options = { signal: controller.signal };\ndocument.querySelector(\"#load\").addEventListener(\"click\", () => instance.setLoading(true), options);\ndocument.querySelector(\"#error\").addEventListener(\"click\", () => instance.setError(\"Falha demonstrativa. Tente recuperar.\"), options);\ndocument.querySelector(\"#recover\").addEventListener(\"click\", () => {\n  instance.setLoading(false);\n  instance.setError(null);\n}, options);\nwindow.addEventListener(\"pagehide\", () => {\n  controller.abort();\n  instance.dispose();\n}, { once: true });\n",
           "cssCode": ".demo-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }\n.demo-stack { display: grid; gap: 1rem; }\n",
           "coverage": [
             "setLoading",
@@ -17281,7 +17281,7 @@
             },
             {
               "path": "docs/catalog/fixtures/datatable/states.js",
-              "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+              "sha256": "d8a44f666599b5fa735396ba1cb2a542fd5280e04488a3819220ea3e66d00234"
             },
             {
               "path": "docs/catalog/fixtures/datatable/states.css",
@@ -18529,7 +18529,7 @@
           "id": "basic",
           "title": "Datepicker — exemplo adaptado e nomeado",
           "htmlCode": "<label for=\"catalog-date\">Data de entrega</label>\n<div class=\"fs-datepicker\">\n  <input id=\"catalog-date\" type=\"text\" value=\"20/07/2026\" class=\"fs-form-control\" data-fs=\"datepicker\" data-fs-target=\"#dp-entrega\" placeholder=\"dd/mm/aaaa\">\n</div>\n<div id=\"dp-entrega\"></div>\n",
-          "jsCode": "import { Datepicker } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"datepicker\"]')]\n  .map((element) => Datepicker.getInstance(element) ?? new Datepicker(element));\n\nfor (const instance of instances) {\n  instance.gridEl.setAttribute(\"aria-label\", \"Data de entrega\");\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "jsCode": "import { Datepicker } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"datepicker\"]')]\n  .map((element) => Datepicker.getInstance(element) ?? new Datepicker(element));\n\nfor (const instance of instances) {\n  instance.panelEl.querySelector('[role=\"grid\"]').setAttribute(\"aria-label\", \"Data de entrega\");\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
           "cssCode": "",
           "coverage": [
             "markup-adaptado-documentado",
@@ -18549,7 +18549,7 @@
             },
             {
               "path": "docs/catalog/fixtures/datepicker/basic.js",
-              "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+              "sha256": "dc84e3dcc2f809e5935ec96269029769dc64340525e6a0979498335dd2d3c4ea"
             }
           ]
         },
@@ -30501,7 +30501,7 @@
           "id": "basic",
           "title": "Notification-Center — demonstração adaptada documentada",
           "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"notification-center\" data-fs-target=\"#painel-notif\" data-toast-container=\"#demo-toast-container\" aria-label=\"Notificações\">\n  <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/></svg>\n  <span class=\"fs-notification-badge\" hidden>0</span>\n</button>\n\n<div class=\"fs-notification-center\" id=\"painel-notif\" role=\"dialog\" aria-label=\"Notificações\">\n  <div class=\"fs-notification-center-header\">\n    <span class=\"fs-notification-center-title\">Notificações</span>\n    <button type=\"button\" class=\"fs-btn fs-btn-sm\" data-notification=\"clear\">Limpar tudo</button>\n  </div>\n  <ul class=\"fs-notification-list\"></ul>\n  <p class=\"fs-notification-empty\">Nenhuma notificação.</p>\n</div>\n<button type=\"button\" class=\"fs-btn\" id=\"demo-notification\">Adicionar notificação de exemplo</button>\n<div class=\"fs-toast-container\" id=\"demo-toast-container\"></div>\n",
-          "jsCode": "import { NotificationCenter, Toast } from \"fokus-styles/js\";\n\nconst trigger = document.querySelector('[data-fs=\"notification-center\"]');\nconst instance = NotificationCenter.getInstance(trigger) ?? new NotificationCenter(trigger);\nconst add = document.getElementById(\"demo-notification\");\nconst push = () => instance.push({ title: \"Exemplo local\", body: \"Nenhum dado foi enviado.\", variant: \"info\", autohide: false });\nconst focusPanel = () => instance.panelEl.querySelector(\"button\")?.focus();\nadd.addEventListener(\"click\", push);\ntrigger.addEventListener(\"fs:notification:opened\", focusPanel);\nwindow.addEventListener(\"pagehide\", () => {\n  add.removeEventListener(\"click\", push);\n  trigger.removeEventListener(\"fs:notification:opened\", focusPanel);\n  instance.dispose();\n  for (const element of instance.toastContainer.querySelectorAll(\".fs-toast\")) {\n    Toast.getInstance(element)?.dispose();\n    element.remove();\n  }\n}, { once: true });\n",
+          "jsCode": "import { NotificationCenter, Toast } from \"fokus-styles/js\";\n\nconst trigger = document.querySelector('[data-fs=\"notification-center\"]');\nconst instance = NotificationCenter.getInstance(trigger) ?? new NotificationCenter(trigger);\nconst add = document.getElementById(\"demo-notification\");\nconst push = () => instance.push({ title: \"Exemplo local\", body: \"Nenhum dado foi enviado.\", variant: \"info\", autohide: false });\nconst focusPanel = () => instance.panelEl.querySelector(\"button\")?.focus();\nadd.addEventListener(\"click\", push);\ntrigger.addEventListener(\"fs:notification:opened\", focusPanel);\nwindow.addEventListener(\"pagehide\", () => {\n  add.removeEventListener(\"click\", push);\n  trigger.removeEventListener(\"fs:notification:opened\", focusPanel);\n  instance.dispose();\n  for (const element of document.querySelectorAll(\"#demo-toast-container .fs-toast\")) {\n    Toast.getInstance(element)?.dispose();\n    element.remove();\n  }\n}, { once: true });\n",
           "cssCode": "",
           "coverage": [
             "markup-adaptado-documentado",
@@ -30519,7 +30519,7 @@
             },
             {
               "path": "docs/catalog/fixtures/notification-center/basic.js",
-              "sha256": "acfcde9309d88dce188d89b8c23f6c6c42e5ca21eeed3b20f003a9c901037120"
+              "sha256": "1821f14b67a390d66979a525340d47a8a020488bdf9ac46f6ddb607066bf8a4d"
             }
           ]
         }
@@ -41825,7 +41825,7 @@
           "id": "basic",
           "title": "Select — exemplo adaptado e nomeado",
           "htmlCode": "<span id=\"catalog-country-label\">País</span>\n<select aria-labelledby=\"catalog-country-label\" class=\"fs-form-select\" data-fs=\"select\" id=\"pais\">\n  <option value=\"br\">Brasil</option>\n  <option value=\"pt\">Portugal</option>\n  <option value=\"us\" disabled>Estados Unidos (indisponível)</option>\n</select>\n",
-          "jsCode": "import { Select } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"select\"]')]\n  .map((element) => Select.getInstance(element) ?? new Select(element));\n\n// O runtime não transfere o nome do select para o botão gerado.\nfor (const instance of instances) {\n  instance.toggleEl.setAttribute(\"aria-labelledby\", `catalog-country-label ${instance.toggleEl.id}`);\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "jsCode": "import { Select } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"select\"]')]\n  .map((element) => Select.getInstance(element) ?? new Select(element));\n\n// O runtime não transfere o nome do select para o botão gerado.\nfor (const instance of instances) {\n  const toggle = instance.selectEl.nextElementSibling.querySelector(\"button\");\n  toggle.setAttribute(\"aria-labelledby\", `catalog-country-label ${toggle.id}`);\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
           "cssCode": "",
           "coverage": [
             "markup-adaptado-documentado",
@@ -41844,7 +41844,7 @@
             },
             {
               "path": "docs/catalog/fixtures/select/basic.js",
-              "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+              "sha256": "ab437b59b381b8bec422d59f2370c86256fddb5fcac00a99fb3e4ca6c6735719"
             }
           ]
         },

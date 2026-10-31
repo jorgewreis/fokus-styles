@@ -781,7 +781,7 @@
         "sha256": "59ff44cd601f042e7c262a2fe149eda16ed7667934fd6353329fecd4e616254a"
       }
     ],
-    "initializationNotes": "O inicializador dá nome à grade gerada; data inicial determinística no HTML."
+    "initializationNotes": "O inicializador dá nome à grade gerada; data inicial determinística no HTML. Grade nomeada via panelEl.querySelector(role=grid), sem gridEl não tipado."
   },
   "select": {
     "source": "docs/components/select.md",
@@ -807,7 +807,7 @@
         "sha256": "ba6a3292be4d44eb361dcf525668f923799a8ee5da73e681f96641feb0530f7e"
       }
     ],
-    "initializationNotes": "O inicializador nomeia o botão gerado usando aria-labelledby com o rótulo e o próprio texto de seleção; não altera runtime."
+    "initializationNotes": "O inicializador nomeia o botão gerado usando aria-labelledby com o rótulo e o próprio texto de seleção; não altera runtime. Botão localizado pelo DOM adjacente a selectEl, sem toggleEl não tipado."
   },
   "tree-view": {
     "source": "docs/components/tree-view.md",
@@ -929,7 +929,8 @@
         "path": "packages/fokus-js/js/toast.js",
         "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
       }
-    ]
+    ],
+    "initializationNotes": "Toasts descartados no contêiner explícito do HTML, sem toastContainer não tipado."
   },
   "scrollspy": {
     "source": "docs/components/scrollspy.md",
@@ -1526,7 +1527,8 @@
       }
     ],
     "mode": "authored-runtime",
-    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778"
+    "sourceCommit": "68bc9151030f948ff058d50d76d802e4a3dbf778",
+    "initializationNotes": "Listeners locais removidos via AbortController no pagehide antes de dispose; reinit coberto pelo inicializador real."
   },
   "datatable/tokens": {
     "source": "docs/catalog/fixtures/datatable/tokens.html",

@@ -11,7 +11,7 @@ window.addEventListener("pagehide", () => {
   add.removeEventListener("click", push);
   trigger.removeEventListener("fs:notification:opened", focusPanel);
   instance.dispose();
-  for (const element of instance.toastContainer.querySelectorAll(".fs-toast")) {
+  for (const element of document.querySelectorAll("#demo-toast-container .fs-toast")) {
     Toast.getInstance(element)?.dispose();
     element.remove();
   }

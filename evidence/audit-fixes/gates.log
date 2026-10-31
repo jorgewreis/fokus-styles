@@ -1,0 +1,171 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 lint
+> npm run lint:scss
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 lint:scss
+> stylelint "scss/**/*.scss" "packages/*/scss/**/*.scss"
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 types:check
+> tsc --noEmit -p tsconfig.types.json
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 docs:check
+> node scripts/check-docs.mjs && npm run docs:catalog:check
+
+Documentação validada: 56 componentes e 93 arquivos Markdown.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 docs:catalog:check
+> node scripts/catalog.mjs --check
+
+Catalog: 56 components; 90 reviewed examples; next/unpublished; partial.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 test:catalog
+> node --test tests/catalog/*.test.mjs
+
+✔ all source documentation is preserved and generated catalog is exact (32.802307ms)
+✔ CSS evidence retains selector and condition scope (0.220635ms)
+✔ inline module adapter rejects hidden dependencies and escapes script terminators (1.040533ms)
+✔ real HTTP preview server is allowlisted, no CORS, no repository disclosure (165.109807ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2754.709311
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 package:check
+> node scripts/check-consumer-package.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.
+npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.
+npm error code ENOENT
+npm error syscall mkdir
+npm error path /home/agent/.npm
+npm error errno -2
+npm error enoent ENOENT: no such file or directory, mkdir '/home/agent/.npm'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm error Log files were not written due to an error writing to the directory: /home/agent/.npm/_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+node:internal/errors:986
+  const err = new Error(message);
+              ^
+
+Error: Command failed: npm pack --dry-run --json --ignore-scripts
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.
+npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.
+npm error code ENOENT
+npm error syscall mkdir
+npm error path /home/agent/.npm
+npm error errno -2
+npm error enoent ENOENT: no such file or directory, mkdir '/home/agent/.npm'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm error Log files were not written due to an error writing to the directory: /home/agent/.npm/_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+
+    at genericNodeError (node:internal/errors:986:15)
+    at wrappedFn (node:internal/errors:540:14)
+    at checkExecSyncError (node:child_process:943:11)
+    at execFileSync (node:child_process:979:15)
+    at file:///workspace/shared/catalog-audit-fixes/scripts/check-consumer-package.mjs:66:44 {
+  status: 254,
+  signal: null,
+  output: [
+    null,
+    '{\n' +
+      '  "error": {\n' +
+      '    "code": "ENOENT",\n' +
+      `    "summary": "ENOENT: no such file or directory, mkdir '/home/agent/.npm'",\n` +
+      '    "detail": "This is related to npm not being able to find a file."\n' +
+      '  }\n' +
+      '}\n',
+    'npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.\n' +
+      'npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.\n' +
+      'npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.\n' +
+      'npm error code ENOENT\n' +
+      'npm error syscall mkdir\n' +
+      'npm error path /home/agent/.npm\n' +
+      'npm error errno -2\n' +
+      "npm error enoent ENOENT: no such file or directory, mkdir '/home/agent/.npm'\n" +
+      'npm error enoent This is related to npm not being able to find a file.\n' +
+      'npm error enoent\n' +
+      'npm notice\n' +
+      'npm notice New major version of npm available! 11.9.0 -> 12.2.1\n' +
+      'npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\n' +
+      'npm notice To update run: npm install -g npm@12.2.1\n' +
+      'npm notice\n' +
+      'npm error Log files were not written due to an error writing to the directory: /home/agent/.npm/_logs\n' +
+      'npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal\n'
+  ],
+  pid: 186,
+  stdout: '{\n' +
+    '  "error": {\n' +
+    '    "code": "ENOENT",\n' +
+    `    "summary": "ENOENT: no such file or directory, mkdir '/home/agent/.npm'",\n` +
+    '    "detail": "This is related to npm not being able to find a file."\n' +
+    '  }\n' +
+    '}\n',
+  stderr: 'npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.\n' +
+    'npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.\n' +
+    'npm warn tarball tarball data for file:/workspace/shared/catalog-audit-fixes (null) seems to be corrupted. Trying again.\n' +
+    'npm error code ENOENT\n' +
+    'npm error syscall mkdir\n' +
+    'npm error path /home/agent/.npm\n' +
+    'npm error errno -2\n' +
+    "npm error enoent ENOENT: no such file or directory, mkdir '/home/agent/.npm'\n" +
+    'npm error enoent This is related to npm not being able to find a file.\n' +
+    'npm error enoent\n' +
+    'npm notice\n' +
+    'npm notice New major version of npm available! 11.9.0 -> 12.2.1\n' +
+    'npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\n' +
+    'npm notice To update run: npm install -g npm@12.2.1\n' +
+    'npm notice\n' +
+    'npm error Log files were not written due to an error writing to the directory: /home/agent/.npm/_logs\n' +
+    'npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal\n'
+}
+
+Node.js v24.22.1
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

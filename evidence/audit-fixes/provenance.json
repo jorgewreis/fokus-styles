@@ -1,0 +1,30 @@
+{
+  "baseCommit": "2d8f2ba1f60bf3ccfb75e390192376ee5c304613",
+  "scope": "Fixture-only audit corrections; no runtime, SCSS, release or publication changes.",
+  "files": [
+    {
+      "path": "docs/catalog/fixtures/datepicker/basic.js",
+      "sha256": "dc84e3dcc2f809e5935ec96269029769dc64340525e6a0979498335dd2d3c4ea",
+      "previousSha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+    },
+    {
+      "path": "docs/catalog/fixtures/select/basic.js",
+      "sha256": "ab437b59b381b8bec422d59f2370c86256fddb5fcac00a99fb3e4ca6c6735719",
+      "previousSha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+    },
+    {
+      "path": "docs/catalog/fixtures/notification-center/basic.js",
+      "sha256": "1821f14b67a390d66979a525340d47a8a020488bdf9ac46f6ddb607066bf8a4d",
+      "previousSha256": "acfcde9309d88dce188d89b8c23f6c6c42e5ca21eeed3b20f003a9c901037120"
+    },
+    {
+      "path": "docs/catalog/fixtures/datatable/states.js",
+      "sha256": "d8a44f666599b5fa735396ba1cb2a542fd5280e04488a3819220ea3e66d00234",
+      "previousSha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+    },
+    {
+      "path": "tests/unit/catalog-audit-fixes.test.js",
+      "sha256": "5cad1abdbb298d5dfd981301e4f29592c1d2fb7fe77643a3a1200df5dcee2dad"
+    }
+  ]
+}

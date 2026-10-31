@@ -1,0 +1,22 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 docs:check
+> node scripts/check-docs.mjs && npm run docs:catalog:check
+
+Documentação validada: 56 componentes e 93 arquivos Markdown.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fokus-styles@2.7.0 docs:catalog:check
+> node scripts/catalog.mjs --check
+
+Catalog: 56 components; 90 reviewed examples; next/unpublished; partial.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

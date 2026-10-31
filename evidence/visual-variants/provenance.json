@@ -103,7 +103,9 @@
     },
     {
       "path": "docs/catalog/fixtures/datatable/states.js",
-      "sha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb"
+      "sha256": "d8a44f666599b5fa735396ba1cb2a542fd5280e04488a3819220ea3e66d00234",
+      "previousSha256": "5e4814b4331f9df3b4a9e3d4b1c4cb3cd9424ffb4da3146722f6d7748bad89fb",
+      "revisionBaseCommit": "2d8f2ba1f60bf3ccfb75e390192376ee5c304613"
     },
     {
       "path": "docs/catalog/fixtures/datatable/tokens.css",

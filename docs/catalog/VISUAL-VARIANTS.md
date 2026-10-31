@@ -2,7 +2,9 @@
 
 Base: commit 68bc915 do catálogo expandido; matriz de lacunas de 31/10/2026.
 Foram acrescentadas 18 fixtures: três por componente (variants, states,
-tokens). O catálogo passa de 56 a 74 exemplos, ainda parcial e não publicado.
+tokens). Esta frente passou de 56 a 74 exemplos. Após integrar também estados
+de formulários e opções interativas, o catálogo contém **90 exemplos**, ainda
+parcial e não publicado.
 Nada em packages/, scss/ ou no comportamento do runtime foi alterado.
 
 | Componente | Exemplos concretos |
@@ -26,7 +28,8 @@ Nada em packages/, scss/ ou no comportamento do runtime foi alterado.
   nativo; não apresenta aria-disabled como bloqueio funcional completo.
 - Fechar/restaurar Alert é JavaScript de demonstração, não API do pacote.
 - DataTable usa a instância existente quando autoInit já executou e dispose
-  no pagehide. Os testes acessam somente linhas não ocultas: o runtime mantém
+  no pagehide; states também remove os listeners locais antes de descartar a
+  instância, permitindo reinicialização sem callbacks antigos. Os testes acessam somente linhas não ocultas: o runtime mantém
   outras páginas no DOM.
 - A matriz estática pode listar classes de componentes importados como
   lacunas do componente atual; não se pretende eliminar essas ocorrências
