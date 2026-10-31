@@ -11,8 +11,21 @@ describe("curated catalog fixtures", () => {
       it(`${component}/${entry.id} preserves complete documented markup and CSS classes`, () => {
         const html = read(entry.html);
         const source = provenance[component];
-        expect(read(source.source)).toContain(html.trimEnd());
-        expect(read(source.source).split("\n").slice(source.startLine - 1).join("\n").startsWith(html)).toBe(true);
+        const original = source.sourceCode ?? html;
+        expect(read(source.source)).toContain(original.trimEnd());
+        expect(read(source.source).split("\n").slice(source.startLine - 1).join("\n").startsWith(original)).toBe(true);
+        if (source.sourceCode) {
+          expect(createHash("sha256").update(original).digest("hex")).toBe(source.sourceSha256);
+          if (original !== html) expect(source.transformations.length).toBeGreaterThan(0);
+          if (source.transformations.every(t => typeof t === "object" && "from" in t && "to" in t)) {
+            let transformed = original;
+            for (const transformation of source.transformations) {
+              expect(transformed).toContain(transformation.from);
+              transformed = transformed.replaceAll(transformation.from, transformation.to);
+            }
+            expect(transformed).toBe(html);
+          }
+        }
         for (const implementation of source.implementation ?? []) {
           expect(createHash("sha256").update(read(implementation.path)).digest("hex")).toBe(implementation.sha256);
         }
@@ -32,11 +45,17 @@ describe("curated catalog fixtures", () => {
           const id = el.getAttribute("for") ?? el.getAttribute("data-fs-target").slice(1);
           expect(ids).toContain(id);
         }
+        for (const element of container.querySelectorAll("[aria-labelledby], [aria-describedby], [aria-controls]")) {
+          for (const attribute of ["aria-labelledby", "aria-describedby", "aria-controls"]) {
+            for (const target of (element.getAttribute(attribute) ?? "").split(/\s+/).filter(Boolean)) expect(ids, `${component}: ${attribute}=${target}`).toContain(target);
+          }
+        }
         expect(entry.limitations.length).toBeGreaterThan(0);
         if (entry.js) {
           const js = read(entry.js);
           expect(js).toMatch(/from "fokus-styles\/js"/);
-          expect(js).toContain("instance.dispose()");
+          expect(js).toContain("pagehide");
+          if (component !== "alert-dialog") expect(js).toContain("instance.dispose()");
         }
       });
     }

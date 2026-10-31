@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "142b2af10edc0d21e6dafc94a0ac49cb7fc7d4d434faa483ad1da08f421e4b69",
+    "digest": "42ec16275c97e937c2363125a1694c8cafb9b247a74d4dd6559e50d78646950f",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,11 +13,11 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "366fb2ffc0bd9f18b289e1e3af85437db43c3ba706aeb5b3df63ae4f368920e7"
+        "sha256": "517e0048eb154be4f2b14e079590ac7b8c6eafbabf31483cd79112bb2a1538ed"
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "ed270c6a5ab19c2a85ac45476d77834f4b0db9a528fbd4512764ce1a631d8e9f"
+        "sha256": "341bc3f5dfc03a45fe3a22bedbd936777405327080c320442acb7f59f6bd76c7"
       },
       {
         "path": "docs/catalog/fixtures/accordion/basic.html",
@@ -28,8 +28,20 @@
         "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
       },
       {
+        "path": "docs/catalog/fixtures/alert-dialog/basic.html",
+        "sha256": "5c322996b097f8100166af2f1a9782ec333dc2ae533d2f316bf118e95ee2f17a"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert-dialog/basic.js",
+        "sha256": "1daf672021fc9489cd7288c86549db00e839b6e81b98bb624a0417508ed9feca"
+      },
+      {
         "path": "docs/catalog/fixtures/alert/basic.html",
         "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f"
+      },
+      {
+        "path": "docs/catalog/fixtures/avatar/basic.html",
+        "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7"
       },
       {
         "path": "docs/catalog/fixtures/badge/basic.html",
@@ -52,6 +64,14 @@
         "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194"
       },
       {
+        "path": "docs/catalog/fixtures/carousel/basic.html",
+        "sha256": "557c355543e596e11d0b463e511490490d7b0a8c2137218e46501794d610e0fa"
+      },
+      {
+        "path": "docs/catalog/fixtures/carousel/basic.js",
+        "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+      },
+      {
         "path": "docs/catalog/fixtures/checkbox/basic.html",
         "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
       },
@@ -72,6 +92,38 @@
         "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
       },
       {
+        "path": "docs/catalog/fixtures/combobox/basic.html",
+        "sha256": "ac51fac3eb7bd8a8c73fdc973f872edea4c3e96a3135511c6c6f77bd8c57f7b8"
+      },
+      {
+        "path": "docs/catalog/fixtures/combobox/basic.js",
+        "sha256": "24b6dd74075de12dbe51a4a1149a6a094749f3dc81f40605ed91b4d31b8ed544"
+      },
+      {
+        "path": "docs/catalog/fixtures/command-palette/basic.html",
+        "sha256": "b703767171b758b1d5c57ff8e09f0e8102266b1a31acc0f9ee13a39950f187ab"
+      },
+      {
+        "path": "docs/catalog/fixtures/command-palette/basic.js",
+        "sha256": "2652ecea099a424e50228d9d351ca04786353a5ed3678f90eb6caa9a0061a179"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/basic.html",
+        "sha256": "dc0de112cbe2df4a6ed975e705ffc12c54cb2e0d6decfd77fb4afe8ca4f177f9"
+      },
+      {
+        "path": "docs/catalog/fixtures/datatable/basic.js",
+        "sha256": "0aed599ebf3ab464b6a706aa314ed6197de026736ae2f04f8f45eb69174d07a6"
+      },
+      {
+        "path": "docs/catalog/fixtures/datepicker/basic.html",
+        "sha256": "1c4022acd1ff8557f8deedc3f4866b8804325c367744109cb3949fd85d22468a"
+      },
+      {
+        "path": "docs/catalog/fixtures/datepicker/basic.js",
+        "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+      },
+      {
         "path": "docs/catalog/fixtures/divider/basic.html",
         "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
       },
@@ -88,12 +140,24 @@
         "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
       },
       {
+        "path": "docs/catalog/fixtures/file-upload-advanced/basic.html",
+        "sha256": "d3cbe2b9ba47e3fb564d777fcfdf07082290f267e9cede1217675f1425ea4145"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload-advanced/basic.js",
+        "sha256": "fd96d743236b65bdd171e40b7fd4089aedb943416fa9b61c777a7eaa0bc26858"
+      },
+      {
         "path": "docs/catalog/fixtures/file-upload/basic.html",
         "sha256": "1f147bdbcf8eb0636090eb539789d6a80195f8959fa71ba5024bc6fedb4af52f"
       },
       {
+        "path": "docs/catalog/fixtures/icon-link/basic.html",
+        "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284"
+      },
+      {
         "path": "docs/catalog/fixtures/input-group/basic.html",
-        "sha256": "4c0270d08997ffed0e310f5d1c53942b97de907b9f35bd4354e20d6047fc5bbd"
+        "sha256": "8ec6e1bf606f93358bc5ccdbb429ce138f128b381b21e79c3ee11a746dc65534"
       },
       {
         "path": "docs/catalog/fixtures/input/basic.html",
@@ -104,6 +168,10 @@
         "sha256": "ec704cce2676115fcafaf3296ba3495cd060bf341eb38a38a5d843b964b00b22"
       },
       {
+        "path": "docs/catalog/fixtures/menu/basic.html",
+        "sha256": "c2a5c756e23092b4391d89e433c2dbd803246d05e8151825ade83ab7b4d54a4c"
+      },
+      {
         "path": "docs/catalog/fixtures/modal/basic.html",
         "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff"
       },
@@ -112,8 +180,56 @@
         "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
       },
       {
+        "path": "docs/catalog/fixtures/navbar/basic.html",
+        "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b"
+      },
+      {
+        "path": "docs/catalog/fixtures/navbar/basic.js",
+        "sha256": "6074e84cbdb3d1a414994b1e3007ff617554afc8b3710d9bf1cc0f339782bace"
+      },
+      {
+        "path": "docs/catalog/fixtures/nested-menu/basic.html",
+        "sha256": "3fd00b6c46c56adfdeadcaf6e9dfea5a02cd312c98ac78992e561fc56d811448"
+      },
+      {
+        "path": "docs/catalog/fixtures/nested-menu/basic.js",
+        "sha256": "a0732f1a721fb29f0464bd34b5a84a784cb8874aaa3317e84e93b8578caf25f5"
+      },
+      {
+        "path": "docs/catalog/fixtures/notification-center/basic.html",
+        "sha256": "d400137a9004f6b616360ee06e3bc6dd6d46feb126d7c1c9d0cca3306a0993a0"
+      },
+      {
+        "path": "docs/catalog/fixtures/notification-center/basic.js",
+        "sha256": "acfcde9309d88dce188d89b8c23f6c6c42e5ca21eeed3b20f003a9c901037120"
+      },
+      {
+        "path": "docs/catalog/fixtures/offcanvas/basic.html",
+        "sha256": "580157829cc682747726eae055d1a4dd626983aa3528789263b3c3fe0eeb2525"
+      },
+      {
+        "path": "docs/catalog/fixtures/offcanvas/basic.js",
+        "sha256": "0058a761f718a6c3d6d30e0707e560851dbe57e4bc59996ce9fa59efe1ca7975"
+      },
+      {
+        "path": "docs/catalog/fixtures/pagination/basic.html",
+        "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf"
+      },
+      {
         "path": "docs/catalog/fixtures/placeholder/basic.html",
         "sha256": "7d0ddcae303263d2d6be825a38c7e4375f59ed1886e9c516a9ba8a9f68499e14"
+      },
+      {
+        "path": "docs/catalog/fixtures/popover/basic.html",
+        "sha256": "9a8440b0ef055aa8f2182d65777b1a1559bfbc149cb4c8b321e8faa662ed2f2f"
+      },
+      {
+        "path": "docs/catalog/fixtures/popover/basic.js",
+        "sha256": "8233d8a00e8ee01b56cd5e9b61c1e4516fcd7d31fa81cd57afedff359d610e77"
+      },
+      {
+        "path": "docs/catalog/fixtures/progress/basic.html",
+        "sha256": "c0407f433130d477f2529d8f737cf90c212ef9943173667a68f68719c29d7e13"
       },
       {
         "path": "docs/catalog/fixtures/radio/basic.html",
@@ -124,12 +240,36 @@
         "sha256": "81062ab98d7b020ff6746d7ec41499497b4593c41803ae9177c824d4026cd6ef"
       },
       {
+        "path": "docs/catalog/fixtures/rating/basic.html",
+        "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519"
+      },
+      {
+        "path": "docs/catalog/fixtures/ratio/basic.html",
+        "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd"
+      },
+      {
         "path": "docs/catalog/fixtures/responsive/basic.html",
         "sha256": "729f4d2dcf23af7eef2de794ee38e416181ea6d7a18eec5a2f828ea120b63219"
       },
       {
+        "path": "docs/catalog/fixtures/scrollspy/basic.html",
+        "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c"
+      },
+      {
+        "path": "docs/catalog/fixtures/scrollspy/basic.js",
+        "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
+      },
+      {
         "path": "docs/catalog/fixtures/segmented-control/basic.html",
         "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d"
+      },
+      {
+        "path": "docs/catalog/fixtures/select/basic.html",
+        "sha256": "05954303d7c4d75645be5da22aa6c7a8807681149fe83b8f2ffaa86ff1c4e464"
+      },
+      {
+        "path": "docs/catalog/fixtures/select/basic.js",
+        "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
       },
       {
         "path": "docs/catalog/fixtures/skeleton/basic.html",
@@ -174,6 +314,30 @@
       {
         "path": "docs/catalog/fixtures/timeline/basic.html",
         "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/basic.html",
+        "sha256": "9c1b7f0fe58e3f7a6e64f8329a7a147eb30b049505f6dfb1752f7ea76ebf1b1c"
+      },
+      {
+        "path": "docs/catalog/fixtures/toast/basic.js",
+        "sha256": "e7f134ce1c3a6211d2cb4aab90ee2c2b5a693042fff9fbc4c35f114a8acae1a3"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/basic.html",
+        "sha256": "12c9097a0b9c177af86ec26fb4cf26e174732c79e97c54f4e09fa166525f3892"
+      },
+      {
+        "path": "docs/catalog/fixtures/tooltip/basic.js",
+        "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+      },
+      {
+        "path": "docs/catalog/fixtures/tree-view/basic.html",
+        "sha256": "7bea5c95f92d8fd75d0e41f0678fb06ae7d6667abd57fcb15a003003b9ca32d4"
+      },
+      {
+        "path": "docs/catalog/fixtures/tree-view/basic.js",
+        "sha256": "69c655df1040387ce24ffff4533e8c2f63a33482c8319688a9058f5e1703f9e2"
       },
       {
         "path": "docs/components/accordion.md",
@@ -1247,8 +1411,8 @@
   },
   "coverage": {
     "components": 56,
-    "withExamples": 32,
-    "examples": 32,
+    "withExamples": 56,
+    "examples": 56,
     "complete": false
   },
   "contracts": [
@@ -4793,7 +4957,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Alert-Dialog — demonstração adaptada documentada",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-danger\" id=\"btn-excluir\">Excluir conta</button>\n<p role=\"status\" id=\"confirm-result\">Demonstração: nenhum dado será excluído.</p>\n",
+          "jsCode": "import { confirm } from \"fokus-styles/js\";\n\nconst trigger = document.getElementById(\"btn-excluir\");\nconst result = document.getElementById(\"confirm-result\");\nlet pending = false;\nlet ownedDialog = null;\nlet disposed = false;\nconst open = async () => {\n  if (pending || disposed) return;\n  pending = true;\n  trigger.disabled = true;\n  const existing = new Set(document.querySelectorAll(\".fs-alert-dialog\"));\n  const promise = confirm({ title: \"Excluir conta?\", message: \"Demonstração: nenhum dado será excluído.\", confirmText: \"Confirmar demonstração\", variant: \"danger\" });\n  ownedDialog = [...document.querySelectorAll(\".fs-alert-dialog\")].find(el => !existing.has(el));\n  const confirmed = await promise;\n  ownedDialog = null;\n  pending = false;\n  trigger.disabled = false;\n  if (!disposed) trigger.focus();\n  if (!disposed) result.textContent = confirmed ? \"Demonstração confirmada; nenhum dado foi excluído.\" : \"Demonstração cancelada.\";\n};\ntrigger.addEventListener(\"click\", open);\nwindow.addEventListener(\"pagehide\", () => {\n  disposed = true;\n  trigger.removeEventListener(\"click\", open);\n  ownedDialog?.querySelector('[data-action=\"cancel\"]')?.click();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+            "A fábrica confirm não expõe dispose; o exemplo cancela apenas o diálogo que criou. Não há exclusão de conta nem backend."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert-dialog/basic.html",
+              "sha256": "5c322996b097f8100166af2f1a9782ec333dc2ae533d2f316bf118e95ee2f17a"
+            },
+            {
+              "path": "docs/catalog/fixtures/alert-dialog/basic.js",
+              "sha256": "1daf672021fc9489cd7288c86549db00e839b6e81b98bb624a0417508ed9feca"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -5000,7 +5191,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Avatar — exemplo adaptado e rastreável",
+          "htmlCode": "<span class=\"fs-avatar\" role=\"img\" aria-label=\"Jorge Reis\">JR</span>\n<span class=\"fs-avatar fs-avatar-lg\" role=\"img\" aria-label=\"Érica Reis\">ER</span>\n<span class=\"fs-avatar fs-avatar-sm fs-avatar-square\" role=\"img\" aria-label=\"Equipe jurídica\">EJ</span>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Iniciais apenas; não demonstra carregamento, recorte nem fallback automático de imagens."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/avatar/basic.html",
+              "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -12491,7 +12704,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Carousel — demonstração adaptada documentada",
+          "htmlCode": "<div class=\"fs-carousel\" data-fs=\"carousel\" aria-label=\"Destaques de produto\">\n  <div class=\"fs-carousel-inner\">\n    <div class=\"fs-carousel-item is-active\">\n      <img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22320%22%20viewBox%3D%220%200%20640%20320%22%3E%3Crect%20width%3D%22640%22%20height%3D%22320%22%20fill%3D%22%23143a66%22%2F%3E%3Ccircle%20cx%3D%22320%22%20cy%3D%22160%22%20r%3D%2290%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E\" alt=\"Ilustração geométrica azul\" width=\"640\" height=\"320\">\n      <div class=\"fs-carousel-caption\">\n        <h2>Fluxos mais claros</h2>\n        <p>Centralize tarefas recorrentes em uma experiência previsível.</p>\n      </div>\n    </div>\n    <div class=\"fs-carousel-item\"><img src=\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22320%22%20viewBox%3D%220%200%20640%20320%22%3E%3Crect%20width%3D%22640%22%20height%3D%22320%22%20fill%3D%22%23145c44%22%2F%3E%3Ccircle%20cx%3D%22320%22%20cy%3D%22160%22%20r%3D%2290%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E\" alt=\"Ilustração geométrica verde\" width=\"640\" height=\"320\"></div>\n  </div>\n  <button type=\"button\" class=\"fs-carousel-control-prev\" aria-label=\"Slide anterior\"></button>\n  <button type=\"button\" class=\"fs-carousel-control-next\" aria-label=\"Próximo slide\"></button>\n</div>\n",
+          "jsCode": "import { Carousel } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"carousel\"]')]\n  .map(element => Carousel.getInstance(element) ?? new Carousel(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+            "Ilustrações geométricas de demonstração, sem fotografia; autoplay, swipe e variantes não são demonstrados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/carousel/basic.html",
+              "sha256": "557c355543e596e11d0b463e511490490d7b0a8c2137218e46501794d610e0fa"
+            },
+            {
+              "path": "docs/catalog/fixtures/carousel/basic.js",
+              "sha256": "01505ec221704347032343a078f8e78b90b04b1df5fe8a5e0fb4f649dac4fb48"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -14454,7 +14694,36 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Combobox — exemplo adaptado e nomeado",
+          "htmlCode": "<label for=\"catalog-framework\">Framework</label>\n<div class=\"fs-combobox\">\n  <input id=\"catalog-framework\" type=\"text\" class=\"fs-form-control\" data-fs=\"combobox\" data-fs-target=\"#lista-frameworks\" placeholder=\"Buscar framework…\">\n</div>\n<ul class=\"fs-dropdown-menu fs-combobox-listbox\" id=\"lista-frameworks\" aria-label=\"Frameworks disponíveis\">\n  <li class=\"fs-dropdown-item\" data-value=\"bootstrap\">Bootstrap</li>\n  <li class=\"fs-dropdown-item\" data-value=\"tailwind\">Tailwind CSS</li>\n  <li class=\"fs-dropdown-item is-disabled\" data-fs-empty hidden>Nenhum resultado encontrado.</li>\n</ul>\n",
+          "jsCode": "import { Combobox } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"combobox\"]')]\n  .map((element) => Combobox.getInstance(element) ?? new Combobox(element));\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+            "Filtro local de duas opções; texto livre não representa seleção validada."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/combobox/basic.html",
+              "sha256": "ac51fac3eb7bd8a8c73fdc973f872edea4c3e96a3135511c6c6f77bd8c57f7b8"
+            },
+            {
+              "path": "docs/catalog/fixtures/combobox/basic.js",
+              "sha256": "24b6dd74075de12dbe51a4a1149a6a094749f3dc81f40605ed91b4d31b8ed544"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -15127,7 +15396,36 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "CommandPalette — exemplo adaptado e nomeado",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"command-palette\" data-fs-target=\"#paleta\" data-fs-shortcut=\"mod+k\">\n  Comandos (Ctrl+K)\n</button>\n\n<div class=\"fs-command-palette\" id=\"paleta\" aria-label=\"Comandos disponíveis\">\n  <div class=\"fs-command-palette-dialog\">\n    <label for=\"catalog-command\">Buscar comando</label>\n    <input id=\"catalog-command\" type=\"text\" class=\"fs-command-palette-input\" placeholder=\"Digite um comando…\">\n    <ul class=\"fs-command-palette-list\" aria-label=\"Resultados de comandos\">\n      <li class=\"fs-dropdown-item\" data-value=\"new-file\">Novo arquivo</li>\n      <li class=\"fs-dropdown-item\" data-value=\"open-settings\">Abrir configurações</li>\n      <li class=\"fs-dropdown-item is-disabled\" data-fs-empty hidden>Nenhum comando encontrado.</li>\n    </ul>\n  </div>\n</div>\n",
+          "jsCode": "import { CommandPalette } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"command-palette\"]')]\n  .map((element) => CommandPalette.getInstance(element) ?? new CommandPalette(element));\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+            "Comandos demonstrativos: seleção emite evento, mas não cria arquivo nem abre configurações."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/command-palette/basic.html",
+              "sha256": "b703767171b758b1d5c57ff8e09f0e8102266b1a31acc0f9ee13a39950f187ab"
+            },
+            {
+              "path": "docs/catalog/fixtures/command-palette/basic.js",
+              "sha256": "2652ecea099a424e50228d9d351ca04786353a5ed3678f90eb6caa9a0061a179"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -16274,7 +16572,36 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "DataTable — exemplo adaptado e nomeado",
+          "htmlCode": "<div class=\"fs-datatable\" data-fs=\"datatable\" data-fs-page-size=\"5\">\n  <div class=\"fs-datatable-toolbar\">\n    <label for=\"catalog-filter\">Filtrar pessoas</label>\n    <input id=\"catalog-filter\" type=\"search\" class=\"fs-form-control\" data-fs-datatable-filter placeholder=\"Filtrar…\">\n  </div>\n  <table class=\"fs-table fs-table-striped fs-table-hover\">\n    <caption>Pessoas de exemplo</caption>\n    <thead>\n      <tr>\n        <th scope=\"col\" data-fs-sort=\"name\">Nome</th>\n        <th scope=\"col\" data-fs-sort=\"age\">Idade</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr><td>Ana</td><td>35</td></tr>\n      <tr><td>Bruno</td><td>19</td></tr>\n    </tbody>\n  </table>\n  <div class=\"fs-empty-state\" data-fs-datatable-empty hidden>\n    <p class=\"fs-empty-state-title\">Nenhum resultado encontrado.</p>\n  </div>\n</div>\n",
+          "jsCode": "import { DataTable } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"datatable\"]')]\n  .map((element) => DataTable.getInstance(element) ?? new DataTable(element));\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+            "Duas linhas locais, sem busca remota, paginação com múltiplas páginas ou persistência."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datatable/basic.html",
+              "sha256": "dc0de112cbe2df4a6ed975e705ffc12c54cb2e0d6decfd77fb4afe8ca4f177f9"
+            },
+            {
+              "path": "docs/catalog/fixtures/datatable/basic.js",
+              "sha256": "0aed599ebf3ab464b6a706aa314ed6197de026736ae2f04f8f45eb69174d07a6"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -17481,7 +17808,36 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Datepicker — exemplo adaptado e nomeado",
+          "htmlCode": "<label for=\"catalog-date\">Data de entrega</label>\n<div class=\"fs-datepicker\">\n  <input id=\"catalog-date\" type=\"text\" value=\"20/07/2026\" class=\"fs-form-control\" data-fs=\"datepicker\" data-fs-target=\"#dp-entrega\" placeholder=\"dd/mm/aaaa\">\n</div>\n<div id=\"dp-entrega\"></div>\n",
+          "jsCode": "import { Datepicker } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"datepicker\"]')]\n  .map((element) => Datepicker.getInstance(element) ?? new Datepicker(element));\n\nfor (const instance of instances) {\n  instance.gridEl.setAttribute(\"aria-label\", \"Data de entrega\");\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+            "Data inicial fixa para reprodução; não há validação min/max nesta API."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/datepicker/basic.html",
+              "sha256": "1c4022acd1ff8557f8deedc3f4866b8804325c367744109cb3949fd85d22468a"
+            },
+            {
+              "path": "docs/catalog/fixtures/datepicker/basic.js",
+              "sha256": "4b218557bc7afcde648877851ab8c5397ecf506918458e904057e2098b1b1ce9"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -22259,7 +22615,35 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "File-Upload-Advanced — demonstração adaptada documentada",
+          "htmlCode": "<div class=\"fs-file-upload\" data-fs=\"file-upload-advanced\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"anexos\" multiple>\n  <label for=\"anexos\" class=\"fs-file-label fs-file-label-dropzone\">\n    Escolher arquivos locais\n    <span class=\"fs-file-dropzone-hint\">Vários arquivos; nenhum envio será realizado</span>\n  </label>\n</div>\n",
+          "jsCode": "import { FileUploadAdvanced } from \"fokus-styles/js\";\n\nconst root = document.querySelector('[data-fs=\"file-upload-advanced\"]');\nconst instance = FileUploadAdvanced.getInstance(root) ?? new FileUploadAdvanced(root);\nwindow.addEventListener(\"pagehide\", () => {\n  instance.dispose();\n  root.querySelector(\".fs-file-upload-list\")?.replaceChildren();\n  root.querySelector(\"input\").value = \"\";\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+            "Não envia, não limita tamanho e não faz drag-and-drop. Progresso permanece em zero sem integração do aplicativo. O teardown do exemplo limpa a lista pertencente à fixture.",
+            "A CSP da prévia deste checkpoint não permite imagens blob:; miniaturas locais podem ser bloqueadas, embora a lista de arquivos funcione. Validar a integração CSP antes de uso."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/file-upload-advanced/basic.html",
+              "sha256": "d3cbe2b9ba47e3fb564d777fcfdf07082290f267e9cede1217675f1425ea4145"
+            },
+            {
+              "path": "docs/catalog/fixtures/file-upload-advanced/basic.js",
+              "sha256": "fd96d743236b65bdd171e40b7fd4089aedb943416fa9b61c777a7eaa0bc26858"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -22410,7 +22794,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Icon-Link — exemplo adaptado e rastreável",
+          "htmlCode": "<a class=\"fs-icon-link\" href=\"#documentacao-catalogo\">\n  Ver documentação\n  <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\" focusable=\"false\">\n    <path d=\"M5 12h14m-6-6 6 6-6 6\" />\n  </svg>\n</a>\n<section id=\"documentacao-catalogo\"><h2>Documentação do exemplo</h2><p>Destino local demonstrativo, sem navegação externa.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Navegação por âncora local; não representa rota real de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/icon-link/basic.html",
+              "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -24612,22 +25018,22 @@
       "examples": [
         {
           "id": "basic",
-          "title": "Input-Group — exemplo documentado",
-          "htmlCode": "<div class=\"fs-input-group\">\n  <span class=\"fs-input-group-text\">R$</span>\n  <input type=\"number\" class=\"fs-form-control\">\n</div>\n",
+          "title": "Input Group — campo nomeado com moeda",
+          "htmlCode": "<label for=\"valor-catalogo\" class=\"fs-form-label\">Valor em reais</label>\n<div class=\"fs-input-group\">\n  <span class=\"fs-input-group-text\" id=\"moeda-catalogo\">R$</span>\n  <input type=\"number\" class=\"fs-form-control\" id=\"valor-catalogo\" aria-describedby=\"moeda-catalogo\">\n</div>\n",
           "jsCode": "",
           "cssCode": "",
           "coverage": [
-            "markup-documentado",
+            "markup-adaptado-rastreavel",
             "classes-css-compiladas"
           ],
           "limitations": [
             "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
-            "Trecho literal sem nome acessível para o campo; aplicativo deve adicionar label antes do uso. Não aprovado como exemplo de acessibilidade."
+            "Campo nomeado e moeda descrita; não inclui validação, formatação monetária nem envio."
           ],
           "sources": [
             {
               "path": "docs/catalog/fixtures/input-group/basic.html",
-              "sha256": "4c0270d08997ffed0e310f5d1c53942b97de907b9f35bd4354e20d6047fc5bbd"
+              "sha256": "8ec6e1bf606f93358bc5ccdbb429ce138f128b381b21e79c3ee11a746dc65534"
             }
           ]
         }
@@ -25225,7 +25631,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Menu — exemplo adaptado e rastreável",
+          "htmlCode": "<nav class=\"fs-menu\" aria-label=\"Configurações\">\n  <p class=\"fs-menu-label\">Conta</p>\n  <ul class=\"fs-menu-list\">\n    <li><a href=\"#perfil-catalogo\" aria-current=\"page\">Perfil</a></li>\n    <li><a href=\"#seguranca-catalogo\">Segurança</a></li>\n  </ul>\n</nav>\n<section id=\"perfil-catalogo\"><h2>Perfil</h2><p>Conteúdo demonstrativo.</p></section>\n<section id=\"seguranca-catalogo\"><h2>Segurança</h2><p>Conteúdo demonstrativo.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Links locais funcionais; aria-current permanece estático, sem roteador de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/menu/basic.html",
+              "sha256": "c2a5c756e23092b4391d89e433c2dbd803246d05e8151825ade83ab7b4d54a4c"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -26555,7 +26983,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Navbar — exemplo completo baseado na documentação",
+          "htmlCode": "<nav class=\"fs-navbar\" data-fs=\"navbar\" aria-label=\"Navegação principal\">\n  <a href=\"#inicio\" class=\"fs-navbar-brand\">Minha Marca</a>\n  <button type=\"button\" class=\"fs-navbar-toggler\" data-fs-toggle=\"navbar\"\n          data-fs-target=\"#menuPrincipal\" aria-controls=\"menuPrincipal\" aria-expanded=\"false\">\n    Menu\n  </button>\n  <div id=\"menuPrincipal\" class=\"fs-navbar-collapse\" hidden>\n    <ul class=\"fs-navbar-nav\">\n      <li><a href=\"#inicio\" class=\"fs-nav-link is-active\" aria-current=\"location\">Início</a></li>\n      <li><a href=\"#produtos\" class=\"fs-nav-link\">Produtos</a></li>\n    </ul>\n  </div>\n</nav>\n<section id=\"inicio\"><h2>Início</h2><p>Conteúdo demonstrativo inicial.</p></section>\n<section id=\"produtos\"><h2>Produtos</h2><p>Conteúdo demonstrativo dos produtos.</p></section>\n",
+          "jsCode": "import { Navbar } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"navbar\"]')]\n  .map((element) => Navbar.getInstance(element) ?? new Navbar(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+            "Estado aria-current é estático e não acompanha navegação por âncora; exemplo demonstra apenas menu recolhível."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/navbar/basic.html",
+              "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b"
+            },
+            {
+              "path": "docs/catalog/fixtures/navbar/basic.js",
+              "sha256": "6074e84cbdb3d1a414994b1e3007ff617554afc8b3710d9bf1cc0f339782bace"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -27360,7 +27815,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "NestedMenu — exemplo completo baseado na documentação",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"nested-menu\" data-fs-target=\"#menu\">\n  Arquivo\n</button>\n<div class=\"fs-dropdown-menu\" id=\"menu\" aria-label=\"Arquivo\">\n  <button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">Novo</button>\n  <div class=\"fs-dropdown-submenu\">\n    <button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</button>\n    <div class=\"fs-dropdown-menu\" aria-label=\"Exportar\">\n      <button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">PDF</button>\n      <button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">CSV</button>\n    </div>\n  </div>\n  <button type=\"button\" role=\"menuitem\" class=\"fs-dropdown-item\">Fechar</button>\n</div>\n",
+          "jsCode": "import { NestedMenu } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"nested-menu\"]')]\n  .map((element) => NestedMenu.getInstance(element) ?? new NestedMenu(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+            "Ações Novo/PDF/CSV/Fechar são demonstrativas; folhas fecham o menu mas não criam/exportam arquivos."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/nested-menu/basic.html",
+              "sha256": "3fd00b6c46c56adfdeadcaf6e9dfea5a02cd312c98ac78992e561fc56d811448"
+            },
+            {
+              "path": "docs/catalog/fixtures/nested-menu/basic.js",
+              "sha256": "a0732f1a721fb29f0464bd34b5a84a784cb8874aaa3317e84e93b8578caf25f5"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -29135,7 +29617,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Notification-Center — demonstração adaptada documentada",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"notification-center\" data-fs-target=\"#painel-notif\" data-toast-container=\"#demo-toast-container\" aria-label=\"Notificações\">\n  <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/></svg>\n  <span class=\"fs-notification-badge\" hidden>0</span>\n</button>\n\n<div class=\"fs-notification-center\" id=\"painel-notif\" role=\"dialog\" aria-label=\"Notificações\">\n  <div class=\"fs-notification-center-header\">\n    <span class=\"fs-notification-center-title\">Notificações</span>\n    <button type=\"button\" class=\"fs-btn fs-btn-sm\" data-notification=\"clear\">Limpar tudo</button>\n  </div>\n  <ul class=\"fs-notification-list\"></ul>\n  <p class=\"fs-notification-empty\">Nenhuma notificação.</p>\n</div>\n<button type=\"button\" class=\"fs-btn\" id=\"demo-notification\">Adicionar notificação de exemplo</button>\n<div class=\"fs-toast-container\" id=\"demo-toast-container\"></div>\n",
+          "jsCode": "import { NotificationCenter, Toast } from \"fokus-styles/js\";\n\nconst trigger = document.querySelector('[data-fs=\"notification-center\"]');\nconst instance = NotificationCenter.getInstance(trigger) ?? new NotificationCenter(trigger);\nconst add = document.getElementById(\"demo-notification\");\nconst push = () => instance.push({ title: \"Exemplo local\", body: \"Nenhum dado foi enviado.\", variant: \"info\", autohide: false });\nconst focusPanel = () => instance.panelEl.querySelector(\"button\")?.focus();\nadd.addEventListener(\"click\", push);\ntrigger.addEventListener(\"fs:notification:opened\", focusPanel);\nwindow.addEventListener(\"pagehide\", () => {\n  add.removeEventListener(\"click\", push);\n  trigger.removeEventListener(\"fs:notification:opened\", focusPanel);\n  instance.dispose();\n  for (const element of instance.toastContainer.querySelectorAll(\".fs-toast\")) {\n    Toast.getInstance(element)?.dispose();\n    element.remove();\n  }\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+            "Histórico somente em memória; não usa localStorage nem notificações remotas. Painel não modal, sem focus trap; o exemplo foca o botão Limpar ao abrir."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/notification-center/basic.html",
+              "sha256": "d400137a9004f6b616360ee06e3bc6dd6d46feb126d7c1c9d0cca3306a0993a0"
+            },
+            {
+              "path": "docs/catalog/fixtures/notification-center/basic.js",
+              "sha256": "acfcde9309d88dce188d89b8c23f6c6c42e5ca21eeed3b20f003a9c901037120"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -29705,7 +30214,33 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Offcanvas — exemplo completo baseado na documentação",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"offcanvas\" data-fs-target=\"#meuPainel\">\n  Abrir menu\n</button>\n\n<div class=\"fs-offcanvas fs-offcanvas-start\" id=\"meuPainel\">\n  <div class=\"fs-offcanvas-header\">\n    <h3 class=\"fs-offcanvas-title\">Menu</h3>\n    <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"offcanvas\" aria-label=\"Fechar\"></button>\n  </div>\n  <div class=\"fs-offcanvas-body\">Conteúdo do painel.</div>\n</div>\n",
+          "jsCode": "import { Offcanvas } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"offcanvas\"]')]\n  .map((element) => Offcanvas.getInstance(element) ?? new Offcanvas(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/offcanvas/basic.html",
+              "sha256": "580157829cc682747726eae055d1a4dd626983aa3528789263b3c3fe0eeb2525"
+            },
+            {
+              "path": "docs/catalog/fixtures/offcanvas/basic.js",
+              "sha256": "0058a761f718a6c3d6d30e0707e560851dbe57e4bc59996ce9fa59efe1ca7975"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -30328,7 +30863,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Pagination — exemplo adaptado e rastreável",
+          "htmlCode": "<nav aria-label=\"Paginação do exemplo\">\n<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item is-disabled\">\n    <span class=\"fs-page-link\" aria-disabled=\"true\">Anterior</span>\n  </li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-1\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item is-active\"><a href=\"#pagina-2\" class=\"fs-page-link\" aria-current=\"page\">2</a></li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-3\" class=\"fs-page-link\">3</a></li>\n  <li class=\"fs-page-item\">\n    <a href=\"#pagina-3\" class=\"fs-page-link\" aria-label=\"Próxima\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg>\n    </a>\n  </li>\n</ul>\n</nav>\n<section id=\"pagina-1\"><h2>Página 1</h2><p>Conteúdo demonstrativo da página 1.</p></section>\n<section id=\"pagina-2\"><h2>Página 2</h2><p>Conteúdo demonstrativo da página 2.</p></section>\n<section id=\"pagina-3\"><h2>Página 3</h2><p>Conteúdo demonstrativo da página 3.</p></section>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Navega entre âncoras locais; página ativa estática, sem carregamento/paginação de dados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/pagination/basic.html",
+              "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -31679,7 +32236,33 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Popover — exemplo completo baseado na documentação",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"popover\" data-fs-target=\"#meu-popover\">\n  Mais informações\n</button>\n<div class=\"fs-popover\" id=\"meu-popover\">\n  <div class=\"fs-popover-header\">Título</div>\n  <div class=\"fs-popover-body\"><p class=\"fs-popover-text\">Conteúdo detalhado aqui.</p>\n    <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"popover\">Fechar informações</button></div>\n</div>\n",
+          "jsCode": "import { Popover } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"popover\"]')]\n  .map((element) => Popover.getInstance(element) ?? new Popover(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/popover/basic.html",
+              "sha256": "9a8440b0ef055aa8f2182d65777b1a1559bfbc149cb4c8b321e8faa662ed2f2f"
+            },
+            {
+              "path": "docs/catalog/fixtures/popover/basic.js",
+              "sha256": "8233d8a00e8ee01b56cd5e9b61c1e4516fcd7d31fa81cd57afedff359d610e77"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -32738,7 +33321,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Progress — exemplo adaptado e rastreável",
+          "htmlCode": "<div class=\"fs-spinner\" role=\"status\" aria-label=\"Carregando\"></div>\n\n<div class=\"fs-progress\" role=\"progressbar\" aria-label=\"Envio demonstrativo\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"60\">\n  <div class=\"fs-progress-bar\" style=\"--fs-progress-value: 60;\"></div>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Valor fixo em 60%; aplicativo deve manter CSS e ARIA sincronizados quando houver progresso real."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/progress/basic.html",
+              "sha256": "c0407f433130d477f2529d8f737cf90c212ef9943173667a68f68719c29d7e13"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -34201,7 +34806,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Rating — exemplo adaptado e rastreável",
+          "htmlCode": "<fieldset>\n<legend>Avaliação do exemplo</legend>\n<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\" aria-label=\"5 estrelas\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\" aria-label=\"4 estrelas\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-3\" value=\"3\" aria-label=\"3 estrelas\">\n  <label for=\"nota-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-2\" value=\"2\" aria-label=\"2 estrelas\">\n  <label for=\"nota-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-1\" value=\"1\" aria-label=\"1 estrela\">\n  <label for=\"nota-1\" class=\"fs-rating-star\" aria-label=\"1 estrela\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n</div>\n</fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "Grupo completo de cinco radios nativos, sem persistência; ordem visual reversa requer validação de teclado real."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/rating/basic.html",
+              "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -34400,7 +35027,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Ratio — exemplo adaptado e rastreável",
+          "htmlCode": "<div class=\"fs-ratio fs-ratio-4x3\">\n  <svg viewBox=\"0 0 400 300\" role=\"img\" aria-label=\"Ilustração geométrica de uma sala\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"300\" fill=\"#dbeafe\"/><rect x=\"80\" y=\"140\" width=\"240\" height=\"30\" fill=\"#1e40af\"/><path d=\"M100 170v80m200-80v80\" stroke=\"#1e40af\" stroke-width=\"12\"/></svg>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-rastreavel",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+            "SVG ilustrativo autossuficiente; não valida recorte de fotos, vídeo ou conteúdo remoto."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/ratio/basic.html",
+              "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -38110,7 +38759,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Scrollspy — demonstração adaptada documentada",
+          "htmlCode": "<nav data-fs=\"scrollspy\" data-fs-scrollspy class=\"fs-scrollspy-nav\" aria-label=\"Nesta página\">\n  <a href=\"#introducao\">Introdução</a>\n  <a href=\"#detalhes\">Detalhes</a>\n</nav>\n<section id=\"introducao\" style=\"min-height: 100vh\"><h2>Introdução</h2><p>Conteúdo introdutório.</p></section>\n<section id=\"detalhes\" style=\"min-height: 100vh\"><h2>Detalhes</h2><p>Detalhes do documento.</p></section>\n",
+          "jsCode": "import { Scrollspy } from \"fokus-styles/js\";\n\nconst nav = document.querySelector('[data-fs=\"scrollspy\"]');\nconst syncCurrent = event => {\n  for (const link of nav.querySelectorAll('a[href^=\"#\"]')) {\n    if (link.getAttribute(\"href\") === `#${event.detail.section.id}`) link.setAttribute(\"aria-current\", \"location\");\n    else link.removeAttribute(\"aria-current\");\n  }\n};\nnav.addEventListener(\"fs:scrollspy:activate\", syncCurrent);\nconst instance = Scrollspy.getInstance(nav) ?? new Scrollspy(nav);\ninstance.activate(document.getElementById(\"introducao\"));\nwindow.addEventListener(\"pagehide\", () => {\n  instance.dispose();\n  nav.removeEventListener(\"fs:scrollspy:activate\", syncCurrent);\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+            "Alturas artificiais apenas para demonstração; rastreamento real exige browser e geometria. Sem configuração de observer ou scroll interno."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/scrollspy/basic.html",
+              "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c"
+            },
+            {
+              "path": "docs/catalog/fixtures/scrollspy/basic.js",
+              "sha256": "537faa1590629d89831fe1de8301d97766b663a7bba16eb4fe9c747f467a4e09"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -40235,7 +40911,35 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Select — exemplo adaptado e nomeado",
+          "htmlCode": "<span id=\"catalog-country-label\">País</span>\n<select aria-labelledby=\"catalog-country-label\" class=\"fs-form-select\" data-fs=\"select\" id=\"pais\">\n  <option value=\"br\">Brasil</option>\n  <option value=\"pt\">Portugal</option>\n  <option value=\"us\" disabled>Estados Unidos (indisponível)</option>\n</select>\n",
+          "jsCode": "import { Select } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"select\"]')]\n  .map((element) => Select.getInstance(element) ?? new Select(element));\n\n// O runtime não transfere o nome do select para o botão gerado.\nfor (const instance of instances) {\n  instance.toggleEl.setAttribute(\"aria-labelledby\", `catalog-country-label ${instance.toggleEl.id}`);\n}\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Seleção local; não envia formulário nem persiste dados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/select/basic.html",
+              "sha256": "05954303d7c4d75645be5da22aa6c7a8807681149fe83b8f2ffaa86ff1c4e464"
+            },
+            {
+              "path": "docs/catalog/fixtures/select/basic.js",
+              "sha256": "2776a767c3a4dd2ac73603be3bc568967690a4cb04144c5ac5fc4eced152ae83"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -50578,7 +51282,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Toast — exemplo completo baseado na documentação",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" id=\"mostrar-toast\">Mostrar notificação de exemplo</button>\n<div class=\"fs-toast-container\">\n  <div class=\"fs-toast fs-toast-success\" data-fs=\"toast\" data-delay=\"4000\">\n    <div class=\"fs-toast-header\">\n      <span>Sucesso</span>\n      <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar\"></button>\n    </div>\n    <div class=\"fs-toast-body\">Operação concluída com sucesso.</div>\n  </div>\n</div>\n",
+          "jsCode": "import { Toast } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"toast\"]')]\n  .map((element) => Toast.getInstance(element) ?? new Toast(element));\nconst trigger = document.getElementById(\"mostrar-toast\");\nconst show = () => instances[0].show();\ntrigger.addEventListener(\"click\", show);\nwindow.addEventListener(\"pagehide\", () => {\n  trigger.removeEventListener(\"click\", show);\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+            "Notificação demonstrativa; não confirma gravação real. Timer de 4000ms pausa com hover/foco conforme runtime."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/toast/basic.html",
+              "sha256": "9c1b7f0fe58e3f7a6e64f8329a7a147eb30b049505f6dfb1752f7ea76ebf1b1c"
+            },
+            {
+              "path": "docs/catalog/fixtures/toast/basic.js",
+              "sha256": "e7f134ce1c3a6211d2cb4aab90ee2c2b5a693042fff9fbc4c35f114a8acae1a3"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -51082,7 +51813,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Tooltip — exemplo completo baseado na documentação",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" data-title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n",
+          "jsCode": "import { Tooltip } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tooltip\"]')]\n  .map((element) => Tooltip.getInstance(element) ?? new Tooltip(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-baseado-na-documentacao",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+            "Botão Copiar é demonstrativo; não acessa a área de transferência."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tooltip/basic.html",
+              "sha256": "12c9097a0b9c177af86ec26fb4cf26e174732c79e97c54f4e09fa166525f3892"
+            },
+            {
+              "path": "docs/catalog/fixtures/tooltip/basic.js",
+              "sha256": "89f7f39430f2ab625101cfa3e6c13dc67c54ced82112be49b34e271c5fd2ebf9"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -51472,7 +52230,36 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "TreeView — exemplo adaptado e nomeado",
+          "htmlCode": "<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos de exemplo\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n",
+          "jsCode": "import { TreeView } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tree-view\"]')]\n  .map((element) => TreeView.getInstance(element) ?? new TreeView(element));\n\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-adaptado-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita",
+            "nomes-acessiveis-adicionados"
+          ],
+          "limitations": [
+            "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+            "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+            "Árvore de exemplo; selecionar um nó não abre arquivos."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tree-view/basic.html",
+              "sha256": "7bea5c95f92d8fd75d0e41f0678fb06ae7d6667abd57fcb15a003003b9ca32d4"
+            },
+            {
+              "path": "docs/catalog/fixtures/tree-view/basic.js",
+              "sha256": "69c655df1040387ce24ffff4533e8c2f63a33482c8319688a9058f5e1703f9e2"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",

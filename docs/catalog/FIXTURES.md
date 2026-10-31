@@ -1,68 +1,76 @@
 # Exemplos selecionados para o catálogo
 
-`examples.json` reúne 32 exemplos mínimos, não o catálogo completo de 56
-componentes. As fontes HTML são cópias literais do primeiro bloco HTML da
-página de cada componente na base PR #41 (`218afe4`). Caminho, linha, SHA-256
-e commit completo estão em `fixture-provenance.json`.
+`examples.json` reúne **56 exemplos mínimos, um por componente**. Isso cobre
+presença de exemplos, **não todas as variantes, estados ou combinações**.
+O catálogo continua `complete: false`, candidato `next` não publicado,
+sem certificação de produção ou WCAG.
 
-Os sete exemplos interativos têm inicialização ESM explícita em arquivos
-`.js`. Use o CSS e JS do mesmo checkout/candidato: o manifesto não afirma
-compatibilidade com o npm 2.7.0 publicado. Os exemplos devem ser montados em
-contextos isolados, pois preservam os IDs originais da documentação.
+## Procedência e adaptações
 
-O teste unitário verifica literalidade, hash, IDs/referências e presença das
-classes no CSS compilado. O teste browser verifica controles nativos e
-abertura/fechamento, troca, teardown e reinicialização dos exemplos
-interativos. Esses testes não são uma auditoria exaustiva de variantes,
-responsividade, contraste, leitores de tela ou equivalência visual.
+As 56 páginas de referência permanecem intactas. Cada fixture identifica
+caminho, linha e commit de origem (`218afe4`) em `fixture-provenance.json`.
+São 32 extrações literais e 24 adaptações rastreadas. As adaptações preservam
+`sourceCode` e `sourceSha256` do bloco original, `sha256` do HTML final e
+`transformations`. Quando estas são pares `{from,to}`, o teste reconstrói
+exatamente o HTML final; descrições textuais registram adaptações revisadas.
+Os registros novos também incluem hashes das implementações consultadas.
+Todos os 56 blocos de origem foram confrontados com o commit declarado.
 
-Depois de `npm run build`:
+As adaptações completam fragmentos (Rating com cinco opções), nomeiam
+controles/diálogos, oferecem destinos locais e substituem imagens ausentes
+por iniciais, SVG ou data SVG autossuficientes. Input Group agora tem label
+visível e descrição da moeda; não conserva a deficiência de nome acessível
+registrada no checkpoint anterior de 32 exemplos. Não houve alteração de
+runtime, SCSS ou páginas originais dos componentes.
 
-- `npm test -- tests/unit/catalog-fixtures.test.js`
-- `npm run test:browsers -- tests/browser/catalog-fixtures.spec.mjs`
+## Execução e limites
 
-Não houve mudança no runtime nem nas páginas fonte dos componentes.
+24 exemplos incluem inicialização ESM explícita e limpeza em `pagehide`,
+incluindo a factory assíncrona de confirmação. Use CSS e JS do mesmo
+checkout; não se afirma compatibilidade com npm 2.7.0 publicado. Monte os
+exemplos em contextos isolados: eles preservam IDs da documentação.
 
-## Validação anterior (21 exemplos)
+Cada entrada declara seus próprios limites. Exemplos de ações não excluem,
+exportam ou enviam dados; navegação por âncoras não substitui roteador;
+Range nativo não inicializa o JS opcional de preenchimento; Datepicker JS
+não ganha restrições min/max inexistentes no runtime. File Upload Advanced
+lista arquivos locais, não realiza upload. A CSP atual da prévia não inclui
+`blob:` em imagens e pode bloquear suas miniaturas; a integração precisa
+ser validada. Nenhuma destas limitações foi ocultada por uma promessa de
+completude.
 
-Node 24.22.1: build, lint, types, docs e package check aprovados. Os 25
-checks focados (21 contratos + quatro fluxos jsdom) passaram. A suíte
-browser contém 78 casos listados nos três engines, mas **não foi executada
-com sucesso neste ambiente**: o download do Chromium Playwright retornou
-arquivo ZIP inválido e o Chromium do sistema não iniciou por restrição de
-socket do sandbox. A tentativa autorizada de execução externa também falhou
-na preparação do ambiente. A validação browser permanece pendente em CI ou
-ambiente compatível; jsdom não comprova layout, foco real ou renderização.
+## Verificação desta ampliação (31/10/2026)
 
-## Ampliação de 31/10/2026 (32 exemplos)
+Node 24.22.1; comandos após `npm run build`:
 
-Foram acrescentados Close Button, Code, File Upload nativo, Input Group,
-List Group, Placeholder, Range nativo, Responsive, Dropdown, Tag e Stepper.
-O manifesto preserva os limites de cada trecho; Input Group não tem nome
-acessível na fonte e **não** é um exemplo aprovado de acessibilidade. Range
-não inicializa o JS opcional de preenchimento da trilha; Close Button não
-fecha o aviso e File Upload não envia arquivos.
+- `npm test` — suíte geral e contratos das fixtures.
+- `npm run test:catalog` — geração/HTTP/sandbox do catálogo.
+- `npm run lint`, `npm run types:check`, `npm run docs:check`,
+  `npm run package:check` — gates de manutenção.
+- `npm run test:browsers -- tests/browser/catalog` — comportamento e axe
+  selecionados nos três engines; não substitui auditoria manual.
 
-Os 32 HTMLs foram comparados literalmente com o commit de origem e suas
-linhas. Os onze novos registros incluem hashes das implementações SCSS/JS
-consultadas; a suíte verifica esses hashes, as classes compiladas e os IDs.
-Não foram alterados o runtime nem as 56 páginas de referência.
+Os contratos verificam HTML final, fonte original, hashes, classes
+compiladas, IDs e referências ARIA. Há testes de teclado, cancelamento,
+interrupção, exclusividade, teardown/reinicialização e 24 testes executando
+os inicializadores realmente empacotados, cada um em jsdom isolado.
+Esses testes **não** comprovam layout, foco físico ou renderização.
 
-Validação local com Node 24.22.1:
+Build/lint/types/docs/package e quatro testes de catálogo passaram.
+O relatório durável do checkpoint registra os totais finais de unitários
+e de casos browser listados, com logs dos comandos.
 
-- Build, lint, types, docs, package check e testes de catálogo aprovados.
-  Package check usou cache npm gravável em `/tmp` após falha no cache padrão.
-- 548 testes unitários passaram em 48 arquivos; destes, 39 verificam as
-  fixtures (32 contratos e sete fluxos interativos).
-- 126 casos browser estão **listados**, não aprovados: 42 por engine.
-  Incluem cinco novos cenários de controles nativos, breakpoint/movimento
-  reduzido e interação/teardown dos três componentes JS adicionados.
-- Browser, visual e a11y foram tentados e bloqueados antes da execução útil
-  pela ausência do engine Playwright. O Chromium do sistema abortou com
-  `socket() failed: Operation not permitted`; a execução externa autorizada
-  falhou na preparação do ambiente. Não há validação visual, axe ou browser
-  bem-sucedida para esta ampliação. Os testes jsdom não a substituem.
+A execução browser foi tentada novamente e bloqueou antes de qualquer
+asserção útil: engine Playwright ausente. Na etapa anterior, Chromium do
+sistema abortou por `socket() EPERM`, e a execução externa autorizada falhou
+na preparação do ambiente. Visual e axe continuam sem execução bem-sucedida;
+não foram geradas nem promovidas imagens de referência. Rodar em CI ou em
+ambiente compatível permanece obrigatório antes de alegar validação browser.
 
-Permanecem 24 componentes sem fixture selecionada, além de variantes e
-combinações não cobertas dos 32 presentes. A cobertura continua parcial,
-sem certificação de produção/WCAG e sem publicação.
+## Histórico dos checkpoints
+
+- 21 exemplos: reconstrução inicial, procedência literal.
+- 32 exemplos: onze adições; 548 unitários passaram, 126 browser listados.
+- 56 exemplos: 24 adições e correção de nome acessível no Input Group.
+  Presença por componente atingida; cobertura de comportamento/variantes,
+  acessibilidade manual e revisão visual permanecem parciais.

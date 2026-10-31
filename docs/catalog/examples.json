@@ -416,15 +416,15 @@
   "input-group": [
     {
       "id": "basic",
-      "title": "Input-Group — exemplo documentado",
+      "title": "Input Group — campo nomeado com moeda",
       "html": "docs/catalog/fixtures/input-group/basic.html",
       "coverage": [
-        "markup-documentado",
+        "markup-adaptado-rastreavel",
         "classes-css-compiladas"
       ],
       "limitations": [
         "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
-        "Trecho literal sem nome acessível para o campo; aplicativo deve adicionar label antes do uso. Não aprovado como exemplo de acessibilidade."
+        "Campo nomeado e moeda descrita; não inclui validação, formatação monetária nem envio."
       ]
     }
   ],
@@ -477,6 +477,410 @@
         "Navegação local sem formulário, validação de dados ou envio final."
       ],
       "js": "docs/catalog/fixtures/stepper/basic.js"
+    }
+  ],
+  "avatar": [
+    {
+      "id": "basic",
+      "title": "Avatar — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/avatar/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Iniciais apenas; não demonstra carregamento, recorte nem fallback automático de imagens."
+      ]
+    }
+  ],
+  "icon-link": [
+    {
+      "id": "basic",
+      "title": "Icon-Link — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/icon-link/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Navegação por âncora local; não representa rota real de aplicativo."
+      ]
+    }
+  ],
+  "menu": [
+    {
+      "id": "basic",
+      "title": "Menu — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/menu/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Links locais funcionais; aria-current permanece estático, sem roteador de aplicativo."
+      ]
+    }
+  ],
+  "pagination": [
+    {
+      "id": "basic",
+      "title": "Pagination — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/pagination/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Navega entre âncoras locais; página ativa estática, sem carregamento/paginação de dados."
+      ]
+    }
+  ],
+  "progress": [
+    {
+      "id": "basic",
+      "title": "Progress — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/progress/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Valor fixo em 60%; aplicativo deve manter CSS e ARIA sincronizados quando houver progresso real."
+      ]
+    }
+  ],
+  "rating": [
+    {
+      "id": "basic",
+      "title": "Rating — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/rating/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "Grupo completo de cinco radios nativos, sem persistência; ordem visual reversa requer validação de teclado real."
+      ]
+    }
+  ],
+  "ratio": [
+    {
+      "id": "basic",
+      "title": "Ratio — exemplo adaptado e rastreável",
+      "html": "docs/catalog/fixtures/ratio/basic.html",
+      "coverage": [
+        "markup-adaptado-rastreavel",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo; não cobre todas as variantes, temas, dispositivos ou acessibilidade manual.",
+        "SVG ilustrativo autossuficiente; não valida recorte de fotos, vídeo ou conteúdo remoto."
+      ]
+    }
+  ],
+  "offcanvas": [
+    {
+      "id": "basic",
+      "title": "Offcanvas — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/offcanvas/basic.html",
+      "js": "docs/catalog/fixtures/offcanvas/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
+      ]
+    }
+  ],
+  "popover": [
+    {
+      "id": "basic",
+      "title": "Popover — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/popover/basic.html",
+      "js": "docs/catalog/fixtures/popover/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
+      ]
+    }
+  ],
+  "tooltip": [
+    {
+      "id": "basic",
+      "title": "Tooltip — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/tooltip/basic.html",
+      "js": "docs/catalog/fixtures/tooltip/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Botão Copiar é demonstrativo; não acessa a área de transferência."
+      ]
+    }
+  ],
+  "toast": [
+    {
+      "id": "basic",
+      "title": "Toast — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/toast/basic.html",
+      "js": "docs/catalog/fixtures/toast/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Notificação demonstrativa; não confirma gravação real. Timer de 4000ms pausa com hover/foco conforme runtime."
+      ]
+    }
+  ],
+  "navbar": [
+    {
+      "id": "basic",
+      "title": "Navbar — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/navbar/basic.html",
+      "js": "docs/catalog/fixtures/navbar/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Estado aria-current é estático e não acompanha navegação por âncora; exemplo demonstra apenas menu recolhível."
+      ]
+    }
+  ],
+  "nested-menu": [
+    {
+      "id": "basic",
+      "title": "NestedMenu — exemplo completo baseado na documentação",
+      "html": "docs/catalog/fixtures/nested-menu/basic.html",
+      "js": "docs/catalog/fixtures/nested-menu/basic.js",
+      "coverage": [
+        "markup-baseado-na-documentacao",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados.",
+        "Ações Novo/PDF/CSV/Fechar são demonstrativas; folhas fecham o menu mas não criam/exportam arquivos."
+      ]
+    }
+  ],
+  "combobox": [
+    {
+      "id": "basic",
+      "title": "Combobox — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/combobox/basic.html",
+      "js": "docs/catalog/fixtures/combobox/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Filtro local de duas opções; texto livre não representa seleção validada."
+      ]
+    }
+  ],
+  "command-palette": [
+    {
+      "id": "basic",
+      "title": "CommandPalette — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/command-palette/basic.html",
+      "js": "docs/catalog/fixtures/command-palette/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Comandos demonstrativos: seleção emite evento, mas não cria arquivo nem abre configurações."
+      ]
+    }
+  ],
+  "datatable": [
+    {
+      "id": "basic",
+      "title": "DataTable — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/datatable/basic.html",
+      "js": "docs/catalog/fixtures/datatable/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Duas linhas locais, sem busca remota, paginação com múltiplas páginas ou persistência."
+      ]
+    }
+  ],
+  "datepicker": [
+    {
+      "id": "basic",
+      "title": "Datepicker — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/datepicker/basic.html",
+      "js": "docs/catalog/fixtures/datepicker/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Data inicial fixa para reprodução; não há validação min/max nesta API."
+      ]
+    }
+  ],
+  "select": [
+    {
+      "id": "basic",
+      "title": "Select — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/select/basic.html",
+      "js": "docs/catalog/fixtures/select/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Seleção local; não envia formulário nem persiste dados."
+      ]
+    }
+  ],
+  "tree-view": [
+    {
+      "id": "basic",
+      "title": "TreeView — exemplo adaptado e nomeado",
+      "html": "docs/catalog/fixtures/tree-view/basic.html",
+      "js": "docs/catalog/fixtures/tree-view/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita",
+        "nomes-acessiveis-adicionados"
+      ],
+      "limitations": [
+        "Exemplo mínimo adaptado; não cobre todas as variantes, temas ou acessibilidade manual.",
+        "Componente avançado/experimental sob observação; presença no catálogo não promove maturidade.",
+        "Árvore de exemplo; selecionar um nó não abre arquivos."
+      ]
+    }
+  ],
+  "alert-dialog": [
+    {
+      "id": "basic",
+      "title": "Alert-Dialog — demonstração adaptada documentada",
+      "html": "docs/catalog/fixtures/alert-dialog/basic.html",
+      "js": "docs/catalog/fixtures/alert-dialog/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "A fábrica confirm não expõe dispose; o exemplo cancela apenas o diálogo que criou. Não há exclusão de conta nem backend."
+      ]
+    }
+  ],
+  "carousel": [
+    {
+      "id": "basic",
+      "title": "Carousel — demonstração adaptada documentada",
+      "html": "docs/catalog/fixtures/carousel/basic.html",
+      "js": "docs/catalog/fixtures/carousel/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Ilustrações geométricas de demonstração, sem fotografia; autoplay, swipe e variantes não são demonstrados."
+      ]
+    }
+  ],
+  "file-upload-advanced": [
+    {
+      "id": "basic",
+      "title": "File-Upload-Advanced — demonstração adaptada documentada",
+      "html": "docs/catalog/fixtures/file-upload-advanced/basic.html",
+      "js": "docs/catalog/fixtures/file-upload-advanced/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Não envia, não limita tamanho e não faz drag-and-drop. Progresso permanece em zero sem integração do aplicativo. O teardown do exemplo limpa a lista pertencente à fixture.",
+        "A CSP da prévia deste checkpoint não permite imagens blob:; miniaturas locais podem ser bloqueadas, embora a lista de arquivos funcione. Validar a integração CSP antes de uso."
+      ]
+    }
+  ],
+  "notification-center": [
+    {
+      "id": "basic",
+      "title": "Notification-Center — demonstração adaptada documentada",
+      "html": "docs/catalog/fixtures/notification-center/basic.html",
+      "js": "docs/catalog/fixtures/notification-center/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Histórico somente em memória; não usa localStorage nem notificações remotas. Painel não modal, sem focus trap; o exemplo foca o botão Limpar ao abrir."
+      ]
+    }
+  ],
+  "scrollspy": [
+    {
+      "id": "basic",
+      "title": "Scrollspy — demonstração adaptada documentada",
+      "html": "docs/catalog/fixtures/scrollspy/basic.html",
+      "js": "docs/catalog/fixtures/scrollspy/basic.js",
+      "coverage": [
+        "markup-adaptado-documentado",
+        "classes-css-compiladas",
+        "inicializacao-explicita"
+      ],
+      "limitations": [
+        "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
+        "Alturas artificiais apenas para demonstração; rastreamento real exige browser e geometria. Sem configuração de observer ou scroll interno."
+      ]
     }
   ]
 }

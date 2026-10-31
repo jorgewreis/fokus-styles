@@ -1,0 +1,15 @@
+<button type="button" class="fs-btn" data-fs="notification-center" data-fs-target="#painel-notif" data-toast-container="#demo-toast-container" aria-label="Notificações">
+  <svg class="fs-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+  <span class="fs-notification-badge" hidden>0</span>
+</button>
+
+<div class="fs-notification-center" id="painel-notif" role="dialog" aria-label="Notificações">
+  <div class="fs-notification-center-header">
+    <span class="fs-notification-center-title">Notificações</span>
+    <button type="button" class="fs-btn fs-btn-sm" data-notification="clear">Limpar tudo</button>
+  </div>
+  <ul class="fs-notification-list"></ul>
+  <p class="fs-notification-empty">Nenhuma notificação.</p>
+</div>
+<button type="button" class="fs-btn" id="demo-notification">Adicionar notificação de exemplo</button>
+<div class="fs-toast-container" id="demo-toast-container"></div>

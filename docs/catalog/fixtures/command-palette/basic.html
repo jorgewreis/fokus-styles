@@ -1,0 +1,15 @@
+<button type="button" class="fs-btn" data-fs="command-palette" data-fs-target="#paleta" data-fs-shortcut="mod+k">
+  Comandos (Ctrl+K)
+</button>
+
+<div class="fs-command-palette" id="paleta" aria-label="Comandos disponíveis">
+  <div class="fs-command-palette-dialog">
+    <label for="catalog-command">Buscar comando</label>
+    <input id="catalog-command" type="text" class="fs-command-palette-input" placeholder="Digite um comando…">
+    <ul class="fs-command-palette-list" aria-label="Resultados de comandos">
+      <li class="fs-dropdown-item" data-value="new-file">Novo arquivo</li>
+      <li class="fs-dropdown-item" data-value="open-settings">Abrir configurações</li>
+      <li class="fs-dropdown-item is-disabled" data-fs-empty hidden>Nenhum comando encontrado.</li>
+    </ul>
+  </div>
+</div>

@@ -241,12 +241,28 @@
     "source": "docs/components/input-group.md",
     "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
     "startLine": 10,
-    "sha256": "4c0270d08997ffed0e310f5d1c53942b97de907b9f35bd4354e20d6047fc5bbd",
-    "extraction": "Primeiro bloco HTML literal; inicialização explícita apenas quando registrada no manifesto.",
+    "sha256": "8ec6e1bf606f93358bc5ccdbb429ce138f128b381b21e79c3ee11a746dc65534",
+    "extraction": "Primeiro bloco HTML adaptado com label e descrição de moeda; fonte original preservada.",
     "implementation": [
       {
         "path": "packages/fokus-components/scss/forms/_forms.scss",
         "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "sourceCode": "<div class=\"fs-input-group\">\n  <span class=\"fs-input-group-text\">R$</span>\n  <input type=\"number\" class=\"fs-form-control\">\n</div>\n",
+    "sourceSha256": "4c0270d08997ffed0e310f5d1c53942b97de907b9f35bd4354e20d6047fc5bbd",
+    "transformations": [
+      {
+        "from": "<input type=\"number\" class=\"fs-form-control\">",
+        "to": "<input type=\"number\" class=\"fs-form-control\" id=\"valor-catalogo\" aria-describedby=\"moeda-catalogo\">"
+      },
+      {
+        "from": "<span class=\"fs-input-group-text\">R$</span>",
+        "to": "<span class=\"fs-input-group-text\" id=\"moeda-catalogo\">R$</span>"
+      },
+      {
+        "from": "<div class=\"fs-input-group\">",
+        "to": "<label for=\"valor-catalogo\" class=\"fs-form-label\">Valor em reais</label>\n<div class=\"fs-input-group\">"
       }
     ]
   },
@@ -298,6 +314,642 @@
       {
         "path": "packages/fokus-js/js/stepper.js",
         "sha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3"
+      }
+    ]
+  },
+  "avatar": {
+    "source": "docs/components/avatar.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 15,
+    "sourceCode": "<img class=\"fs-avatar\" src=\"/imagens/jorge.jpg\" alt=\"Jorge Reis\" width=\"40\" height=\"40\">\n<span class=\"fs-avatar fs-avatar-lg\" role=\"img\" aria-label=\"Érica Reis\">ER</span>\n<span class=\"fs-avatar fs-avatar-sm fs-avatar-square\" role=\"img\" aria-label=\"Equipe jurídica\">EJ</span>\n",
+    "sourceSha256": "4e002ad08e74474085b380fd3eb159bac467552246a9bc6d10649494e52397e5",
+    "sha256": "cf4e31dc7cd52fdaa928d1e447eee76cef4a53f8cad96005d4d587f38d75b8f7",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "<img class=\"fs-avatar\" src=\"/imagens/jorge.jpg\" alt=\"Jorge Reis\" width=\"40\" height=\"40\">",
+        "to": "<span class=\"fs-avatar\" role=\"img\" aria-label=\"Jorge Reis\">JR</span>"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_avatar.scss",
+        "sha256": "2544664701872d7e8eb5d2feea930d732609f1af21ad7aed2fb96c1bc78b2595"
+      }
+    ]
+  },
+  "icon-link": {
+    "source": "docs/components/icon-link.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sourceCode": "<a class=\"fs-icon-link\" href=\"/documentacao\">\n  Ver documentação\n  <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\" focusable=\"false\">\n    <path d=\"M5 12h14m-6-6 6 6-6 6\" />\n  </svg>\n</a>\n",
+    "sourceSha256": "554dd8318c3aeb8504e7d26b5eab153e86857589f9e9c027de1bafbfe1da78c4",
+    "sha256": "b1fc9defe2bcb7bf64c2c8ea48e2b99ca83fd1ecb81a3eff11e1620701209284",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "href=\"/documentacao\"",
+        "to": "href=\"#documentacao-catalogo\""
+      },
+      {
+        "from": "</a>\n",
+        "to": "</a>\n<section id=\"documentacao-catalogo\"><h2>Documentação do exemplo</h2><p>Destino local demonstrativo, sem navegação externa.</p></section>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_icon-link.scss",
+        "sha256": "81b2b2b095461a7ce58349bf7674ff602adb409875cba6d2e8c10556007f5fc8"
+      }
+    ]
+  },
+  "menu": {
+    "source": "docs/components/menu.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sourceCode": "<nav class=\"fs-menu\" aria-label=\"Configurações\">\n  <p class=\"fs-menu-label\">Conta</p>\n  <ul class=\"fs-menu-list\">\n    <li><a href=\"/perfil\" aria-current=\"page\">Perfil</a></li>\n    <li><a href=\"/seguranca\">Segurança</a></li>\n  </ul>\n</nav>\n",
+    "sourceSha256": "56a3e0c6a727ebb6810b5b4dec38749fcc06ece7f1f4cb58e122ad02135f69d3",
+    "sha256": "c2a5c756e23092b4391d89e433c2dbd803246d05e8151825ade83ab7b4d54a4c",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "href=\"/perfil\"",
+        "to": "href=\"#perfil-catalogo\""
+      },
+      {
+        "from": "href=\"/seguranca\"",
+        "to": "href=\"#seguranca-catalogo\""
+      },
+      {
+        "from": "</nav>\n",
+        "to": "</nav>\n<section id=\"perfil-catalogo\"><h2>Perfil</h2><p>Conteúdo demonstrativo.</p></section>\n<section id=\"seguranca-catalogo\"><h2>Segurança</h2><p>Conteúdo demonstrativo.</p></section>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_menu.scss",
+        "sha256": "9e1a5f43c3f4b5106057ec2583dde94cc4993183f6a9c23aa376cdf9320e0549"
+      }
+    ]
+  },
+  "pagination": {
+    "source": "docs/components/pagination.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sourceCode": "<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item is-disabled\">\n    <a href=\"#\" class=\"fs-page-link\" aria-label=\"Anterior\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n    </a>\n  </li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item is-active\"><a href=\"#\" class=\"fs-page-link\">2</a></li>\n  <li class=\"fs-page-item\"><a href=\"#\" class=\"fs-page-link\">3</a></li>\n  <li class=\"fs-page-item\">\n    <a href=\"#\" class=\"fs-page-link\" aria-label=\"Próxima\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg>\n    </a>\n  </li>\n</ul>\n",
+    "sourceSha256": "147f7c1d19d47250794fa3bfb2d130722554d874ab85a1869a04fc358e2069a2",
+    "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "    <a href=\"#\" class=\"fs-page-link\" aria-label=\"Anterior\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 18-6-6 6-6\"/></svg>\n    </a>",
+        "to": "    <span class=\"fs-page-link\" aria-disabled=\"true\">Anterior</span>"
+      },
+      {
+        "from": "<a href=\"#\" class=\"fs-page-link\">1</a>",
+        "to": "<a href=\"#pagina-1\" class=\"fs-page-link\">1</a>"
+      },
+      {
+        "from": "<a href=\"#\" class=\"fs-page-link\">2</a>",
+        "to": "<a href=\"#pagina-2\" class=\"fs-page-link\" aria-current=\"page\">2</a>"
+      },
+      {
+        "from": "<a href=\"#\" class=\"fs-page-link\">3</a>",
+        "to": "<a href=\"#pagina-3\" class=\"fs-page-link\">3</a>"
+      },
+      {
+        "from": "href=\"#\" class=\"fs-page-link\" aria-label=\"Próxima\"",
+        "to": "href=\"#pagina-3\" class=\"fs-page-link\" aria-label=\"Próxima\""
+      },
+      {
+        "from": "<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item is-disabled\">\n    <span class=\"fs-page-link\" aria-disabled=\"true\">Anterior</span>\n  </li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-1\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item is-active\"><a href=\"#pagina-2\" class=\"fs-page-link\" aria-current=\"page\">2</a></li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-3\" class=\"fs-page-link\">3</a></li>\n  <li class=\"fs-page-item\">\n    <a href=\"#pagina-3\" class=\"fs-page-link\" aria-label=\"Próxima\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg>\n    </a>\n  </li>\n</ul>\n",
+        "to": "<nav aria-label=\"Paginação do exemplo\">\n<ul class=\"fs-pagination\">\n  <li class=\"fs-page-item is-disabled\">\n    <span class=\"fs-page-link\" aria-disabled=\"true\">Anterior</span>\n  </li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-1\" class=\"fs-page-link\">1</a></li>\n  <li class=\"fs-page-item is-active\"><a href=\"#pagina-2\" class=\"fs-page-link\" aria-current=\"page\">2</a></li>\n  <li class=\"fs-page-item\"><a href=\"#pagina-3\" class=\"fs-page-link\">3</a></li>\n  <li class=\"fs-page-item\">\n    <a href=\"#pagina-3\" class=\"fs-page-link\" aria-label=\"Próxima\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg>\n    </a>\n  </li>\n</ul>\n</nav>\n<section id=\"pagina-1\"><h2>Página 1</h2><p>Conteúdo demonstrativo da página 1.</p></section>\n<section id=\"pagina-2\"><h2>Página 2</h2><p>Conteúdo demonstrativo da página 2.</p></section>\n<section id=\"pagina-3\"><h2>Página 3</h2><p>Conteúdo demonstrativo da página 3.</p></section>\n"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_pagination.scss",
+        "sha256": "c6d2079fefcd178a698567a5713ef1752467ebbcc086e61fee395cbfea417577"
+      }
+    ]
+  },
+  "progress": {
+    "source": "docs/components/progress.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sourceCode": "<div class=\"fs-spinner\" role=\"status\" aria-label=\"Carregando\"></div>\n\n<div class=\"fs-progress\">\n  <div class=\"fs-progress-bar\" style=\"--fs-progress-value: 60;\"></div>\n</div>\n",
+    "sourceSha256": "dc2b4dee14222c391ea9ec5f40d632021d82aa82f52386cba5147e7967bc6f7f",
+    "sha256": "c0407f433130d477f2529d8f737cf90c212ef9943173667a68f68719c29d7e13",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-progress\">",
+        "to": "<div class=\"fs-progress\" role=\"progressbar\" aria-label=\"Envio demonstrativo\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"60\">"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_progress.scss",
+        "sha256": "ce3b984af79caa1e076d54dfaff7ac9d1793733413d37a2fdece50b938d856e2"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_spinner.scss",
+        "sha256": "baf65aa5811ba79614e99bbb4dd8c8166c2a3ca5647586ad5d735f351527eb20"
+      }
+    ]
+  },
+  "rating": {
+    "source": "docs/components/rating.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sourceCode": "<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <!-- ... 3, 2, 1, mesmo padrão ... -->\n</div>\n",
+    "sourceSha256": "b77725573184b20bbd178f1d49f1f4fd4a2b0c255bc5b5caf4d6fb462ffc4d93",
+    "sha256": "1354cbcbb4d132ba48541db88af4e237fa4ed6a619ead50e4b20c370017bf519",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "  <!-- ... 3, 2, 1, mesmo padrão ... -->",
+        "to": "  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-3\" value=\"3\">\n  <label for=\"nota-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-2\" value=\"2\">\n  <label for=\"nota-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-1\" value=\"1\">\n  <label for=\"nota-1\" class=\"fs-rating-star\" aria-label=\"1 estrela\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>"
+      },
+      {
+        "from": "<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-3\" value=\"3\">\n  <label for=\"nota-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-2\" value=\"2\">\n  <label for=\"nota-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-1\" value=\"1\">\n  <label for=\"nota-1\" class=\"fs-rating-star\" aria-label=\"1 estrela\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n</div>\n",
+        "to": "<fieldset>\n<legend>Avaliação do exemplo</legend>\n<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-3\" value=\"3\">\n  <label for=\"nota-3\" class=\"fs-rating-star\" aria-label=\"3 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-2\" value=\"2\">\n  <label for=\"nota-2\" class=\"fs-rating-star\" aria-label=\"2 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-1\" value=\"1\">\n  <label for=\"nota-1\" class=\"fs-rating-star\" aria-label=\"1 estrela\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n</div>\n</fieldset>\n"
+      },
+      {
+        "from": "id=\"nota-5\" value=\"5\"",
+        "to": "id=\"nota-5\" value=\"5\" aria-label=\"5 estrelas\""
+      },
+      {
+        "from": "id=\"nota-4\" value=\"4\"",
+        "to": "id=\"nota-4\" value=\"4\" aria-label=\"4 estrelas\""
+      },
+      {
+        "from": "id=\"nota-3\" value=\"3\"",
+        "to": "id=\"nota-3\" value=\"3\" aria-label=\"3 estrelas\""
+      },
+      {
+        "from": "id=\"nota-2\" value=\"2\"",
+        "to": "id=\"nota-2\" value=\"2\" aria-label=\"2 estrelas\""
+      },
+      {
+        "from": "id=\"nota-1\" value=\"1\"",
+        "to": "id=\"nota-1\" value=\"1\" aria-label=\"1 estrela\""
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_rating.scss",
+        "sha256": "0dad6ed44db5903d5587e6ee3e6a68f9961e2fe928a831374607854d3739fd9b"
+      }
+    ]
+  },
+  "ratio": {
+    "source": "docs/components/ratio.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sourceCode": "<div class=\"fs-ratio fs-ratio-4x3\">\n  <img src=\"/imagens/escritorio.jpg\" alt=\"Sala de atendimento do escritório\">\n</div>\n",
+    "sourceSha256": "3795056a60e0cc8ae307cbbc442d00b0ef50b2cc9c798d0ffdab380980f7dffe",
+    "sha256": "dbd5232d5bf0ac90eba3cebe3d928e7c73d34c841f868ca75d6279dbfa1818bd",
+    "extraction": "Primeiro bloco HTML adaptado; transformações explícitas e reproduzíveis.",
+    "transformations": [
+      {
+        "from": "<img src=\"/imagens/escritorio.jpg\" alt=\"Sala de atendimento do escritório\">",
+        "to": "<svg viewBox=\"0 0 400 300\" role=\"img\" aria-label=\"Ilustração geométrica de uma sala\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"300\" fill=\"#dbeafe\"/><rect x=\"80\" y=\"140\" width=\"240\" height=\"30\" fill=\"#1e40af\"/><path d=\"M100 170v80m200-80v80\" stroke=\"#1e40af\" stroke-width=\"12\"/></svg>"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_ratio.scss",
+        "sha256": "acb81b12ae0ac9ba95a8bfeb499d0fabcdd5a720444612c01ba1492f61728b87"
+      }
+    ]
+  },
+  "offcanvas": {
+    "source": "docs/components/offcanvas.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "580157829cc682747726eae055d1a4dd626983aa3528789263b3c3fe0eeb2525",
+    "sourceSha256": "580157829cc682747726eae055d1a4dd626983aa3528789263b3c3fe0eeb2525",
+    "extraction": "literal",
+    "transformations": [],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/offcanvas.js",
+        "sha256": "1c2a8f17502ac1e6f01a98d67d0a4715360efe3c28bd5fb1aaea238cd2e03a0a"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_offcanvas.scss",
+        "sha256": "f93fe12cbc6ea40e918c53e2182fdc110b0667ee33cb14712671805991a0dbe1"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"offcanvas\" data-fs-target=\"#meuPainel\">\n  Abrir menu\n</button>\n\n<div class=\"fs-offcanvas fs-offcanvas-start\" id=\"meuPainel\">\n  <div class=\"fs-offcanvas-header\">\n    <h3 class=\"fs-offcanvas-title\">Menu</h3>\n    <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"offcanvas\" aria-label=\"Fechar\"></button>\n  </div>\n  <div class=\"fs-offcanvas-body\">Conteúdo do painel.</div>\n</div>\n"
+  },
+  "popover": {
+    "source": "docs/components/popover.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "9a8440b0ef055aa8f2182d65777b1a1559bfbc149cb4c8b321e8faa662ed2f2f",
+    "sourceSha256": "e09dd61abc8e5239dfe6c6ca79f7a7594704498fbbfd054816ae8985c21cff38",
+    "extraction": "adapted",
+    "transformations": [
+      "Descrição marcada com fs-popover-text e botão de dispensa nomeado adicionados conforme API de dismiss."
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/popover.js",
+        "sha256": "7f64622b84891c39e81c9244219a89a897964e6e6b83660a836bf683c0170f47"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_popover.scss",
+        "sha256": "8cb77fe15196b1436a2c832334a3d8c11a73b52eed6820fc59b9d6e9892915c8"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"popover\" data-fs-target=\"#meu-popover\">\n  Mais informações\n</button>\n<div class=\"fs-popover\" id=\"meu-popover\">\n  <div class=\"fs-popover-header\">Título</div>\n  <div class=\"fs-popover-body\">Conteúdo detalhado aqui.</div>\n</div>\n"
+  },
+  "tooltip": {
+    "source": "docs/components/tooltip.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "12c9097a0b9c177af86ec26fb4cf26e174732c79e97c54f4e09fa166525f3892",
+    "sourceSha256": "9d92a533c85f448914b47693d71009804145a7730614e1a8c78b7b2e9267d565",
+    "extraction": "adapted",
+    "transformations": [
+      "title substituído por data-title (API documentada) para preservar texto após dispose/reinicialização."
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/tooltip.js",
+        "sha256": "220b59f63a2285fef4bba04d5e1edbdfe7fd42c3df187dfd59780ceff10c0b3f"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_tooltips.scss",
+        "sha256": "5ed8dfccee24b1bd2fb0d761b7bd4bc0762a039ac02b64e8221c283f622bc5ec"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"tooltip\" title=\"Copiar para a área de transferência\">\n  Copiar\n</button>\n"
+  },
+  "toast": {
+    "source": "docs/components/toast.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "9c1b7f0fe58e3f7a6e64f8329a7a147eb30b049505f6dfb1752f7ea76ebf1b1c",
+    "sourceSha256": "3cfbd25144a7ead91a52cf90171959da0f2c5e9342486cd8c53b77ef4b03d44c",
+    "extraction": "adapted",
+    "transformations": [
+      "Botão local acrescentado para chamar Toast.show() explicitamente; handler removido no pagehide."
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/toast.js",
+        "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_toasts.scss",
+        "sha256": "7a116e15855bebf5cd90e9d4a14fc483798198a065986dcafa9092ba15a47ebe"
+      }
+    ],
+    "sourceCode": "<div class=\"fs-toast-container\">\n  <div class=\"fs-toast fs-toast-success\" data-fs=\"toast\" data-delay=\"4000\">\n    <div class=\"fs-toast-header\">\n      <span>Sucesso</span>\n      <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"toast\" aria-label=\"Fechar\"></button>\n    </div>\n    <div class=\"fs-toast-body\">Operação concluída com sucesso.</div>\n  </div>\n</div>\n"
+  },
+  "navbar": {
+    "source": "docs/components/navbar.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sha256": "63b6f552bed01a65e5c09f604b28371ce59c4dcc24df5eef851ffb5ef7834d1b",
+    "sourceSha256": "252acd6fc727b1faf540bebe46baf6bfb7c34fea6635ee515614d44b23432eb7",
+    "extraction": "adapted",
+    "transformations": [
+      "Rotas externas ao exemplo substituídas por âncoras locais com seções completas; aria-current alterado para location."
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/navbar.js",
+        "sha256": "7d60228e5fee7556a23ab16853bb2bab4a3fe919a660538290f023b49fa4b99f"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_navbar.scss",
+        "sha256": "2250b8befbd84dd37f65ee1661bdbc1fea5a825a282ef483d92df5670f2b2035"
+      }
+    ],
+    "sourceCode": "<nav class=\"fs-navbar\" data-fs=\"navbar\" aria-label=\"Navegação principal\">\n  <a href=\"/\" class=\"fs-navbar-brand\">Minha Marca</a>\n  <button type=\"button\" class=\"fs-navbar-toggler\" data-fs-toggle=\"navbar\"\n          data-fs-target=\"#menuPrincipal\" aria-controls=\"menuPrincipal\" aria-expanded=\"false\">\n    Menu\n  </button>\n  <div id=\"menuPrincipal\" class=\"fs-navbar-collapse\" hidden>\n    <ul class=\"fs-navbar-nav\">\n      <li><a href=\"/\" class=\"fs-nav-link is-active\" aria-current=\"page\">Início</a></li>\n      <li><a href=\"/produtos\" class=\"fs-nav-link\">Produtos</a></li>\n    </ul>\n  </div>\n</nav>\n"
+  },
+  "nested-menu": {
+    "source": "docs/components/nested-menu.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sha256": "3fd00b6c46c56adfdeadcaf6e9dfea5a02cd312c98ac78992e561fc56d811448",
+    "sourceSha256": "06598b664bb1af93f2d1be797d2bf488635c5e8ffb040e4d88a6ffbd3d671513",
+    "extraction": "adapted",
+    "transformations": [
+      "Itens de ação convertidos de links # em botões type=button com role=menuitem; menus receberam nomes acessíveis."
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/nested-menu.js",
+        "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+        "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+      },
+      {
+        "path": "packages/fokus-components/scss/components/_dropdown.scss",
+        "sha256": "4aa72d9d9d17d40af1c0f4e5c3bb7b2db25edab0dbce215caad81031aee8701d"
+      }
+    ],
+    "sourceCode": "<button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"nested-menu\" data-fs-target=\"#menu\">\n  Arquivo\n</button>\n<div class=\"fs-dropdown-menu\" id=\"menu\">\n  <a href=\"#\" class=\"fs-dropdown-item\">Novo</a>\n  <div class=\"fs-dropdown-submenu\">\n    <a href=\"#\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</a>\n    <div class=\"fs-dropdown-menu\">\n      <a href=\"#\" class=\"fs-dropdown-item\">PDF</a>\n      <a href=\"#\" class=\"fs-dropdown-item\">CSV</a>\n    </div>\n  </div>\n  <a href=\"#\" class=\"fs-dropdown-item\">Fechar</a>\n</div>\n"
+  },
+  "combobox": {
+    "source": "docs/components/combobox.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sourceSha256": "4436899377064e96102efa24ff9a1409f6aece926b4f40ebe3732e5028ee3b0e",
+    "sourceCode": "<div class=\"fs-combobox\">\n  <input type=\"text\" class=\"fs-form-control\" data-fs=\"combobox\" data-fs-target=\"#lista-frameworks\" placeholder=\"Buscar framework…\">\n</div>\n<ul class=\"fs-dropdown-menu fs-combobox-listbox\" id=\"lista-frameworks\">\n  <li class=\"fs-dropdown-item\" data-value=\"bootstrap\">Bootstrap</li>\n  <li class=\"fs-dropdown-item\" data-value=\"tailwind\">Tailwind CSS</li>\n  <li class=\"fs-dropdown-item is-disabled\" data-fs-empty hidden>Nenhum resultado encontrado.</li>\n</ul>\n",
+    "sha256": "ac51fac3eb7bd8a8c73fdc973f872edea4c3e96a3135511c6c6f77bd8c57f7b8",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-combobox\">",
+        "to": "<label for=\"catalog-framework\">Framework</label>\n<div class=\"fs-combobox\">"
+      },
+      {
+        "from": "<input type=\"text\"",
+        "to": "<input id=\"catalog-framework\" type=\"text\""
+      },
+      {
+        "from": "id=\"lista-frameworks\"",
+        "to": "id=\"lista-frameworks\" aria-label=\"Frameworks disponíveis\""
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_combobox.scss",
+        "sha256": "26ff7aee8a55e799ed2f017577ddb428c951b5216e26f94437faa6fd0c8cf0b8"
+      },
+      {
+        "path": "packages/fokus-js/js/combobox.js",
+        "sha256": "9cafa6d72f5418fd49569c9698b40258a18c5a333cddf4e0436173e10bfb83f1"
+      }
+    ]
+  },
+  "command-palette": {
+    "source": "docs/components/command-palette.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 12,
+    "sourceSha256": "ed2718b05389ecdb41fecc3b0c04461d7a36e9cc840d5644989180f0adbdf08e",
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"command-palette\" data-fs-target=\"#paleta\" data-fs-shortcut=\"mod+k\">\n  Comandos (Ctrl+K)\n</button>\n\n<div class=\"fs-command-palette\" id=\"paleta\">\n  <div class=\"fs-command-palette-dialog\">\n    <input type=\"text\" class=\"fs-command-palette-input\" placeholder=\"Digite um comando…\">\n    <ul class=\"fs-command-palette-list\">\n      <li class=\"fs-dropdown-item\" data-value=\"new-file\">Novo arquivo</li>\n      <li class=\"fs-dropdown-item\" data-value=\"open-settings\">Abrir configurações</li>\n      <li class=\"fs-dropdown-item is-disabled\" data-fs-empty hidden>Nenhum comando encontrado.</li>\n    </ul>\n  </div>\n</div>\n",
+    "sha256": "b703767171b758b1d5c57ff8e09f0e8102266b1a31acc0f9ee13a39950f187ab",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "id=\"paleta\"",
+        "to": "id=\"paleta\" aria-label=\"Comandos disponíveis\""
+      },
+      {
+        "from": "<input type=\"text\"",
+        "to": "<label for=\"catalog-command\">Buscar comando</label>\n    <input id=\"catalog-command\" type=\"text\""
+      },
+      {
+        "from": "<ul class=\"fs-command-palette-list\">",
+        "to": "<ul class=\"fs-command-palette-list\" aria-label=\"Resultados de comandos\">"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_command-palette.scss",
+        "sha256": "59f738e7b1d872e4373dafd32fefa60c4e3593807027cf6005ea665aa10ba026"
+      },
+      {
+        "path": "packages/fokus-js/js/command-palette.js",
+        "sha256": "660e005c6296e1d9ef56f521b10a72572f2dcffcc0819adc637a149aec5c786b"
+      }
+    ]
+  },
+  "datatable": {
+    "source": "docs/components/datatable.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sourceSha256": "e5c352a96ffb6e718d934a0d6e641103d78bdf2dbdfa878eb75fe0b3a824840f",
+    "sourceCode": "<div class=\"fs-datatable\" data-fs=\"datatable\" data-fs-page-size=\"5\">\n  <div class=\"fs-datatable-toolbar\">\n    <input type=\"search\" class=\"fs-form-control\" data-fs-datatable-filter placeholder=\"Filtrar…\">\n  </div>\n  <table class=\"fs-table fs-table-striped fs-table-hover\">\n    <thead>\n      <tr>\n        <th scope=\"col\" data-fs-sort=\"name\">Nome</th>\n        <th scope=\"col\" data-fs-sort=\"age\">Idade</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr><td>Ana</td><td>35</td></tr>\n      <tr><td>Bruno</td><td>19</td></tr>\n    </tbody>\n  </table>\n  <div class=\"fs-empty-state\" data-fs-datatable-empty hidden>\n    <p class=\"fs-empty-state-title\">Nenhum resultado encontrado.</p>\n  </div>\n</div>\n",
+    "sha256": "dc0de112cbe2df4a6ed975e705ffc12c54cb2e0d6decfd77fb4afe8ca4f177f9",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "<input type=\"search\"",
+        "to": "<label for=\"catalog-filter\">Filtrar pessoas</label>\n    <input id=\"catalog-filter\" type=\"search\""
+      },
+      {
+        "from": "<thead>",
+        "to": "<caption>Pessoas de exemplo</caption>\n    <thead>"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_datatable.scss",
+        "sha256": "f5a2b04ee24b8c3ecb961a33ad515a507afa1d8b86014869c463b7f54d23a12a"
+      },
+      {
+        "path": "packages/fokus-js/js/datatable.js",
+        "sha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa"
+      }
+    ]
+  },
+  "datepicker": {
+    "source": "docs/components/datepicker.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 29,
+    "sourceSha256": "d28bd2ec559b527b74e7a475d95f3776a0157612a952a5818da470a315a1217f",
+    "sourceCode": "<div class=\"fs-datepicker\">\n  <input type=\"text\" class=\"fs-form-control\" data-fs=\"datepicker\" data-fs-target=\"#dp-entrega\" placeholder=\"dd/mm/aaaa\">\n</div>\n<div id=\"dp-entrega\"></div>\n",
+    "sha256": "1c4022acd1ff8557f8deedc3f4866b8804325c367744109cb3949fd85d22468a",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "<div class=\"fs-datepicker\">",
+        "to": "<label for=\"catalog-date\">Data de entrega</label>\n<div class=\"fs-datepicker\">"
+      },
+      {
+        "from": "<input type=\"text\"",
+        "to": "<input id=\"catalog-date\" type=\"text\" value=\"20/07/2026\""
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_datepicker.scss",
+        "sha256": "7fe4d91b6955e7eb38f340035d8b9feb0aba602e6283ae75441639a0d02b6012"
+      },
+      {
+        "path": "packages/fokus-js/js/datepicker.js",
+        "sha256": "59ff44cd601f042e7c262a2fe149eda16ed7667934fd6353329fecd4e616254a"
+      }
+    ],
+    "initializationNotes": "O inicializador dá nome à grade gerada; data inicial determinística no HTML."
+  },
+  "select": {
+    "source": "docs/components/select.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sourceSha256": "8c846d7a05d15b7895919a4e96f6fb234972013229d49721ea9e75d8f3c74d97",
+    "sourceCode": "<select class=\"fs-form-select\" data-fs=\"select\" id=\"pais\">\n  <option value=\"br\">Brasil</option>\n  <option value=\"pt\">Portugal</option>\n  <option value=\"us\" disabled>Estados Unidos (indisponível)</option>\n</select>\n",
+    "sha256": "05954303d7c4d75645be5da22aa6c7a8807681149fe83b8f2ffaa86ff1c4e464",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "<select class=",
+        "to": "<span id=\"catalog-country-label\">País</span>\n<select aria-labelledby=\"catalog-country-label\" class="
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      },
+      {
+        "path": "packages/fokus-js/js/select.js",
+        "sha256": "ba6a3292be4d44eb361dcf525668f923799a8ee5da73e681f96641feb0530f7e"
+      }
+    ],
+    "initializationNotes": "O inicializador nomeia o botão gerado usando aria-labelledby com o rótulo e o próprio texto de seleção; não altera runtime."
+  },
+  "tree-view": {
+    "source": "docs/components/tree-view.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sourceSha256": "84cf4301395850bd9ae318c97db4187d5ef24be15152fd2bd90c0c66b458581b",
+    "sourceCode": "<ul class=\"fs-tree\" data-fs=\"tree-view\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n",
+    "sha256": "7bea5c95f92d8fd75d0e41f0678fb06ae7d6667abd57fcb15a003003b9ca32d4",
+    "extraction": "Bloco HTML documentado adaptado para exemplo completo com nomes acessíveis; não é cópia literal.",
+    "transformations": [
+      {
+        "from": "data-fs=\"tree-view\"",
+        "to": "data-fs=\"tree-view\" aria-label=\"Arquivos de exemplo\""
+      }
+    ],
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_tree-view.scss",
+        "sha256": "6b43841396a2f4ad7a70f92280c7bb611c75b34538f7c80def4abdf3023d36c9"
+      },
+      {
+        "path": "packages/fokus-js/js/tree-view.js",
+        "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+      }
+    ]
+  },
+  "alert-dialog": {
+    "source": "docs/components/alert-dialog.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 83,
+    "sourceCode": "<button type=\"button\" class=\"fs-btn fs-btn-danger\" id=\"btn-excluir\">Excluir conta</button>\n<script>\n  document.getElementById(\"btn-excluir\").addEventListener(\"click\", async () => {\n    const ok = await FokusStyles.confirm({\n      title: \"Excluir conta?\",\n      message: \"Todos os seus dados serão apagados permanentemente.\",\n      confirmText: \"Excluir conta\",\n      variant: \"danger\",\n    });\n    if (ok) {\n      // prosseguir com a exclusão\n    }\n  });\n</script>\n",
+    "sourceSha256": "b81518063d11ee89404d862f611c6ca1747bf67fb6733a2c089ef4b0e3aa5e49",
+    "sha256": "5c322996b097f8100166af2f1a9782ec333dc2ae533d2f316bf118e95ee2f17a",
+    "transformations": [
+      "Script inline extraído para ESM; resultado anunciado como demonstração sem exclusão. Inicialização impede diálogos concorrentes e cancela o próprio diálogo em pagehide."
+    ],
+    "extraction": "Adaptação explícita do primeiro bloco HTML; fontes e transformações preservadas.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_alert-dialog.scss",
+        "sha256": "29a2cb4db482e552083440d7c79aa5e5a32118cf202ccc6a8b75828c58aaa72c"
+      },
+      {
+        "path": "packages/fokus-js/js/confirm.js",
+        "sha256": "f5f57eac2bd95bfb84c6d496e977b434e053fad4b3609db3fe69abca6350758a"
+      },
+      {
+        "path": "packages/fokus-js/js/modal.js",
+        "sha256": "7ce9944a4d0d43587bf655ea650c2bf63f6c2aa5740ad4a0a874a29eed131066"
+      }
+    ]
+  },
+  "carousel": {
+    "source": "docs/components/carousel.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sourceCode": "<div class=\"fs-carousel\" data-fs=\"carousel\" aria-label=\"Destaques de produto\">\n  <div class=\"fs-carousel-inner\">\n    <div class=\"fs-carousel-item is-active\">\n      <img src=\"slide1.jpg\" alt=\"Equipe colaborando em um painel\">\n      <div class=\"fs-carousel-caption\">\n        <h2>Fluxos mais claros</h2>\n        <p>Centralize tarefas recorrentes em uma experiência previsível.</p>\n      </div>\n    </div>\n    <div class=\"fs-carousel-item\"><img src=\"slide2.jpg\" alt=\"Resumo de resultados\"></div>\n  </div>\n  <button type=\"button\" class=\"fs-carousel-control-prev\" aria-label=\"Slide anterior\"></button>\n  <button type=\"button\" class=\"fs-carousel-control-next\" aria-label=\"Próximo slide\"></button>\n</div>\n",
+    "sourceSha256": "54b9368cb2962269fafea77d02fe4becf5ab9f8a37eb5bd52dca2cfc0291bc03",
+    "sha256": "557c355543e596e11d0b463e511490490d7b0a8c2137218e46501794d610e0fa",
+    "transformations": [
+      "Imagens externas inexistentes substituídas por SVG data URI gerados localmente, com texto alternativo fiel; autoplay permanece desativado."
+    ],
+    "extraction": "Adaptação explícita do primeiro bloco HTML; fontes e transformações preservadas.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_carousel.scss",
+        "sha256": "c510591fff32aa8ef763b54f7321020a91c2e0da72bcbe53edaea30d9426e737"
+      },
+      {
+        "path": "packages/fokus-js/js/carousel.js",
+        "sha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40"
+      }
+    ]
+  },
+  "file-upload-advanced": {
+    "source": "docs/components/file-upload-advanced.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 17,
+    "sourceCode": "<div class=\"fs-file-upload\" data-fs=\"file-upload-advanced\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"anexos\" multiple>\n  <label for=\"anexos\" class=\"fs-file-label fs-file-label-dropzone\">\n    Arraste arquivos ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">Vários arquivos, até 5MB cada</span>\n  </label>\n</div>\n",
+    "sourceSha256": "d0ba6c5e615c1d5a6815c7cf0c3e7ddfd48824b9811a229ee1a4c872d6994dcb",
+    "sha256": "d3cbe2b9ba47e3fb564d777fcfdf07082290f267e9cede1217675f1425ea4145",
+    "transformations": [
+      "Texto de drag-and-drop e limite de 5MB removidos: este exemplo não inicializa FileDrop nem implementa validação de tamanho."
+    ],
+    "extraction": "Adaptação explícita do primeiro bloco HTML; fontes e transformações preservadas.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_file-upload-advanced.scss",
+        "sha256": "ae9f35f4f8a83b409778725c945955a934b22edb0773fe6e96601337bbe680dd"
+      },
+      {
+        "path": "packages/fokus-js/js/file-upload-advanced.js",
+        "sha256": "b47f5de89754252cb41e7e44485a8efcb06fed4d867b565ca292583069c03789"
+      }
+    ]
+  },
+  "notification-center": {
+    "source": "docs/components/notification-center.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sourceCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"notification-center\" data-fs-target=\"#painel-notif\" aria-label=\"Notificações\">\n  <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/></svg>\n  <span class=\"fs-notification-badge\" hidden>0</span>\n</button>\n\n<div class=\"fs-notification-center\" id=\"painel-notif\">\n  <div class=\"fs-notification-center-header\">\n    <span class=\"fs-notification-center-title\">Notificações</span>\n    <button type=\"button\" class=\"fs-btn fs-btn-sm\" data-notification=\"clear\">Limpar tudo</button>\n  </div>\n  <ul class=\"fs-notification-list\"></ul>\n  <p class=\"fs-notification-empty\">Nenhuma notificação.</p>\n</div>\n",
+    "sourceSha256": "9faec7ac1091b17fe41e12badcd4248fc7060a1b9e629faf6c7a23ce8e81781f",
+    "sha256": "d400137a9004f6b616360ee06e3bc6dd6d46feb126d7c1c9d0cca3306a0993a0",
+    "transformations": [
+      "Painel recebe role dialog não modal para corresponder a aria-haspopup do runtime; botão local explícito cria notificação de demonstração.",
+      "Container de toasts dedicado à fixture, para que o teardown não remova toasts de outro consumidor."
+    ],
+    "extraction": "Adaptação explícita do primeiro bloco HTML; fontes e transformações preservadas.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_notification-center.scss",
+        "sha256": "5d3f05649396033053f4b48fa68e54753a93a45a7756fe472dfa4e6ef55767f9"
+      },
+      {
+        "path": "packages/fokus-js/js/notification-center.js",
+        "sha256": "328d3eee486c7008141320b69e2e9a509711602a8301ce89471e8bea67889566"
+      },
+      {
+        "path": "packages/fokus-js/js/toast.js",
+        "sha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7"
+      }
+    ]
+  },
+  "scrollspy": {
+    "source": "docs/components/scrollspy.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 13,
+    "sourceCode": "<nav data-fs=\"scrollspy\" data-fs-scrollspy class=\"fs-scrollspy-nav\" aria-label=\"Nesta página\">\n  <a href=\"#introducao\">Introdução</a>\n  <a href=\"#detalhes\">Detalhes</a>\n</nav>\n<section id=\"introducao\"><h2>Introdução</h2><p>Conteúdo introdutório.</p></section>\n<section id=\"detalhes\"><h2>Detalhes</h2><p>Detalhes do documento.</p></section>\n",
+    "sourceSha256": "5ed6b287289f879042e32055e163a35f6b74f906ec90b0db275fb75a6c3043d1",
+    "sha256": "254d46e5b5171a2d7aafe57c80af435c5f4f2bf7d3d5a96d039aab3ec4e3a01c",
+    "transformations": [
+      "Seções recebem altura de demonstração para possibilitar rolagem; JS sincroniza aria-current via evento documentado e ativa inicialmente a introdução."
+    ],
+    "extraction": "Adaptação explícita do primeiro bloco HTML; fontes e transformações preservadas.",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/components/_scrollspy.scss",
+        "sha256": "ea330eda39160f2a056eb9d93d41cd200761b50e04c3fe8c9d104f1b4ab9bf9a"
+      },
+      {
+        "path": "packages/fokus-js/js/scrollspy.js",
+        "sha256": "14f6f8fe57f93cadc527361385fc35806ae2b4d7ed5a9d38df6dd811e899e0c9"
       }
     ]
   }
