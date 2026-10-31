@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+import { buildSync } from 'esbuild';
+import { fileURLToPath } from 'node:url';
+const root = fileURLToPath(new URL('../../', import.meta.url));
+const script = buildSync({ stdin: { contents: 'import { TreeView } from "./packages/fokus-js/js/tree-view.js"; window.tree = new TreeView(document.getElementById("tree"));', resolveDir: root }, bundle: true, write: false, format: 'iife' }).outputFiles[0].text;
+test('disabled nodes remain discoverable but cannot activate; open enabled descendants work', async ({ page }) => {
+  await page.setContent('<!doctype html><html lang="pt-BR"><title>Tree disabled</title><body><main><ul id="tree" class="fs-tree" aria-label="Arquivos"><li id="closed" aria-disabled="true"><a class="fs-tree-label" href="#blocked">Fechado</a><ul><li><span class="fs-tree-label">Oculto</span></li></ul></li><li id="open" aria-disabled="true" aria-expanded="true"><span class="fs-tree-label">Aberto</span><ul><li id="child"><span class="fs-tree-label">Filho habilitado</span></li></ul></li></ul></main></body></html>');
+  await page.addStyleTag({ path: root + 'dist/css/fokus.css' });
+  await page.addScriptTag({ content: script });
+  await page.locator('#closed').focus();
+  await page.locator('#closed').press('ArrowRight');
+  await expect(page.locator('#closed')).toHaveAttribute('aria-expanded', 'false');
+  await page.locator('#closed a').focus();
+  await page.locator('#closed a').press('Enter');
+  expect(await page.evaluate(() => location.hash)).toBe('');
+  await page.locator('#closed').focus();
+  await page.locator('#closed').press('ArrowDown');
+  await expect(page.locator('#open')).toBeFocused();
+  await page.locator('#open').press('ArrowRight');
+  await expect(page.locator('#child')).toBeFocused();
+  await page.locator('#child').press('Enter');
+  await expect(page.locator('#child')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('#open')).toHaveAttribute('aria-expanded', 'true');
+});
