@@ -24,3 +24,12 @@ Provenance por exemplo inclui commit-base, hash do HTML e hashes de implementaç
 Handlers DOM de Button Group e Close Button são identificados como demo-dom,
 não como APIs Fokus. Testes executam markup/handlers reais e repetem teardown.
 Testes browser/axe fornecidos só podem ser declarados aprovados após execução.
+
+## Resultado integrado
+
+15 exemplos novos: total 152 em 56 componentes; todos têm ao menos 2 exemplos.
+Isso não muda coverage.complete=false. Complementos interativos: Offcanvas end
+estático e bottom sem backdrop; Popover focus/bottom-start; Confirm warning
+com texto escapado; Collapse aberto; Tag loading/recuperação e truncamento;
+Carousel fade manual e estático. Contratos e limites em OVERLAY-OPTIONS.md e
+MOTION-VARIANTS.md. Todos os exemplos da base137 foram preservados.
