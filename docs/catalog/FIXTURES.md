@@ -1,6 +1,6 @@
 # Exemplos selecionados para o catálogo
 
-`examples.json` reúne 12 exemplos mínimos, não o catálogo completo de 56
+`examples.json` reúne 21 exemplos mínimos, não o catálogo completo de 56
 componentes. As fontes HTML são cópias literais do primeiro bloco HTML da
 página de cada componente na base PR #41 (`218afe4`). Caminho, linha, SHA-256
 e commit completo estão em `fixture-provenance.json`.
@@ -25,9 +25,9 @@ Não houve mudança no runtime nem nas páginas fonte dos componentes.
 
 ## Validação desta reconstrução
 
-Node 24.22.1: build, lint, types, docs e package check aprovados. Os 16
-checks focados (12 contratos + quatro fluxos jsdom) passaram. A suíte
-browser contém 51 casos listados nos três engines, mas **não foi executada
+Node 24.22.1: build, lint, types, docs e package check aprovados. Os 25
+checks focados (21 contratos + quatro fluxos jsdom) passaram. A suíte
+browser contém 78 casos listados nos três engines, mas **não foi executada
 com sucesso neste ambiente**: o download do Chromium Playwright retornou
 arquivo ZIP inválido e o Chromium do sistema não iniciou por restrição de
 socket do sandbox. A tentativa autorizada de execução externa também falhou

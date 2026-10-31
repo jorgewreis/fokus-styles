@@ -176,5 +176,136 @@
       ],
       "js": "docs/catalog/fixtures/modal/basic.js"
     }
+  ],
+  "breadcrumb": [
+    {
+      "id": "basic",
+      "title": "Breadcrumb — exemplo documentado",
+      "html": "docs/catalog/fixtures/breadcrumb/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Links demonstrativos (#); não há navegação nem breadcrumb responsivo JavaScript."
+      ]
+    }
+  ],
+  "button-group": [
+    {
+      "id": "basic",
+      "title": "Button-Group — exemplo documentado",
+      "html": "docs/catalog/fixtures/button-group/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botões demonstrativos sem comportamento de aplicativo."
+      ]
+    }
+  ],
+  "divider": [
+    {
+      "id": "basic",
+      "title": "Divider — exemplo documentado",
+      "html": "docs/catalog/fixtures/divider/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "empty-state": [
+    {
+      "id": "basic",
+      "title": "Empty-State — exemplo documentado",
+      "html": "docs/catalog/fixtures/empty-state/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botões demonstrativos sem comportamento de aplicativo."
+      ]
+    }
+  ],
+  "segmented-control": [
+    {
+      "id": "basic",
+      "title": "Segmented-Control — exemplo documentado",
+      "html": "docs/catalog/fixtures/segmented-control/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "skeleton": [
+    {
+      "id": "basic",
+      "title": "Skeleton — exemplo documentado",
+      "html": "docs/catalog/fixtures/skeleton/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Placeholder visual; contexto de carregamento e anúncio acessível são responsabilidade do aplicativo."
+      ]
+    }
+  ],
+  "table": [
+    {
+      "id": "basic",
+      "title": "Table — exemplo documentado",
+      "html": "docs/catalog/fixtures/table/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
+  ],
+  "tile": [
+    {
+      "id": "basic",
+      "title": "Tile — exemplo documentado",
+      "html": "docs/catalog/fixtures/tile/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+        "Botões demonstrativos sem comportamento de aplicativo."
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "basic",
+      "title": "Timeline — exemplo documentado",
+      "html": "docs/catalog/fixtures/timeline/basic.html",
+      "coverage": [
+        "markup-documentado",
+        "classes-css-compiladas"
+      ],
+      "limitations": [
+        "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+      ]
+    }
   ]
 }

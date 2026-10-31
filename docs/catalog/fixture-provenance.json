@@ -82,5 +82,68 @@
     "startLine": 9,
     "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff",
     "extraction": "Primeiro bloco HTML, conteúdo literal; JS de inicialização adicionado conforme API documentada."
+  },
+  "breadcrumb": {
+    "source": "docs/components/breadcrumb.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "20ce604d5998f4edb81c7f5a8c66ae0b6db434259a0dc42a98ce51056c305532",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "button-group": {
+    "source": "docs/components/button-group.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 11,
+    "sha256": "56af881d9a34842277aab0015c8c61174723e9dbb32b2486892add4e366489af",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "divider": {
+    "source": "docs/components/divider.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 8,
+    "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "empty-state": {
+    "source": "docs/components/empty-state.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "segmented-control": {
+    "source": "docs/components/segmented-control.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "skeleton": {
+    "source": "docs/components/skeleton.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "d8d1fc7d365ecd657c2a725b17b6e689c2064d142ecd3b9a9f066c26c4a323a3",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "table": {
+    "source": "docs/components/table.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "3501de011edf7dc3a38d3559fdb5b66d425959e5953a7487a3f07a380a3e1b3f",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "tile": {
+    "source": "docs/components/tile.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 10,
+    "sha256": "4d0218ac209b6dd77b88c93c3675e4b8bbe1e7dc526b1a46c870f4fc706b1a3b",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
+  },
+  "timeline": {
+    "source": "docs/components/timeline.md",
+    "sourceCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
+    "startLine": 9,
+    "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce",
+    "extraction": "Primeiro bloco HTML, conteúdo literal; componente CSS/nativo sem inicialização JS."
   }
 }
