@@ -52,8 +52,8 @@ Tamanho do diálogo: `.fs-modal-sm` (320px), `.fs-modal-lg` (720px) em
 `.is-open` no `.fs-modal` — controlado pelo JS.
 
 **Backdrop estático** (`data-backdrop="static"` no `.fs-modal`): desativa
-fechamento por `Escape` e clique fora — só um `data-fs-dismiss="modal"`
-explícito fecha. Use para fluxos que exigem uma decisão explícita.
+fechamento por `Escape` e clique fora; `data-fs-dismiss="modal"`, `hide()` e
+`dispose()` ainda fecham. Use para fluxos que exigem uma decisão explícita.
 
 ```html
 <div class="fs-modal" id="modalCritico" data-backdrop="static">...</div>
@@ -129,3 +129,12 @@ o painel. `Escape` fecha primeiro o popup ativo; outro `Escape` fecha o modal.
 Fechar o diálogo programaticamente também fecha seus popups internos.
 Ao chamar `dispose()`, painéis fornecidos pelo aplicativo voltam ao seu
 pai original; tooltips gerados pelo framework são removidos.
+
+### Limites das opções desta versão
+
+O construtor lê somente `backdrop`, e apenas o valor `"static"` altera a
+política de fechamento. `{ backdrop: false }` é aceito pelos tipos, mas não
+remove o fundo nem desativa Escape/clique fora; `data-backdrop="false"` também
+não torna o Modal não modal. Não há opção `keyboard`, `focus` ou `html` lida
+pelo construtor. Conteúdo é DOM fornecido pela aplicação, não uma string
+sanitizada pelo Modal.

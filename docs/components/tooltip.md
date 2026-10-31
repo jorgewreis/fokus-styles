@@ -12,9 +12,9 @@ teclado em alguns navegadores).
 </button>
 ```
 
-O texto vem do atributo `title` (ou `data-title`) — o JS o remove do DOM
-na inicialização (pra não duplicar com o tooltip nativo do navegador) e o
-recria como conteúdo do tooltip.
+O texto vem de `title`, depois `data-title`, depois `options.title` (nessa
+precedência). O JS remove somente `title`, evitando o tooltip nativo, e
+insere o texto com `textContent`: tags HTML não são interpretadas.
 
 ## Anatomia
 
@@ -111,3 +111,14 @@ Quando o gatilho já possui `aria-describedby`, o Tooltip acrescenta somente o
 próprio ID e restaura a lista original ao executar `dispose()`.
 
 Mockup: [laboratório independente do componente](../../mockup/examples/tooltip.html).
+
+### Precedência e reinicialização
+
+Um `title=""` existente não cai para `data-title` ou `options.title`: gera erro
+de texto ausente. O mesmo vale para `data-title=""` quando title não existe.
+Ao usar `options.title`, remova atributos conflitantes. Não há opção `html`.
+
+`dispose()` restaura o `aria-describedby` original, mas não restaura `title`.
+Para recriar uma instância que tinha apenas title, forneça novamente o texto
+por atributo ou opção; não suponha que `new Tooltip(el)` continuará funcionando
+após o primeiro dispose. `data-title` não é removido pelo componente.

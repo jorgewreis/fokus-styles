@@ -45,9 +45,9 @@ Borda de entrada — obrigatório escolher uma:
 (desativada automaticamente sob `prefers-reduced-motion: reduce`).
 
 **Backdrop**: `data-backdrop="false"` no `.fs-offcanvas` remove o
-backdrop (painel some, mas o resto da página continua interativa por
-baixo); `data-backdrop="static"` mantém o backdrop mas desativa
-`Escape`/clique-fora (só `data-fs-dismiss="offcanvas"` fecha) — mesma
+backdrop visual; o painel permanece modal, com foco preso, isolamento do
+conteúdo externo e scroll bloqueado. `data-backdrop="static"` mantém o backdrop mas desativa
+`Escape`/clique-fora (dismiss e chamadas `hide()`/`dispose()` ainda fecham) — mesma
 semântica do Modal.
 
 ## A11y
@@ -100,3 +100,12 @@ Auto-init via `data-fs="offcanvas"` **no gatilho**. `Offcanvas.getInstance(trigg
 ```
 
 Mockup: [laboratório do componente](../../mockup/overlays-commands.html#offcanvas).
+
+### Opção backdrop: limite da versão atual
+
+Use o atributo `data-backdrop="false"` no painel para omitir o backdrop visual.
+Embora os tipos aceitem `{ backdrop: false }`, o runtime compara com a string
+`"false"`: o booleano false **não** desativa o backdrop nesta versão e tem
+precedência sobre o atributo. `"static"` é a opção que bloqueia Escape/clique
+fora; não há opção `keyboard` separada. Isto documenta o comportamento atual,
+não amplia o contrato de tipos nem corrige o runtime.

@@ -31,8 +31,8 @@ aditivos incluem `.fs-popover-icon`, `.fs-popover-heading`,
 - **Gatilho**: `data-trigger` no elemento gatilho —
   `click` (padrão), `hover` (com pequeno atraso ao sair, pra dar tempo de
   mover o mouse até o popover), `focus` (mostra ao focar, some ao perder
-  foco pra fora do trigger+popover), `manual` (você chama `show()`/`hide()`
-  vocẽ mesmo, sem listener automático).
+  foco pra fora do trigger+popover). O runtime também reconhece `manual`,
+  mas esse valor não está na união pública `PopoverOptions.trigger`.
 - **Hover Card**: `.fs-popover-hover-card` — não é um componente
   separado, é este mesmo Popover com `data-trigger="hover"` e um
   modificador visual (mais largo, corpo em linha) pra conteúdo tipo
@@ -82,7 +82,7 @@ Auto-init via `data-fs="popover"`. `Popover.getInstance(el)` (`el` é o
 | `show()` | Abre, posiciona, ativa fechamento por clique fora (só no trigger `click`). |
 | `hide()` | Fecha. |
 | `toggle()` | Alterna. |
-| `dispose()` | Fecha se aberto, remove todos os listeners, remove o elemento do popover do DOM. |
+| `dispose()` | Fecha se aberto, remove listeners e devolve o painel ao pai e posição originais; não o destrói. |
 
 | Evento (no gatilho) | Cancelável | Quando |
 |---|---|---|
@@ -116,3 +116,21 @@ Auto-init via `data-fs="popover"`. `Popover.getInstance(el)` (`el` é o
 ```
 
 Mockup: [laboratório independente do componente](../../mockup/examples/popover.html).
+
+### Segurança, teclado e modos de gatilho
+
+Popover usa o DOM já existente em `data-fs-target`; não recebe nem sanitiza
+strings HTML. Inserir conteúdo não confiável nesse DOM é responsabilidade da
+aplicação. `placement`, `align` e `trigger` são as opções lidas; não existe
+opção `html`, `content` ou `offset` (a distância interna é 10px nesta versão).
+
+No modo hover os listeners são apenas de mouse: foco de teclado não abre o
+painel. Não use conteúdo essencial ou interativo disponível somente por hover;
+prefira click/focus e forneça um nome acessível ao diálogo (`.fs-popover-header`
+ou `aria-label`). O exemplo de Hover Card é complementar e precisa de uma
+alternativa acessível e um destino real em vez de `href="#"` na aplicação.
+
+`data-trigger="manual"` é reconhecido em runtime, mas não é uma opção tipada.
+Nesse modo não há listener automático de Escape nem clique fora: a aplicação
+precisa controlar abertura, fechamento e foco. O botão `data-fs-dismiss` ainda
+é atendido. Não é equivalente ao modo click com abertura programática.

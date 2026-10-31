@@ -74,8 +74,8 @@ diálogo; não há instância persistente pra gerenciar.
 
 ## Tokens
 
-Os mesmos do [Modal](modal.md) — sem tokens próprios além de
-`--fs-alert-dialog-message` usar `--fs-color-muted`/`$font-size-sm`.
+Os mesmos do [Modal](modal.md) — não há token `--fs-alert-dialog-message`.
+A classe `.fs-alert-dialog-message` usa `--fs-color-muted`/`$font-size-sm`.
 
 ## Exemplo
 
@@ -103,3 +103,14 @@ Mockup: [laboratório do componente](../../mockup/overlays-commands.html#alert-d
 `variant` aceita `primary`, `secondary`, `success`, `warning`, `danger` e
 `info`. Valores desconhecidos usam `danger`; a entrada não é interpretada
 como HTML nem como classe CSS arbitrária.
+
+### Texto e limites das opções
+
+`title`, `message`, `confirmText` e `cancelText` são texto, escapado antes de
+compor o HTML interno. Tags aparecem literalmente; não há opção `html`.
+`variant` é validada por lista permitida. Não há repasse de `backdrop` ou
+`keyboard` para o Modal: só as cinco opções da tabela são lidas.
+
+Para impedir chamadas simultâneas, o aplicativo deve controlar um estado
+pendente e desabilitar o acionador enquanto aguarda a Promise. O confirm não
+fornece instância pública nem função de cancelamento externa.
