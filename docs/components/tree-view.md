@@ -101,13 +101,18 @@ a label do pai.
 expansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,
 `collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.
 Cliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,
-antes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.
+antes dos handlers do alvo. Listeners de captura externos/anteriores e chamadas
+à lógica de negócio não são interceptados. É uma guarda de interface, não
+autorização de acesso. Links habilitados mantêm seu comportamento/default.
 
 Nós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.
 A indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.
 Se um ramo indisponível já estiver aberto, seus descendentes habilitados
 continuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre
 um ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.
+Alterar disabled não desfaz seleção/expansão anteriores automaticamente. Essa
+política local explícita preserva a navegação existente; não representa uma
+implementação completa de herança de estado ARIA.
 
 A estrutura é preparada na construção; não existe API refresh ou carregamento
 remoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos
