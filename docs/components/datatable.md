@@ -139,9 +139,9 @@ Auto-init via `data-fs="datatable"` no elemento raiz.
 ## Opções e limites do contrato
 
 `data-fs-page-size` tem precedência sobre `options.pageSize`, seguido do padrão
-10. Forneça um inteiro positivo: o runtime converte com Number e arredonda para
-baixo, mas uma fração positiva menor que 1 pode resultar em zero. Não use o
-componente como validador dessa configuração.
+10. O runtime converte com Number, aceita valores finitos maiores ou iguais a 1
+e arredonda para baixo. Valores menores que 1, não finitos ou não numéricos usam
+10, evitando páginas sem linhas e contagens infinitas. Prefira inteiro positivo.
 
 O snapshot de células usa `data-fs-sort-value` quando presente, tanto para ordenar
 quanto para filtrar. Portanto, uma data exibida como “31 outubro” com override
@@ -150,11 +150,10 @@ textos numéricos reconhecidos por Number são comparados numericamente; os dema
 usam comparação textual pt-BR. Valores tipados devem ser válidos e canônicos;
 a comparação não é validação de datas ou números de negócio.
 
-O runtime aceita a direção `none` e o ciclo do cabeçalho a usa, mas a declaração
-TypeScript atual de `sort()` aceita somente `asc`/`desc`. Essa divergência de tipos
-permanece: não presuma que a chamada `sort(chave, "none")` compile com os tipos
-publicados. As propriedades pageCount/rowCount também não constam na declaração
-atual. Este ajuste documental não amplia a API tipada.
+Runtime e declaração TypeScript aceitam `sort(chave, "none")`, que restaura a
+ordem original. `pageCount` e `rowCount` são getters readonly tipados; `pageSize`
+e `currentPage` continuam públicos, mas alterar campos diretamente não valida
+nem renderiza. Use configuração inicial e `goToPage()` para paginação.
 
 ## Tokens
 

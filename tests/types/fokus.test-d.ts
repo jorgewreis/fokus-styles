@@ -20,6 +20,14 @@ dropdown.toggle();
 const tableEl = document.querySelector<HTMLElement>("[data-fs='datatable']")!;
 const table = new DataTable(tableEl, { pageSize: 20 });
 table.sort("name", "asc");
+table.sort("name", "none");
+const pages: number = table.pageCount;
+const rows: number = table.rowCount;
+// @ts-expect-error count getters are readonly
+table.pageCount = 3;
+// @ts-expect-error unsupported sort direction
+table.sort("name", "sideways");
+export { pages, rows };
 table.filter("foo");
 
 confirm({ title: "Tem certeza?", variant: "danger" }).then((confirmed: boolean) => confirmed);

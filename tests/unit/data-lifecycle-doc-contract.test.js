@@ -13,10 +13,10 @@ it('DataTable attribute pageSize wins and sort override also controls filtering'
  const d=new DataTable(document.querySelector('#r'),{pageSize:9});instances.push(d);expect(d.pageSize).toBe(2);d.filter('outubro');expect(d.rowCount).toBe(0);d.filter('2026');expect(d.rowCount).toBe(1);
  expect(doc('datatable')).toContain('tanto para ordenar');
 });
-it('DataTable untyped numeric text sorting and runtime none differ from narrow type declaration',()=>{
+it('DataTable untyped numeric text sorting and none match the public type declaration',()=>{
  document.body.innerHTML='<div id="r"><table class="fs-table"><thead><tr><th data-fs-sort="n">N</th></tr></thead><tbody><tr><td>10</td></tr><tr><td>2</td></tr></tbody></table></div>';
  const d=new DataTable(document.querySelector('#r'));instances.push(d);d.sort('n','asc');expect(document.querySelector('tbody tr').textContent).toBe('2');d.sort('n','none');expect(document.querySelector('tbody tr').textContent).toBe('10');
- expect(readFileSync('packages/fokus-js/js/datatable.d.ts','utf8')).toContain('direction?: "asc" | "desc"');expect(doc('datatable')).toContain('divergência de tipos');
+ expect(readFileSync('packages/fokus-js/js/datatable.d.ts','utf8')).toContain('direction?: "asc" | "desc" | "none"');expect(doc('datatable')).toContain('Runtime e declaração TypeScript aceitam');
 });
 it('TreeView fallback includes children and aria-disabled does not implement disabled interaction',()=>{
  document.body.innerHTML='<ul><li aria-disabled="true"><span class="fs-tree-label">Parent</span><ul><li><span class="fs-tree-label">Child</span></li></ul></li></ul>';
