@@ -253,6 +253,18 @@
         "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
       ],
       "css": "docs/catalog/fixtures/checkbox/native-tokens.css"
+    },
+    {
+      "id": "validation-contract",
+      "title": "Checkbox — estados válidos e inválidos reais",
+      "html": "docs/catalog/fixtures/checkbox/validation-contract.html",
+      "coverage": [
+        "atributos-verificados-na-implementacao",
+        "estados-e-limites-explicitos"
+      ],
+      "limitations": [
+        "Não certifica acessibilidade manual; não há validação de servidor nem upload."
+      ]
     }
   ],
   "radio": [
@@ -977,6 +989,19 @@
       "limitations": [
         "Composição local sem API JS; não certifica equivalência visual entre motores ou acessibilidade manual."
       ]
+    },
+    {
+      "id": "drop-contract",
+      "title": "File Upload — data-fs na label e limites do drop",
+      "html": "docs/catalog/fixtures/file-upload/drop-contract.html",
+      "coverage": [
+        "atributos-verificados-na-implementacao",
+        "estados-e-limites-explicitos"
+      ],
+      "limitations": [
+        "Não certifica acessibilidade manual; não há validação de servidor nem upload."
+      ],
+      "js": "docs/catalog/fixtures/file-upload/drop-contract.js"
     }
   ],
   "list-group": [

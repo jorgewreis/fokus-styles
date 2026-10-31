@@ -44,7 +44,7 @@ Tamanho: `.fs-rating-sm` (16px), `.fs-rating-lg` (32px); sem sufixo = 24px
 
 ## Estados
 
-- Nota selecionada e todas as anteriores (maior valor) ficam na cor de
+- Nota selecionada e as de menor valor (seguintes no DOM decrescente) ficam na cor de
   aviso (`--fs-color-warning`) e com a estrela preenchida — via
   `:checked ~ .fs-rating-star`.
 - **Hover** prévia a mesma seleção antes de confirmar o clique

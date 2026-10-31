@@ -2507,5 +2507,37 @@
       }
     ],
     "extraction": "Composição autoral conferida na implementação e declaração pública; inicialização e dispose locais."
+  },
+  "file-upload/drop-contract": {
+    "mode": "authored-runtime",
+    "sourceCommit": "3b6b8807d3d61a6bbaa80231af9d8330bc6ba3cb",
+    "sha256": "71cac99e5d252f73dc0a6b68b76ea1e2c518961e895754650eee709c7c7c6362",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/file-drop.js",
+        "sha256": "72ff2f318b5a84555826aad39623af62f9572e0c8d1d872d9a01f9d3be7af136"
+      },
+      {
+        "path": "packages/fokus-js/js/file-drop.d.ts",
+        "sha256": "eba01832b4d6853ad7ba192b96059799e5aba623edead9e1369eb6e7925cedbf"
+      },
+      {
+        "path": "packages/fokus-components/scss/forms/_forms.scss",
+        "sha256": "9a1e4a1f111ea8b5049e2b619ea985bf3f10fb19d614f83a610c239a5d382687"
+      }
+    ],
+    "extraction": "Composição autoral para regressão de atributos/opções documentadas versus código real."
+  },
+  "checkbox/validation-contract": {
+    "mode": "authored-runtime",
+    "sourceCommit": "3b6b8807d3d61a6bbaa80231af9d8330bc6ba3cb",
+    "sha256": "825e1c27158cd840f749a652ddb4d97a828967aab4e55ff399a92cbab6434637",
+    "implementation": [
+      {
+        "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
+        "sha256": "ddcfdb8c5f2cbd937c9da33ba5a10a9f6bede504c02761b9dcc16b93e2d2569c"
+      }
+    ],
+    "extraction": "Composição autoral para regressão de atributos/opções documentadas versus código real."
   }
 }

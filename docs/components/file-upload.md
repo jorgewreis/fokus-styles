@@ -33,10 +33,10 @@ visível).
 
 ```html
 <div class="fs-file-upload" style="width: 100%;">
-  <input type="file" class="fs-file-input" id="arquivo2" data-fs="file-drop">
-  <label for="arquivo2" class="fs-file-label fs-file-label-dropzone">
+  <input type="file" class="fs-file-input" id="arquivo2" accept="image/png,image/jpeg">
+  <label for="arquivo2" class="fs-file-label fs-file-label-dropzone" data-fs="file-drop">
     Arraste um arquivo ou clique para escolher
-    <span class="fs-file-dropzone-hint">PNG, JPG até 5MB</span>
+    <span class="fs-file-dropzone-hint">PNG/JPEG sugeridos; valide conteúdo e tamanho na aplicação</span>
   </label>
 </div>
 ```
@@ -91,3 +91,12 @@ Ver acima (Visão geral e Variações) — mockup completo em
 Pra upload de múltiplos arquivos com preview, progresso e remoção por
 item, veja [Upload avançado](file-upload-advanced.md) — evolução deste
 componente, reaproveitando a mesma dropzone/botão como gatilho.
+
+## Limites da personalização e validação
+
+FileDrop não filtra accept, MIME, tamanho ou quantidade e não faz upload.
+accept é apenas uma sugestão do seletor nativo; o drop copia o FileList recebido.
+Use multiple quando a interface permitir vários arquivos e valide no aplicativo
+e no servidor. Um input disabled faz o drop ser ignorado; a aparência dragover
+ainda pode ser aplicada por dragenter. Dispose remove listeners, mas não limpa
+is-dragover: a aplicação pode limpar essa classe ao desmontar sua composição.

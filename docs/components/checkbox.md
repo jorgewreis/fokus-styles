@@ -27,10 +27,10 @@ checkbox, e leitores de tela não anunciam o rótulo.
 ## Variações
 
 Tamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).
-O checkbox é quadrado (`border-radius: 0`): desmarcado tem borda `primary`,
-marcado usa preenchimento `primary` e check branco.
-No hover desmarcado, o fundo recebe um tom sutil de `primary`; em `:active`,
-o preenchimento fica mais intenso para confirmar o clique.
+O raio usa `--fs-check-radius` (padrão `var(--fs-radius-sm)`). Desmarcado usa
+`--fs-color-border` na borda; marcado usa `--fs-color-primary` e a marca
+`--fs-check-mark-color` (padrão `--fs-color-on-primary`). Hover desmarcado usa
+`--fs-control-hover-bg`; active usa `--fs-control-active-bg`.
 
 ```html
 <div class="fs-check fs-check-sm">...</div>
@@ -42,11 +42,13 @@ o preenchimento fica mais intenso para confirmar o clique.
 - **checked**: atributo `checked` no `<input>`.
 - **indeterminate**: só via JavaScript (`input.indeterminate = true` — não
   existe atributo HTML equivalente; o framework estiliza `:indeterminate`,
-  com borda tracejada `primary` e traço horizontal).
+  com borda `primary` e traço horizontal; não define borda tracejada).
 - **disabled**: atributo `disabled` no `<input>`.
 - **Validação**: use `.is-invalid` no `<input>` quando houver erro. O
   inválido usa preenchimento `danger` com um X branco, inclusive quando não
-  está marcado; não há estado visual separado para “válido”.
+  está marcado. `.is-valid` ou `aria-invalid="false"` aplica borda de sucesso;
+  `.is-invalid` ou `aria-invalid="true"` aplica erro. São estados visuais:
+  CSS não valida os dados nem sincroniza classes e ARIA automaticamente.
 - **Disabled**: desmarcado usa trilho e borda neutros; marcado mantém uma
   versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.
 - **Foco**: `:focus-visible` no input desenha o anel sobre a caixa
@@ -89,7 +91,7 @@ Tokens de componente podem ser sobrescritos por instância sem `!important`:
 | Token | Fallback | Uso |
 |---|---|---|
 | `--fs-check-size` | `18px` | Caixa visual |
-| `--fs-check-border-width` | `--fs-border-width` | Borda |
+| `--fs-check-border-width` | `2px` | Borda |
 | `--fs-check-radius` | `--fs-radius-sm` | Raio |
 | `--fs-check-gap` | `--fs-space-2` | Distância até o texto |
 | `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |

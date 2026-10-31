@@ -39,8 +39,9 @@ com dropdown estilizado.
 
 ## Variações
 
-- **Tamanho**: `.fs-form-control-sm`, `.fs-form-control-lg` (idem para
-  `.fs-form-select`); sem sufixo = 38px de altura.
+- **Tamanho**: `.fs-form-control-xs`, `.fs-form-control-sm`,
+  `.fs-form-control-lg`, `.fs-form-control-xl` (idem para `.fs-form-select`);
+  sem sufixo = 38px de altura. Tamanhos estão no SCSS; não são opções JS.
 - **Largura**: `.fs-form-size-{sm|md|lg|xl|xxl}` — larguras fixas
   (120px–360px) pra campos que não devem esticar 100%.
 

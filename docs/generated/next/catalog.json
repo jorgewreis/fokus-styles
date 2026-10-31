@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "db348b96c3f6ab3185fb9fb858053169d9c45d63649a7a493a3e16c92a375e3b",
+    "digest": "279ceb84c2f80258c82831f4141b44b4103aad1cf0e8553c2c2eb11cb63055d2",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "be2cfcd9dfe61aa39f24a97e9341150c88cdc3a26f15034231daddf9a17b191f"
+        "sha256": "4db2738b20879d870107c17e7c3277f6e6e7a2350f51970466a59d73bb13a37c"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "5ee8cd0f71313f846901eaec31d7d46f423d309f346d263ef684510ae83279dd"
+        "sha256": "76958dbae4fba6cb431a37fda26cde589771930bd4e49c5b9703944bf4937494"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -240,6 +240,10 @@
         "sha256": "94c21a25a6494a06ff8297baaf7075a72d1f4076ad9f4358d7998ab4003fca00"
       },
       {
+        "path": "docs/catalog/fixtures/checkbox/validation-contract.html",
+        "sha256": "825e1c27158cd840f749a652ddb4d97a828967aab4e55ff399a92cbab6434637"
+      },
+      {
         "path": "docs/catalog/fixtures/close-button/basic.html",
         "sha256": "15861a77f34aa27fb582f8e3ec1df507484ab985d887bda0e0b4a44310489f38"
       },
@@ -450,6 +454,14 @@
       {
         "path": "docs/catalog/fixtures/file-upload/basic.html",
         "sha256": "1f147bdbcf8eb0636090eb539789d6a80195f8959fa71ba5024bc6fedb4af52f"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload/drop-contract.html",
+        "sha256": "71cac99e5d252f73dc0a6b68b76ea1e2c518961e895754650eee709c7c7c6362"
+      },
+      {
+        "path": "docs/catalog/fixtures/file-upload/drop-contract.js",
+        "sha256": "63b51db58b5d8bfd63e21f1856567612cb71839ed321a1dc71b1f2c60b8e57e8"
       },
       {
         "path": "docs/catalog/fixtures/file-upload/native-sizes.html",
@@ -1077,7 +1089,7 @@
       },
       {
         "path": "docs/components/checkbox.md",
-        "sha256": "0e3439ba91db34144dca40bf10cf74ddae1fb156ce78bc2a36ff1711de5bcb49"
+        "sha256": "4c03c879c83051ab5dd9a000b0c031448a7ffada921c0809895ad5eb93320218"
       },
       {
         "path": "docs/components/close-button.md",
@@ -1125,7 +1137,7 @@
       },
       {
         "path": "docs/components/file-upload.md",
-        "sha256": "22ce26a9022a2d4e716038e806c59432683f360a1ecc1dd401ade228817b7286"
+        "sha256": "288677ebedb86f8039e7e1293780982e4b5fc62df551d55e63e0ccb73baf02fb"
       },
       {
         "path": "docs/components/icon-link.md",
@@ -1137,7 +1149,7 @@
       },
       {
         "path": "docs/components/input.md",
-        "sha256": "7791ac9db22cb8a471c178d78bb25e92907e6e82b95fbcfd5bce41d9485b437a"
+        "sha256": "22d5b856733132165126af0d655ca1fc178885b398e9f5d6c4551dec75bfbdf9"
       },
       {
         "path": "docs/components/list-group.md",
@@ -1193,7 +1205,7 @@
       },
       {
         "path": "docs/components/rating.md",
-        "sha256": "d36a38810a1cced7508a816da7b583722c1e2d8a1c714ce6ab1f66fa8038acc8"
+        "sha256": "6cc5b90055660616e66857230ecfa542d4b8c373f8c1c46be0e6b8fe1555d2ce"
       },
       {
         "path": "docs/components/ratio.md",
@@ -2108,7 +2120,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 152,
+    "examples": 154,
     "complete": false
   },
   "contracts": [
@@ -13922,7 +13934,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/checkbox.md",
-        "markdown": "# Checkbox\n\nCheckbox 100% CSS, desenhado sobre um `<input type=\"checkbox\">` nativo —\nteclado, foco e semântica são os do navegador; o framework só estiliza.\n\n## Visão geral\n\n```html\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"aceite\">\n  <label for=\"aceite\" class=\"fs-check-label\">Aceito os termos</label>\n</div>\n```\n\n## Anatomia\n\n`.fs-check` (wrapper) > `.fs-check-input` (`<input>`, visualmente oculto\nvia clip — continua focável/anunciado por leitor de tela) + `.fs-check-label`\n(`<label for=\"...\">`, desenha a caixa via `::before` e a marca via\n`::after`). Input e label são **irmãos**, não aninhados — a associação é só\npor `for`/`id` (mesma técnica de [Segmented Control](segmented-control.md)\ne [Rating](rating.md)).\n\nO `for`/`id` é obrigatório: sem ele, clicar no texto não alterna o\ncheckbox, e leitores de tela não anunciam o rótulo.\n\n## Variações\n\nTamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).\nO checkbox é quadrado (`border-radius: 0`): desmarcado tem borda `primary`,\nmarcado usa preenchimento `primary` e check branco.\nNo hover desmarcado, o fundo recebe um tom sutil de `primary`; em `:active`,\no preenchimento fica mais intenso para confirmar o clique.\n\n```html\n<div class=\"fs-check fs-check-sm\">...</div>\n<div class=\"fs-check fs-check-lg\">...</div>\n```\n\n## Estados\n\n- **checked**: atributo `checked` no `<input>`.\n- **indeterminate**: só via JavaScript (`input.indeterminate = true` — não\n  existe atributo HTML equivalente; o framework estiliza `:indeterminate`,\n  com borda tracejada `primary` e traço horizontal).\n- **disabled**: atributo `disabled` no `<input>`.\n- **Validação**: use `.is-invalid` no `<input>` quando houver erro. O\n  inválido usa preenchimento `danger` com um X branco, inclusive quando não\n  está marcado; não há estado visual separado para “válido”.\n- **Disabled**: desmarcado usa trilho e borda neutros; marcado mantém uma\n  versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.\n- **Foco**: `:focus-visible` no input desenha o anel sobre a caixa\n  (`::before` da label), não sobre o texto.\n- **Hover/active**: superfície e borda confirmam a interação sem depender\n  apenas da cor do texto.\n- **RTL e movimento**: propriedades lógicas acompanham `dir=\"rtl\"` e as\n  transições são desativadas em `prefers-reduced-motion: reduce`.\n\n```html\n<input type=\"checkbox\" class=\"fs-check-input is-invalid\" id=\"c1\">\n<label for=\"c1\" class=\"fs-check-label\">Campo obrigatório</label>\n```\n\n```js\ndocument.getElementById(\"c2\").indeterminate = true;\n```\n\n## A11y\n\n- `<input type=\"checkbox\">` nativo — `Space` alterna, `Tab` foca, leitor de\n  tela anuncia estado (marcado/desmarcado/indeterminado) automaticamente.\n  Nenhum ARIA extra é necessário.\n- Sempre associe `label` via `for`/`id` — não use só `aria-label` no input\n  se houver texto visível ao lado (duplica a leitura ou some com o clique\n  no texto).\n- Para grupos relacionados, use `fieldset`/`legend`. Associe ajuda ou erro\n  com `aria-describedby` e indique erro com `aria-invalid=\"true\"` quando\n  aplicável.\n\n## API JS\n\nNenhuma — 100% CSS. `indeterminate` é uma propriedade do DOM nativo do\n`<input>`, não uma API do FokusStyles.\n\n## Tokens\n\nTokens de componente podem ser sobrescritos por instância sem `!important`:\n\n| Token | Fallback | Uso |\n|---|---|---|\n| `--fs-check-size` | `18px` | Caixa visual |\n| `--fs-check-border-width` | `--fs-border-width` | Borda |\n| `--fs-check-radius` | `--fs-radius-sm` | Raio |\n| `--fs-check-gap` | `--fs-space-2` | Distância até o texto |\n| `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |\n\n## Exemplo\n\n```html\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"c1\" checked>\n  <label for=\"c1\" class=\"fs-check-label\">Marcado</label>\n</div>\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"c2\" disabled>\n  <label for=\"c2\" class=\"fs-check-label\">Desabilitado</label>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/forms.html#check-radio-switch).\n",
+        "markdown": "# Checkbox\n\nCheckbox 100% CSS, desenhado sobre um `<input type=\"checkbox\">` nativo —\nteclado, foco e semântica são os do navegador; o framework só estiliza.\n\n## Visão geral\n\n```html\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"aceite\">\n  <label for=\"aceite\" class=\"fs-check-label\">Aceito os termos</label>\n</div>\n```\n\n## Anatomia\n\n`.fs-check` (wrapper) > `.fs-check-input` (`<input>`, visualmente oculto\nvia clip — continua focável/anunciado por leitor de tela) + `.fs-check-label`\n(`<label for=\"...\">`, desenha a caixa via `::before` e a marca via\n`::after`). Input e label são **irmãos**, não aninhados — a associação é só\npor `for`/`id` (mesma técnica de [Segmented Control](segmented-control.md)\ne [Rating](rating.md)).\n\nO `for`/`id` é obrigatório: sem ele, clicar no texto não alterna o\ncheckbox, e leitores de tela não anunciam o rótulo.\n\n## Variações\n\nTamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).\nO raio usa `--fs-check-radius` (padrão `var(--fs-radius-sm)`). Desmarcado usa\n`--fs-color-border` na borda; marcado usa `--fs-color-primary` e a marca\n`--fs-check-mark-color` (padrão `--fs-color-on-primary`). Hover desmarcado usa\n`--fs-control-hover-bg`; active usa `--fs-control-active-bg`.\n\n```html\n<div class=\"fs-check fs-check-sm\">...</div>\n<div class=\"fs-check fs-check-lg\">...</div>\n```\n\n## Estados\n\n- **checked**: atributo `checked` no `<input>`.\n- **indeterminate**: só via JavaScript (`input.indeterminate = true` — não\n  existe atributo HTML equivalente; o framework estiliza `:indeterminate`,\n  com borda `primary` e traço horizontal; não define borda tracejada).\n- **disabled**: atributo `disabled` no `<input>`.\n- **Validação**: use `.is-invalid` no `<input>` quando houver erro. O\n  inválido usa preenchimento `danger` com um X branco, inclusive quando não\n  está marcado. `.is-valid` ou `aria-invalid=\"false\"` aplica borda de sucesso;\n  `.is-invalid` ou `aria-invalid=\"true\"` aplica erro. São estados visuais:\n  CSS não valida os dados nem sincroniza classes e ARIA automaticamente.\n- **Disabled**: desmarcado usa trilho e borda neutros; marcado mantém uma\n  versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.\n- **Foco**: `:focus-visible` no input desenha o anel sobre a caixa\n  (`::before` da label), não sobre o texto.\n- **Hover/active**: superfície e borda confirmam a interação sem depender\n  apenas da cor do texto.\n- **RTL e movimento**: propriedades lógicas acompanham `dir=\"rtl\"` e as\n  transições são desativadas em `prefers-reduced-motion: reduce`.\n\n```html\n<input type=\"checkbox\" class=\"fs-check-input is-invalid\" id=\"c1\">\n<label for=\"c1\" class=\"fs-check-label\">Campo obrigatório</label>\n```\n\n```js\ndocument.getElementById(\"c2\").indeterminate = true;\n```\n\n## A11y\n\n- `<input type=\"checkbox\">` nativo — `Space` alterna, `Tab` foca, leitor de\n  tela anuncia estado (marcado/desmarcado/indeterminado) automaticamente.\n  Nenhum ARIA extra é necessário.\n- Sempre associe `label` via `for`/`id` — não use só `aria-label` no input\n  se houver texto visível ao lado (duplica a leitura ou some com o clique\n  no texto).\n- Para grupos relacionados, use `fieldset`/`legend`. Associe ajuda ou erro\n  com `aria-describedby` e indique erro com `aria-invalid=\"true\"` quando\n  aplicável.\n\n## API JS\n\nNenhuma — 100% CSS. `indeterminate` é uma propriedade do DOM nativo do\n`<input>`, não uma API do FokusStyles.\n\n## Tokens\n\nTokens de componente podem ser sobrescritos por instância sem `!important`:\n\n| Token | Fallback | Uso |\n|---|---|---|\n| `--fs-check-size` | `18px` | Caixa visual |\n| `--fs-check-border-width` | `2px` | Borda |\n| `--fs-check-radius` | `--fs-radius-sm` | Raio |\n| `--fs-check-gap` | `--fs-space-2` | Distância até o texto |\n| `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |\n\n## Exemplo\n\n```html\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"c1\" checked>\n  <label for=\"c1\" class=\"fs-check-label\">Marcado</label>\n</div>\n<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"c2\" disabled>\n  <label for=\"c2\" class=\"fs-check-label\">Desabilitado</label>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/forms.html#check-radio-switch).\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -13934,11 +13946,11 @@
           },
           {
             "title": "Variações",
-            "markdown": "Tamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).\nO checkbox é quadrado (`border-radius: 0`): desmarcado tem borda `primary`,\nmarcado usa preenchimento `primary` e check branco.\nNo hover desmarcado, o fundo recebe um tom sutil de `primary`; em `:active`,\no preenchimento fica mais intenso para confirmar o clique.\n\n```html\n<div class=\"fs-check fs-check-sm\">...</div>\n<div class=\"fs-check fs-check-lg\">...</div>\n```"
+            "markdown": "Tamanho: `.fs-check-sm`, `.fs-check-lg` no wrapper (sem sufixo = padrão).\nO raio usa `--fs-check-radius` (padrão `var(--fs-radius-sm)`). Desmarcado usa\n`--fs-color-border` na borda; marcado usa `--fs-color-primary` e a marca\n`--fs-check-mark-color` (padrão `--fs-color-on-primary`). Hover desmarcado usa\n`--fs-control-hover-bg`; active usa `--fs-control-active-bg`.\n\n```html\n<div class=\"fs-check fs-check-sm\">...</div>\n<div class=\"fs-check fs-check-lg\">...</div>\n```"
           },
           {
             "title": "Estados",
-            "markdown": "- **checked**: atributo `checked` no `<input>`.\n- **indeterminate**: só via JavaScript (`input.indeterminate = true` — não\n  existe atributo HTML equivalente; o framework estiliza `:indeterminate`,\n  com borda tracejada `primary` e traço horizontal).\n- **disabled**: atributo `disabled` no `<input>`.\n- **Validação**: use `.is-invalid` no `<input>` quando houver erro. O\n  inválido usa preenchimento `danger` com um X branco, inclusive quando não\n  está marcado; não há estado visual separado para “válido”.\n- **Disabled**: desmarcado usa trilho e borda neutros; marcado mantém uma\n  versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.\n- **Foco**: `:focus-visible` no input desenha o anel sobre a caixa\n  (`::before` da label), não sobre o texto.\n- **Hover/active**: superfície e borda confirmam a interação sem depender\n  apenas da cor do texto.\n- **RTL e movimento**: propriedades lógicas acompanham `dir=\"rtl\"` e as\n  transições são desativadas em `prefers-reduced-motion: reduce`.\n\n```html\n<input type=\"checkbox\" class=\"fs-check-input is-invalid\" id=\"c1\">\n<label for=\"c1\" class=\"fs-check-label\">Campo obrigatório</label>\n```\n\n```js\ndocument.getElementById(\"c2\").indeterminate = true;\n```"
+            "markdown": "- **checked**: atributo `checked` no `<input>`.\n- **indeterminate**: só via JavaScript (`input.indeterminate = true` — não\n  existe atributo HTML equivalente; o framework estiliza `:indeterminate`,\n  com borda `primary` e traço horizontal; não define borda tracejada).\n- **disabled**: atributo `disabled` no `<input>`.\n- **Validação**: use `.is-invalid` no `<input>` quando houver erro. O\n  inválido usa preenchimento `danger` com um X branco, inclusive quando não\n  está marcado. `.is-valid` ou `aria-invalid=\"false\"` aplica borda de sucesso;\n  `.is-invalid` ou `aria-invalid=\"true\"` aplica erro. São estados visuais:\n  CSS não valida os dados nem sincroniza classes e ARIA automaticamente.\n- **Disabled**: desmarcado usa trilho e borda neutros; marcado mantém uma\n  versão atenuada de `primary`, em vez de reduzir a opacidade do controle todo.\n- **Foco**: `:focus-visible` no input desenha o anel sobre a caixa\n  (`::before` da label), não sobre o texto.\n- **Hover/active**: superfície e borda confirmam a interação sem depender\n  apenas da cor do texto.\n- **RTL e movimento**: propriedades lógicas acompanham `dir=\"rtl\"` e as\n  transições são desativadas em `prefers-reduced-motion: reduce`.\n\n```html\n<input type=\"checkbox\" class=\"fs-check-input is-invalid\" id=\"c1\">\n<label for=\"c1\" class=\"fs-check-label\">Campo obrigatório</label>\n```\n\n```js\ndocument.getElementById(\"c2\").indeterminate = true;\n```"
           },
           {
             "title": "A11y",
@@ -13950,7 +13962,7 @@
           },
           {
             "title": "Tokens",
-            "markdown": "Tokens de componente podem ser sobrescritos por instância sem `!important`:\n\n| Token | Fallback | Uso |\n|---|---|---|\n| `--fs-check-size` | `18px` | Caixa visual |\n| `--fs-check-border-width` | `--fs-border-width` | Borda |\n| `--fs-check-radius` | `--fs-radius-sm` | Raio |\n| `--fs-check-gap` | `--fs-space-2` | Distância até o texto |\n| `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |"
+            "markdown": "Tokens de componente podem ser sobrescritos por instância sem `!important`:\n\n| Token | Fallback | Uso |\n|---|---|---|\n| `--fs-check-size` | `18px` | Caixa visual |\n| `--fs-check-border-width` | `2px` | Borda |\n| `--fs-check-radius` | `--fs-radius-sm` | Raio |\n| `--fs-check-gap` | `--fs-space-2` | Distância até o texto |\n| `--fs-check-mark-color` | `--fs-color-on-primary` | Marca |"
           },
           {
             "title": "Exemplo",
@@ -13961,7 +13973,7 @@
       "sources": [
         {
           "path": "docs/components/checkbox.md",
-          "sha256": "0e3439ba91db34144dca40bf10cf74ddae1fb156ce78bc2a36ff1711de5bcb49"
+          "sha256": "4c03c879c83051ab5dd9a000b0c031448a7ffada921c0809895ad5eb93320218"
         },
         {
           "path": "packages/fokus-components/scss/forms/_check-radio-switch.scss",
@@ -14813,6 +14825,26 @@
             {
               "path": "docs/catalog/fixtures/checkbox/native-tokens.css",
               "sha256": "6e193ab893eb054e8107c1f2ecb305123e69e0698c1717796f2d49bc200b8842"
+            }
+          ]
+        },
+        {
+          "id": "validation-contract",
+          "title": "Checkbox — estados válidos e inválidos reais",
+          "htmlCode": "<fieldset><legend>Estados de validação fornecidos pela aplicação</legend><div class=\"fs-check\"><input class=\"fs-check-input is-valid\" type=\"checkbox\" id=\"audit-valid\" aria-invalid=\"false\" checked><label for=\"audit-valid\" class=\"fs-check-label\">Validação concluída</label></div><div class=\"fs-check\"><input class=\"fs-check-input is-invalid\" type=\"checkbox\" id=\"audit-invalid\" aria-invalid=\"true\" aria-describedby=\"audit-check-help\"><label for=\"audit-invalid\" class=\"fs-check-label\">Confirmação obrigatória</label></div><p id=\"audit-check-help\">Erro demonstrativo persistente. A aplicação decide quando validar e remover o erro.</p></fieldset>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "atributos-verificados-na-implementacao",
+            "estados-e-limites-explicitos"
+          ],
+          "limitations": [
+            "Não certifica acessibilidade manual; não há validação de servidor nem upload."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/checkbox/validation-contract.html",
+              "sha256": "825e1c27158cd840f749a652ddb4d97a828967aab4e55ff399a92cbab6434637"
             }
           ]
         }
@@ -22915,7 +22947,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/file-upload.md",
-        "markdown": "# File Upload\n\nBotão de seleção de arquivo estilizado (o `<input type=\"file\">` nativo não\né estilizável) — CSS-only na base, com arrastar-e-soltar opcional via JS.\n\n## Visão geral\n\n```html\n<div class=\"fs-file-upload\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo\">\n  <label for=\"arquivo\" class=\"fs-file-label\">Escolher arquivo</label>\n</div>\n```\n\nMesma técnica de input oculto + label irmã dos outros controles\nCSS-only — `for`/`id` é o que faz o clique na label abrir o seletor de\narquivo nativo.\n\n## Anatomia\n\n`.fs-file-upload` (wrapper) > `.fs-file-input` (`<input type=\"file\">`,\noculto via clip) + `.fs-file-label` (`<label for=\"...\">`, o botão\nvisível).\n\n## Variações\n\n- **Tamanho**: `.fs-file-label-sm`, `.fs-file-label-lg`; sem sufixo =\n  padrão.\n- **Dropzone**: `.fs-file-label-dropzone` — versão maior, borda tracejada,\n  layout em coluna, pra uma área de soltar mais generosa que o botão\n  padrão. Combine com `.fs-file-dropzone-hint` pra um texto de apoio\n  discreto dentro.\n\n```html\n<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" data-fs=\"file-drop\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG, JPG até 5MB</span>\n  </label>\n</div>\n```\n\n## Estados\n\n- `:disabled` no input — opacidade reduzida, sem interação.\n- `:focus` no input — anel de foco na label.\n- `.is-dragover` na label — aplicada pelo JS de drag-and-drop enquanto um\n  arquivo é arrastado por cima (ver API JS).\n\n## A11y\n\n`<input type=\"file\">` nativo — totalmente operável por teclado (`Tab`\nfoca, `Enter`/`Space` abre o seletor do sistema) sem nenhum JS. O\ndrag-and-drop é um **complemento**, não uma alternativa obrigatória — quem\nusa teclado sempre tem o clique na label como caminho.\n\n## API JS\n\nDrag-and-drop é opcional, via `data-fs=\"file-drop\"` **na `<label>`** (não\nno input). `FileDrop.getInstance(labelEl)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Remove os listeners de drag/drop e desregistra a instância. |\n\nSem eventos customizados — ao soltar um arquivo, o JS atribui\n`inputEl.files` e dispara o evento nativo `change` no input (mesmo evento\nde uma seleção manual, então seu código de validação/upload não precisa\nsaber a diferença).\n\n```js\ndocument.getElementById(\"arquivo2\").addEventListener(\"change\", (event) => {\n  console.log(event.target.files);\n});\n```\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-subtle`, `--fs-color-text`,\n`--fs-color-muted` (hint), `--fs-color-primary` (borda durante drag-over),\n`--fs-radius-sm`.\n\n## Exemplo\n\nVer acima (Visão geral e Variações) — mockup completo em\n[`mockup/forms.html#file-upload`](../../mockup/forms.html#file-upload).\n\n## Variante avançada (múltiplos arquivos)\n\nPra upload de múltiplos arquivos com preview, progresso e remoção por\nitem, veja [Upload avançado](file-upload-advanced.md) — evolução deste\ncomponente, reaproveitando a mesma dropzone/botão como gatilho.\n",
+        "markdown": "# File Upload\n\nBotão de seleção de arquivo estilizado (o `<input type=\"file\">` nativo não\né estilizável) — CSS-only na base, com arrastar-e-soltar opcional via JS.\n\n## Visão geral\n\n```html\n<div class=\"fs-file-upload\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo\">\n  <label for=\"arquivo\" class=\"fs-file-label\">Escolher arquivo</label>\n</div>\n```\n\nMesma técnica de input oculto + label irmã dos outros controles\nCSS-only — `for`/`id` é o que faz o clique na label abrir o seletor de\narquivo nativo.\n\n## Anatomia\n\n`.fs-file-upload` (wrapper) > `.fs-file-input` (`<input type=\"file\">`,\noculto via clip) + `.fs-file-label` (`<label for=\"...\">`, o botão\nvisível).\n\n## Variações\n\n- **Tamanho**: `.fs-file-label-sm`, `.fs-file-label-lg`; sem sufixo =\n  padrão.\n- **Dropzone**: `.fs-file-label-dropzone` — versão maior, borda tracejada,\n  layout em coluna, pra uma área de soltar mais generosa que o botão\n  padrão. Combine com `.fs-file-dropzone-hint` pra um texto de apoio\n  discreto dentro.\n\n```html\n<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" accept=\"image/png,image/jpeg\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\" data-fs=\"file-drop\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG/JPEG sugeridos; valide conteúdo e tamanho na aplicação</span>\n  </label>\n</div>\n```\n\n## Estados\n\n- `:disabled` no input — opacidade reduzida, sem interação.\n- `:focus` no input — anel de foco na label.\n- `.is-dragover` na label — aplicada pelo JS de drag-and-drop enquanto um\n  arquivo é arrastado por cima (ver API JS).\n\n## A11y\n\n`<input type=\"file\">` nativo — totalmente operável por teclado (`Tab`\nfoca, `Enter`/`Space` abre o seletor do sistema) sem nenhum JS. O\ndrag-and-drop é um **complemento**, não uma alternativa obrigatória — quem\nusa teclado sempre tem o clique na label como caminho.\n\n## API JS\n\nDrag-and-drop é opcional, via `data-fs=\"file-drop\"` **na `<label>`** (não\nno input). `FileDrop.getInstance(labelEl)`.\n\n| Método | Descrição |\n|---|---|\n| `dispose()` | Remove os listeners de drag/drop e desregistra a instância. |\n\nSem eventos customizados — ao soltar um arquivo, o JS atribui\n`inputEl.files` e dispara o evento nativo `change` no input (mesmo evento\nde uma seleção manual, então seu código de validação/upload não precisa\nsaber a diferença).\n\n```js\ndocument.getElementById(\"arquivo2\").addEventListener(\"change\", (event) => {\n  console.log(event.target.files);\n});\n```\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-subtle`, `--fs-color-text`,\n`--fs-color-muted` (hint), `--fs-color-primary` (borda durante drag-over),\n`--fs-radius-sm`.\n\n## Exemplo\n\nVer acima (Visão geral e Variações) — mockup completo em\n[`mockup/forms.html#file-upload`](../../mockup/forms.html#file-upload).\n\n## Variante avançada (múltiplos arquivos)\n\nPra upload de múltiplos arquivos com preview, progresso e remoção por\nitem, veja [Upload avançado](file-upload-advanced.md) — evolução deste\ncomponente, reaproveitando a mesma dropzone/botão como gatilho.\n\n## Limites da personalização e validação\n\nFileDrop não filtra accept, MIME, tamanho ou quantidade e não faz upload.\naccept é apenas uma sugestão do seletor nativo; o drop copia o FileList recebido.\nUse multiple quando a interface permitir vários arquivos e valide no aplicativo\ne no servidor. Um input disabled faz o drop ser ignorado; a aparência dragover\nainda pode ser aplicada por dragenter. Dispose remove listeners, mas não limpa\nis-dragover: a aplicação pode limpar essa classe ao desmontar sua composição.\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -22927,7 +22959,7 @@
           },
           {
             "title": "Variações",
-            "markdown": "- **Tamanho**: `.fs-file-label-sm`, `.fs-file-label-lg`; sem sufixo =\n  padrão.\n- **Dropzone**: `.fs-file-label-dropzone` — versão maior, borda tracejada,\n  layout em coluna, pra uma área de soltar mais generosa que o botão\n  padrão. Combine com `.fs-file-dropzone-hint` pra um texto de apoio\n  discreto dentro.\n\n```html\n<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" data-fs=\"file-drop\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG, JPG até 5MB</span>\n  </label>\n</div>\n```"
+            "markdown": "- **Tamanho**: `.fs-file-label-sm`, `.fs-file-label-lg`; sem sufixo =\n  padrão.\n- **Dropzone**: `.fs-file-label-dropzone` — versão maior, borda tracejada,\n  layout em coluna, pra uma área de soltar mais generosa que o botão\n  padrão. Combine com `.fs-file-dropzone-hint` pra um texto de apoio\n  discreto dentro.\n\n```html\n<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" accept=\"image/png,image/jpeg\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\" data-fs=\"file-drop\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG/JPEG sugeridos; valide conteúdo e tamanho na aplicação</span>\n  </label>\n</div>\n```"
           },
           {
             "title": "Estados",
@@ -22952,13 +22984,17 @@
           {
             "title": "Variante avançada (múltiplos arquivos)",
             "markdown": "Pra upload de múltiplos arquivos com preview, progresso e remoção por\nitem, veja [Upload avançado](file-upload-advanced.md) — evolução deste\ncomponente, reaproveitando a mesma dropzone/botão como gatilho."
+          },
+          {
+            "title": "Limites da personalização e validação",
+            "markdown": "FileDrop não filtra accept, MIME, tamanho ou quantidade e não faz upload.\naccept é apenas uma sugestão do seletor nativo; o drop copia o FileList recebido.\nUse multiple quando a interface permitir vários arquivos e valide no aplicativo\ne no servidor. Um input disabled faz o drop ser ignorado; a aparência dragover\nainda pode ser aplicada por dragenter. Dispose remove listeners, mas não limpa\nis-dragover: a aplicação pode limpar essa classe ao desmontar sua composição."
           }
         ]
       },
       "sources": [
         {
           "path": "docs/components/file-upload.md",
-          "sha256": "22ce26a9022a2d4e716038e806c59432683f360a1ecc1dd401ade228817b7286"
+          "sha256": "288677ebedb86f8039e7e1293780982e4b5fc62df551d55e63e0ccb73baf02fb"
         },
         {
           "path": "packages/fokus-components/scss/forms/_forms.scss",
@@ -23554,7 +23590,7 @@
         {
           "id": "file-upload-snippet-2",
           "language": "html",
-          "code": "<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" data-fs=\"file-drop\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG, JPG até 5MB</span>\n  </label>\n</div>",
+          "code": "<div class=\"fs-file-upload\" style=\"width: 100%;\">\n  <input type=\"file\" class=\"fs-file-input\" id=\"arquivo2\" accept=\"image/png,image/jpeg\">\n  <label for=\"arquivo2\" class=\"fs-file-label fs-file-label-dropzone\" data-fs=\"file-drop\">\n    Arraste um arquivo ou clique para escolher\n    <span class=\"fs-file-dropzone-hint\">PNG/JPEG sugeridos; valide conteúdo e tamanho na aplicação</span>\n  </label>\n</div>",
           "section": "Variações",
           "executable": false
         },
@@ -23627,6 +23663,30 @@
             {
               "path": "docs/catalog/fixtures/file-upload/native-states.html",
               "sha256": "8a71464aa10b38271845d07ff63afac7b66a6042e66cc74c7087921b7b86e6f5"
+            }
+          ]
+        },
+        {
+          "id": "drop-contract",
+          "title": "File Upload — data-fs na label e limites do drop",
+          "htmlCode": "<div class=\"fs-file-upload\"><input id=\"audited-files\" type=\"file\" class=\"fs-file-input\" multiple accept=\"image/png,image/jpeg\" aria-describedby=\"audited-file-help\"><label for=\"audited-files\" class=\"fs-file-label fs-file-label-dropzone\" data-fs=\"file-drop\">Selecionar ou soltar imagens<span class=\"fs-file-dropzone-hint\">Somente seleção local; sem upload</span></label></div><p class=\"fs-form-text\" id=\"audited-file-help\">Accept sugere formatos no seletor; FileDrop não valida tipo, tamanho ou quantidade.</p><button class=\"fs-btn\" type=\"button\" id=\"audited-lock\" aria-pressed=\"false\">Bloquear seleção</button><p id=\"audited-selection\" role=\"status\">Nenhum arquivo selecionado.</p>\n",
+          "jsCode": "import { FileDrop } from \"fokus-styles/js\";\nconst input = document.getElementById('audited-files'); const label = document.querySelector('label[for=\"audited-files\"]'); const lock = document.getElementById('audited-lock'); const output = document.getElementById('audited-selection');\nconst instance = FileDrop.getInstance(label) || new FileDrop(label); const controller = new AbortController();\ninput.addEventListener('change', () => { output.textContent = `${input.files.length} arquivo(s) selecionado(s) localmente.`; }, { signal: controller.signal });\nlock.addEventListener('click', () => { input.disabled = !input.disabled; lock.setAttribute('aria-pressed', String(input.disabled)); lock.textContent = input.disabled ? 'Desbloquear seleção' : 'Bloquear seleção'; }, { signal: controller.signal });\nwindow.addEventListener('pagehide', () => { controller.abort(); instance.dispose(); label.classList.remove('is-dragover'); input.disabled = false; lock.setAttribute('aria-pressed', 'false'); lock.textContent = 'Bloquear seleção'; }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "atributos-verificados-na-implementacao",
+            "estados-e-limites-explicitos"
+          ],
+          "limitations": [
+            "Não certifica acessibilidade manual; não há validação de servidor nem upload."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/file-upload/drop-contract.html",
+              "sha256": "71cac99e5d252f73dc0a6b68b76ea1e2c518961e895754650eee709c7c7c6362"
+            },
+            {
+              "path": "docs/catalog/fixtures/file-upload/drop-contract.js",
+              "sha256": "63b51db58b5d8bfd63e21f1856567612cb71839ed321a1dc71b1f2c60b8e57e8"
             }
           ]
         }
@@ -24535,7 +24595,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/input.md",
-        "markdown": "# Input\n\nCampos de formulário de texto — 100% CSS, sobre elementos nativos\n(`<input>`, `<textarea>`, `<select>`). Ver também\n[Checkbox](checkbox.md)/[Radio](radio.md)/[Switch](switch.md) para\ncontroles booleanos, e [Select customizado](select.md) para um `<select>`\ncom dropdown estilizado.\n\n## Visão geral\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"nome\" class=\"fs-form-label\">Nome completo</label>\n  <input type=\"text\" class=\"fs-form-control\" id=\"nome\" placeholder=\"Seu nome\">\n</div>\n```\n\n## Anatomia\n\n- `.fs-form-control` — em `<input>`/`<textarea>`.\n- `.fs-form-select` — versão estática (sem JS) de um `<select>`\n  estilizado apenas visualmente com uma seta; para dropdown customizado\n  completo, ver [Select](select.md).\n- `.fs-form-label` — rótulo (associe via `for`/`id`).\n- `.fs-form-text` — texto de apoio, sempre visível.\n- `.fs-valid-feedback`/`.fs-invalid-feedback` — texto de apoio que só\n  aparece quando o input tem `.is-valid`/`.is-invalid` (via combinador de\n  irmãos gerais `~` — precisam estar depois do input no DOM).\n- `.fs-form-row`/`.fs-form-col` — helpers de layout (linha/coluna) pra\n  organizar label + campo + texto de apoio.\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"email\" class=\"fs-form-label\">E-mail</label>\n  <input type=\"email\" class=\"fs-form-control is-invalid\" id=\"email\">\n  <div class=\"fs-invalid-feedback\">E-mail inválido.</div>\n</div>\n```\n\n## Variações\n\n- **Tamanho**: `.fs-form-control-sm`, `.fs-form-control-lg` (idem para\n  `.fs-form-select`); sem sufixo = 38px de altura.\n- **Largura**: `.fs-form-size-{sm|md|lg|xl|xxl}` — larguras fixas\n  (120px–360px) pra campos que não devem esticar 100%.\n\n```html\n<input type=\"text\" class=\"fs-form-control fs-form-control-sm fs-form-size-sm\">\n```\n\n## Estados\n\n- `:focus` — anel de foco (mixin `focus-ring`).\n- `:disabled` — cor muted, fundo sutil, opacidade reduzida.\n- `:read-only` — fundo sutil, cursor padrão (não indica edição).\n- `.is-valid`/`.is-invalid` — borda verde/vermelha + ativa o\n  `.fs-valid-feedback`/`.fs-invalid-feedback` correspondente.\n\n## A11y\n\n- Sempre associe `.fs-form-label` ao campo via `for`/`id`.\n- Associe o texto de apoio (`.fs-form-text`, `.fs-valid-feedback`) ao\n  campo via `aria-describedby` — não é automático (o `id` do texto de\n  apoio é definido por você).\n- `.fs-form-select` estático não tem teclado/ARIA customizados — é a\n  aparência de um `<select>` nativo real, herda tudo do navegador.\n\n## API JS\n\nNenhuma — 100% CSS. Para o `<select>` com dropdown customizado (JS), ver\n[Select](select.md).\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-surface`, `--fs-color-text`,\n`--fs-color-muted`, `--fs-color-subtle` (disabled/read-only),\n`--fs-color-success`/`--fs-color-danger` (validação), `--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"senha\" class=\"fs-form-label\">Senha</label>\n  <input type=\"password\" class=\"fs-form-control is-valid\" id=\"senha\" aria-describedby=\"senha-ok\">\n  <div class=\"fs-valid-feedback\" id=\"senha-ok\">Senha forte.</div>\n</div>\n```\n\nMockups: [`mockup/forms.html#input`](../../mockup/forms.html#input),\n[`mockup/foundations.html#layout`](../../mockup/forms.html#input).\n",
+        "markdown": "# Input\n\nCampos de formulário de texto — 100% CSS, sobre elementos nativos\n(`<input>`, `<textarea>`, `<select>`). Ver também\n[Checkbox](checkbox.md)/[Radio](radio.md)/[Switch](switch.md) para\ncontroles booleanos, e [Select customizado](select.md) para um `<select>`\ncom dropdown estilizado.\n\n## Visão geral\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"nome\" class=\"fs-form-label\">Nome completo</label>\n  <input type=\"text\" class=\"fs-form-control\" id=\"nome\" placeholder=\"Seu nome\">\n</div>\n```\n\n## Anatomia\n\n- `.fs-form-control` — em `<input>`/`<textarea>`.\n- `.fs-form-select` — versão estática (sem JS) de um `<select>`\n  estilizado apenas visualmente com uma seta; para dropdown customizado\n  completo, ver [Select](select.md).\n- `.fs-form-label` — rótulo (associe via `for`/`id`).\n- `.fs-form-text` — texto de apoio, sempre visível.\n- `.fs-valid-feedback`/`.fs-invalid-feedback` — texto de apoio que só\n  aparece quando o input tem `.is-valid`/`.is-invalid` (via combinador de\n  irmãos gerais `~` — precisam estar depois do input no DOM).\n- `.fs-form-row`/`.fs-form-col` — helpers de layout (linha/coluna) pra\n  organizar label + campo + texto de apoio.\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"email\" class=\"fs-form-label\">E-mail</label>\n  <input type=\"email\" class=\"fs-form-control is-invalid\" id=\"email\">\n  <div class=\"fs-invalid-feedback\">E-mail inválido.</div>\n</div>\n```\n\n## Variações\n\n- **Tamanho**: `.fs-form-control-xs`, `.fs-form-control-sm`,\n  `.fs-form-control-lg`, `.fs-form-control-xl` (idem para `.fs-form-select`);\n  sem sufixo = 38px de altura. Tamanhos estão no SCSS; não são opções JS.\n- **Largura**: `.fs-form-size-{sm|md|lg|xl|xxl}` — larguras fixas\n  (120px–360px) pra campos que não devem esticar 100%.\n\n```html\n<input type=\"text\" class=\"fs-form-control fs-form-control-sm fs-form-size-sm\">\n```\n\n## Estados\n\n- `:focus` — anel de foco (mixin `focus-ring`).\n- `:disabled` — cor muted, fundo sutil, opacidade reduzida.\n- `:read-only` — fundo sutil, cursor padrão (não indica edição).\n- `.is-valid`/`.is-invalid` — borda verde/vermelha + ativa o\n  `.fs-valid-feedback`/`.fs-invalid-feedback` correspondente.\n\n## A11y\n\n- Sempre associe `.fs-form-label` ao campo via `for`/`id`.\n- Associe o texto de apoio (`.fs-form-text`, `.fs-valid-feedback`) ao\n  campo via `aria-describedby` — não é automático (o `id` do texto de\n  apoio é definido por você).\n- `.fs-form-select` estático não tem teclado/ARIA customizados — é a\n  aparência de um `<select>` nativo real, herda tudo do navegador.\n\n## API JS\n\nNenhuma — 100% CSS. Para o `<select>` com dropdown customizado (JS), ver\n[Select](select.md).\n\n## Tokens\n\n`--fs-color-border`, `--fs-color-surface`, `--fs-color-text`,\n`--fs-color-muted`, `--fs-color-subtle` (disabled/read-only),\n`--fs-color-success`/`--fs-color-danger` (validação), `--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<div class=\"fs-form-col\">\n  <label for=\"senha\" class=\"fs-form-label\">Senha</label>\n  <input type=\"password\" class=\"fs-form-control is-valid\" id=\"senha\" aria-describedby=\"senha-ok\">\n  <div class=\"fs-valid-feedback\" id=\"senha-ok\">Senha forte.</div>\n</div>\n```\n\nMockups: [`mockup/forms.html#input`](../../mockup/forms.html#input),\n[`mockup/foundations.html#layout`](../../mockup/forms.html#input).\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -24547,7 +24607,7 @@
           },
           {
             "title": "Variações",
-            "markdown": "- **Tamanho**: `.fs-form-control-sm`, `.fs-form-control-lg` (idem para\n  `.fs-form-select`); sem sufixo = 38px de altura.\n- **Largura**: `.fs-form-size-{sm|md|lg|xl|xxl}` — larguras fixas\n  (120px–360px) pra campos que não devem esticar 100%.\n\n```html\n<input type=\"text\" class=\"fs-form-control fs-form-control-sm fs-form-size-sm\">\n```"
+            "markdown": "- **Tamanho**: `.fs-form-control-xs`, `.fs-form-control-sm`,\n  `.fs-form-control-lg`, `.fs-form-control-xl` (idem para `.fs-form-select`);\n  sem sufixo = 38px de altura. Tamanhos estão no SCSS; não são opções JS.\n- **Largura**: `.fs-form-size-{sm|md|lg|xl|xxl}` — larguras fixas\n  (120px–360px) pra campos que não devem esticar 100%.\n\n```html\n<input type=\"text\" class=\"fs-form-control fs-form-control-sm fs-form-size-sm\">\n```"
           },
           {
             "title": "Estados",
@@ -24574,7 +24634,7 @@
       "sources": [
         {
           "path": "docs/components/input.md",
-          "sha256": "7791ac9db22cb8a471c178d78bb25e92907e6e82b95fbcfd5bce41d9485b437a"
+          "sha256": "22d5b856733132165126af0d655ca1fc178885b398e9f5d6c4551dec75bfbdf9"
         },
         {
           "path": "packages/fokus-components/scss/forms/_forms.scss",
@@ -36562,7 +36622,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/rating.md",
-        "markdown": "# Rating\n\nAvaliação por estrelas, 100% CSS — mesma técnica de input oculto + label\nirmã do [Checkbox](checkbox.md)/[Segmented Control](segmented-control.md),\nusando `<input type=\"radio\">` (seleção exclusiva nativa). A estrela é o\nícone `star` do [`fokus-styles/icons`](../guides/icons.md) — contorno vazio por\npadrão, preenchido (`fill: currentcolor`) quando selecionada ou em hover.\n\n## Visão geral\n\n```html\n<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <!-- ... 3, 2, 1, mesmo padrão ... -->\n</div>\n```\n\n**A ordem no HTML é decrescente** (5, 4, 3, 2, 1) — truque clássico de CSS\npuro: o contêiner usa `row-reverse` (visualmente reordena pra crescente,\nesquerda→direita) e o destaque \"estrela clicada + todas à esquerda dela\"\nusa só o combinador de irmãos gerais (`~`, que só enxerga o que vem\n**depois** no DOM) — depende da ordem decrescente pra funcionar.\n\n## Anatomia\n\n`.fs-rating` (contêiner, `row-reverse`) > pares `.fs-rating-input`\n(`<input type=\"radio\">`, mesmo `name`, oculto via clip) +\n`.fs-rating-star` (`<label for=\"...\">` com `aria-label` + o ícone `star`\ndentro, `aria-hidden`), um par por nota possível, em ordem decrescente de\n`value`.\n\n## Variações\n\nTamanho: `.fs-rating-sm` (16px), `.fs-rating-lg` (32px); sem sufixo = 24px\n(padrão) — controla o `font-size` do `<label>`, e o ícone (`.fs-icon`,\n`1em` × `1em`) acompanha.\n\n## Estados\n\n- Nota selecionada e todas as anteriores (maior valor) ficam na cor de\n  aviso (`--fs-color-warning`) e com a estrela preenchida — via\n  `:checked ~ .fs-rating-star`.\n- **Hover** prévia a mesma seleção antes de confirmar o clique\n  (`:hover`/`:hover ~`).\n- `disabled` no input — opacidade reduzida, sem interação.\n\n## A11y\n\n`<input type=\"radio\">` nativo — `Tab` foca o grupo, `ArrowLeft`/\n`ArrowRight` (ou `Up`/`Down`) movem a seleção entre notas, `Space`\nconfirma. Como a estrela é um ícone (`aria-hidden=\"true\"`, sem texto\nvisível), o `<label>` **precisa** de `aria-label` (`\"5 estrelas\"`,\n`\"1 estrela\"` etc.) — sem isso o link não tem nome acessível nenhum.\n\n## API JS\n\nNenhuma — 100% CSS. O valor selecionado é lido como qualquer grupo de\nradio nativo (`document.querySelector('input[name=\"nota\"]:checked').value`).\n\n## Tokens\n\n`--fs-color-border` (estrela vazia), `--fs-color-warning` (selecionada/\nhover), `--fs-color-primary` (anel de foco).\n\n## Exemplo\n\n```html\n<fieldset>\n  <legend>Avalie sua experiência</legend>\n  <div class=\"fs-rating\">\n    <input type=\"radio\" name=\"exp\" class=\"fs-rating-input\" id=\"exp-5\" value=\"5\" checked>\n    <label for=\"exp-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n    </label>\n    <input type=\"radio\" name=\"exp\" class=\"fs-rating-input\" id=\"exp-4\" value=\"4\">\n    <label for=\"exp-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n    </label>\n    <!-- ... 3, mesmo padrão ... -->\n  </div>\n</fieldset>\n```\n\nMockup: [laboratório do componente](../../mockup/forms.html#rating).\n",
+        "markdown": "# Rating\n\nAvaliação por estrelas, 100% CSS — mesma técnica de input oculto + label\nirmã do [Checkbox](checkbox.md)/[Segmented Control](segmented-control.md),\nusando `<input type=\"radio\">` (seleção exclusiva nativa). A estrela é o\nícone `star` do [`fokus-styles/icons`](../guides/icons.md) — contorno vazio por\npadrão, preenchido (`fill: currentcolor`) quando selecionada ou em hover.\n\n## Visão geral\n\n```html\n<div class=\"fs-rating\">\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-5\" value=\"5\">\n  <label for=\"nota-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <input type=\"radio\" name=\"nota\" class=\"fs-rating-input\" id=\"nota-4\" value=\"4\">\n  <label for=\"nota-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n    <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n  </label>\n  <!-- ... 3, 2, 1, mesmo padrão ... -->\n</div>\n```\n\n**A ordem no HTML é decrescente** (5, 4, 3, 2, 1) — truque clássico de CSS\npuro: o contêiner usa `row-reverse` (visualmente reordena pra crescente,\nesquerda→direita) e o destaque \"estrela clicada + todas à esquerda dela\"\nusa só o combinador de irmãos gerais (`~`, que só enxerga o que vem\n**depois** no DOM) — depende da ordem decrescente pra funcionar.\n\n## Anatomia\n\n`.fs-rating` (contêiner, `row-reverse`) > pares `.fs-rating-input`\n(`<input type=\"radio\">`, mesmo `name`, oculto via clip) +\n`.fs-rating-star` (`<label for=\"...\">` com `aria-label` + o ícone `star`\ndentro, `aria-hidden`), um par por nota possível, em ordem decrescente de\n`value`.\n\n## Variações\n\nTamanho: `.fs-rating-sm` (16px), `.fs-rating-lg` (32px); sem sufixo = 24px\n(padrão) — controla o `font-size` do `<label>`, e o ícone (`.fs-icon`,\n`1em` × `1em`) acompanha.\n\n## Estados\n\n- Nota selecionada e as de menor valor (seguintes no DOM decrescente) ficam na cor de\n  aviso (`--fs-color-warning`) e com a estrela preenchida — via\n  `:checked ~ .fs-rating-star`.\n- **Hover** prévia a mesma seleção antes de confirmar o clique\n  (`:hover`/`:hover ~`).\n- `disabled` no input — opacidade reduzida, sem interação.\n\n## A11y\n\n`<input type=\"radio\">` nativo — `Tab` foca o grupo, `ArrowLeft`/\n`ArrowRight` (ou `Up`/`Down`) movem a seleção entre notas, `Space`\nconfirma. Como a estrela é um ícone (`aria-hidden=\"true\"`, sem texto\nvisível), o `<label>` **precisa** de `aria-label` (`\"5 estrelas\"`,\n`\"1 estrela\"` etc.) — sem isso o link não tem nome acessível nenhum.\n\n## API JS\n\nNenhuma — 100% CSS. O valor selecionado é lido como qualquer grupo de\nradio nativo (`document.querySelector('input[name=\"nota\"]:checked').value`).\n\n## Tokens\n\n`--fs-color-border` (estrela vazia), `--fs-color-warning` (selecionada/\nhover), `--fs-color-primary` (anel de foco).\n\n## Exemplo\n\n```html\n<fieldset>\n  <legend>Avalie sua experiência</legend>\n  <div class=\"fs-rating\">\n    <input type=\"radio\" name=\"exp\" class=\"fs-rating-input\" id=\"exp-5\" value=\"5\" checked>\n    <label for=\"exp-5\" class=\"fs-rating-star\" aria-label=\"5 estrelas\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n    </label>\n    <input type=\"radio\" name=\"exp\" class=\"fs-rating-input\" id=\"exp-4\" value=\"4\">\n    <label for=\"exp-4\" class=\"fs-rating-star\" aria-label=\"4 estrelas\">\n      <svg class=\"fs-icon\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/></svg>\n    </label>\n    <!-- ... 3, mesmo padrão ... -->\n  </div>\n</fieldset>\n```\n\nMockup: [laboratório do componente](../../mockup/forms.html#rating).\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -36578,7 +36638,7 @@
           },
           {
             "title": "Estados",
-            "markdown": "- Nota selecionada e todas as anteriores (maior valor) ficam na cor de\n  aviso (`--fs-color-warning`) e com a estrela preenchida — via\n  `:checked ~ .fs-rating-star`.\n- **Hover** prévia a mesma seleção antes de confirmar o clique\n  (`:hover`/`:hover ~`).\n- `disabled` no input — opacidade reduzida, sem interação."
+            "markdown": "- Nota selecionada e as de menor valor (seguintes no DOM decrescente) ficam na cor de\n  aviso (`--fs-color-warning`) e com a estrela preenchida — via\n  `:checked ~ .fs-rating-star`.\n- **Hover** prévia a mesma seleção antes de confirmar o clique\n  (`:hover`/`:hover ~`).\n- `disabled` no input — opacidade reduzida, sem interação."
           },
           {
             "title": "A11y",
@@ -36601,7 +36661,7 @@
       "sources": [
         {
           "path": "docs/components/rating.md",
-          "sha256": "d36a38810a1cced7508a816da7b583722c1e2d8a1c714ce6ab1f66fa8038acc8"
+          "sha256": "6cc5b90055660616e66857230ecfa542d4b8c373f8c1c46be0e6b8fe1555d2ce"
         },
         {
           "path": "packages/fokus-components/scss/components/_rating.scss",
