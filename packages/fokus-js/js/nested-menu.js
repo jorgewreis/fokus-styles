@@ -124,7 +124,6 @@ export class NestedMenu {
   }
 
   _closeSubmenu(parentItem) {
-    if (isDisabled(parentItem)) return;
     const submenu = this._submenuOf(parentItem);
     if (!submenu) return;
 
@@ -135,6 +134,17 @@ export class NestedMenu {
     submenu.classList.remove("is-open");
     parentItem.parentElement.classList.remove("fs-dropdown-submenu-left");
     parentItem.setAttribute("aria-expanded", "false");
+  }
+
+  _returnToParent(parentItem) {
+    this._closeSubmenu(parentItem);
+    if (isDisabled(parentItem)) {
+      // The old parent may no longer accept focus; never leave it in a hidden child.
+      this.hide();
+      this.toggleEl.focus();
+    } else {
+      parentItem.focus();
+    }
   }
 
   _closeAllSubmenus() {
@@ -213,8 +223,7 @@ export class NestedMenu {
         if (inSubmenu) {
           event.preventDefault();
           const parentItem = parentWrapper.querySelector(":scope > .fs-dropdown-item");
-          this._closeSubmenu(parentItem);
-          parentItem.focus();
+          this._returnToParent(parentItem);
         }
         break;
       case "Enter":
@@ -234,8 +243,7 @@ export class NestedMenu {
           event.preventDefault();
           event.stopPropagation();
           const parentItem = parentWrapper.querySelector(":scope > .fs-dropdown-item");
-          this._closeSubmenu(parentItem);
-          parentItem.focus();
+          this._returnToParent(parentItem);
         } else {
           event.preventDefault();
           this.hide();

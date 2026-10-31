@@ -116,3 +116,10 @@ Mesmos do [Dropdown](dropdown.md) — sem tokens próprios.
 
 Ver acima (Visão geral) — mockup com múltiplos níveis em
 [laboratório do componente](../../mockup/navigation-disclosure.html#nested-menu).
+
+### Retorno de um ramo que ficou indisponível
+
+Fechamento de navegação e limpeza não são bloqueados pelo disabled do pai. Se
+Escape ou ArrowLeft partir de um filho cujo pai ficou indisponível, a raiz fecha
+e o foco retorna ao gatilho, evitando tentar focar um botão disabled e deixar
+foco em conteúdo oculto. Com pai habilitado, o retorno usual ao pai permanece.

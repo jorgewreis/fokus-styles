@@ -53,16 +53,27 @@ describe("NestedMenu disabled activation", () => {
     expect(parent.getAttribute("aria-expanded")).toBe("false");
   });
 
-  it("does not close a disabled parent directly but hide cleans all submenus", () => {
+  it("internal navigation cleanup can close disabled parents and hide cleans all submenus", () => {
     const parent = mount();
     parent.focus(); key(parent, "ArrowRight");
     expect(document.activeElement.id).toBe("child");
     parent.setAttribute("aria-disabled", "true");
     menu._closeSubmenu(parent);
-    expect(parent.getAttribute("aria-expanded")).toBe("true");
+    expect(parent.getAttribute("aria-expanded")).toBe("false");
     menu.hide();
     expect(parent.getAttribute("aria-expanded")).toBe("false");
     expect(menu.rootMenu.querySelector(".fs-dropdown-menu.is-open")).toBeNull();
+  });
+
+  it.each(["Escape", "ArrowLeft"])("%s returns to root trigger if the open parent became disabled", keyName => {
+    const parent = mount();
+    parent.focus(); key(parent, "ArrowRight");
+    expect(document.activeElement.id).toBe("child");
+    parent.disabled = true;
+    key(document.activeElement, keyName);
+    expect(menu.isOpen).toBe(false);
+    expect(parent.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(menu.toggleEl);
   });
 
   it("preserves enabled target handler order, leaf defaults and close, without inheriting container ARIA", () => {
