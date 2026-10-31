@@ -31,13 +31,13 @@ function menu() {
   const instance = new NestedMenu(document.querySelector('#toggle')); instances.push(instance); instance.show();
   return instance;
 }
-it('pending: disabled NestedMenu link default is not canceled', () => {
+it('disabled NestedMenu link default is canceled', () => {
   menu(); const event = new MouseEvent('click', { bubbles: true, cancelable: true });
   document.querySelector('a').dispatchEvent(event);
-  expect(event.defaultPrevented).toBe(false);
+  expect(event.defaultPrevented).toBe(true);
 });
-it('pending: native disabled NestedMenu item can stall arrow traversal', () => {
-  menu(); const first = document.querySelector('#first'); first.focus();
+it('native disabled NestedMenu item is skipped during arrow traversal', () => {
+  const instance = menu(); const last = document.createElement('button'); last.className = 'fs-dropdown-item'; instance.rootMenu.append(last); const first = document.querySelector('#first'); first.focus();
   first.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }));
-  expect(document.activeElement).toBe(first);
+  expect(document.activeElement).toBe(last);
 });

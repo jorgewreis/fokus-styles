@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### NestedMenu: estados indisponíveis coerentes
+
+- usa a guarda compartilhada para cancelar ativação de itens class/ARIA/native
+  disabled antes dos handlers do alvo, preservando defaults e ordem habilitados.
+- foco inicial e setas pulam itens indisponíveis; abertura/fechamento direto do
+  pai indisponível é bloqueado, mas hide/dispose continuam limpando os ramos.
+- hover CSS só abre submenu após um item pai habilitado; estado is-open permanece
+  independente. Documenta a divergência deliberada de foco frente ao APG.
+- 34 testes focais, build, lint, tipos e validação Markdown passam. Browser
+  adicionado, mas execução bloqueada por Chromium ausente.
+- gzip isolado: JS 26.868 bytes, CSS completo 43.440 e componentes 20.319.
+  Orçamentos e provenance não alterados; revalidação final cabe à integração.
+
 ### DataTable, Tag e Stepper: fronteiras e propriedade de estado
 
 - DataTable usa fallback para pageSize abaixo de 1, evitando tamanho zero após

@@ -86,18 +86,27 @@ As opções JS placement/align precedem os atributos data-placement/data-align;
 os padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown
 inteiro: este componente tem contrato próprio.
 
-O filtro de navegação e o handler de clique ignoram itens com `.is-disabled`.
-`aria-disabled` sozinho não implementa esse bloqueio; se a aplicação o declarar,
-deve manter estado visual, semântica e comportamento coerentes. Um link marcado
-visualmente indisponível não é mecanismo de autorização. Nenhum conteúdo HTML
-do menu é sanitizado pelo componente.
+O filtro de navegação ignora itens com `.is-disabled`, `aria-disabled="true"`
+ou estado nativo `:disabled` (incluindo fieldset desabilitado). A classe e ARIA
+são consultadas no próprio item: não há herança inventada de `aria-disabled`
+do contêiner. Mantenha aparência, semântica e regras da aplicação coerentes.
 
-O retorno antecipado para `.is-disabled` não cancela a ação padrão de links nem
-handlers da aplicação. Um clique sintético ou ativação nativa pode seguir o href;
-prefira botão nativamente disabled e não associe ações a itens indisponíveis.
-Inclua também `.is-disabled`: sem ela, um botão disabled ainda entra na lista de
-setas e pode impedir a travessia porque não recebe foco. O Dropdown tem guarda
-própria de ativação; não presuma que ela se aplique a NestedMenu.
+Itens indisponíveis são pulados pelas setas e pelo foco inicial. Essa é uma
+divergência deliberada do padrão APG de menu, no qual itens indisponíveis podem
+receber foco; não é uma implementação integral desse padrão.
+
+Uma guarda em capture cancela click, auxclick e Enter/Espaço nesses itens,
+incluindo eventos originados em seus descendentes, antes de handlers no alvo.
+Não registra autorização: ações e regras de negócio continuam na aplicação.
+Itens habilitados preservam handlers, ações padrão de links e fechamento normal;
+setas, Escape e Tab não são interceptados pela guarda. Pais de submenu
+indisponíveis não podem ser abertos/fechados por ativação; o fechamento geral
+ao ocultar/descartar o menu continua limpando todos os submenus.
+Hover também exige um item pai habilitado, imediatamente seguido do submenu.
+Um ramo já aberto pode permanecer aberto se o pai se tornar indisponível; seus
+filhos continuam com estado local próprio, sem herdar ARIA do pai. O fechamento
+geral continua limpando esse ramo. Nenhum conteúdo HTML do menu é sanitizado
+pelo componente.
 
 ## Tokens
 

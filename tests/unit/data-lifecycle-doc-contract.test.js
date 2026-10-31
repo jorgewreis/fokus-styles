@@ -33,7 +33,7 @@ it('Tag loading preserves consumer disabled, protected styling does not veto API
 it('Carousel modulo wraps negative index and ignores NaN',()=>{
  document.body.innerHTML='<div><div class="fs-carousel-inner"><div class="fs-carousel-item is-active">A</div><div class="fs-carousel-item">B</div></div></div>';const c=new Carousel(document.querySelector('div'));instances.push(c);c.goTo(-1);expect(document.querySelector('.is-active').textContent).toBe('B');c.goTo(NaN);expect(document.querySelectorAll('.is-active')).toHaveLength(1);expect(document.querySelector('.is-active').textContent).toBe('B');expect(doc('carousel')).toContain('inteiro finito');
 });
-it('NestedMenu disabled contract uses class, not aria-disabled alone',()=>{
+it('NestedMenu skips both local aria-disabled and class-disabled items',()=>{
  document.body.innerHTML='<button id="toggle" data-fs-target="#menu">Menu</button><div id="menu" class="fs-dropdown-menu"><button class="fs-dropdown-item" aria-disabled="true">First</button><button class="fs-dropdown-item is-disabled">Second</button></div>';
- const n=new NestedMenu(document.querySelector('#toggle'));instances.push(n);n.show();expect(document.activeElement.textContent).toBe('First');document.activeElement.click();expect(n.isOpen).toBe(false);expect(doc('nested-menu')).toContain('aria-disabled` sozinho');
+ const n=new NestedMenu(document.querySelector('#toggle'));instances.push(n);n.show();expect(document.activeElement.closest('.fs-dropdown-item')).toBeNull();document.querySelector('[aria-disabled]').click();expect(n.isOpen).toBe(true);expect(doc('nested-menu')).toContain('não há herança');
 });

@@ -4,6 +4,7 @@ import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from
 import { onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
+import { isDisabled, guardDisabledActivation } from "./core/disabled.js";
 
 const instances = createInstanceRegistry();
 
@@ -19,7 +20,7 @@ function levelItems(menuEl) {
     } else if (child.classList.contains("fs-dropdown-submenu")) {
       item = child.querySelector(":scope > .fs-dropdown-item");
     }
-    if (item && !item.classList.contains("is-disabled")) items.push(item);
+    if (item && !isDisabled(item)) items.push(item);
   }
   return items;
 }
@@ -67,6 +68,7 @@ export class NestedMenu {
     this._handleMenuKeydown = this._handleMenuKeydown.bind(this);
     this._handleMenuMouseover = this._handleMenuMouseover.bind(this);
 
+    this._removeDisabledGuard = guardDisabledActivation(rootMenu, ".fs-dropdown-item");
     this.toggleEl.addEventListener("click", this._handleToggleClick);
     this.rootMenu.addEventListener("click", this._handleMenuClick);
     this.rootMenu.addEventListener("keydown", this._handleMenuKeydown);
@@ -102,6 +104,7 @@ export class NestedMenu {
   }
 
   _openSubmenu(parentItem, focusFirst) {
+    if (isDisabled(parentItem)) return;
     const submenu = this._submenuOf(parentItem);
     if (!submenu) return;
 
@@ -121,6 +124,7 @@ export class NestedMenu {
   }
 
   _closeSubmenu(parentItem) {
+    if (isDisabled(parentItem)) return;
     const submenu = this._submenuOf(parentItem);
     if (!submenu) return;
 
@@ -148,7 +152,7 @@ export class NestedMenu {
 
   _handleMenuClick(event) {
     const item = event.target.closest(".fs-dropdown-item");
-    if (!item || item.classList.contains("is-disabled")) return;
+    if (!item || isDisabled(item)) return;
 
     if (isSubmenuParent(item)) {
       event.preventDefault();
@@ -200,7 +204,7 @@ export class NestedMenu {
         items[(index - 1 + items.length) % items.length]?.focus();
         break;
       case "ArrowRight":
-        if (isSubmenuParent(active)) {
+        if (!isDisabled(active) && isSubmenuParent(active)) {
           event.preventDefault();
           this._openSubmenu(active, true);
         }
@@ -215,7 +219,7 @@ export class NestedMenu {
         break;
       case "Enter":
       case " ":
-        if (isSubmenuParent(active)) {
+        if (!isDisabled(active) && isSubmenuParent(active)) {
           event.preventDefault();
           if (this._submenuOf(active)?.classList.contains("is-open")) {
             this._closeSubmenu(active);
@@ -300,6 +304,7 @@ export class NestedMenu {
   dispose() {
     this.hide();
     this._removeEscapeListener();
+    this._removeDisabledGuard();
     this.toggleEl.removeEventListener("click", this._handleToggleClick);
     this.rootMenu.removeEventListener("click", this._handleMenuClick);
     this.rootMenu.removeEventListener("keydown", this._handleMenuKeydown);
