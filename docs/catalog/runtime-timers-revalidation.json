@@ -1,0 +1,56 @@
+{
+  "baseCommit": "7171c75493932d9f76d5e9e04fabb571d337dcde",
+  "runtimeCommit": "bfb504c97f89a061d2983f23553f36698cc2c256",
+  "reason": "Toast pause and elapsed progress, Carousel finite integer index guard; original fixtures and historical audit records retained.",
+  "changes": [
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/toast/implementation/0",
+      "path": "packages/fokus-js/js/toast.js",
+      "previousSha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7",
+      "sha256": "9634f1b8fe200e3014f8ac4ee97da6e3e4572819caf9bcf683f69a64251cff3c"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/carousel/implementation/1",
+      "path": "packages/fokus-js/js/carousel.js",
+      "previousSha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40",
+      "sha256": "d5c2dbd1bc93ae37f21d29ac06e9ba0650dfce994d5ad5f34268ce1752aaadd6"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/notification-center/implementation/2",
+      "path": "packages/fokus-js/js/toast.js",
+      "previousSha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7",
+      "sha256": "9634f1b8fe200e3014f8ac4ee97da6e3e4572819caf9bcf683f69a64251cff3c"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/toast/timed-progress/implementation/0",
+      "path": "packages/fokus-js/js/toast.js",
+      "previousSha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7",
+      "sha256": "9634f1b8fe200e3014f8ac4ee97da6e3e4572819caf9bcf683f69a64251cff3c"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/toast/persistent-variants/implementation/0",
+      "path": "packages/fokus-js/js/toast.js",
+      "previousSha256": "4624504bbc238217d937d7296c182cade3fcbb91e70919a3aa8fd9331ed6f8a7",
+      "sha256": "9634f1b8fe200e3014f8ac4ee97da6e3e4572819caf9bcf683f69a64251cff3c"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/carousel/manual-fade/implementation/0",
+      "path": "packages/fokus-js/js/carousel.js",
+      "previousSha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40",
+      "sha256": "d5c2dbd1bc93ae37f21d29ac06e9ba0650dfce994d5ad5f34268ce1752aaadd6"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/carousel/single-static/implementation/0",
+      "path": "packages/fokus-js/js/carousel.js",
+      "previousSha256": "947ae74d5a4ab8fcc79ad5a600d022b064d9fbced72d2a38eaec6b1a9385ac40",
+      "sha256": "d5c2dbd1bc93ae37f21d29ac06e9ba0650dfce994d5ad5f34268ce1752aaadd6"
+    }
+  ]
+}

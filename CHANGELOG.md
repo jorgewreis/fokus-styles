@@ -2,16 +2,18 @@
 
 ## Unreleased
 
-### Carousel: índices inválidos sem corromper o slide ativo
+### Toast e Carousel: temporização e índices seguros
 
-- `goTo(index)` ignora valores que não são números inteiros finitos, sem
-  coerção, eventos ou alteração de estado; mantém o wrap circular dos inteiros.
-- 43 testes focais passam, incluindo preservação de ARIA, inert, indicadores
-  e contador. Build, tipos, docs e size:check passam nesta alteração isolada.
-- JS gzip 26.560 bytes (+11 sobre a base), dentro do teto existente de 26.560;
-  nenhum orçamento alterado. A integração com outras correções requer nova medição.
-- cenário browser/axe adicionado; execução Chromium bloqueada antes do teste
-  pela ausência do executável Playwright neste ambiente.
+- Toast coordena hover/foco independentemente; mover foco entre descendentes
+  não retoma o timer. Progresso e tempo restante não subtraem tempo duas vezes
+  nem reiniciam a duração ao retomar. Hide limpa causas para uma nova abertura.
+- Carousel ignora valores que não são números inteiros finitos, sem coerção,
+  eventos ou alteração de estado; mantém wrap circular de índices inteiros.
+- JS gzip integrado 26.616 bytes (+67 sobre 26.549; +286 cumulativos desde
+  26.330). Teto explicitamente autorizado 26.624 (+64), margem de 8 bytes;
+  limites CSS e salvaguardas preservados, controle negativo mantido.
+- Cenários browser adicionados; neste ambiente a execução continua bloqueada
+  antes dos corpos pela ausência do executável Playwright.
 
 ### Dropdown e Breadcrumb: ativação e descarte seguros
 
