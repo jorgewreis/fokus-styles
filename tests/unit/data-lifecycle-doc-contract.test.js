@@ -22,10 +22,10 @@ it('TreeView fallback includes children and aria-disabled does not implement dis
  document.body.innerHTML='<ul><li aria-disabled="true"><span class="fs-tree-label">Parent</span><ul><li><span class="fs-tree-label">Child</span></li></ul></li></ul>';
  const tree=new TreeView(document.querySelector('ul'));instances.push(tree);const selected=vi.fn();tree.rootEl.addEventListener('fs:tree:selected',selected);document.querySelector('.fs-tree-label').click();expect(selected.mock.calls[0][0].detail.value).toBe('ParentChild');expect(document.querySelector('li').getAttribute('aria-selected')).toBe('true');expect(doc('tree-view')).toContain('incluindo o texto dos descendentes');
 });
-it('Toast fallback and visibility use isOpen, and mouseleave resumes despite internal focus',async()=>{
+it('Toast fallback and visibility use isOpen, and mouseleave preserves pause during internal focus',async()=>{
  vi.spyOn(window,'matchMedia').mockReturnValue({matches:true});document.body.innerHTML='<div class="fs-toast" data-delay="0"><button>Action</button></div>';
  const t=new Toast(document.querySelector('div'));instances.push(t);expect(t.delay).toBe(4000);t.show();await Promise.resolve();expect(t.isOpen).toBe(true);expect(t.toastEl.classList.contains('is-open')).toBe(false);
- t.toastEl.dispatchEvent(new Event('mouseenter'));t.toastEl.querySelector('button').focus();t.toastEl.dispatchEvent(new Event('mouseleave'));expect(document.activeElement.tagName).toBe('BUTTON');expect(t.toastEl.classList.contains('is-paused')).toBe(false);expect(doc('toast')).toContain('mouseleave pode retomar');
+ t.toastEl.dispatchEvent(new Event('mouseenter'));t.toastEl.querySelector('button').focus();t.toastEl.dispatchEvent(new Event('mouseleave'));expect(document.activeElement.tagName).toBe('BUTTON');expect(t.toastEl.classList.contains('is-paused')).toBe(true);expect(doc('toast')).toContain('causas independentes de pausa');
 });
 it('Tag loading synchronization resets disabled, protected styling does not veto API dismissal',()=>{
  document.body.innerHTML='<span class="fs-tag fs-tag-protected"><button data-fs-dismiss="tag" disabled>Remove</button></span>';const t=new Tag(document.querySelector('span'));instances.push(t);expect(t.tagEl.querySelector('button').disabled).toBe(false);expect(t.dismiss()).toBe(true);expect(doc('tag')).toContain('não uma trava na API');

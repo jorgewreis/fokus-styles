@@ -101,10 +101,12 @@ JS. `data-delay` ausente, zero ou não numérico usa 4000 ms por causa do fallba
 valores negativos/não finitos não são validados. Forneça duração finita positiva.
 Somente a string exata `data-autohide="false"` desliga o fechamento automático.
 
-Limitação atual: hover e foco compartilham um único indicador de pausa. Um
-mouseleave pode retomar o timer mesmo com foco interno; focusout também pode
-retomar enquanto o ponteiro permanece sobre o Toast. Não há contagem independente
-das condições. Para mensagens com ações que não podem expirar, use autohide=false.
+Hover e foco são causas independentes de pausa: o timer só retoma quando
+ambas terminam. Mover o foco entre descendentes não retoma o auto-dismiss.
+O tempo restante e o indicador de progresso consideram apenas o tempo ativo,
+sem contar duas vezes o período anterior à pausa nem reiniciar a duração.
+`hide()` limpa as causas e uma nova abertura inicia a duração completa.
+Para mensagens com ações que não podem expirar, use autohide=false.
 
 `dispose()` cancela timers/transição e remove listeners, mas não equivale a
 `hide()` nem remove o elemento da página. A aplicação administra sua remoção.

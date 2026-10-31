@@ -11,6 +11,7 @@ export class Toast {
     this.isOpen = false;
     this._hideTimer = null;
     this._paused = false;
+    this._pauseReasons = new Set();
     this._remaining = this.delay;
     this._startedAt = 0;
     this._progressTimer = null;
@@ -20,23 +21,27 @@ export class Toast {
     toastEl.style.display = "none";
 
     this._handleDismissClick = this._handleDismissClick.bind(this);
-    this._pause = () => {
-      if (!this.isOpen || this._paused) return;
+    this._pause = (event) => {
+      if (!this.isOpen) return;
+      this._pauseReasons.add(event.type === "mouseenter" ? "hover" : "focus");
+      if (this._paused) return;
       this._paused = true;
       clearTimeout(this._hideTimer);
-      if (this.autohide && this._startedAt) {
+      if (this.autohide) {
         this._remaining = Math.max(0, this._remaining - (Date.now() - this._startedAt));
       }
       this._updateProgress();
       clearInterval(this._progressTimer);
       this.toastEl.classList.add("is-paused");
     };
-    this._resume = () => {
-      if (!this.isOpen || !this._paused) return;
+    this._resume = (event) => {
+      if (event.type === "focusout" && toastEl.contains(event.relatedTarget)) return;
+      this._pauseReasons.delete(event.type === "mouseleave" ? "hover" : "focus");
+      if (!this.isOpen || !this._paused || this._pauseReasons.size) return;
       this._paused = false;
       this.toastEl.classList.remove("is-paused");
+      this._scheduleHide();
       this._startProgress();
-      if (this.autohide) this._scheduleHide();
     };
     toastEl.addEventListener("click", this._handleDismissClick);
     toastEl.addEventListener("mouseenter", this._pause);
@@ -92,7 +97,8 @@ export class Toast {
 
   _updateProgress() {
     if (this.toastEl.getAttribute("data-toast-progress") !== "true" || !this.autohide) return;
-    const percentage = Math.max(0, Math.min(100, (this._remaining / this.delay) * 100));
+    const remaining = this._paused ? this._remaining : this._remaining - (Date.now() - this._startedAt);
+    const percentage = Math.max(0, Math.min(100, (remaining / this.delay) * 100));
     const progressEl = this.toastEl.querySelector(".fs-toast-progress");
     if (progressEl) progressEl.style.inlineSize = `${percentage}%`;
   }
@@ -103,7 +109,6 @@ export class Toast {
     this._updateProgress();
     this._progressTimer = setInterval(() => {
       if (!this.isOpen || this._paused) return;
-      this._remaining = Math.max(0, this.delay - (Date.now() - this._startedAt));
       this._updateProgress();
     }, 50);
   }
@@ -118,6 +123,7 @@ export class Toast {
     clearInterval(this._progressTimer);
     this._progressTimer = null;
     this._startedAt = 0;
+    this._pauseReasons.clear();
     this._paused = false;
     this._remaining = this.delay;
     this.toastEl.classList.remove("is-paused");
