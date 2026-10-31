@@ -2343,5 +2343,69 @@
       }
     ],
     "extraction": "Composição autoral verificada no SCSS; handlers locais não são API do framework."
+  },
+  "offcanvas/static-end": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "54d5039e4ef448ed88ce1480304e378adb6f722775ab4aee369198173b256a1b",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/offcanvas.js",
+        "sha256": "1c2a8f17502ac1e6f01a98d67d0a4715360efe3c28bd5fb1aaea238cd2e03a0a"
+      },
+      {
+        "path": "packages/fokus-js/js/offcanvas.d.ts",
+        "sha256": "96e0feee9e7084c95f260479fa1d564f5cbbd8fce286382b324cfc5290875bdf"
+      }
+    ],
+    "extraction": "Composição autoral baseada no runtime e tipos públicos; não é extração literal histórica."
+  },
+  "offcanvas/no-backdrop-bottom": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "1e3c253e66f6851de0e4da2b49e2bdfe8dcf1a7e83bb26c9a7b7871e84b8af4a",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/offcanvas.js",
+        "sha256": "1c2a8f17502ac1e6f01a98d67d0a4715360efe3c28bd5fb1aaea238cd2e03a0a"
+      },
+      {
+        "path": "packages/fokus-js/js/offcanvas.d.ts",
+        "sha256": "96e0feee9e7084c95f260479fa1d564f5cbbd8fce286382b324cfc5290875bdf"
+      }
+    ],
+    "extraction": "Composição autoral baseada no runtime e tipos públicos; não é extração literal histórica."
+  },
+  "popover/focus-bottom-start": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "349e156dd22b825e77ad818ba1f2d4d83df405645a25dfd6f829c2332505c9e7",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/popover.js",
+        "sha256": "7f64622b84891c39e81c9244219a89a897964e6e6b83660a836bf683c0170f47"
+      },
+      {
+        "path": "packages/fokus-js/js/popover.d.ts",
+        "sha256": "eb04f9b7bc90a54666286af35519d5b237d1b082e606013387c46a722696dba5"
+      }
+    ],
+    "extraction": "Composição autoral baseada no runtime e tipos públicos; não é extração literal histórica."
+  },
+  "alert-dialog/warning-copy": {
+    "mode": "authored-runtime",
+    "sourceCommit": "55ac61f03aa75a6f9301ef183cbfc2c5f72ad64c",
+    "sha256": "6d5811cf4e0e8863a1dd11d6eafad1d13f41f4427c2ab1fdeaca55ceaaabb6b2",
+    "implementation": [
+      {
+        "path": "packages/fokus-js/js/confirm.js",
+        "sha256": "f5f57eac2bd95bfb84c6d496e977b434e053fad4b3609db3fe69abca6350758a"
+      },
+      {
+        "path": "packages/fokus-js/js/confirm.d.ts",
+        "sha256": "f2d4809ad598f89c0623e6252c24d24d5de138841dc063a0956dc6f8d9c50428"
+      }
+    ],
+    "extraction": "Composição autoral baseada no runtime e tipos públicos; não é extração literal histórica."
   }
 }

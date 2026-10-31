@@ -1537,6 +1537,38 @@
       "limitations": [
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
       ]
+    },
+    {
+      "id": "static-end",
+      "title": "Offcanvas — static-end",
+      "html": "docs/catalog/fixtures/offcanvas/static-end.html",
+      "js": "docs/catalog/fixtures/offcanvas/static-end.js",
+      "coverage": [
+        "opcoes-runtime",
+        "teardown",
+        "rotulos-acessiveis"
+      ],
+      "limitations": [
+        "Sem backdrop visual não significa não modal.",
+        "O atributo data-backdrop=\"false\" é usado: a opção boolean false tem comportamento diferente nesta implementação.",
+        "Geometria e foco real exigem teste browser."
+      ]
+    },
+    {
+      "id": "no-backdrop-bottom",
+      "title": "Offcanvas — no-backdrop-bottom",
+      "html": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.html",
+      "js": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.js",
+      "coverage": [
+        "opcoes-runtime",
+        "teardown",
+        "rotulos-acessiveis"
+      ],
+      "limitations": [
+        "Sem backdrop visual não significa não modal.",
+        "O atributo data-backdrop=\"false\" é usado: a opção boolean false tem comportamento diferente nesta implementação.",
+        "Geometria e foco real exigem teste browser."
+      ]
     }
   ],
   "popover": [
@@ -1552,6 +1584,21 @@
       ],
       "limitations": [
         "Exemplo mínimo do checkout candidato; variantes, temas, responsividade e acessibilidade manual não estão integralmente validados."
+      ]
+    },
+    {
+      "id": "focus-bottom-start",
+      "title": "Popover — foco e alinhamento inicial",
+      "html": "docs/catalog/fixtures/popover/focus-bottom-start.html",
+      "js": "docs/catalog/fixtures/popover/focus-bottom-start.js",
+      "coverage": [
+        "opcoes-runtime",
+        "teardown",
+        "rotulos-acessiveis"
+      ],
+      "limitations": [
+        "Placement pode inverter para caber na viewport.",
+        "Não é focus trap modal; hover-only e trigger manual não são demonstrados."
       ]
     }
   ],
@@ -2002,6 +2049,21 @@
       "limitations": [
         "Exemplo mínimo; variantes, temas e acessibilidade manual não estão integralmente cobertos.",
         "A fábrica confirm não expõe dispose; o exemplo cancela apenas o diálogo que criou. Não há exclusão de conta nem backend."
+      ]
+    },
+    {
+      "id": "warning-copy",
+      "title": "Alert Dialog — warning, rótulos e texto literal",
+      "html": "docs/catalog/fixtures/alert-dialog/warning-copy.html",
+      "js": "docs/catalog/fixtures/alert-dialog/warning-copy.js",
+      "coverage": [
+        "opcoes-runtime",
+        "teardown",
+        "rotulos-acessiveis"
+      ],
+      "limitations": [
+        "Ação local simulada, sem exclusão ou navegação.",
+        "Retorno Promise<boolean>; não existe instância persistente nem dispose público."
       ]
     }
   ],

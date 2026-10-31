@@ -4,7 +4,7 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "00ef54d4de5eb4f073054c030a0fc9dcee0889f6f134017004993ffe78d66c63",
+    "digest": "efff43cf11f7304ef80c6efea1d30adb0225fcdf675db3326f86d018e7b3269e",
     "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
@@ -13,7 +13,7 @@
       },
       {
         "path": "docs/catalog/examples.json",
-        "sha256": "e51a6dbfac54322500b47548df602529d64c91a6420d8a066ee547ecc7cbfe72"
+        "sha256": "d17c8b7e6fdbc5e23e52ab16efe4afa443891d420d8ce40a367e1a10006d7931"
       },
       {
         "path": "docs/catalog/feedback-cases.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "baa6983135e5dd692cb82fa7ce5578796c7f6353b1c55344e84d88a4aa5a0e5b"
+        "sha256": "5cd61e5872c2c64fcfe87db00eb4cfd728682c77c549f31527b91c74b20de9b0"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -54,6 +54,14 @@
       {
         "path": "docs/catalog/fixtures/alert-dialog/basic.js",
         "sha256": "1daf672021fc9489cd7288c86549db00e839b6e81b98bb624a0417508ed9feca"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert-dialog/warning-copy.html",
+        "sha256": "6d5811cf4e0e8863a1dd11d6eafad1d13f41f4427c2ab1fdeaca55ceaaabb6b2"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert-dialog/warning-copy.js",
+        "sha256": "903d34f610bd8c9069c1dae148eba545cc75bee50811620cdeda2b5fe98eb78f"
       },
       {
         "path": "docs/catalog/fixtures/alert/basic.html",
@@ -580,6 +588,22 @@
         "sha256": "0058a761f718a6c3d6d30e0707e560851dbe57e4bc59996ce9fa59efe1ca7975"
       },
       {
+        "path": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.html",
+        "sha256": "1e3c253e66f6851de0e4da2b49e2bdfe8dcf1a7e83bb26c9a7b7871e84b8af4a"
+      },
+      {
+        "path": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.js",
+        "sha256": "2ae1f490f62701fe564d633c9ba5abd4b800f05d129693ca6a0ff07d271fb81f"
+      },
+      {
+        "path": "docs/catalog/fixtures/offcanvas/static-end.html",
+        "sha256": "54d5039e4ef448ed88ce1480304e378adb6f722775ab4aee369198173b256a1b"
+      },
+      {
+        "path": "docs/catalog/fixtures/offcanvas/static-end.js",
+        "sha256": "2ae1f490f62701fe564d633c9ba5abd4b800f05d129693ca6a0ff07d271fb81f"
+      },
+      {
         "path": "docs/catalog/fixtures/pagination/basic.html",
         "sha256": "94707ca23825f6946c6bae5990ef00370a5845eecddb68f7c8a3ca048c2476bf"
       },
@@ -610,6 +634,14 @@
       {
         "path": "docs/catalog/fixtures/popover/basic.js",
         "sha256": "8233d8a00e8ee01b56cd5e9b61c1e4516fcd7d31fa81cd57afedff359d610e77"
+      },
+      {
+        "path": "docs/catalog/fixtures/popover/focus-bottom-start.html",
+        "sha256": "349e156dd22b825e77ad818ba1f2d4d83df405645a25dfd6f829c2332505c9e7"
+      },
+      {
+        "path": "docs/catalog/fixtures/popover/focus-bottom-start.js",
+        "sha256": "105ff5563aa74d4e92419cf6266d4d5b5fd6ca86cbe50246ffdcb3ce5ef1bcc9"
       },
       {
         "path": "docs/catalog/fixtures/progress/basic.html",
@@ -2032,7 +2064,7 @@
   "coverage": {
     "components": 56,
     "withExamples": 56,
-    "examples": 143,
+    "examples": 147,
     "complete": false
   },
   "contracts": [
@@ -5721,6 +5753,32 @@
             {
               "path": "docs/catalog/fixtures/alert-dialog/basic.js",
               "sha256": "1daf672021fc9489cd7288c86549db00e839b6e81b98bb624a0417508ed9feca"
+            }
+          ]
+        },
+        {
+          "id": "warning-copy",
+          "title": "Alert Dialog — warning, rótulos e texto literal",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-warning\" id=\"preview-confirm\">Revisar saída sem salvar</button><p role=\"status\" id=\"preview-result\">Demonstração local: nenhum dado será alterado.</p>\n",
+          "jsCode": "import { confirm } from \"fokus-styles/js\";\nconst trigger = document.getElementById(\"preview-confirm\");\nconst result = document.getElementById(\"preview-result\");\nlet pending = false;\nlet disposed = false;\nlet ownedDialog = null;\nconst open = async () => {\n  if (pending || disposed) return;\n  pending = true;\n  trigger.disabled = true;\n  const existing = new Set(document.querySelectorAll(\".fs-alert-dialog\"));\n  const promise = confirm({ title: \"Sair sem salvar?\", message: \"Texto literal: <rascunho> & alterações locais.\", confirmText: \"Sair na demonstração\", cancelText: \"Continuar editando\", variant: \"warning\" });\n  ownedDialog = [...document.querySelectorAll(\".fs-alert-dialog\")].find(el => !existing.has(el));\n  const confirmed = await promise;\n  ownedDialog = null;\n  pending = false;\n  trigger.disabled = false;\n  if (!disposed) trigger.focus();\n  if (!disposed) result.textContent = confirmed ? \"Saída simulada; nenhum dado alterado.\" : \"Edição mantida na demonstração.\";\n};\ntrigger.addEventListener(\"click\", open);\nwindow.addEventListener(\"pagehide\", () => {\n  disposed = true;\n  trigger.removeEventListener(\"click\", open);\n  ownedDialog?.querySelector('[data-action=\"cancel\"]')?.click();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "opcoes-runtime",
+            "teardown",
+            "rotulos-acessiveis"
+          ],
+          "limitations": [
+            "Ação local simulada, sem exclusão ou navegação.",
+            "Retorno Promise<boolean>; não existe instância persistente nem dispose público."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert-dialog/warning-copy.html",
+              "sha256": "6d5811cf4e0e8863a1dd11d6eafad1d13f41f4427c2ab1fdeaca55ceaaabb6b2"
+            },
+            {
+              "path": "docs/catalog/fixtures/alert-dialog/warning-copy.js",
+              "sha256": "903d34f610bd8c9069c1dae148eba545cc75bee50811620cdeda2b5fe98eb78f"
             }
           ]
         }
@@ -32103,6 +32161,60 @@
               "sha256": "0058a761f718a6c3d6d30e0707e560851dbe57e4bc59996ce9fa59efe1ca7975"
             }
           ]
+        },
+        {
+          "id": "static-end",
+          "title": "Offcanvas — static-end",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"offcanvas\" data-fs-target=\"#panel-static-end\">Abrir painel static-end</button>\n<div class=\"fs-offcanvas fs-offcanvas-end\" id=\"panel-static-end\" data-backdrop=\"static\"><div class=\"fs-offcanvas-header\"><h3 class=\"fs-offcanvas-title\">Painel static-end</h3><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"offcanvas\" aria-label=\"Fechar painel static-end\"></button></div><div class=\"fs-offcanvas-body\"><p>Escape e clique fora não fecham este painel; use Fechar.</p></div></div>\n",
+          "jsCode": "import { Offcanvas } from \"fokus-styles/js\";\nconst trigger = document.querySelector('[data-fs=\"offcanvas\"]');\nconst instance = Offcanvas.getInstance(trigger) ?? new Offcanvas(trigger);\nwindow.addEventListener(\"pagehide\", () => { instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "opcoes-runtime",
+            "teardown",
+            "rotulos-acessiveis"
+          ],
+          "limitations": [
+            "Sem backdrop visual não significa não modal.",
+            "O atributo data-backdrop=\"false\" é usado: a opção boolean false tem comportamento diferente nesta implementação.",
+            "Geometria e foco real exigem teste browser."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/offcanvas/static-end.html",
+              "sha256": "54d5039e4ef448ed88ce1480304e378adb6f722775ab4aee369198173b256a1b"
+            },
+            {
+              "path": "docs/catalog/fixtures/offcanvas/static-end.js",
+              "sha256": "2ae1f490f62701fe564d633c9ba5abd4b800f05d129693ca6a0ff07d271fb81f"
+            }
+          ]
+        },
+        {
+          "id": "no-backdrop-bottom",
+          "title": "Offcanvas — no-backdrop-bottom",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"offcanvas\" data-fs-target=\"#panel-no-backdrop-bottom\">Abrir painel no-backdrop-bottom</button>\n<div class=\"fs-offcanvas fs-offcanvas-bottom\" id=\"panel-no-backdrop-bottom\" data-backdrop=\"false\"><div class=\"fs-offcanvas-header\"><h3 class=\"fs-offcanvas-title\">Painel no-backdrop-bottom</h3><button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"offcanvas\" aria-label=\"Fechar painel no-backdrop-bottom\"></button></div><div class=\"fs-offcanvas-body\"><p>Sem backdrop visual, mas ainda modal: foco preso e scroll bloqueado.</p></div></div>\n",
+          "jsCode": "import { Offcanvas } from \"fokus-styles/js\";\nconst trigger = document.querySelector('[data-fs=\"offcanvas\"]');\nconst instance = Offcanvas.getInstance(trigger) ?? new Offcanvas(trigger);\nwindow.addEventListener(\"pagehide\", () => { instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "opcoes-runtime",
+            "teardown",
+            "rotulos-acessiveis"
+          ],
+          "limitations": [
+            "Sem backdrop visual não significa não modal.",
+            "O atributo data-backdrop=\"false\" é usado: a opção boolean false tem comportamento diferente nesta implementação.",
+            "Geometria e foco real exigem teste browser."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.html",
+              "sha256": "1e3c253e66f6851de0e4da2b49e2bdfe8dcf1a7e83bb26c9a7b7871e84b8af4a"
+            },
+            {
+              "path": "docs/catalog/fixtures/offcanvas/no-backdrop-bottom.js",
+              "sha256": "2ae1f490f62701fe564d633c9ba5abd4b800f05d129693ca6a0ff07d271fb81f"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -34193,6 +34305,32 @@
             {
               "path": "docs/catalog/fixtures/popover/basic.js",
               "sha256": "8233d8a00e8ee01b56cd5e9b61c1e4516fcd7d31fa81cd57afedff359d610e77"
+            }
+          ]
+        },
+        {
+          "id": "focus-bottom-start",
+          "title": "Popover — foco e alinhamento inicial",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"popover\" data-fs-target=\"#focus-details\" data-trigger=\"focus\" data-placement=\"bottom\" data-align=\"start\">Foque para consultar detalhes</button>\n<div class=\"fs-popover\" id=\"focus-details\"><div class=\"fs-popover-header\">Detalhes ao receber foco</div><div class=\"fs-popover-body\"><p class=\"fs-popover-text\">Tab pode entrar no painel; Fechar retorna ao gatilho sem reabrir imediatamente.</p><button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"popover\">Fechar detalhes</button></div></div>\n",
+          "jsCode": "import { Popover } from \"fokus-styles/js\";\nconst trigger = document.querySelector('[data-fs=\"popover\"]');\nconst instance = Popover.getInstance(trigger) ?? new Popover(trigger);\nwindow.addEventListener(\"pagehide\", () => { instance.dispose(); }, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "opcoes-runtime",
+            "teardown",
+            "rotulos-acessiveis"
+          ],
+          "limitations": [
+            "Placement pode inverter para caber na viewport.",
+            "Não é focus trap modal; hover-only e trigger manual não são demonstrados."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/popover/focus-bottom-start.html",
+              "sha256": "349e156dd22b825e77ad818ba1f2d4d83df405645a25dfd6f829c2332505c9e7"
+            },
+            {
+              "path": "docs/catalog/fixtures/popover/focus-bottom-start.js",
+              "sha256": "105ff5563aa74d4e92419cf6266d4d5b5fd6ca86cbe50246ffdcb3ce5ef1bcc9"
             }
           ]
         }
