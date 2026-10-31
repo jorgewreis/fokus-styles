@@ -90,6 +90,7 @@ export function generateCatalog() {
   });
   return {id,title:markdown.match(/^# (.+)$/m)[1],group:Object.entries(groups).find(([,ids])=>ids.includes(id))?.[0]||'Conteúdo e feedback',status:'partial',
    documentation:{path:documentPath,markdown,sections:sections(markdown)},sources:files.map(sourceEntry),imports,
+   runtimeEvidence:files.filter(p=>p.endsWith('.js')).map(p=>({path:p,attributes:read(p).split('\n').flatMap((line,index)=>[...line.matchAll(/(?:getAttribute|setAttribute|hasAttribute|removeAttribute)\(\s*['"]([^'"]+)['"]/g)].map(m=>({name:m[1],line:index+1,code:line.trim()}))),meaning:'Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos.'})),
    typeDefinitions:files.filter(p=>p.endsWith('.d.ts')).map(p=>({path:p,code:read(p)})),
    cssEvidence:{scopeClasses:scopes,rules:rulesFor(cssRoot,scopes),meaning:'Regras compiladas que mencionam classes do escopo; preservar seletor completo, condições e ordem. Evidência de implementação, não garantia de que qualquer token citado funcione em qualquer estado.'},
    snippets:snippets(markdown,id),examples:resolvedExamples,
@@ -97,7 +98,7 @@ export function generateCatalog() {
  });
  const inputs=sorted([...walk('packages').filter(p=>/\.(scss|js|ts)$/.test(p)&&!p.includes('/icons/')),...walk('scss'),...walk('docs/components'),...walk('docs/catalog').filter(p=>p.endsWith('.json')||p.includes('/fixtures/')),'scripts/catalog.mjs','package.json','package-lock.json']);
  const manifest=inputs.map(sourceEntry);
- return {schemaVersion:1,channel:'next',published:false,source:{baselineCommit:'218afe443936e31edd57fdca03b392ac23381d1d',digest:hash(JSON.stringify(manifest)),compiledCssSha256:hash(css),files:manifest},coverage:{components:contracts.length,withExamples:contracts.filter(c=>c.examples.length).length,examples:contracts.reduce((n,c)=>n+c.examples.length,0),complete:false},contracts};
+ return {schemaVersion:1,channel:'next',published:false,source:{baselineCommit:'218afe443936e31edd57fdca03b392ac23381d1d',digest:hash(JSON.stringify(manifest)),sassEvidenceCssSha256:hash(css),files:manifest},coverage:{components:contracts.length,withExamples:contracts.filter(c=>c.examples.length).length,examples:contracts.reduce((n,c)=>n+c.examples.length,0),complete:false},contracts};
 }
 export function writeOrCheck(check=false) {
  const catalog=generateCatalog(); const out=path.join(root,'docs/generated/next/catalog.json'); const content=JSON.stringify(catalog,null,2)+'\n';

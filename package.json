@@ -152,7 +152,8 @@
     "docs:generate": "node scripts/catalog.mjs",
     "docs:catalog:check": "node scripts/catalog.mjs --check",
     "test:catalog": "node --test tests/catalog/*.test.mjs",
-    "docs:preview": "node scripts/catalog-preview-server.mjs"
+    "docs:preview": "node scripts/catalog-preview-server.mjs",
+    "test:catalog:browser": "node scripts/catalog-preview-smoke.mjs"
   },
   "publishConfig": {
     "access": "public"

@@ -58,6 +58,11 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Canonical catalog and real HTTP previews
+        run: |
+          npm run test:catalog
+          npm run test:catalog:browser
+
       - name: Visual tests
         run: npm run test:visual
 

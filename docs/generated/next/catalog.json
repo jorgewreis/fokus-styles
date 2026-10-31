@@ -4,12 +4,120 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "9636ed6867dad7298a60f2d1022073de213e58a905c2a67b90c4e18af7708181",
-    "compiledCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
+    "digest": "bb7eb8aa7006ba17770c0a9c155be30eed6922961c070e17e08c56060529f74c",
+    "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
     "files": [
       {
         "path": "docs/catalog/components.json",
         "sha256": "1bab1641764cb2253eaa2d5353557ce4f556911f4057855a41cbf0d0f0598a02"
+      },
+      {
+        "path": "docs/catalog/examples.json",
+        "sha256": "a60c3ca3becd525cf88c4dd4c0a0c8ff8d42c556eeac8bf854229fec9c452178"
+      },
+      {
+        "path": "docs/catalog/fixture-provenance.json",
+        "sha256": "6ab6eac18ce6b609532e1d97cb706dc8b7069cb923a512398974a6b5c958c056"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/basic.html",
+        "sha256": "a0167e521ff3091218ad7ad8e1b9c677e072b195de796bcf25d1201955d69550"
+      },
+      {
+        "path": "docs/catalog/fixtures/accordion/basic.js",
+        "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
+      },
+      {
+        "path": "docs/catalog/fixtures/alert/basic.html",
+        "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f"
+      },
+      {
+        "path": "docs/catalog/fixtures/badge/basic.html",
+        "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f"
+      },
+      {
+        "path": "docs/catalog/fixtures/breadcrumb/basic.html",
+        "sha256": "20ce604d5998f4edb81c7f5a8c66ae0b6db434259a0dc42a98ce51056c305532"
+      },
+      {
+        "path": "docs/catalog/fixtures/button-group/basic.html",
+        "sha256": "56af881d9a34842277aab0015c8c61174723e9dbb32b2486892add4e366489af"
+      },
+      {
+        "path": "docs/catalog/fixtures/button/basic.html",
+        "sha256": "ea073c48488a8f2041e6c7e987016fa829f24665bc0cc48b944304db8a5d0818"
+      },
+      {
+        "path": "docs/catalog/fixtures/card/basic.html",
+        "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194"
+      },
+      {
+        "path": "docs/catalog/fixtures/checkbox/basic.html",
+        "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
+      },
+      {
+        "path": "docs/catalog/fixtures/collapse/basic.html",
+        "sha256": "b8f51d8bc595a386224f05f585d26feedb8c2628c584ea69084b33c22202dbc6"
+      },
+      {
+        "path": "docs/catalog/fixtures/collapse/basic.js",
+        "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
+      },
+      {
+        "path": "docs/catalog/fixtures/divider/basic.html",
+        "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
+      },
+      {
+        "path": "docs/catalog/fixtures/empty-state/basic.html",
+        "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
+      },
+      {
+        "path": "docs/catalog/fixtures/input/basic.html",
+        "sha256": "e7cf7c05904c209cb8113a1a5876ba85367515f575c233673865a58964397211"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/basic.html",
+        "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff"
+      },
+      {
+        "path": "docs/catalog/fixtures/modal/basic.js",
+        "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
+      },
+      {
+        "path": "docs/catalog/fixtures/radio/basic.html",
+        "sha256": "537ebf8fe682524ea7944f74c9f2b3cd6a03d45ea476be4410364a2d1afb6da3"
+      },
+      {
+        "path": "docs/catalog/fixtures/segmented-control/basic.html",
+        "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d"
+      },
+      {
+        "path": "docs/catalog/fixtures/skeleton/basic.html",
+        "sha256": "d8d1fc7d365ecd657c2a725b17b6e689c2064d142ecd3b9a9f066c26c4a323a3"
+      },
+      {
+        "path": "docs/catalog/fixtures/switch/basic.html",
+        "sha256": "b910c06625f27e7c00b76574c046f63c36f68ea909d71ba27f862d908210b752"
+      },
+      {
+        "path": "docs/catalog/fixtures/table/basic.html",
+        "sha256": "3501de011edf7dc3a38d3559fdb5b66d425959e5953a7487a3f07a380a3e1b3f"
+      },
+      {
+        "path": "docs/catalog/fixtures/tabs/basic.html",
+        "sha256": "b3d92505810a07634614a61d766cd701a2c943fc3e43eab9295b1b7550603ae6"
+      },
+      {
+        "path": "docs/catalog/fixtures/tabs/basic.js",
+        "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+      },
+      {
+        "path": "docs/catalog/fixtures/tile/basic.html",
+        "sha256": "4d0218ac209b6dd77b88c93c3675e4b8bbe1e7dc526b1a46c870f4fc706b1a3b"
+      },
+      {
+        "path": "docs/catalog/fixtures/timeline/basic.html",
+        "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce"
       },
       {
         "path": "docs/components/accordion.md",
@@ -241,7 +349,7 @@
       },
       {
         "path": "package.json",
-        "sha256": "f487ac29b43a18cb7af0d61a73b6428cd0253d9ecd2e1a448dc17755e4e40af6"
+        "sha256": "ca7260ef9503c484fb0e2680f0d728332c1ae24ee4333f17402366ff0f63d517"
       },
       {
         "path": "packages/fokus-components/scss/components/_accordion.scss",
@@ -1033,7 +1141,7 @@
       },
       {
         "path": "scripts/catalog.mjs",
-        "sha256": "17cffcc01360562504592c37d2b89442d6c3e7b74914e852f6e11a18df199cc1"
+        "sha256": "05fa8071415c108be49d6357740308a794aa448e7c186d297f28eea6470c4f94"
       },
       {
         "path": "scss/_index.scss",
@@ -1083,8 +1191,8 @@
   },
   "coverage": {
     "components": 56,
-    "withExamples": 0,
-    "examples": 0,
+    "withExamples": 21,
+    "examples": 21,
     "complete": false
   },
   "contracts": [
@@ -1154,6 +1262,74 @@
           "name": "Accordion",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/accordion.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/accordion.js",
+          "attributes": [
+            {
+              "name": "data-multiple",
+              "line": 10,
+              "code": "this.exclusive = accordionEl.getAttribute(\"data-multiple\") !== \"true\" && accordionEl.getAttribute(\"data-fs-always-open\") !== \"true\";"
+            },
+            {
+              "name": "data-fs-always-open",
+              "line": 10,
+              "code": "this.exclusive = accordionEl.getAttribute(\"data-multiple\") !== \"true\" && accordionEl.getAttribute(\"data-fs-always-open\") !== \"true\";"
+            },
+            {
+              "name": "data-fs-always-open",
+              "line": 11,
+              "code": "this.alwaysOpen = accordionEl.getAttribute(\"data-fs-always-open\") === \"true\";"
+            },
+            {
+              "name": "aria-controls",
+              "line": 23,
+              "code": "button.setAttribute(\"aria-controls\", panel.id);"
+            },
+            {
+              "name": "role",
+              "line": 24,
+              "code": "panel.setAttribute(\"role\", \"region\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 25,
+              "code": "panel.setAttribute(\"aria-labelledby\", button.id);"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 27,
+              "code": "const startsOpen = button.getAttribute(\"aria-expanded\") === \"true\";"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 28,
+              "code": "button.setAttribute(\"aria-expanded\", String(startsOpen));"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 47,
+              "code": "const isOpen = entry.button.getAttribute(\"aria-expanded\") === \"true\";"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 57,
+              "code": ".filter((other) => other !== entry && other.button.getAttribute(\"aria-expanded\") === \"true\")"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 66,
+              "code": "entry.button.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 77,
+              "code": "entry.button.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -1525,7 +1701,33 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Accordion — exemplo documentado",
+          "htmlCode": "<div class=\"fs-accordion\" data-fs=\"accordion\">\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"true\">Pergunta 1</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 1.</div>\n    </div>\n  </div>\n  <div class=\"fs-accordion-item\">\n    <h3 class=\"fs-accordion-header\">\n      <button type=\"button\" class=\"fs-accordion-button\" aria-expanded=\"false\">Pergunta 2</button>\n    </h3>\n    <div class=\"fs-accordion-collapse\">\n      <div class=\"fs-accordion-body\">Resposta 2.</div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Accordion } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"accordion\"]')]\n  .map((element) => Accordion.getInstance(element) ?? new Accordion(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/accordion/basic.html",
+              "sha256": "a0167e521ff3091218ad7ad8e1b9c677e072b195de796bcf25d1201955d69550"
+            },
+            {
+              "path": "docs/catalog/fixtures/accordion/basic.js",
+              "sha256": "9510b569dc41d605aab8f7303db02db6cf87267ae01693beccb7dec536b9f4ac"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -1590,6 +1792,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -3999,7 +4202,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Alert — exemplo documentado",
+          "htmlCode": "<div class=\"fs-alert fs-alert-success\">Operação concluída com sucesso.</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/alert/basic.html",
+              "sha256": "49850f4e45c86860400393757876dc88826404d71614b3939c99f03e47e7632f"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -4072,6 +4296,19 @@
           "name": "confirm",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/confirm.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/confirm.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 43,
+              "code": "triggerEl.setAttribute(\"data-fs-target\", `#${modalId}`);"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -4557,6 +4794,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -4771,6 +5009,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -5705,7 +5944,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Badge — exemplo documentado",
+          "htmlCode": "<span class=\"fs-badge\">Padrão</span>\n<span class=\"fs-badge fs-badge-primary\">Primary</span>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/badge/basic.html",
+              "sha256": "9138c0bea543baccd581c2bcd0f45422ccd8ba24b51b4c399b50a64be5f3778f"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -5782,6 +6042,34 @@
           "name": "Breadcrumb",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/breadcrumb.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/breadcrumb.js",
+          "attributes": [
+            {
+              "name": "data-max-items",
+              "line": 10,
+              "code": "this.maxItems = Number(options.maxItems ?? listEl.getAttribute(\"data-max-items\") ?? 4);"
+            },
+            {
+              "name": "data-title",
+              "line": 47,
+              "code": "target.setAttribute(\"data-title\", target.textContent.trim());"
+            },
+            {
+              "name": "aria-label",
+              "line": 88,
+              "code": "toggle.setAttribute(\"aria-label\", \"Mostrar níveis ocultos\");"
+            },
+            {
+              "name": "href",
+              "line": 100,
+              "code": "if (isLink) link.href = source.getAttribute(\"href\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -6040,7 +6328,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Breadcrumb — exemplo documentado",
+          "htmlCode": "<nav aria-label=\"breadcrumb\">\n  <ol class=\"fs-breadcrumb\">\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Início</a></li>\n    <li class=\"fs-breadcrumb-item\"><a href=\"#\">Categoria</a></li>\n    <li class=\"fs-breadcrumb-item is-active\">Página atual</li>\n  </ol>\n</nav>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Links demonstrativos (#); não há navegação nem breadcrumb responsivo JavaScript."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/breadcrumb/basic.html",
+              "sha256": "20ce604d5998f4edb81c7f5a8c66ae0b6db434259a0dc42a98ce51056c305532"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -6101,6 +6411,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -7385,7 +7696,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Button — exemplo documentado",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\">Padrão</button>\n<button type=\"button\" class=\"fs-btn fs-btn-primary\">Primary</button>\n<button type=\"button\" class=\"fs-btn fs-btn-outline-primary\">Outline</button>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button/basic.html",
+              "sha256": "ea073c48488a8f2041e6c7e987016fa829f24665bc0cc48b944304db8a5d0818"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -7442,6 +7774,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -8745,7 +9078,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Button-Group — exemplo documentado",
+          "htmlCode": "<div class=\"fs-button-group\" role=\"group\" aria-label=\"Ações do documento\">\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-primary\">Editar</button>\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-primary\">Duplicar</button>\n  <button type=\"button\" class=\"fs-btn fs-btn-outline-primary\" disabled>Excluir</button>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Botões demonstrativos sem comportamento de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/button-group/basic.html",
+              "sha256": "56af881d9a34842277aab0015c8c61174723e9dbb32b2486892add4e366489af"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -8806,6 +9161,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -9225,7 +9581,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Card — exemplo documentado",
+          "htmlCode": "<div class=\"fs-card\">\n  <div class=\"fs-card-header\">\n    <h3 class=\"fs-card-title\">Título do card</h3>\n    <button type=\"button\" class=\"fs-btn-close\" aria-label=\"Fechar\"></button>\n  </div>\n  <div class=\"fs-card-body\">\n    <p class=\"fs-card-text\">Corpo de texto do card.</p>\n    <button type=\"button\" class=\"fs-btn fs-btn-primary\">Ação</button>\n  </div>\n  <div class=\"fs-card-footer\">\n    <span class=\"fs-badge fs-badge-success\">Ativo</span>\n  </div>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Botões são demonstrativos: fechar e ação não têm comportamento de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/card/basic.html",
+              "sha256": "40351526bc92dcd3872f2ad8f805aeae4b25c94c8329a046f42989fa1394f194"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -9302,6 +9680,74 @@
           "name": "Carousel",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/carousel.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/carousel.js",
+          "attributes": [
+            {
+              "name": "data-interval",
+              "line": 18,
+              "code": "this.interval = Number(carouselEl.getAttribute(\"data-interval\")) || 5000;"
+            },
+            {
+              "name": "data-autoplay",
+              "line": 19,
+              "code": "this.autoplay = carouselEl.getAttribute(\"data-autoplay\") === \"true\";"
+            },
+            {
+              "name": "data-drag",
+              "line": 20,
+              "code": "this.dragEnabled = carouselEl.getAttribute(\"data-drag\") !== \"false\";"
+            },
+            {
+              "name": "role",
+              "line": 29,
+              "code": "carouselEl.setAttribute(\"role\", \"group\");"
+            },
+            {
+              "name": "aria-roledescription",
+              "line": 30,
+              "code": "carouselEl.setAttribute(\"aria-roledescription\", \"carousel\");"
+            },
+            {
+              "name": "tabindex",
+              "line": 33,
+              "code": "if (!this.isStatic && !carouselEl.hasAttribute(\"tabindex\")) {"
+            },
+            {
+              "name": "tabindex",
+              "line": 34,
+              "code": "carouselEl.setAttribute(\"tabindex\", \"0\");"
+            },
+            {
+              "name": "aria-live",
+              "line": 121,
+              "code": "if (this.inner) this.inner.setAttribute(\"aria-live\", this.timer ? \"off\" : \"polite\");"
+            },
+            {
+              "name": "aria-pressed",
+              "line": 138,
+              "code": "this.toggleBtn.setAttribute(\"aria-pressed\", String(isPlaying));"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 152,
+              "code": "item.setAttribute(\"aria-hidden\", String(index !== this.index));"
+            },
+            {
+              "name": "aria-current",
+              "line": 157,
+              "code": "btn.setAttribute(\"aria-current\", String(index === this.index));"
+            },
+            {
+              "name": "tabindex",
+              "line": 304,
+              "code": "if (this.managesTabindex) this.carouselEl.removeAttribute(\"tabindex\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -12050,6 +12496,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -12829,7 +13276,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Checkbox — exemplo documentado",
+          "htmlCode": "<div class=\"fs-check\">\n  <input type=\"checkbox\" class=\"fs-check-input\" id=\"aceite\">\n  <label for=\"aceite\" class=\"fs-check-label\">Aceito os termos</label>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/checkbox/basic.html",
+              "sha256": "ee50345399a28fe159d84664aeb5d3093d39cb103c8ece361c3d004526963b5c"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -12882,6 +13350,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -13064,6 +13533,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -13222,6 +13692,44 @@
           "source": "packages/fokus-js/js/collapse.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/collapse.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 9,
+              "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 18,
+              "code": "this.isOpen = triggerEl.getAttribute(\"aria-expanded\") === \"true\";"
+            },
+            {
+              "name": "aria-controls",
+              "line": 22,
+              "code": "triggerEl.setAttribute(\"aria-controls\", collapseEl.id);"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 23,
+              "code": "triggerEl.setAttribute(\"aria-expanded\", String(this.isOpen));"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 43,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 54,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/collapse.d.ts",
@@ -13284,7 +13792,33 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Collapse — exemplo documentado",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn\" data-fs=\"collapse\" data-fs-target=\"#detalhes\">\n  Ver detalhes\n</button>\n<div class=\"fs-collapse\" id=\"detalhes\">\n  Conteúdo que expande/recolhe.\n</div>\n",
+          "jsCode": "import { Collapse } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"collapse\"]')]\n  .map((element) => Collapse.getInstance(element) ?? new Collapse(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/collapse/basic.html",
+              "sha256": "b8f51d8bc595a386224f05f585d26feedb8c2628c584ea69084b33c22202dbc6"
+            },
+            {
+              "path": "docs/catalog/fixtures/collapse/basic.js",
+              "sha256": "62542e5d08db3770f757b2bdece95f9f725ac257b4f74734362beb324e6c16f1"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -13357,6 +13891,114 @@
           "name": "Combobox",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/combobox.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/combobox.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 19,
+              "code": "const targetSelector = inputEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 28,
+              "code": "this.placement = options.placement ?? inputEl.getAttribute(\"data-placement\") ?? \"bottom\";"
+            },
+            {
+              "name": "role",
+              "line": 39,
+              "code": "this.inputEl.setAttribute(\"role\", \"combobox\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 40,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-autocomplete",
+              "line": 41,
+              "code": "this.inputEl.setAttribute(\"aria-autocomplete\", \"list\");"
+            },
+            {
+              "name": "aria-controls",
+              "line": 42,
+              "code": "this.inputEl.setAttribute(\"aria-controls\", this.listboxEl.id);"
+            },
+            {
+              "name": "autocomplete",
+              "line": 43,
+              "code": "this.inputEl.setAttribute(\"autocomplete\", \"off\");"
+            },
+            {
+              "name": "role",
+              "line": 44,
+              "code": "this.listboxEl.setAttribute(\"role\", \"listbox\");"
+            },
+            {
+              "name": "role",
+              "line": 48,
+              "code": "option.setAttribute(\"role\", \"option\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 49,
+              "code": "option.setAttribute(\"aria-selected\", \"false\");"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 79,
+              "code": "(option) => !option.hidden && !option.hasAttribute(\"data-fs-empty\") && !option.classList.contains(\"is-disabled\"),"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 87,
+              "code": "if (option.hasAttribute(\"data-fs-empty\")) return;"
+            },
+            {
+              "name": "aria-activedescendant",
+              "line": 99,
+              "code": "this.inputEl.removeAttribute(\"aria-activedescendant\");"
+            },
+            {
+              "name": "aria-activedescendant",
+              "line": 110,
+              "code": "this.inputEl.setAttribute(\"aria-activedescendant\", current.id);"
+            },
+            {
+              "name": "data-value",
+              "line": 115,
+              "code": "this.value = option.getAttribute(\"data-value\") ?? label;"
+            },
+            {
+              "name": "aria-selected",
+              "line": 118,
+              "code": "this._getOptions().forEach((item) => item.setAttribute(\"aria-selected\", String(item === option)));"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 172,
+              "code": "if (!option || option.hasAttribute(\"data-fs-empty\")) return;"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 195,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-activedescendant",
+              "line": 212,
+              "code": "this.inputEl.removeAttribute(\"aria-activedescendant\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 219,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -13785,6 +14427,114 @@
           "name": "CommandPalette",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/command-palette.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/command-palette.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 42,
+              "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "role",
+              "line": 61,
+              "code": "paletteEl.setAttribute(\"role\", \"dialog\");"
+            },
+            {
+              "name": "aria-modal",
+              "line": 62,
+              "code": "paletteEl.setAttribute(\"aria-modal\", \"true\");"
+            },
+            {
+              "name": "role",
+              "line": 64,
+              "code": "this.inputEl.setAttribute(\"role\", \"combobox\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 65,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-autocomplete",
+              "line": 66,
+              "code": "this.inputEl.setAttribute(\"aria-autocomplete\", \"list\");"
+            },
+            {
+              "name": "aria-controls",
+              "line": 67,
+              "code": "this.inputEl.setAttribute(\"aria-controls\", this.listEl.id);"
+            },
+            {
+              "name": "autocomplete",
+              "line": 68,
+              "code": "this.inputEl.setAttribute(\"autocomplete\", \"off\");"
+            },
+            {
+              "name": "role",
+              "line": 69,
+              "code": "this.listEl.setAttribute(\"role\", \"listbox\");"
+            },
+            {
+              "name": "role",
+              "line": 73,
+              "code": "item.setAttribute(\"role\", \"option\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 74,
+              "code": "item.setAttribute(\"aria-selected\", \"false\");"
+            },
+            {
+              "name": "data-fs-shortcut",
+              "line": 90,
+              "code": "const shortcut = options.shortcut ?? triggerEl.getAttribute(\"data-fs-shortcut\");"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 110,
+              "code": "return this._getItems().filter((item) => !item.hidden && !item.hasAttribute(\"data-fs-empty\") && !item.classList.contains(\"is-disabled\"));"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 117,
+              "code": "if (item.hasAttribute(\"data-fs-empty\")) return;"
+            },
+            {
+              "name": "aria-activedescendant",
+              "line": 129,
+              "code": "this.inputEl.removeAttribute(\"aria-activedescendant\");"
+            },
+            {
+              "name": "aria-activedescendant",
+              "line": 140,
+              "code": "this.inputEl.setAttribute(\"aria-activedescendant\", current.id);"
+            },
+            {
+              "name": "data-value",
+              "line": 145,
+              "code": "const value = item.getAttribute(\"data-value\") ?? label;"
+            },
+            {
+              "name": "data-fs-empty",
+              "line": 185,
+              "code": "if (!item || item.hasAttribute(\"data-fs-empty\")) return;"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 209,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 228,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -14350,6 +15100,89 @@
           "name": "DataTable",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/datatable.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/datatable.js",
+          "attributes": [
+            {
+              "name": "data-fs-page-size",
+              "line": 58,
+              "code": "const configuredPageSize = Number(rootEl.getAttribute(\"data-fs-page-size\") ?? options.pageSize ?? 10);"
+            },
+            {
+              "name": "data-fs-datatable-pagination",
+              "line": 71,
+              "code": "this.paginationEl.setAttribute(\"data-fs-datatable-pagination\", \"\");"
+            },
+            {
+              "name": "aria-label",
+              "line": 72,
+              "code": "this.paginationEl.setAttribute(\"aria-label\", \"Paginação da tabela\");"
+            },
+            {
+              "name": "aria-busy",
+              "line": 101,
+              "code": "this.tableEl.setAttribute(\"aria-busy\", \"false\");"
+            },
+            {
+              "name": "data-fs-sort",
+              "line": 122,
+              "code": "const key = th.getAttribute(\"data-fs-sort\");"
+            },
+            {
+              "name": "data-fs-sort-key",
+              "line": 126,
+              "code": "btn.setAttribute(\"data-fs-sort-key\", key);"
+            },
+            {
+              "name": "aria-sort",
+              "line": 129,
+              "code": "th.setAttribute(\"aria-sort\", \"none\");"
+            },
+            {
+              "name": "data-fs-sort-value",
+              "line": 138,
+              "code": "cells: Array.from(el.children).map((cell) => (cell.getAttribute(\"data-fs-sort-value\") ?? cell.textContent).trim()),"
+            },
+            {
+              "name": "data-fs-sort-type",
+              "line": 159,
+              "code": "const type = th?.getAttribute(\"data-fs-sort-type\") ?? \"text\";"
+            },
+            {
+              "name": "aria-busy",
+              "line": 212,
+              "code": "this.tableEl.setAttribute(\"aria-busy\", String(this._loading));"
+            },
+            {
+              "name": "aria-busy",
+              "line": 220,
+              "code": "this.tableEl.setAttribute(\"aria-busy\", String(this._loading));"
+            },
+            {
+              "name": "aria-sort",
+              "line": 277,
+              "code": "th.setAttribute(\"aria-sort\", direction === \"asc\" ? \"ascending\" : direction === \"desc\" ? \"descending\" : \"none\");"
+            },
+            {
+              "name": "tabindex",
+              "line": 335,
+              "code": "this._visibleCells().forEach((cell, index) => cell.setAttribute(\"tabindex\", index === 0 ? \"0\" : \"-1\"));"
+            },
+            {
+              "name": "tabindex",
+              "line": 342,
+              "code": "this._visibleCells().forEach((c) => c.setAttribute(\"tabindex\", c === cell ? \"0\" : \"-1\"));"
+            },
+            {
+              "name": "aria-sort",
+              "line": 395,
+              "code": "th.removeAttribute(\"aria-sort\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -15414,6 +16247,59 @@
           "name": "Datepicker",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/datepicker.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/datepicker.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 85,
+              "code": "const targetSelector = inputEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 94,
+              "code": "this.placement = options.placement ?? inputEl.getAttribute(\"data-placement\") ?? \"bottom\";"
+            },
+            {
+              "name": "role",
+              "line": 113,
+              "code": "this.inputEl.setAttribute(\"role\", \"combobox\");"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 114,
+              "code": "this.inputEl.setAttribute(\"aria-haspopup\", \"grid\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 115,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-controls",
+              "line": 116,
+              "code": "this.inputEl.setAttribute(\"aria-controls\", this.panelEl.id);"
+            },
+            {
+              "name": "autocomplete",
+              "line": 117,
+              "code": "this.inputEl.setAttribute(\"autocomplete\", \"off\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 378,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 401,
+              "code": "this.inputEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -16556,6 +17442,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -16662,7 +17549,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Divider — exemplo documentado",
+          "htmlCode": "<hr class=\"fs-divider\">\n\n<div class=\"fs-divider\"><span class=\"fs-divider-label\">ou</span></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/divider/basic.html",
+              "sha256": "86c42d2168817abc637c92001430ae915f141d4518fefabfd00fc9c0c071118c"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -16735,6 +17643,114 @@
           "name": "Dropdown",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/dropdown.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/dropdown.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 12,
+              "code": "const targetSelector = toggleEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 21,
+              "code": "this.placement = options.placement ?? toggleEl.getAttribute(\"data-placement\") ?? \"bottom\";"
+            },
+            {
+              "name": "data-align",
+              "line": 22,
+              "code": "this.align = options.align ?? toggleEl.getAttribute(\"data-align\") ?? \"start\";"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 31,
+              "code": "this.toggleEl.setAttribute(\"aria-haspopup\", \"menu\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 32,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-controls",
+              "line": 33,
+              "code": "this.toggleEl.setAttribute(\"aria-controls\", this.menuEl.id || `fs-dropdown-${Math.random().toString(36).slice(2)}`);"
+            },
+            {
+              "name": "aria-controls",
+              "line": 34,
+              "code": "if (!this.menuEl.id) this.menuEl.id = this.toggleEl.getAttribute(\"aria-controls\");"
+            },
+            {
+              "name": "role",
+              "line": 35,
+              "code": "if (!this.menuEl.hasAttribute(\"role\")) this.menuEl.setAttribute(\"role\", \"menu\");"
+            },
+            {
+              "name": "role",
+              "line": 35,
+              "code": "if (!this.menuEl.hasAttribute(\"role\")) this.menuEl.setAttribute(\"role\", \"menu\");"
+            },
+            {
+              "name": "aria-orientation",
+              "line": 36,
+              "code": "this.menuEl.setAttribute(\"aria-orientation\", \"vertical\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 37,
+              "code": "this.menuEl.setAttribute(\"aria-labelledby\", this.toggleEl.id || this.toggleEl.getAttribute(\"aria-controls\"));"
+            },
+            {
+              "name": "aria-controls",
+              "line": 37,
+              "code": "this.menuEl.setAttribute(\"aria-labelledby\", this.toggleEl.id || this.toggleEl.getAttribute(\"aria-controls\"));"
+            },
+            {
+              "name": "role",
+              "line": 39,
+              "code": "if (!item.hasAttribute(\"role\")) item.setAttribute(\"role\", \"menuitem\");"
+            },
+            {
+              "name": "role",
+              "line": 39,
+              "code": "if (!item.hasAttribute(\"role\")) item.setAttribute(\"role\", \"menuitem\");"
+            },
+            {
+              "name": "aria-disabled",
+              "line": 40,
+              "code": "if (this._isDisabled(item)) item.setAttribute(\"aria-disabled\", \"true\");"
+            },
+            {
+              "name": "role",
+              "line": 42,
+              "code": "this.menuEl.querySelectorAll(\".fs-dropdown-divider\").forEach((divider) => divider.setAttribute(\"role\", \"separator\"));"
+            },
+            {
+              "name": "role",
+              "line": 43,
+              "code": "this.menuEl.querySelectorAll(\".fs-dropdown-header\").forEach((header) => header.setAttribute(\"role\", \"presentation\"));"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 144,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 169,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-disabled",
+              "line": 189,
+              "code": "return item.classList.contains(\"is-disabled\") || item.disabled || item.getAttribute(\"aria-disabled\") === \"true\";"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -19484,6 +20500,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -19766,7 +20783,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Empty-State — exemplo documentado",
+          "htmlCode": "<div class=\"fs-empty-state\">\n  <div class=\"fs-empty-state-icon\" aria-hidden=\"true\">\n    <svg class=\"fs-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"22 12 16 12 14 15 10 15 8 12 2 12\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"/></svg>\n  </div>\n  <h3 class=\"fs-empty-state-title\">Nenhum resultado encontrado</h3>\n  <p class=\"fs-empty-state-text\">Tente ajustar os filtros ou buscar por outro termo.</p>\n  <button type=\"button\" class=\"fs-btn fs-btn-primary\">Limpar filtros</button>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Botões demonstrativos sem comportamento de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/empty-state/basic.html",
+              "sha256": "131414ad58752193047f08411e977a6ff5eab04a6ec76ef53da3fb521447e850"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -19843,6 +20882,19 @@
           "name": "FileDrop",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/file-drop.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/file-drop.js",
+          "attributes": [
+            {
+              "name": "for",
+              "line": 12,
+              "code": "const inputEl = document.getElementById(labelEl.getAttribute(\"for\"));"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -20493,6 +21545,34 @@
           "source": "packages/fokus-js/js/file-upload-advanced.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/file-upload-advanced.js",
+          "attributes": [
+            {
+              "name": "data-file-id",
+              "line": 123,
+              "code": "if (itemEl) this.remove(itemEl.getAttribute(\"data-file-id\"));"
+            },
+            {
+              "name": "data-file-id",
+              "line": 130,
+              "code": "li.setAttribute(\"data-file-id\", id);"
+            },
+            {
+              "name": "aria-label",
+              "line": 160,
+              "code": "li.querySelector('[role=\"progressbar\"]').setAttribute(\"aria-label\", `Progresso de ${file.name}`);"
+            },
+            {
+              "name": "aria-label",
+              "line": 161,
+              "code": "li.querySelector(\"[data-file-upload-remove]\").setAttribute(\"aria-label\", `Remover ${file.name}`);"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/file-upload-advanced.d.ts",
@@ -21083,6 +22163,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -21241,6 +22322,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -22983,7 +24065,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Input — exemplo documentado",
+          "htmlCode": "<div class=\"fs-form-col\">\n  <label for=\"nome\" class=\"fs-form-label\">Nome completo</label>\n  <input type=\"text\" class=\"fs-form-control\" id=\"nome\" placeholder=\"Seu nome\">\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/input/basic.html",
+              "sha256": "e7cf7c05904c209cb8113a1a5876ba85367515f575c233673865a58964397211"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -23044,6 +24147,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -23409,6 +24513,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -23612,6 +24717,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -24003,6 +25109,54 @@
           "name": "Modal",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/modal.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/modal.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 9,
+              "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-backdrop",
+              "line": 19,
+              "code": "this.staticBackdrop = (options.backdrop ?? modalEl.getAttribute(\"data-backdrop\")) === \"static\";"
+            },
+            {
+              "name": "role",
+              "line": 24,
+              "code": "modalEl.setAttribute(\"role\", \"dialog\");"
+            },
+            {
+              "name": "aria-modal",
+              "line": 25,
+              "code": "modalEl.setAttribute(\"aria-modal\", \"true\");"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 26,
+              "code": "modalEl.setAttribute(\"aria-hidden\", \"true\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 30,
+              "code": "modalEl.setAttribute(\"aria-labelledby\", titleEl.id);"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 76,
+              "code": "updateFocusIsolation(() => this.modalEl.setAttribute(\"aria-hidden\", \"false\"));"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 103,
+              "code": "updateFocusIsolation(() => this.modalEl.setAttribute(\"aria-hidden\", \"true\"));"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -24425,7 +25579,34 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Modal — exemplo documentado",
+          "htmlCode": "<button type=\"button\" class=\"fs-btn fs-btn-primary\" data-fs=\"modal\" data-fs-target=\"#meuModal\">\n  Abrir modal\n</button>\n\n<div class=\"fs-modal\" id=\"meuModal\">\n  <div class=\"fs-modal-dialog\">\n    <div class=\"fs-modal-content\">\n      <div class=\"fs-modal-header\">\n        <h3 class=\"fs-modal-title\">Título</h3>\n        <button type=\"button\" class=\"fs-btn-close\" data-fs-dismiss=\"modal\" aria-label=\"Fechar\"></button>\n      </div>\n      <div class=\"fs-modal-body\">Conteúdo do modal.</div>\n      <div class=\"fs-modal-footer\">\n        <button type=\"button\" class=\"fs-btn\" data-fs-dismiss=\"modal\">Cancelar</button>\n        <button type=\"button\" class=\"fs-btn fs-btn-primary\">Confirmar</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
+          "jsCode": "import { Modal } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"modal\"]')]\n  .map((element) => Modal.getInstance(element) ?? new Modal(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Confirmar é demonstrativo; não executa ação de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/modal/basic.html",
+              "sha256": "640c3e2ce53ab3d60663860e9768a969452a8fd2a3de905947e7422857bca5ff"
+            },
+            {
+              "path": "docs/catalog/fixtures/modal/basic.js",
+              "sha256": "9fcf2831fad4ed628bb2b5a547fd2b00063ab61e2b6a3a5176951eeb5c8f60b5"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -24494,6 +25675,29 @@
           "name": "Navbar",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/navbar.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/navbar.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 9,
+              "code": "const target = this.toggleEl?.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 21,
+              "code": "show() { this.menuEl.classList.add(\"is-open\"); this.menuEl.hidden = false; this.toggleEl.setAttribute(\"aria-expanded\", \"true\"); this.navbarEl.dispatchEvent(new CustomEvent(\"fs:shown\", { bubbles: true })); }"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 22,
+              "code": "hide() { this.menuEl.classList.remove(\"is-open\"); this.menuEl.hidden = true; this.toggleEl.setAttribute(\"aria-expanded\", \"false\"); this.toggleEl.focus(); this.navbarEl.dispatchEvent(new CustomEvent(\"fs:hidden\", { bubbles: true })); }"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -25233,6 +26437,99 @@
           "source": "packages/fokus-js/js/nested-menu.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/nested-menu.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 39,
+              "code": "const targetSelector = toggleEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 48,
+              "code": "this.placement = options.placement ?? toggleEl.getAttribute(\"data-placement\") ?? \"bottom\";"
+            },
+            {
+              "name": "data-align",
+              "line": 49,
+              "code": "this.align = options.align ?? toggleEl.getAttribute(\"data-align\") ?? \"start\";"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 56,
+              "code": "this.toggleEl.setAttribute(\"aria-haspopup\", \"menu\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 57,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "role",
+              "line": 58,
+              "code": "this.rootMenu.setAttribute(\"role\", \"menu\");"
+            },
+            {
+              "name": "role",
+              "line": 59,
+              "code": "this.rootMenu.querySelectorAll(\".fs-dropdown-menu\").forEach((menu) => menu.setAttribute(\"role\", \"menu\"));"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 61,
+              "code": "item.setAttribute(\"aria-haspopup\", \"menu\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 62,
+              "code": "item.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 113,
+              "code": "sibling.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 119,
+              "code": "parentItem.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 129,
+              "code": "nested.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 133,
+              "code": "parentItem.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 139,
+              "code": "submenu.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 176,
+              "code": "submenu.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 263,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 284,
+              "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/nested-menu.d.ts",
@@ -25943,6 +27240,89 @@
           "name": "NotificationCenter",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/notification-center.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/notification-center.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 29,
+              "code": "const panelSelector = options.target ?? triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-storage",
+              "line": 38,
+              "code": "this.storage = options.storage ?? triggerEl.getAttribute(\"data-storage\") ?? \"memory\";"
+            },
+            {
+              "name": "data-storage-key",
+              "line": 39,
+              "code": "this.storageKey = options.storageKey ?? triggerEl.getAttribute(\"data-storage-key\") ?? \"fokus-notifications\";"
+            },
+            {
+              "name": "data-toast-container",
+              "line": 41,
+              "code": "const containerSelector = options.toastContainer ?? triggerEl.getAttribute(\"data-toast-container\");"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 54,
+              "code": "triggerEl.setAttribute(\"aria-haspopup\", \"dialog\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 55,
+              "code": "triggerEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-controls",
+              "line": 56,
+              "code": "if (panelEl.id) triggerEl.setAttribute(\"aria-controls\", panelEl.id);"
+            },
+            {
+              "name": "role",
+              "line": 57,
+              "code": "if (!panelEl.getAttribute(\"role\")) panelEl.setAttribute(\"role\", \"region\");"
+            },
+            {
+              "name": "role",
+              "line": 57,
+              "code": "if (!panelEl.getAttribute(\"role\")) panelEl.setAttribute(\"role\", \"region\");"
+            },
+            {
+              "name": "aria-label",
+              "line": 58,
+              "code": "if (!panelEl.getAttribute(\"aria-label\")) panelEl.setAttribute(\"aria-label\", \"Notificações\");"
+            },
+            {
+              "name": "aria-label",
+              "line": 58,
+              "code": "if (!panelEl.getAttribute(\"aria-label\")) panelEl.setAttribute(\"aria-label\", \"Notificações\");"
+            },
+            {
+              "name": "data-delay",
+              "line": 144,
+              "code": "if (delay != null) toastEl.setAttribute(\"data-delay\", String(delay));"
+            },
+            {
+              "name": "data-autohide",
+              "line": 145,
+              "code": "if (!autohide) toastEl.setAttribute(\"data-autohide\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 242,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 267,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -27637,6 +29017,59 @@
           "source": "packages/fokus-js/js/offcanvas.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/offcanvas.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 9,
+              "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-backdrop",
+              "line": 18,
+              "code": "this.hasBackdrop = (options.backdrop ?? offcanvasEl.getAttribute(\"data-backdrop\")) !== \"false\";"
+            },
+            {
+              "name": "data-backdrop",
+              "line": 19,
+              "code": "this.staticBackdrop = (options.backdrop ?? offcanvasEl.getAttribute(\"data-backdrop\")) === \"static\";"
+            },
+            {
+              "name": "role",
+              "line": 25,
+              "code": "offcanvasEl.setAttribute(\"role\", \"dialog\");"
+            },
+            {
+              "name": "aria-modal",
+              "line": 26,
+              "code": "offcanvasEl.setAttribute(\"aria-modal\", \"true\");"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 27,
+              "code": "offcanvasEl.setAttribute(\"aria-hidden\", \"true\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 31,
+              "code": "offcanvasEl.setAttribute(\"aria-labelledby\", titleEl.id);"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 87,
+              "code": "updateFocusIsolation(() => this.offcanvasEl.setAttribute(\"aria-hidden\", \"false\"));"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 124,
+              "code": "updateFocusIsolation(() => this.offcanvasEl.setAttribute(\"aria-hidden\", \"true\"));"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/offcanvas.d.ts",
@@ -28152,6 +29585,54 @@
           "name": "Pagination",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/pagination.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/pagination.js",
+          "attributes": [
+            {
+              "name": "data-fs-pages",
+              "line": 7,
+              "code": "this.total = Math.max(1, this._normalizePage(element.getAttribute(\"data-fs-pages\"), element.querySelectorAll(\"[data-fs-page]\").length || 1));"
+            },
+            {
+              "name": "data-fs-page",
+              "line": 8,
+              "code": "this.current = Math.min(this.total, this._normalizePage(element.getAttribute(\"data-fs-page\"), 1));"
+            },
+            {
+              "name": "aria-disabled",
+              "line": 13,
+              "code": "if (button.disabled || button.getAttribute(\"aria-disabled\") === \"true\" || button.closest(\".is-disabled\")) return;"
+            },
+            {
+              "name": "data-fs-page",
+              "line": 14,
+              "code": "this.goTo(button.getAttribute(\"data-fs-page\"));"
+            },
+            {
+              "name": "data-fs-page",
+              "line": 27,
+              "code": "this.element.setAttribute(\"data-fs-page\", String(bounded));"
+            },
+            {
+              "name": "data-fs-page",
+              "line": 33,
+              "code": "const active = Number(item.getAttribute(\"data-fs-page\")) === this.current;"
+            },
+            {
+              "name": "aria-current",
+              "line": 36,
+              "code": "if (active) item.setAttribute(\"aria-current\", \"page\");"
+            },
+            {
+              "name": "aria-current",
+              "line": 37,
+              "code": "else item.removeAttribute(\"aria-current\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -28711,6 +30192,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -28902,6 +30384,79 @@
           "name": "Popover",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/popover.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/popover.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 15,
+              "code": "const targetSelector = triggerEl.getAttribute(\"data-fs-target\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 24,
+              "code": "this.placement = options.placement ?? triggerEl.getAttribute(\"data-placement\") ?? \"top\";"
+            },
+            {
+              "name": "data-align",
+              "line": 25,
+              "code": "this.align = options.align ?? triggerEl.getAttribute(\"data-align\") ?? \"center\";"
+            },
+            {
+              "name": "data-trigger",
+              "line": 26,
+              "code": "this.trigger = options.trigger ?? triggerEl.getAttribute(\"data-trigger\") ?? \"click\";"
+            },
+            {
+              "name": "role",
+              "line": 37,
+              "code": "popoverEl.setAttribute(\"role\", \"dialog\");"
+            },
+            {
+              "name": "aria-modal",
+              "line": 38,
+              "code": "popoverEl.setAttribute(\"aria-modal\", \"false\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 46,
+              "code": "popoverEl.setAttribute(\"aria-labelledby\", headerEl.id);"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 52,
+              "code": "popoverEl.setAttribute(\"aria-describedby\", descriptionEl.id);"
+            },
+            {
+              "name": "aria-controls",
+              "line": 55,
+              "code": "triggerEl.setAttribute(\"aria-controls\", popoverEl.id);"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 56,
+              "code": "triggerEl.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 157,
+              "code": "this.popoverEl.setAttribute(\"data-placement\", position.placement);"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 160,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 181,
+              "code": "this.triggerEl.setAttribute(\"aria-expanded\", \"false\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -29988,6 +31543,29 @@
           "source": "packages/fokus-js/js/spinner.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/spinner.js",
+          "attributes": [
+            {
+              "name": "data-fs-loading",
+              "line": 7,
+              "code": "this._setLoading(element.hasAttribute(\"data-fs-loading\") && element.getAttribute(\"data-fs-loading\") !== \"false\");"
+            },
+            {
+              "name": "data-fs-loading",
+              "line": 7,
+              "code": "this._setLoading(element.hasAttribute(\"data-fs-loading\") && element.getAttribute(\"data-fs-loading\") !== \"false\");"
+            },
+            {
+              "name": "aria-busy",
+              "line": 12,
+              "code": "_setLoading(value) { this.loading = value; this.element.setAttribute(\"aria-busy\", String(value)); this.element.toggleAttribute(\"data-fs-loading\", value); }"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/spinner.d.ts",
@@ -31006,6 +32584,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -31640,7 +33219,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Radio — exemplo documentado",
+          "htmlCode": "<div class=\"fs-radio\">\n  <input type=\"radio\" name=\"periodo\" class=\"fs-radio-input\" id=\"dia\" checked>\n  <label for=\"dia\" class=\"fs-radio-label\">Dia</label>\n</div>\n<div class=\"fs-radio\">\n  <input type=\"radio\" name=\"periodo\" class=\"fs-radio-input\" id=\"semana\">\n  <label for=\"semana\" class=\"fs-radio-label\">Semana</label>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/radio/basic.html",
+              "sha256": "537ebf8fe682524ea7944f74c9f2b3cd6a03d45ea476be4410364a2d1afb6da3"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -31709,6 +33309,19 @@
           "name": "RangeSlider",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/range.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/range.js",
+          "attributes": [
+            {
+              "name": "data-fs-target",
+              "line": 24,
+              "code": "const targetSelector = inputEl.getAttribute(\"data-fs-target\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -31841,6 +33454,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -32407,6 +34021,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -32601,6 +34216,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -36164,6 +37780,24 @@
           "source": "packages/fokus-js/js/scrollspy.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/scrollspy.js",
+          "attributes": [
+            {
+              "name": "href",
+              "line": 9,
+              "code": "this.sections = this.links.map((link) => document.getElementById(link.getAttribute(\"href\").slice(1))).filter(Boolean);"
+            },
+            {
+              "name": "href",
+              "line": 22,
+              "code": "activate(section) { this.links.forEach((link) => link.classList.toggle(\"is-active\", link.getAttribute(\"href\") === `#${section.id}`)); this.navEl.dispatchEvent(new CustomEvent(\"fs:scrollspy:activate\", { bubbles: true, detail: { section } })); }"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/scrollspy.d.ts",
@@ -36278,6 +37912,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -36737,7 +38372,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Segmented-Control — exemplo documentado",
+          "htmlCode": "<div class=\"fs-segmented-control\">\n  <div class=\"fs-segmented-item\">\n    <input type=\"radio\" name=\"periodo\" class=\"fs-segmented-input\" id=\"p-dia\" checked>\n    <label for=\"p-dia\" class=\"fs-segmented-label\">Dia</label>\n  </div>\n  <div class=\"fs-segmented-item\">\n    <input type=\"radio\" name=\"periodo\" class=\"fs-segmented-input\" id=\"p-semana\">\n    <label for=\"p-semana\" class=\"fs-segmented-label\">Semana</label>\n  </div>\n  <div class=\"fs-segmented-item\">\n    <input type=\"radio\" name=\"periodo\" class=\"fs-segmented-input\" id=\"p-mes\">\n    <label for=\"p-mes\" class=\"fs-segmented-label\">Mês</label>\n  </div>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/segmented-control/basic.html",
+              "sha256": "99e0729de1a71267e04816d57e58be9600f9af45c38dc4ec7c5d47d7794e467d"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -36810,6 +38466,39 @@
           "name": "Select",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/select.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/select.js",
+          "attributes": [
+            {
+              "name": "data-size",
+              "line": 13,
+              "code": "this.size = selectEl.getAttribute(\"data-size\");"
+            },
+            {
+              "name": "aria-haspopup",
+              "line": 21,
+              "code": "this.toggleEl.setAttribute(\"aria-haspopup\", \"listbox\");"
+            },
+            {
+              "name": "role",
+              "line": 22,
+              "code": "this.menuEl.setAttribute(\"role\", \"listbox\");"
+            },
+            {
+              "name": "role",
+              "line": 73,
+              "code": "item.setAttribute(\"role\", \"option\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 96,
+              "code": "item.setAttribute(\"aria-selected\", String(isSelected));"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -38348,6 +40037,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -39000,7 +40690,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Skeleton — exemplo documentado",
+          "htmlCode": "<div class=\"fs-skeleton fs-skeleton-text\"></div>\n<div class=\"fs-skeleton fs-skeleton-text\"></div>\n<div class=\"fs-skeleton fs-skeleton-circle\" style=\"width: 48px; height: 48px;\"></div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Placeholder visual; contexto de carregamento e anúncio acessível são responsabilidade do aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/skeleton/basic.html",
+              "sha256": "d8d1fc7d365ecd657c2a725b17b6e689c2064d142ecd3b9a9f066c26c4a323a3"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -39073,6 +40785,34 @@
           "name": "Stepper",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/stepper.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/stepper.js",
+          "attributes": [
+            {
+              "name": "data-linear",
+              "line": 9,
+              "code": "this.linear = stepperEl.getAttribute(\"data-linear\") !== \"false\";"
+            },
+            {
+              "name": "role",
+              "line": 26,
+              "code": "step.setAttribute(\"role\", \"listitem\");"
+            },
+            {
+              "name": "aria-current",
+              "line": 64,
+              "code": "step.setAttribute(\"aria-current\", isActive ? \"step\" : \"false\");"
+            },
+            {
+              "name": "tabindex",
+              "line": 68,
+              "code": "step.setAttribute(\"tabindex\", clickable ? \"0\" : \"-1\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -39667,6 +41407,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -40574,7 +42315,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Switch — exemplo documentado",
+          "htmlCode": "<div class=\"fs-switch\">\n  <input type=\"checkbox\" class=\"fs-switch-input\" id=\"notif\" checked>\n  <label for=\"notif\" class=\"fs-switch-label\">Notificações</label>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/switch/basic.html",
+              "sha256": "b910c06625f27e7c00b76574c046f63c36f68ea909d71ba27f862d908210b752"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -40635,6 +42397,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -41223,7 +42986,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Table — exemplo documentado",
+          "htmlCode": "<table class=\"fs-table fs-table-striped fs-table-hover\">\n  <thead>\n    <tr><th>Nome</th><th>Status</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Ana</td><td>Ativo</td></tr>\n    <tr><td>Bruno</td><td>Inativo</td></tr>\n  </tbody>\n</table>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/table/basic.html",
+              "sha256": "3501de011edf7dc3a38d3559fdb5b66d425959e5953a7487a3f07a380a3e1b3f"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -41296,6 +43080,94 @@
           "name": "Tabs",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/tabs.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/tabs.js",
+          "attributes": [
+            {
+              "name": "data-tabs-activation",
+              "line": 10,
+              "code": "this.manualActivation = tablistEl.getAttribute(\"data-tabs-activation\") === \"manual\";"
+            },
+            {
+              "name": "role",
+              "line": 12,
+              "code": "tablistEl.setAttribute(\"role\", \"tablist\");"
+            },
+            {
+              "name": "role",
+              "line": 20,
+              "code": "tab.setAttribute(\"role\", \"tab\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 21,
+              "code": "tab.setAttribute(\"aria-selected\", String(isActive));"
+            },
+            {
+              "name": "tabindex",
+              "line": 22,
+              "code": "tab.setAttribute(\"tabindex\", isActive ? \"0\" : \"-1\");"
+            },
+            {
+              "name": "data-fs-target",
+              "line": 24,
+              "code": "const paneSelector = tab.getAttribute(\"data-fs-target\") || tab.getAttribute(\"data-fs-tab-target\");"
+            },
+            {
+              "name": "data-fs-tab-target",
+              "line": 24,
+              "code": "const paneSelector = tab.getAttribute(\"data-fs-target\") || tab.getAttribute(\"data-fs-tab-target\");"
+            },
+            {
+              "name": "role",
+              "line": 28,
+              "code": "pane.setAttribute(\"role\", \"tabpanel\");"
+            },
+            {
+              "name": "aria-labelledby",
+              "line": 29,
+              "code": "pane.setAttribute(\"aria-labelledby\", tab.id);"
+            },
+            {
+              "name": "tabindex",
+              "line": 30,
+              "code": "pane.setAttribute(\"tabindex\", \"0\");"
+            },
+            {
+              "name": "aria-orientation",
+              "line": 63,
+              "code": "const vertical = this.tablistEl.getAttribute(\"aria-orientation\") === \"vertical\" || this.tablistEl.classList.contains(\"fs-tabs-vertical\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 85,
+              "code": "otherTab.setAttribute(\"aria-selected\", String(isActive));"
+            },
+            {
+              "name": "tabindex",
+              "line": 86,
+              "code": "otherTab.setAttribute(\"tabindex\", isActive ? \"0\" : \"-1\");"
+            },
+            {
+              "name": "data-fs-target",
+              "line": 88,
+              "code": "const paneSelector = otherTab.getAttribute(\"data-fs-target\") || otherTab.getAttribute(\"data-fs-tab-target\");"
+            },
+            {
+              "name": "data-fs-tab-target",
+              "line": 88,
+              "code": "const paneSelector = otherTab.getAttribute(\"data-fs-target\") || otherTab.getAttribute(\"data-fs-tab-target\");"
+            },
+            {
+              "name": "data-fs-target",
+              "line": 96,
+              "code": "new CustomEvent(\"fs:tab:changed\", { bubbles: true, detail: { target: tab.getAttribute(\"data-fs-target\") } }),"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -41923,7 +43795,33 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Tabs — exemplo documentado",
+          "htmlCode": "<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n",
+          "jsCode": "import { Tabs } from \"fokus-styles/js\";\n\nconst instances = [...document.querySelectorAll('[data-fs=\"tabs\"]')]\n  .map((element) => Tabs.getInstance(element) ?? new Tabs(element));\nwindow.addEventListener(\"pagehide\", () => {\n  for (const instance of instances) instance.dispose();\n}, { once: true });\n",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas",
+            "inicializacao-explicita"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tabs/basic.html",
+              "sha256": "b3d92505810a07634614a61d766cd701a2c943fc3e43eab9295b1b7550603ae6"
+            },
+            {
+              "path": "docs/catalog/fixtures/tabs/basic.js",
+              "sha256": "cdbe4b953e7b5b3635b07167c86dbe4cc40f12ac48270c6c3433ee2f7ca3978b"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -41996,6 +43894,34 @@
           "name": "Tag",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/tag.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/tag.js",
+          "attributes": [
+            {
+              "name": "aria-busy",
+              "line": 11,
+              "code": "this._isLoading = tagEl.classList.contains(\"is-loading\") || tagEl.getAttribute(\"aria-busy\") === \"true\";"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 53,
+              "code": ".filter((button) => !button.disabled && !button.hidden && button.getAttribute(\"aria-hidden\") !== \"true\");"
+            },
+            {
+              "name": "aria-busy",
+              "line": 67,
+              "code": "this.tagEl.setAttribute(\"aria-busy\", \"true\");"
+            },
+            {
+              "name": "aria-busy",
+              "line": 69,
+              "code": "this.tagEl.removeAttribute(\"aria-busy\");"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -44464,6 +46390,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -46143,7 +48070,29 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Tile — exemplo documentado",
+          "htmlCode": "<div class=\"fs-tile\">\n  <div class=\"fs-tile-icon\" aria-hidden=\"true\">\n    <svg class=\"fs-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M10 9H8\"/><path d=\"M16 13H8\"/><path d=\"M16 17H8\"/></svg>\n  </div>\n  <div class=\"fs-tile-body\">\n    <p class=\"fs-tile-title\">Relatório mensal.pdf</p>\n    <p class=\"fs-tile-subtitle\">2.4 MB · Atualizado há 2h</p>\n  </div>\n  <div class=\"fs-tile-actions\">\n    <button type=\"button\" class=\"fs-btn fs-btn-sm\">Abrir</button>\n  </div>\n</div>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual.",
+            "Botões demonstrativos sem comportamento de aplicativo."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/tile/basic.html",
+              "sha256": "4d0218ac209b6dd77b88c93c3675e4b8bbe1e7dc526b1a46c870f4fc706b1a3b"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -46204,6 +48153,7 @@
         }
       ],
       "imports": [],
+      "runtimeEvidence": [],
       "typeDefinitions": [],
       "cssEvidence": {
         "scopeClasses": [
@@ -47045,7 +48995,28 @@
           "executable": false
         }
       ],
-      "examples": [],
+      "examples": [
+        {
+          "id": "basic",
+          "title": "Timeline — exemplo documentado",
+          "htmlCode": "<ol class=\"fs-timeline\">\n  <li class=\"fs-timeline-item fs-timeline-completed\">\n    <div class=\"fs-timeline-marker\"></div>\n    <div class=\"fs-timeline-content\">\n      <p class=\"fs-timeline-title\">Pedido criado</p>\n      <p class=\"fs-timeline-text\">Seu pedido foi registrado.</p>\n      <span class=\"fs-timeline-time\">10:32</span>\n    </div>\n  </li>\n  <li class=\"fs-timeline-item fs-timeline-active\">\n    <div class=\"fs-timeline-marker\"></div>\n    <div class=\"fs-timeline-content\">\n      <p class=\"fs-timeline-title\">Em preparação</p>\n    </div>\n  </li>\n  <li class=\"fs-timeline-item\">\n    <div class=\"fs-timeline-marker\"></div>\n    <div class=\"fs-timeline-content\">\n      <p class=\"fs-timeline-title\">Enviado</p>\n    </div>\n  </li>\n</ol>\n",
+          "jsCode": "",
+          "cssCode": "",
+          "coverage": [
+            "markup-documentado",
+            "classes-css-compiladas"
+          ],
+          "limitations": [
+            "Exemplo mínimo selecionado; não cobre todas as variantes, estados, temas ou acessibilidade manual."
+          ],
+          "sources": [
+            {
+              "path": "docs/catalog/fixtures/timeline/basic.html",
+              "sha256": "2a0beff748cd5dbd5cc33da1e12bd9593b148dd7e44267c67dfdafd34b282fce"
+            }
+          ]
+        }
+      ],
       "limitations": [
         "Documentação e código preservados da base candidata; cobertura parcial, não certificação de todas as variantes ou combinações.",
         "Snippets históricos são trechos de referência; somente exemplos explicitamente revisados são executáveis.",
@@ -47118,6 +49089,49 @@
           "name": "Toast",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/toast.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/toast.js",
+          "attributes": [
+            {
+              "name": "data-delay",
+              "line": 9,
+              "code": "this.delay = Number(toastEl.getAttribute(\"data-delay\")) || 4000;"
+            },
+            {
+              "name": "data-autohide",
+              "line": 10,
+              "code": "this.autohide = toastEl.getAttribute(\"data-autohide\") !== \"false\";"
+            },
+            {
+              "name": "role",
+              "line": 18,
+              "code": "toastEl.setAttribute(\"role\", \"status\");"
+            },
+            {
+              "name": "aria-live",
+              "line": 19,
+              "code": "toastEl.setAttribute(\"aria-live\", \"polite\");"
+            },
+            {
+              "name": "data-toast-progress",
+              "line": 71,
+              "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") === \"true\" && this.autohide) {"
+            },
+            {
+              "name": "data-toast-progress",
+              "line": 94,
+              "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") !== \"true\" || !this.autohide) return;"
+            },
+            {
+              "name": "data-toast-progress",
+              "line": 101,
+              "code": "if (this.toastEl.getAttribute(\"data-toast-progress\") !== \"true\" || !this.autohide) return;"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
@@ -48326,6 +50340,94 @@
           "source": "packages/fokus-js/js/tooltip.js"
         }
       ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/tooltip.js",
+          "attributes": [
+            {
+              "name": "title",
+              "line": 26,
+              "code": "const title = referenceEl.getAttribute(\"title\") ?? referenceEl.getAttribute(\"data-title\") ?? options.title;"
+            },
+            {
+              "name": "data-title",
+              "line": 26,
+              "code": "const title = referenceEl.getAttribute(\"title\") ?? referenceEl.getAttribute(\"data-title\") ?? options.title;"
+            },
+            {
+              "name": "title",
+              "line": 32,
+              "code": "referenceEl.removeAttribute(\"title\");"
+            },
+            {
+              "name": "data-placement",
+              "line": 38,
+              "code": "const parsedPlacement = parsePlacement(options.placement ?? referenceEl.getAttribute(\"data-placement\") ?? \"top\");"
+            },
+            {
+              "name": "data-align",
+              "line": 40,
+              "code": "this.align = options.align ?? referenceEl.getAttribute(\"data-align\") ?? parsedPlacement.align;"
+            },
+            {
+              "name": "data-offset",
+              "line": 41,
+              "code": "this.offset = toDelay(options.offset ?? referenceEl.getAttribute(\"data-offset\"), DEFAULT_TOOLTIP_OFFSET);"
+            },
+            {
+              "name": "data-show-delay",
+              "line": 42,
+              "code": "this.showDelay = toDelay(options.showDelay ?? referenceEl.getAttribute(\"data-show-delay\"), 0);"
+            },
+            {
+              "name": "data-hide-delay",
+              "line": 43,
+              "code": "this.hideDelay = toDelay(options.hideDelay ?? referenceEl.getAttribute(\"data-hide-delay\"));"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 50,
+              "code": "this._originalDescribedBy = referenceEl.getAttribute(\"aria-describedby\");"
+            },
+            {
+              "name": "role",
+              "line": 55,
+              "code": "this.tooltipEl.setAttribute(\"role\", \"tooltip\");"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 110,
+              "code": "const ids = new Set((this.referenceEl.getAttribute(\"aria-describedby\") ?? \"\").split(/\\s+/).filter(Boolean));"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 112,
+              "code": "this.referenceEl.setAttribute(\"aria-describedby\", [...ids].join(\" \"));"
+            },
+            {
+              "name": "data-placement",
+              "line": 157,
+              "code": "this.tooltipEl.setAttribute(\"data-placement\", position.placement);"
+            },
+            {
+              "name": "data-align",
+              "line": 158,
+              "code": "this.tooltipEl.setAttribute(\"data-align\", this.align);"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 202,
+              "code": "if (this._originalDescribedBy === null) this.referenceEl.removeAttribute(\"aria-describedby\");"
+            },
+            {
+              "name": "aria-describedby",
+              "line": 203,
+              "code": "else this.referenceEl.setAttribute(\"aria-describedby\", this._originalDescribedBy);"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
+        }
+      ],
       "typeDefinitions": [
         {
           "path": "packages/fokus-js/js/tooltip.d.ts",
@@ -48740,6 +50842,89 @@
           "name": "TreeView",
           "from": "fokus-styles/js",
           "source": "packages/fokus-js/js/tree-view.js"
+        }
+      ],
+      "runtimeEvidence": [
+        {
+          "path": "packages/fokus-js/js/tree-view.js",
+          "attributes": [
+            {
+              "name": "role",
+              "line": 14,
+              "code": "rootEl.setAttribute(\"role\", \"tree\");"
+            },
+            {
+              "name": "role",
+              "line": 37,
+              "code": "li.setAttribute(\"role\", \"treeitem\");"
+            },
+            {
+              "name": "role",
+              "line": 42,
+              "code": "group.setAttribute(\"role\", \"group\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 43,
+              "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 43,
+              "code": "if (!li.hasAttribute(\"aria-expanded\")) li.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 44,
+              "code": "group.hidden = li.getAttribute(\"aria-expanded\") !== \"true\";"
+            },
+            {
+              "name": "aria-hidden",
+              "line": 50,
+              "code": "toggle.setAttribute(\"aria-hidden\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 61,
+              "code": "return item.getAttribute(\"aria-expanded\") === \"true\";"
+            },
+            {
+              "name": "tabindex",
+              "line": 79,
+              "code": "const current = items.find((item) => item.getAttribute(\"tabindex\") === \"0\") ?? items[0];"
+            },
+            {
+              "name": "tabindex",
+              "line": 80,
+              "code": "items.forEach((item) => item.setAttribute(\"tabindex\", item === current ? \"0\" : \"-1\"));"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 87,
+              "code": "item.setAttribute(\"aria-expanded\", \"true\");"
+            },
+            {
+              "name": "aria-expanded",
+              "line": 97,
+              "code": "item.setAttribute(\"aria-expanded\", \"false\");"
+            },
+            {
+              "name": "aria-selected",
+              "line": 112,
+              "code": "this.rootEl.querySelectorAll('[aria-selected=\"true\"]').forEach((el) => el.setAttribute(\"aria-selected\", \"false\"));"
+            },
+            {
+              "name": "aria-selected",
+              "line": 113,
+              "code": "item.setAttribute(\"aria-selected\", \"true\");"
+            },
+            {
+              "name": "tabindex",
+              "line": 133,
+              "code": "this._visibleItems().forEach((el) => el.setAttribute(\"tabindex\", el === item ? \"0\" : \"-1\"));"
+            }
+          ],
+          "meaning": "Atributos lidos/escritos pela implementação; inclui estado interno e não promove cada ocorrência a opção pública. Consultar documentação e tipos."
         }
       ],
       "typeDefinitions": [
