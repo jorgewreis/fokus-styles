@@ -645,15 +645,19 @@
     "implementation": [
       {
         "path": "packages/fokus-js/js/nested-menu.js",
-        "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+        "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
       },
       {
         "path": "packages/fokus-components/scss/components/_nested-menu.scss",
-        "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+        "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
       },
       {
         "path": "packages/fokus-components/scss/components/_dropdown.scss",
         "sha256": "4aa72d9d9d17d40af1c0f4e5c3bb7b2db25edab0dbce215caad81031aee8701d"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ],
     "sourceCode": "<button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"nested-menu\" data-fs-target=\"#menu\">\n  Arquivo\n</button>\n<div class=\"fs-dropdown-menu\" id=\"menu\">\n  <a href=\"#\" class=\"fs-dropdown-item\">Novo</a>\n  <div class=\"fs-dropdown-submenu\">\n    <a href=\"#\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</a>\n    <div class=\"fs-dropdown-menu\">\n      <a href=\"#\" class=\"fs-dropdown-item\">PDF</a>\n      <a href=\"#\" class=\"fs-dropdown-item\">CSV</a>\n    </div>\n  </div>\n  <a href=\"#\" class=\"fs-dropdown-item\">Fechar</a>\n</div>\n"
@@ -830,7 +834,11 @@
       },
       {
         "path": "packages/fokus-js/js/tree-view.js",
-        "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+        "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ]
   },
@@ -1177,7 +1185,11 @@
     "implementation": [
       {
         "path": "packages/fokus-js/js/tabs.js",
-        "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+        "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ]
   },
@@ -1198,7 +1210,11 @@
     "implementation": [
       {
         "path": "packages/fokus-js/js/tabs.js",
-        "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+        "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ]
   },
@@ -2051,15 +2067,19 @@
     "implementation": [
       {
         "path": "docs/components/nested-menu.md",
-        "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
+        "sha256": "1be43c447929c26c31155e72b4b2c90744f27b274a071c4458fe9e7a1405608c"
       },
       {
         "path": "packages/fokus-components/scss/components/_nested-menu.scss",
-        "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+        "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
       },
       {
         "path": "packages/fokus-js/js/nested-menu.js",
-        "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+        "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ],
     "sha256": "175bb4da6d0519ffab1fde83d7d7478bda5f4f26721b55afbb1722203ac41be7",
@@ -2073,7 +2093,7 @@
     "implementation": [
       {
         "path": "docs/components/tree-view.md",
-        "sha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b"
+        "sha256": "d707d6cc438a6689e2168016539bbfff431f1d72173eae8f937e8e35ca3ced9a"
       },
       {
         "path": "packages/fokus-components/scss/components/_tree-view.scss",
@@ -2081,7 +2101,11 @@
       },
       {
         "path": "packages/fokus-js/js/tree-view.js",
-        "sha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49"
+        "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
+      },
+      {
+        "path": "packages/fokus-js/js/core/disabled.js",
+        "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
       }
     ],
     "sha256": "cc2cde67ecc2c7e09b498a1eab002682ff48fc05aed365b79b878da242df0e07",

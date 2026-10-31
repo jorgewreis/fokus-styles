@@ -5,6 +5,12 @@ identificados nas auditorias anteriores, não certificação completa dos 56
 componentes ou de toda aplicação que use os 154 exemplos. O catálogo continua
 next, não publicado e com cobertura parcial explícita.
 
+> Registro histórico desta base. A rodada posterior
+> `DISABLED-ACTIVATION-AUDIT.md` trata disabled de TreeView/Tabs/NestedMenu,
+> default de links indisponíveis e pertencimento Tabs, com políticas explícitas.
+> Os demais limites permanecem; não interpretar a tabela abaixo como status
+> corrente sem consultar esse complemento.
+
 ## Corrigidos nesta rodada
 
 - DataTable: pageSize fracionário entre 0 e 1 produzia zero, linhas invisíveis e

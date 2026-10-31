@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### Tabs, TreeView e NestedMenu: interação indisponível
+
+- Guarda compartilhada bloqueia ativação disabled antes dos handlers do item,
+  sem alterar defaults/ordem dos links habilitados. Tabs rejeita alvo externo.
+- Tabs/NestedMenu preservam foco que pula indisponíveis; TreeView mantém nós
+  descobríveis e bloqueia APIs de ativação. Estado ARIA/classe é local ao item.
+- NestedMenu não abre ramo disabled por hover; Escape/ArrowLeft de um filho cujo
+  pai ficou disabled fecha a raiz e volta ao gatilho, sem foco oculto.
+- JS 26.943 (+278 no lote; +613 acumulados desde 26.330), teto autorizado 27.008,
+  margem 65. CSS completo 43.440 (+20), componentes 20.319 (+19), tetos inalterados.
+- Políticas de foco preservam compatibilidade, não equivalem a APG integral.
+  Limites e efeitos sobre handlers documentados; browser ainda requer ambiente.
+
 ### NestedMenu: estados indisponíveis coerentes
 
 - usa a guarda compartilhada para cancelar ativação de itens class/ARIA/native

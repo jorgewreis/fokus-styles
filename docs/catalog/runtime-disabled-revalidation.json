@@ -1,0 +1,161 @@
+{
+  "baseCommit": "2413582b717a3a01fa475192a19574fd8949411b",
+  "runtimeCommit": "60146f66596bb727e254c0c4d3a992d1a17b44b7",
+  "reason": "Approved local disabled activation in Tabs/TreeView/NestedMenu; shared guard dependency, CSS hover guard and compatible focus fallback. Historical audits retained.",
+  "changes": [
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/implementation/0",
+      "path": "packages/fokus-js/js/nested-menu.js",
+      "previousSha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6",
+      "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/implementation/1",
+      "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+      "previousSha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950",
+      "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tree-view/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tree-view/implementation/1",
+      "path": "packages/fokus-js/js/tree-view.js",
+      "previousSha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49",
+      "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tabs/vertical-manual/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tabs/vertical-manual/implementation/0",
+      "path": "packages/fokus-js/js/tabs.js",
+      "previousSha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9",
+      "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tabs/vertical-automatic/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tabs/vertical-automatic/implementation/0",
+      "path": "packages/fokus-js/js/tabs.js",
+      "previousSha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9",
+      "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/recursive-end/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/recursive-end/implementation/0",
+      "path": "docs/components/nested-menu.md",
+      "previousSha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9",
+      "sha256": "1be43c447929c26c31155e72b4b2c90744f27b274a071c4458fe9e7a1405608c"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/recursive-end/implementation/1",
+      "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+      "previousSha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950",
+      "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/recursive-end/implementation/2",
+      "path": "packages/fokus-js/js/nested-menu.js",
+      "previousSha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6",
+      "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tree-view/expanded-values/implementation",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tree-view/expanded-values/implementation/0",
+      "path": "docs/components/tree-view.md",
+      "previousSha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b",
+      "sha256": "d707d6cc438a6689e2168016539bbfff431f1d72173eae8f937e8e35ca3ced9a"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tree-view/expanded-values/implementation/2",
+      "path": "packages/fokus-js/js/tree-view.js",
+      "previousSha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49",
+      "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources",
+      "path": "packages/fokus-js/js/core/disabled.js",
+      "addedDependency": true,
+      "sha256": "7c4417ebebddb92be4350999f0bd97524e922277867543af0798ee6d0b0b23ab"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/10",
+      "path": "docs/components/nested-menu.md",
+      "previousSha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9",
+      "sha256": "1be43c447929c26c31155e72b4b2c90744f27b274a071c4458fe9e7a1405608c"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/11",
+      "path": "packages/fokus-components/scss/components/_nested-menu.scss",
+      "previousSha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950",
+      "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/12",
+      "path": "packages/fokus-js/js/nested-menu.js",
+      "previousSha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6",
+      "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/19",
+      "path": "docs/components/tree-view.md",
+      "previousSha256": "fb5d83762c4137f78e5485032303e24eeac257b068f86e2873144f17606c598b",
+      "sha256": "d707d6cc438a6689e2168016539bbfff431f1d72173eae8f937e8e35ca3ced9a"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/21",
+      "path": "packages/fokus-js/js/tree-view.js",
+      "previousSha256": "d0763209defa54e1444b9f7cec5655ed722b7f87dddf881aecf2242c33e92f49",
+      "sha256": "2977252e136397acf94b08c9db3884e27737041421901907958b4d847250d10d"
+    }
+  ]
+}

@@ -127,7 +127,9 @@ foco anterior de Fokus, embora a APG recomende descoberta de itens indisponívei
 por foco em composites. Essa escolha de compatibilidade não é uma afirmação de
 conformidade integral com APG. O estado ARIA/classe é local à aba, não herdado.
 Não marque uma aba indisponível como ativa inicialmente; mudar disabled não
-seleciona automaticamente uma substituta. Forneça semântica acessível coerente.
+seleciona automaticamente uma substituta. Se a aba que está focada se tornar
+indisponível, a navegação por setas/Home/End não parte dela; a aplicação deve
+mover foco para uma aba habilitada. Forneça semântica acessível coerente.
 
 Clicks/auxclicks e Enter/Espaço em aba indisponível são cancelados em captura,
 antes dos handlers do item; não navegam, não selecionam e não chamam esses handlers.

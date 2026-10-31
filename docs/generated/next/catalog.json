@@ -4,8 +4,8 @@
   "published": false,
   "source": {
     "baselineCommit": "218afe443936e31edd57fdca03b392ac23381d1d",
-    "digest": "131064407a083fa7a4b0e1a215bff8d603de17e6c33886858de3ee68fc81ef2a",
-    "sassEvidenceCssSha256": "22f780be35e3ecfe3fcb02ab6e7537ca855bb7150f15c514f0f9eb1e7a7e1743",
+    "digest": "5e37a8e52555d000c08aaf179b59686db8022aa72cabb34094d98a4cad2d8dd0",
+    "sassEvidenceCssSha256": "a36498bde223cb26e2b3f27aca620e281512bd2e21f3659e6ec301711bc2b2cc",
     "files": [
       {
         "path": "docs/catalog/components.json",
@@ -21,7 +21,7 @@
       },
       {
         "path": "docs/catalog/fixture-provenance.json",
-        "sha256": "bc0fcb90864b07840d2172688a103b4daae6ee6e4be7fcf36ff36adfd874fe0a"
+        "sha256": "ab34409dd50aa20c2699dc38af4d8d94607e7bc7da920081b35f71be037ff263"
       },
       {
         "path": "docs/catalog/fixtures/accordion/always-open.html",
@@ -1045,7 +1045,11 @@
       },
       {
         "path": "docs/catalog/navigation-provenance.json",
-        "sha256": "586bde8ee7e5d89c34ae8ac7ea4a23e59039ac58a2996ead58addc3ba8f0b931"
+        "sha256": "a9687bdcc9b278e9792d4216f5f2a5b3ffcaf8be4d7c77d79bdcc1c0450ca6ab"
+      },
+      {
+        "path": "docs/catalog/runtime-disabled-revalidation.json",
+        "sha256": "ca13adba238b9fa9eb3e12ab77790a1bf0a200eda588a2fa4c4a89f0211f3835"
       },
       {
         "path": "docs/catalog/runtime-final-revalidation.json",
@@ -1181,7 +1185,7 @@
       },
       {
         "path": "docs/components/nested-menu.md",
-        "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
+        "sha256": "1be43c447929c26c31155e72b4b2c90744f27b274a071c4458fe9e7a1405608c"
       },
       {
         "path": "docs/components/notification-center.md",
@@ -1257,7 +1261,7 @@
       },
       {
         "path": "docs/components/tabs.md",
-        "sha256": "1dd0b5d0969a9acf9fbe379c575a855cb62a921cb3a70edbacdba80a71b637ba"
+        "sha256": "36e0ff027b027887ecc65b112a626c7e5d9f159f6dd0492628b41b16eecaf05d"
       },
       {
         "path": "docs/components/tag.md",
@@ -1281,7 +1285,7 @@
       },
       {
         "path": "docs/components/tree-view.md",
-        "sha256": "66ef29744bb72703b4107594ee811c1c078acae49a408150815a03f8b843a67e"
+        "sha256": "d707d6cc438a6689e2168016539bbfff431f1d72173eae8f937e8e35ca3ced9a"
       },
       {
         "path": "package-lock.json",
@@ -1397,7 +1401,7 @@
       },
       {
         "path": "packages/fokus-components/scss/components/_nested-menu.scss",
-        "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+        "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
       },
       {
         "path": "packages/fokus-components/scss/components/_notification-center.scss",
@@ -1845,7 +1849,7 @@
       },
       {
         "path": "packages/fokus-js/js/nested-menu.js",
-        "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+        "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
       },
       {
         "path": "packages/fokus-js/js/notification-center.d.ts",
@@ -1925,7 +1929,7 @@
       },
       {
         "path": "packages/fokus-js/js/tabs.js",
-        "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+        "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
       },
       {
         "path": "packages/fokus-js/js/tag.d.ts",
@@ -16007,7 +16011,7 @@
             ]
           },
           {
-            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
             "conditions": [
               "@layer components"
             ],
@@ -16783,6 +16787,18 @@
               {
                 "property": "border-left",
                 "value": "5px solid currentcolor"
+              }
+            ]
+          },
+          {
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "conditions": [
+              "@layer components"
+            ],
+            "declarations": [
+              {
+                "property": "display",
+                "value": "block"
               }
             ]
           }
@@ -22113,7 +22129,7 @@
             ]
           },
           {
-            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
             "conditions": [
               "@layer components"
             ],
@@ -29109,7 +29125,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/nested-menu.md",
-        "markdown": "# Nested Menu\n\n[Dropdown](dropdown.md) com submenus recursivos, quantos níveis quiser.\nReusa `.fs-dropdown-menu`/`.fs-dropdown-item` sem reestilizar — só adiciona\no posicionamento em cascata e a navegação por nível. Componente próprio\n(não é o Dropdown com opção extra) porque a navegação por teclado é por\nnível, não linear sobre todos os itens.\n\n## Visão geral\n\n```html\n<button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"nested-menu\" data-fs-target=\"#menu\">\n  Arquivo\n</button>\n<div class=\"fs-dropdown-menu\" id=\"menu\">\n  <a href=\"#\" class=\"fs-dropdown-item\">Novo</a>\n  <div class=\"fs-dropdown-submenu\">\n    <a href=\"#\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</a>\n    <div class=\"fs-dropdown-menu\">\n      <a href=\"#\" class=\"fs-dropdown-item\">PDF</a>\n      <a href=\"#\" class=\"fs-dropdown-item\">CSV</a>\n    </div>\n  </div>\n  <a href=\"#\" class=\"fs-dropdown-item\">Fechar</a>\n</div>\n```\n\n## Anatomia\n\nGatilho + `.fs-dropdown-menu` (raiz) — cada submenu é\n`.fs-dropdown-submenu` (âncora de posicionamento) envolvendo um\n`.fs-dropdown-item.fs-dropdown-item-submenu` (o item que abre, com seta\nlateral) seguido de outro `.fs-dropdown-menu` (o submenu em si, mesmo\npadrão recursivamente).\n\n## Variações\n\nMesmas de [Dropdown](dropdown.md) no gatilho raiz (`data-placement`,\n`data-align`). Submenus não têm variação própria — abrem sempre à direita\ndo item pai, com flip automático para a esquerda se não couber (a classe\n`.fs-dropdown-submenu-left` é aplicada/removida pelo JS, não escreva\nmanualmente).\n\n## Estados\n\n`.is-open` em cada `.fs-dropdown-menu` (raiz e submenus, independentes).\nSó um submenu por nível fica aberto por vez — abrir um fecha os irmãos do\nmesmo nível.\n\nAbertura por **hover** é 100% CSS (`:hover` no `.fs-dropdown-submenu`);\npor **clique/teclado** é controlada pelo JS, coexistindo sem conflito\n(passar o mouse fecha ramos abertos por teclado que não estão no caminho\ndo hover).\n\n## A11y\n\n`role=\"menu\"` em todo nível, `aria-haspopup=\"menu\"` + `aria-expanded` em\ntodo item que abre submenu (sincronizados automaticamente). Teclado (com\nfoco num item do menu): `ArrowDown`/`ArrowUp` navegam no nível atual,\n`ArrowRight` abre o submenu do item focado e move o foco pro primeiro item\ndele, `ArrowLeft` fecha o submenu atual e devolve o foco ao item pai,\n`Escape` fecha só o nível atual (se estiver num submenu) ou o menu inteiro\n(se estiver na raiz), `Enter`/`Space` num item com submenu alterna\nabrir/fechar.\n\n## API JS\n\nAuto-init via `data-fs=\"nested-menu\"`. `NestedMenu.getInstance(el)` (`el`\né o gatilho).\n\n| Método | Descrição |\n|---|---|\n| `show()` | Abre o menu raiz, posiciona, foca o primeiro item. |\n| `hide()` | Fecha o menu raiz e todos os submenus abertos. |\n| `toggle()` | Alterna. |\n| `dispose()` | Fecha se aberto, remove todos os listeners, desregistra a instância. |\n\n| Evento (no gatilho) | Cancelável | Quando |\n|---|---|---|\n| `fs:nested-menu:shown` | Não | Depois de abrir o menu raiz. |\n| `fs:nested-menu:hidden` | Não | Depois de fechar o menu raiz (fecha todos os submenus junto). |\n\n## Opções e itens indisponíveis\n\nAs opções JS placement/align precedem os atributos data-placement/data-align;\nos padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown\ninteiro: este componente tem contrato próprio.\n\nO filtro de navegação e o handler de clique ignoram itens com `.is-disabled`.\n`aria-disabled` sozinho não implementa esse bloqueio; se a aplicação o declarar,\ndeve manter estado visual, semântica e comportamento coerentes. Um link marcado\nvisualmente indisponível não é mecanismo de autorização. Nenhum conteúdo HTML\ndo menu é sanitizado pelo componente.\n\nO retorno antecipado para `.is-disabled` não cancela a ação padrão de links nem\nhandlers da aplicação. Um clique sintético ou ativação nativa pode seguir o href;\nprefira botão nativamente disabled e não associe ações a itens indisponíveis.\nInclua também `.is-disabled`: sem ela, um botão disabled ainda entra na lista de\nsetas e pode impedir a travessia porque não recebe foco. O Dropdown tem guarda\nprópria de ativação; não presuma que ela se aplique a NestedMenu.\n\n## Tokens\n\nMesmos do [Dropdown](dropdown.md) — sem tokens próprios.\n\n## Exemplo\n\nVer acima (Visão geral) — mockup com múltiplos níveis em\n[laboratório do componente](../../mockup/navigation-disclosure.html#nested-menu).\n",
+        "markdown": "# Nested Menu\n\n[Dropdown](dropdown.md) com submenus recursivos, quantos níveis quiser.\nReusa `.fs-dropdown-menu`/`.fs-dropdown-item` sem reestilizar — só adiciona\no posicionamento em cascata e a navegação por nível. Componente próprio\n(não é o Dropdown com opção extra) porque a navegação por teclado é por\nnível, não linear sobre todos os itens.\n\n## Visão geral\n\n```html\n<button type=\"button\" class=\"fs-btn fs-dropdown-toggle\" data-fs=\"nested-menu\" data-fs-target=\"#menu\">\n  Arquivo\n</button>\n<div class=\"fs-dropdown-menu\" id=\"menu\">\n  <a href=\"#\" class=\"fs-dropdown-item\">Novo</a>\n  <div class=\"fs-dropdown-submenu\">\n    <a href=\"#\" class=\"fs-dropdown-item fs-dropdown-item-submenu\">Exportar</a>\n    <div class=\"fs-dropdown-menu\">\n      <a href=\"#\" class=\"fs-dropdown-item\">PDF</a>\n      <a href=\"#\" class=\"fs-dropdown-item\">CSV</a>\n    </div>\n  </div>\n  <a href=\"#\" class=\"fs-dropdown-item\">Fechar</a>\n</div>\n```\n\n## Anatomia\n\nGatilho + `.fs-dropdown-menu` (raiz) — cada submenu é\n`.fs-dropdown-submenu` (âncora de posicionamento) envolvendo um\n`.fs-dropdown-item.fs-dropdown-item-submenu` (o item que abre, com seta\nlateral) seguido de outro `.fs-dropdown-menu` (o submenu em si, mesmo\npadrão recursivamente).\n\n## Variações\n\nMesmas de [Dropdown](dropdown.md) no gatilho raiz (`data-placement`,\n`data-align`). Submenus não têm variação própria — abrem sempre à direita\ndo item pai, com flip automático para a esquerda se não couber (a classe\n`.fs-dropdown-submenu-left` é aplicada/removida pelo JS, não escreva\nmanualmente).\n\n## Estados\n\n`.is-open` em cada `.fs-dropdown-menu` (raiz e submenus, independentes).\nSó um submenu por nível fica aberto por vez — abrir um fecha os irmãos do\nmesmo nível.\n\nAbertura por **hover** é 100% CSS (`:hover` no `.fs-dropdown-submenu`);\npor **clique/teclado** é controlada pelo JS, coexistindo sem conflito\n(passar o mouse fecha ramos abertos por teclado que não estão no caminho\ndo hover).\n\n## A11y\n\n`role=\"menu\"` em todo nível, `aria-haspopup=\"menu\"` + `aria-expanded` em\ntodo item que abre submenu (sincronizados automaticamente). Teclado (com\nfoco num item do menu): `ArrowDown`/`ArrowUp` navegam no nível atual,\n`ArrowRight` abre o submenu do item focado e move o foco pro primeiro item\ndele, `ArrowLeft` fecha o submenu atual e devolve o foco ao item pai,\n`Escape` fecha só o nível atual (se estiver num submenu) ou o menu inteiro\n(se estiver na raiz), `Enter`/`Space` num item com submenu alterna\nabrir/fechar.\n\n## API JS\n\nAuto-init via `data-fs=\"nested-menu\"`. `NestedMenu.getInstance(el)` (`el`\né o gatilho).\n\n| Método | Descrição |\n|---|---|\n| `show()` | Abre o menu raiz, posiciona, foca o primeiro item. |\n| `hide()` | Fecha o menu raiz e todos os submenus abertos. |\n| `toggle()` | Alterna. |\n| `dispose()` | Fecha se aberto, remove todos os listeners, desregistra a instância. |\n\n| Evento (no gatilho) | Cancelável | Quando |\n|---|---|---|\n| `fs:nested-menu:shown` | Não | Depois de abrir o menu raiz. |\n| `fs:nested-menu:hidden` | Não | Depois de fechar o menu raiz (fecha todos os submenus junto). |\n\n## Opções e itens indisponíveis\n\nAs opções JS placement/align precedem os atributos data-placement/data-align;\nos padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown\ninteiro: este componente tem contrato próprio.\n\nO filtro de navegação ignora itens com `.is-disabled`, `aria-disabled=\"true\"`\nou estado nativo `:disabled` (incluindo fieldset desabilitado). A classe e ARIA\nsão consultadas no próprio item: não há herança inventada de `aria-disabled`\ndo contêiner. Mantenha aparência, semântica e regras da aplicação coerentes.\n\nItens indisponíveis são pulados pelas setas e pelo foco inicial. Essa é uma\ndivergência deliberada do padrão APG de menu, no qual itens indisponíveis podem\nreceber foco; não é uma implementação integral desse padrão.\n\nUma guarda em capture cancela click, auxclick e Enter/Espaço nesses itens,\nincluindo eventos originados em seus descendentes, antes de handlers no alvo.\nNão registra autorização: ações e regras de negócio continuam na aplicação.\nItens habilitados preservam handlers, ações padrão de links e fechamento normal;\nsetas, Escape e Tab não são interceptados pela guarda. Pais de submenu\nindisponíveis não podem ser abertos/fechados por ativação; o fechamento geral\nao ocultar/descartar o menu continua limpando todos os submenus.\nHover também exige um item pai habilitado, imediatamente seguido do submenu.\nUm ramo já aberto pode permanecer aberto se o pai se tornar indisponível; seus\nfilhos continuam com estado local próprio, sem herdar ARIA do pai. O fechamento\ngeral continua limpando esse ramo. Nenhum conteúdo HTML do menu é sanitizado\npelo componente.\n\n## Tokens\n\nMesmos do [Dropdown](dropdown.md) — sem tokens próprios.\n\n## Exemplo\n\nVer acima (Visão geral) — mockup com múltiplos níveis em\n[laboratório do componente](../../mockup/navigation-disclosure.html#nested-menu).\n\n### Retorno de um ramo que ficou indisponível\n\nFechamento de navegação e limpeza não são bloqueados pelo disabled do pai. Se\nEscape ou ArrowLeft partir de um filho cujo pai ficou indisponível, a raiz fecha\ne o foco retorna ao gatilho, evitando tentar focar um botão disabled e deixar\nfoco em conteúdo oculto. Com pai habilitado, o retorno usual ao pai permanece.\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -29137,7 +29153,7 @@
           },
           {
             "title": "Opções e itens indisponíveis",
-            "markdown": "As opções JS placement/align precedem os atributos data-placement/data-align;\nos padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown\ninteiro: este componente tem contrato próprio.\n\nO filtro de navegação e o handler de clique ignoram itens com `.is-disabled`.\n`aria-disabled` sozinho não implementa esse bloqueio; se a aplicação o declarar,\ndeve manter estado visual, semântica e comportamento coerentes. Um link marcado\nvisualmente indisponível não é mecanismo de autorização. Nenhum conteúdo HTML\ndo menu é sanitizado pelo componente.\n\nO retorno antecipado para `.is-disabled` não cancela a ação padrão de links nem\nhandlers da aplicação. Um clique sintético ou ativação nativa pode seguir o href;\nprefira botão nativamente disabled e não associe ações a itens indisponíveis.\nInclua também `.is-disabled`: sem ela, um botão disabled ainda entra na lista de\nsetas e pode impedir a travessia porque não recebe foco. O Dropdown tem guarda\nprópria de ativação; não presuma que ela se aplique a NestedMenu."
+            "markdown": "As opções JS placement/align precedem os atributos data-placement/data-align;\nos padrões são bottom/start. Não há objeto de opções equivalente ao Dropdown\ninteiro: este componente tem contrato próprio.\n\nO filtro de navegação ignora itens com `.is-disabled`, `aria-disabled=\"true\"`\nou estado nativo `:disabled` (incluindo fieldset desabilitado). A classe e ARIA\nsão consultadas no próprio item: não há herança inventada de `aria-disabled`\ndo contêiner. Mantenha aparência, semântica e regras da aplicação coerentes.\n\nItens indisponíveis são pulados pelas setas e pelo foco inicial. Essa é uma\ndivergência deliberada do padrão APG de menu, no qual itens indisponíveis podem\nreceber foco; não é uma implementação integral desse padrão.\n\nUma guarda em capture cancela click, auxclick e Enter/Espaço nesses itens,\nincluindo eventos originados em seus descendentes, antes de handlers no alvo.\nNão registra autorização: ações e regras de negócio continuam na aplicação.\nItens habilitados preservam handlers, ações padrão de links e fechamento normal;\nsetas, Escape e Tab não são interceptados pela guarda. Pais de submenu\nindisponíveis não podem ser abertos/fechados por ativação; o fechamento geral\nao ocultar/descartar o menu continua limpando todos os submenus.\nHover também exige um item pai habilitado, imediatamente seguido do submenu.\nUm ramo já aberto pode permanecer aberto se o pai se tornar indisponível; seus\nfilhos continuam com estado local próprio, sem herdar ARIA do pai. O fechamento\ngeral continua limpando esse ramo. Nenhum conteúdo HTML do menu é sanitizado\npelo componente."
           },
           {
             "title": "Tokens",
@@ -29145,18 +29161,18 @@
           },
           {
             "title": "Exemplo",
-            "markdown": "Ver acima (Visão geral) — mockup com múltiplos níveis em\n[laboratório do componente](../../mockup/navigation-disclosure.html#nested-menu)."
+            "markdown": "Ver acima (Visão geral) — mockup com múltiplos níveis em\n[laboratório do componente](../../mockup/navigation-disclosure.html#nested-menu).\n\n### Retorno de um ramo que ficou indisponível\n\nFechamento de navegação e limpeza não são bloqueados pelo disabled do pai. Se\nEscape ou ArrowLeft partir de um filho cujo pai ficou indisponível, a raiz fecha\ne o foco retorna ao gatilho, evitando tentar focar um botão disabled e deixar\nfoco em conteúdo oculto. Com pai habilitado, o retorno usual ao pai permanece."
           }
         ]
       },
       "sources": [
         {
           "path": "docs/components/nested-menu.md",
-          "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
+          "sha256": "1be43c447929c26c31155e72b4b2c90744f27b274a071c4458fe9e7a1405608c"
         },
         {
           "path": "packages/fokus-components/scss/components/_nested-menu.scss",
-          "sha256": "d8d1e7b199be29ece3e0ea3b74b6ff9c133a28f406364ab82d5a38332380a950"
+          "sha256": "b7da3dc873f58b1be26634a842464897c1e794bf82be2fe43e1c64715cfde171"
         },
         {
           "path": "packages/fokus-js/js/nested-menu.d.ts",
@@ -29164,7 +29180,7 @@
         },
         {
           "path": "packages/fokus-js/js/nested-menu.js",
-          "sha256": "8b69b9598d9cd9092e04a1effdf20c9943ab2119384cbaa891ff905bc9321cb6"
+          "sha256": "de6c08d1659c93101941fd9038dedde546e06c389116cd3201fe99dde2d21e00"
         }
       ],
       "imports": [
@@ -29180,87 +29196,87 @@
           "attributes": [
             {
               "name": "data-fs-target",
-              "line": 39,
+              "line": 40,
               "code": "const targetSelector = toggleEl.getAttribute(\"data-fs-target\");"
             },
             {
               "name": "data-placement",
-              "line": 48,
+              "line": 49,
               "code": "this.placement = options.placement ?? toggleEl.getAttribute(\"data-placement\") ?? \"bottom\";"
             },
             {
               "name": "data-align",
-              "line": 49,
+              "line": 50,
               "code": "this.align = options.align ?? toggleEl.getAttribute(\"data-align\") ?? \"start\";"
             },
             {
               "name": "aria-haspopup",
-              "line": 56,
+              "line": 57,
               "code": "this.toggleEl.setAttribute(\"aria-haspopup\", \"menu\");"
             },
             {
               "name": "aria-expanded",
-              "line": 57,
+              "line": 58,
               "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "role",
-              "line": 58,
+              "line": 59,
               "code": "this.rootMenu.setAttribute(\"role\", \"menu\");"
             },
             {
               "name": "role",
-              "line": 59,
+              "line": 60,
               "code": "this.rootMenu.querySelectorAll(\".fs-dropdown-menu\").forEach((menu) => menu.setAttribute(\"role\", \"menu\"));"
             },
             {
               "name": "aria-haspopup",
-              "line": 61,
+              "line": 62,
               "code": "item.setAttribute(\"aria-haspopup\", \"menu\");"
             },
             {
               "name": "aria-expanded",
-              "line": 62,
+              "line": 63,
               "code": "item.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 113,
+              "line": 116,
               "code": "sibling.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 119,
+              "line": 122,
               "code": "parentItem.setAttribute(\"aria-expanded\", \"true\");"
             },
             {
               "name": "aria-expanded",
-              "line": 129,
+              "line": 132,
               "code": "nested.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 133,
+              "line": 136,
               "code": "parentItem.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 139,
+              "line": 153,
               "code": "submenu.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 176,
+              "line": 190,
               "code": "submenu.previousElementSibling?.setAttribute(\"aria-expanded\", \"false\");"
             },
             {
               "name": "aria-expanded",
-              "line": 263,
+              "line": 275,
               "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"true\");"
             },
             {
               "name": "aria-expanded",
-              "line": 284,
+              "line": 296,
               "code": "this.toggleEl.setAttribute(\"aria-expanded\", \"false\");"
             }
           ],
@@ -29848,7 +29864,7 @@
             ]
           },
           {
-            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
             "conditions": [
               "@layer components"
             ],
@@ -40747,7 +40763,7 @@
             ]
           },
           {
-            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
             "conditions": [
               "@layer components"
             ],
@@ -43441,7 +43457,7 @@
             ]
           },
           {
-            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
+            "selector": ".fs-dropdown-submenu:hover > .fs-dropdown-item:not(.is-disabled, :disabled, [aria-disabled=true]) + .fs-dropdown-menu,\n  .fs-dropdown-submenu > .fs-dropdown-menu.is-open",
             "conditions": [
               "@layer components"
             ],
@@ -46864,7 +46880,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/tabs.md",
-        "markdown": "# Tabs\n\nAlterna painéis de conteúdo por clique/teclado. Reusa `.fs-nav-link`\n([Navbar](navbar.md)) como item — o HTML e a navegação por teclado são os\nmesmos em qualquer um dos 3 estilos visuais.\n\n## Visão geral\n\n```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n```\n\n## Anatomia\n\n`.fs-tabs` (`data-fs=\"tabs\"`) > `.fs-nav-link` (um por aba, `data-fs-target`\napontando pro painel) + `.fs-tab-content` > `.fs-tab-pane` (um por aba,\n`id` batendo com o `data-fs-target` correspondente).\n\n## Variações\n\n- **Estilo**: linha (padrão, sublinhado na aba ativa), `.fs-tabs-pill`\n  (chip com fundo sólido na aba ativa, sem linha), `.fs-tabs-depth` (aba\n  ativa \"sobe\" com fundo igual ao conteúdo, sobre um backdrop neutro — como\n  aba de pasta).\n- **Alinhamento**: `.fs-tabs-center`, `.fs-tabs-right`; sem sufixo =\n  esquerda (padrão). `.fs-tabs-fill` distribui os itens em largura igual.\n- **Tamanho**: `.fs-tabs-sm`, `.fs-tabs-lg`; sem sufixo = padrão.\n\n```html\n<div class=\"fs-tabs fs-tabs-pill fs-tabs-center\" data-fs=\"tabs\">...</div>\n<div class=\"fs-tabs fs-tabs-depth fs-tabs-fill fs-tabs-lg\" data-fs=\"tabs\">...</div>\n```\n\n## Estados\n\n- `.is-active` na aba e no painel correspondente — controlado pelo JS ao\n  trocar, ou definido no HTML inicial (exatamente uma aba/painel deve\n  começar ativo).\n- `.is-disabled` na aba — não recebe clique nem entra na navegação por\n  seta.\n\n## A11y\n\nO JS aplica automaticamente ao inicializar: `role=\"tablist\"` no `.fs-tabs`,\n`role=\"tab\"` + `aria-selected` + `tabindex` (roving: só a aba ativa tem\n`tabindex=\"0\"`) em cada `.fs-nav-link`, e `role=\"tabpanel\"` +\n`aria-labelledby` no painel correspondente. Nenhum desses atributos precisa\nser escrito manualmente no HTML.\n\nTeclado (com foco numa aba): `ArrowLeft`/`ArrowRight` no modo horizontal,\n`ArrowUp`/`ArrowDown` com `.fs-tabs-vertical` ou `aria-orientation=\"vertical\"`;\n`Home`/`End` vai à primeira/última. As setas pulam `.is-disabled`.\n\nPara separar navegação e ativação, use `data-tabs-activation=\"manual\"` no\ngrupo. Nesse modo as setas apenas movem o foco. Use `<button type=\"button\">`\npara que `Enter` e `Espaço` gerem o clique nativo que ativa a aba.\n\n## API JS\n\nAuto-init via `data-fs=\"tabs\"`. `Tabs.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `show(tabEl)` | Ativa a aba `tabEl` (deve ser uma das `.fs-nav-link` do grupo) e o painel correspondente; desativa as demais. Não faz nada se `tabEl` já é a ativa. |\n| `dispose()` | Remove os listeners de clique/teclado e desregistra a instância. |\n\n| Evento | Cancelável | Quando |\n|---|---|---|\n| `fs:tab:changed` | Não | Depois de trocar de aba — `event.detail.target` traz o seletor (`data-fs-target`) da aba ativa. |\n\n```js\nconst tabs = FokusStyles.Tabs.getInstance(document.getElementById(\"minhas-tabs\"));\ntabs.show(document.querySelector('[data-fs-target=\"#seguranca\"]'));\n```\n\n## Tokens\n\nUsa `--fs-color-border`, `--fs-color-primary` (linha/pill ativos),\n`--fs-color-bg-subtle` (depth), `--fs-color-surface` (depth ativo),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#tab-perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#tab-seguranca\">Segurança</a>\n  <a href=\"#\" class=\"fs-nav-link is-disabled\" data-fs-target=\"#tab-notif\">Notificações</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"tab-perfil\">Conteúdo da aba Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-seguranca\">Conteúdo da aba Segurança.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-notif\">Conteúdo da aba Notificações (desabilitada).</div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tabs).\n\nAlém do estilo de linha, estão disponíveis `.fs-tabs-boxed`,\n`.fs-tabs-toggle` e `.fs-tabs-vertical`. A rolagem horizontal já faz parte\ndo estilo padrão, sem classe adicional. Use o modo vertical\nem navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo\nJS.\n\n### Limites de ativação, disabled e ciclo de vida\n\nO handler não implementa Enter/Espaço: depende do click nativo do elemento.\nLinks ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elementos\ngenéricos com role=tab também não ganham ativação automática. O handler de\nclique não cancela navegação de links, incluindo `href=\"#\"`; prefira botões.\n\nNo modo manual, as setas movem foco sem ativar, mas não atualizam o roving\n`tabindex`: a aba selecionada conserva `0` e a focada pode continuar `-1`.\nSair e reentrar por Tab pode retornar à selecionada, não à última focada.\nEsse limite requer verificação de teclado real no consumidor.\n\nO runtime filtra somente a classe `.is-disabled`, não `aria-disabled` nem\n`disabled` na navegação por setas. Forneça `.is-disabled` e a semântica adequada\nao elemento; não marque uma aba indisponível como ativa inicialmente.\n\n`show(tabEl)` exige que a aplicação passe uma aba habilitada do próprio grupo.\nO método não valida pertencimento nem disabled; uma referência externa pode\ndesativar todas as abas e emitir evento nela. Esse é um limite conhecido,\nnão uma maneira suportada de limpar a seleção.\n\nAs abas são coletadas na construção; não há refresh para inserções dinâmicas.\n`dispose()` remove listeners e registro, mas não restaura atributos ARIA,\nclasses ou visibilidade dos painéis. Recrie a instância após alterar a lista.\nCom o alias `data-fs-tab-target`, a seleção funciona, mas o evento\n`fs:tab:changed` ainda lê apenas `data-fs-target` e pode trazer target nulo.\n",
+        "markdown": "# Tabs\n\nAlterna painéis de conteúdo por clique/teclado. Reusa `.fs-nav-link`\n([Navbar](navbar.md)) como item — o HTML e a navegação por teclado são os\nmesmos em qualquer um dos 3 estilos visuais.\n\n## Visão geral\n\n```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#seguranca\">Segurança</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"perfil\">Conteúdo Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"seguranca\">Conteúdo Segurança.</div>\n</div>\n```\n\n## Anatomia\n\n`.fs-tabs` (`data-fs=\"tabs\"`) > `.fs-nav-link` (um por aba, `data-fs-target`\napontando pro painel) + `.fs-tab-content` > `.fs-tab-pane` (um por aba,\n`id` batendo com o `data-fs-target` correspondente).\n\n## Variações\n\n- **Estilo**: linha (padrão, sublinhado na aba ativa), `.fs-tabs-pill`\n  (chip com fundo sólido na aba ativa, sem linha), `.fs-tabs-depth` (aba\n  ativa \"sobe\" com fundo igual ao conteúdo, sobre um backdrop neutro — como\n  aba de pasta).\n- **Alinhamento**: `.fs-tabs-center`, `.fs-tabs-right`; sem sufixo =\n  esquerda (padrão). `.fs-tabs-fill` distribui os itens em largura igual.\n- **Tamanho**: `.fs-tabs-sm`, `.fs-tabs-lg`; sem sufixo = padrão.\n\n```html\n<div class=\"fs-tabs fs-tabs-pill fs-tabs-center\" data-fs=\"tabs\">...</div>\n<div class=\"fs-tabs fs-tabs-depth fs-tabs-fill fs-tabs-lg\" data-fs=\"tabs\">...</div>\n```\n\n## Estados\n\n- `.is-active` na aba e no painel correspondente — controlado pelo JS ao\n  trocar, ou definido no HTML inicial (exatamente uma aba/painel deve\n  começar ativo).\n- `.is-disabled` na aba — não recebe clique nem entra na navegação por\n  seta.\n\n## A11y\n\nO JS aplica automaticamente ao inicializar: `role=\"tablist\"` no `.fs-tabs`,\n`role=\"tab\"` + `aria-selected` + `tabindex` (roving: só a aba ativa tem\n`tabindex=\"0\"`) em cada `.fs-nav-link`, e `role=\"tabpanel\"` +\n`aria-labelledby` no painel correspondente. Nenhum desses atributos precisa\nser escrito manualmente no HTML.\n\nTeclado (com foco numa aba): `ArrowLeft`/`ArrowRight` no modo horizontal,\n`ArrowUp`/`ArrowDown` com `.fs-tabs-vertical` ou `aria-orientation=\"vertical\"`;\n`Home`/`End` vai à primeira/última. As setas pulam `.is-disabled`.\n\nPara separar navegação e ativação, use `data-tabs-activation=\"manual\"` no\ngrupo. Nesse modo as setas apenas movem o foco. Use `<button type=\"button\">`\npara que `Enter` e `Espaço` gerem o clique nativo que ativa a aba.\n\n## API JS\n\nAuto-init via `data-fs=\"tabs\"`. `Tabs.getInstance(el)`.\n\n| Método | Descrição |\n|---|---|\n| `show(tabEl)` | Ativa a aba `tabEl` (deve ser uma das `.fs-nav-link` do grupo) e o painel correspondente; desativa as demais. Não faz nada se `tabEl` já é a ativa. |\n| `dispose()` | Remove os listeners de clique/teclado e desregistra a instância. |\n\n| Evento | Cancelável | Quando |\n|---|---|---|\n| `fs:tab:changed` | Não | Depois de trocar de aba — `event.detail.target` traz o seletor (`data-fs-target`) da aba ativa. |\n\n```js\nconst tabs = FokusStyles.Tabs.getInstance(document.getElementById(\"minhas-tabs\"));\ntabs.show(document.querySelector('[data-fs-target=\"#seguranca\"]'));\n```\n\n## Tokens\n\nUsa `--fs-color-border`, `--fs-color-primary` (linha/pill ativos),\n`--fs-color-bg-subtle` (depth), `--fs-color-surface` (depth ativo),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#tab-perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#tab-seguranca\">Segurança</a>\n  <a href=\"#\" class=\"fs-nav-link is-disabled\" data-fs-target=\"#tab-notif\">Notificações</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"tab-perfil\">Conteúdo da aba Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-seguranca\">Conteúdo da aba Segurança.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-notif\">Conteúdo da aba Notificações (desabilitada).</div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tabs).\n\nAlém do estilo de linha, estão disponíveis `.fs-tabs-boxed`,\n`.fs-tabs-toggle` e `.fs-tabs-vertical`. A rolagem horizontal já faz parte\ndo estilo padrão, sem classe adicional. Use o modo vertical\nem navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo\nJS.\n\n### Limites de ativação, disabled e ciclo de vida\n\nO handler não implementa Enter/Espaço: depende do click nativo do elemento.\nLinks ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elementos\ngenéricos com role=tab também não ganham ativação automática. O handler de\nclique não cancela navegação de links, incluindo `href=\"#\"`; prefira botões.\n\nNo modo manual, as setas movem foco sem ativar, mas não atualizam o roving\n`tabindex`: a aba selecionada conserva `0` e a focada pode continuar `-1`.\nSair e reentrar por Tab pode retornar à selecionada, não à última focada.\nEsse limite requer verificação de teclado real no consumidor.\n\n`.is-disabled`, `disabled` nativo (inclusive fieldset) e `aria-disabled=\"true\"`\nimpedem ativação e seleção. As setas pulam essas abas, preservando o contrato de\nfoco anterior de Fokus, embora a APG recomende descoberta de itens indisponíveis\npor foco em composites. Essa escolha de compatibilidade não é uma afirmação de\nconformidade integral com APG. O estado ARIA/classe é local à aba, não herdado.\nNão marque uma aba indisponível como ativa inicialmente; mudar disabled não\nseleciona automaticamente uma substituta. Se a aba que está focada se tornar\nindisponível, a navegação por setas/Home/End não parte dela; a aplicação deve\nmover foco para uma aba habilitada. Forneça semântica acessível coerente.\n\nClicks/auxclicks e Enter/Espaço em aba indisponível são cancelados em captura,\nantes dos handlers do item; não navegam, não selecionam e não chamam esses handlers.\nListeners de captura externos/anteriores e chamadas diretas da aplicação não\npodem ser desfeitos: essa guarda é de interação, não autorização de negócio.\nLinks habilitados mantêm sua navegação/default e ordem de handlers neste lote.\n\n`show(tabEl)` ignora abas indisponíveis ou referências fora do grupo sem limpar\na seleção existente nem emitir eventos. As assinaturas públicas permanecem.\n\nReferência: [APG: foco de controles disabled](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls).\n\nAs abas são coletadas na construção; não há refresh para inserções dinâmicas.\n`dispose()` remove listeners e registro, mas não restaura atributos ARIA,\nclasses ou visibilidade dos painéis. Recrie a instância após alterar a lista.\nCom o alias `data-fs-tab-target`, a seleção funciona, mas o evento\n`fs:tab:changed` ainda lê apenas `data-fs-target` e pode trazer target nulo.\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -46896,14 +46912,14 @@
           },
           {
             "title": "Exemplo",
-            "markdown": "```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#tab-perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#tab-seguranca\">Segurança</a>\n  <a href=\"#\" class=\"fs-nav-link is-disabled\" data-fs-target=\"#tab-notif\">Notificações</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"tab-perfil\">Conteúdo da aba Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-seguranca\">Conteúdo da aba Segurança.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-notif\">Conteúdo da aba Notificações (desabilitada).</div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tabs).\n\nAlém do estilo de linha, estão disponíveis `.fs-tabs-boxed`,\n`.fs-tabs-toggle` e `.fs-tabs-vertical`. A rolagem horizontal já faz parte\ndo estilo padrão, sem classe adicional. Use o modo vertical\nem navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo\nJS.\n\n### Limites de ativação, disabled e ciclo de vida\n\nO handler não implementa Enter/Espaço: depende do click nativo do elemento.\nLinks ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elementos\ngenéricos com role=tab também não ganham ativação automática. O handler de\nclique não cancela navegação de links, incluindo `href=\"#\"`; prefira botões.\n\nNo modo manual, as setas movem foco sem ativar, mas não atualizam o roving\n`tabindex`: a aba selecionada conserva `0` e a focada pode continuar `-1`.\nSair e reentrar por Tab pode retornar à selecionada, não à última focada.\nEsse limite requer verificação de teclado real no consumidor.\n\nO runtime filtra somente a classe `.is-disabled`, não `aria-disabled` nem\n`disabled` na navegação por setas. Forneça `.is-disabled` e a semântica adequada\nao elemento; não marque uma aba indisponível como ativa inicialmente.\n\n`show(tabEl)` exige que a aplicação passe uma aba habilitada do próprio grupo.\nO método não valida pertencimento nem disabled; uma referência externa pode\ndesativar todas as abas e emitir evento nela. Esse é um limite conhecido,\nnão uma maneira suportada de limpar a seleção.\n\nAs abas são coletadas na construção; não há refresh para inserções dinâmicas.\n`dispose()` remove listeners e registro, mas não restaura atributos ARIA,\nclasses ou visibilidade dos painéis. Recrie a instância após alterar a lista.\nCom o alias `data-fs-tab-target`, a seleção funciona, mas o evento\n`fs:tab:changed` ainda lê apenas `data-fs-target` e pode trazer target nulo."
+            "markdown": "```html\n<div class=\"fs-tabs\" data-fs=\"tabs\">\n  <a href=\"#\" class=\"fs-nav-link is-active\" data-fs-target=\"#tab-perfil\">Perfil</a>\n  <a href=\"#\" class=\"fs-nav-link\" data-fs-target=\"#tab-seguranca\">Segurança</a>\n  <a href=\"#\" class=\"fs-nav-link is-disabled\" data-fs-target=\"#tab-notif\">Notificações</a>\n</div>\n<div class=\"fs-tab-content\">\n  <div class=\"fs-tab-pane is-active\" id=\"tab-perfil\">Conteúdo da aba Perfil.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-seguranca\">Conteúdo da aba Segurança.</div>\n  <div class=\"fs-tab-pane\" id=\"tab-notif\">Conteúdo da aba Notificações (desabilitada).</div>\n</div>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tabs).\n\nAlém do estilo de linha, estão disponíveis `.fs-tabs-boxed`,\n`.fs-tabs-toggle` e `.fs-tabs-vertical`. A rolagem horizontal já faz parte\ndo estilo padrão, sem classe adicional. Use o modo vertical\nem navegação lateral e preserve o padrão `tablist`/`tab`/`tabpanel` gerado pelo\nJS.\n\n### Limites de ativação, disabled e ciclo de vida\n\nO handler não implementa Enter/Espaço: depende do click nativo do elemento.\nLinks ativam por Enter, mas Espaço não é ativação nativa de `<a>`; elementos\ngenéricos com role=tab também não ganham ativação automática. O handler de\nclique não cancela navegação de links, incluindo `href=\"#\"`; prefira botões.\n\nNo modo manual, as setas movem foco sem ativar, mas não atualizam o roving\n`tabindex`: a aba selecionada conserva `0` e a focada pode continuar `-1`.\nSair e reentrar por Tab pode retornar à selecionada, não à última focada.\nEsse limite requer verificação de teclado real no consumidor.\n\n`.is-disabled`, `disabled` nativo (inclusive fieldset) e `aria-disabled=\"true\"`\nimpedem ativação e seleção. As setas pulam essas abas, preservando o contrato de\nfoco anterior de Fokus, embora a APG recomende descoberta de itens indisponíveis\npor foco em composites. Essa escolha de compatibilidade não é uma afirmação de\nconformidade integral com APG. O estado ARIA/classe é local à aba, não herdado.\nNão marque uma aba indisponível como ativa inicialmente; mudar disabled não\nseleciona automaticamente uma substituta. Se a aba que está focada se tornar\nindisponível, a navegação por setas/Home/End não parte dela; a aplicação deve\nmover foco para uma aba habilitada. Forneça semântica acessível coerente.\n\nClicks/auxclicks e Enter/Espaço em aba indisponível são cancelados em captura,\nantes dos handlers do item; não navegam, não selecionam e não chamam esses handlers.\nListeners de captura externos/anteriores e chamadas diretas da aplicação não\npodem ser desfeitos: essa guarda é de interação, não autorização de negócio.\nLinks habilitados mantêm sua navegação/default e ordem de handlers neste lote.\n\n`show(tabEl)` ignora abas indisponíveis ou referências fora do grupo sem limpar\na seleção existente nem emitir eventos. As assinaturas públicas permanecem.\n\nReferência: [APG: foco de controles disabled](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls).\n\nAs abas são coletadas na construção; não há refresh para inserções dinâmicas.\n`dispose()` remove listeners e registro, mas não restaura atributos ARIA,\nclasses ou visibilidade dos painéis. Recrie a instância após alterar a lista.\nCom o alias `data-fs-tab-target`, a seleção funciona, mas o evento\n`fs:tab:changed` ainda lê apenas `data-fs-target` e pode trazer target nulo."
           }
         ]
       },
       "sources": [
         {
           "path": "docs/components/tabs.md",
-          "sha256": "1dd0b5d0969a9acf9fbe379c575a855cb62a921cb3a70edbacdba80a71b637ba"
+          "sha256": "36e0ff027b027887ecc65b112a626c7e5d9f159f6dd0492628b41b16eecaf05d"
         },
         {
           "path": "packages/fokus-components/scss/components/_tabs.scss",
@@ -46915,7 +46931,7 @@
         },
         {
           "path": "packages/fokus-js/js/tabs.js",
-          "sha256": "4a1b4ec36677d64146bdfdbcf61c2fc626bb324548641de6bb62bb70ee3c63e9"
+          "sha256": "5cf0a0510d9969ef17bbf4764d3075d87238c7fa3daf3ef13bf8c64942d57a53"
         }
       ],
       "imports": [
@@ -46931,82 +46947,82 @@
           "attributes": [
             {
               "name": "data-tabs-activation",
-              "line": 10,
+              "line": 11,
               "code": "this.manualActivation = tablistEl.getAttribute(\"data-tabs-activation\") === \"manual\";"
             },
             {
               "name": "role",
-              "line": 12,
+              "line": 13,
               "code": "tablistEl.setAttribute(\"role\", \"tablist\");"
             },
             {
               "name": "role",
-              "line": 20,
+              "line": 21,
               "code": "tab.setAttribute(\"role\", \"tab\");"
             },
             {
               "name": "aria-selected",
-              "line": 21,
+              "line": 22,
               "code": "tab.setAttribute(\"aria-selected\", String(isActive));"
             },
             {
               "name": "tabindex",
-              "line": 22,
+              "line": 23,
               "code": "tab.setAttribute(\"tabindex\", isActive ? \"0\" : \"-1\");"
             },
             {
               "name": "data-fs-target",
-              "line": 24,
+              "line": 25,
               "code": "const paneSelector = tab.getAttribute(\"data-fs-target\") || tab.getAttribute(\"data-fs-tab-target\");"
             },
             {
               "name": "data-fs-tab-target",
-              "line": 24,
+              "line": 25,
               "code": "const paneSelector = tab.getAttribute(\"data-fs-target\") || tab.getAttribute(\"data-fs-tab-target\");"
             },
             {
               "name": "role",
-              "line": 28,
+              "line": 29,
               "code": "pane.setAttribute(\"role\", \"tabpanel\");"
             },
             {
               "name": "aria-labelledby",
-              "line": 29,
+              "line": 30,
               "code": "pane.setAttribute(\"aria-labelledby\", tab.id);"
             },
             {
               "name": "tabindex",
-              "line": 30,
+              "line": 31,
               "code": "pane.setAttribute(\"tabindex\", \"0\");"
             },
             {
               "name": "aria-orientation",
-              "line": 63,
+              "line": 65,
               "code": "const vertical = this.tablistEl.getAttribute(\"aria-orientation\") === \"vertical\" || this.tablistEl.classList.contains(\"fs-tabs-vertical\");"
             },
             {
               "name": "aria-selected",
-              "line": 85,
+              "line": 87,
               "code": "otherTab.setAttribute(\"aria-selected\", String(isActive));"
             },
             {
               "name": "tabindex",
-              "line": 86,
+              "line": 88,
               "code": "otherTab.setAttribute(\"tabindex\", isActive ? \"0\" : \"-1\");"
             },
             {
               "name": "data-fs-target",
-              "line": 88,
+              "line": 90,
               "code": "const paneSelector = otherTab.getAttribute(\"data-fs-target\") || otherTab.getAttribute(\"data-fs-tab-target\");"
             },
             {
               "name": "data-fs-tab-target",
-              "line": 88,
+              "line": 90,
               "code": "const paneSelector = otherTab.getAttribute(\"data-fs-target\") || otherTab.getAttribute(\"data-fs-tab-target\");"
             },
             {
               "name": "data-fs-target",
-              "line": 96,
+              "line": 98,
               "code": "new CustomEvent(\"fs:tab:changed\", { bubbles: true, detail: { target: tab.getAttribute(\"data-fs-target\") } }),"
             }
           ],
@@ -55031,7 +55047,7 @@
       "status": "partial",
       "documentation": {
         "path": "docs/components/tree-view.md",
-        "markdown": "# Tree View\n\nLista hierárquica navegável (arquivos, categorias, organogramas), seguindo\no padrão [WAI-ARIA Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).\nMarcação nativa `<ul>`/`<li>` aninhada — o JS só adiciona os papéis ARIA,\no botão de expandir/colapsar e a navegação por teclado.\n\n## Visão geral\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n```\n\nCada `<li>` precisa de um `<span class=\"fs-tree-label\">` como filho direto\n(o texto do nó) — nós com filhos somam um `<ul>`/`<ol>` aninhado logo\ndepois do label. O JS injeta automaticamente o `.fs-tree-toggle` (a seta)\ndentro do label de cada nó que tiver filhos; nós-folha não recebem seta.\n\n## Anatomia\n\n`ul.fs-tree[role=\"tree\"]` > `li[role=\"treeitem\"]` (recursivo) >\n`span.fs-tree-label` (com `.fs-tree-toggle` auto-injetado se houver\nfilhos) + opcionalmente `ul[role=\"group\"]` (o próximo nível).\n\n## Variações\n\n- `data-value` num `<li>` define o valor \"de verdade\" reportado em\n  `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto\n  integral do nó, incluindo seus descendentes.\n- `aria-expanded=\"true\"` pré-existente num `<li>` com filhos abre esse\n  ramo já expandido na renderização inicial (por padrão, todo ramo nasce\n  colapsado).\n\n## Estados\n\n- Colapsado (padrão) / expandido (`aria-expanded=\"true\"` no `<li>`,\n  `hidden` removido do `<ul>` filho) — alternado por clique na\n  label/seta ou por teclado.\n- Selecionado: `aria-selected=\"true\"` (só no nó mais recente; os demais\n  voltam a `\"false\"`) — clicar num nó com filhos expande/colapsa **e**\n  seleciona ao mesmo tempo (como um explorador de arquivos).\n\n## A11y\n\n`role=\"tree\"` na raiz, `role=\"treeitem\"` em cada `<li>`, `role=\"group\"` no\n`<ul>`/`<ol>` aninhado, `aria-expanded` nos nós com filhos. Roving\n`tabindex`: só o nó tabulável atual tem `tabindex=\"0\"`; os demais (visíveis)\nficam em `\"-1\"` — nós dentro de um ramo colapsado não são alcançáveis por\nTab. `aria-selected` reflete a seleção atual.\n\nTeclado (com foco num nó da árvore):\n- `ArrowDown`/`ArrowUp`: move o foco pro próximo/anterior nó **visível**\n  (não desce em ramos colapsados).\n- `ArrowRight`: nó fechado → expande (foco não se move); nó já aberto →\n  move o foco pro primeiro filho; folha → sem efeito.\n- `ArrowLeft`: nó aberto → colapsa; nó fechado ou folha → move o foco pro\n  nó pai.\n- `Home`/`End`: primeiro/último nó visível da árvore inteira.\n- `Enter`/`Espaço`: alterna expansão (se houver filhos) e seleciona o nó.\n\n## API JS\n\nAuto-init via `data-fs=\"tree-view\"` na raiz (`<ul>`/`<ol>`).\n`TreeView.getInstance(rootEl)`.\n\n| Método | Descrição |\n|---|---|\n| `expand(item)` | Expande o `<li>` informado (sem efeito se já expandido ou sem filhos). |\n| `collapse(item)` | Colapsa o `<li>` informado. |\n| `toggle(item)` | Alterna expandido/colapsado. |\n| `select(item)` | Marca `aria-selected=\"true\"` no `<li>` informado (e `\"false\"` nos demais), dispara `fs:tree:selected`. |\n| `dispose()` | Remove listeners e desregistra a instância. |\n\n| Evento (na raiz) | Cancelável | Quando |\n|---|---|---|\n| `fs:tree:expanded` | Não | Após expandir um nó, com `event.detail.item`. |\n| `fs:tree:collapsed` | Não | Após colapsar um nó, com `event.detail.item`. |\n| `fs:tree:selected` | Não | Após selecionar um nó, com `event.detail.value`/`event.detail.item`. |\n\n## Valores, indisponibilidade e ciclo de vida\n\nForneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA.\n\n## Tokens\n\n`--fs-color-text`, `--fs-color-subtle` (hover da label),\n`--fs-color-primary` (nó selecionado, com `color-contrast()` pro texto),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos do projeto\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n    </ul>\n  </li>\n</ul>\n<script>\n  document.querySelector(\".fs-tree\").addEventListener(\"fs:tree:selected\", (e) => {\n    console.log(\"selecionado:\", e.detail.value);\n  });\n</script>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tree-view).\n",
+        "markdown": "# Tree View\n\nLista hierárquica navegável (arquivos, categorias, organogramas), seguindo\no padrão [WAI-ARIA Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).\nMarcação nativa `<ul>`/`<li>` aninhada — o JS só adiciona os papéis ARIA,\no botão de expandir/colapsar e a navegação por teclado.\n\n## Visão geral\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n      <li>\n        <span class=\"fs-tree-label\">components</span>\n        <ul>\n          <li><span class=\"fs-tree-label\">Button.js</span></li>\n        </ul>\n      </li>\n    </ul>\n  </li>\n  <li><span class=\"fs-tree-label\">README.md</span></li>\n</ul>\n```\n\nCada `<li>` precisa de um `<span class=\"fs-tree-label\">` como filho direto\n(o texto do nó) — nós com filhos somam um `<ul>`/`<ol>` aninhado logo\ndepois do label. O JS injeta automaticamente o `.fs-tree-toggle` (a seta)\ndentro do label de cada nó que tiver filhos; nós-folha não recebem seta.\n\n## Anatomia\n\n`ul.fs-tree[role=\"tree\"]` > `li[role=\"treeitem\"]` (recursivo) >\n`span.fs-tree-label` (com `.fs-tree-toggle` auto-injetado se houver\nfilhos) + opcionalmente `ul[role=\"group\"]` (o próximo nível).\n\n## Variações\n\n- `data-value` num `<li>` define o valor \"de verdade\" reportado em\n  `fs:tree:selected` (`event.detail.value`); sem ele, o valor é o texto\n  integral do nó, incluindo seus descendentes.\n- `aria-expanded=\"true\"` pré-existente num `<li>` com filhos abre esse\n  ramo já expandido na renderização inicial (por padrão, todo ramo nasce\n  colapsado).\n\n## Estados\n\n- Colapsado (padrão) / expandido (`aria-expanded=\"true\"` no `<li>`,\n  `hidden` removido do `<ul>` filho) — alternado por clique na\n  label/seta ou por teclado.\n- Selecionado: `aria-selected=\"true\"` (só no nó mais recente; os demais\n  voltam a `\"false\"`) — clicar num nó com filhos expande/colapsa **e**\n  seleciona ao mesmo tempo (como um explorador de arquivos).\n\n## A11y\n\n`role=\"tree\"` na raiz, `role=\"treeitem\"` em cada `<li>`, `role=\"group\"` no\n`<ul>`/`<ol>` aninhado, `aria-expanded` nos nós com filhos. Roving\n`tabindex`: só o nó tabulável atual tem `tabindex=\"0\"`; os demais (visíveis)\nficam em `\"-1\"` — nós dentro de um ramo colapsado não são alcançáveis por\nTab. `aria-selected` reflete a seleção atual.\n\nTeclado (com foco num nó da árvore):\n- `ArrowDown`/`ArrowUp`: move o foco pro próximo/anterior nó **visível**\n  (não desce em ramos colapsados).\n- `ArrowRight`: nó fechado → expande (foco não se move); nó já aberto →\n  move o foco pro primeiro filho; folha → sem efeito.\n- `ArrowLeft`: nó aberto → colapsa; nó fechado ou folha → move o foco pro\n  nó pai.\n- `Home`/`End`: primeiro/último nó visível da árvore inteira.\n- `Enter`/`Espaço`: alterna expansão (se houver filhos) e seleciona o nó.\n\n## API JS\n\nAuto-init via `data-fs=\"tree-view\"` na raiz (`<ul>`/`<ol>`).\n`TreeView.getInstance(rootEl)`.\n\n| Método | Descrição |\n|---|---|\n| `expand(item)` | Expande o `<li>` informado (sem efeito se já expandido ou sem filhos). |\n| `collapse(item)` | Colapsa o `<li>` informado. |\n| `toggle(item)` | Alterna expandido/colapsado. |\n| `select(item)` | Marca `aria-selected=\"true\"` no `<li>` informado (e `\"false\"` nos demais), dispara `fs:tree:selected`. |\n| `dispose()` | Remove listeners e desregistra a instância. |\n\n| Evento (na raiz) | Cancelável | Quando |\n|---|---|---|\n| `fs:tree:expanded` | Não | Após expandir um nó, com `event.detail.item`. |\n| `fs:tree:collapsed` | Não | Após colapsar um nó, com `event.detail.item`. |\n| `fs:tree:selected` | Não | Após selecionar um nó, com `event.detail.value`/`event.detail.item`. |\n\n## Valores, indisponibilidade e ciclo de vida\n\nForneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. Listeners de captura externos/anteriores e chamadas\nà lógica de negócio não são interceptados. É uma guarda de interface, não\nautorização de acesso. Links habilitados mantêm seu comportamento/default.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\nAlterar disabled não desfaz seleção/expansão anteriores automaticamente. Essa\npolítica local explícita preserva a navegação existente; não representa uma\nimplementação completa de herança de estado ARIA.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA.\n\n## Tokens\n\n`--fs-color-text`, `--fs-color-subtle` (hover da label),\n`--fs-color-primary` (nó selecionado, com `color-contrast()` pro texto),\n`--fs-radius-sm`.\n\n## Exemplo\n\n```html\n<ul class=\"fs-tree\" data-fs=\"tree-view\" aria-label=\"Arquivos do projeto\">\n  <li>\n    <span class=\"fs-tree-label\">src</span>\n    <ul>\n      <li><span class=\"fs-tree-label\">index.js</span></li>\n    </ul>\n  </li>\n</ul>\n<script>\n  document.querySelector(\".fs-tree\").addEventListener(\"fs:tree:selected\", (e) => {\n    console.log(\"selecionado:\", e.detail.value);\n  });\n</script>\n```\n\nMockup: [laboratório do componente](../../mockup/navigation-disclosure.html#tree-view).\n",
         "sections": [
           {
             "title": "Visão geral",
@@ -55059,7 +55075,7 @@
           },
           {
             "title": "Valores, indisponibilidade e ciclo de vida",
-            "markdown": "Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. É uma guarda de interface, não autorização de acesso.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA."
+            "markdown": "Forneça `data-value` explícito nos ramos. Sem ele, o evento usa o textContent\nintegral do li, incluindo o texto dos descendentes, mesmo colapsados; não somente\na label do pai.\n\n`aria-disabled=\"true\"` e `.is-disabled` no próprio nó impedem seleção,\nexpansão e colapso, tanto por ativação quanto pelas APIs `select`, `expand`,\n`collapse` e `toggle`. Essas APIs também ignoram itens externos à árvore.\nCliques (inclusive auxiliares), Enter e Space são cancelados na captura da raiz,\nantes dos handlers do alvo. Listeners de captura externos/anteriores e chamadas\nà lógica de negócio não são interceptados. É uma guarda de interface, não\nautorização de acesso. Links habilitados mantêm seu comportamento/default.\n\nNós indisponíveis continuam descobríveis pelo foco e pelas setas, Home e End.\nA indisponibilidade é local ao item: não é propagada por classe/ARIA aos filhos.\nSe um ramo indisponível já estiver aberto, seus descendentes habilitados\ncontinuam navegáveis e ativáveis; ArrowRight pode focar o filho, mas não abre\num ramo indisponível fechado. ArrowLeft não fecha um ramo indisponível aberto.\nAlterar disabled não desfaz seleção/expansão anteriores automaticamente. Essa\npolítica local explícita preserva a navegação existente; não representa uma\nimplementação completa de herança de estado ARIA.\n\nA estrutura é preparada na construção; não existe API refresh ou carregamento\nremoto. `dispose()` remove listeners/registro, mas conserva os papéis, atributos\ne setas já adicionados ao DOM. Alterações estruturais exigem recomposição pela\naplicação e conferência de foco/ARIA."
           },
           {
             "title": "Tokens",
@@ -55074,7 +55090,7 @@
       "sources": [
         {
           "path": "docs/components/tree-view.md",
-          "sha256": "66ef29744bb72703b4107594ee811c1c078acae49a408150815a03f8b843a67e"
+          "sha256": "d707d6cc438a6689e2168016539bbfff431f1d72173eae8f937e8e35ca3ced9a"
         },
         {
           "path": "packages/fokus-components/scss/components/_tree-view.scss",

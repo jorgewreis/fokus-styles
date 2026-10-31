@@ -54,3 +54,16 @@ test("hover cannot open disabled branches but enabled siblings still open", asyn
   await page.locator("#wrapper3").hover();
   await expect(page.locator("#submenu3")).toBeVisible();
 });
+
+test("Escape can leave a submenu whose native parent became disabled", async ({ page }) => {
+  await page.setContent('<!doctype html><html lang="pt-BR"><title>Menu escape</title><body><main><button id="toggle">Menu</button><div class="fs-dropdown-menu"><div class="fs-dropdown-submenu"><button id="parent" class="fs-dropdown-item fs-dropdown-item-submenu">Pai</button><div class="fs-dropdown-menu"><button id="child" class="fs-dropdown-item">Filho</button></div></div></div></main></body></html>');
+  await page.addStyleTag({ path: root + "dist/css/fokus.css" });
+  await page.addScriptTag({ content: script });
+  await page.evaluate(() => { window.instance = new window.NestedMenu(document.getElementById('toggle')); window.instance.show(); });
+  await page.locator('#parent').press('ArrowRight');
+  await expect(page.locator('#child')).toBeFocused();
+  await page.evaluate(() => document.getElementById('parent').disabled = true);
+  await page.locator('#child').press('Escape');
+  await expect(page.locator('#toggle')).toBeFocused();
+  expect(await page.evaluate(() => window.instance.isOpen)).toBe(false);
+});
