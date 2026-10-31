@@ -51,7 +51,8 @@ com label/descrição ao lado do indicador em vez de embaixo.
 
 ## Estados
 
-Cada `.fs-step` recebe uma destas classes, sincronizadas pelo JS:
+Cada `.fs-step` recebe classes sincronizadas pelo JS; erro/clickable podem
+coexistir com estado ativo ou concluído:
 
 | Classe | Significado |
 |---|---|
@@ -105,3 +106,16 @@ stepperEl.addEventListener("fs:stepper:beforechange", (event) => {
 
 Ver acima (Visão geral) — mockup completo com validação por passo em
 [`mockup/navigation-disclosure.html#stepper`](../../mockup/navigation-disclosure.html#stepper).
+
+## Limites de estado e entrada
+
+SetError é visual: não impede next/goTo/complete. Valide a etapa em
+fs:stepper:beforechange e cancele explicitamente quando necessário. O componente
+não submete formulários nem implementa autorização de ações.
+
+Forneça índices inteiros finitos a goTo. Valores finitos fora da faixa são
+limitados às extremidades; NaN não é normalizado pelo runtime. O modo linear
+restringe o cabeçalho, não chamadas programáticas goTo. Data-linear é lido na
+construção; não é uma opção reativa. Concluído é calculado pela posição relativa
+ao passo atual (ou finished), não um histórico persistente de etapas visitadas.
+Voltar pode retirar a marca de concluído das etapas posteriores.

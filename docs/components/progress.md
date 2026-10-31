@@ -80,9 +80,9 @@ presente = carregando; progress: `--fs-progress-value` = progresso atual).
   `aria-valuemax="100"` **e um nome acessível** (`aria-label="Progresso: 60%"`
   ou `aria-labelledby` apontando pro rótulo visível) no `.fs-progress`
   (mantidos em sincronia com `--fs-progress-value` pela sua aplicação — o
-  framework não injeta automaticamente). Sem nome acessível, o
-  `role="progressbar"` é rejeitado por leitores de tela (gate `axe` no CI:
-  regra `aria-progressbar-name`).
+  framework não injeta automaticamente). Sem nome acessível, não se identifica
+  qual operação o indicador representa; o gate `axe` sinaliza essa ausência
+  pela regra `aria-progressbar-name`.
 - A animação de listras (`.fs-progress-bar-animated`), a barra indeterminada
   e a rotação do spinner desaceleram em `prefers-reduced-motion: reduce`, mas
   não param completamente para não parecerem travadas.
@@ -109,7 +109,7 @@ ajustes locais.
 ```html
 <div class="fs-spinner" role="status" aria-label="Carregando"></div>
 
-<div class="fs-progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+<div class="fs-progress" role="progressbar" aria-label="Progresso do exemplo" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
   <div class="fs-progress-bar" style="--fs-progress-value: 60;">60%</div>
 </div>
 
@@ -124,3 +124,9 @@ ajustes locais.
 ```
 
 Mockup: [laboratório do componente](../../mockup/feedback-actions.html#progress).
+
+## Limites de valor
+
+A aplicação deve fornecer valor finito entre0 e100 e manter CSS/ARIA coerentes.
+O CSS calcula a largura a partir de --fs-progress-value, sem validar o número.
+O indicador não mede upload/rede e os estados complete/error são visuais.
