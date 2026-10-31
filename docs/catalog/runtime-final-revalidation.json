@@ -1,0 +1,91 @@
+{
+  "baseCommit": "8df3f39aa21c2fcc20572d9de3f91392a02aa305",
+  "runtimeCommit": "ef9a09ac184bdc7c06d6f4d1ced827029cd1b355",
+  "reason": "DataTable size/types, Tag disabled ownership, Stepper integer indices; updated documentation and Tag app-owned disabled fixture; historical audit records retained.",
+  "changes": [
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tag/implementation/1",
+      "path": "packages/fokus-js/js/tag.js",
+      "previousSha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22",
+      "sha256": "fa5c83c2d1391a9cc21fa11e33455355279ae42c16ec96f09e9962e6a0243410"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/stepper/implementation/1",
+      "path": "packages/fokus-js/js/stepper.js",
+      "previousSha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3",
+      "sha256": "35d3bb345380cdfcd50ec9a34ead05bac433e2022f795b5275473f4c9ba453f1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/datatable/implementation/1",
+      "path": "packages/fokus-js/js/datatable.js",
+      "previousSha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa",
+      "sha256": "3c18e93bfe229222137c0e71a05250e8a6d737f7a4f94456f53f93e442db53a1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/datatable/variants/implementation/1",
+      "path": "packages/fokus-js/js/datatable.js",
+      "previousSha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa",
+      "sha256": "3c18e93bfe229222137c0e71a05250e8a6d737f7a4f94456f53f93e442db53a1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/datatable/states/implementation/1",
+      "path": "packages/fokus-js/js/datatable.js",
+      "previousSha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa",
+      "sha256": "3c18e93bfe229222137c0e71a05250e8a6d737f7a4f94456f53f93e442db53a1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/datatable/tokens/implementation/1",
+      "path": "packages/fokus-js/js/datatable.js",
+      "previousSha256": "e78ce83a90d253cc4efc6fd04f8b57cfebdf44a19062bcecf37531e19924c9aa",
+      "sha256": "3c18e93bfe229222137c0e71a05250e8a6d737f7a4f94456f53f93e442db53a1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/stepper/nonlinear-vertical/implementation/1",
+      "path": "packages/fokus-js/js/stepper.js",
+      "previousSha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3",
+      "sha256": "35d3bb345380cdfcd50ec9a34ead05bac433e2022f795b5275473f4c9ba453f1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/stepper/validation-error/implementation/1",
+      "path": "packages/fokus-js/js/stepper.js",
+      "previousSha256": "4041228203efe1aa709c90688e3e9c046b5a7169866424693fe9da16878545f3",
+      "sha256": "35d3bb345380cdfcd50ec9a34ead05bac433e2022f795b5275473f4c9ba453f1"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/nested-menu/recursive-end/implementation/0",
+      "path": "docs/components/nested-menu.md",
+      "previousSha256": "7c17c2028b5e139895431aabc102dd0810c5ba924c00b66e1a8bee367959e034",
+      "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tag/loading-recovery/implementation/0",
+      "path": "packages/fokus-js/js/tag.js",
+      "previousSha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22",
+      "sha256": "fa5c83c2d1391a9cc21fa11e33455355279ae42c16ec96f09e9962e6a0243410"
+    },
+    {
+      "manifest": "docs/catalog/fixture-provenance.json",
+      "entry": "/tag/truncated-group/implementation/0",
+      "path": "packages/fokus-js/js/tag.js",
+      "previousSha256": "451f8c7ef77dca1e6297b9b94e4d15d0210dfccfef21cfe6d176434d4a191e22",
+      "sha256": "fa5c83c2d1391a9cc21fa11e33455355279ae42c16ec96f09e9962e6a0243410"
+    },
+    {
+      "manifest": "docs/catalog/navigation-provenance.json",
+      "entry": "/sources/10",
+      "path": "docs/components/nested-menu.md",
+      "previousSha256": "7c17c2028b5e139895431aabc102dd0810c5ba924c00b66e1a8bee367959e034",
+      "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
+    }
+  ]
+}

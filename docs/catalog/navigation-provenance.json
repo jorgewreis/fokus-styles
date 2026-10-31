@@ -1475,7 +1475,7 @@
     },
     {
       "path": "docs/components/nested-menu.md",
-      "sha256": "7c17c2028b5e139895431aabc102dd0810c5ba924c00b66e1a8bee367959e034"
+      "sha256": "3c625aceabf5fc371f15925a724bc3d4095ab69deaf3294306d4386450785ff9"
     },
     {
       "path": "packages/fokus-components/scss/components/_nested-menu.scss",

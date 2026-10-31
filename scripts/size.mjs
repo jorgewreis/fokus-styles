@@ -29,7 +29,7 @@ const targets = [
 // tokens). `forms`/`helpers`/`fonts` não têm teto próprio; ficam de fora do
 // gate (só informativos abaixo).
 //
-// `js/fokus.min.js`: 26 KiB — cobre o bundle JS completo (Combobox,
+// `js/fokus.min.js`: 26,0625 KiB — cobre o bundle JS completo (Combobox,
 // Datepicker, DataTable, Command Palette, Tree View e o restante dos
 // componentes interativos).
 const budgets = {
@@ -45,11 +45,11 @@ const budgets = {
   // os refinamentos de navegação; o limite continua sendo um gate, não um
   // baseline aberto.
   "css/fokus.min.css": 43 * 1024,
-  // Toast pause/progress + Carousel index guard: 26,616 bytes (+67).
-  // Reviewed increase 26,560 -> 26,624 (+64), 8 bytes headroom.
-  // Cumulative +286 vs 26,330 before these runtime hardening batches.
+  // DataTable/Tag/Stepper boundary and ownership fixes: 26,665 bytes (+49).
+  // Reviewed increase 26,624 -> 26,688 (+64), 23 bytes headroom.
+  // Cumulative +335 vs 26,330 before these runtime hardening batches.
   // Keep all guards, CSS budgets and negative-control verification.
-  "js/fokus.min.js": 26624,
+  "js/fokus.min.js": 26688,
 };
 
 const check = process.argv.includes("--check");

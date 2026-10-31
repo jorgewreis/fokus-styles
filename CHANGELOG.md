@@ -2,17 +2,18 @@
 
 ## Unreleased
 
-### Tag: preservar disabled do consumidor
+### DataTable, Tag e Stepper: fronteiras e propriedade de estado
 
-- construção e saída de loading não reabilitam controles previamente disabled;
-  somente controles desabilitados pela própria instância são restaurados.
-- exemplo loading-recovery libera explicitamente o disabled inicial fornecido
-  pela aplicação. Proteção visual e chamada programática dismiss permanecem
-  inalteradas; regras de autorização continuam na aplicação/evento cancelável.
-- 28 testes focais passam; build e tipos passam. Revalidação de provenance e
-  catálogo gerado fica para a integração. Browser/axe depende do Chromium ausente.
-- JS gzip isolado: 26.660 bytes, 36 acima do teto 26.624; size:check bloqueado.
-  Nenhum orçamento alterado; integração deve reavaliar o total.
+- DataTable usa fallback para pageSize abaixo de 1, evitando tamanho zero após
+  floor; tipos de sort none e contagens readonly alinhados à API existente.
+- Tag preserva disabled do consumidor e restaura somente botões que ela própria
+  desabilitou. Fixture pending libera seu próprio disabled explicitamente.
+- Stepper ignora índices não inteiros sem eventos/mutação; mantém clamp inteiro.
+  Retornos boolean tipados. Complete repetível continua como comportamento atual.
+- JS integrado 26.665 bytes (+49 no lote; +335 desde 26.330), teto autorizado
+  26.688 (+64 sobre anterior), margem 23; CSS e controle negativo preservados.
+- Relatório final registra pendências de teclado/disabled e entrada com impacto;
+  não declara todos os defeitos corrigidos nem validação visual em navegador.
 
 ### Toast e Carousel: temporização e índices seguros
 

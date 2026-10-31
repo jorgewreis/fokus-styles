@@ -7,6 +7,8 @@ runtime, SCSS, tipos, API, PR ou qualquer operação externa bloqueada.
 > ativação disabled do Dropdown e o descarte de recursos próprios do Breadcrumb.
 > Outro lote posterior coordena hover/foco e progresso do Toast e rejeita
 > índices inválidos do Carousel (veja `RUNTIME-TIMERS-INDICES.md`).
+> A rodada final também corrige pageSize DataTable, disabled Tag e índice Stepper;
+> consulte `FINAL-PRIORITY-AUDIT.md` para estado atual e pendências.
 > Consulte as páginas atuais dos componentes e `RUNTIME-HARDENING.md`; as
 > demais observações abaixo continuam delimitadas pela auditoria original.
 
