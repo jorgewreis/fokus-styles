@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Breadcrumb: descarte seguro
+
+- cancela medição RAF pendente e impede que fonts.ready crie recursos após
+  dispose; Tooltips próprios são descartados, sem assumir Tooltips de outro dono.
+- descarte idempotente e reinicialização cobertos por testes; API pública mantida.
+- medição isolada: JS gzip 26.616 bytes, acima do teto atual de 26.496; gate
+  de tamanho permanece bloqueado até decisão explícita, sem elevar o limite.
+
 ### Gates e acessibilidade de Icon Link
 
 - release reutiliza CI completa e publica somente o tarball validado, com hash e manifesto conferidos; reruns substituem o artefato do único produtor.

@@ -68,7 +68,7 @@ colapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.
 
 | Método | Descrição |
 |---|---|
-| `dispose()` | Remove o listener de media query, restaura os itens colapsados e desregistra a instância. |
+| `dispose()` | Cancela medição pendente, descarta Tooltips próprios e dropdown, remove listener, restaura itens colapsados e desregistra a instância; é idempotente. |
 
 Sem eventos customizados.
 
@@ -101,13 +101,15 @@ os tooltips quando o conteúdo ou a largura muda. `maxItems` é convertido com
 o limiar de colapso, não a quantidade de itens mantidos: ao colapsar, ficam
 primeiro, reticências e último.
 
-**Limitação de lifecycle:** `dispose()` limpa o dropdown de reticências,
-o listener da media query e o registro, mas não descarta Tooltips criados
-pelo truncamento, nem remove classes/data-title adicionados. Também não cancela
-a medição pendente: um Tooltip pode surgir após o descarte. Não suponha cleanup
-completo ao montar/desmontar a versão avançada repetidamente. Esse comportamento
-exige correção de runtime em uma alteração separada; não é API recomendada.
+**Descarte:** `dispose()` cancela o requestAnimationFrame pendente e torna
+inofensivo o callback de `document.fonts.ready`, que não pode ser cancelado.
+Remove os Tooltips criados pela própria instância, o dropdown de reticências,
+o listener da media query e o registro. Tooltips que já existiam nos alvos
+são reutilizados sem mudança de dono e não são descartados pelo Breadcrumb.
+Chamadas repetidas de dispose não afetam uma nova instância no mesmo elemento.
 
-A versão básica sem data-fs não inicia essa medição. Na composição avançada,
-planeje o descarte dos recursos auxiliares da aplicação e valide desmontagem
-assíncrona; remover apenas o HTML não cancela os callbacks internos pendentes.
+As classes de truncamento e o `data-title` adicionados permanecem no DOM;
+o descarte não restaura todo o HTML original. Recriar a instância mede o texto
+novamente e cria no máximo um Tooltip por alvo sem instância existente.
+A versão básica sem data-fs não inicia medição; ao desmontar a versão avançada,
+chame dispose antes de remover o HTML e descarte recursos próprios da aplicação.
