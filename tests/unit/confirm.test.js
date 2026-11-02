@@ -84,4 +84,20 @@ describe("confirm()", () => {
     expect(modalEl.querySelector(".fs-modal-title").innerHTML).not.toContain("<img");
     expect(modalEl.querySelector(".fs-alert-dialog-message").innerHTML).not.toContain("<b>");
   });
+  it.each(["primary", "secondary", "success", "warning", "danger", "info"])("preserva a variante %s", async (variant) => {
+    const result = confirm({ variant });
+    expect(document.querySelector('[data-action="confirm"]').classList.contains(`fs-btn-${variant}`)).toBe(true);
+    document.querySelector('[data-action="cancel"]').click();
+    expect(await result).toBe(false);
+  });
+
+  it.each(['danger" data-injected="yes', 'danger"><img src=x onerror="alert(1)">', "custom", null, {}])("rejeita variante não documentada sem interpretar HTML: %s", async (variant) => {
+    const result = confirm({ variant });
+    const button = document.querySelector('[data-action="confirm"]');
+    expect(button.className).toBe("fs-btn fs-btn-danger");
+    expect(document.querySelector('[data-injected], img, [onerror]')).toBeNull();
+    button.click();
+    expect(await result).toBe(true);
+  });
+
 });

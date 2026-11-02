@@ -22,6 +22,14 @@ function buildPopover({ trigger = "click" } = {}) {
   return { wrapper, triggerEl, popoverEl, popover: new Popover(triggerEl) };
 }
 
+function blurFocusWhenPopoverHides(popover) {
+  const hide = popover.hide.bind(popover);
+  popover.hide = () => {
+    hide();
+    if (popover.popoverEl.contains(document.activeElement)) document.activeElement.blur();
+  };
+}
+
 describe("Popover", () => {
   afterEach(() => {
     document.body.innerHTML = "";
@@ -171,6 +179,69 @@ describe("Popover", () => {
 
       expect(popoverEl.classList.contains("is-open")).toBe(true);
     });
+  });
+
+  it("Escape restores internal focus without reopening or leaving focus suppression pending", () => {
+    const { triggerEl, popoverEl, popover } = buildPopover({ trigger: "focus" });
+    blurFocusWhenPopoverHides(popover);
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
+
+    popoverEl.querySelector("#innerBtn").focus();
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+
+    expect(popoverEl.classList.contains("is-open")).toBe(false);
+    expect(document.activeElement).toBe(triggerEl);
+
+    // Focusing an already focused trigger emits no focus event; the next real focus must open.
+    triggerEl.blur();
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
+
+    // Escape while the trigger already has focus must not leave suppression behind.
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    expect(popoverEl.classList.contains("is-open")).toBe(false);
+    triggerEl.blur();
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
+  });
+
+  it("dismiss clears focus suppression when the trigger cannot receive focus", () => {
+    const { wrapper, triggerEl, popoverEl, popover } = buildPopover({ trigger: "focus" });
+    blurFocusWhenPopoverHides(popover);
+    triggerEl.focus();
+    popoverEl.querySelector("#dismissBtn").focus();
+    triggerEl.disabled = true;
+    popoverEl.querySelector("#dismissBtn").click();
+
+    expect(popoverEl.classList.contains("is-open")).toBe(false);
+    expect(document.activeElement).not.toBe(triggerEl);
+
+    triggerEl.disabled = false;
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
+
+    popoverEl.querySelector("#dismissBtn").focus();
+    popoverEl.querySelector("#dismissBtn").click();
+    expect(popoverEl.classList.contains("is-open")).toBe(false);
+    triggerEl.blur();
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
+    wrapper.remove();
+  });
+
+  it("dismiss clears focus suppression when the trigger was removed", () => {
+    const { wrapper, triggerEl, popoverEl, popover } = buildPopover({ trigger: "focus" });
+    blurFocusWhenPopoverHides(popover);
+    triggerEl.focus();
+    popoverEl.querySelector("#dismissBtn").focus();
+    triggerEl.remove();
+    popoverEl.querySelector("#dismissBtn").click();
+
+    expect(popoverEl.classList.contains("is-open")).toBe(false);
+    wrapper.appendChild(triggerEl);
+    triggerEl.focus();
+    expect(popoverEl.classList.contains("is-open")).toBe(true);
   });
 
   describe("trigger manual", () => {

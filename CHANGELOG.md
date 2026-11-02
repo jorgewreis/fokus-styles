@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+- Eleva o teto gzip do runtime JavaScript para 27.008 bytes para acomodar
+  hardening de portal, overlays e foco, com regressões unitárias e browser.
+  Medição real: 26.022 bytes, com margem de 986 bytes; ajuste aprovado pelo
+  mantenedor em 02/11/2026.
+- Ignora índices fracionários ou não numéricos no Carousel e Stepper sem
+  alterar estado, DOM ou eventos; índices inteiros continuam usando o wrap e
+  o clamp existentes.
+- Usa o fallback de 10 linhas para pageSize menor que 1 no DataTable e alinha
+  tipos públicos existentes de paginação e ordenação.
+- Desfaz recursos de Tooltip próprios do Breadcrumb e cancela medições adiadas
+  ao descartar a instância, sem remover Tooltip de outro proprietário.
+- Preserva `disabled` explícito no Tag durante loading; aplicações que devam
+  reabilitar esse botão fazem isso explicitamente após `setLoading(false)`.
+
 ## [2.7.0] - 2026-09-10
 
 - consolida a Utility API Sass com novas categorias de layout, grid, tipografia,

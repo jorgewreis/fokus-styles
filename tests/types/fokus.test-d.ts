@@ -2,6 +2,7 @@
 // runtime, só garante que os .d.ts em packages/fokus-js/js/ tipam
 // corretamente um uso real da API pública.
 import { Modal, Dropdown, DataTable, confirm, core } from "../../packages/fokus-js/js/fokus.js";
+import { Popover } from "../../packages/fokus-js/js/popover.js";
 
 const triggerEl = document.querySelector<HTMLElement>("[data-fs-target]")!;
 
@@ -23,4 +24,7 @@ confirm({ title: "Tem certeza?", variant: "danger" }).then((confirmed: boolean) 
 const position = core.computePosition(triggerEl, document.createElement("div"), { placement: "top" });
 core.applyPosition(document.createElement("div"), position);
 
-export { modal, dropdown, table, sameModal };
+const manualPopover = new Popover(triggerEl, { trigger: "manual" });
+manualPopover.show();
+
+export { modal, dropdown, table, sameModal, manualPopover };

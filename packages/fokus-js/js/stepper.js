@@ -75,6 +75,7 @@ export class Stepper {
   }
 
   _change(to) {
+    if (!Number.isInteger(to)) return false;
     const from = this.current;
     const target = Math.max(0, Math.min(to, this.steps.length - 1));
     if (target === from && !this.finished) return false;
