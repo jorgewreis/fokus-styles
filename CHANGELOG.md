@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Eleva o teto gzip do runtime JavaScript para 27.008 bytes para acomodar
+  hardening de portal, overlays e foco, com regressões unitárias e browser.
+  Medição real: 26.022 bytes, com margem de 986 bytes; ajuste aprovado pelo
+  mantenedor em 02/11/2026.
+
 ## [2.7.0] - 2026-09-10
 
 - consolida a Utility API Sass com novas categorias de layout, grid, tipografia,

@@ -5,6 +5,8 @@ async function flushDoubleRaf() {
   await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
 }
 
+const created = [];
+
 function buildOffcanvas({ backdrop } = {}) {
   const wrapper = document.createElement("div");
   const backdropAttr = backdrop ? ` data-backdrop="${backdrop}"` : "";
@@ -25,11 +27,14 @@ function buildOffcanvas({ backdrop } = {}) {
   const trigger = wrapper.querySelector("#trigger");
   const offcanvasEl = wrapper.querySelector("#myOffcanvas");
 
-  return { wrapper, trigger, offcanvasEl, offcanvas: new Offcanvas(trigger) };
+  const offcanvas = new Offcanvas(trigger);
+  created.push(offcanvas);
+  return { wrapper, trigger, offcanvasEl, offcanvas };
 }
 
 describe("Offcanvas", () => {
   afterEach(() => {
+    created.splice(0).reverse().forEach((instance) => instance.dispose());
     document.body.innerHTML = "";
     document.body.style.overflow = "";
     document.body.style.paddingRight = "";
@@ -144,6 +149,7 @@ describe("Offcanvas", () => {
     `;
     document.body.appendChild(secondWrapper);
     const second = new Offcanvas(secondWrapper.querySelector("#trigger2"));
+    created.push(second);
 
     first.show();
     await flushDoubleRaf();

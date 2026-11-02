@@ -1,5 +1,7 @@
+import { applyThemeContext } from "./core/theme.js";
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition, watchPosition } from "./core/positioning.js";
-import { onClickOutside } from "./core/overlay.js";
+import { onClickOutside, registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
 import { onEscapeKey } from "./core/focus.js";
 import { autoInit, createInstanceRegistry } from "./core/register.js";
 
@@ -99,12 +101,11 @@ export class Datepicker {
     this.value = initial ? toISO(initial) : null;
     this._outsideClickCleanup = null;
     this._positionCleanup = null;
-    this._originalParent = panelEl.parentNode;
-    this._originalNextSibling = panelEl.nextSibling;
 
     if (!this.panelEl.id) this.panelEl.id = uniqueId("fs-datepicker-panel");
 
-    document.body.appendChild(this.panelEl);
+    this._portal = createPortal(this.panelEl, this.inputEl);
+    this._portal.mount();
 
     // `role="combobox"` é obrigatório aqui: `aria-expanded` não é permitido
     // no role implícito de `<input type="text">` ("textbox"), só em roles
@@ -145,8 +146,8 @@ export class Datepicker {
     this.gridEl.addEventListener("click", this._handleGridClick);
     this.gridEl.addEventListener("keydown", this._handleGridKeydown);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) {
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) {
         this.hide();
         this._refocusInputWithoutReopening();
       }
@@ -192,6 +193,7 @@ export class Datepicker {
   _handleInputChange() {
     const parsed = parseDisplay(this.inputEl.value);
     if (!parsed) return;
+
 
     this.selectedDate = parsed;
     this.viewDate = new Date(parsed);
@@ -351,14 +353,10 @@ export class Datepicker {
   show() {
     if (this.isOpen) return;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.panelEl);
 
-    const themeRoot = this.inputEl.closest("[data-theme], [data-fs-theme]");
-    const theme = themeRoot?.getAttribute("data-theme") ?? themeRoot?.getAttribute("data-fs-theme");
-    if (theme) {
-      this.panelEl.setAttribute("data-theme", theme);
-    } else {
-      this.panelEl.removeAttribute("data-theme");
-    }
+    applyThemeContext(this.panelEl, this.inputEl);
 
     this.panelEl.classList.add("is-open");
 
@@ -379,7 +377,7 @@ export class Datepicker {
     this._render(this.selectedDate ?? new Date());
 
     this._outsideClickCleanup = onClickOutside(this.panelEl, (event) => {
-      if (this.inputEl.contains(event.target)) return;
+      if (!isTopOverlay(this, event) || this.inputEl.contains(event.target)) return;
       this.hide();
     });
 
@@ -389,6 +387,7 @@ export class Datepicker {
   hide() {
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
 
     this.panelEl.classList.remove("is-open");
     this.panelEl.style.removeProperty("position");
@@ -422,9 +421,7 @@ export class Datepicker {
     this.nextBtn.removeEventListener("click", this._handleNext);
     this.gridEl.removeEventListener("click", this._handleGridClick);
     this.gridEl.removeEventListener("keydown", this._handleGridKeydown);
-    if (this._originalParent) {
-      this._originalParent.insertBefore(this.panelEl, this._originalNextSibling);
-    }
+    this._portal.restore();
     instances.delete(this.inputEl);
   }
 }
