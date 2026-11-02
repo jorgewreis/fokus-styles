@@ -85,6 +85,28 @@ describe("Stepper", () => {
     expect(steps[2].classList.contains("fs-step-active")).toBe(true);
   });
 
+  it.each([[-4, 0], [20, 2]])("mantém o clamp para índice inteiro %s", (index, expected) => {
+    const { el, stepper } = buildStepper();
+    stepper.next();
+    const beforechange = vi.fn();
+    const changed = vi.fn();
+    const completed = vi.fn();
+    el.addEventListener("fs:stepper:beforechange", beforechange);
+    el.addEventListener("fs:stepper:changed", changed);
+    el.addEventListener("fs:stepper:completed", completed);
+
+    expect(stepper.goTo(index)).toBe(true);
+    expect(stepper.current).toBe(expected);
+    expect(stepper.finished).toBe(false);
+    expect([...el.querySelectorAll(".fs-step")].findIndex((step) => step.classList.contains("fs-step-active"))).toBe(expected);
+    expect(beforechange).toHaveBeenCalledTimes(1);
+    expect(beforechange.mock.calls[0][0].detail).toEqual({ from: 1, to: expected });
+    expect(changed).toHaveBeenCalledTimes(1);
+    expect(changed.mock.calls[0][0].detail).toEqual({ from: 1, to: expected });
+    expect(completed).not.toHaveBeenCalled();
+    stepper.dispose();
+  });
+
   it("fs:stepper:beforechange cancelável bloqueia a troca", () => {
     const { el } = buildStepper();
     const steps = el.querySelectorAll(".fs-step");
@@ -117,6 +139,42 @@ describe("Stepper", () => {
 
     expect(handler).toHaveBeenCalledTimes(1);
     expect([...el.querySelectorAll(".fs-step")].every((s) => s.classList.contains("fs-step-completed"))).toBe(true);
+  });
+
+  it.each([NaN, Infinity, -Infinity, 0.5, -0.5, "1", null, undefined])(
+    "rejeita índice inválido %s sem eventos nem mudanças no DOM ou estado",
+    (index) => {
+      const { el, stepper } = buildStepper();
+      stepper.goTo(1);
+      const snapshot = el.innerHTML;
+      const handler = vi.fn();
+      for (const event of ["beforechange", "changed", "completed"]) {
+        el.addEventListener(`fs:stepper:${event}`, handler);
+      }
+
+      expect(stepper.goTo(index)).toBe(false);
+      expect(stepper.current).toBe(1);
+      expect(stepper.finished).toBe(false);
+      expect(el.innerHTML).toBe(snapshot);
+      expect(handler).not.toHaveBeenCalled();
+      stepper.dispose();
+    },
+  );
+
+  it("índice inválido após complete não reabre o fluxo; complete repetido mantém o evento existente", () => {
+    const { el, stepper } = buildStepper();
+    const completed = vi.fn();
+    el.addEventListener("fs:stepper:completed", completed);
+    expect(stepper.complete()).toBe(true);
+    expect(stepper.complete()).toBe(true);
+    const snapshot = el.innerHTML;
+
+    expect(stepper.goTo(NaN)).toBe(false);
+    expect(stepper.current).toBe(0);
+    expect(stepper.finished).toBe(true);
+    expect(el.innerHTML).toBe(snapshot);
+    expect(completed).toHaveBeenCalledTimes(2);
+    stepper.dispose();
   });
 
   it("setError() alterna a classe step-error no passo", () => {
