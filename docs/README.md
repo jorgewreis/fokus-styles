@@ -111,3 +111,8 @@ Leia o [guia de contribuição](contributing/contributing.md) antes de alterar
 SCSS, JavaScript, documentação ou snapshots. Uma mudança pública deve manter
 implementação, exemplo, documentação e testes alinhados; `npm run docs:check`
 verifica parte desse contrato automaticamente.
+
+
+## Documentação aprovada do candidato next
+
+A [edição documental de 01/11/2026](next/2026-11-01/README.md) reúne as 56 páginas ampliadas aprovadas, em destino separado. Ela descreve o candidato identificado, não altera o runtime desta branch e não representa uma nova publicação npm ou deploy.

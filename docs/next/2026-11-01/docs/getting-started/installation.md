@@ -1,0 +1,95 @@
+> **Documentação aprovada do candidato `next` (01/11/2026).** Este texto descreve a árvore `f5a5d62`, não o runtime da branch `main` nem uma nova versão npm. [Escopo e índice](../../README.md).
+
+# Instalação
+
+## Requisito Node.js — mudança incompatível em preparação
+
+Este checkout adota **Node.js 24 LTS: `>=24.11.0 <25`** para npm, CLI e
+manutenção. Use o patch de segurança mais recente da linha 24. Node 18/20/22,
+24 anterior a 24.11 e 25/26 não são suportados; novas linhas exigirão validação.
+A mudança substitui a antiga declaração `>=18` e deve integrar uma próxima
+versão major (por exemplo, `3.0.0-beta.1`), não uma atualização silenciosa da
+2.7.0 já publicada. A versão deste checkout ainda não foi publicada.
+
+Antes de atualizar o pacote, atualize Node no desenvolvimento, CI e etapas de
+build da hospedagem. Use `npm ci --engine-strict` em projetos com lockfile para
+validar o requisito; o npm sem essa opção pode emitir apenas um aviso.
+Não use `--force` para contornar incompatibilidades.
+
+**CDN e CSS/JS prontos no navegador continuam sem precisar de Node.js.**
+Não é necessário instalar Node em um servidor que apenas entrega arquivos estáticos.
+
+
+## Via npm
+
+```bash
+npm install fokus-styles
+```
+
+## Via CDN
+
+Sem instalar nada, direto do jsDelivr ou unpkg:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fokus.css">
+<script src="https://cdn.jsdelivr.net/npm/fokus-styles/dist/js/fokus.js"></script>
+```
+
+Troque `fokus.css`/`fokus.js` por `fokus.min.css`/`fokus.min.js` para as
+versões minificadas em produção.
+
+## Fontes self-hosted
+
+Plus Jakarta Sans (sans) e Source Code Pro (mono) são distribuídas à parte,
+em `fonts.css`, para não forçar o download das fontes em quem prefere usar
+as próprias. Inclua **antes** do CSS principal:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fonts.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fokus-styles/dist/css/fokus.css">
+```
+
+Sem `fonts.css`, a tipografia cai no fallback `sans-serif`/`monospace` do
+sistema — nada quebra, só muda a fonte.
+
+## Distribuições disponíveis
+
+O pacote publica o bundle completo (`fokus.css`) e distribuições granulares,
+para quem não precisa do framework inteiro:
+
+| Arquivo | Conteúdo |
+|---|---|
+| `dist/css/fokus.css` | Bundle completo: tokens, reset, layout, forms, components, utilities, tema escuro. |
+| `dist/css/layout.css` | Só grid/containers (+ tokens/reset/tema). |
+| `dist/css/forms.css` | Só formulários (+ tokens/reset/tema). |
+| `dist/css/components.css` | Só componentes prontos (+ tokens/reset/tema). |
+| `dist/css/helpers.css` | Bundle de compatibilidade com os utilitários atômicos históricos. |
+| `dist/css/fokus-helpers.css` | Helpers semânticos isolados, como aspect, object, safe-area e color-scheme. |
+| `dist/css/fonts.css` | Só os `@font-face` self-hosted (opcional, ver acima). |
+| `dist/js/fokus.js` | Todo o JavaScript dos componentes interativos, IIFE global `FokusStyles`. |
+
+Cada distribuição CSS granular já inclui tokens, reset e tema escuro
+completos — pode ser usada isoladamente sem quebrar variáveis ou dark mode.
+
+## Import via Sass
+
+Para compilar com suas próprias variáveis Sass (sobrescrever antes de
+compilar, em vez de sobrescrever CSS Custom Properties depois):
+
+```scss
+@use "fokus-styles/packages/fokus-core/scss/settings" with (
+  $radius-md: 10px
+);
+@use "fokus-styles/scss/fokus";
+```
+
+Compile com `npx sass --load-path=node_modules tema.scss tema.css`.
+Configure settings antes do entry-point; `scss/fokus` não reexporta variáveis.
+
+Ver [`docs/reference/scss-architecture.md`](../reference/scss-architecture.md)
+para a lista completa de variáveis e a organização dos módulos.
+
+## Próximo passo
+
+[Formas de uso](usage.md) — como inicializar componentes interativos e a
+convenção de nomenclatura de classes.

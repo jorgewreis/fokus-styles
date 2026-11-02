@@ -25,7 +25,7 @@ profissionais, e é distribuído publicamente como produto para qualquer
 desenvolvedor que precise construir interfaces consistentes sem carregar
 React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 
-> **Status:** `2.6.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
+> **Status:** `2.7.0`. O Fokus Styles consolida CSS, JavaScript, ícones, React
 > e CLI em um único pacote npm. O foco atual é consolidar o núcleo CSS e os componentes
 > essenciais antes de ampliar o catálogo. O framework já possui componentes
 > avançados, mas eles são tratados como extensões e não definem o caminho
