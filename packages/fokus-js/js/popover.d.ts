@@ -3,7 +3,7 @@ import type { Placement, Align } from "./core/positioning.js";
 export interface PopoverOptions {
   placement?: Placement;
   align?: Align;
-  trigger?: "click" | "hover" | "focus";
+  trigger?: "click" | "hover" | "focus" | "manual";
 }
 
 export class Popover {

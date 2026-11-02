@@ -118,6 +118,56 @@ describe("Datepicker", () => {
     expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/fevereiro.*2026/i);
   });
 
+  it.each([
+    ["Enter", "Enter"],
+    ["Space", " "],
+  ])("does not activate a natively disabled day with %s", (_label, key) => {
+    const { input, panel, datepicker } = buildDatepicker();
+    datepicker.show();
+
+    const day = dayButton(panel, 2026, 6, 10);
+    day.disabled = true;
+    day.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }));
+
+    expect(input.value).toBe("");
+    expect(datepicker.value).toBeNull();
+    expect(datepicker.selectedDate).toBeNull();
+    expect(panel.classList.contains("is-open")).toBe(true);
+  });
+
+  it("still navigates from a disabled day with arrows and PageDown", () => {
+    const { panel, datepicker } = buildDatepicker();
+    datepicker.show();
+
+    const disabledDay = dayButton(panel, 2026, 6, 10);
+    disabledDay.disabled = true;
+    disabledDay.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+
+    expect(document.activeElement).toBe(dayButton(panel, 2026, 6, 11));
+    document.activeElement.dispatchEvent(new KeyboardEvent("keydown", { key: "PageDown", bubbles: true }));
+
+    expect(panel.querySelector(".fs-datepicker-title").textContent).toMatch(/agosto.*2026/i);
+    expect(document.activeElement).toBe(dayButton(panel, 2026, 7, 11));
+  });
+
+  it("does not activate a day disabled by a native fieldset", () => {
+    const { input, panel, datepicker } = buildDatepicker();
+    datepicker.show();
+    const fieldset = document.createElement("fieldset");
+    fieldset.disabled = true;
+    document.body.appendChild(fieldset);
+    fieldset.appendChild(panel);
+    const day = dayButton(panel, 2026, 6, 10);
+
+    expect(day.disabled).toBe(false);
+    expect(day.matches(":disabled")).toBe(true);
+    day.focus();
+    day.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    expect(input.value).toBe("");
+    expect(datepicker.value).toBeNull();
+    expect(panel.classList.contains("is-open")).toBe(true);
+  });
+
   it("marca o dia atual com aria-current=date", () => {
     const { panel, datepicker } = buildDatepicker();
     datepicker.show();

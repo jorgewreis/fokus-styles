@@ -262,6 +262,7 @@ export class Datepicker {
         break;
       case "Enter":
       case " ":
+        if (current.matches(":disabled")) return;
         event.preventDefault();
         this._selectDate(currentDate);
         return;

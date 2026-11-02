@@ -33,3 +33,47 @@ for (const theme of ["light", "dark"]) {
     expect(await page.locator("body").evaluate((body) => body.scrollWidth > body.clientWidth)).toBe(false);
   });
 }
+
+test("focus-trigger Escape does not reopen the popover while restoring focus", async ({ page }) => {
+  await page.goto(`${exampleUrl}?theme=light`);
+  const trigger = page.locator('[data-fs-target="#pop-focus"]');
+  const panel = page.locator("#pop-focus");
+
+  await trigger.focus();
+  await expect(panel).toBeVisible();
+  await panel.locator('[data-fs-dismiss="popover"]').focus();
+  await page.keyboard.press("Escape");
+  await expect(panel).toBeHidden();
+  await expect(trigger).toBeFocused();
+
+  await trigger.evaluate((element) => element.blur());
+  await trigger.focus();
+  await expect(panel).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(panel).toBeHidden();
+
+  await trigger.evaluate((element) => element.blur());
+  await trigger.focus();
+  await expect(panel).toBeVisible();
+});
+
+test("dismiss clears focus suppression if the trigger cannot receive focus", async ({ page }) => {
+  await page.goto(`${exampleUrl}?theme=light`);
+  const trigger = page.locator('[data-fs-target="#pop-focus"]');
+  const panel = page.locator("#pop-focus");
+  const dismiss = panel.locator('[data-fs-dismiss="popover"]');
+
+  await trigger.focus();
+  await dismiss.focus();
+  await trigger.evaluate((element) => {
+    element.disabled = true;
+  });
+  await dismiss.press("Enter");
+  await expect(panel).toBeHidden();
+
+  await trigger.evaluate((element) => {
+    element.disabled = false;
+  });
+  await trigger.focus();
+  await expect(panel).toBeVisible();
+});

@@ -112,21 +112,22 @@ export class Popover {
     if (this.trigger !== "manual") {
       this._removeEscapeListener = onEscapeKey(() => {
         if (!this.isOpen) return;
-        this.hide();
-        this.triggerEl.focus();
+        this._restoreTriggerFocus(true);
       });
     }
   }
 
   _handleDismissClick(event) {
     if (event.target.closest('[data-fs-dismiss="popover"]')) {
-      const restoreFocus = this.popoverEl.contains(document.activeElement);
-      if (restoreFocus && this.trigger === "focus") this._suppressNextFocus = true;
-      this.hide();
-      if (restoreFocus && typeof this.triggerEl.focus === "function") {
-        this.triggerEl.focus();
-      }
+      this._restoreTriggerFocus();
     }
+  }
+
+  _restoreTriggerFocus(restoreFocus = this.popoverEl.contains(document.activeElement)) {
+    this._suppressNextFocus = this.trigger === "focus" && restoreFocus;
+    this.hide();
+    if (restoreFocus) this.triggerEl.focus();
+    this._suppressNextFocus = false;
   }
 
   show() {

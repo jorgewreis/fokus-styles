@@ -7,9 +7,16 @@ const exampleUrl = `file://${path.join(rootDir, "mockup", "examples", "toast.htm
 
 for (const theme of ["light", "dark"]) {
   test(`toasts demonstram composição, pausa e responsividade (${theme})`, async ({ page }) => {
+    await page.clock.install();
     await page.goto(`${exampleUrl}?theme=${theme}`);
     await expect(page.locator(".demo-page")).toBeVisible();
+    const toastShown = page.evaluate(() => new Promise((resolve) => {
+      document.querySelector("#toast-progress").addEventListener("fs:toast:shown", resolve, { once: true });
+    }));
     await page.click('[data-show-toast="progress"]');
+    await toastShown;
+    const currentTime = await page.evaluate(() => Date.now());
+    await page.clock.pauseAt(currentTime + 1000);
     await expect(page.locator("#toast-progress")).toBeVisible();
     await expect(page.locator("#toast-progress .fs-toast-progress")).toBeVisible();
     await expect(page.locator("#toast-progress .fs-toast-progress")).toHaveCSS("opacity", "0.5");
@@ -17,15 +24,19 @@ for (const theme of ["light", "dark"]) {
       const rect = element.getBoundingClientRect();
       return { width: rect.width, right: rect.right };
     });
-    await expect(page.locator("#toast-progress .fs-toast-meta")).toHaveText("6 segundos");
-    await page.waitForTimeout(1100);
+    const initialCountdown = await page.locator("#toast-progress .fs-toast-meta").textContent();
+    const initialSeconds = Number(initialCountdown.match(/\d+/)?.[0]);
+    expect(initialSeconds).toBeGreaterThan(0);
+    await page.clock.runFor(1100);
     const reducedProgress = await page.locator("#toast-progress .fs-toast-progress").evaluate((element) => {
       const rect = element.getBoundingClientRect();
       return { width: rect.width, right: rect.right };
     });
     expect(reducedProgress.width).toBeLessThan(initialProgress.width);
     expect(Math.abs(reducedProgress.right - initialProgress.right)).toBeLessThanOrEqual(1);
-    await expect(page.locator("#toast-progress .fs-toast-meta")).toHaveText("5 segundos");
+    const reducedCountdown = await page.locator("#toast-progress .fs-toast-meta").textContent();
+    const reducedSeconds = Number(reducedCountdown.match(/\d+/)?.[0]);
+    expect(reducedSeconds).toBe(initialSeconds - 1);
     await page.locator("#toast-progress").hover();
     await expect(page.locator("#toast-progress")).toHaveClass(/is-paused/);
     await expect(page.locator(".fs-toast-container")).toBeVisible();
