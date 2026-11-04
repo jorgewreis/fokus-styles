@@ -128,10 +128,10 @@ o CSS e o JS e escrever o HTML:
 <script src="node_modules/fokus-styles/dist/js/fokus.min.js"></script>
 ```
 
-Todo componente interativo compartilha a mesma API (`.show()`, `.hide()`,
-`.toggle()`, `.dispose()`, `getInstance()` e eventos DOM `fs:*`). Os
-conceitos gerais estão em
-[Formas de uso](docs/getting-started/usage.md#api-comum-aos-componentes-interativos).
+Os componentes interativos seguem convenções comuns, mas os métodos e eventos
+DOM disponíveis variam por componente. Consulte a referência específica de
+cada componente para conhecer sua API; as [formas de uso](docs/getting-started/usage.md#api-comum-aos-componentes-interativos)
+explicam os conceitos gerais.
 
 ## Componentes
 
