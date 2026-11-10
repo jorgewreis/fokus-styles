@@ -38,8 +38,8 @@ detalhe, com exemplos completos, consulte a **[documentação completa](docs/REA
 ## Compatibilidade Node
 
 CSS pronto no navegador não requer Node. A instalação npm do pacote agregado
-inclui a CLI e dependências de compilação; o `engines.node >=18` legado não
-comprova compatibilidade de toda essa árvore. Para desenvolver, use Node 22
+inclui a CLI e dependências de compilação e declara
+`^22.11.0 || ^24.11.0 || >=26.0.0`. Para desenvolver, use Node 22
 (atualizado, mínimo 22.13.0) ou 24 (mínimo 24.11.0). Consulte os
 [contratos e a matriz verificada](docs/reference/node-compatibility.md).
 
