@@ -35,6 +35,9 @@ React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 Este README é a **visão geral** do projeto. Para aprender a usar cada recurso em
 detalhe, com exemplos completos, consulte a **[documentação completa](docs/README.md)**.
 
+> Versão 3.0.0 em preparação: este checkout não comprova publicação npm.
+> Consulte o [guia de migração para v3](docs/guides/migration-v3.md).
+
 ## Compatibilidade Node
 
 CSS pronto no navegador não requer Node. A instalação npm do pacote agregado

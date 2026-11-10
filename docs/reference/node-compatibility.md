@@ -21,8 +21,9 @@ privados (CLI, React e ícones mantêm suas declarações locais).
 **Risco contratual:** restringir o metadado `>=18` é uma mudança visível para
 consumidores e pode ser considerada quebra de contrato na próxima publicação,
 ainda que a instalação agregada estrita já falhasse nessas versões. Esta mudança
-não publica uma versão npm. Sua política de versionamento deve ser revisada
-antes da release. Não usar o requisito da CLI como requisito do CSS no navegador.
+não publica uma versão npm. A preparação da versão 3.0.0 trata essa restrição como quebra de contrato;
+consulte o [guia de migração](../guides/migration-v3.md). Merge, tag e
+publicação ainda dependem de decisão separada. Não usar o requisito da CLI como requisito do CSS no navegador.
 
 ## Interseção dos requisitos declarados
 
@@ -69,9 +70,9 @@ compilação SCSS, importação JS, CLI `--help` e tipos. React teve somente cam
 de declarações conferido, **não** peer/runtime instalado e testado.
 
 Esta evidência pertence ao commit acima, não a futuros commits nem ao pacote
-atualmente publicado no registry. A matriz do PR #49 não está no main e sua
-aprovação/merge é uma decisão separada. Esta correção não copia nem modifica
-seu workflow ou a publicação. Node 22.11.0 (piso apenas de produção), Node 26+
+atualmente publicado no registry. O PR #49 foi integrado na main em 10/11/2026. A matriz está em
+`.github/workflows/minimum-node-investigation.yml` e roda nos PRs; publicação
+continua sendo uma decisão separada. Node 22.11.0 (piso apenas de produção), Node 26+
 e outras plataformas não foram homologados por essa execução histórica.
 
 ## Validação adicional desta correção
@@ -104,6 +105,34 @@ histórica acima não substitui a validação do commit final.
 Node 26.0.0 foi testado especificamente; `>=26` não significa homologação de
 todas as versões futuras. React runtime/peer e sistemas diferentes de Linux
 não foram testados nesse smoke.
+
+## Candidato 3.0.0, preparação de 10/11/2026
+
+A preparação parte da main `5a9aa82bd8f915b99abb283f6b159e6255ea3d3c`.
+Não muda a resolução de dependências nem o código de runtime. Atualiza versão,
+migração e registros documentais; não cria tag e não publica.
+
+No lockfile deste candidato foram reavaliadas 77 declarações Node no conjunto
+de produção (incluindo raiz) e 275 no conjunto completo. As faixas de produção
+e desenvolvimento acima são subconjuntos de todas as declarações respectivas.
+
+Em checkouts isolados, Node 22.13.0, 24.11.0 e 26.0.0, com npm 11.9.0,
+passaram `npm ci --engine-strict`, lint, build, 509 testes unitários, tipos,
+documentação, contraste e os sete budgets. As contagens anteriores deste
+documento são históricas e não descrevem o candidato atual.
+
+Um único tarball 3.0.0 foi instalado com `--engine-strict --ignore-scripts`
+em consumidores isolados com Node 22.11.0, 24.11.0 e 26.0.0. Nos três,
+passaram leitura de CSS, imports JS, compilação Sass, fixture TypeScript e
+CLI help/version/build-minify/theme/analyze. CLI informou 3.0.0. A resolução
+nova foi Sass 1.108.1, cssnano 8.0.10, PostCSS 8.5.32 e Autoprefixer 10.6.2.
+React teve somente declaração de tipos conferida, não instalação do peer nem
+teste de runtime. Não houve homologação de outras plataformas ou Node futuro.
+
+SHA-256 do tarball local testado:
+`43880e0701345df60826b384e9c0b9677dfe7aaafcb7a3d28e6c9a025b47fa22`.
+Esse hash identifica o artefato local, não um pacote publicado nem um futuro
+rebuild. A publicação posterior precisa validar seu próprio artefato.
 
 ## Ambiente e validação contínua
 

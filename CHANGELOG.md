@@ -1,11 +1,60 @@
 # Changelog
 
-## Unreleased
+## [Unreleased]
+
+## [3.0.0] - Em preparação, não publicada
+
+### Breaking
+
+- Alinha engines do pacote agregado a `^22.11.0 || ^24.11.0 || >=26.0.0`.
+  Node 18/20 e as demais versões fora dessas faixas deixam de ser admitidos
+  pelo manifesto. CSS pronto no navegador continua sem requisito Node.
+- Desenvolvimento exige `^22.13.0 || ^24.11.0 || >=26.0.0`; consulte o
+  [guia de migração](docs/guides/migration-v3.md).
+
+### Changed
+
+- Integra correções de componentes, dependências compatíveis e hardening da
+  publicação. Mantém cssnano 8; não adota cssnano 9.
+
+
+- arredonda badges e badges split com `--fs-radius-sm`, preservando os tokens
+  locais de personalização;
+- adiciona tokens de densidade, contagem circular opcional e cobertura visual
+  dedicada para badges nos temas claro e escuro;
+- refina Tags com tokens de ícones, ícone final, fechamento arredondado,
+  foco após remoção e laboratório visual de estados;
+- refina o Carousel com tokens locais, controles compactos, indicadores em
+  pill, legendas opt-in, arraste aprimorado e autoplay pausável/retomável;
+- consolida tokens públicos de foco, transição, densidade, alturas e padding dos controles;
+- adiciona suporte CSS global a `prefers-reduced-motion`;
+- reorganiza o índice da documentação e adiciona `npm run docs:check` ao fluxo local e ao CI;
+- atualiza a baseline de tamanho e os snapshots visuais afetados pelo refinamento dos componentes.
+- define fundos semânticos explícitos para superfícies, controles, navegação,
+  accordions, calendários, dropdowns e ordenação de tabelas.
+- consolida os mockups em seis laboratórios documentados, com âncoras estáveis,
+  preview funcional, código sincronizado, temas e cobertura de regressão visual;
+  preserva as fontes executáveis em `mockup/examples/` para testes de interação
+  e acessibilidade.
+
+- atualiza as baselines visuais Linux dos mockups após o refinamento dos componentes;
+- consolidates visual tokens for spacing, control heights, overlay layers and
+  contrast-aware content colors;
+- refines focus-visible states, responsive form controls and overlay widths;
+- improves dropdown, tooltip, popover and datepicker positioning on resize and
+  scroll, while restoring DOM/style state on disposal;
+- strengthens modal/offcanvas/accordion/tabs semantics and adds manual tab
+  activation;
+- adds typed DataTable sorting and busy-state feedback;
+- hardens date parsing, transition fallback and scroll-lock restoration.
+
+### Fixed
 
 - Eleva o teto gzip do runtime JavaScript para 27.008 bytes para acomodar
   hardening de portal, overlays e foco, com regressões unitárias e browser.
-  Medição real: 26.022 bytes, com margem de 986 bytes; ajuste aprovado pelo
-  mantenedor em 02/11/2026.
+  Medição do candidato 3.0.0 em 10/11/2026: 26.192 bytes, com margem de
+  816 bytes; teto aprovado pelo mantenedor em 02/11/2026. CSS agregado:
+  43.548 bytes gzip, abaixo do teto de 44.032 bytes.
 - Ignora índices fracionários ou não numéricos no Carousel e Stepper sem
   alterar estado, DOM ou eventos; índices inteiros continuam usando o wrap e
   o clamp existentes.
@@ -83,43 +132,10 @@
 - adiciona `Spinner`, `Pagination` dinâmica e fallback de Scrollspy sem `IntersectionObserver`;
 - adiciona suporte a `inert`/`aria-hidden` no focus trap e estilos do spinner com redução de movimento.
 
-## Unreleased
-
-- arredonda badges e badges split com `--fs-radius-sm`, preservando os tokens
-  locais de personalização;
-- adiciona tokens de densidade, contagem circular opcional e cobertura visual
-  dedicada para badges nos temas claro e escuro;
-- refina Tags com tokens de ícones, ícone final, fechamento arredondado,
-  foco após remoção e laboratório visual de estados;
-- refina o Carousel com tokens locais, controles compactos, indicadores em
-  pill, legendas opt-in, arraste aprimorado e autoplay pausável/retomável;
-- consolida tokens públicos de foco, transição, densidade, alturas e padding dos controles;
-- adiciona suporte CSS global a `prefers-reduced-motion`;
-- reorganiza o índice da documentação e adiciona `npm run docs:check` ao fluxo local e ao CI;
-- atualiza a baseline de tamanho e os snapshots visuais afetados pelo refinamento dos componentes.
-- define fundos semânticos explícitos para superfícies, controles, navegação,
-  accordions, calendários, dropdowns e ordenação de tabelas.
-- consolida os mockups em seis laboratórios documentados, com âncoras estáveis,
-  preview funcional, código sincronizado, temas e cobertura de regressão visual;
-  preserva as fontes executáveis em `mockup/examples/` para testes de interação
-  e acessibilidade.
-
-- atualiza as baselines visuais Linux dos mockups após o refinamento dos componentes;\n- consolidates visual tokens for spacing, control heights, overlay layers and
-  contrast-aware content colors;
-- refines focus-visible states, responsive form controls and overlay widths;
-- improves dropdown, tooltip, popover and datepicker positioning on resize and
-  scroll, while restoring DOM/style state on disposal;
-- strengthens modal/offcanvas/accordion/tabs semantics and adds manual tab
-  activation;
-- adds typed DataTable sorting and busy-state feedback;
-- hardens date parsing, transition fallback and scroll-lock restoration.
-
 Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
-
-## [Unreleased]
 
 ## [1.0.0] - 2026-07-08
 
@@ -973,7 +989,7 @@ e este projeto adere a [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `scss/utilities/_typography.scss`.
 - Estado `:read-only` em `.form-control`.
 
-[Unreleased]: https://github.com/jorgewreis/clarus-css/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/jorgewreis/fokus-styles/compare/v2.7.0...HEAD
 [0.3.0]: https://github.com/jorgewreis/clarus-css/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jorgewreis/clarus-css/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/jorgewreis/clarus-css/compare/v0.1.1...v0.1.2
