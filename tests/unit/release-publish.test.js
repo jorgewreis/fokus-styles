@@ -51,6 +51,13 @@ function noMatch() {
   };
 }
 
+function jsonNoMatch(overrides = {}) {
+  return { ...noMatch(), stdout: JSON.stringify({ error: {
+    code: 'E404', summary: `No match found for version ${version}`,
+    detail: `'${packageName}@${version}' is not in this registry.`, ...overrides,
+  } }) };
+}
+
 function existingMetadata(overrides = {}) {
   return {
     status: 0,
@@ -113,6 +120,55 @@ describe('release publish gate (offline process boundary)', () => {
     expect(calls[2]).toContain('--ignore-scripts');
     expect(calls[2][1]).toMatch(/fokus-styles-2\.8\.0\.tgz$/);
     expect(calls[2]).toContain('--provenance');
+  });
+
+
+  it('replays captured Node22.23.4/npm10.9.9 output without calling real npm publish', async () => {
+    const capture = JSON.parse(await readFile(path.join(process.cwd(), 'tests/fixtures/release/npm10-exact-version-e404.json'), 'utf8'));
+    const view = { ...capture.result,
+      stdout: capture.result.stdout.replaceAll(capture.version, version),
+      stderr: capture.result.stderr.replaceAll(capture.version, version),
+    };
+    const { action, calls } = await executeWith({ view });
+    expect((await action).published).toBe(true);
+    expect(calls.filter((args) => args[0] === 'publish')).toHaveLength(1);
+  });
+
+  it.each([
+    ['npm 10', `'${packageName}@${version}' is not in this registry.`],
+    ['npm 11', `The requested resource '${packageName}@${version}' could not be found or you do not have permission to access it.`],
+  ])('accepts matching JSON and stderr from %s only for the exact version', async (_label, detail) => {
+    const { action, calls } = await executeWith({ view: jsonNoMatch({ detail }) });
+    expect((await action).published).toBe(true);
+    expect(calls.filter((args) => args[0] === 'publish')).toHaveLength(1);
+  });
+
+  it.each([
+    ['malformed stdout', { ...noMatch(), stdout: '{bad' }],
+    ['array stdout', { ...noMatch(), stdout: '[]' }],
+    ['null stdout JSON', { ...noMatch(), stdout: 'null' }],
+    ['unexpected envelope', { ...jsonNoMatch(), stdout: JSON.stringify({ error: JSON.parse(jsonNoMatch().stdout).error, extra: true }) }],
+    ['unexpected error fields', jsonNoMatch({ extra: true })],
+    ['JSON 401', jsonNoMatch({ code: 'E401' })],
+    ['JSON 403', jsonNoMatch({ code: 'E403' })],
+    ['JSON DNS', jsonNoMatch({ code: 'ENOTFOUND' })],
+    ['JSON timeout', jsonNoMatch({ code: 'ETIMEDOUT' })],
+    ['other version', jsonNoMatch({ summary: 'No match found for version 2.8.1' })],
+    ['other package', jsonNoMatch({ detail: `'other-package@${version}' is not in this registry.` })],
+    ['package substring', jsonNoMatch({ detail: `'not-${packageName}@${version}' is not in this registry.` })],
+    ['ambiguous 404', jsonNoMatch({ summary: `Not Found ${packageName}` })],
+    ['permission denial detail', jsonNoMatch({ detail: `Permission denied for '${packageName}@${version}'` })],
+    ['ambiguous detail', jsonNoMatch({ detail: `Not Found '${packageName}@${version}'` })],
+    ['missing stderr', { ...jsonNoMatch(), stderr: '' }],
+    ['conflicting stderr', { ...jsonNoMatch(), stderr: noMatch().stderr + '\nnpm error code E401' }],
+    ['other stderr version', { ...jsonNoMatch(), stderr: noMatch().stderr.replaceAll(version, '2.8.1') }],
+    ['exit two', { ...jsonNoMatch(), status: 2 }],
+    ['process error', { ...jsonNoMatch(), error: 'ETIMEDOUT' }],
+    ['signal exit', { ...jsonNoMatch(), status: null }],
+  ])('rejects %s despite an E404 claim, without invoking publish', async (_label, view) => {
+    const { action, calls } = await executeWith({ view });
+    await expect(action).rejects.toThrow(/npm view failed closed/);
+    expect(calls.some((args) => args[0] === 'publish')).toBe(false);
   });
 
   it.each([

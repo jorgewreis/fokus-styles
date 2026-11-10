@@ -49,12 +49,29 @@ function requireSuccess(result, action) {
 }
 
 function isExactMissingVersion(result, name, version) {
-  if (result.error || result.status !== 1 || result.stdout.trim()) return false;
+  if (result.error || result.status !== 1 || typeof result.stdout !== 'string' || typeof result.stderr !== 'string') return false;
   const output = result.stderr;
-  const codeLine = /^npm (?:error|ERR!) code E404$/im.test(output);
+  const codes = [...output.matchAll(/^npm (?:error|ERR!) code (\S+)$/gim)].map((match) => match[1]);
   const missingVersionLine = new RegExp(`^npm (?:error|ERR!) 404 No match found for version ${escapeRegExp(version)}$`, 'im').test(output);
-  const exactPackageId = output.includes(`${name}@${version}`);
-  return codeLine && missingVersionLine && exactPackageId;
+  const exactPackageId = `'${name}@${version}'`;
+  if (codes.length !== 1 || codes[0] !== 'E404' || !missingVersionLine || !output.includes(exactPackageId)) return false;
+
+  // npm --json emits errors on stdout in npm 10/11. Both channels must
+  // independently identify this exact missing version, never a generic 404.
+  if (!result.stdout.trim()) return true; // Legacy stderr-only npm output.
+  let body;
+  try { body = JSON.parse(result.stdout); } catch { return false; }
+  if (!body || Array.isArray(body) || typeof body !== 'object' || Object.keys(body).length !== 1) return false;
+  const error = body.error;
+  if (!error || Array.isArray(error) || typeof error !== 'object') return false;
+  if (Object.keys(error).some((key) => !['code', 'summary', 'detail'].includes(key))) return false;
+  return error.code === 'E404'
+    && error.summary === `No match found for version ${version}`
+    && typeof error.detail === 'string'
+    && [
+      `${exactPackageId} is not in this registry.`,
+      `The requested resource ${exactPackageId} could not be found or you do not have permission to access it.`,
+    ].includes(error.detail.split('\n')[0]);
 }
 
 function escapeRegExp(value) {
