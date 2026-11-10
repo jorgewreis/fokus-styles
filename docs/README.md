@@ -49,6 +49,7 @@ os testes da versão consultada no GitHub definem o comportamento efetivo.
 - [Forms & Controls](guides/forms-controls.md)
 - [Matriz de utilitários](reference/utility-matrix.md)
 - [Suporte a navegadores](reference/browser-support.md)
+- [Compatibilidade Node e toolchain](reference/node-compatibility.md)
 - [Migração para v1](guides/migration-v1.md)
 - [Migração de outro framework](guides/migration-external.md)
 
@@ -90,6 +91,7 @@ limitações. Os exemplos funcionais ficam nos [laboratórios de
 - [Design tokens](reference/design-tokens.md)
 - [Arquitetura SCSS](reference/scss-architecture.md)
 - [Suporte a navegadores](reference/browser-support.md)
+- [Compatibilidade Node e toolchain](reference/node-compatibility.md)
 - [Matriz de acessibilidade](reference/accessibility-matrix.md)
 - [Auditoria de qualidade dos componentes](reference/component-quality-audit.md)
 - [Relatório de contraste](reference/contrast-report.md)
