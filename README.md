@@ -35,6 +35,14 @@ React, Vue, Angular, jQuery ou qualquer outra dependência de runtime.
 Este README é a **visão geral** do projeto. Para aprender a usar cada recurso em
 detalhe, com exemplos completos, consulte a **[documentação completa](docs/README.md)**.
 
+## Compatibilidade Node
+
+CSS pronto no navegador não requer Node. A instalação npm do pacote agregado
+inclui a CLI e dependências de compilação e declara
+`^22.11.0 || ^24.11.0 || >=26.0.0`. Para desenvolver, use Node 22
+(atualizado, mínimo 22.13.0) ou 24 (mínimo 24.11.0). Consulte os
+[contratos e a matriz verificada](docs/reference/node-compatibility.md).
+
 ## Ecossistema Fokus Cloud
 
 O Fokus Styles é o sistema visual que integra o ecossistema Fokus Cloud. Use
@@ -128,10 +136,10 @@ o CSS e o JS e escrever o HTML:
 <script src="node_modules/fokus-styles/dist/js/fokus.min.js"></script>
 ```
 
-Todo componente interativo compartilha a mesma API (`.show()`, `.hide()`,
-`.toggle()`, `.dispose()`, `getInstance()` e eventos DOM `fs:*`). Os
-conceitos gerais estão em
-[Formas de uso](docs/getting-started/usage.md#api-comum-aos-componentes-interativos).
+Os componentes interativos seguem convenções comuns, mas os métodos e eventos
+DOM disponíveis variam por componente. Consulte a referência específica de
+cada componente para conhecer sua API; as [formas de uso](docs/getting-started/usage.md#api-comum-aos-componentes-interativos)
+explicam os conceitos gerais.
 
 ## Componentes
 

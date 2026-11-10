@@ -33,8 +33,11 @@ jobs:
             exit 1
           fi
 
+      - name: Record toolchain versions
+        run: node --version && npm --version
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --engine-strict
 
       - name: Lint
         run: npm run lint
@@ -69,14 +72,7 @@ jobs:
       # O repositório publica exclusivamente o pacote agregado fokus-styles.
       # Cada publish é idempotente, para permitir reruns seguros do workflow.
       - name: Publish fokus-styles
-        run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
-            echo "$NAME@$VERSION ja publicado -- pulando."
-          else
-            npm publish --provenance --access public
-          fi
+        run: node scripts/publish-package-cli.mjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
