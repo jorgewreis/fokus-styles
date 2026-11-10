@@ -21,8 +21,11 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Record toolchain versions
+        run: node --version && npm --version
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --engine-strict
 
       - name: Lint
         run: npm run lint
