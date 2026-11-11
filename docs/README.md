@@ -50,6 +50,7 @@ os testes da versão consultada no GitHub definem o comportamento efetivo.
 - [Matriz de utilitários](reference/utility-matrix.md)
 - [Suporte a navegadores](reference/browser-support.md)
 - [Compatibilidade Node e toolchain](reference/node-compatibility.md)
+- [Migração para v3 (em preparação)](guides/migration-v3.md)
 - [Migração para v1](guides/migration-v1.md)
 - [Migração de outro framework](guides/migration-external.md)
 
