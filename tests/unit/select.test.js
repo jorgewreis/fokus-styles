@@ -15,6 +15,7 @@ function buildSelect() {
 
 describe("Select", () => {
   afterEach(() => {
+    vi.useRealTimers();
     document.body.innerHTML = "";
   });
 
@@ -101,5 +102,74 @@ describe("Select", () => {
 
     expect(select.style.display).toBe("");
     expect(document.querySelector(".fs-form-select")).toBeNull();
+  });
+
+  it("sincroniza reset nativo sem emitir eventos extras, inclusive com form externo", () => {
+    vi.useFakeTimers();
+    const form = document.createElement("form");
+    form.id = "select-form";
+    document.body.appendChild(form);
+    const { select, instance } = buildSelect();
+    select.setAttribute("form", form.id);
+    instance.dispose();
+    const associated = new Select(select);
+    const change = vi.fn();
+    const changed = vi.fn();
+    select.addEventListener("change", change);
+    select.addEventListener("fs:select:changed", changed);
+    associated.menuEl.querySelectorAll(".fs-dropdown-item")[1].click();
+    change.mockClear();
+    changed.mockClear();
+
+    form.reset();
+    vi.runAllTimers();
+    expect(select.value).toBe("São Paulo");
+    expect(associated.toggleEl.textContent).toBe("São Paulo");
+    expect(associated.menuEl.querySelectorAll(".fs-dropdown-item")[0].getAttribute("aria-selected")).toBe("true");
+    expect(change).not.toHaveBeenCalled();
+    expect(changed).not.toHaveBeenCalled();
+    associated.dispose();
+  });
+
+  it("respeita reset cancelado e sincroniza reset anterior concluído no mesmo ciclo", () => {
+    vi.useFakeTimers();
+    const form = document.createElement("form");
+    document.body.appendChild(form);
+    const { select, instance } = buildSelect();
+    instance.dispose();
+    form.appendChild(select);
+    const associated = new Select(select);
+    associated.menuEl.querySelectorAll(".fs-dropdown-item")[1].click();
+    const cancel = (event) => event.preventDefault();
+    form.addEventListener("reset", cancel);
+    form.reset();
+    vi.runAllTimers();
+    expect(select.value).toBe("Rio de Janeiro");
+    expect(associated.toggleEl.textContent).toBe("Rio de Janeiro");
+    form.removeEventListener("reset", cancel);
+    form.reset();
+    form.addEventListener("reset", cancel);
+    form.reset();
+    vi.runAllTimers();
+    expect(select.value).toBe("São Paulo");
+    expect(associated.toggleEl.textContent).toBe("São Paulo");
+    associated.dispose();
+  });
+
+  it("limpa o reset pendente e o listener ao descartar a instância", () => {
+    vi.useFakeTimers();
+    const form = document.createElement("form");
+    document.body.appendChild(form);
+    const { select, instance } = buildSelect();
+    instance.dispose();
+    form.appendChild(select);
+    const associated = new Select(select);
+    const sync = vi.spyOn(associated, "_syncFromNativeSelect");
+    form.reset();
+    associated.dispose();
+    vi.runAllTimers();
+    form.reset();
+    vi.runAllTimers();
+    expect(sync).not.toHaveBeenCalled();
   });
 });
