@@ -1,6 +1,11 @@
 import { Modal } from "./modal.js";
 
 let idCounter = 0;
+const confirmVariants = new Set(["primary", "secondary", "success", "warning", "danger", "info"]);
+
+function normalizeVariant(value) {
+  return confirmVariants.has(value) ? value : "danger";
+}
 
 function escapeHtml(value) {
   const div = document.createElement("div");
@@ -15,6 +20,7 @@ function escapeHtml(value) {
 // (cancelado ou fechado por Escape/clique fora).
 export function confirm(options = {}) {
   const { title = "Tem certeza?", message = "", confirmText = "Confirmar", cancelText = "Cancelar", variant = "danger" } = options;
+  const safeVariant = normalizeVariant(variant);
 
   return new Promise((resolve) => {
     idCounter += 1;
@@ -33,7 +39,7 @@ export function confirm(options = {}) {
           </div>
           <div class="fs-modal-footer">
             <button type="button" class="fs-btn" data-action="cancel">${escapeHtml(cancelText)}</button>
-            <button type="button" class="fs-btn fs-btn-${variant}" data-action="confirm">${escapeHtml(confirmText)}</button>
+            <button type="button" class="fs-btn fs-btn-${safeVariant}" data-action="confirm">${escapeHtml(confirmText)}</button>
           </div>
         </div>
       </div>

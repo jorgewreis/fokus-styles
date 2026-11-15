@@ -8,6 +8,11 @@ import { autoInit, createInstanceRegistry } from "./core/register.js";
 const instances = createInstanceRegistry();
 
 let idCounter = 0;
+const notificationVariants = new Set(["primary", "secondary", "success", "warning", "danger", "info"]);
+
+function normalizeVariant(value) {
+  return notificationVariants.has(value) ? value : "primary";
+}
 
 function escapeHtml(value) {
   const div = document.createElement("div");
@@ -50,12 +55,14 @@ export class NotificationCenter {
     this.history = this._load();
 
     this.badgeEl = triggerEl.querySelector(".fs-notification-badge");
+    this.triggerLabel = triggerEl.getAttribute("aria-label") || "Notificações";
     this.listEl = panelEl.querySelector(".fs-notification-list");
     this.emptyEl = panelEl.querySelector(".fs-notification-empty");
 
     document.body.appendChild(this.panelEl);
 
-    triggerEl.setAttribute("aria-haspopup", "dialog");
+    // O painel não move nem retém foco, portanto é uma região expansível, não um diálogo.
+    triggerEl.removeAttribute("aria-haspopup");
     triggerEl.setAttribute("aria-expanded", "false");
     if (panelEl.id) triggerEl.setAttribute("aria-controls", panelEl.id);
     if (!panelEl.getAttribute("role")) panelEl.setAttribute("role", "region");
@@ -95,7 +102,10 @@ export class NotificationCenter {
   _load() {
     if (this.storage !== "local") return [];
     try {
-      return JSON.parse(localStorage.getItem(this.storageKey)) || [];
+      const stored = JSON.parse(localStorage.getItem(this.storageKey));
+      if (!Array.isArray(stored)) return [];
+
+      return stored.map((record) => ({ ...record, variant: normalizeVariant(record?.variant) }));
     } catch {
       return [];
     }
@@ -117,14 +127,15 @@ export class NotificationCenter {
   // Empilha um toast e registra a notificação. Retorna o id do registro.
   push(options = {}) {
     const { title = "", body = "", variant = "primary", autohide = true, delay } = options;
+    const safeVariant = normalizeVariant(variant);
 
     idCounter += 1;
-    const record = { id: `n-${idCounter}`, title, body, variant, time: Date.now(), read: this.isOpen };
+    const record = { id: `n-${idCounter}`, title, body, variant: safeVariant, time: Date.now(), read: this.isOpen };
     this.history.unshift(record);
     this._persist();
     this._render();
 
-    this._showToast({ title, body, variant, autohide, delay });
+    this._showToast({ title, body, variant: safeVariant, autohide, delay });
 
     this.triggerEl.dispatchEvent(new CustomEvent("fs:notification:pushed", { bubbles: true, detail: { record } }));
     return record.id;
@@ -170,10 +181,13 @@ export class NotificationCenter {
   }
 
   _updateBadge() {
-    if (!this.badgeEl) return;
     const count = this.unreadCount;
-    this.badgeEl.textContent = String(count);
-    this.badgeEl.toggleAttribute("hidden", count === 0);
+    const unreadLabel = count === 1 ? "1 notificação não lida" : `${count} notificações não lidas`;
+    this.triggerEl.setAttribute("aria-label", count ? `${this.triggerLabel}: ${unreadLabel}` : this.triggerLabel);
+    if (this.badgeEl) {
+      this.badgeEl.textContent = String(count);
+      this.badgeEl.toggleAttribute("hidden", count === 0);
+    }
   }
 
   _render() {
@@ -181,7 +195,7 @@ export class NotificationCenter {
       this.listEl.innerHTML = this.history
         .map(
           (record) => `
-        <li class="fs-notification-item fs-notification-item-${record.variant}${record.read ? "" : " fs-notification-item-unread"}" data-id="${record.id}">
+        <li class="fs-notification-item fs-notification-item-${normalizeVariant(record.variant)}${record.read ? "" : " fs-notification-item-unread"}" data-id="${escapeHtml(record.id)}">
           <div class="fs-notification-item-content">
             <p class="fs-notification-item-title">${escapeHtml(record.title)}</p>
             ${record.body ? `<p class="fs-notification-item-text">${escapeHtml(record.body)}</p>` : ""}

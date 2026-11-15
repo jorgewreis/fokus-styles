@@ -84,4 +84,12 @@ describe("confirm()", () => {
     expect(modalEl.querySelector(".fs-modal-title").innerHTML).not.toContain("<img");
     expect(modalEl.querySelector(".fs-alert-dialog-message").innerHTML).not.toContain("<b>");
   });
+
+  it("normaliza uma variante inválida antes de inseri-la no markup", () => {
+    confirm({ variant: 'danger\" onclick="alert(1)' });
+
+    const confirmButton = document.querySelector('[data-action="confirm"]');
+    expect(confirmButton.className).toContain("fs-btn-danger");
+    expect(confirmButton.getAttribute("onclick")).toBeNull();
+  });
 });
