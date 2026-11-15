@@ -23,7 +23,7 @@ export class Modal {
 
     modalEl.setAttribute("role", "dialog");
     modalEl.setAttribute("aria-modal", "true");
-    modalEl.setAttribute("aria-hidden", "true");
+    if (!modalEl.classList.contains("is-open")) modalEl.setAttribute("aria-hidden", "true");
     const titleEl = modalEl.querySelector(".fs-modal-title");
     if (titleEl) {
       if (!titleEl.id) titleEl.id = `fs-modal-title-${Math.random().toString(36).slice(2)}`;

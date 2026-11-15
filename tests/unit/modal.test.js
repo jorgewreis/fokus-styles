@@ -59,6 +59,19 @@ describe("Modal", () => {
     expect(document.activeElement.textContent).toBe("x");
   });
 
+  it("mantém o modal aberto acessível ao inicializar outro trigger para o mesmo alvo", () => {
+    const { modalEl, modal } = buildModal();
+    const secondTrigger = document.createElement("button");
+    secondTrigger.setAttribute("data-fs-target", "#myModal");
+    document.body.appendChild(secondTrigger);
+
+    modal.show();
+    created.push(new Modal(secondTrigger));
+
+    expect(modalEl.classList.contains("is-open")).toBe(true);
+    expect(modalEl.getAttribute("aria-hidden")).toBe("false");
+  });
+
   it("Escape fecha o modal, libera o scroll e devolve o foco ao trigger", () => {
     const { trigger, modalEl, modal } = buildModal();
     modal.show();

@@ -94,6 +94,41 @@ describe("FileDrop", () => {
     expect(changeHandler).not.toHaveBeenCalled();
   });
 
+  it("input em fieldset desabilitado ignora o drop e limpa o estado visual", () => {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = `
+      <fieldset disabled>
+        <input type="file" id="arquivo-em-fieldset">
+        <label for="arquivo-em-fieldset" class="fs-file-label fs-file-label-dropzone">Arraste um arquivo</label>
+      </fieldset>
+    `;
+    document.body.appendChild(wrapper);
+
+    const input = wrapper.querySelector("input");
+    const label = wrapper.querySelector("label");
+    const initialFiles = input.files;
+    Object.defineProperty(input, "files", {
+      get: () => initialFiles,
+      set: () => {
+        throw new Error("um campo desabilitado não deve receber arquivos");
+      },
+      configurable: true,
+    });
+    const changeHandler = vi.fn();
+    input.addEventListener("change", changeHandler);
+    const fileDrop = new FileDrop(label);
+
+    label.classList.add("is-dragover");
+    label.dispatchEvent(dropEventWithFiles([{ name: "foto.png" }]));
+
+    expect(input.disabled).toBe(false);
+    expect(input.matches(":disabled")).toBe(true);
+    expect(input.files).toBe(initialFiles);
+    expect(changeHandler).not.toHaveBeenCalled();
+    expect(label.classList.contains("is-dragover")).toBe(false);
+    fileDrop.dispose();
+  });
+
   it("dispose() remove os listeners de drag-and-drop", () => {
     const { input, label, fileDrop } = buildFileDrop();
     fileDrop.dispose();
