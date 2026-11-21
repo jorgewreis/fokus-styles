@@ -60,6 +60,29 @@ opcionais do mesmo pacote. Eles devem
 seguir documentação, versionamento e testes próprios, sem tornar o pacote
 principal dependente de React, Sass, CLI ou bibliotecas de ícones.
 
+## Validação cross-browser e snapshots
+
+O gate do Playwright cobre os motores declarados para os cenários interativos e
+de acessibilidade de maior risco:
+
+- `tests/a11y/**/*.spec.mjs` e
+  `tests/visual/interactions.spec.mjs` executam em Chromium, Firefox e WebKit;
+- os demais testes visuais, incluindo `tests/visual/mockups.spec.mjs`, executam
+  somente em Chromium.
+
+As comparações por screenshot e seus baselines permanecem exclusivamente em
+Chromium. A política evita comparar pixels renderizados por motores diferentes;
+Firefox e WebKit continuam cobertos por interações e acessibilidade, sem
+baselines próprios neste gate. Não há exceções de navegador ativas. Uma futura
+exceção deve registrar em issue o teste e motor afetados, a justificativa, o
+responsável e a condição ou data de revisão; ela não deve ser introduzida apenas
+alterando o filtro do Playwright.
+
+Os projetos Playwright nomeiam o motor no relatório e gravam screenshots e
+traces de falhas em diretórios separados por motor em `test-results/`. Quando
+um job falha, o CI preserva esse diretório e o relatório HTML como artifact por
+sete dias.
+
 ## Roadmap de consolidação
 
 1. Corrigir e uniformizar a documentação pública e os exemplos.
