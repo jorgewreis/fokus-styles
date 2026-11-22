@@ -101,7 +101,7 @@ describe("Fokus Styles evolution API", () => {
   });
 
   it("ativa links do Scrollspy", () => {
-    document.body.innerHTML = '<nav data-fs-scrollspy><a href="#one">Um</a><a href="#two">Dois</a></nav><section id="one"></section><section id="two"></section>';
+    document.body.innerHTML = '<nav data-fs="scrollspy"><a href="#one">Um</a><a href="#two">Dois</a></nav><section id="one"></section><section id="two"></section>';
     const nav = document.querySelector("nav");
     const instance = new Scrollspy(nav);
     instance.activate(document.querySelector("#two"));

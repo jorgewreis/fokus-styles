@@ -3,26 +3,51 @@ name: Update visual baselines
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: update-visual-baselines-main
+  cancel-in-progress: false
+
 jobs:
+  validate_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require dispatch from main
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+        run: |
+          if [ "$DISPATCH_REF" != "refs/heads/main" ]; then
+            echo "Run this workflow from main; received $DISPATCH_REF" >&2
+            exit 1
+          fi
+
   update:
+    needs: validate_dispatch
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+    outputs:
+      has_changes: ${{ steps.changes.outputs.has_changes }}
+      base_sha: ${{ steps.base.outputs.sha }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Checkout main
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
-          ref: ${{ github.ref_name }}
+          ref: main
+          persist-credentials: false
+
+      - name: Record baseline source commit
+        id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version: 22
           cache: npm
-
-      - name: Record toolchain versions
-        run: node --version && npm --version
 
       - name: Install dependencies
         run: npm ci --engine-strict
@@ -36,11 +61,100 @@ jobs:
       - name: Update snapshots
         run: npm run test:visual:update
 
-      - name: Commit updated baselines
+      - name: Verify updated snapshots
+        run: npm run test:visual
+
+      - name: Validate and export snapshot patch
+        id: changes
+        env:
+          PATCH_PATH: ${{ runner.temp }}/baseline-update.patch
         run: |
+          git add -- tests/visual/mockups.spec.mjs-snapshots/
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No visual snapshots changed."
+            exit 0
+          fi
+
+          node scripts/validate-visual-baseline-paths.mjs --staged
+          git diff --cached --binary > "$PATCH_PATH"
+          test -s "$PATCH_PATH"
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+
+      - name: Upload reviewed patch
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: visual-baseline-patch-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/baseline-update.patch
+          if-no-files-found: error
+          retention-days: 7
+
+  open_pull_request:
+    needs: [validate_dispatch, update]
+    if: needs.update.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Download reviewed patch
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: visual-baseline-patch-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/baseline-artifact
+
+      - name: Apply and validate snapshot patch
+        env:
+          PATCH_PATH: ${{ runner.temp }}/baseline-artifact/baseline-update.patch
+          BASE_SHA: ${{ needs.update.outputs.base_sha }}
+        run: |
+          if [ "$(git rev-parse HEAD)" != "$BASE_SHA" ]; then
+            echo "main advanced after snapshots were generated; rerun this workflow from main." >&2
+            exit 1
+          fi
+          git apply --index "$PATCH_PATH"
+          node scripts/validate-visual-baseline-paths.mjs --staged
+
+      - name: Create review branch and commit
+        id: branch
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          branch="visual-baselines/run-${RUN_ID}-${RUN_ATTEMPT}"
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tests/visual/mockups.spec.mjs-snapshots/
-          git diff --cached --quiet && echo "Nada para commitar." && exit 0
-          git commit -m "Atualiza baselines visuais (linux) via workflow_dispatch"
-          git push
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "$branch"
+          git diff --cached --check
+          git commit -m "test(visual): update Linux baselines"
+          git push --set-upstream origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REVIEW_BRANCH: ${{ steps.branch.outputs.branch }}
+          BASE_SHA: ${{ needs.update.outputs.base_sha }}
+        run: |
+          cat > "$RUNNER_TEMP/pull-request-body.md" <<'EOF'
+          ## Visual baseline update
+
+          This PR contains snapshots generated by the manual baseline workflow from `main`.
+          Source commit: `$BASE_SHA`.
+          The patch was checked to contain only PNG files under `tests/visual/mockups.spec.mjs-snapshots/` and the visual suite passed against the generated snapshots.
+
+          Please review the image changes before merging. This workflow never pushes to `main` or merges the PR.
+          EOF
+          gh pr create \
+            --base main \
+            --head "$REVIEW_BRANCH" \
+            --title "test(visual): review updated Linux baselines" \
+            --body-file "$RUNNER_TEMP/pull-request-body.md"
