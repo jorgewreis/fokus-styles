@@ -50,7 +50,15 @@ Mantenha `aria-expanded` e um nome acessível no botão.
 
 ## API JS
 
-Nenhuma — 100% CSS.
+O comportamento de collapse tem API JavaScript pública opcional, exportada por
+`fokus-styles/js`. A inicialização automática usa `data-fs="navbar"`; o
+elemento precisa conter `[data-fs-toggle="navbar"]` e um menu
+`.fs-navbar-collapse` (ou um menu indicado por `data-fs-target`).
+`Navbar.getInstance(element)` retorna a instância atual e
+`Navbar.getOrCreateInstance(element)` recupera ou cria uma;
+`isOpen()` consulta o estado, enquanto `show()`, `hide()` e `toggle()` controlam o menu. O componente emite `fs:shown`
+e `fs:hidden` no elemento raiz. `Escape` fecha o menu e devolve o foco ao
+botão toggler. O botão reflete o estado em `aria-expanded` (`true` ao abrir e `false` ao fechar). Chame `dispose()` para remover os listeners e o registro.
 
 ## Tokens
 

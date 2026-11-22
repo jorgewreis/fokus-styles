@@ -3,9 +3,13 @@ import { autoInit, createInstanceRegistry } from "./core/register.js";
 const instances = createInstanceRegistry();
 export class Pagination {
   constructor(element) {
+    if (!element || element.nodeType !== 1) {
+      throw new TypeError("FokusStyles.Pagination: elemento raiz inválido.");
+    }
     this.element = element;
     this.total = Math.max(1, this._normalizePage(element.getAttribute("data-fs-pages"), element.querySelectorAll("[data-fs-page]").length || 1));
     this.current = Math.min(this.total, this._normalizePage(element.getAttribute("data-fs-page"), 1));
+    this.element.setAttribute("data-fs-page", String(this.current));
     this._click = (event) => {
       const button = event.target.closest("[data-fs-page]");
       if (!button || !this.element.contains(button)) return;
@@ -41,6 +45,9 @@ export class Pagination {
     const parsed = Number(value);
     return Number.isFinite(parsed) && parsed >= 1 ? Math.floor(parsed) : fallback;
   }
-  dispose() { this.element.removeEventListener("click", this._click); instances.delete(this.element); }
+  dispose() {
+    this.element.removeEventListener("click", this._click);
+    if (instances.get(this.element) === this) instances.delete(this.element);
+  }
 }
 autoInit("pagination", Pagination);

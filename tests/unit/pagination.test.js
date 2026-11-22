@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { Pagination } from "../../packages/fokus-js/js/fokus.js";
 
 function mount() {
@@ -31,6 +31,48 @@ describe("Pagination public JavaScript API", () => {
     expect(element.querySelectorAll('[aria-current="page"]')).toHaveLength(1);
     expect(element.querySelector('[data-fs-page="1"]').getAttribute("aria-current")).toBe("page");
     expect(element.querySelector(".fs-page-item").classList.contains("is-active")).toBe(true);
+  });
+
+  it("auto-initializes data-fs=pagination when the public barrel is loaded", async () => {
+    vi.resetModules();
+    document.body.innerHTML = '<nav><ul data-fs="pagination" data-fs-pages="2"><li><button data-fs-page="1">1</button></li></ul></nav>';
+    const { Pagination: FreshPagination } = await import("../../packages/fokus-js/js/fokus.js");
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+    const element = document.querySelector('[data-fs="pagination"]');
+
+    expect(FreshPagination.getInstance(element)).toBeDefined();
+    FreshPagination.getInstance(element).dispose();
+  });
+
+  it("normalizes invalid page metadata and keeps empty markup in a safe page-one state", () => {
+    document.body.innerHTML = `
+      <nav><ul data-fs="pagination" data-fs-pages="not-a-number" data-fs-page="-2"></ul></nav>
+    `;
+    const element = document.querySelector('[data-fs="pagination"]');
+    const pagination = Pagination.getOrCreateInstance(element);
+
+    expect(pagination.total).toBe(1);
+    expect(pagination.current).toBe(1);
+    expect(element.getAttribute("data-fs-page")).toBe("1");
+    expect(element.querySelectorAll("[data-fs-page]")).toHaveLength(0);
+    pagination.dispose();
+  });
+
+  it("bounds fractional and out-of-range page requests without emitting for no-op values", () => {
+    const { element, pagination } = mount();
+    const changes = [];
+    element.addEventListener("fs:pagination:change", (event) => changes.push(event.detail));
+
+    pagination.goTo(2.8);
+    pagination.goTo(99);
+    pagination.goTo(4);
+    pagination.goTo("invalid");
+
+    expect(pagination.current).toBe(4);
+    expect(changes).toEqual([
+      { page: 2, total: 4 },
+      { page: 4, total: 4 },
+    ]);
   });
 
   it("ignores disabled controls and emits a bubbling change event for an enabled page", () => {
@@ -74,5 +116,19 @@ describe("Pagination public JavaScript API", () => {
     expect(Pagination.getInstance(element)).toBeUndefined();
     element.querySelector('[data-fs-page="2"]').click();
     expect(element.getAttribute("data-fs-page")).toBe("1");
+  });
+
+  it("rejects a non-element root and does not let a stale instance delete its replacement", () => {
+    expect(() => new Pagination(null)).toThrowError(
+      new TypeError("FokusStyles.Pagination: elemento raiz inválido."),
+    );
+
+    const { element, pagination } = mount();
+    pagination.dispose();
+    const replacement = Pagination.getOrCreateInstance(element);
+    pagination.dispose();
+
+    expect(Pagination.getInstance(element)).toBe(replacement);
+    replacement.dispose();
   });
 });

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Pagination",
+    "export": "Pagination",
+    "selector": "[data-fs=\"pagination\"]",
+    "documentedSelector": "data-fs=\"pagination\"",
+    "documentation": "docs/components/pagination.md",
+    "api": {
+      "static": ["getInstance", "getOrCreateInstance"],
+      "instance": ["goTo", "dispose"]
+    },
+    "events": ["fs:pagination:change"],
+    "attributes": ["aria-current=\"page\"", "aria-busy"]
+  },
+  {
+    "name": "Spinner",
+    "export": "Spinner",
+    "selector": "[data-fs=\"spinner\"]",
+    "documentedSelector": "data-fs=\"spinner\"",
+    "documentation": "docs/components/progress.md",
+    "api": {
+      "static": ["getInstance", "getOrCreateInstance"],
+      "instance": ["start", "stop", "toggle", "dispose"]
+    },
+    "events": ["fs:loading:start", "fs:loading:stop"],
+    "attributes": ["aria-busy=\"true|false\""]
+  },
+  {
+    "name": "Navbar",
+    "export": "Navbar",
+    "selector": "[data-fs=\"navbar\"]",
+    "documentedSelector": "data-fs=\"navbar\"",
+    "documentation": "docs/components/navbar.md",
+    "api": {
+      "static": ["getInstance", "getOrCreateInstance"],
+      "instance": ["isOpen", "show", "hide", "toggle", "dispose"]
+    },
+    "events": ["fs:shown", "fs:hidden"],
+    "attributes": ["aria-expanded"]
+  },
+  {
+    "name": "Scrollspy",
+    "export": "Scrollspy",
+    "selector": "[data-fs=\"scrollspy\"]",
+    "documentedSelector": "data-fs=\"scrollspy\"",
+    "documentation": "docs/components/scrollspy.md",
+    "api": {
+      "static": ["getInstance", "getOrCreateInstance"],
+      "instance": ["activate", "dispose"]
+    },
+    "events": ["fs:scrollspy:activate"],
+    "attributes": [".is-active"]
+  }
+]

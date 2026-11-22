@@ -92,8 +92,28 @@ presente = carregando; progress: `--fs-progress-value` = progresso atual).
 
 ## API JS
 
-Nenhuma — 100% CSS. Atualizar `--fs-progress-value` é responsabilidade da
-sua aplicação (ex.: `barEl.style.setProperty("--fs-progress-value", "75")`).
+O **Spinner** tem API JavaScript pública opcional, exportada por
+`fokus-styles/js`. O runtime inicializa automaticamente elementos com
+`data-fs="spinner"`; também é possível recuperar a instância com
+`Spinner.getInstance(element)` ou criá-la com
+`Spinner.getOrCreateInstance(element)`. `start()`, `stop()` e `toggle()`
+atualizam `aria-busy="true|false"` e emitem os eventos bubbling
+`fs:loading:start` e `fs:loading:stop`. `dispose()` remove a instância do
+registro e pode ser chamado novamente com segurança.
+
+```js
+import { Spinner } from "fokus-styles/js";
+
+const spinner = Spinner.getOrCreateInstance(document.querySelector('[data-fs="spinner"]'));
+spinner.start();
+// Quando a operação terminar:
+spinner.stop();
+spinner.dispose();
+```
+
+Progress continua sendo controlado pela aplicação: atualizar
+`--fs-progress-value` e seus atributos ARIA é responsabilidade do consumidor
+(ex.: `barEl.style.setProperty("--fs-progress-value", "75")`).
 
 ## Tokens
 

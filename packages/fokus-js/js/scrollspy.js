@@ -20,7 +20,7 @@ export class Scrollspy {
   static getInstance(el) { return instances.get(el); }
   static getOrCreateInstance(el) { return this.getInstance(el) ?? new Scrollspy(el); }
   activate(section) { this.links.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${section.id}`)); this.navEl.dispatchEvent(new CustomEvent("fs:scrollspy:activate", { bubbles: true, detail: { section } })); }
-  dispose() { this.observer?.disconnect(); window.removeEventListener("scroll", this._onScroll); instances.delete(this.navEl); }
+  dispose() { this.observer?.disconnect(); window.removeEventListener("scroll", this._onScroll); if (instances.get(this.navEl) === this) instances.delete(this.navEl); }
 }
 
 autoInit("scrollspy", Scrollspy);
