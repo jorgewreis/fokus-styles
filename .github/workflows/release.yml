@@ -61,7 +61,7 @@ jobs:
         run: npm run size:check
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Visual tests
         run: npm run test:visual
