@@ -60,10 +60,12 @@ passado em `push()`.
 
 ## A11y
 
-`aria-haspopup="dialog"` + `aria-expanded` no gatilho, `role="region"` +
+`aria-expanded` e `aria-controls` no gatilho, `role="region"` +
 `aria-label="Notificações"` no painel (aplicados automaticamente, a menos
-que você já tenha definido `aria-label` próprio). `Escape` fecha e devolve
-foco ao gatilho; clique fora fecha.
+que você já tenha definido `aria-label` próprio). O painel preserva o foco no
+gatilho, portanto não anuncia um diálogo. A contagem de não lidas é adicionada
+ao nome acessível do gatilho. `Escape` fecha e devolve foco ao gatilho; clique
+fora fecha.
 
 ## API JS
 

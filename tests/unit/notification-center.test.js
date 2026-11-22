@@ -41,6 +41,24 @@ describe("NotificationCenter", () => {
     expect(NotificationCenter.getInstance(trigger)).toBe(center);
   });
 
+  it("expõe o painel como região expansível, sem anunciar um diálogo", () => {
+    const { trigger } = build();
+    expect(trigger.getAttribute("aria-haspopup")).toBeNull();
+    expect(trigger.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("inclui a contagem de não lidas no nome acessível do gatilho", () => {
+    const { trigger, center } = build();
+    center.push({ title: "A" });
+    expect(trigger.getAttribute("aria-label")).toBe("Notificações: 1 notificação não lida");
+
+    center.push({ title: "B" });
+    expect(trigger.getAttribute("aria-label")).toBe("Notificações: 2 notificações não lidas");
+
+    center.open();
+    expect(trigger.getAttribute("aria-label")).toBe("Notificações");
+  });
+
   it("push() registra a notificação, cria um toast e atualiza o contador", () => {
     const { center } = build();
 
@@ -62,6 +80,16 @@ describe("NotificationCenter", () => {
     const item = document.querySelector(".fs-notification-item");
     expect(item.querySelector(".fs-notification-item-title").innerHTML).not.toContain("<img");
     expect(item.querySelector(".fs-notification-item-text").innerHTML).not.toContain("<b>");
+  });
+
+  it("normaliza variantes inválidas antes de renderizar ou persistir", () => {
+    const { center } = build({ storage: "local" });
+    center.push({ title: "Alerta", variant: 'danger\" onmouseover="alert(1)' });
+
+    const item = document.querySelector(".fs-notification-item");
+    expect(item.className).toContain("fs-notification-item-primary");
+    expect(item.getAttribute("onmouseover")).toBeNull();
+    expect(center.getAll()[0].variant).toBe("primary");
   });
 
   it("open() marca tudo como lido (zera o contador) e mostra o painel", () => {

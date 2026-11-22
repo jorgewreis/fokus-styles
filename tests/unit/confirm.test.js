@@ -99,5 +99,4 @@ describe("confirm()", () => {
     button.click();
     expect(await result).toBe(true);
   });
-
 });

@@ -11,7 +11,6 @@ let idCounter = 0;
 // (cancelado ou fechado por Escape/clique fora).
 export function confirm(options = {}) {
   const { title = "Tem certeza?", message = "", confirmText = "Confirmar", cancelText = "Cancelar", variant = "danger" } = options;
-
   return new Promise((resolve) => {
     idCounter += 1;
     const modalId = `fokus-confirm-${idCounter}`;
