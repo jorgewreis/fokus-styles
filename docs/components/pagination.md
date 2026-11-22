@@ -1,9 +1,9 @@
 # Pagination
 
-Navegação entre páginas de uma listagem — sem JavaScript próprio; qual
-página está ativa/desabilitada é responsabilidade da sua aplicação (você
-adiciona/remove `.is-active`/`.is-disabled` conforme o estado atual). Os
-ícones de anterior/próxima/reticências usam o pacote
+Navegação entre páginas de uma listagem. O pacote fornece estilos CSS e a API
+JavaScript pública opcional `Pagination`; você pode usar só o CSS ou ligar o
+componente ao estado da sua aplicação. Os ícones de
+anterior/próxima/reticências usam o pacote
 [`fokus-styles/icons`](../guides/icons.md) (Lucide) — veja lá se quiser trocar
 por outro conjunto.
 
@@ -90,11 +90,13 @@ de `aria-label` (`"Anterior"`/`"Próxima"`) já que o SVG é `aria-hidden`.
 ## Estados
 
 - `.fs-page-item.is-active .fs-page-link` — fundo/borda na cor primária.
-- `.fs-page-item.is-disabled .fs-page-link` — opacidade reduzida,
-  `pointer-events: none` (não clicável, não focável por mouse; ainda é
-  focável por teclado como um link comum — considere `aria-disabled="true"`
-  e remover do fluxo de tab se precisar bloquear totalmente). No item de
-  reticências (sem `<a>`), isso não se aplica — ele nunca é focável.
+- `.fs-page-item.is-disabled .fs-page-link` — opacidade reduzida e
+  `pointer-events: none`. CSS sozinho não bloqueia ativação por teclado ou
+  script. Com a API JS, um controle marcado `aria-disabled="true"`, com
+  `disabled` nativo ou dentro de `.is-disabled` não muda a página; links com
+  `aria-disabled` continuam no fluxo de Tab. Para controles sem destino,
+  prefira um `<button disabled>` ou um elemento não interativo. No item de
+  reticências (sem controle), nada é focável.
 
 ## A11y
 
@@ -110,9 +112,85 @@ nomeado, `aria-current="page"` e desabilite controles sem destino real.
   como `aria-hidden="true"` nos dois casos, pra não duplicar o nome
   acessível.
 
+- A API atualiza `aria-current="page"` no controle ativo. Ela não gerencia
+  `aria-busy`: a aplicação deve marcar a região dos resultados como ocupada
+  durante uma busca assíncrona e limpar o estado quando terminar.
+
 ## API JS
 
-Nenhuma — 100% CSS. Ativar/desativar itens é feito pela sua aplicação.
+`Pagination` é uma API pública, exportada por `fokus-styles/js` e declarada
+em `fokus-styles/js/fokus.d.ts`. O runtime inicializa automaticamente
+elementos com `data-fs="pagination"`; também é possível criar a instância
+manualmente. A API de JavaScript é opcional: os estilos CSS continuam
+disponíveis sem ela.
+
+### Marcação e inicialização
+
+Use `data-fs-pages` no contêiner para informar o total e `data-fs-page` para
+indicar a página inicial. Cada controle recebe `data-fs-page` com seu número.
+Se `data-fs-pages` não for informado, o runtime usa a quantidade de controles
+ou 1. O total mínimo é 1.
+
+```html
+<nav aria-label="Paginação">
+  <ul class="fs-pagination" data-fs="pagination" data-fs-pages="3" data-fs-page="1">
+    <li class="fs-page-item"><button class="fs-page-link" type="button" data-fs-page="1">1</button></li>
+    <li class="fs-page-item"><button class="fs-page-link" type="button" data-fs-page="2">2</button></li>
+    <li class="fs-page-item"><button class="fs-page-link" type="button" data-fs-page="3">3</button></li>
+  </ul>
+</nav>
+<p id="page-status" aria-live="polite">Página 1 de 3</p>
+<ul id="page-results" aria-busy="false"></ul>
+```
+
+### Evento e carregamento dos resultados
+
+Ao ativar um controle, a instância atualiza `data-fs-page` no contêiner,
+aplica `.is-active` no controle e no `.fs-page-item` correspondente, define
+`aria-current="page"` no controle ativo e emite o evento bubbling
+`fs:pagination:change` com `detail: { page, total }`. O evento só é emitido
+quando a página muda.
+
+O runtime não busca nem renderiza os resultados e não altera `aria-busy`.
+Esse estado pertence à região atualizada pela aplicação. Exemplo executável
+usando dados locais:
+
+```js
+import { Pagination } from "fokus-styles/js";
+
+const nav = document.querySelector('[data-fs="pagination"]');
+const status = document.querySelector("#page-status");
+const results = document.querySelector("#page-results");
+const pages = { 1: ["A", "B"], 2: ["C", "D"], 3: ["E"] };
+const pagination = Pagination.getInstance(nav);
+
+nav.addEventListener("fs:pagination:change", async ({ detail }) => {
+  results.setAttribute("aria-busy", "true");
+  status.textContent = `Página ${detail.page} de ${detail.total}`;
+  await Promise.resolve();
+  results.replaceChildren(...pages[detail.page].map((text) => {
+    const item = document.createElement("li");
+    item.textContent = text;
+    return item;
+  }));
+  results.setAttribute("aria-busy", "false");
+});
+
+pagination.goTo(2);
+```
+
+`Pagination.getInstance(element)` retorna a instância existente;
+`Pagination.getOrCreateInstance(element)` a recupera ou cria; `goTo(page)`
+seleciona uma página entre 1 e o total; e `dispose()` remove o listener e o
+registro da instância. A aplicação pode usar `goTo()` para conectar seus
+próprios controles ao estado da paginação.
+
+### Compatibilidade
+
+A decisão mantém a exportação pública, a declaração de tipos e o auto-init já
+existentes; não remove nem renomeia APIs. O único comportamento runtime
+acrescentado nesta correção é ignorar cliques em controles desabilitados,
+alinhando-os ao estado visual e acessível documentado.
 
 ## Tokens
 

@@ -1,7 +1,7 @@
 // Verificado por `npm run types:check` (tsc --noEmit) — não é executado em
 // runtime, só garante que os .d.ts em packages/fokus-js/js/ tipam
 // corretamente um uso real da API pública.
-import { Modal, Dropdown, DataTable, confirm, core } from "../../packages/fokus-js/js/fokus.js";
+import { Modal, Dropdown, DataTable, Pagination, confirm, core } from "../../packages/fokus-js/js/fokus.js";
 import { Popover } from "../../packages/fokus-js/js/popover.js";
 
 const triggerEl = document.querySelector<HTMLElement>("[data-fs-target]")!;
@@ -19,6 +19,10 @@ const table = new DataTable(tableEl, { pageSize: 20 });
 table.sort("name", "asc");
 table.filter("foo");
 
+const paginationEl = document.querySelector<HTMLElement>('[data-fs="pagination"]')!;
+const pagination = Pagination.getOrCreateInstance(paginationEl);
+pagination.goTo(2);
+
 confirm({ title: "Tem certeza?", variant: "danger" }).then((confirmed: boolean) => confirmed);
 
 const position = core.computePosition(triggerEl, document.createElement("div"), { placement: "top" });
@@ -27,4 +31,4 @@ core.applyPosition(document.createElement("div"), position);
 const manualPopover = new Popover(triggerEl, { trigger: "manual" });
 manualPopover.show();
 
-export { modal, dropdown, table, sameModal, manualPopover };
+export { modal, dropdown, table, sameModal, manualPopover, pagination };
