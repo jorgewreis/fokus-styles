@@ -14,6 +14,8 @@
     .utility-grid { min-height: 14rem; }
     .utility-grid > * { min-height: 4rem; border-radius: var(--fs-radius-sm); background: var(--fs-color-primary-bg); }
     .utility-overflow { max-height: 8rem; overflow: auto; }
+    .utility-status { display: inline-flex; align-items: center; gap: .5rem; }
+    .utility-status__indicator { inline-size: .5rem; block-size: .5rem; flex: none; border-radius: 50%; background: var(--fs-color-on-success); }
     .utility-motion { transition: transform var(--fs-transition-normal) var(--fs-ease-standard), box-shadow var(--fs-transition-normal) var(--fs-ease-standard); }
     .utility-motion:hover, .utility-motion:focus-visible { transform: translateY(-0.25rem) scale(1.02); box-shadow: var(--fs-shadow-md); }
     .utility-swatch { min-height: 4rem; border: 1px solid var(--fs-color-border); border-radius: var(--fs-radius-sm); }
@@ -44,7 +46,7 @@
       <section class="utility-card fs-u-p-4" aria-labelledby="motion-title">
         <h2 id="motion-title" class="fs-u-fs-lg fs-u-mb-3">Estados e motion</h2>
         <button class="fs-btn fs-btn-primary fs-u-transition-colors fs-u-duration-fast fs-u-focus-ring" type="button">Foco visível</button>
-        <span class="fs-u-inline-block fs-u-p-2 fs-u-ml-2 fs-u-bg-success fs-u-rounded-full fs-u-animate-pulse" style="color: var(--fs-color-on-success)">Status</span>
+        <span class="utility-status fs-u-p-2 fs-u-ml-2 fs-u-bg-success fs-u-rounded-full" style="color: var(--fs-color-on-success)"><span class="utility-status__indicator fs-u-animate-pulse" aria-hidden="true"></span>Status</span>
       </section>
       <section class="utility-card fs-u-p-4" aria-labelledby="sizing-title">
         <h2 id="sizing-title" class="fs-u-fs-lg fs-u-mb-3">Sizing e filters</h2>
