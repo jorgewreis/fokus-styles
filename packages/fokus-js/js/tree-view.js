@@ -1,4 +1,5 @@
 import { autoInit, createInstanceRegistry } from "./core/register.js";
+import { guardDisabledActivation, isDisabled } from "./core/disabled.js";
 
 const instances = createInstanceRegistry();
 
@@ -14,6 +15,7 @@ export class TreeView {
     rootEl.setAttribute("role", "tree");
 
     this._setupItems();
+    this._removeDisabledGuard = guardDisabledActivation(rootEl, '[role="treeitem"]');
 
     this._handleClick = this._handleClick.bind(this);
     this._handleKeydown = this._handleKeydown.bind(this);
@@ -61,6 +63,10 @@ export class TreeView {
     return item.getAttribute("aria-expanded") === "true";
   }
 
+  _canActivate(item) {
+    return Boolean(item?.nodeType === 1 && this.rootEl.contains(item) && item.matches('[role="treeitem"]') && !isDisabled(item));
+  }
+
   _isVisible(item) {
     let group = item.parentElement.closest('[role="group"]');
     while (group) {
@@ -81,6 +87,7 @@ export class TreeView {
   }
 
   expand(item) {
+    if (!this._canActivate(item)) return;
     const group = this._group(item);
     if (!group || this._isExpanded(item)) return;
 
@@ -91,6 +98,7 @@ export class TreeView {
   }
 
   collapse(item) {
+    if (!this._canActivate(item)) return;
     const group = this._group(item);
     if (!group || !this._isExpanded(item)) return;
 
@@ -101,6 +109,7 @@ export class TreeView {
   }
 
   toggle(item) {
+    if (!this._canActivate(item)) return;
     if (this._isExpanded(item)) {
       this.collapse(item);
     } else {
@@ -109,6 +118,7 @@ export class TreeView {
   }
 
   select(item) {
+    if (!this._canActivate(item)) return;
     this.rootEl.querySelectorAll('[aria-selected="true"]').forEach((el) => el.setAttribute("aria-selected", "false"));
     item.setAttribute("aria-selected", "true");
 
@@ -119,7 +129,7 @@ export class TreeView {
 
   _handleClick(event) {
     const item = event.target.closest('[role="treeitem"]');
-    if (!item) return;
+    if (!item || !this._canActivate(item)) return;
 
     if (this._group(item)) this.toggle(item);
     this.select(item);
@@ -185,6 +195,7 @@ export class TreeView {
   }
 
   dispose() {
+    this._removeDisabledGuard();
     this.rootEl.removeEventListener("click", this._handleClick);
     this.rootEl.removeEventListener("keydown", this._handleKeydown);
     this.rootEl.removeEventListener("focusin", this._handleFocusIn);

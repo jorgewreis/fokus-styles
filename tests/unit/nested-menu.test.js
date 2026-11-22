@@ -163,4 +163,34 @@ describe("NestedMenu", () => {
     menu.dispose();
     expect(NestedMenu.getInstance(toggle)).toBeUndefined();
   });
+
+  it.each(["aria", "class", "native"])("pula e bloqueia ativação de item %s desabilitado", (mode) => {
+    const { menu } = build();
+    menu.show();
+    const parent = document.getElementById("sub1");
+    if (mode === "aria") parent.setAttribute("aria-disabled", "true");
+    if (mode === "class") parent.classList.add("is-disabled");
+    if (mode === "native") parent.disabled = true;
+    const handler = vi.fn();
+    parent.addEventListener("click", handler);
+    const click = new MouseEvent("click", { bubbles: true, cancelable: true });
+    parent.dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(true);
+    expect(handler).not.toHaveBeenCalled();
+    expect(document.getElementById("submenu1").classList.contains("is-open")).toBe(false);
+    expect(document.activeElement.id).toBe("leaf1");
+  });
+
+  it.each(["Escape", "ArrowLeft"])("fecha a raiz se o pai se tornar nativamente desabilitado antes de %s", (key) => {
+    const { toggle, menu } = build();
+    menu.show();
+    const parent = document.getElementById("sub1");
+    parent.focus();
+    press("ArrowRight");
+    expect(document.activeElement.id).toBe("leaf2");
+    parent.disabled = true;
+    press(key);
+    expect(menu.isOpen).toBe(false);
+    expect(document.activeElement).toBe(toggle);
+  });
 });

@@ -186,4 +186,41 @@ describe("TreeView", () => {
 
     expect(TreeView.getInstance(root)).toBeUndefined();
   });
+
+  it("bloqueia seleção e expansão de itens disabled sem desabilitar seus descendentes", () => {
+    const { root, tree } = buildTree();
+    const src = root.querySelector('[role="treeitem"]');
+    const child = root.querySelectorAll('[role="treeitem"]')[1];
+    src.classList.add("is-disabled");
+    const selected = vi.fn();
+    root.addEventListener("fs:tree:selected", selected);
+    tree.expand(src);
+    tree.select(src);
+    tree.toggle(src);
+    src.querySelector(".fs-tree-label").click();
+    expect(src.getAttribute("aria-expanded")).toBe("false");
+    expect(src.hasAttribute("aria-selected")).toBe(false);
+    expect(selected).not.toHaveBeenCalled();
+
+    src.setAttribute("aria-expanded", "true");
+    src.querySelector("ul").hidden = false;
+    src.focus();
+    src.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
+    expect(document.activeElement).toBe(child);
+    tree.select(child);
+    expect(child.getAttribute("aria-selected")).toBe("true");
+  });
+
+  it("APIs rejeitam nós externos ou que não sejam treeitems", () => {
+    const { root, tree } = buildTree();
+    const external = document.createElement("li");
+    external.setAttribute("role", "treeitem");
+    const selected = vi.fn();
+    root.addEventListener("fs:tree:selected", selected);
+    tree.select(external);
+    tree.expand(root);
+    tree.select(null);
+    expect(external.hasAttribute("aria-selected")).toBe(false);
+    expect(selected).not.toHaveBeenCalled();
+  });
 });

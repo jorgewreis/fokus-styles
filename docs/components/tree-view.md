@@ -53,6 +53,10 @@ filhos) + opcionalmente `ul[role="group"]` (o próximo nível).
 - Selecionado: `aria-selected="true"` (só no nó mais recente; os demais
   voltam a `"false"`) — clicar num nó com filhos expande/colapsa **e**
   seleciona ao mesmo tempo (como um explorador de arquivos).
+- Nó desabilitado: `.is-disabled` ou `aria-disabled="true"` bloqueia
+  seleção e expansão/colapso por clique, teclado e API. O nó permanece na
+  navegação por setas para poder ser descoberto; esse estado não se propaga
+  aos descendentes.
 
 ## A11y
 
@@ -79,10 +83,10 @@ Auto-init via `data-fs="tree-view"` na raiz (`<ul>`/`<ol>`).
 
 | Método | Descrição |
 |---|---|
-| `expand(item)` | Expande o `<li>` informado (sem efeito se já expandido ou sem filhos). |
-| `collapse(item)` | Colapsa o `<li>` informado. |
-| `toggle(item)` | Alterna expandido/colapsado. |
-| `select(item)` | Marca `aria-selected="true"` no `<li>` informado (e `"false"` nos demais), dispara `fs:tree:selected`. |
+| `expand(item)` | Expande um treeitem desta árvore habilitado (sem efeito se inválido, desabilitado, já expandido ou sem filhos). |
+| `collapse(item)` | Colapsa um treeitem desta árvore habilitado. |
+| `toggle(item)` | Alterna expansão de um treeitem desta árvore habilitado. |
+| `select(item)` | Seleciona um treeitem desta árvore habilitado, desmarca os demais e dispara `fs:tree:selected`. |
 | `dispose()` | Remove listeners e desregistra a instância. |
 
 | Evento (na raiz) | Cancelável | Quando |

@@ -52,6 +52,12 @@ por **clique/teclado** é controlada pelo JS, coexistindo sem conflito
 (passar o mouse fecha ramos abertos por teclado que não estão no caminho
 do hover).
 
+Itens marcados com `.is-disabled`, `aria-disabled="true"` ou `disabled`
+nativo não recebem clique, ativação por teclado nem abertura por hover, e são
+ignorados ao percorrer cada nível com as setas. Desabilitar um pai depois de
+abrir seu submenu e pressionar `Escape` ou `ArrowLeft` fecha o menu raiz e
+devolve o foco ao gatilho, sem deixá-lo em conteúdo oculto.
+
 ## A11y
 
 `role="menu"` em todo nível, `aria-haspopup="menu"` + `aria-expanded` em

@@ -36,7 +36,7 @@
     margin: 0;
   }
 
-  .fs-dropdown-submenu:hover > .fs-dropdown-menu,
+  .fs-dropdown-submenu:hover > .fs-dropdown-item-submenu:not(.is-disabled, :disabled, [aria-disabled="true"]) + .fs-dropdown-menu,
   .fs-dropdown-submenu > .fs-dropdown-menu.is-open {
     display: block;
   }

@@ -43,8 +43,9 @@ apontando pro painel) + `.fs-tab-content` > `.fs-tab-pane` (um por aba,
 - `.is-active` na aba e no painel correspondente — controlado pelo JS ao
   trocar, ou definido no HTML inicial (exatamente uma aba/painel deve
   começar ativo).
-- `.is-disabled` na aba — não recebe clique nem entra na navegação por
-  seta.
+- `.is-disabled`, `aria-disabled="true"` ou `disabled` nativo na aba — não
+  recebe ativação e não entra na navegação por setas. O estado nativo também
+  respeita um `<fieldset disabled>` que contenha o controle.
 
 ## A11y
 
@@ -55,8 +56,9 @@ O JS aplica automaticamente ao inicializar: `role="tablist"` no `.fs-tabs`,
 ser escrito manualmente no HTML.
 
 Teclado (com foco numa aba): `ArrowLeft`/`ArrowRight` move e ativa a
-aba anterior/próxima (pulando desabilitadas), `Home`/`End` vai pra
-primeira/última.
+aba anterior/próxima (pulando desabilitadas); em `.fs-tabs-vertical` ou com
+`aria-orientation="vertical"`, use `ArrowUp`/`ArrowDown`. `Home`/`End` vai
+pra primeira/última aba habilitada.
 
 Para separar navegação e ativação, use `data-tabs-activation="manual"` no
 grupo. Nesse modo as setas apenas movem o foco; `Enter` ou `Espaço` ativa a
@@ -68,7 +70,7 @@ Auto-init via `data-fs="tabs"`. `Tabs.getInstance(el)`.
 
 | Método | Descrição |
 |---|---|
-| `show(tabEl)` | Ativa a aba `tabEl` (deve ser uma das `.fs-nav-link` do grupo) e o painel correspondente; desativa as demais. Não faz nada se `tabEl` já é a ativa. |
+| `show(tabEl)` | Ativa a aba habilitada `tabEl` (deve pertencer ao grupo) e o painel correspondente; desativa as demais. Não faz nada se for inválida, desabilitada ou já ativa. |
 | `dispose()` | Remove os listeners de clique/teclado e desregistra a instância. |
 
 | Evento | Cancelável | Quando |

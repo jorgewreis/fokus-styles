@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-11-10T20:01:32.489Z",
+  "measuredAt": "2026-11-22T17:23:46.106Z",
   "unit": "bytes",
   "files": {
     "css/layout.min.css": {
@@ -11,8 +11,8 @@
       "gzipBytes": 8855
     },
     "css/components.min.css": {
-      "bytes": 118056,
-      "gzipBytes": 20377
+      "bytes": 118131,
+      "gzipBytes": 20401
     },
     "css/helpers.min.css": {
       "bytes": 187467,
@@ -31,12 +31,12 @@
       "gzipBytes": 409
     },
     "css/fokus.min.css": {
-      "bytes": 323013,
-      "gzipBytes": 43548
+      "bytes": 323088,
+      "gzipBytes": 43573
     },
     "js/fokus.min.js": {
-      "bytes": 119390,
-      "gzipBytes": 26192
+      "bytes": 121659,
+      "gzipBytes": 26883
     }
   }
 }

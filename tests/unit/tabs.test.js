@@ -113,6 +113,56 @@ describe("Tabs", () => {
     expect(Tabs.getInstance(tablistEl)).toBeUndefined();
   });
 
+  it.each(["aria", "native", "fieldset"])("bloqueia ativação e API de uma aba desabilitada por %s", (mode) => {
+    const { container, tabs } = buildTabs();
+    const links = container.querySelectorAll(".fs-nav-link");
+    let item = links[1];
+    if (mode === "aria") item.setAttribute("aria-disabled", "true");
+    if (mode === "native") {
+      const button = document.createElement("button");
+      button.className = "fs-nav-link";
+      button.dataset.fsTarget = "#pane2";
+      button.textContent = "Segurança";
+      button.disabled = true;
+      item.replaceWith(button);
+      tabs.tabs[1] = item = button;
+    }
+    if (mode === "fieldset") {
+      const button = document.createElement("button");
+      button.className = "fs-nav-link";
+      button.dataset.fsTarget = "#pane2";
+      button.textContent = "Segurança";
+      const fieldset = document.createElement("fieldset");
+      fieldset.disabled = true;
+      item.replaceWith(fieldset);
+      fieldset.append(button);
+      tabs.tabs[1] = item = button;
+    }
+    tabs.show(item);
+    const event = new MouseEvent("click", { bubbles: true, cancelable: true });
+    item.dispatchEvent(event);
+    expect(event.defaultPrevented).toBe(true);
+    expect(links[0].getAttribute("aria-selected")).toBe("true");
+    expect(document.getElementById("pane1").hidden).toBe(false);
+  });
+
+  it("rejeita abas externas e habilita setas verticais sem cancelar href habilitado", () => {
+    const { container, tabs } = buildTabs();
+    const links = container.querySelectorAll(".fs-nav-link");
+    const changed = vi.fn();
+    container.querySelector("#tablist").classList.add("fs-tabs-vertical");
+    tabs.show(document.createElement("button"));
+    links[0].focus();
+    container.querySelector("#tablist").dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true, cancelable: true }));
+    expect(document.activeElement).toBe(links[1]);
+    links[0].click();
+    links[1].addEventListener("fs:tab:changed", changed);
+    const click = new MouseEvent("click", { bubbles: true, cancelable: true });
+    links[1].dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(false);
+    expect(changed).toHaveBeenCalledOnce();
+  });
+
   it("aceita gatilhos declarados com role=tab", () => {
     const root = document.createElement("div");
     root.innerHTML = '<div data-fs="tabs"><button role="tab" data-fs-tab-target="#custom-pane">Custom</button></div><div id="custom-pane">Conteúdo</div>';
