@@ -10,6 +10,7 @@ export class Pagination {
       const button = event.target.closest("[data-fs-page]");
       if (!button || !this.element.contains(button)) return;
       event.preventDefault();
+      if (button.disabled || button.getAttribute("aria-disabled") === "true" || button.closest(".is-disabled")) return;
       this.goTo(button.getAttribute("data-fs-page"));
     };
     element.addEventListener("click", this._click);
@@ -31,6 +32,7 @@ export class Pagination {
     this.element.querySelectorAll("[data-fs-page]").forEach((item) => {
       const active = Number(item.getAttribute("data-fs-page")) === this.current;
       item.classList.toggle("is-active", active);
+      item.closest(".fs-page-item")?.classList.toggle("is-active", active);
       if (active) item.setAttribute("aria-current", "page");
       else item.removeAttribute("aria-current");
     });
