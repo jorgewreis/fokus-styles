@@ -83,6 +83,67 @@ describe("Tag", () => {
     expect(dismissButton.disabled).toBe(false);
   });
 
+  it.each([false, true])( "preserva disabled explícito com loading inicial %s", (loading) => {
+    const el = document.createElement("span");
+    el.classList.toggle("is-loading", loading);
+    el.innerHTML = '<button type="button" data-fs-dismiss="tag" disabled>Remover</button>';
+    document.body.appendChild(el);
+    const tag = new Tag(el);
+    const button = el.querySelector("button");
+
+    expect(button.disabled).toBe(true);
+    tag.setLoading(false).setLoading(true).setLoading(true).setLoading(false);
+    expect(button.disabled).toBe(true);
+    button.click();
+    expect(el.isConnected).toBe(true);
+    tag.dispose();
+  });
+
+  it("restaura somente controles desabilitados pela instância e preserva chamadas repetidas", () => {
+    const { el, tag } = buildTag();
+    const button = el.querySelector("button");
+    tag.setLoading(true).setLoading(true).setLoading(false);
+    expect(button.disabled).toBe(false);
+
+    button.disabled = true;
+    tag.setLoading(false).setLoading(true).setLoading(false);
+    expect(button.disabled).toBe(true);
+
+    button.disabled = false;
+    tag.setLoading(true).setLoading(false);
+    expect(button.disabled).toBe(false);
+    tag.dispose();
+  });
+
+  it("não reabilita um botão substituto que não desabilitou", () => {
+    const { el, tag } = buildTag();
+    const original = el.querySelector("button");
+    tag.setLoading(true);
+    const replacement = document.createElement("button");
+    replacement.setAttribute("data-fs-dismiss", "tag");
+    replacement.disabled = true;
+    original.replaceWith(replacement);
+
+    tag.setLoading(true).setLoading(false);
+    expect(original.disabled).toBe(false);
+    expect(replacement.disabled).toBe(true);
+    tag.dispose();
+  });
+
+  it("loading inicial sem disabled explícito libera o botão de propriedade própria", () => {
+    const el = document.createElement("span");
+    el.setAttribute("aria-busy", "true");
+    el.innerHTML = '<button type="button" data-fs-dismiss="tag">Remover</button>';
+    document.body.appendChild(el);
+    const tag = new Tag(el);
+    const button = el.querySelector("button");
+
+    expect(button.disabled).toBe(true);
+    tag.setLoading(false);
+    expect(button.disabled).toBe(false);
+    tag.dispose();
+  });
+
   it("dispose() remove o listener e o registro da instância (sem remover a tag)", () => {
     const { el, tag } = buildTag();
     tag.dispose();

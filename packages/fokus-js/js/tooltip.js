@@ -1,3 +1,5 @@
+import { registerOverlay, unregisterOverlay, isTopOverlay } from "./core/overlay.js";
+import { createPortal } from "./core/portal.js";
 import { computePosition, applyPosition, watchPosition } from "./core/positioning.js";
 import { onEscapeKey } from "./core/focus.js";
 import { applyThemeContext } from "./core/theme.js";
@@ -53,7 +55,8 @@ export class Tooltip {
     this.tooltipEl.setAttribute("role", "tooltip");
     this.tooltipEl.innerHTML = '<div class="fs-tooltip-arrow"></div><div class="fs-tooltip-inner"></div>';
     this.tooltipEl.querySelector(".fs-tooltip-inner").textContent = this.title;
-    document.body.appendChild(this.tooltipEl);
+    this._portal = createPortal(this.tooltipEl, this.referenceEl);
+    this._portal.mount();
 
     this._addDescribedBy();
 
@@ -85,8 +88,8 @@ export class Tooltip {
     };
     document.addEventListener("pointerdown", this._handleDocumentPointerDown, true);
 
-    this._removeEscapeListener = onEscapeKey(() => {
-      if (this.isOpen) this.hide();
+    this._removeEscapeListener = onEscapeKey((event) => {
+      if (this.isOpen && isTopOverlay(this, event)) this.hide();
     });
 
     instances.set(referenceEl, this);
@@ -137,6 +140,8 @@ export class Tooltip {
     if (openInstance && openInstance !== this) openInstance.hide(true);
     openInstance = this;
     this.isOpen = true;
+    this._portal.mount();
+    registerOverlay(this, this.tooltipEl);
 
     applyThemeContext(this.tooltipEl, this.referenceEl);
 
@@ -163,6 +168,7 @@ export class Tooltip {
     this._clearTimers();
     if (!this.isOpen) return;
     this.isOpen = false;
+    unregisterOverlay(this);
     this._touchOpened = false;
 
     this.tooltipEl.classList.remove("is-open");

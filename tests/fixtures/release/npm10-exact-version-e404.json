@@ -1,0 +1,14 @@
+{
+  "node": "22.23.4",
+  "npm": "10.9.9",
+  "package": "fokus-styles",
+  "version": "0.0.0",
+  "command": "npm view fokus-styles@0.0.0 --json --registry=https://registry.npmjs.org/",
+  "note": "Read-only capture. Environment warnings and local log path omitted; npm error lines and stdout preserved. No publication executed.",
+  "result": {
+    "status": 1,
+    "error": null,
+    "stdout": "{\n  \"error\": {\n    \"code\": \"E404\",\n    \"summary\": \"No match found for version 0.0.0\",\n    \"detail\": \"'fokus-styles@0.0.0' is not in this registry.\\n\\nNote that you can also install from a\\ntarball, folder, http url, or git url.\"\n  }\n}\n",
+    "stderr": "npm error code E404\nnpm error 404 No match found for version 0.0.0\nnpm error 404\nnpm error 404  'fokus-styles@0.0.0' is not in this registry.\nnpm error 404\nnpm error 404 Note that you can also install from a\nnpm error 404 tarball, folder, http url, or git url.\n"
+  }
+}

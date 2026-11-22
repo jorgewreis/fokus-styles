@@ -68,7 +68,7 @@ colapso — a trilha básica não precisa de JS). `Breadcrumb.getInstance(el)`.
 
 | Método | Descrição |
 |---|---|
-| `dispose()` | Remove o listener de media query, restaura os itens colapsados e desregistra a instância. |
+| `dispose()` | Cancela medições adiadas, descarta os tooltips criados pela instância, remove o listener de media query, restaura os itens colapsados e desregistra a instância. |
 
 Sem eventos customizados.
 

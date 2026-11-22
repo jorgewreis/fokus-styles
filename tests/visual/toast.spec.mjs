@@ -28,6 +28,12 @@ for (const theme of ["light", "dark"]) {
     const initialSeconds = Number(initialCountdown.match(/\d+/)?.[0]);
     expect(initialSeconds).toBeGreaterThan(0);
     await page.clock.runFor(1100);
+    // The JS clock drives the countdown, but CSS inline-size transitions use
+    // the rendering timeline. Wait for the visible effect, not an immediate
+    // layout read in the same task as the virtual-clock advance.
+    await expect.poll(() => page.locator("#toast-progress .fs-toast-progress")
+      .evaluate((element) => element.getBoundingClientRect().width))
+      .toBeLessThan(initialProgress.width);
     const reducedProgress = await page.locator("#toast-progress .fs-toast-progress").evaluate((element) => {
       const rect = element.getBoundingClientRect();
       return { width: rect.width, right: rect.right };

@@ -57,7 +57,8 @@ toolbar/tabela/estados — não no `<table>` diretamente. O JS lê as linhas de
   célula, se for diferente do texto exibido (ex.: data ISO por trás de um
   texto formatado, número por trás de um texto com símbolo).
 - `data-fs-page-size="N"` no elemento raiz define quantas linhas por
-  página (padrão: 10).
+  página (padrão: 10); valores abaixo de 1 usam o padrão, e valores maiores
+  são arredondados para baixo.
 - `[data-fs-datatable-filter]` — um `<input>` (dentro do elemento raiz)
   que filtra por substring em qualquer célula da linha, case-insensitive.
 - `[data-fs-datatable-empty]` — bloco (tipicamente `.fs-empty-state`)

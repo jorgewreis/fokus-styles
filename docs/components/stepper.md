@@ -79,7 +79,7 @@ Auto-init via `data-fs="stepper"`. `Stepper.getInstance(el)`.
 |---|---|
 | `next()` | Avança um passo; no último, chama `complete()`. |
 | `prev()` | Volta um passo. |
-| `goTo(index)` | Vai direto pro passo `index` (respeitando o modo linear se disparado pelo cabeçalho — via método, sempre permitido). |
+| `goTo(index)` | Vai direto para o índice inteiro `index` (respeitando o modo linear se disparado pelo cabeçalho - via método, sempre permitido). Valores não inteiros ou não numéricos são ignorados sem evento. |
 | `setError(index, hasError = true)` | Marca/desmarca `.fs-step-error` num passo específico. |
 | `complete()` | Marca o wizard como concluído (todos os passos ficam `.fs-step-completed`). |
 | `dispose()` | Remove todos os listeners e desregistra a instância. |

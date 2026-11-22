@@ -1,6 +1,8 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
 import { Modal } from "../../packages/fokus-js/js/modal.js";
 
+const created = [];
+
 function buildModal({ backdropStatic = false } = {}) {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
@@ -24,11 +26,14 @@ function buildModal({ backdropStatic = false } = {}) {
   const trigger = wrapper.querySelector("#trigger");
   const modalEl = wrapper.querySelector("#myModal");
 
-  return { trigger, modalEl, modal: new Modal(trigger) };
+  const modal = new Modal(trigger);
+  created.push(modal);
+  return { trigger, modalEl, modal };
 }
 
 describe("Modal", () => {
   afterEach(() => {
+    created.splice(0).reverse().forEach((instance) => instance.dispose());
     document.body.innerHTML = "";
     document.body.style.overflow = "";
   });
@@ -52,6 +57,19 @@ describe("Modal", () => {
     expect(modalEl.classList.contains("is-open")).toBe(true);
     expect(document.body.style.overflow).toBe("hidden");
     expect(document.activeElement.textContent).toBe("x");
+  });
+
+  it("mantém o modal aberto acessível ao inicializar outro trigger para o mesmo alvo", () => {
+    const { modalEl, modal } = buildModal();
+    const secondTrigger = document.createElement("button");
+    secondTrigger.setAttribute("data-fs-target", "#myModal");
+    document.body.appendChild(secondTrigger);
+
+    modal.show();
+    created.push(new Modal(secondTrigger));
+
+    expect(modalEl.classList.contains("is-open")).toBe(true);
+    expect(modalEl.getAttribute("aria-hidden")).toBe("false");
   });
 
   it("Escape fecha o modal, libera o scroll e devolve o foco ao trigger", () => {

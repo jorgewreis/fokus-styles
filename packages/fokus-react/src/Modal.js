@@ -13,8 +13,12 @@ export const ModalTrigger = forwardRef(function ModalTrigger({ target, backdrop,
 
   useEffect(() => {
     instanceRef.current = new FokusStylesModal(buttonRef.current, { backdrop });
-    return () => instanceRef.current?.dispose();
-  }, [backdrop]);
+    const instance = instanceRef.current;
+    return () => {
+      instance.dispose();
+      instanceRef.current = null;
+    };
+  }, [target, backdrop]);
 
   useImperativeHandle(ref, () => ({
     show: () => instanceRef.current?.show(),

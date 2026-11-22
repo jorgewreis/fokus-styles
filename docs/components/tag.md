@@ -69,7 +69,20 @@ ficar distinguível em agrupamentos densos.
 Para uma operação assíncrona, aplique `aria-busy="true"` e `.is-loading`, ou
 use `Tag.setLoading(true)`. Inclua um `.fs-spinner` depois de `.fs-tag-label`:
 o estado pendente usa fundo `warning`, texto e spinner pretos. O botão de
-remoção é desabilitado até que o estado seja removido.
+remoção é desabilitado durante o estado pendente quando estava habilitado.
+`setLoading(false)` reabilita somente os botões que a instância desabilitou.
+Um botão que já vem com `disabled` explícito continua desabilitado, inclusive
+quando a tag começa com `.is-loading` ou `aria-busy="true"`. Se a aplicação
+quiser liberar esse botão após a operação, faça isso explicitamente depois de
+encerrar o loading:
+
+```js
+tag.setLoading(false);
+tagElement.querySelector('[data-fs-dismiss="tag"]').disabled = false;
+```
+
+A instância não distingue outra causa de `disabled` aplicada enquanto o
+loading está ativo; aplique estados adicionais depois de `setLoading(false)`.
 
 ## A11y
 

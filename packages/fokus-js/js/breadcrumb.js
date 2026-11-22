@@ -12,6 +12,7 @@ export class Breadcrumb {
     this.isCollapsed = false;
     this._moreItem = null;
     this._dropdown = null;
+    this._tooltips = new Set();
     // Abaixo do breakpoint `sm` (scss/settings/_breakpoints.scss, 640px). Por
     // instância (em vez de módulo) para poder ser mockado por teste e para o
     // listener ser removido de forma isolada em dispose().
@@ -42,10 +43,11 @@ export class Breadcrumb {
     targets.forEach((target) => target.classList.add("fs-breadcrumb-item-truncate"));
 
     const measure = () => {
+      if (!this._tooltips) return;
       targets.forEach((target) => {
-        if (target.scrollWidth > target.clientWidth) {
+        if (target.scrollWidth > target.clientWidth && !Tooltip.getInstance(target)) {
           target.setAttribute("data-title", target.textContent.trim());
-          new Tooltip(target);
+          this._tooltips.add(new Tooltip(target));
         }
       });
     };
@@ -53,11 +55,12 @@ export class Breadcrumb {
     if (document.fonts?.ready) {
       document.fonts.ready.then(measure);
     } else {
-      requestAnimationFrame(measure);
+      this._measureFrame = requestAnimationFrame(measure);
     }
   }
 
   _render() {
+    if (!this._tooltips) return;
     const shouldCollapse = this._collapseQuery.matches && this.items.length > this.maxItems;
 
     if (shouldCollapse === this.isCollapsed) return;
@@ -122,6 +125,13 @@ export class Breadcrumb {
   }
 
   dispose() {
+    const tooltips = this._tooltips;
+    if (!tooltips) return;
+    this._tooltips = null;
+    if (this._measureFrame != null) cancelAnimationFrame(this._measureFrame);
+    tooltips.forEach((tooltip) => {
+      if (Tooltip.getInstance(tooltip.referenceEl) === tooltip) tooltip.dispose();
+    });
     this._collapseQuery.removeEventListener("change", this._handleMediaChange);
     this._expand();
     instances.delete(this.listEl);

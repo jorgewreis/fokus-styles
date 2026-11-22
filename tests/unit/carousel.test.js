@@ -82,6 +82,46 @@ describe("Carousel", () => {
     carousel.dispose();
   });
 
+  it.each([NaN, Infinity, -Infinity, 0.5, -1.5, "", "1", " ", null, undefined, true, {}, [], 1n, Symbol("index")])(
+    "ignora índice inválido %s sem alterar estado nem disparar eventos",
+    (index) => {
+      const { el, carousel } = buildCarousel({ counter: true });
+      carousel.goTo(1);
+      const html = el.innerHTML;
+      const handler = vi.fn();
+      el.addEventListener("fs:shown", handler);
+      el.addEventListener("fs:carousel:slid", handler);
+
+      expect(() => carousel.goTo(index)).not.toThrow();
+      expect(() => Carousel.goTo(el, index)).not.toThrow();
+      expect(carousel.index).toBe(1);
+      expect(el.innerHTML).toBe(html);
+      expect(handler).not.toHaveBeenCalled();
+
+      carousel.next();
+      expect(carousel.index).toBe(2);
+      expect(handler).toHaveBeenCalledTimes(2);
+      carousel.dispose();
+    },
+  );
+
+  it.each([[-7, 2], [-1, 2], [-0, 0], [3, 0], [7, 1], [Number.MAX_SAFE_INTEGER, 1]])(
+    "preserva o wrap circular para índice inteiro %s",
+    (index, expected) => {
+      const { el, carousel } = buildCarousel({ counter: true });
+      carousel.goTo(index);
+      expect(carousel.index).toBe(expected);
+      expect(el.querySelectorAll(".fs-carousel-item.is-active")).toHaveLength(1);
+      carousel.items.forEach((item, i) => {
+        expect(item.getAttribute("aria-hidden")).toBe(String(i !== expected));
+        expect(item.hasAttribute("inert")).toBe(i !== expected);
+      });
+      expect(carousel.indicators[expected].getAttribute("aria-current")).toBe("true");
+      expect(carousel.counterEl.textContent).toBe(`${expected + 1} de 3`);
+      carousel.dispose();
+    },
+  );
+
   it("controles e indicadores navegam e sincronizam aria-current", () => {
     const { el, carousel } = buildCarousel();
     el.querySelector(".fs-carousel-control-next").click();

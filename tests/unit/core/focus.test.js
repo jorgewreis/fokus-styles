@@ -31,6 +31,8 @@ describe("getFocusableElements", () => {
 
 describe("createFocusTrap", () => {
   let container;
+  const traps = [];
+  const createTrap = (el) => { const trap = createFocusTrap(el); traps.push(trap); return trap; };
   let first;
   let last;
 
@@ -43,16 +45,17 @@ describe("createFocusTrap", () => {
   });
 
   afterEach(() => {
+    traps.splice(0).reverse().forEach((trap) => trap.deactivate());
     document.body.innerHTML = "";
   });
 
   it("activate() foca o primeiro elemento focável", () => {
-    createFocusTrap(container).activate();
+    createTrap(container).activate();
     expect(document.activeElement).toBe(first);
   });
 
   it("Tab no último elemento cicla de volta para o primeiro", () => {
-    createFocusTrap(container).activate();
+    createTrap(container).activate();
     last.focus();
 
     const event = pressKey(container, "Tab");
@@ -62,7 +65,7 @@ describe("createFocusTrap", () => {
   });
 
   it("Shift+Tab no primeiro elemento cicla para o último", () => {
-    createFocusTrap(container).activate();
+    createTrap(container).activate();
     first.focus();
 
     const event = pressKey(container, "Tab", { shiftKey: true });
@@ -72,7 +75,7 @@ describe("createFocusTrap", () => {
   });
 
   it("deactivate() para de interceptar Tab", () => {
-    const trap = createFocusTrap(container);
+    const trap = createTrap(container);
     trap.activate();
     trap.deactivate();
     last.focus();

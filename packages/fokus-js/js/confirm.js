@@ -1,17 +1,8 @@
+import { escapeHtml } from "./core/html.js";
 import { Modal } from "./modal.js";
+import { normalizeVariant } from "./core/variant.js";
 
 let idCounter = 0;
-const confirmVariants = new Set(["primary", "secondary", "success", "warning", "danger", "info"]);
-
-function normalizeVariant(value) {
-  return confirmVariants.has(value) ? value : "danger";
-}
-
-function escapeHtml(value) {
-  const div = document.createElement("div");
-  div.textContent = value;
-  return div.innerHTML;
-}
 
 // Alert Dialog / Confirm: ao contrário dos demais componentes (auto-init
 // declarativo via data-fs), é 100% programático — monta o modal na hora,
@@ -20,8 +11,6 @@ function escapeHtml(value) {
 // (cancelado ou fechado por Escape/clique fora).
 export function confirm(options = {}) {
   const { title = "Tem certeza?", message = "", confirmText = "Confirmar", cancelText = "Cancelar", variant = "danger" } = options;
-  const safeVariant = normalizeVariant(variant);
-
   return new Promise((resolve) => {
     idCounter += 1;
     const modalId = `fokus-confirm-${idCounter}`;
@@ -39,7 +28,7 @@ export function confirm(options = {}) {
           </div>
           <div class="fs-modal-footer">
             <button type="button" class="fs-btn" data-action="cancel">${escapeHtml(cancelText)}</button>
-            <button type="button" class="fs-btn fs-btn-${safeVariant}" data-action="confirm">${escapeHtml(confirmText)}</button>
+            <button type="button" class="fs-btn fs-btn-${normalizeVariant(variant, "danger")}" data-action="confirm">${escapeHtml(confirmText)}</button>
           </div>
         </div>
       </div>

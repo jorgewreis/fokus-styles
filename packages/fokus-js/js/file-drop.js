@@ -63,7 +63,7 @@ export class FileDrop {
     this._dragDepth = 0;
     this.labelEl.classList.remove("is-dragover");
 
-    if (this.inputEl.disabled) return;
+    if (this.inputEl.matches(":disabled")) return;
 
     const files = event.dataTransfer?.files;
     if (!files || files.length === 0) return;

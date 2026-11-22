@@ -115,7 +115,7 @@ instância criada.
 | Método | Descrição |
 |---|---|
 | `next()` / `prev()` | Avança/volta um slide, circularmente. |
-| `goTo(index)` | Vai diretamente ao índice informado. |
+| `goTo(index)` | Vai diretamente ao índice inteiro informado; valores não inteiros ou não numéricos são ignorados sem evento. Índices inteiros continuam circulares. |
 | `pause()` | Pausa o autoplay configurado até uma chamada a `play()`. |
 | `play()` | Retoma o autoplay configurado, se o carrossel for navegável e a página estiver visível. |
 | `dispose()` | Para o timer, remove listeners e desregistra a instância. |

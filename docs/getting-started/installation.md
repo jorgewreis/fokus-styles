@@ -1,5 +1,9 @@
 # Instalação
 
+CSS pronto por CDN ou arquivo local não requer Node. Para instalar o pacote
+agregado por npm ou compilar fontes, consulte os
+[requisitos Node e a matriz de validação](../reference/node-compatibility.md).
+
 ## Via npm
 
 ```bash

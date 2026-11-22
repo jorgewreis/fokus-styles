@@ -14,12 +14,14 @@ para a distribuição pública. A documentação versionada deste checkout come�
 
 ## Pré-requisitos
 
-- Node.js >= 18
+- Node.js 22 atualizado (mínimo 22.13.0) ou 24 (mínimo 24.11.0).
+- Consulte os [contratos Node](docs/reference/node-compatibility.md): o piso
+  do checkout é diferente do piso de instalação do pacote consumidor.
 
 ## Setup
 
 ```bash
-npm install
+npm ci --engine-strict
 ```
 
 ## Scripts

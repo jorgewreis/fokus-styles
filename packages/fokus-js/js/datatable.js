@@ -52,7 +52,7 @@ export class DataTable {
     this.theadEl = tableEl.querySelector("thead");
     this.tbodyEl = tbodyEl;
     const configuredPageSize = Number(rootEl.getAttribute("data-fs-page-size") ?? options.pageSize ?? 10);
-    this.pageSize = Number.isFinite(configuredPageSize) && configuredPageSize > 0
+    this.pageSize = Number.isFinite(configuredPageSize) && configuredPageSize >= 1
       ? Math.floor(configuredPageSize)
       : 10;
 

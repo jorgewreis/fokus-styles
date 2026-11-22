@@ -8,6 +8,7 @@ const instances = createInstanceRegistry();
 export class Tag {
   constructor(tagEl) {
     this.tagEl = tagEl;
+    this._loadingButtons = new Set();
     this._isLoading = tagEl.classList.contains("is-loading") || tagEl.getAttribute("aria-busy") === "true";
 
     this._handleClick = this._handleClick.bind(this);
@@ -70,7 +71,15 @@ export class Tag {
     }
 
     const dismissButton = this.tagEl.querySelector('[data-fs-dismiss="tag"]');
-    if (dismissButton) dismissButton.disabled = this._isLoading;
+    if (this._isLoading) {
+      if (dismissButton && !dismissButton.disabled) {
+        this._loadingButtons.add(dismissButton);
+        dismissButton.disabled = true;
+      }
+    } else {
+      this._loadingButtons.forEach((button) => { button.disabled = false; });
+      this._loadingButtons.clear();
+    }
 
     return this;
   }
