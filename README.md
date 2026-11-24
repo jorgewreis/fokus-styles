@@ -1,3 +1,5 @@
+> **Este projeto mudou de repositório.** O código está em [packages/styles](https://github.com/jorgewreis/fokus/tree/main/packages/styles). Issues e pull requests devem ir para [github.com/jorgewreis/fokus/issues](https://github.com/jorgewreis/fokus/issues). O pacote npm continua se chamando `fokus-styles`.
+
 <div align="center">
 
 # Fokus Styles
